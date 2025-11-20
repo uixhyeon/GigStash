@@ -3,23 +3,23 @@
 // ============================================
 
 // Primary Colors
-$color-primary: #296AF1;
-$color-accent: #3DD9B6;
+$color-primary: #296af1;
+$color-accent: #3dd9b6;
 
 // Status Colors
-$color-warning: #FFC83D;
-$color-error: #EF4444;
+$color-warning: #ffc83d;
+$color-error: #ef4444;
 
 // Grayscale
-$color-gray-900: #1E293B;
-$color-gray-600: #64748B;
-$color-gray-200: #E2E8F0;
+$color-gray-900: #1e293b;
+$color-gray-600: #64748b;
+$color-gray-200: #e2e8f0;
 
 // Background
-$color-background: #F8FAFC;
+$color-background: #f8fafc;
 
 // Additional Utility Colors
-$color-white: #FFFFFF;
+$color-white: #ffffff;
 $color-black: #000000;
 
 // ============================================
@@ -27,37 +27,37 @@ $color-black: #000000;
 // ============================================
 
 // Dark Background Colors
-$color-dark-bg: #0F172A;
-$color-dark-bg-secondary: #1E293B;
+$color-dark-bg: #0f172a;
+$color-dark-bg-secondary: #1e293b;
 $color-dark-bg-tertiary: #334155;
 
 // Dark Text Colors
-$color-dark-text-primary: #F1F5F9;
-$color-dark-text-secondary: #CBD5E1;
-$color-dark-text-tertiary: #94A3B8;
+$color-dark-text-primary: #f1f5f9;
+$color-dark-text-secondary: #cbd5e1;
+$color-dark-text-tertiary: #94a3b8;
 
-// Dark Border Colors
+// Dark Bord           Colors
 $color-dark-border: #334155;
 $color-dark-border-light: #475569;
-
 
 // ============================================
 // Typography
 // ============================================
 
 // Font Families
-$font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-primary:
+  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 $font-monospace: 'Courier New', Courier, monospace;
 
 // Font Sizes
-$font-size-xs: 0.75rem;    // 12px
-$font-size-sm: 0.875rem;   // 14px
-$font-size-base: 1rem;     // 16px
-$font-size-lg: 1.125rem;   // 18px
-$font-size-xl: 1.25rem;    // 20px
-$font-size-2xl: 1.5rem;    // 24px
-$font-size-3xl: 1.875rem;  // 30px
-$font-size-4xl: 2.25rem;   // 36px
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-2xl: 1.5rem; // 24px
+$font-size-3xl: 1.875rem; // 30px
+$font-size-4xl: 2.25rem; // 36px
 
 // Font Weights
 $font-weight-light: 300;
@@ -71,48 +71,52 @@ $line-height-tight: 1.25;
 $line-height-normal: 1.5;
 $line-height-relaxed: 1.75;
 
-
 // ============================================
 // Spacing
 // ============================================
 
 $spacing-0: 0;
-$spacing-1: 0.25rem;   // 4px
-$spacing-2: 0.5rem;    // 8px
-$spacing-3: 0.75rem;   // 12px
-$spacing-4: 1rem;      // 16px
-$spacing-5: 1.25rem;   // 20px
-$spacing-6: 1.5rem;    // 24px
-$spacing-8: 2rem;      // 32px
-$spacing-10: 2.5rem;   // 40px
-$spacing-12: 3rem;     // 48px
-$spacing-16: 4rem;     // 64px
-$spacing-20: 5rem;     // 80px
-$spacing-24: 6rem;     // 96px
-
+$spacing-1: 0.25rem; // 4px
+$spacing-2: 0.5rem; // 8px
+$spacing-3: 0.75rem; // 12px
+$spacing-4: 1rem; // 16px
+$spacing-5: 1.25rem; // 20px
+$spacing-6: 1.5rem; // 24px
+$spacing-8: 2rem; // 32px
+$spacing-10: 2.5rem; // 40px
+$spacing-12: 3rem; // 48px
+$spacing-16: 4rem; // 64px
+$spacing-20: 5rem; // 80px
+$spacing-24: 6rem; // 96px
 
 // ============================================
 // Border Radius
 // ============================================
 
-$radius-sm: 0.25rem;   // 4px
-$radius-base: 0.5rem;  // 8px
-$radius-md: 0.75rem;   // 12px
-$radius-lg: 1rem;      // 16px
-$radius-xl: 1.5rem;    // 24px
-$radius-full: 9999px;  // Full rounded
-
+$radius-sm: 0.25rem; // 4px
+$radius-base: 0.5rem; // 8px
+$radius-md: 0.75rem; // 12px
+$radius-lg: 1rem; // 16px
+$radius-xl: 1.5rem; // 24px
+$radius-full: 9999px; // Full rounded
 
 // ============================================
 // Shadows
 // ============================================
 
 $shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-$shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-
+$shadow-base:
+  0 1px 3px 0 rgba(0, 0, 0, 0.1),
+  0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-md:
+  0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg:
+  0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl:
+  0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
 // ============================================
 // Transitions
@@ -121,7 +125,6 @@ $shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 
 $transition-fast: 150ms ease-in-out;
 $transition-base: 200ms ease-in-out;
 $transition-slow: 300ms ease-in-out;
-
 
 // ============================================
 // Breakpoints
@@ -132,7 +135,6 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 $breakpoint-xl: 1280px;
 $breakpoint-2xl: 1536px;
-
 
 // ============================================
 // Z-Index
