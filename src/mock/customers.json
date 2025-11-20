@@ -1,0 +1,169 @@
+{
+  "customers": [
+    {
+      "id": "C001",
+      "name": "김철수",
+      "phone": "010-1234-5678",
+      "email": "kim.cs@email.com",
+      "membershipLevel": "gold",
+      "registeredAt": "2024-11-15T10:00:00Z",
+      "totalReservations": 15,
+      "activeReservations": 1,
+      "lastReservation": "2025-01-09T15:30:00Z"
+    },
+    {
+      "id": "C002",
+      "name": "이영희",
+      "phone": "010-2345-6789",
+      "email": "lee.yh@email.com",
+      "membershipLevel": "silver",
+      "registeredAt": "2024-12-01T10:00:00Z",
+      "totalReservations": 8,
+      "activeReservations": 1,
+      "lastReservation": "2025-01-09T14:00:00Z"
+    },
+    {
+      "id": "C003",
+      "name": "박민수",
+      "phone": "010-3456-7890",
+      "email": "park.ms@email.com",
+      "membershipLevel": "bronze",
+      "registeredAt": "2024-12-20T10:00:00Z",
+      "totalReservations": 3,
+      "activeReservations": 1,
+      "lastReservation": "2025-01-10T09:15:00Z"
+    },
+    {
+      "id": "C004",
+      "name": "최지은",
+      "phone": "010-4567-8901",
+      "email": "choi.je@email.com",
+      "membershipLevel": "gold",
+      "registeredAt": "2024-10-10T10:00:00Z",
+      "totalReservations": 22,
+      "activeReservations": 1,
+      "lastReservation": "2025-01-09T18:00:00Z"
+    },
+    {
+      "id": "C005",
+      "name": "정수진",
+      "phone": "010-5678-9012",
+      "email": "jung.sj@email.com",
+      "membershipLevel": "silver",
+      "registeredAt": "2024-11-25T10:00:00Z",
+      "totalReservations": 10,
+      "activeReservations": 1,
+      "lastReservation": "2025-01-10T08:00:00Z"
+    },
+    {
+      "id": "C006",
+      "name": "강동욱",
+      "phone": "010-6789-0123",
+      "email": "kang.dw@email.com",
+      "membershipLevel": "platinum",
+      "registeredAt": "2024-09-05T10:00:00Z",
+      "totalReservations": 35,
+      "activeReservations": 1,
+      "lastReservation": "2025-01-09T20:00:00Z"
+    },
+    {
+      "id": "C007",
+      "name": "윤서연",
+      "phone": "010-7890-1234",
+      "email": "yoon.sy@email.com",
+      "membershipLevel": "bronze",
+      "registeredAt": "2025-01-02T10:00:00Z",
+      "totalReservations": 2,
+      "activeReservations": 1,
+      "lastReservation": "2025-01-10T09:45:00Z"
+    },
+    {
+      "id": "C008",
+      "name": "임태희",
+      "phone": "010-8901-2345",
+      "email": "lim.th@email.com",
+      "membershipLevel": "silver",
+      "registeredAt": "2024-11-10T10:00:00Z",
+      "totalReservations": 12,
+      "activeReservations": 1,
+      "lastReservation": "2025-01-09T22:00:00Z"
+    },
+    {
+      "id": "C009",
+      "name": "한지우",
+      "phone": "010-9012-3456",
+      "email": "han.jw@email.com",
+      "membershipLevel": "gold",
+      "registeredAt": "2024-10-20T10:00:00Z",
+      "totalReservations": 18,
+      "activeReservations": 0,
+      "lastReservation": "2025-01-08T15:00:00Z"
+    },
+    {
+      "id": "C010",
+      "name": "오민지",
+      "phone": "010-0123-4567",
+      "email": "oh.mj@email.com",
+      "membershipLevel": "bronze",
+      "registeredAt": "2024-12-15T10:00:00Z",
+      "totalReservations": 5,
+      "activeReservations": 0,
+      "lastReservation": "2025-01-08T14:30:00Z"
+    },
+    {
+      "id": "C011",
+      "name": "서준호",
+      "phone": "010-1111-2222",
+      "email": "seo.jh@email.com",
+      "membershipLevel": "silver",
+      "registeredAt": "2024-11-05T10:00:00Z",
+      "totalReservations": 9,
+      "activeReservations": 0,
+      "lastReservation": "2025-01-09T10:00:00Z"
+    },
+    {
+      "id": "C012",
+      "name": "조예린",
+      "phone": "010-2222-3333",
+      "email": "jo.yr@email.com",
+      "membershipLevel": "bronze",
+      "registeredAt": "2025-01-05T10:00:00Z",
+      "totalReservations": 1,
+      "activeReservations": 0,
+      "lastReservation": "2025-01-07T16:00:00Z"
+    },
+    {
+      "id": "C013",
+      "name": "배성훈",
+      "phone": "010-3333-4444",
+      "email": "bae.sh@email.com",
+      "membershipLevel": "platinum",
+      "registeredAt": "2024-08-15T10:00:00Z",
+      "totalReservations": 42,
+      "activeReservations": 0,
+      "lastReservation": "2025-01-05T10:00:00Z"
+    },
+    {
+      "id": "C014",
+      "name": "송하나",
+      "phone": "010-4444-5555",
+      "email": "song.hn@email.com",
+      "membershipLevel": "gold",
+      "registeredAt": "2024-10-01T10:00:00Z",
+      "totalReservations": 20,
+      "activeReservations": 0,
+      "lastReservation": "2025-01-04T10:00:00Z"
+    },
+    {
+      "id": "C015",
+      "name": "안재현",
+      "phone": "010-5555-6666",
+      "email": "ahn.jh@email.com",
+      "membershipLevel": "silver",
+      "registeredAt": "2024-11-20T10:00:00Z",
+      "totalReservations": 7,
+      "activeReservations": 0,
+      "lastReservation": "2025-01-03T10:00:00Z"
+    }
+  ]
+}

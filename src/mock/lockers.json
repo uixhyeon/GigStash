@@ -1,0 +1,224 @@
+{
+  "lockers": [
+    {
+      "id": "L001",
+      "number": "A-101",
+      "size": "small",
+      "location": "1층 A구역",
+      "status": "available",
+      "temperature": 4.2,
+      "lastMaintenance": "2025-01-05T10:00:00Z",
+      "features": ["냉장", "RFID"],
+      "currentReservation": null
+    },
+    {
+      "id": "L002",
+      "number": "A-102",
+      "size": "small",
+      "location": "1층 A구역",
+      "status": "in-use",
+      "temperature": 3.8,
+      "lastMaintenance": "2025-01-05T10:00:00Z",
+      "features": ["냉장", "RFID"],
+      "currentReservation": "R001"
+    },
+    {
+      "id": "L003",
+      "number": "A-103",
+      "size": "medium",
+      "location": "1층 A구역",
+      "status": "available",
+      "temperature": 4.5,
+      "lastMaintenance": "2025-01-04T10:00:00Z",
+      "features": ["냉장", "RFID", "알림"],
+      "currentReservation": null
+    },
+    {
+      "id": "L004",
+      "number": "A-104",
+      "size": "medium",
+      "location": "1층 A구역",
+      "status": "in-use",
+      "temperature": 3.9,
+      "lastMaintenance": "2025-01-04T10:00:00Z",
+      "features": ["냉장", "RFID", "알림"],
+      "currentReservation": "R002"
+    },
+    {
+      "id": "L005",
+      "number": "A-105",
+      "size": "large",
+      "location": "1층 A구역",
+      "status": "maintenance",
+      "temperature": null,
+      "lastMaintenance": "2025-01-10T10:00:00Z",
+      "features": ["냉장", "RFID", "알림"],
+      "currentReservation": null
+    },
+    {
+      "id": "L006",
+      "number": "B-201",
+      "size": "small",
+      "location": "2층 B구역",
+      "status": "available",
+      "temperature": 4.1,
+      "lastMaintenance": "2025-01-06T10:00:00Z",
+      "features": ["냉장", "RFID"],
+      "currentReservation": null
+    },
+    {
+      "id": "L007",
+      "number": "B-202",
+      "size": "small",
+      "location": "2층 B구역",
+      "status": "in-use",
+      "temperature": 4.3,
+      "lastMaintenance": "2025-01-06T10:00:00Z",
+      "features": ["냉장", "RFID"],
+      "currentReservation": "R003"
+    },
+    {
+      "id": "L008",
+      "number": "B-203",
+      "size": "medium",
+      "location": "2층 B구역",
+      "status": "available",
+      "temperature": 3.7,
+      "lastMaintenance": "2025-01-05T10:00:00Z",
+      "features": ["냉장", "RFID", "알림"],
+      "currentReservation": null
+    },
+    {
+      "id": "L009",
+      "number": "B-204",
+      "size": "medium",
+      "location": "2층 B구역",
+      "status": "in-use",
+      "temperature": 4.0,
+      "lastMaintenance": "2025-01-05T10:00:00Z",
+      "features": ["냉장", "RFID", "알림"],
+      "currentReservation": "R004"
+    },
+    {
+      "id": "L010",
+      "number": "B-205",
+      "size": "large",
+      "location": "2층 B구역",
+      "status": "available",
+      "temperature": 4.4,
+      "lastMaintenance": "2025-01-03T10:00:00Z",
+      "features": ["냉장", "RFID", "알림", "대용량"],
+      "currentReservation": null
+    },
+    {
+      "id": "L011",
+      "number": "C-301",
+      "size": "small",
+      "location": "3층 C구역",
+      "status": "broken",
+      "temperature": null,
+      "lastMaintenance": "2025-01-01T10:00:00Z",
+      "features": ["냉장", "RFID"],
+      "currentReservation": null
+    },
+    {
+      "id": "L012",
+      "number": "C-302",
+      "size": "small",
+      "location": "3층 C구역",
+      "status": "available",
+      "temperature": 3.6,
+      "lastMaintenance": "2025-01-07T10:00:00Z",
+      "features": ["냉장", "RFID"],
+      "currentReservation": null
+    },
+    {
+      "id": "L013",
+      "number": "C-303",
+      "size": "medium",
+      "location": "3층 C구역",
+      "status": "in-use",
+      "temperature": 4.2,
+      "lastMaintenance": "2025-01-07T10:00:00Z",
+      "features": ["냉장", "RFID", "알림"],
+      "currentReservation": "R005"
+    },
+    {
+      "id": "L014",
+      "number": "C-304",
+      "size": "medium",
+      "location": "3층 C구역",
+      "status": "available",
+      "temperature": 3.9,
+      "lastMaintenance": "2025-01-06T10:00:00Z",
+      "features": ["냉장", "RFID", "알림"],
+      "currentReservation": null
+    },
+    {
+      "id": "L015",
+      "number": "C-305",
+      "size": "large",
+      "location": "3층 C구역",
+      "status": "in-use",
+      "temperature": 4.1,
+      "lastMaintenance": "2025-01-06T10:00:00Z",
+      "features": ["냉장", "RFID", "알림", "대용량"],
+      "currentReservation": "R006"
+    },
+    {
+      "id": "L016",
+      "number": "D-401",
+      "size": "small",
+      "location": "4층 D구역",
+      "status": "available",
+      "temperature": 4.0,
+      "lastMaintenance": "2025-01-08T10:00:00Z",
+      "features": ["냉장", "RFID"],
+      "currentReservation": null
+    },
+    {
+      "id": "L017",
+      "number": "D-402",
+      "size": "medium",
+      "location": "4층 D구역",
+      "status": "available",
+      "temperature": 3.8,
+      "lastMaintenance": "2025-01-08T10:00:00Z",
+      "features": ["냉장", "RFID", "알림"],
+      "currentReservation": null
+    },
+    {
+      "id": "L018",
+      "number": "D-403",
+      "size": "medium",
+      "location": "4층 D구역",
+      "status": "in-use",
+      "temperature": 4.3,
+      "lastMaintenance": "2025-01-07T10:00:00Z",
+      "features": ["냉장", "RFID", "알림"],
+      "currentReservation": "R007"
+    },
+    {
+      "id": "L019",
+      "number": "D-404",
+      "size": "large",
+      "location": "4층 D구역",
+      "status": "available",
+      "temperature": 4.2,
+      "lastMaintenance": "2025-01-07T10:00:00Z",
+      "features": ["냉장", "RFID", "알림", "대용량"],
+      "currentReservation": null
+    },
+    {
+      "id": "L020",
+      "number": "D-405",
+      "size": "large",
+      "location": "4층 D구역",
+      "status": "in-use",
+      "temperature": 3.7,
+      "lastMaintenance": "2025-01-05T10:00:00Z",
+      "features": ["냉장", "RFID", "알림", "대용량"],
+      "currentReservation": "R008"
+    }
+  ]
+}
