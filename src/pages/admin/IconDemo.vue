@@ -54,7 +54,7 @@
       <div class="icon-grid">
         <div class="icon-card">
           <div class="icon-3d icon-3d--cube"></div>
-          <span>ChillBox</span>
+          <span>GigStash</span>
         </div>
       </div>
     </section>

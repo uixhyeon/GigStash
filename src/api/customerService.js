@@ -1,7 +1,7 @@
 // 고객 API 서비스
 import apiClient from './index'
 import { API_CONFIG } from '@/config/api.config'
-import customersData from '@/mock/customers.json'
+import customersData from '@/data/customers.json'
 
 const mockResponse = (data) => {
   return new Promise((resolve) => {

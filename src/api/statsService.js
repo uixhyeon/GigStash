@@ -1,9 +1,9 @@
 // 통계 API 서비스
 import apiClient from './index'
 import { API_CONFIG } from '@/config/api.config'
-import lockersData from '@/mock/lockers.json'
-import reservationsData from '@/mock/reservations.json'
-import customersData from '@/mock/customers.json'
+import lockersData from '@/data/lockers.json'
+import reservationsData from '@/data/reservations.json'
+import customersData from '@/data/customers.json'
 
 const mockResponse = (data) => {
   return new Promise((resolve) => {

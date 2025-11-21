@@ -21,9 +21,9 @@ export const toggleApiMode = () => {
 
 // 개발 도구: Vue DevTools에서 접근 가능하도록 window에 노출
 if (import.meta.env.DEV) {
-  window.__CHILLBOX_API_CONFIG__ = API_CONFIG
+  window.__GIGSTASH_API_CONFIG__ = API_CONFIG
   window.__TOGGLE_API_MODE__ = toggleApiMode
   console.log('🛠️ Dev Tools Available:')
-  console.log('  - window.__CHILLBOX_API_CONFIG__: API 설정 확인')
+  console.log('  - window.__GIGSTASH_API_CONFIG__: API 설정 확인')
   console.log('  - window.__TOGGLE_API_MODE__(): Mock ↔ Real 전환')
 }

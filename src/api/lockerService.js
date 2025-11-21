@@ -3,7 +3,7 @@ import apiClient from './index'
 import { API_CONFIG } from '@/config/api.config'
 
 // Mock 데이터 import
-import lockersData from '@/mock/lockers.json'
+import lockersData from '@/data/lockers.json'
 
 // Mock 응답 시뮬레이션 (실제 API 호출처럼 Promise 반환)
 const mockResponse = (data) => {
