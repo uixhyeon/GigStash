@@ -50,7 +50,8 @@
           ]"
           active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
         >
-          <span class="text-xl flex-shrink-0">{{ item.icon }}</span>
+          <span class="text-xl flex-shrink-0"> <i :class="[item.icon, `mr-3`]"></i></span>
+          <!-- {{ item.icon }} -->
           <transition name="fade">
             <span v-if="!isSidebarCollapsed" class="flex-1">{{ item.label }}</span>
           </transition>
@@ -214,12 +215,11 @@ const isMobileMenuOpen = ref(false)
 const isProfileMenuOpen = ref(false)
 
 const menuItems = [
-  { path: '/admin/adminMain', icon: '📊', label: '대시보드' },
-  { path: '/admin/reservations', icon: '📅', label: '예약관리' },
-  { path: '/admin/event-management', icon: '🎯', label: '행사관리' },
-  { path: '/admin/monitoring', icon: '📡', label: '모니터링' },
+  { path: '/admin/adminMain', icon: 'fi fi-rr-dashboard-panel', label: '대시보드' },
+  { path: '/admin/reservations', icon: 'fi fi-sr-list-check', label: '예약관리' },
+  { path: '/admin/event-management', icon: 'fi fi-rr-calendar-check', label: '행사관리' },
+  { path: '/admin/monitoring', icon: 'fi fi-br-chart-histogram ', label: '모니터링' },
 ]
-
 const secondaryMenuItems = [
   { path: '/admin/demo', icon: '🎨', label: '컴포넌트' },
   { path: '/admin/icon-demo', icon: '✨', label: '3D 아이콘' },
