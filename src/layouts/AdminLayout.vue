@@ -128,12 +128,12 @@
             <DarkModeToggle />
 
             <!-- 알림 아이콘 -->
-            <button
+            <!-- <button
               class="relative p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-all"
               style="color: #1e293b"
             >
               <i class="fi fi-rs-bell text-xl"></i>
-            </button>
+            </button> -->
 
             <!-- 프로필 영역 -->
             <div class="relative">
