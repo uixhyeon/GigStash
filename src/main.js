@@ -7,4 +7,9 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-createApp(App).use(router).use(createPinia()).mount('#app')
+const app = createApp(App)
+
+// Pinia를 먼저 초기화 (라우터 가드에서 사용됨)
+app.use(createPinia())
+app.use(router)
+app.mount('#app')
