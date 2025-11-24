@@ -503,7 +503,7 @@
       "deliveryCity": "",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료",
+      "status": "예정",
       "lineup": "알파드라이브원, 베이비몬스터, 보이넥스트도어, 범접, 엔하이픈, 하츠투하츠, 아이브, 슈퍼주니어, 투어스",
       "performanceTime": "17:00 레드카펫, 19:00 본행사"
     },
@@ -525,7 +525,7 @@
       "deliveryCity": "",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료",
+      "status": "예정",
       "lineup": "올데이프로젝트, 코르티스, 이즈나, 킥플립, 라이즈, 스트레이키즈, 제로베이스원, 지드래곤",
       "performanceTime": "17:00 레드카펫, 19:00 본행사"
     },
@@ -547,7 +547,7 @@
       "deliveryCity": "중구",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료",
+      "status": "예정",
       "performanceTime": "17:00"
     },
     {
@@ -568,7 +568,7 @@
       "deliveryCity": "송파구",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료",
+      "status": "예정",
       "performanceTime": "18:00"
     },
     {
@@ -589,7 +589,7 @@
       "deliveryCity": "중구",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료",
+      "status": "예정",
       "performanceTime": "16:00"
     },
     {
@@ -610,7 +610,7 @@
       "deliveryCity": "송파구",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료",
+      "status": "예정",
       "performanceTime": "17:00"
     }
   ]
