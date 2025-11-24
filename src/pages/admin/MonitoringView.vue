@@ -4,49 +4,30 @@
     <section class="mb-12">
       <h2 class="text-lg font-semibold mb-6" style="color: #1E293B">시스템 상태</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <!-- Blue Card -->
-        <div class="text-white p-6 rounded-3xl shadow-sm" style="background: linear-gradient(135deg, #007AFF 0%, #007AFF 100%)">
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <div class="text-sm font-medium opacity-90">활성 사물함</div>
-              <div class="text-3xl font-bold mt-2">14</div>
-            </div>
-            <i class="fi fi-rr-arrow-up-right text-xl"></i>
-          </div>
-        </div>
-
-        <!-- Dark Card -->
-        <div class="text-white p-6 rounded-3xl shadow-sm" style="background: linear-gradient(135deg, #000000 0%, #000000 100%)">
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <div class="text-sm font-medium opacity-90">온라인 사용자</div>
-              <div class="text-3xl font-bold mt-2">32</div>
-            </div>
-            <i class="fi fi-rr-arrow-up-right text-xl"></i>
-          </div>
-        </div>
-
-        <!-- Blue Card -->
-        <div class="text-white p-6 rounded-3xl shadow-sm" style="background: linear-gradient(135deg, #007AFF 0%, #007AFF 100%)">
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <div class="text-sm font-medium opacity-90">평균 온도</div>
-              <div class="text-3xl font-bold mt-2">18°C</div>
-            </div>
-            <i class="fi fi-rr-arrow-down-left text-xl"></i>
-          </div>
-        </div>
-
-        <!-- Dark Card -->
-        <div class="text-white p-6 rounded-3xl shadow-sm" style="background: linear-gradient(135deg, #000000 0%, #000000 100%)">
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <div class="text-sm font-medium opacity-90">시스템 상태</div>
-              <div class="text-3xl font-bold mt-2">정상</div>
-            </div>
-            <i class="fi fi-rr-check text-xl"></i>
-          </div>
-        </div>
+        <StatCard
+          label="활성 사물함"
+          value="14"
+          icon="fi-rr-box"
+          variant="gradient-blue"
+        />
+        <StatCard
+          label="온라인 사용자"
+          value="32"
+          icon="fi-rr-users"
+          variant="gradient-black"
+        />
+        <StatCard
+          label="평균 온도"
+          value="18°C"
+          icon="fi-rr-temperature-low"
+          variant="gradient-blue"
+        />
+        <StatCard
+          label="시스템 상태"
+          value="정상"
+          icon="fi-rr-check"
+          variant="gradient-black"
+        />
       </div>
     </section>
 
@@ -97,6 +78,8 @@
 </template>
 
 <script setup>
+import StatCard from '@/components/common/StatCard.vue'
+
 const statusCounts = [
   { name: '사용 가능', count: 8, percentage: 57 },
   { name: '사용 중', count: 4, percentage: 29 },
