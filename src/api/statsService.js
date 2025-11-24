@@ -1,9 +1,9 @@
 // 통계 API 서비스
 import apiClient from './index'
-import { API_CONFIG } from '@/config/api.config'
-import lockersData from '@/data/lockers.json'
-import reservationsData from '@/data/reservations.json'
-import customersData from '@/data/customers.json'
+import { API_CONFIG } from '../config/api.config'
+import lockersData from '../data/lockers.json'
+import reservationsData from '../data/reservations.json'
+import customersData from '../data/customers.json'
 
 const mockResponse = (data) => {
   return new Promise((resolve) => {
@@ -19,21 +19,21 @@ export const statsService = {
       const availableLockers = lockersData.lockers.filter((l) => l.status === 'available').length
       const inUseLockers = lockersData.lockers.filter((l) => l.status === 'in-use').length
       const maintenanceLockers = lockersData.lockers.filter(
-        (l) => l.status === 'maintenance'
+        (l) => l.status === 'maintenance',
       ).length
       const brokenLockers = lockersData.lockers.filter((l) => l.status === 'broken').length
 
       const today = new Date().toISOString().split('T')[0]
       const todayReservations = reservationsData.reservations.filter((r) =>
-        r.startTime.startsWith(today)
+        r.startTime.startsWith(today),
       ).length
 
       const activeReservations = reservationsData.reservations.filter(
-        (r) => r.status === 'active'
+        (r) => r.status === 'active',
       ).length
 
       const completedToday = reservationsData.reservations.filter(
-        (r) => r.status === 'completed' && r.completedAt && r.completedAt.startsWith(today)
+        (r) => r.status === 'completed' && r.completedAt && r.completedAt.startsWith(today),
       ).length
 
       const usageRate = ((inUseLockers / totalLockers) * 100).toFixed(1)
@@ -50,7 +50,7 @@ export const statsService = {
         todayPickups: completedToday,
         totalCustomers: customersData.customers.length,
         revenueToday: todayReservations * 5000, // 가정: 건당 5000원
-        revenueMonth: reservationsData.reservations.length * 5000
+        revenueMonth: reservationsData.reservations.length * 5000,
       }
 
       return mockResponse(stats)
@@ -73,7 +73,7 @@ export const statsService = {
           date: dateStr,
           usage: 50 + Math.random() * 30, // 50~80% 사이
           reservations: Math.floor(5 + Math.random() * 15), // 5~20건
-          revenue: Math.floor((5 + Math.random() * 15) * 5000)
+          revenue: Math.floor((5 + Math.random() * 15) * 5000),
         }
       })
 
@@ -90,7 +90,7 @@ export const statsService = {
       const hourlyData = Array.from({ length: 24 }, (_, hour) => ({
         hour,
         reservations: Math.floor(Math.random() * 10),
-        pickups: Math.floor(Math.random() * 8)
+        pickups: Math.floor(Math.random() * 8),
       }))
 
       return mockResponse(hourlyData)
@@ -106,27 +106,27 @@ export const statsService = {
         small: {
           total: lockersData.lockers.filter((l) => l.size === 'small').length,
           available: lockersData.lockers.filter(
-            (l) => l.size === 'small' && l.status === 'available'
+            (l) => l.size === 'small' && l.status === 'available',
           ).length,
           inUse: lockersData.lockers.filter((l) => l.size === 'small' && l.status === 'in-use')
-            .length
+            .length,
         },
         medium: {
           total: lockersData.lockers.filter((l) => l.size === 'medium').length,
           available: lockersData.lockers.filter(
-            (l) => l.size === 'medium' && l.status === 'available'
+            (l) => l.size === 'medium' && l.status === 'available',
           ).length,
           inUse: lockersData.lockers.filter((l) => l.size === 'medium' && l.status === 'in-use')
-            .length
+            .length,
         },
         large: {
           total: lockersData.lockers.filter((l) => l.size === 'large').length,
           available: lockersData.lockers.filter(
-            (l) => l.size === 'large' && l.status === 'available'
+            (l) => l.size === 'large' && l.status === 'available',
           ).length,
           inUse: lockersData.lockers.filter((l) => l.size === 'large' && l.status === 'in-use')
-            .length
-        }
+            .length,
+        },
       }
 
       return mockResponse(sizeStats)
@@ -150,7 +150,7 @@ export const statsService = {
           total: lockers.length,
           available,
           inUse,
-          usageRate: ((inUse / lockers.length) * 100).toFixed(1)
+          usageRate: ((inUse / lockers.length) * 100).toFixed(1),
         }
       })
 
@@ -167,7 +167,7 @@ export const statsService = {
         bronze: customersData.customers.filter((c) => c.membershipLevel === 'bronze').length,
         silver: customersData.customers.filter((c) => c.membershipLevel === 'silver').length,
         gold: customersData.customers.filter((c) => c.membershipLevel === 'gold').length,
-        platinum: customersData.customers.filter((c) => c.membershipLevel === 'platinum').length
+        platinum: customersData.customers.filter((c) => c.membershipLevel === 'platinum').length,
       }
 
       return mockResponse(membershipStats)
@@ -183,12 +183,12 @@ export const statsService = {
         active: reservationsData.reservations.filter((r) => r.status === 'active').length,
         completed: reservationsData.reservations.filter((r) => r.status === 'completed').length,
         cancelled: reservationsData.reservations.filter((r) => r.status === 'cancelled').length,
-        expired: reservationsData.reservations.filter((r) => r.status === 'expired').length
+        expired: reservationsData.reservations.filter((r) => r.status === 'expired').length,
       }
 
       return mockResponse(reservationStats)
     } else {
       return apiClient.get('/stats/reservations')
     }
-  }
+  },
 }

@@ -183,13 +183,15 @@ onMounted(() => {
 // 테스트 계정 정보
 const testAccounts = {
   'admin@example.com': {
-    password: 'admin123',
+    password: '1',
+    // password: 'admin123',
     id: 1,
     name: '김관리',
     role: 'admin',
   },
   'worker@example.com': {
-    password: 'worker123',
+    password: '1',
+    // password: 'worker123',
     id: 2,
     name: '박기사',
     role: 'worker',

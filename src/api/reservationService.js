@@ -65,7 +65,7 @@ export const reservationService = {
         ...data,
         status: 'active',
         createdAt: new Date().toISOString(),
-        accessCode: String(Math.floor(1000 + Math.random() * 9000))
+        accessCode: String(Math.floor(1000 + Math.random() * 9000)),
       }
       reservationsData.reservations.push(newReservation)
       return mockResponse(newReservation)
@@ -84,7 +84,7 @@ export const reservationService = {
       const updated = {
         ...reservationsData.reservations[index],
         ...data,
-        updatedAt: new Date().toISOString()
+        updatedAt: new Date().toISOString(),
       }
       reservationsData.reservations[index] = updated
       return mockResponse(updated)
@@ -128,9 +128,7 @@ export const reservationService = {
   async getToday() {
     if (API_CONFIG.mode === 'mock') {
       const today = new Date().toISOString().split('T')[0]
-      const filtered = reservationsData.reservations.filter((r) =>
-        r.startTime.startsWith(today)
-      )
+      const filtered = reservationsData.reservations.filter((r) => r.startTime.startsWith(today))
       return mockResponse(filtered)
     } else {
       return apiClient.get('/reservations/today')
@@ -145,5 +143,5 @@ export const reservationService = {
     } else {
       return apiClient.get('/reservations', { params: { status: 'active' } })
     }
-  }
+  },
 }

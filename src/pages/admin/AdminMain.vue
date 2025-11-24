@@ -15,12 +15,7 @@
           icon="fi-rr-box"
           variant="gradient-blue"
         />
-        <StatCard
-          label="사용중"
-          :value="stats.inUse"
-          icon="fi-rr-lock"
-          variant="gradient-black"
-        />
+        <StatCard label="사용중" :value="stats.inUse" icon="fi-rr-lock" variant="gradient-black" />
         <StatCard
           label="사용률"
           :value="`${stats.usageRate}%`"
