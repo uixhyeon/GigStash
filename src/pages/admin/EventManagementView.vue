@@ -127,35 +127,100 @@
 
       <!-- 필터 및 테이블 섹션 -->
       <div class="lg:col-span-2">
-        <h2 class="text-lg font-semibold mb-6" style="color: #1e293b">행사 목록</h2>
-        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 mb-6">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <input
-              v-model="searchQuery"
-              type="text"
-              placeholder="행사명으로 검색"
-              class="px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
-            />
-            <select
-              v-model="statusFilter"
-              class="px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
-            >
-              <option value="">상태 선택</option>
-              <option value="예정">예정</option>
-              <option value="진행 중">진행 중</option>
-              <option value="종료">종료</option>
-            </select>
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-lg font-semibold" style="color: #1e293b">행사 목록</h2>
+          <div class="flex items-center gap-2">
+            <!-- 이전 달 버튼 -->
             <button
-              @click="resetFilters"
-              class="px-4 py-2 bg-gray-200 dark:bg-slate-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors"
+              @click="prevMonth"
+              class="p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-600 dark:text-gray-400"
+              title="이전 달"
             >
-              초기화
+              <i class="fa fa-chevron-left text-lg"></i>
             </button>
+
+            <!-- 다음 달 버튼 -->
+            <button
+              @click="nextMonth"
+              class="p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-600 dark:text-gray-400"
+              title="다음 달"
+            >
+              <i class="fa fa-chevron-right text-lg"></i>
+            </button>
+
+            <!-- 구분선 -->
+            <div class="h-6 w-px bg-gray-300 dark:bg-slate-600 mx-1"></div>
+
+            <!-- 오늘로 이동 버튼 -->
+            <button
+              @click="goToToday"
+              class="px-3 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-700 rounded-lg transition-all"
+              title="오늘 날짜로 이동"
+            >
+              오늘
+            </button>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 mb-6">
+          <div class="flex flex-col gap-4">
+            <!-- 첫 번째 행: 상태, 행사명 검색 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <select
+                v-model="statusFilter"
+                class="px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+              >
+                <option value="">상태 선택</option>
+                <option value="예정">예정</option>
+                <option value="진행 중">진행 중</option>
+                <option value="종료">종료</option>
+              </select>
+              <input
+                v-model="searchQuery"
+                type="text"
+                placeholder="행사명으로 검색"
+                class="px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+              />
+            </div>
+
+            <!-- 두 번째 행: 날짜 필터 + 초기화 버튼 -->
+            <div class="flex flex-col md:flex-row gap-4 md:items-end">
+              <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    시작일
+                  </label>
+                  <input
+                    v-model="startDateFilter"
+                    type="date"
+                    class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    종료일
+                  </label>
+                  <input
+                    v-model="endDateFilter"
+                    type="date"
+                    class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                  />
+                </div>
+              </div>
+
+              <button
+                @click="resetFilters"
+                class="px-3 py-2 bg-gray-200 dark:bg-slate-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors text-sm font-medium whitespace-nowrap"
+              >
+                초기화
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- 행사 목록 -->
-        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden flex flex-col max-h-[800px]">
+        <div
+          class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden flex flex-col max-h-[800px]"
+        >
           <div class="overflow-y-auto flex-1">
             <table class="w-full text-sm">
               <thead class="bg-slate-100 dark:bg-slate-700 sticky top-0">
@@ -183,7 +248,9 @@
                   class="border-t border-slate-200 dark:border-slate-700"
                 >
                   <td class="px-4 py-3 text-slate-900 dark:text-slate-100">{{ event.name }}</td>
-                  <td class="px-4 py-3 text-slate-900 dark:text-slate-100">{{ event.startDate }}</td>
+                  <td class="px-4 py-3 text-slate-900 dark:text-slate-100">
+                    {{ event.startDate }}
+                  </td>
                   <td class="px-4 py-3 text-slate-900 dark:text-slate-100">{{ event.endDate }}</td>
                   <td class="px-4 py-3">
                     <span
@@ -217,7 +284,7 @@
         </div>
 
         <!-- 페이지네이션 -->
-        <div class="flex justify-center gap-2 mt-6">
+        <!-- <div class="flex justify-center gap-2 mt-6">
           <button
             class="px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-slate-700"
           >
@@ -239,7 +306,7 @@
           >
             ▶
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -265,6 +332,8 @@ const selectedDate = ref(null)
 // 검색 및 필터
 const searchQuery = ref('')
 const statusFilter = ref('')
+const startDateFilter = ref('')
+const endDateFilter = ref('')
 
 // 테이블 데이터 (events.json에서 import하고 형식 변환)
 const events = ref(
@@ -394,6 +463,18 @@ const filteredEvents = computed(() => {
     result = result.filter((event) => event.status !== '종료')
   }
 
+  // 날짜 필터링 (시작일)
+  if (startDateFilter.value) {
+    const startDate = new Date(startDateFilter.value)
+    result = result.filter((event) => new Date(event.startDate) >= startDate)
+  }
+
+  // 날짜 필터링 (종료일)
+  if (endDateFilter.value) {
+    const endDate = new Date(endDateFilter.value)
+    result = result.filter((event) => new Date(event.endDate) <= endDate)
+  }
+
   return result
 })
 
@@ -401,6 +482,8 @@ const filteredEvents = computed(() => {
 const resetFilters = () => {
   searchQuery.value = ''
   statusFilter.value = ''
+  startDateFilter.value = ''
+  endDateFilter.value = ''
 }
 
 // 이전 달로 이동
@@ -415,6 +498,12 @@ const nextMonth = () => {
   const newDate = new Date(currentDate.value)
   newDate.setMonth(newDate.getMonth() + 1)
   currentDate.value = newDate
+}
+
+// 오늘 날짜로 이동
+const goToToday = () => {
+  currentDate.value = new Date()
+  selectedDate.value = new Date()
 }
 
 // 상태에 따른 CSS 클래스 반환
