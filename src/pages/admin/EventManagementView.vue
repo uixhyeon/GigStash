@@ -131,7 +131,18 @@
 
       <!-- 필터 및 테이블 섹션 -->
       <div class="lg:col-span-2">
-        <h2 class="text-lg font-semibold mb-6" style="color: #1e293b">행사 목록</h2>
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-lg font-semibold" style="color: #1e293b">행사 목록</h2>
+
+          <button
+            @click="resetFilters"
+            class="p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-600 dark:text-gray-400"
+            title="필터 초기화"
+          >
+            필터 초기화
+            <i class="fa fa-rotate-right text-lg"></i>
+          </button>
+        </div>
         <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 mb-6">
           <div class="space-y-4">
             <!-- 첫 번째 행: 상태, 행사명 검색 -->
@@ -161,14 +172,7 @@
                   class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
                 />
               </div>
-              <div class="flex items-end">
-                <button
-                  @click="resetFilters"
-                  class="w-full px-4 py-2 bg-gray-200 dark:bg-slate-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors text-sm font-medium"
-                >
-                  초기화
-                </button>
-              </div>
+              <div></div>
             </div>
 
             <!-- 두 번째 행: 날짜 필터 -->
