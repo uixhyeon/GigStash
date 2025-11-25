@@ -31,17 +31,22 @@
             </button>
           </div>
         </div>
-        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
-          <div class="mb-6">
+        <div
+          class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 h-[calc(100vh*0.90-128px)] flex flex-col overflow-hidden"
+        >
+          <div class="mb-6 flex-shrink-0">
             <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              <h3 class="text-lg font-medium text-gray-900 dark:text-white">
                 {{ currentMonth }}
               </h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                총 {{ currentMonthFilteredCount }}건
+              </p>
             </div>
           </div>
 
           <!-- 요일 헤더 -->
-          <div class="grid grid-cols-7 gap-2 mb-2">
+          <div class="grid grid-cols-7 gap-2 mb-2 flex-shrink-0">
             <div
               v-for="(day, index) in ['일', '월', '화', '수', '목', '금', '토']"
               :key="day"
@@ -59,20 +64,22 @@
           </div>
 
           <!-- 캘린더 날짜 그리드 -->
-          <div class="grid grid-cols-7 gap-2">
+          <div class="grid grid-cols-7 gap-2 flex-1 overflow-y-auto">
             <button
               v-for="(date, index) in calendarDates"
               :key="index"
               @click="selectedDate = new Date(date.dateStr || currentDate)"
               :class="[
-                'p-2 text-sm rounded-lg transition-all text-center min-h-16 flex flex-col items-center justify-center border-2',
+                'p-2 text-sm rounded-lg transition-all text-center min-h-20 flex flex-col items-center justify-between border-2',
                 date.isCurrentMonth
                   ? (index % 7 === 0
                       ? 'day-sunday-text'
                       : index % 7 === 6
                         ? 'day-saturday-text'
                         : 'text-gray-900 dark:text-white') +
-                    (date.eventCount > 0 ? ' hover:shadow-md hover:scale-105' : ' hover:bg-blue-50 dark:hover:bg-slate-700') +
+                    (date.eventCount > 0
+                      ? ' hover:shadow-md hover:scale-105'
+                      : ' hover:bg-blue-50 dark:hover:bg-slate-700') +
                     ' cursor-pointer'
                   : 'text-gray-400 dark:text-gray-600',
                 date.isToday ? 'border-blue-500 dark:border-blue-400 font-semibold shadow-md' : '',
@@ -82,8 +89,10 @@
                 new Date(date.dateStr).toDateString() === selectedDate.toDateString()
                   ? 'bg-blue-600 text-white border-blue-600'
                   : // 행사가 있는 날짜 - 상태에 따라 다르게
-                  date.eventCount > 0
-                    ? date.completedCount > 0 && date.scheduledCount === 0 && date.inProgressCount === 0
+                    date.eventCount > 0
+                    ? date.completedCount > 0 &&
+                      date.scheduledCount === 0 &&
+                      date.inProgressCount === 0
                       ? 'bg-gray-100 dark:bg-gray-800 border-gray-400 dark:border-gray-500' // 완료만
                       : date.inProgressCount > 0
                         ? 'bg-green-100 dark:bg-green-900/30 border-green-400 dark:border-green-600' // 진행중 (초록색)
@@ -93,30 +102,20 @@
                     : 'border-transparent',
               ]"
             >
-              <span>{{ date.date }}</span>
-              <!-- 행사별 색상 표시 -->
-              <div
-                v-if="date.eventCount > 0 && date.isCurrentMonth"
-                class="flex gap-1 mt-1 flex-wrap justify-center"
-              >
-                <span v-if="date.completedCount > 0" class="text-xs">
-                  <span class="inline-block w-2 h-2 rounded-full dot-completed"></span>
-                  {{ date.completedCount }}
-                </span>
-                <span v-if="date.scheduledCount > 0" class="text-xs">
-                  <span class="inline-block w-2 h-2 rounded-full dot-scheduled"></span>
-                  {{ date.scheduledCount }}
-                </span>
-                <span v-if="date.inProgressCount > 0" class="text-xs">
-                  <span class="inline-block w-2 h-2 rounded-full dot-in-progress"></span>
-                  {{ date.inProgressCount }}
-                </span>
+              <div class="flex flex-col w-full h-full justify-between">
+                <span class="text-sm font-medium">{{ date.date }}</span>
+                <!-- 총 건수 표시 -->
+                <span
+                  v-if="date.eventCount > 0 && date.isCurrentMonth"
+                  class="text-[10px] px-1 py-0.5 rounded bg-blue-50 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300"
+                  >{{ date.eventCount }}건</span
+                >
               </div>
             </button>
           </div>
 
           <!-- 선택된 날짜 행사 -->
-          <div class="mt-6 pt-6 border-t border-gray-200 dark:border-slate-700">
+          <div class="mt-6 pt-6 border-t border-gray-200 dark:border-slate-700 flex-shrink-0">
             <h4 class="text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300">
               {{
                 selectedDate
@@ -217,12 +216,22 @@
                 class="w-full px-3 py-1.5 text-sm border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
               />
             </div>
+
+            <!-- 조회 버튼 -->
+            <div class="flex items-end">
+              <button
+                @click="searchEvents"
+                class="w-full px-4 py-1.5 bg-blue-600 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-600 text-white text-sm font-medium rounded-lg transition-all"
+              >
+                조회
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- 행사 목록 -->
         <div
-          class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden flex flex-col max-h-[800px]"
+          class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden flex flex-col h-[calc(100vh*0.80-128px)]"
         >
           <div class="overflow-y-auto flex-1">
             <table class="w-full text-sm">
@@ -233,7 +242,9 @@
                   <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">종료일</th>
                   <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">상태</th>
                   <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">참여자</th>
-                  <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">액션</th>
+                  <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">
+                    수정 및 삭제
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -287,7 +298,7 @@
         </div>
 
         <!-- 페이지네이션 -->
-        <div class="flex justify-end mt-4 space-x-2">
+        <!-- <div class="flex justify-end mt-4 space-x-2">
           <button
             class="px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-slate-700"
           >
@@ -309,7 +320,7 @@
           >
             ▶
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -481,6 +492,20 @@ const filteredEvents = computed(() => {
   }
 
   return result
+})
+
+// 현재 월의 필터링된 행사 개수
+const currentMonthFilteredCount = computed(() => {
+  const year = currentDate.value.getFullYear()
+  const month = currentDate.value.getMonth()
+  const monthStart = new Date(year, month, 1)
+  const monthEnd = new Date(year, month + 1, 0)
+
+  return filteredEvents.value.filter((event) => {
+    const eventStart = new Date(event.startDate)
+    const eventEnd = new Date(event.endDate)
+    return eventStart <= monthEnd && eventEnd >= monthStart
+  }).length
 })
 
 // 필터 초기화
