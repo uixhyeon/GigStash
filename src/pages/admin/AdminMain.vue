@@ -1,6 +1,6 @@
 <template>
   <div class="p-8 bg-slate-50 dark:bg-slate-900 min-h-screen">
-    <h1 class="text-3xl font-bold mb-8" style="color: #1e293b">Main Home</h1>
+    <!-- <h1 class="text-3xl font-bold mb-8" style="color: #1e293b">Main Home</h1> -->
 
     <!-- 통계 카드 -->
     <section class="mb-12">
