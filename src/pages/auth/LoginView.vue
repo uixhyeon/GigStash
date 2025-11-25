@@ -127,7 +127,8 @@
                 <span class="font-medium">이메일:</span> admin@example.com
               </p>
               <p class="text-gray-600 dark:text-gray-400">
-                <span class="font-medium">비밀번호:</span> admin123
+                <span class="font-medium">비밀번호:</span> 1
+                <!-- <span class="font-medium">비밀번호:</span> admin123 -->
               </p>
             </div>
             <!-- Worker account -->
@@ -137,7 +138,8 @@
                 <span class="font-medium">이메일:</span> worker@example.com
               </p>
               <p class="text-gray-600 dark:text-gray-400">
-                <span class="font-medium">비밀번호:</span> worker123
+                <span class="font-medium">비밀번호:</span> 1
+                <!-- <span class="font-medium">비밀번호:</span> worker123 -->
               </p>
             </div>
           </div>
@@ -167,7 +169,7 @@ const form = ref({
 
 const isLoading = ref(false)
 const error = ref('')
-const rememberEmail = ref(false)
+const rememberEmail = ref()
 
 // 로컬스토리지에서 저장된 이메일 복원
 onMounted(() => {
