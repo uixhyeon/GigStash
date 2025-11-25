@@ -405,6 +405,17 @@ const calendarDates = computed(() => {
     })
   }
 
+  // 비활성화 날짜만 있는 마지막 주(7개 연속)는 제거
+  // 마지막 7개가 모두 비활성화 상태이고, 제거 후에도 최소 35일 유지
+  if (dates.length >= 42) {
+    const lastSevenDays = dates.slice(-7)
+    const allLastSevenInactive = lastSevenDays.every((d) => !d.isCurrentMonth)
+
+    if (allLastSevenInactive) {
+      dates.splice(-7) // 마지막 7개 제거
+    }
+  }
+
   return dates
 })
 
