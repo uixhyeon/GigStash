@@ -192,7 +192,7 @@
         >
           <div class="overflow-y-auto flex-1 min-h-0">
             <table class="w-full text-sm">
-              <thead class="sticky top-0" style="background-color: #1e293b">
+              <thead class="sticky top-0 bg-slate-800 dark:bg-[#334155]">
                 <tr>
                   <th class="px-4 py-3 text-left font-semibold text-white">
                     행사명
