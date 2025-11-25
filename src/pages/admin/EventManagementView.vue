@@ -65,7 +65,7 @@
               :key="index"
               @click="selectedDate = new Date(date.dateStr || currentDate)"
               :class="[
-                'p-2 text-sm rounded-lg transition-all text-center min-h-16 flex flex-col items-center justify-center',
+                'p-2 text-sm rounded-lg transition-all text-center min-h-16 flex flex-col items-center justify-center border-2',
                 date.isCurrentMonth
                   ? (index % 7 === 0
                       ? 'day-sunday-text'
@@ -75,13 +75,21 @@
                     ' hover:bg-blue-50 dark:hover:bg-slate-700 cursor-pointer'
                   : 'text-gray-400 dark:text-gray-600',
                 date.isToday ? 'ring-2 ring-blue-500 dark:ring-blue-400 font-semibold' : '',
+                // 선택된 날짜
                 selectedDate &&
                 date.dateStr &&
                 new Date(date.dateStr).toDateString() === selectedDate.toDateString()
-                  ? 'bg-blue-600 text-white'
-                  : date.eventCount > 0
-                    ? 'bg-blue-50 dark:bg-blue-900/20 font-semibold'
-                    : '',
+                  ? 'bg-blue-600 text-white border-blue-600'
+                  : // 행사가 있는 날짜 - 상태에 따라 다르게
+                  date.eventCount > 0
+                    ? date.completedCount > 0 && date.scheduledCount === 0 && date.inProgressCount === 0
+                      ? 'bg-gray-100 dark:bg-gray-800 border-gray-400 dark:border-gray-500' // 완료만
+                      : date.inProgressCount > 0
+                        ? 'bg-yellow-100 dark:bg-yellow-900/30 border-yellow-400 dark:border-yellow-600' // 진행중
+                        : date.scheduledCount > 0
+                          ? 'bg-blue-100 dark:bg-blue-900/30 border-blue-400 dark:border-blue-600' // 예정
+                          : ''
+                    : 'border-transparent',
               ]"
             >
               <span>{{ date.date }}</span>
