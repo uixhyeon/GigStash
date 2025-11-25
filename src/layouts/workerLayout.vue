@@ -40,7 +40,7 @@
       <router-view></router-view>
     </main>
     <!-- 하단 탭바 -->
-    <nav
+    <!-- <nav
       class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] bg-white/95 dark:bg-gray-900/95 backdrop-blur border-t border-gray-200 dark:border-gray-700 h-[68px] z-10"
     >
       <div class="h-full grid grid-cols-3">
@@ -97,7 +97,7 @@
           ></span
         ></router-link>
       </div>
-    </nav>
+    </nav> -->
   </div>
 </template>
 <script setup>
