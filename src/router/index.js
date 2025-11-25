@@ -108,7 +108,7 @@ router.beforeEach((to, _from, next) => {
 
   // 인증이 필요한 페이지인 경우
   if (to.meta.requiresAuth && !isAuthenticated) {
-    next('/login')
+    next('/')
     return
   }
 
@@ -120,7 +120,7 @@ router.beforeEach((to, _from, next) => {
   }
 
   // 로그인 페이지 접근 시 (이미 로그인한 경우)
-  if (to.path === '/login' && isAuthenticated) {
+  if (to.path === '/' && isAuthenticated) {
     // 역할에 따라 다른 페이지로 리다이렉트
     if (userRole === 'admin') {
       next('/admin/adminMain')
