@@ -24,7 +24,9 @@
         class="h-16 px-4 flex items-center justify-between border-b border-gray-200 dark:border-slate-700"
       >
         <!-- 모바일에서는 항상 보임, 데스크톱에서는 !isSidebarCollapsed일 때만 보임 -->
-        <h2 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-cyan-400 dark:to-blue-500 bg-clip-text text-transparent text-center whitespace-nowrap flex-1 lg:hidden">
+        <h2
+          class="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-cyan-400 dark:to-blue-500 bg-clip-text text-transparent text-center whitespace-nowrap flex-1 lg:hidden"
+        >
           GigStash
         </h2>
         <transition name="fade" mode="out-in">

@@ -4,27 +4,31 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
       <!-- 달력 섹션 -->
       <div class="lg:col-span-1">
-        <h2 class="text-lg font-semibold mb-6" style="color: #1e293b">행사 일정</h2>
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-lg font-semibold mb-6" style="color: #1e293b">행사 일정</h2>
+          <div class="flex gap-2">
+            <button
+              @click="prevMonth"
+              class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 rounded-lg transition-all flex-shrink-0 text-gray-600 dark:text-gray-400"
+              title="이전 달"
+            >
+              <i class="fa fa-chevron-left text-lg"></i>
+            </button>
+            <button
+              @click="nextMonth"
+              class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 rounded-lg transition-all flex-shrink-0 text-gray-600 dark:text-gray-400"
+              title="다음 달"
+            >
+              <i class="fa fa-chevron-right text-lg"></i>
+            </button>
+          </div>
+        </div>
         <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
           <div class="mb-6">
             <div class="flex justify-between items-center">
-              <button
-                @click="prevMonth"
-                class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 rounded-lg transition-all flex-shrink-0 text-gray-600 dark:text-gray-400"
-                title="이전 달"
-              >
-                <i class="fi fi-br-angle-left text-2xl"></i>
-              </button>
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                 {{ currentMonth }}
               </h3>
-              <button
-                @click="nextMonth"
-                class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 rounded-lg transition-all flex-shrink-0 text-gray-600 dark:text-gray-400"
-                title="다음 달"
-              >
-                <i class="fi fi-br-angle-right text-2xl"></i>
-              </button>
             </div>
           </div>
 
@@ -127,40 +131,7 @@
 
       <!-- 필터 및 테이블 섹션 -->
       <div class="lg:col-span-2">
-        <div class="flex justify-between items-center mb-6">
-          <h2 class="text-lg font-semibold" style="color: #1e293b">행사 목록</h2>
-          <div class="flex items-center gap-2">
-            <!-- 이전 달 버튼 -->
-            <button
-              @click="prevMonth"
-              class="p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-600 dark:text-gray-400"
-              title="이전 달"
-            >
-              <i class="fa fa-chevron-left text-lg"></i>
-            </button>
-
-            <!-- 다음 달 버튼 -->
-            <button
-              @click="nextMonth"
-              class="p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-600 dark:text-gray-400"
-              title="다음 달"
-            >
-              <i class="fa fa-chevron-right text-lg"></i>
-            </button>
-
-            <!-- 구분선 -->
-            <div class="h-6 w-px bg-gray-300 dark:bg-slate-600 mx-1"></div>
-
-            <!-- 오늘로 이동 버튼 -->
-            <button
-              @click="goToToday"
-              class="px-3 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-700 rounded-lg transition-all"
-              title="오늘 날짜로 이동"
-            >
-              오늘
-            </button>
-          </div>
-        </div>
+        <h2 class="text-lg font-semibold mb-6" style="color: #1e293b">행사 목록</h2>
         <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 mb-6">
           <div class="flex flex-col gap-4">
             <!-- 첫 번째 행: 상태, 행사명 검색 -->
@@ -284,7 +255,7 @@
         </div>
 
         <!-- 페이지네이션 -->
-        <!-- <div class="flex justify-center gap-2 mt-6">
+        <div class="flex justify-end mt-4 space-x-2">
           <button
             class="px-3 py-2 border border-gray-300 dark:border-slate-600 rounded-lg text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-slate-700"
           >
@@ -306,7 +277,7 @@
           >
             ▶
           </button>
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
@@ -482,8 +453,6 @@ const filteredEvents = computed(() => {
 const resetFilters = () => {
   searchQuery.value = ''
   statusFilter.value = ''
-  startDateFilter.value = ''
-  endDateFilter.value = ''
 }
 
 // 이전 달로 이동
@@ -498,12 +467,6 @@ const nextMonth = () => {
   const newDate = new Date(currentDate.value)
   newDate.setMonth(newDate.getMonth() + 1)
   currentDate.value = newDate
-}
-
-// 오늘 날짜로 이동
-const goToToday = () => {
-  currentDate.value = new Date()
-  selectedDate.value = new Date()
 }
 
 // 상태에 따른 CSS 클래스 반환
