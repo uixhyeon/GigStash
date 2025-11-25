@@ -317,7 +317,7 @@ const selectedDate = ref(null)
 
 // 검색 및 필터
 const searchQuery = ref('')
-const statusFilter = ref('')
+const statusFilter = ref('전체')
 const startDateFilter = ref('')
 const endDateFilter = ref('')
 
@@ -441,13 +441,11 @@ const filteredEvents = computed(() => {
   }
 
   // 상태 필터링
-  if (statusFilter.value) {
-    // 명시적으로 선택된 상태만 표시
+  if (statusFilter.value && statusFilter.value !== '전체') {
+    // '전체'가 아니면 선택된 상태만 표시
     result = result.filter((event) => event.status === statusFilter.value)
-  } else {
-    // 초기 로드 시 종료된 항목 제외 (예정, 진행 중만 표시)
-    result = result.filter((event) => event.status !== '종료')
   }
+  // '전체'이면 모든 상태 표시
 
   // 날짜 필터링 (시작일)
   if (startDateFilter.value) {
@@ -467,7 +465,9 @@ const filteredEvents = computed(() => {
 // 필터 초기화
 const resetFilters = () => {
   searchQuery.value = ''
-  statusFilter.value = ''
+  statusFilter.value = '전체'
+  startDateFilter.value = ''
+  endDateFilter.value = ''
 }
 
 // 이전 달로 이동
