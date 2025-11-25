@@ -72,9 +72,10 @@
                       : index % 7 === 6
                         ? 'day-saturday-text'
                         : 'text-gray-900 dark:text-white') +
-                    ' hover:bg-blue-50 dark:hover:bg-slate-700 cursor-pointer'
+                    (date.eventCount > 0 ? ' hover:shadow-md hover:scale-105' : ' hover:bg-blue-50 dark:hover:bg-slate-700') +
+                    ' cursor-pointer'
                   : 'text-gray-400 dark:text-gray-600',
-                date.isToday ? 'ring-2 ring-blue-500 dark:ring-blue-400 font-semibold' : '',
+                date.isToday ? 'border-blue-500 dark:border-blue-400 font-semibold shadow-md' : '',
                 // 선택된 날짜
                 selectedDate &&
                 date.dateStr &&
@@ -85,7 +86,7 @@
                     ? date.completedCount > 0 && date.scheduledCount === 0 && date.inProgressCount === 0
                       ? 'bg-gray-100 dark:bg-gray-800 border-gray-400 dark:border-gray-500' // 완료만
                       : date.inProgressCount > 0
-                        ? 'bg-yellow-100 dark:bg-yellow-900/30 border-yellow-400 dark:border-yellow-600' // 진행중
+                        ? 'bg-green-100 dark:bg-green-900/30 border-green-400 dark:border-green-600' // 진행중 (초록색)
                         : date.scheduledCount > 0
                           ? 'bg-blue-100 dark:bg-blue-900/30 border-blue-400 dark:border-blue-600' // 예정
                           : ''
