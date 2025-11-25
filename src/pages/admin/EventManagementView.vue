@@ -143,61 +143,59 @@
             <i class="fa fa-rotate-right text-lg"></i>
           </button>
         </div>
-        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 mb-6">
-          <div class="space-y-4">
-            <!-- 첫 번째 행: 상태, 행사명 검색 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  상태
-                </label>
-                <select
-                  v-model="statusFilter"
-                  class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
-                >
-                  <option value="">상태 선택</option>
-                  <option value="예정">예정</option>
-                  <option value="진행 중">진행 중</option>
-                  <option value="종료">종료</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  행사명
-                </label>
-                <input
-                  v-model="searchQuery"
-                  type="text"
-                  placeholder="행사명으로 검색"
-                  class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
-                />
-              </div>
-              <div></div>
+        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-4 mb-6">
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+            <!-- 상태 -->
+            <div>
+              <label class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                상태
+              </label>
+              <select
+                v-model="statusFilter"
+                class="w-full px-3 py-1.5 text-sm border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+              >
+                <option value="">상태 선택</option>
+                <option value="예정">예정</option>
+                <option value="진행 중">진행 중</option>
+                <option value="종료">종료</option>
+              </select>
             </div>
 
-            <!-- 두 번째 행: 날짜 필터 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  시작일
-                </label>
-                <input
-                  v-model="startDateFilter"
-                  type="date"
-                  class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
-                />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  종료일
-                </label>
-                <input
-                  v-model="endDateFilter"
-                  type="date"
-                  class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
-                />
-              </div>
-              <div></div>
+            <!-- 행사명 -->
+            <div>
+              <label class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                행사명
+              </label>
+              <input
+                v-model="searchQuery"
+                type="text"
+                placeholder="검색"
+                class="w-full px-3 py-1.5 text-sm border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+              />
+            </div>
+
+            <!-- 시작일 -->
+            <div>
+              <label class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                시작일
+              </label>
+              <input
+                v-model="startDateFilter"
+                type="date"
+                class="w-full px-3 py-1.5 text-sm border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+              />
+            </div>
+
+            <!-- 종료일 -->
+            <div>
+              <label class="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                종료일
+              </label>
+              <input
+                v-model="endDateFilter"
+                type="date"
+                class="w-full px-3 py-1.5 text-sm border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+              />
             </div>
           </div>
         </div>
