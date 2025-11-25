@@ -23,15 +23,20 @@
       <div
         class="h-16 px-4 flex items-center justify-between border-b border-gray-200 dark:border-slate-700"
       >
+        <!-- 모바일에서는 항상 보임, 데스크톱에서는 !isSidebarCollapsed일 때만 보임 -->
+        <h2
+          class="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-cyan-400 dark:to-blue-500 bg-clip-text text-transparent text-center whitespace-nowrap flex-1 lg:hidden"
+        >
+          GigStash
+        </h2>
         <transition name="fade" mode="out-in">
           <h2
             v-if="!isSidebarCollapsed"
             key="full"
-            class="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-cyan-400 dark:to-blue-500 bg-clip-text text-transparent text-center whitespace-nowrap flex-1"
+            class="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-cyan-400 dark:to-blue-500 bg-clip-text text-transparent text-center whitespace-nowrap flex-1 hidden lg:block"
           >
             GigStash
           </h2>
-          <!-- <h2 v-else key="icon" class="text-xl text-center w-full">🧊</h2> -->
         </transition>
         <!-- 데스크탑 사이드바 토글 버튼 -->
         <button
@@ -39,7 +44,10 @@
           class="hidden lg:flex items-center justify-center w-8 h-8 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-600 dark:text-gray-400"
           :title="collapseButtonTitle"
         >
-          <i :class="[isSidebarCollapsed ? 'fi fi-rr-angle-right' : 'fi fi-rr-angle-left']"></i>
+          <!-- 접기 아이콘 (펼쳐진 상태) - 왼쪽 화살표 -->
+          <i v-if="!isSidebarCollapsed" class="fa fa-chevron-left"></i>
+          <!-- 펴기 아이콘 (접힌 상태) - 햄버거바 -->
+          <i v-else class="fa fa-bars"></i>
         </button>
       </div>
 
@@ -56,14 +64,14 @@
             'text-gray-700 dark:text-slate-300 font-medium transition-all duration-200 whitespace-nowrap',
             'hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 dark:hover:from-slate-700 dark:hover:to-slate-600',
             'hover:text-blue-600 dark:hover:text-cyan-400 hover:shadow-md',
-            isSidebarCollapsed ? 'justify-center px-2' : '',
+            isSidebarCollapsed ? 'lg:justify-center lg:px-2' : '',
           ]"
           active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
         >
           <span class="text-xl flex-shrink-0"><i :class="[item.icon, `mr-3`]"></i></span>
           <!-- {{ item.icon }} -->
           <transition name="fade">
-            <span v-if="!isSidebarCollapsed" class="flex-1">{{ item.label }}</span>
+            <span v-if="!isSidebarCollapsed" class="flex-1 block lg:block">{{ item.label }}</span>
           </transition>
         </RouterLink>
 
@@ -80,13 +88,13 @@
             'text-gray-700 dark:text-slate-300 font-medium transition-all duration-200 whitespace-nowrap',
             'hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 dark:hover:from-slate-700 dark:hover:to-slate-600',
             'hover:text-blue-600 dark:hover:text-cyan-400 hover:shadow-md',
-            isSidebarCollapsed ? 'justify-center px-2' : '',
+            isSidebarCollapsed ? 'lg:justify-center lg:px-2' : '',
           ]"
           active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
         >
           <span class="text-xl flex-shrink-0"><i :class="[item.icon, `mr-3`]"></i></span>
           <transition name="fade">
-            <span v-if="!isSidebarCollapsed" class="flex-1">{{ item.label }}</span>
+            <span v-if="!isSidebarCollapsed" class="flex-1 block lg:block">{{ item.label }}</span>
           </transition>
         </RouterLink>
       </nav>
@@ -110,11 +118,11 @@
             class="lg:hidden w-12 h-12 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-slate-700 rounded-lg transition-all active:bg-gray-300 dark:active:bg-slate-600"
             title="사이드바 토글"
           >
-            <i class="fi fi-rr-menu-burger text-3xl text-gray-600 dark:text-gray-300"></i>
+            <i class="fa fa-bars text-2xl text-gray-600 dark:text-gray-300"></i>
           </button>
 
           <!-- 페이지 타이틀 -->
-          <h1 class="text-2xl font-semibold" style="color: #1e293b">
+          <h1 class="text-xl" style="color: #1e293b">
             {{ pageTitle }}
           </h1>
 
@@ -124,7 +132,7 @@
             <div
               class="hidden md:flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-slate-700 rounded-full"
             >
-              <i class="fi fi-rr-search text-gray-600 dark:text-gray-300"></i>
+              <i class="fa fa-search text-gray-600 dark:text-gray-300"></i>
               <input
                 type="text"
                 placeholder="메뉴 검색"
@@ -221,28 +229,33 @@ const isMobileMenuOpen = ref(false)
 const isProfileMenuOpen = ref(false)
 
 const menuItems = [
-  { name: 'adminMain', path: '/admin/adminMain', icon: 'fi fi-rr-dashboard', label: '대시보드' },
+  {
+    name: 'adminMain',
+    path: '/admin/adminMain',
+    icon: 'fa fa-chart-line',
+    label: '대시보드',
+  },
   {
     name: 'adminReservations',
     path: '/admin/reservations',
-    icon: 'fi fi-rr-list-check',
+    icon: 'fa fa-clipboard-list',
     label: '예약관리',
   },
   {
     name: 'adminEventManagement',
     path: '/admin/event-management',
-    icon: 'fi fi-rr-calendar',
+    icon: 'fa fa-calendar',
     label: '행사관리',
   },
   {
     name: 'adminMonitoring',
     path: '/admin/monitoring',
-    icon: 'fi fi-rr-chart-histogram',
+    icon: 'fa fa-bar-chart',
     label: '모니터링',
   },
 ]
 const secondaryMenuItems = [
-  { name: 'adminComponentDemo', path: '/admin/demo', icon: 'fi fi-rc-settings', label: '설정' },
+  { name: 'adminComponentDemo', path: '/admin/demo', icon: 'fa fa-cog', label: '설정' },
 ]
 
 // menuItems과 secondaryMenuItems을 통합하여 route.name -> label 매핑

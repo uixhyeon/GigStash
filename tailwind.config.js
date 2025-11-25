@@ -30,7 +30,8 @@ export default {
       },
       // Font Families
       fontFamily: {
-        primary: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        primary: ['Noto Sans KR', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        sans: ['Noto Sans KR', 'Pretendard', 'sans-serif'],
         monospace: ['Courier New', 'Courier', 'monospace']
       },
       // Font Sizes
