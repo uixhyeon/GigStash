@@ -394,8 +394,12 @@ const calendarDates = computed(() => {
     })
   }
 
-  // 다음 달의 날짜들
-  const remainingDays = 42 - dates.length
+  // 다음 달의 날짜들 - 현재 달의 마지막 날짜까지만 필요한 주 수 계산
+  // 예: 28일 = 4주 + 며칠 → 마지막 주까지 포함하면 5주
+  const weeksNeeded = Math.ceil((firstDayOfWeek + lastDateOfMonth) / 7)
+  const totalDaysNeeded = weeksNeeded * 7
+  const remainingDays = totalDaysNeeded - dates.length
+
   for (let i = 1; i <= remainingDays; i++) {
     dates.push({
       date: i,
@@ -403,17 +407,6 @@ const calendarDates = computed(() => {
       isToday: false,
       hasEvent: false,
     })
-  }
-
-  // 비활성화 날짜만 있는 마지막 주(7개 연속)는 제거
-  // 마지막 7개가 모두 비활성화 상태이고, 제거 후에도 최소 35일 유지
-  if (dates.length >= 42) {
-    const lastSevenDays = dates.slice(-7)
-    const allLastSevenInactive = lastSevenDays.every((d) => !d.isCurrentMonth)
-
-    if (allLastSevenInactive) {
-      dates.splice(-7) // 마지막 7개 제거
-    }
   }
 
   return dates
