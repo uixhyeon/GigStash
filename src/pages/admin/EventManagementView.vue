@@ -4,7 +4,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
       <!-- 달력 섹션 -->
       <div class="lg:col-span-1">
-        <div class="flex justify-between items-center mb-6">
+        <div class="flex justify-between items-center mb-3">
           <h2 class="text-lg font-semibold mb-6" style="color: #1e293b">행사 일정</h2>
           <div class="flex gap-2">
             <button
@@ -133,57 +133,67 @@
       <div class="lg:col-span-2">
         <h2 class="text-lg font-semibold mb-6" style="color: #1e293b">행사 목록</h2>
         <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 mb-6">
-          <div class="flex flex-col gap-4">
+          <div class="space-y-4">
             <!-- 첫 번째 행: 상태, 행사명 검색 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <select
-                v-model="statusFilter"
-                class="px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
-              >
-                <option value="">상태 선택</option>
-                <option value="예정">예정</option>
-                <option value="진행 중">진행 중</option>
-                <option value="종료">종료</option>
-              </select>
-              <input
-                v-model="searchQuery"
-                type="text"
-                placeholder="행사명으로 검색"
-                class="px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
-              />
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  상태
+                </label>
+                <select
+                  v-model="statusFilter"
+                  class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                >
+                  <option value="">상태 선택</option>
+                  <option value="예정">예정</option>
+                  <option value="진행 중">진행 중</option>
+                  <option value="종료">종료</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  행사명
+                </label>
+                <input
+                  v-model="searchQuery"
+                  type="text"
+                  placeholder="행사명으로 검색"
+                  class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                />
+              </div>
+              <div class="flex items-end">
+                <button
+                  @click="resetFilters"
+                  class="w-full px-4 py-2 bg-gray-200 dark:bg-slate-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors text-sm font-medium"
+                >
+                  초기화
+                </button>
+              </div>
             </div>
 
-            <!-- 두 번째 행: 날짜 필터 + 초기화 버튼 -->
-            <div class="flex flex-col md:flex-row gap-4 md:items-end">
-              <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    시작일
-                  </label>
-                  <input
-                    v-model="startDateFilter"
-                    type="date"
-                    class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
-                  />
-                </div>
-                <div>
-                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    종료일
-                  </label>
-                  <input
-                    v-model="endDateFilter"
-                    type="date"
-                    class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
-                  />
-                </div>
+            <!-- 두 번째 행: 날짜 필터 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  시작일
+                </label>
+                <input
+                  v-model="startDateFilter"
+                  type="date"
+                  class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                />
               </div>
-
-              <button
-                @click="resetFilters"
-                class="px-3 py-2 bg-gray-200 dark:bg-slate-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors text-sm font-medium whitespace-nowrap"
-              >
-                초기화
-              </button>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  종료일
+                </label>
+                <input
+                  v-model="endDateFilter"
+                  type="date"
+                  class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                />
+              </div>
+              <div></div>
             </div>
           </div>
         </div>
