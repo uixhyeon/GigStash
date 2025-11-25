@@ -152,9 +152,10 @@
               </label>
               <select
                 v-model="statusFilter"
+                placeholder="상태 선택"
                 class="w-full px-3 py-1.5 text-sm border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
               >
-                <option value="">상태 선택</option>
+                <option value="전체">전체</option>
                 <option value="예정">예정</option>
                 <option value="진행 중">진행 중</option>
                 <option value="종료">종료</option>
@@ -169,7 +170,7 @@
               <input
                 v-model="searchQuery"
                 type="text"
-                placeholder="검색"
+                placeholder="행사명 조회"
                 class="w-full px-3 py-1.5 text-sm border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
               />
             </div>
@@ -182,7 +183,8 @@
               <input
                 v-model="startDateFilter"
                 type="date"
-                class="w-full px-3 py-1.5 text-sm border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                placeholder="YYYY-MM-DD"
+                class="w-full px-3 py-1.5 text-sm border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
               />
             </div>
 
@@ -194,7 +196,8 @@
               <input
                 v-model="endDateFilter"
                 type="date"
-                class="w-full px-3 py-1.5 text-sm border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                placeholder="YYYY-MM-DD"
+                class="w-full px-3 py-1.5 text-sm border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
               />
             </div>
           </div>
