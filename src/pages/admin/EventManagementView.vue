@@ -6,7 +6,7 @@
       <div class="lg:col-span-1">
         <div class="flex justify-between items-center mb-3">
           <h2 class="text-lg font-semibold mb-6" style="color: #1e293b">행사 일정</h2>
-          <div class="flex gap-2">
+          <div class="flex gap-2 items-center">
             <button
               @click="prevMonth"
               class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 rounded-lg transition-all flex-shrink-0 text-gray-600 dark:text-gray-400"
@@ -20,6 +20,14 @@
               title="다음 달"
             >
               <i class="fa fa-chevron-right text-lg"></i>
+            </button>
+            <div class="h-6 w-px bg-gray-300 dark:bg-slate-600"></div>
+            <button
+              @click="goToToday"
+              class="px-3 py-1.5 flex items-center justify-center bg-blue-50 dark:bg-slate-700 hover:bg-blue-100 dark:hover:bg-slate-600 rounded-lg transition-all text-blue-600 dark:text-blue-400 text-sm font-medium"
+              title="오늘로 이동"
+            >
+              오늘
             </button>
           </div>
         </div>
@@ -486,6 +494,11 @@ const nextMonth = () => {
   const newDate = new Date(currentDate.value)
   newDate.setMonth(newDate.getMonth() + 1)
   currentDate.value = newDate
+}
+
+// 오늘 날짜로 이동
+const goToToday = () => {
+  currentDate.value = new Date()
 }
 
 // 상태에 따른 CSS 클래스 반환
