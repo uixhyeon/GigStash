@@ -71,7 +71,7 @@
           <span class="text-xl flex-shrink-0"><i :class="[item.icon, `mr-3`]"></i></span>
           <!-- {{ item.icon }} -->
           <transition name="fade">
-            <span v-if="!isSidebarCollapsed" class="flex-1 block lg:block">{{ item.label }}</span>
+            <span v-if="!isSidebarCollapsed" class="flex-1 block">{{ item.label }}</span>
           </transition>
         </RouterLink>
 
@@ -94,7 +94,7 @@
         >
           <span class="text-xl flex-shrink-0"><i :class="[item.icon, `mr-3`]"></i></span>
           <transition name="fade">
-            <span v-if="!isSidebarCollapsed" class="flex-1 block lg:block">{{ item.label }}</span>
+            <span v-if="!isSidebarCollapsed" class="flex-1 block">{{ item.label }}</span>
           </transition>
         </RouterLink>
       </nav>
@@ -144,11 +144,11 @@
             <DarkModeToggle />
 
             <!-- 알림 아이콘 -->
-            <button
+            <!-- <button
               class="relative p-2 hover:bg-gray-200 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-600 dark:text-gray-300"
             >
               <i class="fi fi-rr-bell text-xl"></i>
-            </button>
+            </button> -->
 
             <!-- 프로필 영역 -->
             <div class="relative">
