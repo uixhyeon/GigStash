@@ -58,11 +58,11 @@
   --white: #ffffff;
   --black: #000000;
 
-  /* Table Header & Text Colors */
-  --table-header-bg: #1e293b;
-  --table-header-text: #c4cfe1;
-  --table-header-bg-dark: #c4cfe1;
-  --table-header-text-dark: #334155;
+  /* Table Header & Text Colors (using unified color system) */
+  /* --table-header-bg: uses --gray-900 */
+  /* --table-header-text: uses --dark-text-secondary */
+  /* --table-header-bg-dark: uses --dark-text-secondary */
+  /* --table-header-text-dark: uses --dark-bg-tertiary */
 
   /* Dark Background Colors */
   --dark-bg: #0f172a;

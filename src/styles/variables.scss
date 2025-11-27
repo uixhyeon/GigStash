@@ -25,24 +25,31 @@ $background: #f8fafc;
 $white: #ffffff;
 $black: #000000;
 
-// Table Header & Text Colors
-$table-header-bg: #1e293b;           // Light mode: table header background
-$table-header-text: #c4cfe1;         // Light mode: table header text
-$table-header-bg-dark: #c4cfe1;      // Dark mode: table header background
-$table-header-text-dark: #334155;    // Dark mode: table header text
+// Table Header & Text Colors (using existing color variables to avoid duplication)
+// Light mode: table header background = gray-900 (#1e293b)
+// Light mode: table header text = dark-text-secondary (#c4cfe1)
+// Dark mode: table header background = dark-text-secondary (#c4cfe1)
+// Dark mode: table header text = dark-bg-tertiary (#334155)
 
 // ============================================
 // Tailwind Config Reference
 // ============================================
 // 아래 색상들은 tailwind.config.js에서 사용됩니다
+// Primary & Accent
 // primary: $primary (#3482ff)
 // primary-light: $primary-light (#6faeff)
 // accent: $accent (#296af1)
+//
+// Status Colors
 // warning: $warning (#ffc83d)
 // error: $error (#ef4444)
+//
+// Grayscale
 // gray-900: $gray-900 (#1e293b)
 // gray-600: $gray-600 (#64748b)
 // gray-200: $gray-200 (#e2e8f0)
+//
+// Background & Dark Mode
 // background: $background (#f8fafc)
 // dark-bg: $dark-bg (#0f172a)
 // dark-bg-secondary: $dark-bg-secondary (#1e293b)
@@ -52,10 +59,12 @@ $table-header-text-dark: #334155;    // Dark mode: table header text
 // dark-text-tertiary: $dark-text-tertiary (#94a3b8)
 // dark-border: $dark-border (#334155)
 // dark-border-light: $dark-border-light (#475569)
-// table-header-bg: $table-header-bg (#1e293b)
-// table-header-text: $table-header-text (#c4cfe1)
-// table-header-bg-dark: $table-header-bg-dark (#c4cfe1)
-// table-header-text-dark: $table-header-text-dark (#334155)
+//
+// Table Header (unified with existing colors)
+// table-header-bg: $gray-900 (#1e293b) - light mode background
+// table-header-text: $dark-text-secondary (#c4cfe1) - light mode text
+// table-header-bg-dark: $dark-text-secondary (#c4cfe1) - dark mode background
+// table-header-text-dark: $dark-bg-tertiary (#334155) - dark mode text
 
 // ============================================
 // Dark Mode Colors
