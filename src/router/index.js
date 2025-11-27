@@ -59,32 +59,37 @@ const router = createRouter({
     },
 
     // 기사 페이지 ===================================
+{
+  path: "/worker/workerMain",
+  component: () => import("../layouts/workerLayout.vue"),
+  children: [
     {
-      path: '/worker/workerMain',
-      component: WorkerLayout,
-      meta: { requiresAuth: true, role: 'worker' },
-      children: [
-        {
-          path: 'jobs',
-          name: 'MobileJobs',
-          component: () => import('../pages/worker/Jobs.vue'),
-          meta: { title: '작업자', role: 'worker' },
-        },
-        {
-          path: 'calendar',
-          name: 'MobileCalendar',
-          component: () => import('../pages/worker/Calendar.vue'),
-          meta: { title: '작업자 일정', role: 'worker' },
-        },
-        {
-          path: 'payment',
-          name: 'MobilePayment',
-          component: () => import('../pages/worker/Payment.vue'),
-          meta: { title: '결제', role: 'worker' },
-        },
-      ],
+      path: "",
+      name: "WorkerWork",
+      component: () => import("../pages/worker/WorkerMain.vue"),
     },
-
+    {
+      path: "calendar",
+      name: "WorkerCalendar",
+      component: () => import("../pages/worker/Calendar.vue"),
+    },
+    {
+      path: "edit-profile",
+      name: "WorkerEditProfile",
+      component: () => import("../pages/worker/EditProfile.vue"),
+    },
+    {
+      path: "salary-detail",
+      name: "WorkerSalaryDetail",
+      component: () => import("../pages/worker/SalaryDetail.vue"),
+    },
+    {
+      path: "settings",
+      name: "WorkerSettings",
+      component: () => import("../pages/worker/WorkerSettings.vue"),
+    },
+  ],
+},
     // 404 처리 =============================
     {
       path: '/:pathMatch(.*)*', //모든 정의되지 않은 경로 캐치

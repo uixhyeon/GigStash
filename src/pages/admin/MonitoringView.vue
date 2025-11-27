@@ -1,18 +1,17 @@
 ㄱ
 <template>
   <div
-    class="p-8 bg-slate-50 dark:bg-slate-900 min-h-screen"
+    class="p-4 bg-slate-50 dark:bg-slate-900 min-h-screen relative"
     @click="showCalendar = false"
   >
+
     <!-- 리포트 & 통계 헤더 -->
-    <div class="mb-8">
-      <h1 class="text-2xl font-bold mb-6" style="color: #1e293b">
-        리포트 & 통계
-      </h1>
+    <div class="mb-3">
+      <!-- <h1 class="text-xl font-bold mb-3" style="color: #1e293b">리포트 & 통계</h1> -->
 
       <!-- 날짜 범위 선택기 -->
-      <div class="mb-8">
-        <div class="flex items-center justify-center gap-4 relative">
+      <div class="flex justify-center mb-3">
+        <div class="flex items-center gap-4 relative">
           <button
             @click="prevDateRange"
             class="p-2.5 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors flex items-center justify-center"
@@ -24,7 +23,7 @@
           </button>
           <div
             @click.stop="showCalendar = !showCalendar"
-            class="px-6 py-2 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors flex flex-col items-center"
+            class="px-6 py-2 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors flex flex-col items-center text-center"
           >
             <div
               class="text-lg font-semibold text-slate-900 dark:text-slate-100"
@@ -124,7 +123,11 @@
                   // 선택되지 않은 날짜는 둥근 모서리
                   !isDateInRange(d.date) && !d.outside ? 'rounded-xl' : '',
                 ]"
-                :style="isDateInRange(d.date) && !d.outside ? 'background-color: #3b82f6;' : ''"
+                :style="
+                  isDateInRange(d.date) && !d.outside
+                    ? 'background-color: #3b82f6;'
+                    : ''
+                "
                 @click="selectWeekFromDate(d.date)"
                 @mouseenter="hoveredCalendarDate = d.date"
                 @mouseleave="hoveredCalendarDate = null"
@@ -136,7 +139,7 @@
                 <span
                   v-if="isToday(d.date) && !isDateInRange(d.date)"
                   class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 rounded-full"
-                  style="background-color: #3b82f6;"
+                  style="background-color: #3b82f6"
                 ></span>
               </div>
             </div>
@@ -163,83 +166,121 @@
       </div>
     </div>
 
+    <!-- 운영 기간 안내 메시지 -->
+    <div
+      v-if="!isValidDateRange && filteredReservations.length === 0"
+      :class="[
+        'mb-4 p-4 rounded-xl border',
+        isBeforeNovember
+          ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800'
+          : 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800'
+      ]"
+    >
+      <div class="flex items-center gap-2">
+        <i 
+          :class="[
+            'fi fi-rr-info',
+            isBeforeNovember
+              ? 'text-green-600 dark:text-green-400'
+              : 'text-blue-600 dark:text-blue-400'
+          ]"
+        ></i>
+        <p 
+          :class="[
+            'text-sm',
+            isBeforeNovember
+              ? 'text-green-800 dark:text-green-200'
+              : 'text-blue-800 dark:text-blue-200'
+          ]"
+        >
+          <span v-if="isBeforeNovember">아직 서비스가 오픈되지 않았습니다.</span>
+          <span v-else-if="isAfterNovember">이 기간은 운영 정보가 없습니다.</span>
+        </p>
+      </div>
+    </div>
+
     <!-- 왼쪽/오른쪽 2분할 레이아웃 -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-4"
+    >
       <!-- 왼쪽 컬럼 -->
-      <div class="space-y-6">
+      <div class="space-y-3">
         <!-- 주요 지표 -->
         <section>
-          <h2 class="text-lg font-semibold mb-6" style="color: #1e293b">
+          <h2 class="font-semibold mb-2" style="color: #1e293b; font-size: 18px;">
             주요 지표
           </h2>
-          <div class="flex flex-wrap gap-4">
-            <!-- 매출 카드 -->
-            <div
-              class="text-white p-4 sm:p-5 md:p-6 rounded-3xl shadow-sm"
-              style="
-                flex: 1 1 calc(33.333% - 0.67rem);
-                min-width: 200px;
-                max-width: calc(33.333% - 0.67rem);
-                background: linear-gradient(135deg, rgba(96, 165, 250, 0.9), rgba(59, 130, 246, 0.95));
-              "
-            >
-              <div class="flex justify-between items-start mb-4">
-                <div>
-                  <div class="text-xs sm:text-sm font-medium opacity-90">매출</div>
-                  <div class="text-xl sm:text-2xl md:text-3xl font-bold mt-2">
-                    {{ formatCurrency(keyMetrics.revenue) }}
-                  </div>
-                  <div class="text-xs sm:text-sm mt-2 text-green-200">
-                    <i class="fi fi-rr-arrow-up mr-1"></i
-                    >{{ keyMetrics.revenueChange }}%
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 이용객 카드 -->
-            <div
-              class="text-white p-4 sm:p-5 md:p-6 rounded-3xl shadow-sm"
-              style="
-                flex: 1 1 calc(33.333% - 0.67rem);
-                min-width: 200px;
-                max-width: calc(33.333% - 0.67rem);
-                background: linear-gradient(135deg, rgba(107, 114, 128, 0.9), rgba(75, 85, 99, 0.95));
-              "
-            >
-              <div class="flex justify-between items-start mb-4">
-                <div>
-                  <div class="text-xs sm:text-sm font-medium opacity-90">이용객</div>
-                  <div class="text-xl sm:text-2xl md:text-3xl font-bold mt-2">
-                    {{ formatNumber(keyMetrics.users) }}명
-                  </div>
-                  <div class="text-xs sm:text-sm mt-2 text-green-200">
-                    <i class="fi fi-rr-arrow-up mr-1"></i
-                    >{{ keyMetrics.usersChange }}%
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          <div class="flex gap-3">
             <!-- 이용률 카드 -->
             <div
-              class="text-white p-4 sm:p-5 md:p-6 rounded-3xl shadow-sm"
-              style="
-                flex: 1 1 calc(33.333% - 0.67rem);
-                min-width: 200px;
-                max-width: calc(33.333% - 0.67rem);
-                background: linear-gradient(135deg, rgba(34, 211, 238, 0.9), rgba(14, 165, 233, 0.95));
+              class="text-[#333] rounded-2xl shadow-sm flex-1"
+               style="
+                padding: 12px;
+                background: white;
+                border: solid 1px;
+              "
               "
             >
-              <div class="flex justify-between items-start mb-4">
+              <div class="text-center mb-1">
                 <div>
-                  <div class="text-xs sm:text-sm font-medium opacity-90">이용률</div>
-                  <div class="text-xl sm:text-2xl md:text-3xl font-bold mt-2">
+                  <div class="font-medium opacity-90" style="font-size: 18px;">이용률</div>
+                  <div class="font-bold mt-0.5" style="font-size: 28px;">
                     {{ keyMetrics.utilizationRate }}%
                   </div>
-                  <div class="text-xs sm:text-sm mt-2 text-red-200">
+                  <div class="mt-0.5 text-[#333] font-bold " style="font-size: 18px;">
                     <i class="fi fi-rr-arrow-down mr-1"></i
                     >{{ Math.abs(keyMetrics.utilizationChange) }}%
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 재방문율 카드 -->
+            <div
+              class="text-[#333] rounded-2xl shadow-sm flex-1"
+              style="
+                padding: 12px;
+                background: white;
+                border: solid 1px;
+              "
+            >
+              <div class="text-center mb-1">
+                <div>
+                  <div class="font-medium opacity-90" style="font-size: 18px;">재방문율</div>
+                  <div class="font-bold mt-0.5" style="font-size: 28px;">
+                    {{ additionalMetrics.revisitRate }}%
+                  </div>
+                  <div class="mt-0.5 text-[#333] font-bold" style="font-size: 18px;">
+                    <i class="fi fi-rr-arrow-up mr-1"></i
+                    >{{ additionalMetrics.revisitChange }}%
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 배송선택률 카드 -->
+            <div
+              class="text-[#333] rounded-2xl shadow-sm flex-1"
+              style="
+                padding: 12px;
+                background: linear-gradient(
+                  135deg,
+                  rgba(251, 191, 36, 0.9),
+                  rgba(245, 158, 11, 0.95)
+                );
+              "
+            >
+              <div class="text-center mb-1">
+                <div>
+                  <div class="font-medium opacity-90" style="font-size: 18px;">
+                  배송선택률
+                  </div>
+                  <div class="font-bold mt-0.5" style="font-size: 28px;">
+                    {{ additionalMetrics.deliveryRate }}%
+                  </div>
+                  <div class="mt-0.5 text-[#333]  font-bold" style="font-size: 18px;">
+                    <i class="fi fi-rr-arrow-up mr-1"></i
+                    >{{ additionalMetrics.deliveryChange }}%
                   </div>
                 </div>
               </div>
@@ -247,51 +288,55 @@
           </div>
         </section>
 
-        <!-- 재방문율 & 홈 배송 선택률 카드 -->
-        <div class="flex flex-wrap gap-4">
-          <!-- 재방문율 카드 -->
+        <!-- 재방문율 & 배송선택률 카드 -->
+        <div class="flex gap-3">
+          <!-- 매출 카드 -->
           <div
-            class="text-white p-4 sm:p-5 md:p-6 rounded-3xl shadow-sm"
+            class="text-[#333] rounded-2xl shadow-sm flex-1"
             style="
-              flex: 1 1 calc(50% - 0.5rem);
-              min-width: 200px;
-              max-width: calc(50% - 0.5rem);
-              background: linear-gradient(135deg, rgba(34, 197, 94, 0.9), rgba(22, 163, 74, 0.95));
+              padding: 12px;
+              background: linear-gradient(
+                135deg,
+                rgba(96, 165, 250, 0.9),
+                rgba(59, 130, 246, 0.95)
+              );
             "
           >
-            <div class="flex justify-between items-start mb-4">
+            <div class="text-center mb-1">
               <div>
-                <div class="text-xs sm:text-sm font-medium opacity-90">재방문율</div>
-                <div class="text-xl sm:text-2xl md:text-3xl font-bold mt-2">
-                  {{ additionalMetrics.revisitRate }}%
+                <div class="font-medium opacity-90" style="font-size: 18px;">매출</div>
+                <div class="font-bold mt-0.5" style="font-size: 28px;">
+                  {{ formatCurrency(keyMetrics.revenue) }}
                 </div>
-                <div class="text-xs sm:text-sm mt-2 text-green-200">
+                <div class="mt-0.5 text-[#333] font-bold" style="font-size: 18px;">
                   <i class="fi fi-rr-arrow-up mr-1"></i
-                  >{{ additionalMetrics.revisitChange }}%
+                  >{{ keyMetrics.revenueChange }}%
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- 홈 배송 선택률 카드 -->
+          <!-- 이용객 카드 -->
           <div
-            class="text-slate-900 p-4 sm:p-5 md:p-6 rounded-3xl shadow-sm"
+            class="text-[#333] rounded-2xl shadow-sm flex-1"
             style="
-              flex: 1 1 calc(50% - 0.5rem);
-              min-width: 200px;
-              max-width: calc(50% - 0.5rem);
-              background: linear-gradient(135deg, rgba(251, 191, 36, 0.9), rgba(245, 158, 11, 0.95));
+              padding: 12px;
+              background: linear-gradient(
+                135deg,
+                rgba(107, 114, 128, 0.9),
+                rgba(75, 85, 99, 0.95)
+              );
             "
           >
-            <div class="flex justify-between items-start mb-4">
+            <div class="text-center mb-1">
               <div>
-                <div class="text-xs sm:text-sm font-medium opacity-90">홈 배송 선택률</div>
-                <div class="text-xl sm:text-2xl md:text-3xl font-bold mt-2">
-                  {{ additionalMetrics.deliveryRate }}%
+                <div class="font-medium opacity-90" style="font-size: 18px;">이용객</div>
+                <div class="font-bold mt-0.5" style="font-size: 28px;">
+                  {{ formatNumber(keyMetrics.users) }}명
                 </div>
-                <div class="text-xs sm:text-sm mt-2 text-green-700">
+                <div class="mt-0.5 text-[#333] font-bold" style="font-size: 18px;">
                   <i class="fi fi-rr-arrow-up mr-1"></i
-                  >{{ additionalMetrics.deliveryChange }}%
+                  >{{ keyMetrics.usersChange }}%
                 </div>
               </div>
             </div>
@@ -299,41 +344,34 @@
         </div>
         <!-- 행사 유형별 매출 -->
         <section>
-          <h2 class="text-lg font-semibold mb-4" style="color: #1e293b">
+          <h2 class="font-semibold mb-2" style="color: #1e293b; font-size: 18px;">
             행사 유형별 매출
           </h2>
-          <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
-            <div class="h-64">
+          <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
+            <div class="h-40">
               <canvas ref="eventTypeChartRef"></canvas>
-            </div>
-            <div
-              class="text-center text-sm text-slate-500 dark:text-slate-400 mt-4"
-            >
-              11월 매출
             </div>
           </div>
         </section>
 
         <!-- 결제 수단 -->
-        <section>
-          <h2 class="text-lg font-semibold mb-4" style="color: #1e293b">
-            결제 수단
-          </h2>
+        <!-- <section>
+          <h2 class="text-lg font-semibold mb-4" style="color: #1e293b">결제 수단</h2>
           <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
             <div class="h-48">
               <canvas ref="paymentMethodChartRef"></canvas>
             </div>
           </div>
-        </section>
+        </section> -->
 
         <!-- 사이즈별 비율 -->
         <section>
-          <h2 class="text-lg font-semibold mb-4" style="color: #1e293b">
+          <h2 class="font-semibold mb-2" style="color: #1e293b; font-size: 18px;">
             사이즈별 비율
           </h2>
-          <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
-            <div class="flex items-center justify-center gap-6">
-              <div class="w-48 h-48">
+          <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
+            <div class="flex items-center justify-center gap-4">
+              <div class="w-32 h-32">
                 <canvas ref="sizeRatioChartRef"></canvas>
               </div>
               <div class="space-y-2">
@@ -357,14 +395,29 @@
       </div>
 
       <!-- 오른쪽 컬럼 -->
-      <div class="space-y-6">
+      <div class="space-y-3">
         <!-- 피크타임 분석 -->
         <section>
-          <h2 class="text-lg font-semibold mb-4" style="color: #1e293b">
-            피크타임 분석
-          </h2>
-          <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
-            <div class="h-64">
+          <div class="flex justify-between items-center mb-2">
+            <h2 class="font-semibold" style="color: #1e293b; font-size: 18px;">
+              피크타임 분석
+            </h2>
+            <select
+              v-model="selectedEventTypeForPeakTime"
+              class="px-3 py-1.5 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-[120px] w-[120px]"
+            >
+              <option value="">전체</option>
+              <option
+                v-for="eventType in availableEventTypes"
+                :key="eventType"
+                :value="eventType"
+              >
+                {{ eventType }}
+              </option>
+            </select>
+          </div>
+          <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
+            <div class="h-40">
               <canvas ref="peakTimeChartRef"></canvas>
             </div>
           </div>
@@ -372,203 +425,257 @@
 
         <!-- 지역별 배송 -->
         <section>
-          <h2 class="text-lg font-semibold mb-4" style="color: #1e293b">
+          <h2 class="font-semibold mb-2" style="color: #1e293b; font-size: 18px;">
             지역별 배송
           </h2>
-          <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
-            <!-- 히트맵 스타일 지도 -->
-            <div class="flex flex-col items-center gap-2 mb-4">
-              <!-- 1행: 서북권, 동북권 -->
-              <div class="flex justify-center gap-2 w-full">
-                <div
-                  v-if="deliveryHeatmap[0]"
-                  :class="[getHeatmapColor(deliveryHeatmap[0].count || 0), getHeatmapTextColor(deliveryHeatmap[0].count || 0)]"
-                  class="h-20 w-28 min-w-28 max-w-28 flex-shrink-0 rounded-lg flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-80 transition-opacity text-center text-xs px-2 relative"
-                  @click="selectRegion(deliveryHeatmap[0])"
-                  @mouseenter="
-                    (e) => {
-                      hoveredRegion = deliveryHeatmap[0];
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      regionTooltipPosition.x = rect.left + rect.width / 2;
-                      regionTooltipPosition.y = rect.top - 10;
-                    }
-                  "
-                  @mouseleave="hoveredRegion = null"
-                >
-                  <div class="font-bold">{{ deliveryHeatmap[0].name }}</div>
-                  <div class="text-[9px] mt-1 opacity-75 leading-tight">
-                    {{ getRegionDescription(deliveryHeatmap[0].name) }}
-                  </div>
-                </div>
-                <div
-                  v-if="deliveryHeatmap[1]"
-                  :class="[getHeatmapColor(deliveryHeatmap[1].count || 0), getHeatmapTextColor(deliveryHeatmap[1].count || 0)]"
-                  class="h-20 w-28 min-w-28 max-w-28 flex-shrink-0 rounded-lg flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-80 transition-opacity text-center text-xs px-2 relative"
-                  @click="selectRegion(deliveryHeatmap[1])"
-                  @mouseenter="
-                    (e) => {
-                      hoveredRegion = deliveryHeatmap[1];
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      regionTooltipPosition.x = rect.left + rect.width / 2;
-                      regionTooltipPosition.y = rect.top - 10;
-                    }
-                  "
-                  @mouseleave="hoveredRegion = null"
-                >
-                  <div class="font-bold">{{ deliveryHeatmap[1].name }}</div>
-                  <div class="text-[9px] mt-1 opacity-75 leading-tight">
-                    {{ getRegionDescription(deliveryHeatmap[1].name) }}
-                  </div>
-                </div>
-              </div>
-
-              <!-- 2행: 서남권, 도심권, 동남권 -->
-              <div class="flex justify-center gap-2 w-full">
-                <div
-                  v-if="deliveryHeatmap[2]"
-                  :class="[getHeatmapColor(deliveryHeatmap[2].count || 0), getHeatmapTextColor(deliveryHeatmap[2].count || 0)]"
-                  class="h-20 w-28 min-w-28 max-w-28 flex-shrink-0 rounded-lg flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-80 transition-opacity text-center text-xs px-2 relative"
-                  @click="selectRegion(deliveryHeatmap[2])"
-                  @mouseenter="
-                    (e) => {
-                      hoveredRegion = deliveryHeatmap[2];
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      regionTooltipPosition.x = rect.left + rect.width / 2;
-                      regionTooltipPosition.y = rect.top - 10;
-                    }
-                  "
-                  @mouseleave="hoveredRegion = null"
-                >
-                  <div class="font-bold">{{ deliveryHeatmap[2].name }}</div>
-                  <div class="text-[9px] mt-1 opacity-75 leading-tight">
-                    {{ getRegionDescription(deliveryHeatmap[2].name) }}
-                  </div>
-                </div>
-                <div
-                  v-if="deliveryHeatmap[3]"
-                  :class="[getHeatmapColor(deliveryHeatmap[3].count || 0), getHeatmapTextColor(deliveryHeatmap[3].count || 0)]"
-                  class="h-20 w-28 min-w-28 max-w-28 flex-shrink-0 rounded-lg flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-80 transition-opacity text-center text-xs px-2 relative"
-                  @click="selectRegion(deliveryHeatmap[3])"
-                  @mouseenter="
-                    (e) => {
-                      hoveredRegion = deliveryHeatmap[3];
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      regionTooltipPosition.x = rect.left + rect.width / 2;
-                      regionTooltipPosition.y = rect.top - 10;
-                    }
-                  "
-                  @mouseleave="hoveredRegion = null"
-                >
-                  <div class="font-bold">{{ deliveryHeatmap[3].name }}</div>
-                  <div class="text-[9px] mt-1 opacity-75 leading-tight">
-                    {{ getRegionDescription(deliveryHeatmap[3].name) }}
-                  </div>
-                </div>
-                <div
-                  v-if="deliveryHeatmap[4]"
-                  :class="[getHeatmapColor(deliveryHeatmap[4].count || 0), getHeatmapTextColor(deliveryHeatmap[4].count || 0)]"
-                  class="h-20 w-28 min-w-28 max-w-28 flex-shrink-0 rounded-lg flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-80 transition-opacity text-center text-xs px-2 relative"
-                  @click="selectRegion(deliveryHeatmap[4])"
-                  @mouseenter="
-                    (e) => {
-                      hoveredRegion = deliveryHeatmap[4];
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      regionTooltipPosition.x = rect.left + rect.width / 2;
-                      regionTooltipPosition.y = rect.top - 10;
-                    }
-                  "
-                  @mouseleave="hoveredRegion = null"
-                >
-                  <div class="font-bold">{{ deliveryHeatmap[4].name }}</div>
-                  <div class="text-[9px] mt-1 opacity-75 leading-tight">
-                    {{ getRegionDescription(deliveryHeatmap[4].name) }}
-                  </div>
-                </div>
-              </div>
-
-              <!-- 3행: 인천&경기, 지방 -->
-              <div class="flex justify-center gap-2 w-full">
-                <div
-                  v-if="deliveryHeatmap[5]"
-                  :class="[getHeatmapColor(deliveryHeatmap[5].count || 0), getHeatmapTextColor(deliveryHeatmap[5].count || 0)]"
-                  class="h-20 w-28 min-w-28 max-w-28 flex-shrink-0 rounded-lg flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-80 transition-opacity text-center text-xs px-2 relative"
-                  @click="selectRegion(deliveryHeatmap[5])"
-                  @mouseenter="
-                    (e) => {
-                      hoveredRegion = deliveryHeatmap[5];
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      regionTooltipPosition.x = rect.left + rect.width / 2;
-                      regionTooltipPosition.y = rect.top - 10;
-                    }
-                  "
-                  @mouseleave="hoveredRegion = null"
-                >
-                  <div class="font-bold">{{ deliveryHeatmap[5].name }}</div>
-                  <div class="text-[9px] mt-1 opacity-75 leading-tight">
-                    {{ getRegionDescription(deliveryHeatmap[5].name) }}
-                  </div>
-                </div>
-                <div
-                  v-if="deliveryHeatmap[6]"
-                  :class="[getHeatmapColor(deliveryHeatmap[6].count || 0), getHeatmapTextColor(deliveryHeatmap[6].count || 0)]"
-                  class="h-20 w-28 min-w-28 max-w-28 flex-shrink-0 rounded-lg flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-80 transition-opacity text-center text-xs px-2 relative"
-                  @click="selectRegion(deliveryHeatmap[6])"
-                  @mouseenter="
-                    (e) => {
-                      hoveredRegion = deliveryHeatmap[6];
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      regionTooltipPosition.x = rect.left + rect.width / 2;
-                      regionTooltipPosition.y = rect.top - 10;
-                    }
-                  "
-                  @mouseleave="hoveredRegion = null"
-                >
-                  <div class="font-bold">{{ deliveryHeatmap[6].name }}</div>
-                  <div class="text-[9px] mt-1 opacity-75 leading-tight">
-                    {{ getRegionDescription(deliveryHeatmap[6].name) }}
-                  </div>
-                </div>
-              </div>
-
-              <!-- 지역별 배송 툴팁 -->
+          <div
+            class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 overflow-x-auto"
+          >
+            <!-- 히트맵과 Top 3를 나란히 배치 (큰 화면) -->
+            <div class="flex flex-col lg:flex-row gap-3 items-start min-w-0">
+              <!-- 히트맵 스타일 지도 -->
               <div
-                v-if="hoveredRegion"
-                class="fixed bg-slate-900 dark:bg-slate-700 text-white text-xs rounded-lg p-3 shadow-lg z-50 pointer-events-none transform -translate-x-1/2 -translate-y-full"
-                :style="{
-                  left: `${regionTooltipPosition.x}px`,
-                  top: `${regionTooltipPosition.y}px`,
-                }"
+                class="flex flex-col items-center gap-2 flex-1 w-full min-w-0 overflow-x-auto"
               >
-                <div class="font-semibold mb-2">{{ hoveredRegion.name }}</div>
-                <div class="mb-1">건수: {{ hoveredRegion.count || 0 }}건</div>
-                <div class="mb-1">비율: {{ hoveredRegion.percentage }}%</div>
-              </div>
-            </div>
-
-            <!-- Top 3 리스트 -->
-            <div class="mt-4">
-              <div class="text-sm font-semibold mb-3" style="color: #1e293b">
-                Top 3
-              </div>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <div
-                  v-for="(region, index) in deliveryRegions"
-                  :key="index"
-                  class="p-4 rounded-2xl shadow-sm bg-white dark:bg-slate-800"
-                  :style="
-                    index === 0
-                      ? 'border: 3px solid #3b82f6; color: #3b82f6;'
-                      : index === 1
-                        ? 'border: 3px solid #16a34a; color: #16a34a;'
-                        : 'border: 3px solid #f97316; color: #f97316;'
-                  "
-                >
-                  <div class="text-xs font-medium opacity-90 mb-1">
-                    {{ index + 1 }}위
+                <!-- 1행: 서북권, 동북권 -->
+                <div class="flex justify-center gap-2 w-full flex-wrap">
+                  <div
+                    v-if="deliveryHeatmap[0]"
+                    :class="[
+                      getHeatmapColor(deliveryHeatmap[0].count || 0),
+                      getHeatmapTextColor(deliveryHeatmap[0].count || 0),
+                    ]"
+                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    @click="selectRegion(deliveryHeatmap[0])"
+                    @mouseenter="
+                      (e) => {
+                        hoveredRegion = deliveryHeatmap[0];
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        regionTooltipPosition.x = rect.left + rect.width / 2;
+                        regionTooltipPosition.y = rect.top - 10;
+                      }
+                    "
+                    @mouseleave="hoveredRegion = null"
+                  >
+                    <div class="font-bold text-xs sm:text-sm">
+                      {{ deliveryHeatmap[0].name }}
+                    </div>
+                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
+                      {{ getRegionDescription(deliveryHeatmap[0].name) }}
+                    </div>
                   </div>
-                  <div class="text-lg font-bold">{{ region.name }}</div>
-                  <div class="text-xs mt-1 opacity-90">
-                    {{ region.percentage }}%
+                  <div
+                    v-if="deliveryHeatmap[1]"
+                    :class="[
+                      getHeatmapColor(deliveryHeatmap[1].count || 0),
+                      getHeatmapTextColor(deliveryHeatmap[1].count || 0),
+                    ]"
+                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    @click="selectRegion(deliveryHeatmap[1])"
+                    @mouseenter="
+                      (e) => {
+                        hoveredRegion = deliveryHeatmap[1];
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        regionTooltipPosition.x = rect.left + rect.width / 2;
+                        regionTooltipPosition.y = rect.top - 10;
+                      }
+                    "
+                    @mouseleave="hoveredRegion = null"
+                  >
+                    <div class="font-bold text-xs sm:text-sm">
+                      {{ deliveryHeatmap[1].name }}
+                    </div>
+                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
+                      {{ getRegionDescription(deliveryHeatmap[1].name) }}
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2행: 서남권, 도심권, 동남권 -->
+                <div class="flex justify-center gap-2 w-full flex-wrap">
+                  <div
+                    v-if="deliveryHeatmap[2]"
+                    :class="[
+                      getHeatmapColor(deliveryHeatmap[2].count || 0),
+                      getHeatmapTextColor(deliveryHeatmap[2].count || 0),
+                    ]"
+                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    @click="selectRegion(deliveryHeatmap[2])"
+                    @mouseenter="
+                      (e) => {
+                        hoveredRegion = deliveryHeatmap[2];
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        regionTooltipPosition.x = rect.left + rect.width / 2;
+                        regionTooltipPosition.y = rect.top - 10;
+                      }
+                    "
+                    @mouseleave="hoveredRegion = null"
+                  >
+                    <div class="font-bold text-xs sm:text-sm">
+                      {{ deliveryHeatmap[2].name }}
+                    </div>
+                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
+                      {{ getRegionDescription(deliveryHeatmap[2].name) }}
+                    </div>
+                  </div>
+                  <div
+                    v-if="deliveryHeatmap[3]"
+                    :class="[
+                      getHeatmapColor(deliveryHeatmap[3].count || 0),
+                      getHeatmapTextColor(deliveryHeatmap[3].count || 0),
+                    ]"
+                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    @click="selectRegion(deliveryHeatmap[3])"
+                    @mouseenter="
+                      (e) => {
+                        hoveredRegion = deliveryHeatmap[3];
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        regionTooltipPosition.x = rect.left + rect.width / 2;
+                        regionTooltipPosition.y = rect.top - 10;
+                      }
+                    "
+                    @mouseleave="hoveredRegion = null"
+                  >
+                    <div class="font-bold text-xs sm:text-sm">
+                      {{ deliveryHeatmap[3].name }}
+                    </div>
+                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
+                      {{ getRegionDescription(deliveryHeatmap[3].name) }}
+                    </div>
+                  </div>
+                  <div
+                    v-if="deliveryHeatmap[4]"
+                    :class="[
+                      getHeatmapColor(deliveryHeatmap[4].count || 0),
+                      getHeatmapTextColor(deliveryHeatmap[4].count || 0),
+                    ]"
+                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    @click="selectRegion(deliveryHeatmap[4])"
+                    @mouseenter="
+                      (e) => {
+                        hoveredRegion = deliveryHeatmap[4];
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        regionTooltipPosition.x = rect.left + rect.width / 2;
+                        regionTooltipPosition.y = rect.top - 10;
+                      }
+                    "
+                    @mouseleave="hoveredRegion = null"
+                  >
+                    <div class="font-bold text-xs sm:text-sm">
+                      {{ deliveryHeatmap[4].name }}
+                    </div>
+                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
+                      {{ getRegionDescription(deliveryHeatmap[4].name) }}
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3행: 인천&경기, 지방 -->
+                <div class="flex justify-center gap-2 w-full flex-wrap">
+                  <div
+                    v-if="deliveryHeatmap[5]"
+                    :class="[
+                      getHeatmapColor(deliveryHeatmap[5].count || 0),
+                      getHeatmapTextColor(deliveryHeatmap[5].count || 0),
+                    ]"
+                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    @click="selectRegion(deliveryHeatmap[5])"
+                    @mouseenter="
+                      (e) => {
+                        hoveredRegion = deliveryHeatmap[5];
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        regionTooltipPosition.x = rect.left + rect.width / 2;
+                        regionTooltipPosition.y = rect.top - 10;
+                      }
+                    "
+                    @mouseleave="hoveredRegion = null"
+                  >
+                    <div class="font-bold text-xs sm:text-sm">
+                      {{ deliveryHeatmap[5].name }}
+                    </div>
+                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
+                      {{ getRegionDescription(deliveryHeatmap[5].name) }}
+                    </div>
+                  </div>
+                  <div
+                    v-if="deliveryHeatmap[6]"
+                    :class="[
+                      getHeatmapColor(deliveryHeatmap[6].count || 0),
+                      getHeatmapTextColor(deliveryHeatmap[6].count || 0),
+                    ]"
+                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    @click="selectRegion(deliveryHeatmap[6])"
+                    @mouseenter="
+                      (e) => {
+                        hoveredRegion = deliveryHeatmap[6];
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        regionTooltipPosition.x = rect.left + rect.width / 2;
+                        regionTooltipPosition.y = rect.top - 10;
+                      }
+                    "
+                    @mouseleave="hoveredRegion = null"
+                  >
+                    <div class="font-bold text-xs sm:text-sm">
+                      {{ deliveryHeatmap[6].name }}
+                    </div>
+                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
+                      {{ getRegionDescription(deliveryHeatmap[6].name) }}
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 지역별 배송 툴팁 -->
+                <div
+                  v-if="hoveredRegion"
+                  class="fixed bg-slate-900 dark:bg-slate-700 text-white text-xs rounded-lg p-3 shadow-lg z-50 pointer-events-none transform -translate-x-1/2 -translate-y-full"
+                  :style="{
+                    left: `${regionTooltipPosition.x}px`,
+                    top: `${regionTooltipPosition.y}px`,
+                  }"
+                >
+                  <div class="font-semibold mb-2">{{ hoveredRegion.name }}</div>
+                  <div class="mb-1">건수: {{ hoveredRegion.count || 0 }}건</div>
+                  <div class="mb-1">비율: {{ hoveredRegion.percentage }}%</div>
+                </div>
+              </div>
+
+              <!-- Top 3 리스트 (큰 화면에서는 오른쪽에 세로 배치) -->
+              <div
+                class="w-full lg:w-auto lg:min-w-[140px] lg:max-w-[180px] flex-shrink-0"
+              >
+                <div
+                  class="text-xs font-semibold mb-2.5 text-center lg:text-left"
+                  style="color: #1e293b"
+                >
+                  Top 3
+                </div>
+                <div class="flex flex-row lg:flex-col gap-2.5">
+                  <div
+                    v-for="(region, index) in deliveryRegions"
+                    :key="index"
+                    class="p-2 rounded-lg shadow-sm bg-white dark:bg-slate-800 flex-1 lg:flex-none transition-all hover:shadow-md min-w-0 overflow-hidden"
+                    :style="
+                      index === 0
+                        ? 'border: 2px solid #3b82f6; color: #3b82f6; background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(59, 130, 246, 0.1));'
+                        : index === 1
+                          ? 'border: 2px solid #16a34a; color: #16a34a; background: linear-gradient(135deg, rgba(22, 163, 74, 0.05), rgba(22, 163, 74, 0.1));'
+                          : 'border: 2px solid #f97316; color: #f97316; background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(249, 115, 22, 0.1));'
+                    "
+                  >
+                    <div class="flex items-center justify-between mb-1">
+                      <div class="text-[10px] font-bold opacity-90">
+                        {{ index + 1 }}위
+                      </div>
+                      <div class="text-[10px] font-semibold opacity-75">
+                        {{ region.percentage }}%
+                      </div>
+                    </div>
+                    <div class="text-sm font-bold truncate">
+                      {{ region.name }}
+                    </div>
+                    <div class="text-[9px] mt-0.5 opacity-70">
+                      {{ region.count || 0 }}건
+                    </div>
                   </div>
                 </div>
               </div>
@@ -578,44 +685,44 @@
 
         <!-- 인사이트 -->
         <section>
-          <h2 class="text-lg font-semibold mb-4" style="color: #1e293b">
+          <h2 class="font-semibold mb-2" style="color: #1e293b; font-size: 18px;">
             인사이트
           </h2>
-          <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
-            <div class="space-y-3">
+          <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
+            <div class="space-y-2">
               <div
                 v-for="(insight, index) in insights"
                 :key="index"
-                class="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-900 rounded-lg"
+                class="flex items-start gap-2 p-2 bg-slate-50 dark:bg-slate-900 rounded-lg"
               >
                 <div
-                  class="w-2 h-2 rounded-full mt-2 flex-shrink-0"
-                  style="background-color: #3b82f6;"
+                  class="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
+                  style="background-color: #3b82f6"
                 ></div>
-                <p class="text-sm text-slate-700 dark:text-slate-300">
+                <p class="text-xs text-slate-700 dark:text-slate-300">
                   {{ insight }}
                 </p>
               </div>
             </div>
           </div>
         </section>
-      </div>
-    </div>
 
-    <!-- 액션 버튼 -->
-    <div class="flex justify-end gap-4">
-      <button
-        class="px-6 py-3 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg shadow-sm hover:shadow-md transition-all flex items-center gap-2"
-      >
-        <i class="fi fi-rr-download"></i>
-        PDF 다운로드
-      </button>
-      <button
-        class="px-6 py-3 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg shadow-sm hover:shadow-md transition-all flex items-center gap-2"
-      >
-        <i class="fi fi-rr-envelope"></i>
-        이메일 발송
-      </button>
+        <!-- 액션 버튼 (인사이트 카드 아래) -->
+        <div class="flex justify-end gap-2 mt-3">
+          <button
+            class="px-3 py-1.5 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg shadow-sm transition-all flex items-center gap-1.5 text-xs"
+          >
+            <i class="fi fi-rr-download text-xs"></i>
+            PDF
+          </button>
+          <button
+            class="px-3 py-1.5 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg shadow-sm transition-all flex items-center gap-1.5 text-xs"
+          >
+            <i class="fi fi-rr-envelope text-xs"></i>
+            이메일
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -905,7 +1012,7 @@ const keyMetrics = computed(() => {
   };
 });
 
-// 추가 지표 계산 (재방문율, 홈 배송 선택률)
+// 추가 지표 계산 (재방문율, 배송선택률)
 const additionalMetrics = computed(() => {
   const current = filteredReservations.value;
   const previous = previousPeriodReservations.value;
@@ -930,7 +1037,7 @@ const additionalMetrics = computed(() => {
         ).toFixed(1)
       : 0;
 
-  // 홈 배송 선택률
+  // 배송선택률
   const currentDelivery = current.filter(
     (r) => r.deliveryType === "배송"
   ).length;
@@ -961,8 +1068,7 @@ const additionalMetrics = computed(() => {
 });
 
 const formatCurrency = (value) => {
-  const 만 = Math.floor(value / 10000);
-  return `${만}만`;
+  return `${formatNumber(value)}원`;
 };
 
 const formatNumber = (value) => {
@@ -980,6 +1086,9 @@ const regionTooltipPosition = ref({ x: 0, y: 0 });
 // 호버된 행사 유형
 const hoveredEventType = ref(null);
 
+// 피크타임 분석용 선택된 행사 유형
+const selectedEventTypeForPeakTime = ref("");
+
 // Chart.js refs
 const eventTypeChartRef = ref(null);
 const peakTimeChartRef = ref(null);
@@ -990,9 +1099,54 @@ let peakTimeChart = null;
 let paymentMethodChart = null;
 let sizeRatioChart = null;
 
+// 사용 가능한 행사 유형 목록
+const availableEventTypes = computed(() => {
+  const reservations = filteredReservations.value;
+  const types = new Set();
+  reservations.forEach((r) => {
+    const type = r.eventType || "기타";
+    types.add(type);
+  });
+  return Array.from(types).sort();
+});
+
+// 운영 기간 확인 (2025년 11월)
+const isValidDateRange = computed(() => {
+  const start = dateRange.value.start;
+  const end = dateRange.value.end;
+  
+  // 2025년 11월 1일 ~ 11월 30일
+  const serviceStartDate = new Date(2025, 10, 1); // 2025-11-01
+  const serviceEndDate = new Date(2025, 10, 30); // 2025-11-30
+  
+  // 선택된 기간이 운영 기간 내에 있는지 확인
+  return start >= serviceStartDate && end <= serviceEndDate;
+});
+
+// 11월 이전인지 확인
+const isBeforeNovember = computed(() => {
+  const end = dateRange.value.end;
+  const serviceStartDate = new Date(2025, 10, 1); // 2025-11-01
+  return end < serviceStartDate;
+});
+
+// 11월 이후인지 확인
+const isAfterNovember = computed(() => {
+  const start = dateRange.value.start;
+  const serviceEndDate = new Date(2025, 10, 30); // 2025-11-30
+  return start > serviceEndDate;
+});
+
 // 피크타임 분석 데이터
 const peakTimeData = computed(() => {
-  const reservations = filteredReservations.value;
+  let reservations = filteredReservations.value;
+  
+  // 선택된 행사 유형으로 필터링
+  if (selectedEventTypeForPeakTime.value) {
+    reservations = reservations.filter(
+      (r) => (r.eventType || "기타") === selectedEventTypeForPeakTime.value
+    );
+  }
 
   // 전체 시간대 (0-23시) 또는 데이터가 있는 시간대만
   const allHours = Array.from({ length: 24 }, (_, i) => i);
@@ -1398,7 +1552,7 @@ onMounted(() => {
   if (reservationsData && reservationsData.reservations) {
     allReservations.value = reservationsData.reservations;
   }
-  
+
   // Chart.js 차트 생성
   nextTick(() => {
     createEventTypeChart();
@@ -1411,17 +1565,21 @@ onMounted(() => {
 // 행사 유형별 매출 차트 생성
 const createEventTypeChart = () => {
   if (!eventTypeChartRef.value) return;
-  
+
   const ctx = eventTypeChartRef.value.getContext("2d");
-  
+
   if (eventTypeChart) {
     eventTypeChart.destroy();
   }
-  
+
   const isDark = document.documentElement.classList.contains("dark");
-  const gridColor = isDark ? "rgba(148, 163, 184, 0.1)" : "rgba(226, 232, 240, 1)";
-  const textColor = isDark ? "rgba(148, 163, 184, 1)" : "rgba(100, 116, 139, 1)";
-  
+  const gridColor = isDark
+    ? "rgba(148, 163, 184, 0.1)"
+    : "rgba(226, 232, 240, 1)";
+  const textColor = isDark
+    ? "rgba(148, 163, 184, 1)"
+    : "rgba(100, 116, 139, 1)";
+
   eventTypeChart = new Chart(ctx, {
     type: "bar",
     data: {
@@ -1430,11 +1588,14 @@ const createEventTypeChart = () => {
         {
           label: "매출",
           data: eventTypeSales.value.map((item) => item.value),
-          backgroundColor: eventTypeSales.value.map((item) => item.color + "CC"), // 투명도 추가
+          backgroundColor: eventTypeSales.value.map(
+            (item) => item.color + "CC"
+          ), // 투명도 추가
           borderColor: eventTypeSales.value.map((item) => item.color),
           borderWidth: 0,
           borderRadius: 8,
           borderSkipped: false,
+          barThickness: 48, // 고정 바 두께 (5개 기준 적절한 크기)
         },
       ],
     },
@@ -1446,10 +1607,14 @@ const createEventTypeChart = () => {
           display: false,
         },
         tooltip: {
-          backgroundColor: isDark ? "rgba(15, 23, 42, 0.9)" : "rgba(15, 23, 42, 0.9)",
+          backgroundColor: isDark
+            ? "rgba(15, 23, 42, 0.9)"
+            : "rgba(15, 23, 42, 0.9)",
           titleColor: "#fff",
           bodyColor: "#fff",
-          borderColor: isDark ? "rgba(148, 163, 184, 0.2)" : "rgba(148, 163, 184, 0.2)",
+          borderColor: isDark
+            ? "rgba(148, 163, 184, 0.2)"
+            : "rgba(148, 163, 184, 0.2)",
           borderWidth: 1,
           callbacks: {
             label: function (context) {
@@ -1475,7 +1640,6 @@ const createEventTypeChart = () => {
             color: textColor,
             font: {
               size: 11,
-              weight: "bold",
             },
           },
           grid: {
@@ -1494,6 +1658,8 @@ const createEventTypeChart = () => {
           grid: {
             display: false,
           },
+          categoryPercentage: 0.6, // 카테고리 간격 비율 (5개 기준 적절한 여백)
+          barPercentage: 0.8, // 바 너비 비율 (바 사이 여백)
         },
       },
     },
@@ -1503,24 +1669,28 @@ const createEventTypeChart = () => {
 // 피크타임 분석 차트 생성
 const createPeakTimeChart = () => {
   if (!peakTimeChartRef.value) return;
-  
+
   const ctx = peakTimeChartRef.value.getContext("2d");
-  
+
   if (peakTimeChart) {
     peakTimeChart.destroy();
   }
-  
+
   const isDark = document.documentElement.classList.contains("dark");
-  const gridColor = isDark ? "rgba(148, 163, 184, 0.1)" : "rgba(226, 232, 240, 1)";
-  const textColor = isDark ? "rgba(148, 163, 184, 1)" : "rgba(100, 116, 139, 1)";
-  
+  const gridColor = isDark
+    ? "rgba(148, 163, 184, 0.1)"
+    : "rgba(226, 232, 240, 1)";
+  const textColor = isDark
+    ? "rgba(148, 163, 184, 1)"
+    : "rgba(100, 116, 139, 1)";
+
   peakTimeChart = new Chart(ctx, {
     type: "line",
     data: {
       labels: peakTimeData.value.hours.map((h) => h + "시"),
       datasets: [
         {
-          label: "기기(store)",
+          label: "맡기기",
           data: peakTimeData.value.storeValues,
           borderColor: "#3b82f6",
           backgroundColor: "rgba(59, 130, 246, 0.1)",
@@ -1530,7 +1700,7 @@ const createPeakTimeChart = () => {
           pointHoverRadius: 6,
         },
         {
-          label: "찾기(find)",
+          label: "찾기",
           data: peakTimeData.value.findValues,
           borderColor: "#22c55e",
           backgroundColor: "rgba(34, 197, 94, 0.1)",
@@ -1558,10 +1728,14 @@ const createPeakTimeChart = () => {
           },
         },
         tooltip: {
-          backgroundColor: isDark ? "rgba(15, 23, 42, 0.9)" : "rgba(15, 23, 42, 0.9)",
+          backgroundColor: isDark
+            ? "rgba(15, 23, 42, 0.9)"
+            : "rgba(15, 23, 42, 0.9)",
           titleColor: "#fff",
           bodyColor: "#fff",
-          borderColor: isDark ? "rgba(148, 163, 184, 0.2)" : "rgba(148, 163, 184, 0.2)",
+          borderColor: isDark
+            ? "rgba(148, 163, 184, 0.2)"
+            : "rgba(148, 163, 184, 0.2)",
           borderWidth: 1,
           callbacks: {
             label: function (context) {
@@ -1608,16 +1782,18 @@ const createPeakTimeChart = () => {
 // 결제 수단 차트 생성
 const createPaymentMethodChart = () => {
   if (!paymentMethodChartRef.value) return;
-  
+
   const ctx = paymentMethodChartRef.value.getContext("2d");
-  
+
   if (paymentMethodChart) {
     paymentMethodChart.destroy();
   }
-  
+
   const isDark = document.documentElement.classList.contains("dark");
-  const textColor = isDark ? "rgba(148, 163, 184, 1)" : "rgba(100, 116, 139, 1)";
-  
+  const textColor = isDark
+    ? "rgba(148, 163, 184, 1)"
+    : "rgba(100, 116, 139, 1)";
+
   paymentMethodChart = new Chart(ctx, {
     type: "bar",
     data: {
@@ -1646,18 +1822,23 @@ const createPaymentMethodChart = () => {
           display: false,
         },
         tooltip: {
-          backgroundColor: isDark ? "rgba(15, 23, 42, 0.9)" : "rgba(15, 23, 42, 0.9)",
+          backgroundColor: isDark
+            ? "rgba(15, 23, 42, 0.9)"
+            : "rgba(15, 23, 42, 0.9)",
           titleColor: "#fff",
           bodyColor: "#fff",
-          borderColor: isDark ? "rgba(148, 163, 184, 0.2)" : "rgba(148, 163, 184, 0.2)",
+          borderColor: isDark
+            ? "rgba(148, 163, 184, 0.2)"
+            : "rgba(148, 163, 184, 0.2)",
           borderWidth: 1,
           callbacks: {
             label: function (context) {
               const labels = ["카드", "기타"];
               const method = labels[context.dataIndex];
-              const data = method === "카드" 
-                ? paymentMethods.value.card 
-                : paymentMethods.value.other;
+              const data =
+                method === "카드"
+                  ? paymentMethods.value.card
+                  : paymentMethods.value.other;
               return [
                 `${method}`,
                 `건수: ${data.count}건`,
@@ -1699,16 +1880,18 @@ const createPaymentMethodChart = () => {
 // 사이즈별 비율 차트 생성
 const createSizeRatioChart = () => {
   if (!sizeRatioChartRef.value) return;
-  
+
   const ctx = sizeRatioChartRef.value.getContext("2d");
-  
+
   if (sizeRatioChart) {
     sizeRatioChart.destroy();
   }
-  
+
   const isDark = document.documentElement.classList.contains("dark");
-  const textColor = isDark ? "rgba(148, 163, 184, 1)" : "rgba(100, 116, 139, 1)";
-  
+  const textColor = isDark
+    ? "rgba(148, 163, 184, 1)"
+    : "rgba(100, 116, 139, 1)";
+
   sizeRatioChart = new Chart(ctx, {
     type: "doughnut",
     data: {
@@ -1731,10 +1914,14 @@ const createSizeRatioChart = () => {
           display: false,
         },
         tooltip: {
-          backgroundColor: isDark ? "rgba(15, 23, 42, 0.9)" : "rgba(15, 23, 42, 0.9)",
+          backgroundColor: isDark
+            ? "rgba(15, 23, 42, 0.9)"
+            : "rgba(15, 23, 42, 0.9)",
           titleColor: "#fff",
           bodyColor: "#fff",
-          borderColor: isDark ? "rgba(148, 163, 184, 0.2)" : "rgba(148, 163, 184, 0.2)",
+          borderColor: isDark
+            ? "rgba(148, 163, 184, 0.2)"
+            : "rgba(148, 163, 184, 0.2)",
           borderWidth: 1,
           callbacks: {
             label: function (context) {
@@ -1752,30 +1939,46 @@ const createSizeRatioChart = () => {
   });
 };
 
+// 주차 변경 시 피크타임 분석 셀렉트 초기화
+watch(
+  () => dateRange.value,
+  () => {
+    selectedEventTypeForPeakTime.value = "";
+  },
+  { deep: true }
+);
+
 // 데이터 변경 시 차트 업데이트
 watch(
-  [eventTypeSales, peakTimeData, paymentMethods, sizeRatio],
+  [eventTypeSales, peakTimeData, paymentMethods, sizeRatio, selectedEventTypeForPeakTime],
   () => {
     nextTick(() => {
       if (eventTypeChart) {
-        eventTypeChart.data.labels = eventTypeSales.value.map((item) => item.type);
-        eventTypeChart.data.datasets[0].data = eventTypeSales.value.map((item) => item.value);
-        eventTypeChart.data.datasets[0].backgroundColor = eventTypeSales.value.map(
-          (item) => item.color + "CC"
+        eventTypeChart.data.labels = eventTypeSales.value.map(
+          (item) => item.type
         );
-        eventTypeChart.data.datasets[0].borderColor = eventTypeSales.value.map((item) => item.color);
+        eventTypeChart.data.datasets[0].data = eventTypeSales.value.map(
+          (item) => item.value
+        );
+        eventTypeChart.data.datasets[0].backgroundColor =
+          eventTypeSales.value.map((item) => item.color + "CC");
+        eventTypeChart.data.datasets[0].borderColor = eventTypeSales.value.map(
+          (item) => item.color
+        );
         eventTypeChart.update();
       }
-      
+
       if (peakTimeChart) {
-        peakTimeChart.data.labels = peakTimeData.value.hours.map((h) => h + "시");
+        peakTimeChart.data.labels = peakTimeData.value.hours.map(
+          (h) => h + "시"
+        );
         peakTimeChart.data.datasets[0].data = peakTimeData.value.storeValues;
         peakTimeChart.data.datasets[1].data = peakTimeData.value.findValues;
         peakTimeChart.options.scales.y.max = 50;
         peakTimeChart.options.scales.y.ticks.stepSize = 10;
         peakTimeChart.update();
       }
-      
+
       if (paymentMethodChart) {
         paymentMethodChart.data.datasets[0].data = [
           paymentMethods.value.card.count,
@@ -1783,14 +1986,18 @@ watch(
         ];
         paymentMethodChart.update();
       }
-      
+
       if (sizeRatioChart) {
         sizeRatioChart.data.labels = sizeRatio.value.map((item) => item.size);
-        sizeRatioChart.data.datasets[0].data = sizeRatio.value.map((item) => item.count);
+        sizeRatioChart.data.datasets[0].data = sizeRatio.value.map(
+          (item) => item.count
+        );
         sizeRatioChart.data.datasets[0].backgroundColor = sizeRatio.value.map(
           (item) => item.color + "CC"
         );
-        sizeRatioChart.data.datasets[0].borderColor = sizeRatio.value.map((item) => item.color);
+        sizeRatioChart.data.datasets[0].borderColor = sizeRatio.value.map(
+          (item) => item.color
+        );
         sizeRatioChart.update();
       }
     });

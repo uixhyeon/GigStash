@@ -1,3 +1,4 @@
+<!--
 <template>
   <div class="w-full">
     <!-- 상단 정산 요약 카드 -->
@@ -181,3 +182,4 @@ ${payment.storeName}\n정산 상세 정보\n금액: ₩${payment.amount.toLocale
 `);
 }
 </script>
+-->
