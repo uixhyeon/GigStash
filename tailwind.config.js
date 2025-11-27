@@ -6,9 +6,11 @@ export default {
     extend: {
       // Colors
       colors: {
-        // Primary Colors
-        primary: '#296AF1',
-        accent: '#3DD9B6',
+        // Primary Colors (Brand)
+        primary: '#3482FF',
+        'primary-light': '#6FAEFF',
+        // Accent Color (Point)
+        accent: '#296AF1',
         // Status Colors
         warning: '#FFC83D',
         error: '#EF4444',

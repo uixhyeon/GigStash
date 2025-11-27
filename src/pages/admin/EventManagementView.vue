@@ -178,7 +178,7 @@
             <!-- 필터 초기화 버튼 -->
             <button
               @click="resetFilters"
-              class="px-3 py-1.5 hover:bg-blue-100 dark:hover:bg-primary/20 rounded-lg transition-all text-primary dark:text-primary font-medium text-xs flex-shrink-0 border border-primary border-opacity-30 dark:border-primary/50"
+              class="px-3 py-1.5 hover:bg-primary/10 dark:hover:bg-primary/20 rounded-lg transition-all text-primary dark:text-primary font-medium text-xs flex-shrink-0 border border-primary border-opacity-30 dark:border-primary/50"
               title="필터 초기화"
             >
               <i class="fa fa-rotate-right mr-1"></i>초기화
@@ -256,7 +256,8 @@
               <tbody>
                 <tr
                   v-if="filteredEvents.length === 0"
-                  class="border-t border-slate-200 dark:border-dark-border"
+                  class="border-t border-gray-200 dark:border-dark-border"
+                  <!-- class="border-t border-slate-200 dark:border-dark-border" -->
                 >
                   <td colspan="5" class="px-4 py-8 text-center text-gray-500 dark:text-dark-text-tertiary">
                     검색 결과가 없습니다.
@@ -265,7 +266,8 @@
                 <tr
                   v-for="event in filteredEvents"
                   :key="event.id"
-                  class="border-t border-slate-200 dark:border-dark-border hover:bg-slate-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors"
+                  class="border-t border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors"
+                  <!-- class="border-t border-slate-200 dark:border-dark-border hover:bg-slate-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors" -->
                   @dblclick="openEventModal(event)"
                 >
                   <td class="px-4 py-3 text-gray-900 dark:text-dark-text-primary">{{ event.name }}</td>
@@ -586,9 +588,11 @@ const goToToday = () => {
 // 상태에 따른 CSS 클래스 반환
 const getStatusClass = (status) => {
   if (status === '예정') {
-    return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400'
+    return 'bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary-light'
+    // return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400'
   } else if (status === '진행 중') {
-    return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400'
+    return 'bg-warning/20 text-warning dark:bg-warning/30 dark:text-warning'
+    // return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400'
   } else {
     // 종료
     return 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400'
