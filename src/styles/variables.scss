@@ -5,6 +5,7 @@
 // Primary Colors (Brand)
 $color-primary: #3482ff;
 $color-primary-light: #6faeff;
+
 // Accent Color (Point)
 $color-accent: #296af1;
 
@@ -23,6 +24,12 @@ $color-background: #f8fafc;
 // Additional Utility Colors
 $color-white: #ffffff;
 $color-black: #000000;
+
+// Table Header & Text Colors
+$color-table-header-bg: #1e293b;      // Light mode: table header background
+$color-table-header-text: #c4cfe1;    // Light mode: table header text
+$color-table-header-bg-dark: #c4cfe1; // Dark mode: table header background
+$color-table-header-text-dark: #334155; // Dark mode: table header text
 
 // ============================================
 // Tailwind Config Reference
@@ -45,6 +52,10 @@ $color-black: #000000;
 // dark-text-tertiary: $color-dark-text-tertiary (#94a3b8)
 // dark-border: $color-dark-border (#334155)
 // dark-border-light: $color-dark-border-light (#475569)
+// table-header-bg: $color-table-header-bg (#1e293b)
+// table-header-text: $color-table-header-text (#c4cfe1)
+// table-header-bg-dark: $color-table-header-bg-dark (#c4cfe1)
+// table-header-text-dark: $color-table-header-text-dark (#334155)
 
 // ============================================
 // Dark Mode Colors

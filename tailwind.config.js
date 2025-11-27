@@ -31,7 +31,12 @@ export default {
         'dark-text-secondary': 'var(--color-dark-text-secondary, #CBD5E1)',
         'dark-text-tertiary': 'var(--color-dark-text-tertiary, #94A3B8)',
         'dark-border': 'var(--color-dark-border, #334155)',
-        'dark-border-light': 'var(--color-dark-border-light, #475569)'
+        'dark-border-light': 'var(--color-dark-border-light, #475569)',
+        // Table Header Colors
+        'table-header-bg': 'var(--color-table-header-bg, #1E293B)',
+        'table-header-text': 'var(--color-table-header-text, #C4CFE1)',
+        'table-header-bg-dark': 'var(--color-table-header-bg-dark, #C4CFE1)',
+        'table-header-text-dark': 'var(--color-table-header-text-dark, #334155)'
       },
       // Font Families
       fontFamily: {

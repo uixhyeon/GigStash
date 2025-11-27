@@ -10,7 +10,7 @@
           <div class="mb-4 flex-shrink-0">
             <div class="flex justify-between items-center">
               <div class="flex justify-between items-end gap-3 w-full">
-                <h3 class="text-lg font-medium text-gray-900 dark:text-dark-text-primary">
+                <h3 class="text-lg font-medium text-gray-900 dark:text-table-header-text">
                   {{ currentMonth }}
                 </h3>
                 <div class="flex gap-2 items-center">
@@ -123,7 +123,7 @@
       <div class="lg:col-span-2 flex flex-col overflow-hidden min-h-0">
         <!-- 행사 목록 헤더 (제목 + 필터) -->
         <div class="flex items-end justify-between gap-4 mb-4 flex-shrink-0">
-          <h2 class="text-lg font-semibold text-gray-900 dark:text-dark-text-primary">행사 목록</h2>
+          <h2 class="text-lg font-semibold text-gray-900 dark:text-table-header-text">행사 목록</h2>
 
           <!-- 필터 조건 -->
           <div class="flex items-end gap-3">
@@ -192,11 +192,11 @@
         >
           <div class="overflow-y-auto flex-1 min-h-0">
             <table class="w-full text-sm">
-              <thead class="sticky top-0 bg-gray-900 dark:bg-dark-text-primary">
+              <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
                 <tr>
-                  <th class="px-4 py-3 text-left font-semibold text-white dark:text-dark-border">행사명</th>
+                  <th class="px-4 py-3 text-left font-semibold text-table-header-text dark:text-table-header-text-dark">행사명</th>
                   <th
-                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-white dark:text-dark-border"
+                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark"
                     @click="toggleSort('startDate')"
                   >
                     <div class="flex items-center justify-center gap-1">
@@ -214,9 +214,9 @@
                       ></i>
                     </div>
                   </th>
-                  <th class="px-4 py-3 text-center font-semibold text-white dark:text-dark-border">상태</th>
+                  <th class="px-4 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark">상태</th>
                   <th
-                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-white dark:text-dark-border"
+                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark"
                     @click="toggleSort('busCount')"
                   >
                     <div class="flex items-center justify-center gap-1">
@@ -234,7 +234,7 @@
                     </div>
                   </th>
                   <th
-                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-white dark:text-dark-border"
+                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark"
                     @click="toggleSort('reservations')"
                   >
                     <div class="flex items-center justify-center gap-1">
