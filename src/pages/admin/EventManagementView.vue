@@ -3,9 +3,9 @@
     <!-- 달력과 테이블 병렬 레이아웃 -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 min-h-0 overflow-hidden">
       <!-- 달력 섹션 -->
-      <div class="lg:col-span-1 min-h-0 h-full">
+      <div class="lg:col-span-1 min-h-0">
         <div
-          class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm p-6 flex flex-col overflow-hidden h-full"
+          class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm p-6 flex flex-col overflow-hidden"
         >
           <div class="mb-4 flex-shrink-0">
             <div class="flex justify-between items-center">
@@ -63,7 +63,7 @@
           </div>
 
           <!-- 캘린더 날짜 그리드 -->
-          <div class="grid grid-cols-7 gap-2 flex-1 overflow-y-auto min-h-0">
+          <div class="grid grid-cols-7 gap-2">
             <button
               v-for="(date, index) in calendarDates"
               :key="index"
@@ -186,7 +186,7 @@
           </div>
         </div>
 
-        <!-- 행사 목록 -->
+        <!-- 행사 목록 =============================================================-->
         <div
           class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden flex flex-col flex-1 min-h-0"
         >
@@ -194,7 +194,11 @@
             <table class="w-full text-sm">
               <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
                 <tr>
-                  <th class="px-4 py-3 text-left font-semibold text-table-header-text dark:text-table-header-text-dark">행사명</th>
+                  <th
+                    class="px-4 py-3 text-left font-semibold text-table-header-text dark:text-table-header-text-dark"
+                  >
+                    행사명
+                  </th>
                   <th
                     class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark"
                     @click="toggleSort('startDate')"
@@ -214,7 +218,11 @@
                       ></i>
                     </div>
                   </th>
-                  <th class="px-4 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark">상태</th>
+                  <th
+                    class="px-4 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark"
+                  >
+                    상태
+                  </th>
                   <th
                     class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark"
                     @click="toggleSort('busCount')"
@@ -258,7 +266,10 @@
                   v-if="filteredEvents.length === 0"
                   class="border-t border-gray-200 dark:border-dark-border"
                 >
-                  <td colspan="5" class="px-4 py-8 text-center text-gray-500 dark:text-dark-text-tertiary">
+                  <td
+                    colspan="5"
+                    class="px-4 py-8 text-center text-gray-500 dark:text-dark-text-tertiary"
+                  >
                     검색 결과가 없습니다.
                   </td>
                 </tr>
@@ -268,7 +279,9 @@
                   class="border-t border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors"
                   @dblclick="openEventModal(event)"
                 >
-                  <td class="px-4 py-3 text-gray-900 dark:text-dark-text-primary">{{ event.name }}</td>
+                  <td class="px-4 py-3 text-gray-900 dark:text-dark-text-primary">
+                    {{ event.name }}
+                  </td>
                   <td class="px-4 py-3 text-center text-gray-900 dark:text-dark-text-primary">
                     {{ event.startDate }} ~ {{ event.endDate }}
                   </td>
@@ -598,48 +611,7 @@ const getStatusClass = (status) => {
 }
 </script>
 
-<!-- 테이블 헤더 클래스 변경: CSS에서 Tailwind로 이동 -->
-<!--
-  라이트모드: bg-gray-900 text-white
-  다크모드: bg-dark-text-primary text-dark-border
--->
-
 <style scoped>
-
-/* 달력 내부 스크롤 설정 */
-.grid.grid-cols-7 {
-  max-height: calc(100% - 60px);
-  overflow-y: auto;
-}
-
-/* Event Status Indicator Dots */
-/* 종료/완료된 행사 - 회색 60% 투명도 */
-.dot-completed {
-  background-color: rgba(100, 116, 139, 0.6);
-}
-
-.dark .dot-completed {
-  background-color: rgba(148, 163, 184, 0.6);
-}
-
-/* 예정 행사 - 파란색 70% 투명도 */
-.dot-scheduled {
-  background-color: rgba(41, 106, 241, 0.7);
-}
-
-.dark .dot-scheduled {
-  background-color: rgba(61, 217, 182, 0.7);
-}
-
-/* 진행중 행사 - 노란색 70% 투명도 */
-.dot-in-progress {
-  background-color: rgba(255, 200, 61, 0.7);
-}
-
-.dark .dot-in-progress {
-  background-color: rgba(255, 200, 61, 0.7);
-}
-
 /* Day of Week Styling */
 /* 일요일 (Sunday) - Red */
 .day-sunday {
@@ -677,16 +649,5 @@ const getStatusClass = (status) => {
 
 .dark .day-saturday-text {
   color: #60a5fa;
-}
-
-/* 모달 페이드 트랜지션 */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 300ms ease-in-out;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
