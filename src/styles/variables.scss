@@ -3,77 +3,77 @@
 // ============================================
 
 // Primary Colors (Brand)
-$color-primary: #3482ff;
-$color-primary-light: #6faeff;
+$primary: #3482ff;
+$primary-light: #6faeff;
 
 // Accent Color (Point)
-$color-accent: #296af1;
+$accent: #296af1;
 
 // Status Colors
-$color-warning: #ffc83d;
-$color-error: #ef4444;
+$warning: #ffc83d;
+$error: #ef4444;
 
 // Grayscale
-$color-gray-900: #1e293b;
-$color-gray-600: #64748b;
-$color-gray-200: #e2e8f0;
+$gray-900: #1e293b;
+$gray-600: #64748b;
+$gray-200: #e2e8f0;
 
 // Background
-$color-background: #f8fafc;
+$background: #f8fafc;
 
 // Additional Utility Colors
-$color-white: #ffffff;
-$color-black: #000000;
+$white: #ffffff;
+$black: #000000;
 
 // Table Header & Text Colors
-$color-table-header-bg: #1e293b;      // Light mode: table header background
-$color-table-header-text: #c4cfe1;    // Light mode: table header text
-$color-table-header-bg-dark: #c4cfe1; // Dark mode: table header background
-$color-table-header-text-dark: #334155; // Dark mode: table header text
+$table-header-bg: #1e293b;           // Light mode: table header background
+$table-header-text: #c4cfe1;         // Light mode: table header text
+$table-header-bg-dark: #c4cfe1;      // Dark mode: table header background
+$table-header-text-dark: #334155;    // Dark mode: table header text
 
 // ============================================
 // Tailwind Config Reference
 // ============================================
 // 아래 색상들은 tailwind.config.js에서 사용됩니다
-// primary: $color-primary (#3482ff)
-// primary-light: $color-primary-light (#6faeff)
-// accent: $color-accent (#296af1)
-// warning: $color-warning (#ffc83d)
-// error: $color-error (#ef4444)
-// gray-900: $color-gray-900 (#1e293b)
-// gray-600: $color-gray-600 (#64748b)
-// gray-200: $color-gray-200 (#e2e8f0)
-// background: $color-background (#f8fafc)
-// dark-bg: $color-dark-bg (#0f172a)
-// dark-bg-secondary: $color-dark-bg-secondary (#1e293b)
-// dark-bg-tertiary: $color-dark-bg-tertiary (#334155)
-// dark-text-primary: $color-dark-text-primary (#f1f5f9)
-// dark-text-secondary: $color-dark-text-secondary (#cbd5e1)
-// dark-text-tertiary: $color-dark-text-tertiary (#94a3b8)
-// dark-border: $color-dark-border (#334155)
-// dark-border-light: $color-dark-border-light (#475569)
-// table-header-bg: $color-table-header-bg (#1e293b)
-// table-header-text: $color-table-header-text (#c4cfe1)
-// table-header-bg-dark: $color-table-header-bg-dark (#c4cfe1)
-// table-header-text-dark: $color-table-header-text-dark (#334155)
+// primary: $primary (#3482ff)
+// primary-light: $primary-light (#6faeff)
+// accent: $accent (#296af1)
+// warning: $warning (#ffc83d)
+// error: $error (#ef4444)
+// gray-900: $gray-900 (#1e293b)
+// gray-600: $gray-600 (#64748b)
+// gray-200: $gray-200 (#e2e8f0)
+// background: $background (#f8fafc)
+// dark-bg: $dark-bg (#0f172a)
+// dark-bg-secondary: $dark-bg-secondary (#1e293b)
+// dark-bg-tertiary: $dark-bg-tertiary (#334155)
+// dark-text-primary: $dark-text-primary (#f1f5f9)
+// dark-text-secondary: $dark-text-secondary (#cbd5e1)
+// dark-text-tertiary: $dark-text-tertiary (#94a3b8)
+// dark-border: $dark-border (#334155)
+// dark-border-light: $dark-border-light (#475569)
+// table-header-bg: $table-header-bg (#1e293b)
+// table-header-text: $table-header-text (#c4cfe1)
+// table-header-bg-dark: $table-header-bg-dark (#c4cfe1)
+// table-header-text-dark: $table-header-text-dark (#334155)
 
 // ============================================
 // Dark Mode Colors
 // ============================================
 
 // Dark Background Colors
-$color-dark-bg: #0f172a;
-$color-dark-bg-secondary: #1e293b;
-$color-dark-bg-tertiary: #334155;
+$dark-bg: #0f172a;
+$dark-bg-secondary: #1e293b;
+$dark-bg-tertiary: #334155;
 
 // Dark Text Colors
-$color-dark-text-primary: #f1f5f9;
-$color-dark-text-secondary: #cbd5e1;
-$color-dark-text-tertiary: #94a3b8;
+$dark-text-primary: #f1f5f9;
+$dark-text-secondary: #cbd5e1;
+$dark-text-tertiary: #94a3b8;
 
-// Dark Bord           Colors
-$color-dark-border: #334155;
-$color-dark-border-light: #475569;
+// Dark Border Colors
+$dark-border: #334155;
+$dark-border-light: #475569;
 
 // ============================================
 // Typography
