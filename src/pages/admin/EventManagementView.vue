@@ -69,7 +69,7 @@
               :key="index"
               @click="selectedDate = new Date(date.dateStr || currentDate)"
               :class="[
-                'p-2 text-sm rounded-lg transition-all text-center flex flex-col items-center justify-center border-2 py-2',
+                'p-2 text-sm rounded-lg transition-all text-center flex flex-col items-center justify-center border-2',
                 date.isCurrentMonth
                   ? (index % 7 === 0
                       ? 'day-sunday-text'
