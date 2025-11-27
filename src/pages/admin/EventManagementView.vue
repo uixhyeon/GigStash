@@ -194,11 +194,13 @@
             <table class="w-full text-sm">
               <thead class="sticky top-0 table-header">
                 <tr>
-                  <th class="px-4 py-3 text-left font-semibold text-white">행사명</th>
+                  <th class="px-4 py-3 text-left font-semibold">행사명</th>
+                  <!-- class="px-4 py-3 text-left font-semibold text-white" -->
                   <th
-                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-white"
+                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all"
                     @click="toggleSort('startDate')"
                   >
+                    <!-- class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-white" -->
                     <div class="flex items-center justify-center gap-1">
                       행사 일자
 
@@ -214,11 +216,13 @@
                       ></i>
                     </div>
                   </th>
-                  <th class="px-4 py-3 text-center font-semibold text-white">상태</th>
+                  <th class="px-4 py-3 text-center font-semibold">상태</th>
+                  <!-- class="px-4 py-3 text-center font-semibold text-white" -->
                   <th
-                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-white"
+                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all"
                     @click="toggleSort('busCount')"
                   >
+                    <!-- class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-white" -->
                     <div class="flex items-center justify-center gap-1">
                       배차 대수
                       <i
@@ -234,9 +238,10 @@
                     </div>
                   </th>
                   <th
-                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-white"
+                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all"
                     @click="toggleSort('reservations')"
                   >
+                  <!-- class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-white" -->
                     <div class="flex items-center justify-center gap-1">
                       예약건수
                       <i
@@ -607,7 +612,16 @@ const getStatusClass = (status) => {
 }
 
 .dark .table-header {
-  background-color: #1E293B; /* dark-bg-secondary */
+  background-color: #F1F5F9; /* dark-text-primary */
+}
+
+/* 테이블 헤더 텍스트 색상 */
+.table-header th {
+  color: #ffffff;
+}
+
+.dark .table-header th {
+  color: #334155; /* dark-bg-tertiary / dark-border */
 }
 
 /* 달력 내부 스크롤 설정 */
