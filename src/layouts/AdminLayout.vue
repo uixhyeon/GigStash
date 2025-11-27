@@ -68,8 +68,10 @@
           ]"
           active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
         >
-          <span class="text-xl flex-shrink-0"><i :class="[item.icon, `mr-3`]"></i></span>
-          <!-- {{ item.icon }} -->
+          <span class="text-xl flex-shrink-0">
+            <component v-if="typeof item.icon !== 'string'" :is="item.icon" class="w-5 h-5 mr-3" />
+            <i v-else :class="[item.icon, `mr-3`]"></i>
+          </span>
           <transition name="fade">
             <span v-if="!isSidebarCollapsed" class="flex-1 block">{{ item.label }}</span>
           </transition>

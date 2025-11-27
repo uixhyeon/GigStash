@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-background dark:bg-dark-bg min-h-screen overflow-auto scrollbar-hide flex flex-col p-6">
+  <div
+    class="bg-background dark:bg-dark-bg min-h-screen overflow-auto scrollbar-hide flex flex-col p-6"
+  >
     <!-- 달력과 테이블 병렬 레이아웃 -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 min-h-0">
       <!-- 달력 섹션 -->
