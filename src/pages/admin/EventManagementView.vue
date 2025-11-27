@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-background dark:bg-dark-bg min-h-screen overflow-auto flex flex-col p-6">
+  <div class="bg-background dark:bg-dark-bg min-h-screen overflow-auto scrollbar-hide flex flex-col p-6">
     <!-- 달력과 테이블 병렬 레이아웃 -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 min-h-0">
       <!-- 달력 섹션 -->
@@ -35,6 +35,7 @@
                 <option value="예정">예정</option>
                 <option value="진행 중">진행 중</option>
                 <option value="종료">종료</option>
+                <option value="취소">취소</option>
               </select>
             </div>
 
@@ -73,7 +74,7 @@
             <!-- 필터 초기화 버튼 -->
             <button
               @click="resetFilters"
-              class="px-3 py-1.5 hover:bg-primary/10 dark:hover:bg-primary/20 rounded-lg transition-all text-primary dark:text-primary font-medium text-xs flex-shrink-0 border border-primary border-opacity-30 dark:border-primary/50"
+              class="px-3 py-1.5 bg-transparent hover:bg-primary hover:text-white rounded-lg transition-all text-primary dark:text-primary font-medium text-xs flex-shrink-0 border border-primary"
               title="필터 초기화"
             >
               <i class="fi fi-br-refresh mr-1"></i>초기화
@@ -83,10 +84,20 @@
 
         <!-- 행사 list =============================================================-->
         <div class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden">
-          <div class="overflow-y-auto max-h-[700px]">
+          <div class="overflow-y-auto max-h-[700px] scrollbar-hide">
             <table class="w-full text-sm">
               <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
                 <tr>
+                  <th
+                    class="px-4 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl"
+                  >
+                    No
+                  </th>
+                  <th
+                    class="px-4 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark"
+                  >
+                    ID
+                  </th>
                   <th
                     class="px-4 py-3 text-left font-semibold text-table-header-text dark:text-table-header-text-dark"
                   >
@@ -135,7 +146,7 @@
                     </div>
                   </th>
                   <th
-                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark"
+                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark rounded-tr-2xl"
                     @click="toggleSort('reservations')"
                   >
                     <div class="flex items-center justify-center gap-1">
@@ -160,27 +171,45 @@
                   class="border-t border-gray-200 dark:border-dark-border"
                 >
                   <td
-                    colspan="5"
+                    colspan="7"
                     class="px-4 py-8 text-center text-gray-500 dark:text-dark-text-tertiary"
                   >
                     검색 결과가 없습니다.
                   </td>
                 </tr>
                 <tr
-                  v-for="event in filteredEvents"
+                  v-for="(event, index) in filteredEvents"
                   :key="event.id"
-                  class="border-t border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors group"
+                  :class="[
+                    'border-t border-gray-200 dark:border-dark-border cursor-pointer transition-colors group',
+                    event.status === '취소'
+                      ? 'bg-amber-50 dark:bg-amber-900/10 hover:bg-amber-100 dark:hover:bg-amber-900/20'
+                      : 'hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50',
+                  ]"
                   @dblclick="openEventModal(event)"
                 >
                   <td
-                    class="px-4 py-2 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900"
+                    class="px-4 py-2 text-center text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900"
+                  >
+                    {{ index + 1 }}
+                  </td>
+                  <td
+                    class="px-4 py-2 text-center text-xs font-mono text-gray-700 dark:text-dark-text-secondary group-hover:dark:text-gray-700"
+                  >
+                    {{ event.id }}
+                  </td>
+                  <td
+                    :class="[
+                      'px-4 py-2 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900',
+                      event.status === '취소' ? 'line-through' : '',
+                    ]"
                   >
                     {{ event.name }}
                   </td>
                   <td
-                    class="px-4 py-2 text-center text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900"
+                    class="px-4 py-2 text-center text-xs text-gray-700 dark:text-dark-text-secondary group-hover:dark:text-gray-700"
                   >
-                    {{ event.startDate }} ~ {{ event.endDate }}
+                    {{ event.startDate }}
                   </td>
                   <td class="px-4 py-2 text-center">
                     <StatusChip :status="event.status" />
@@ -204,7 +233,12 @@
     </div>
 
     <!-- 행사 상세 정보 모달 -->
-    <EventDetailModal v-if="isModalOpen" :event="selectedEventDetail" @close="closeEventModal" />
+    <EventDetailModal
+      v-if="isModalOpen"
+      :event="selectedEventDetail"
+      @close="closeEventModal"
+      @status-change="handleStatusChange"
+    />
   </div>
 </template>
 
@@ -226,7 +260,11 @@ const searchQuery = ref('')
 const statusFilter = ref('전체')
 const monthFilter = ref('')
 
-const normalizeStatus = (startDate, endDate) => {
+const normalizeStatus = (startDate, endDate, originalStatus) => {
+  // 원본 데이터에 "취소" 상태가 있으면 그대로 사용
+  if (originalStatus === '취소') return '취소'
+
+  // 그 외에는 날짜 기준으로 자동 계산
   const today = new Date().setHours(0, 0, 0, 0)
   const start = new Date(startDate).setHours(0, 0, 0, 0)
   const end = new Date(endDate).setHours(0, 0, 0, 0)
@@ -242,7 +280,7 @@ const events = ref(
     name: event.eventName,
     startDate: event.eventDate,
     endDate: event.eventDate,
-    status: normalizeStatus(event.eventDate, event.eventDate),
+    status: normalizeStatus(event.eventDate, event.eventDate, event.status),
     participants: 0,
     busCount: Math.floor(Math.random() * 10) + 1,
     reservations: Math.floor(Math.random() * 100) + 1,
@@ -250,13 +288,6 @@ const events = ref(
     type: event.eventType,
   })),
 )
-
-const processedEvents = computed(() => {
-  return events.value.map((e) => ({
-    ...e,
-    status: normalizeStatus(e.startDate, e.endDate),
-  }))
-})
 
 // 정렬 상태 (초기값: 일자별 오름차순)
 const sortConfig = ref({
@@ -278,6 +309,19 @@ const openEventModal = (event) => {
 const closeEventModal = () => {
   isModalOpen.value = false
   selectedEventDetail.value = null
+}
+
+// 상태 변경 핸들러
+const handleStatusChange = (newStatus) => {
+  if (selectedEventDetail.value) {
+    // events 배열에서 해당 이벤트를 찾아서 상태 업데이트
+    const eventIndex = events.value.findIndex((e) => e.id === selectedEventDetail.value.id)
+    if (eventIndex !== -1) {
+      events.value[eventIndex].status = newStatus
+      // 모달에 표시되는 selectedEventDetail도 업데이트
+      selectedEventDetail.value.status = newStatus
+    }
+  }
 }
 
 // 필터링된 행사 목록 (정렬 포함)
@@ -374,3 +418,15 @@ const resetFilters = () => {
   selectedDate.value = null
 }
 </script>
+
+<style scoped>
+/* 스크롤바 숨기기 */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+</style>

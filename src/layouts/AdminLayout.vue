@@ -45,13 +45,13 @@
           :title="collapseButtonTitle"
         >
           <!-- 접기 아이콘 (펼쳐진 상태) - 왼쪽 화살표 -->
-          <i v-if="!isSidebarCollapsed" class="fa fa-chevron-left"></i>
+          <i v-if="!isSidebarCollapsed" class="fi fi-br-chevron-left"></i>
           <!-- 펴기 아이콘 (접힌 상태) - 햄버거바 -->
-          <i v-else class="fa fa-bars"></i>
+          <i v-else class="fi fi-br-menu-burger"></i>
         </button>
       </div>
 
-      <!-- 네비게이션 -->
+      <!-- 네비게이션 ================================================== -->
       <nav
         class="flex-1 py-3 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-slate-600"
       >
@@ -90,8 +90,9 @@
             'hover:text-blue-600 dark:hover:text-cyan-400 hover:shadow-md',
             isSidebarCollapsed ? 'lg:justify-center lg:px-2' : '',
           ]"
-          active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
+          active-class="!bg-primary !text-gray-g  dark:!blue-600 dark:!table-header-text !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
         >
+          <!-- active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30" -->
           <span class="text-xl flex-shrink-0"><i :class="[item.icon, `mr-3`]"></i></span>
           <transition name="fade">
             <span v-if="!isSidebarCollapsed" class="flex-1 block">{{ item.label }}</span>
@@ -118,30 +119,27 @@
             class="lg:hidden w-12 h-12 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-slate-700 rounded-lg transition-all active:bg-gray-300 dark:active:bg-slate-600"
             title="사이드바 토글"
           >
-            <i class="fa fa-bars text-2xl text-gray-600 dark:text-gray-300"></i>
+            <i class="fi fi-br-bars text-2xl text-gray-600 dark:text-gray-300"></i>
           </button>
 
           <!-- 페이지 타이틀 -->
-          <h1 class="text-xl" style="color: #1e293b">
+          <h1 class="text-lg" style="color: #1e293b">
             {{ pageTitle }}
           </h1>
 
           <!-- 헤더 오른쪽: 서치 + 다크모드 + 유저 프로필 -->
           <div class="flex items-center gap-4">
             <!-- 검색 박스 -->
-            <div
+            <!-- <div
               class="hidden md:flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-slate-700 rounded-full"
             >
-              <i class="fa fa-search text-gray-600 dark:text-gray-300"></i>
+              <i class="fi fi-br-search text-gray-600 dark:text-gray-300"></i>
               <input
                 type="text"
                 placeholder="메뉴 검색"
                 class="bg-transparent text-sm placeholder-gray-500 dark:placeholder-gray-400 outline-none w-40 text-gray-900 dark:text-white text-right"
               />
-            </div>
-
-            <!-- 다크모드 토글 -->
-            <DarkModeToggle />
+            </div> -->
 
             <!-- 알림 아이콘 -->
             <!-- <button
@@ -156,14 +154,17 @@
                 @click="isProfileMenuOpen = !isProfileMenuOpen"
                 class="flex items-center gap-2 px-3 py-2 hover:bg-gray-200 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-700 dark:text-gray-300"
               >
-                <span class="text-2xl">
+                <p class="text-xs text-gray-600 dark:text-gray-400">
+                  {{ authStore.user?.email || 'admin@example.com' }}
+                </p>
+                <span class="text-xl">
                   <div
-                    class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-300"
+                    class="w-7 h-7 text-lg rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-300"
                   >
                     {{ authStore.user?.name ? authStore.user.name.charAt(0).toUpperCase() : '관' }}
                   </div></span
                 >
-                <span class="font-medium text-gray-700 dark:text-gray-300">
+                <span class="text-gray-700 dark:text-gray-300">
                   {{ authStore.user?.name || '관리자' }}
                 </span>
                 <i class="fi fi-br-caret-down"></i>
@@ -199,6 +200,9 @@
                 </div>
               </transition>
             </div>
+
+            <!-- 다크모드 토글 -->
+            <DarkModeToggle />
           </div>
         </div>
       </header>
@@ -232,30 +236,30 @@ const menuItems = [
   {
     name: 'adminMain',
     path: '/admin/adminMain',
-    icon: 'fa fa-chart-line',
+    icon: 'fi fi-rr-home',
     label: '대시보드',
   },
   {
     name: 'adminReservations',
     path: '/admin/reservations',
-    icon: 'fa fa-clipboard-list',
+    icon: 'fi fi-br-clipboard-list',
     label: '예약관리',
   },
   {
     name: 'adminEventManagement',
     path: '/admin/event-management',
-    icon: 'fa fa-calendar',
+    icon: 'fi fi-br-calendar',
     label: '행사관리',
   },
   {
     name: 'adminMonitoring',
     path: '/admin/monitoring',
-    icon: 'fa fa-bar-chart',
+    icon: 'fi fi-rr-dashboard-panel',
     label: '모니터링',
   },
 ]
 const secondaryMenuItems = [
-  { name: 'adminComponentDemo', path: '/admin/demo', icon: 'fa fa-cog', label: '설정' },
+  { name: 'adminComponentDemo', path: '/admin/demo', icon: 'fi fi-br-settings', label: '설정' },
 ]
 
 // menuItems과 secondaryMenuItems을 통합하여 route.name -> label 매핑

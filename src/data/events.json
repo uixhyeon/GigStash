@@ -1,6 +1,27 @@
 {
   "events": [
     {
+      "id": "EVT-251127-999",
+      "createdAt": "2025-11-27T10:00:00Z",
+      "customerName": "테스트",
+      "customerPhone": "010-1234-5678",
+      "eventName": "[취소] 테스트 행사",
+      "eventDate": "2025-11-27",
+      "eventVenue": "테스트 장소",
+      "eventType": "테스트",
+      "itemType": "",
+      "itemSize": "",
+      "quantity": 0,
+      "deliveryType": "",
+      "deliveryAddress": "",
+      "deliveryRegion": "서울",
+      "deliveryCity": "강남구",
+      "paymentMethod": "",
+      "totalPrice": 0,
+      "status": "취소",
+      "performanceTime": "19:00"
+    },
+    {
       "id": "EVT-251101-001",
       "createdAt": "2025-11-24T10:00:00Z",
       "customerName": "",
@@ -354,7 +375,7 @@
       "deliveryCity": "송파구",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료",
+      "status": "취소",
       "performanceTime": "13:00"
     },
     {
@@ -418,7 +439,7 @@
       "deliveryCity": "송파구",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료",
+      "status": "취소",
       "performanceTime": "13:00"
     },
     {
@@ -439,7 +460,7 @@
       "deliveryCity": "양천구",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료",
+      "status": "취소",
       "performanceTime": "14:00"
     },
     {
@@ -469,7 +490,7 @@
       "customerName": "",
       "customerPhone": "",
       "eventName": "HANTEO MUSIC FESTIVAL Day 2",
-      "eventDate": "2025-11-23",
+      "eventDate": "2025-11-27",
       "eventVenue": "인스파이어 아레나",
       "eventType": "페스티벌",
       "itemType": "",

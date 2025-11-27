@@ -18,104 +18,109 @@
             @click="$emit('close')"
             class="text-white hover:text-gray-200 transition-colors"
           >
-            <i class="fa fa-times text-2xl"></i>
+            <i class="fi fi-br-cross text-2xl"></i>
           </button>
         </div>
 
-        <!-- 모달 바디 - 가로 테이블 형태 -->
+        <!-- 모달 바디 - 상세 정보 -->
         <div class="flex-1 overflow-y-auto px-8 py-6">
-          <!-- 배치 정보 테이블 -->
-          <div class="bg-slate-50 dark:bg-slate-900/30 rounded-xl overflow-hidden">
-            <table class="w-full text-sm border-collapse">
-              <thead class="bg-slate-800 dark:bg-slate-900">
-                <tr>
-                  <th class="px-4 py-3 text-center font-semibold text-white">No.</th>
-                  <th class="px-4 py-3 text-center font-semibold text-white">입점</th>
-                  <th class="px-4 py-3 text-left font-semibold text-white">행사 위치</th>
-                  <th class="px-4 py-3 text-center font-semibold text-white">행사명</th>
-                  <th class="px-4 py-3 text-center font-semibold text-white">배차 대수</th>
-                  <th class="px-4 py-3 text-center font-semibold text-white">예약 건수</th>
-                  <th class="px-4 py-3 text-center font-semibold text-white">담당 기사</th>
-                  <th class="px-4 py-3 text-center font-semibold text-white">배차 트럭</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors">
-                  <td class="px-4 py-3 text-center text-gray-900 dark:text-slate-200">1</td>
-                  <td class="px-4 py-3 text-center text-gray-900 dark:text-slate-200">-</td>
-                  <td class="px-4 py-3 text-left text-gray-900 dark:text-slate-200">
-                    {{ event?.venue }}
-                  </td>
-                  <td class="px-4 py-3 text-center text-gray-900 dark:text-slate-200">
-                    {{ event?.name }}
-                  </td>
-                  <td class="px-4 py-3 text-center text-gray-900 dark:text-slate-200">
-                    {{ event?.busCount }}
-                  </td>
-                  <td class="px-4 py-3 text-center text-gray-900 dark:text-slate-200">
-                    {{ event?.reservations }}
-                  </td>
-                  <td class="px-4 py-3 text-center text-gray-900 dark:text-slate-200">-</td>
-                  <td class="px-4 py-3 text-center text-gray-900 dark:text-slate-200">-</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <!-- 행사 상세 정보 -->
+          <div class="grid grid-cols-2 gap-4">
+            <!-- ID -->
+            <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
+              <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
+                >ID</label
+              >
+              <p class="text-sm text-gray-900 dark:text-slate-200 font-mono">
+                {{ event?.id }}
+              </p>
+            </div>
 
-          <!-- 기본 정보 섹션 -->
-          <div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
-            <h4 class="text-sm font-semibold mb-4 dark:text-slate-200" style="color: #1e293b">
-              기본 정보
-            </h4>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
-                <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
-                  >행사 유형</label
-                >
-                <p class="text-sm text-gray-900 dark:text-slate-200">
-                  {{ event?.type }}
-                </p>
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
-                <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
-                  >상태</label
-                >
-                <p class="text-sm text-gray-900 dark:text-slate-200">
-                  {{ event?.status }}
-                </p>
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
-                <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
-                  >시작일</label
-                >
-                <p class="text-sm text-gray-900 dark:text-slate-200">
-                  {{ event?.startDate }}
-                </p>
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
-                <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
-                  >종료일</label
-                >
-                <p class="text-sm text-gray-900 dark:text-slate-200">
-                  {{ event?.endDate }}
-                </p>
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
-                <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
-                  >참여자 수</label
-                >
-                <p class="text-sm text-gray-900 dark:text-slate-200">
-                  {{ event?.participants }}명
-                </p>
-              </div>
-              <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
-                <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
-                  >행사 ID</label
-                >
-                <p class="text-xs text-gray-900 dark:text-slate-200 font-mono">
-                  {{ event?.id }}
-                </p>
-              </div>
+            <!-- 행사명 -->
+            <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
+              <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
+                >행사명</label
+              >
+              <p class="text-sm text-gray-900 dark:text-slate-200">
+                {{ event?.name }}
+              </p>
+            </div>
+
+            <!-- 행사 일자 -->
+            <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
+              <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
+                >행사 일자</label
+              >
+              <p class="text-sm text-gray-900 dark:text-slate-200">
+                {{ event?.startDate }}
+              </p>
+            </div>
+
+            <!-- 상태 -->
+            <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
+              <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
+                >상태</label
+              >
+              <select
+                v-model="localStatus"
+                @change="handleStatusChange($event)"
+                class="w-full px-3 py-2 text-sm border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-800 dark:text-slate-200"
+              >
+                <option value="예정">예정</option>
+                <option value="진행 중">진행 중</option>
+                <option value="종료">종료</option>
+                <option value="취소">취소</option>
+              </select>
+            </div>
+
+            <!-- 배차 대수 -->
+            <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
+              <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
+                >배차 대수</label
+              >
+              <p class="text-sm text-gray-900 dark:text-slate-200">
+                {{ event?.busCount }}대
+              </p>
+            </div>
+
+            <!-- 예약건수 -->
+            <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
+              <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
+                >예약건수</label
+              >
+              <p class="text-sm text-gray-900 dark:text-slate-200">
+                {{ event?.reservations }}건
+              </p>
+            </div>
+
+            <!-- 행사 위치 -->
+            <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4 col-span-2">
+              <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
+                >행사 위치</label
+              >
+              <p class="text-sm text-gray-900 dark:text-slate-200">
+                {{ event?.venue }}
+              </p>
+            </div>
+
+            <!-- 행사 유형 -->
+            <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
+              <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
+                >행사 유형</label
+              >
+              <p class="text-sm text-gray-900 dark:text-slate-200">
+                {{ event?.type }}
+              </p>
+            </div>
+
+            <!-- 참여자 수 -->
+            <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
+              <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
+                >참여자 수</label
+              >
+              <p class="text-sm text-gray-900 dark:text-slate-200">
+                {{ event?.participants }}명
+              </p>
             </div>
           </div>
         </div>
@@ -131,9 +136,16 @@
             닫기
           </button>
           <button
-            class="px-6 py-2 bg-blue-600 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-600 text-white rounded-lg transition-colors font-medium"
+            @click="handleSave"
+            :class="[
+              'px-6 py-2 rounded-lg transition-colors font-medium',
+              hasChanges
+                ? 'bg-blue-600 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-600 text-white'
+                : 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed',
+            ]"
+            :disabled="!hasChanges"
           >
-            편집
+            저장
           </button>
         </div>
       </div>
@@ -142,14 +154,42 @@
 </template>
 
 <script setup>
-defineProps({
+import { ref, watch } from 'vue'
+
+const props = defineProps({
   event: {
     type: Object,
     default: null,
   },
 })
 
-defineEmits(['close'])
+const emit = defineEmits(['close', 'status-change', 'save'])
+
+// 로컬 상태로 관리
+const localStatus = ref(props.event?.status)
+const hasChanges = ref(false)
+
+// event prop이 변경될 때 localStatus 업데이트
+watch(
+  () => props.event?.status,
+  (newStatus) => {
+    localStatus.value = newStatus
+    hasChanges.value = false
+  },
+)
+
+const handleStatusChange = (event) => {
+  localStatus.value = event.target.value
+  hasChanges.value = true
+}
+
+const handleSave = () => {
+  if (hasChanges.value) {
+    emit('status-change', localStatus.value)
+    hasChanges.value = false
+  }
+  emit('close')
+}
 </script>
 
 <style scoped>

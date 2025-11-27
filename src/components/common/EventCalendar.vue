@@ -16,7 +16,7 @@
             title="이전 달"
             type="button"
           >
-            <i class="fi fi-br-chevron-left text-sm"></i>
+            <i class="fi fi-br-angle-left text-sm"></i>
           </button>
           <button
             @click.prevent="handleNextMonth"
@@ -24,7 +24,7 @@
             title="다음 달"
             type="button"
           >
-            <i class="fi fi-br-chevron-right text-sm"></i>
+            <i class="fi fi-br-angle-right text-sm"></i>
           </button>
           <button
             @click.prevent="handleGoToToday"
@@ -85,15 +85,15 @@
                 ? 'bg-blue-500 text-white'
                 : // 행사가 있는 날짜 - 상태에 따라 다르게 (선택된 날짜 제외)
                   date.eventCount > 0
-                  ? date.completedCount > 0 &&
-                    date.scheduledCount === 0 &&
-                    date.inProgressCount === 0
-                    ? 'bg-gray-100 dark:bg-gray-800' // 완료만
+                  ? date.cancelledCount > 0
+                    ? 'bg-amber-100 dark:bg-amber-900/30' // 취소 있음
                     : date.inProgressCount > 0
-                      ? 'bg-teal-100 dark:bg-teal-900/30' // 진행중 (사용중 칩 색상)
+                      ? 'bg-teal-100 dark:bg-teal-900/30' // 진행중
                       : date.scheduledCount > 0
                         ? 'bg-blue-100 dark:bg-blue-900/30' // 예정
-                        : ''
+                        : date.completedCount > 0
+                          ? 'bg-gray-100 dark:bg-gray-800' // 완료만
+                          : ''
                   : '',
             ]"
           >
@@ -120,6 +120,13 @@
                 class="text-[10px] px-1 py-0.5 rounded bg-teal-100 dark:bg-teal-500/20 text-teal-700 dark:text-accent-400 font-medium"
               >
                 {{ date.inProgressCount }} 건
+              </span>
+              <!-- 취소 건수 -->
+              <span
+                v-if="date.cancelledCount > 0"
+                class="text-[10px] px-1 py-0.5 rounded bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 font-medium"
+              >
+                {{ date.cancelledCount }} 건
               </span>
               <!-- 종료 건수 -->
               <span
@@ -216,15 +223,10 @@ const calendarDates = computed(() => {
     })
 
     // 상태별 행사 개수 계산
-    const completedCount = dateEvents.filter(
-      (e) => normalizeStatus(e.startDate, e.endDate) === '종료',
-    ).length
-    const scheduledCount = dateEvents.filter(
-      (e) => normalizeStatus(e.startDate, e.endDate) === '예정',
-    ).length
-    const inProgressCount = dateEvents.filter(
-      (e) => normalizeStatus(e.startDate, e.endDate) === '진행 중',
-    ).length
+    const completedCount = dateEvents.filter((e) => e.status === '종료').length
+    const scheduledCount = dateEvents.filter((e) => e.status === '예정').length
+    const inProgressCount = dateEvents.filter((e) => e.status === '진행 중').length
+    const cancelledCount = dateEvents.filter((e) => e.status === '취소').length
     const eventCount = dateEvents.length
 
     dates.push({
@@ -237,6 +239,7 @@ const calendarDates = computed(() => {
       completedCount,
       scheduledCount,
       inProgressCount,
+      cancelledCount,
     })
   }
 

@@ -247,9 +247,4 @@ const handleLogin = async () => {
 </script>
 
 <style scoped>
-@import '@/styles/variables.scss';
-
-:root {
-  --primary: #{$color-primary};
-}
 </style>

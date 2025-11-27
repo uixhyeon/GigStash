@@ -1,6 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-// Import SCSS variables
-import colors from './src/styles/variables.scss' assert { type: 'css' };
 
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -32,11 +30,11 @@ export default {
         'dark-text-tertiary': 'var(--dark-text-tertiary, #94A3B8)',
         'dark-border': 'var(--dark-border, #334155)',
         'dark-border-light': 'var(--dark-border-light, #475569)',
-        // Table Header Colors (using unified color system)
-        'table-header-bg': 'var(--gray-900, #1E293B)',
-        'table-header-text': 'var(--dark-text-secondary, #C4CFE1)',
-        'table-header-bg-dark': 'var(--dark-text-secondary, #C4CFE1)',
-        'table-header-text-dark': 'var(--dark-bg-tertiary, #334155)'
+        // Table Header Colors
+        'table-header-bg': 'var(--table-header-bg, #1E293B)',
+        'table-header-text': 'var(--table-header-text, #C4CFE1)',
+        'table-header-bg-dark': 'var(--table-header-bg-dark, #C4CFE1)',
+        'table-header-text-dark': 'var(--table-header-text-dark, #334155)'
       },
       // Font Families
       fontFamily: {

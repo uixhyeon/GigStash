@@ -4,7 +4,10 @@
 
     <!-- 통계 카드 -->
     <section class="mb-12">
-      <h2 class="text-lg font-semibold mb-6" style="color: #1e293b">당일 보관함 현황</h2>
+      <h2 class="text-lg font-semibold mb-6 text-gray-900 dark:text-table-header-text">
+        당일 보관함 현황
+      </h2>
+
       <div v-if="loading" class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm">
         통계 로딩 중...
       </div>
@@ -45,7 +48,9 @@
       <div>
         <!-- 최근 예약 테이블 -->
         <section class="mb-8">
-          <h2 class="text-lg font-semibold mb-4" style="color: #1e293b">최근 예약</h2>
+          <h2 class="text-lg font-semibold mb-6 text-gray-900 dark:text-table-header-text">
+            최근 예약
+          </h2>
           <div
             v-if="loading"
             class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm text-slate-600 dark:text-slate-400"
@@ -56,7 +61,7 @@
             v-else
             class="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden text-sm"
           >
-            <thead class="bg-slate-100 dark:bg-slate-700">
+            <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
               <tr>
                 <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">접수시간</th>
                 <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">이름</th>
@@ -100,7 +105,9 @@
       <div>
         <!-- 회원 등급별 현황 -->
         <section class="mb-8">
-          <h2 class="text-lg font-semibold mb-4" style="color: #1e293b">회원 등급별 현황</h2>
+          <h2 class="text-lg font-semibold mb-6 text-gray-900 dark:text-table-header-text">
+            회원 등급별 현황
+          </h2>
           <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
             <div class="h-64">
               <Doughnut :data="membershipChartData" :options="doughnutChartOptions" />
@@ -110,7 +117,9 @@
 
         <!-- 사용 고객 목록 -->
         <section>
-          <h2 class="text-lg font-semibold mb-4" style="color: #1e293b">현재 사용 고객</h2>
+          <h2 class="text-lg font-semibold mb-6 text-gray-900 dark:text-table-header-text">
+            현재 사용 고객
+          </h2>
           <div
             v-if="loading"
             class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm text-slate-600 dark:text-slate-400"
@@ -119,7 +128,7 @@
           </div>
           <div v-else class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden">
             <table class="w-full text-sm">
-              <thead class="bg-slate-100 dark:bg-slate-700">
+              <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
                 <tr>
                   <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">고객명</th>
                   <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">보관함</th>

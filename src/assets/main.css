@@ -1,3 +1,5 @@
+@import './base.css';
+@import '@flaticon/flaticon-uicons/css/all/all';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,4 +12,13 @@
   body {
     @apply m-0 font-sans;
   }
+}
+
+/* Font Awesome icon fix */
+i[class^='fa-'],
+i[class*=' fa-'],
+.fa {
+  font-family: var(--fa-style-family, 'Font Awesome 6 Pro');
+  font-weight: var(--fa-style, 900);
+  font-size: inherit;
 }
