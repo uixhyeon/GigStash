@@ -1,42 +1,42 @@
 <template>
-  <div class="bg-slate-50 dark:bg-slate-900 min-h-screen overflow-hidden flex flex-col p-6">
+  <div class="bg-background dark:bg-dark-bg min-h-screen overflow-hidden flex flex-col p-6">
     <!-- 달력과 테이블 병렬 레이아웃 -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 min-h-0 overflow-hidden">
       <!-- 달력 섹션 -->
       <div class="lg:col-span-1 min-h-0 h-full">
         <div
-          class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6 flex flex-col overflow-hidden h-full"
+          class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm p-6 flex flex-col overflow-hidden h-full"
         >
           <div class="mb-4 flex-shrink-0">
             <div class="flex justify-between items-center">
               <div class="flex justify-between items-end gap-3 w-full">
-                <h3 class="text-lg font-medium text-slate-900 dark:text-slate-200">
+                <h3 class="text-lg font-medium text-gray-900 dark:text-dark-text-primary">
                   {{ currentMonth }}
                 </h3>
                 <div class="flex gap-2 items-center">
                   <button
                     @click="prevMonth"
-                    class="w-10 h-7 flex items-center justify-center bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 rounded-sm transition-all flex-shrink-0 text-gray-600 dark:text-gray-400"
+                    class="w-10 h-7 flex items-center justify-center bg-gray-200 dark:bg-dark-bg-tertiary hover:bg-gray-300 dark:hover:bg-dark-border rounded-sm transition-all flex-shrink-0 text-gray-600 dark:text-dark-text-secondary"
                     title="이전 달"
                   >
                     <i class="fa fa-chevron-left text-sm"></i>
                   </button>
                   <button
                     @click="nextMonth"
-                    class="w-10 h-7 flex items-center justify-center bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 rounded-sm transition-all flex-shrink-0 text-gray-600 dark:text-gray-400"
+                    class="w-10 h-7 flex items-center justify-center bg-gray-200 dark:bg-dark-bg-tertiary hover:bg-gray-300 dark:hover:bg-dark-border rounded-sm transition-all flex-shrink-0 text-gray-600 dark:text-dark-text-secondary"
                     title="다음 달"
                   >
                     <i class="fa fa-chevron-right text-sm"></i>
                   </button>
-                  <!-- <div class="h-6 w-px bg-gray-300 dark:bg-slate-600"></div> -->
+                  <!-- <div class="h-6 w-px bg-gray-300 dark:bg-dark-border"></div> -->
                   <button
                     @click="goToToday"
-                    class="w-20 h-7 flex items-center justify-center bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 rounded-sm transition-all flex-shrink-0 text-gray-600 dark:text-gray-400"
+                    class="w-20 h-7 flex items-center justify-center bg-gray-200 dark:bg-dark-bg-tertiary hover:bg-gray-300 dark:hover:bg-dark-border rounded-sm transition-all flex-shrink-0 text-gray-600 dark:text-dark-text-secondary"
                     title="오늘로 이동"
                   >
                     오늘
                   </button>
-                  <p class="text-sm text-gray-600 dark:text-gray-400 ml-auto">
+                  <p class="text-sm text-gray-600 dark:text-dark-text-secondary ml-auto">
                     총 {{ currentMonthFilteredCount }}건
                   </p>
                 </div>
@@ -123,21 +123,21 @@
       <div class="lg:col-span-2 flex flex-col overflow-hidden min-h-0">
         <!-- 행사 목록 헤더 (제목 + 필터) -->
         <div class="flex items-end justify-between gap-4 mb-4 flex-shrink-0">
-          <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-200">행사 목록</h2>
+          <h2 class="text-lg font-semibold text-gray-900 dark:text-dark-text-primary">행사 목록</h2>
 
           <!-- 필터 조건 -->
           <div class="flex items-end gap-3">
             <!-- 상태 -->
             <div class="flex items-end gap-1.5 flex-shrink-0">
               <label
-                class="text-xs font-medium text-gray-700 dark:text-slate-300 whitespace-nowrap"
+                class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
               >
                 상태
               </label>
               <select
                 v-model="statusFilter"
                 placeholder="상태 선택"
-                class="px-2.5 py-1.5 text-xs border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                class="px-2.5 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
               >
                 <option value="전체">전체</option>
                 <option value="예정">예정</option>
@@ -149,7 +149,7 @@
             <!-- 행사명 -->
             <div class="flex items-end gap-1.5 w-48">
               <label
-                class="text-xs font-medium text-gray-700 dark:text-slate-300 whitespace-nowrap"
+                class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
               >
                 행사명
               </label>
@@ -157,28 +157,28 @@
                 v-model="searchQuery"
                 type="text"
                 placeholder="검색"
-                class="w-full px-2.5 py-1.5 text-xs border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                class="w-full px-2.5 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
               />
             </div>
 
             <!-- 월 선택 -->
             <div class="flex items-end gap-1.5 flex-shrink-0">
               <label
-                class="text-xs font-medium text-gray-700 dark:text-slate-300 whitespace-nowrap"
+                class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
               >
                 월
               </label>
               <input
                 v-model="monthFilter"
                 type="month"
-                class="px-2.5 py-1.5 text-xs border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                class="px-2.5 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
               />
             </div>
 
             <!-- 필터 초기화 버튼 -->
             <button
               @click="resetFilters"
-              class="px-3 py-1.5 hover:bg-blue-100 dark:hover:bg-blue-900/30 rounded-lg transition-all text-blue-600 dark:text-blue-400 font-medium text-xs flex-shrink-0 border border-blue-200 dark:border-blue-800"
+              class="px-3 py-1.5 hover:bg-blue-100 dark:hover:bg-primary/20 rounded-lg transition-all text-primary dark:text-primary font-medium text-xs flex-shrink-0 border border-primary border-opacity-30 dark:border-primary/50"
               title="필터 초기화"
             >
               <i class="fa fa-rotate-right mr-1"></i>초기화
@@ -188,15 +188,13 @@
 
         <!-- 행사 목록 -->
         <div
-          class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden flex flex-col flex-1 min-h-0"
+          class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden flex flex-col flex-1 min-h-0"
         >
           <div class="overflow-y-auto flex-1 min-h-0">
             <table class="w-full text-sm">
-              <thead class="sticky top-0" style="background-color: #1e293b">
+              <thead class="sticky top-0 table-header">
                 <tr>
-                  <th class="px-4 py-3 text-left font-semibold text-white">
-                    행사명
-                  </th>
+                  <th class="px-4 py-3 text-left font-semibold text-white">행사명</th>
                   <th
                     class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-white"
                     @click="toggleSort('startDate')"
@@ -216,9 +214,7 @@
                       ></i>
                     </div>
                   </th>
-                  <th class="px-4 py-3 text-center font-semibold text-white">
-                    상태
-                  </th>
+                  <th class="px-4 py-3 text-center font-semibold text-white">상태</th>
                   <th
                     class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-white"
                     @click="toggleSort('busCount')"
@@ -260,20 +256,20 @@
               <tbody>
                 <tr
                   v-if="filteredEvents.length === 0"
-                  class="border-t border-slate-200 dark:border-slate-700"
+                  class="border-t border-slate-200 dark:border-dark-border"
                 >
-                  <td colspan="5" class="px-4 py-8 text-center text-gray-500 dark:text-gray-400">
+                  <td colspan="5" class="px-4 py-8 text-center text-gray-500 dark:text-dark-text-tertiary">
                     검색 결과가 없습니다.
                   </td>
                 </tr>
                 <tr
                   v-for="event in filteredEvents"
                   :key="event.id"
-                  class="border-t border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/30 cursor-pointer transition-colors"
+                  class="border-t border-slate-200 dark:border-dark-border hover:bg-slate-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors"
                   @dblclick="openEventModal(event)"
                 >
-                  <td class="px-4 py-3 text-slate-900 dark:text-slate-200">{{ event.name }}</td>
-                  <td class="px-4 py-3 text-center text-slate-900 dark:text-slate-200">
+                  <td class="px-4 py-3 text-gray-900 dark:text-dark-text-primary">{{ event.name }}</td>
+                  <td class="px-4 py-3 text-center text-gray-900 dark:text-dark-text-primary">
                     {{ event.startDate }} ~ {{ event.endDate }}
                   </td>
                   <td class="px-4 py-3 text-center">
@@ -292,10 +288,10 @@
                       }}
                     </span>
                   </td>
-                  <td class="px-4 py-3 text-center text-slate-900 dark:text-slate-200">
+                  <td class="px-4 py-3 text-center text-gray-900 dark:text-dark-text-primary">
                     {{ event.busCount }}대
                   </td>
-                  <td class="px-4 py-3 text-center text-slate-900 dark:text-slate-200">
+                  <td class="px-4 py-3 text-center text-gray-900 dark:text-dark-text-primary">
                     {{ event.reservations }}건
                   </td>
                 </tr>
@@ -601,6 +597,15 @@ const getStatusClass = (status) => {
 </script>
 
 <style scoped>
+/* 테이블 헤더 스타일 */
+.table-header {
+  background-color: #1E293B; /* gray-900 */
+}
+
+.dark .table-header {
+  background-color: #1E293B; /* dark-bg-secondary */
+}
+
 /* 달력 내부 스크롤 설정 */
 .grid.grid-cols-7 {
   max-height: calc(100% - 60px);
