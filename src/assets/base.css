@@ -34,6 +34,49 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+
+  /* Primary Colors (Brand) */
+  --color-primary: #3482ff;
+  --color-primary-light: #6faeff;
+
+  /* Accent Color (Point) */
+  --color-accent: #296af1;
+
+  /* Status Colors */
+  --color-warning: #ffc83d;
+  --color-error: #ef4444;
+
+  /* Grayscale */
+  --color-gray-900: #1e293b;
+  --color-gray-600: #64748b;
+  --color-gray-200: #e2e8f0;
+
+  /* Background */
+  --color-background: #f8fafc;
+
+  /* Additional Utility Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Table Header & Text Colors */
+  --color-table-header-bg: #1e293b;
+  --color-table-header-text: #c4cfe1;
+  --color-table-header-bg-dark: #c4cfe1;
+  --color-table-header-text-dark: #334155;
+
+  /* Dark Background Colors */
+  --color-dark-bg: #0f172a;
+  --color-dark-bg-secondary: #1e293b;
+  --color-dark-bg-tertiary: #334155;
+
+  /* Dark Text Colors */
+  --color-dark-text-primary: #f1f5f9;
+  --color-dark-text-secondary: #cbd5e1;
+  --color-dark-text-tertiary: #94a3b8;
+
+  /* Dark Border Colors */
+  --color-dark-border: #334155;
+  --color-dark-border-light: #475569;
 }
 
 @media (prefers-color-scheme: dark) {

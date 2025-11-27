@@ -257,7 +257,6 @@
                 <tr
                   v-if="filteredEvents.length === 0"
                   class="border-t border-gray-200 dark:border-dark-border"
-                  <!-- class="border-t border-slate-200 dark:border-dark-border" -->
                 >
                   <td colspan="5" class="px-4 py-8 text-center text-gray-500 dark:text-dark-text-tertiary">
                     검색 결과가 없습니다.
@@ -267,7 +266,6 @@
                   v-for="event in filteredEvents"
                   :key="event.id"
                   class="border-t border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors"
-                  <!-- class="border-t border-slate-200 dark:border-dark-border hover:bg-slate-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors" -->
                   @dblclick="openEventModal(event)"
                 >
                   <td class="px-4 py-3 text-gray-900 dark:text-dark-text-primary">{{ event.name }}</td>
