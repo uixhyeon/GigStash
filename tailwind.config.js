@@ -1,34 +1,37 @@
 /** @type {import('tailwindcss').Config} */
+// Import SCSS variables
+import colors from './src/styles/variables.scss' assert { type: 'css' };
+
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
-      // Colors
+      // Colors (from SCSS variables)
       colors: {
         // Primary Colors (Brand)
-        primary: '#3482FF',
-        'primary-light': '#6FAEFF',
+        primary: 'var(--color-primary, #3482FF)',
+        'primary-light': 'var(--color-primary-light, #6FAEFF)',
         // Accent Color (Point)
-        accent: '#296AF1',
+        accent: 'var(--color-accent, #296AF1)',
         // Status Colors
-        warning: '#FFC83D',
-        error: '#EF4444',
+        warning: 'var(--color-warning, #FFC83D)',
+        error: 'var(--color-error, #EF4444)',
         // Grayscale
-        'gray-900': '#1E293B',
-        'gray-600': '#64748B',
-        'gray-200': '#E2E8F0',
+        'gray-900': 'var(--color-gray-900, #1E293B)',
+        'gray-600': 'var(--color-gray-600, #64748B)',
+        'gray-200': 'var(--color-gray-200, #E2E8F0)',
         // Background
-        background: '#F8FAFC',
+        background: 'var(--color-background, #F8FAFC)',
         // Dark Mode
-        'dark-bg': '#0F172A',
-        'dark-bg-secondary': '#1E293B',
-        'dark-bg-tertiary': '#334155',
-        'dark-text-primary': '#F1F5F9',
-        'dark-text-secondary': '#CBD5E1',
-        'dark-text-tertiary': '#94A3B8',
-        'dark-border': '#334155',
-        'dark-border-light': '#475569'
+        'dark-bg': 'var(--color-dark-bg, #0F172A)',
+        'dark-bg-secondary': 'var(--color-dark-bg-secondary, #1E293B)',
+        'dark-bg-tertiary': 'var(--color-dark-bg-tertiary, #334155)',
+        'dark-text-primary': 'var(--color-dark-text-primary, #F1F5F9)',
+        'dark-text-secondary': 'var(--color-dark-text-secondary, #CBD5E1)',
+        'dark-text-tertiary': 'var(--color-dark-text-tertiary, #94A3B8)',
+        'dark-border': 'var(--color-dark-border, #334155)',
+        'dark-border-light': 'var(--color-dark-border-light, #475569)'
       },
       // Font Families
       fontFamily: {
