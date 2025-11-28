@@ -172,7 +172,7 @@
     </div>
 
     <!-- 왼쪽/오른쪽 2분할 레이아웃 -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
       <!-- 왼쪽 컬럼 -->
       <div class="space-y-3">
         <!-- 주요 지표 -->
@@ -327,7 +327,7 @@
             </h2>
             <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
               <div class="flex items-center justify-center gap-4">
-                <div class="w-32 h-32">
+                <div class="w-32 h-40">
                   <canvas ref="sizeRatioChartRef"></canvas>
                 </div>
                 <div class="space-y-2">
