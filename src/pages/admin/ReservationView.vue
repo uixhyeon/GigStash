@@ -48,7 +48,7 @@
               </div>
             </div>
             <i
-              class="fi fi-rr-circle-check text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0"
+              class="fi fi-rs-rotate-left text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0"
               style="color: #3b82f6"
             ></i>
           </div>
@@ -244,29 +244,94 @@
             <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
               <tr>
                 <th
-                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap"
+                  @click="toggleSort('id')"
+                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
                 >
-                  예약번호 (ID)
+                  <div class="flex items-center gap-1">
+                    예약번호 (ID)
+                    <i
+                      v-if="sortBy === 'id'"
+                      :class="[
+                        'fi text-xs',
+                        sortDirection === 'asc' ? 'fi-rr-arrow-up' : 'fi-rr-arrow-down',
+                      ]"
+                    ></i>
+                  </div>
                 </th>
                 <th
-                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  @click="toggleSort('eventId')"
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
                 >
-                  사용자명
+                  <div class="flex items-center justify-center gap-1">
+                    행사번호
+                    <i
+                      v-if="sortBy === 'eventId'"
+                      :class="[
+                        'fi text-xs',
+                        sortDirection === 'asc' ? 'fi-rr-arrow-up' : 'fi-rr-arrow-down',
+                      ]"
+                    ></i>
+                  </div>
                 </th>
                 <th
-                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  @click="toggleSort('customerId')"
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
                 >
-                  사물함
+                  <div class="flex items-center justify-center gap-1">
+                    사용자명
+                    <i
+                      v-if="sortBy === 'customerId'"
+                      :class="[
+                        'fi text-xs',
+                        sortDirection === 'asc' ? 'fi-rr-arrow-up' : 'fi-rr-arrow-down',
+                      ]"
+                    ></i>
+                  </div>
                 </th>
                 <th
-                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  @click="toggleSort('lockerNumber')"
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
                 >
-                  기간
+                  <div class="flex items-center justify-center gap-1">
+                    사물함
+                    <i
+                      v-if="sortBy === 'lockerNumber'"
+                      :class="[
+                        'fi text-xs',
+                        sortDirection === 'asc' ? 'fi-rr-arrow-up' : 'fi-rr-arrow-down',
+                      ]"
+                    ></i>
+                  </div>
                 </th>
                 <th
-                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  @click="toggleSort('startTime')"
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
                 >
-                  상태
+                  <div class="flex items-center justify-center gap-1">
+                    기간
+                    <i
+                      v-if="sortBy === 'startTime'"
+                      :class="[
+                        'fi text-xs',
+                        sortDirection === 'asc' ? 'fi-rr-arrow-up' : 'fi-rr-arrow-down',
+                      ]"
+                    ></i>
+                  </div>
+                </th>
+                <th
+                  @click="toggleSort('status')"
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
+                >
+                  <div class="flex items-center justify-center gap-1">
+                    상태
+                    <i
+                      v-if="sortBy === 'status'"
+                      :class="[
+                        'fi text-xs',
+                        sortDirection === 'asc' ? 'fi-rr-arrow-up' : 'fi-rr-arrow-down',
+                      ]"
+                    ></i>
+                  </div>
                 </th>
                 <th
                   class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tr-2xl whitespace-nowrap"
@@ -279,12 +344,17 @@
               <tr
                 v-for="reservation in filteredReservations"
                 :key="reservation.id"
-                class="border-t border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors group h-10"
+                class="border-t text-center border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors group h-10"
               >
+                <td
+                  class="text-left px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
+                >
+                  {{ reservation.id }}
+                </td>
                 <td
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
-                  {{ reservation.id }}
+                  {{ reservation.eventId }}
                 </td>
                 <td
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
@@ -351,6 +421,10 @@ const searchQuery = ref('')
 const lockerFilter = ref('')
 const startDateFilter = ref('')
 const endDateFilter = ref('')
+
+// 정렬 상태
+const sortBy = ref('startTime')
+const sortDirection = ref('desc')
 
 // 데이터 초기화
 const initializeData = () => {
@@ -449,8 +523,44 @@ const filteredReservations = computed(() => {
     })
   }
 
-  // 최신 순으로 정렬
-  return filtered.sort((a, b) => new Date(b.startTime) - new Date(a.startTime))
+  // 정렬 로직
+  return filtered.sort((a, b) => {
+    let aValue, bValue
+
+    if (sortBy.value === 'startTime') {
+      aValue = new Date(a.startTime)
+      bValue = new Date(b.startTime)
+    } else if (sortBy.value === 'id') {
+      aValue = a.id
+      bValue = b.id
+    } else if (sortBy.value === 'eventId') {
+      aValue = a.eventId
+      bValue = b.eventId
+    } else if (sortBy.value === 'customerId') {
+      aValue = getCustomerInfo(a.customerId).name
+      bValue = getCustomerInfo(b.customerId).name
+    } else if (sortBy.value === 'lockerNumber') {
+      aValue = a.lockerNumber
+      bValue = b.lockerNumber
+    } else if (sortBy.value === 'status') {
+      aValue = a.status
+      bValue = b.status
+    } else {
+      aValue = a[sortBy.value]
+      bValue = b[sortBy.value]
+    }
+
+    if (typeof aValue === 'string') {
+      aValue = aValue.toLowerCase()
+      bValue = bValue.toLowerCase()
+    }
+
+    if (sortDirection.value === 'asc') {
+      return aValue > bValue ? 1 : aValue < bValue ? -1 : 0
+    } else {
+      return aValue < bValue ? 1 : aValue > bValue ? -1 : 0
+    }
+  })
 })
 
 // 날짜 포맷 함수
@@ -496,6 +606,18 @@ const getStatusDotColor = (status) => {
     pending: 'bg-gray-600',
   }
   return colors[status] || colors.pending
+}
+
+// 정렬 토글 함수
+const toggleSort = (column) => {
+  if (sortBy.value === column) {
+    // 같은 컬럼을 클릭하면 정렬 방향 토글
+    sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc'
+  } else {
+    // 다른 컬럼을 클릭하면 새로운 컬럼으로 정렬 (기본값: desc)
+    sortBy.value = column
+    sortDirection.value = 'desc'
+  }
 }
 
 // 필터 초기화
