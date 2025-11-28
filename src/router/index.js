@@ -28,13 +28,13 @@ const router = createRouter({
         {
           path: 'event-management',
           name: 'adminEventManagement',
-          component: () => import('../pages/admin/EventManagementView.vue'),
+          component: () => import('../pages/admin/EventView.vue'),
           meta: { title: '행사관리', role: 'admin' },
         },
         {
           path: 'reservations',
           name: 'adminReservations',
-          component: () => import('../pages/admin/ReservationManagementView.vue'),
+          component: () => import('../pages/admin/ReservationView.vue'),
           meta: { title: '예약관리', role: 'admin' },
         },
         {
@@ -49,47 +49,41 @@ const router = createRouter({
           component: () => import('../pages/admin/ComponentDemo.vue'),
           meta: { title: 'Component Demo', role: 'admin' },
         },
-        {
-          path: 'icon-demo',
-          name: 'adminIconDemo',
-          component: () => import('../pages/admin/IconDemo.vue'),
-          meta: { title: 'Icon Demo', role: 'admin' },
-        },
       ],
     },
 
     // 기사 페이지 ===================================
-{
-  path: "/worker/workerMain",
-  component: () => import("../layouts/workerLayout.vue"),
-  children: [
     {
-      path: "",
-      name: "WorkerWork",
-      component: () => import("../pages/worker/WorkerMain.vue"),
+      path: '/worker/workerMain',
+      component: () => import('../layouts/workerLayout.vue'),
+      children: [
+        {
+          path: '',
+          name: 'WorkerWork',
+          component: () => import('../pages/worker/WorkerMain.vue'),
+        },
+        {
+          path: 'calendar',
+          name: 'WorkerCalendar',
+          component: () => import('../pages/worker/Calendar.vue'),
+        },
+        {
+          path: 'edit-profile',
+          name: 'WorkerEditProfile',
+          component: () => import('../pages/worker/EditProfile.vue'),
+        },
+        {
+          path: 'salary-detail',
+          name: 'WorkerSalaryDetail',
+          component: () => import('../pages/worker/SalaryDetail.vue'),
+        },
+        {
+          path: 'settings',
+          name: 'WorkerSettings',
+          component: () => import('../pages/worker/WorkerSettings.vue'),
+        },
+      ],
     },
-    {
-      path: "calendar",
-      name: "WorkerCalendar",
-      component: () => import("../pages/worker/Calendar.vue"),
-    },
-    {
-      path: "edit-profile",
-      name: "WorkerEditProfile",
-      component: () => import("../pages/worker/EditProfile.vue"),
-    },
-    {
-      path: "salary-detail",
-      name: "WorkerSalaryDetail",
-      component: () => import("../pages/worker/SalaryDetail.vue"),
-    },
-    {
-      path: "settings",
-      name: "WorkerSettings",
-      component: () => import("../pages/worker/WorkerSettings.vue"),
-    },
-  ],
-},
     // 404 처리 =============================
     {
       path: '/:pathMatch(.*)*', //모든 정의되지 않은 경로 캐치

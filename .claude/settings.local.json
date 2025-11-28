@@ -9,7 +9,10 @@
       "Bash(git merge:*)",
       "Bash(git commit:*)",
       "Bash(git fetch:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(node update-event-ids.js:*)",
+      "Bash(npm run dev:*)",
+      "Bash(git mv:*)"
     ],
     "deny": [],
     "ask": []

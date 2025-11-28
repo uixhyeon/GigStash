@@ -1,8 +1,8 @@
 <template>
-  <div class="p-6 bg-slate-50 dark:bg-slate-900 h-[100vh - 64px]">
+  <div class="p-6 bg-slate-50 dark:bg-slate-900 scrollbar-hide h-[100vh - 64px]">
     <!-- 통계 카드 -->
-    <section class="mb-12">
-      <h2 class="text-lg font-semibold mb-6 text-slate-800 dark:text-slate-200">예약 통계</h2>
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold mb-4 text-slate-800 dark:text-slate-200">예약 통계</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <!-- Blue Card -->
         <div
@@ -62,12 +62,79 @@
       </div>
     </section>
 
-    <!-- 필터 및 검색 -->
-    <section class="mb-12">
-      <h2 class="text-lg font-semibold mb-6 text-gray-900 dark:text-table-header-text">
+    <!-- 필터 및 검색 ==================================================-->
+    <section>
+      <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
         예약 목록
       </h2>
-      <div
+
+      <div class="flex flex-end justify-between gap-4 mb-4 items-center">
+        <!-- 필터 조건 -->
+        <div class="flex items-center gap-3">
+          <!-- 상태 -->
+          <div class="flex items-center gap-2">
+            <label
+              class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
+            >
+              상태
+            </label>
+            <select
+              v-model="statusFilter"
+              placeholder="상태 선택"
+              class="px-2.5 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+            >
+              <option value="전체">전체</option>
+              <option value="예정">예정</option>
+              <option value="진행 중">진행 중</option>
+              <option value="종료">종료</option>
+              <option value="취소">취소</option>
+            </select>
+          </div>
+
+          <!-- 행사명 -->
+          <label
+            class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
+          >
+            행사명
+          </label>
+          <div
+            class="flex items-center gap-2 w-full px-2.5 py-1.5 text-xs border border-gray-300 bg-white dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+          >
+            <input
+              v-model="searchQuery"
+              type="text"
+              placeholder="검색"
+              class="bg-transparent placeholder-gray-500 dark:placeholder-gray-400 outline-none focus:outline-none focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+            />
+            <i class="fi fi-br-search text-gray-600 dark:text-gray-300"></i>
+          </div>
+
+          <!-- 월 선택 -->
+          <div class="flex items-center gap-1.5">
+            <label
+              class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
+            >
+              월
+            </label>
+            <input
+              v-model="monthFilter"
+              type="month"
+              class="px-2.5 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+            />
+          </div>
+
+          <!-- 필터 초기화 버튼 -->
+          <button
+            @click="resetFilters"
+            class="px-3 py-1.5 bg-transparent hover:bg-primary hover:text-white rounded-lg transition-all text-primary dark:text-primary font-medium text-xs flex-shrink-0 border border-primary"
+            title="필터 초기화"
+          >
+            <i class="fi fi-br-refresh mr-1"></i>초기화
+          </button>
+        </div>
+      </div>
+
+      <!-- <div
         class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm p-6 mb-6"
         style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
       >
@@ -96,7 +163,7 @@
             검색
           </button>
         </div>
-      </div>
+      </div> -->
 
       <!-- 예약 목록 -->
       <div

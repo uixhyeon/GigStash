@@ -107,22 +107,34 @@
                   :key="reservation.id"
                   class="border-t border-slate-200 dark:border-slate-700 h-10"
                 >
-                  <td class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                  <td
+                    class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  >
                     {{ reservation.id }}
                   </td>
-                  <td class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                  <td
+                    class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  >
                     {{ reservation.lockerId }}
                   </td>
-                  <td class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                  <td
+                    class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  >
                     {{ reservation.lockerNumber }}
                   </td>
-                  <td class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                  <td
+                    class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  >
                     {{ formatDateTime(reservation.createdAt) }}
                   </td>
-                  <td class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                  <td
+                    class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  >
                     {{ reservation.customerName }}
                   </td>
-                  <td class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                  <td
+                    class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  >
                     {{ reservation.accessCode }}
                   </td>
                 </tr>
@@ -150,8 +162,22 @@
 
       <!-- 우측: 회원 등급별 현황 + 사용 고객 목록 -->
       <div>
-        <!-- 사용 고객 목록 -->
+        <!-- 회원 등급별 현황 -->
         <section class="mb-8">
+          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+            회원 등급별 현황
+          </h2>
+          <div
+            class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
+            <div class="h-60">
+              <Doughnut :data="membershipChartData" :options="doughnutChartOptions" />
+            </div>
+          </div>
+        </section>
+        <!-- 사용 고객 목록 -->
+        <section>
           <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
             현재 사용 고객
           </h2>
@@ -218,20 +244,6 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-        </section>
-        <!-- 회원 등급별 현황 -->
-        <section>
-          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-            회원 등급별 현황
-          </h2>
-          <div
-            class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6"
-            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-          >
-            <div class="h-64">
-              <Doughnut :data="membershipChartData" :options="doughnutChartOptions" />
             </div>
           </div>
         </section>

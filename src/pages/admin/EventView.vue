@@ -4,11 +4,11 @@
   >
     <!-- 달력과 테이블 병렬 레이아웃 -->
     <div
-      class="grid grid-cols-1 xl:grid-cols-3 gap-6 flex-1 w-full"
-      style="max-width: 1400px; margin-left: auto; margin-right: auto"
+      class="grid grid-cols-1 xl:grid-cols-6 2xl:grid-cols-7 gap-10 flex-1 w-full min-h-0"
+      style="margin-left: auto; margin-right: auto"
     >
       <!-- 달력 섹션 -->
-      <div class="xl:col-span-1">
+      <div class="xl:col-span-2 2xl:col-span-3">
         <EventCalendar
           v-model:current-date="currentDate"
           v-model:selected-date="selectedDate"
@@ -17,7 +17,7 @@
       </div>
 
       <!-- 필터 및 테이블 섹션 -->
-      <div class="xl:col-span-2 flex flex-col">
+      <div class="xl:col-span-4 2xl:col-span-4">
         <!-- 행사 목록 헤더 (제목 + 필터) -->
         <div class="flex justify-between gap-4 mb-4 items-center">
           <h2 class="text-lg font-semibold text-gray-900 dark:text-table-header-text">행사 목록</h2>
@@ -95,7 +95,7 @@
           <div class="overflow-x-auto overflow-y-auto max-h-[700px] scrollbar-hide w-full">
             <table class="w-full text-xs min-w-max">
               <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
-                <tr>
+                <tr class="h-10">
                   <th
                     class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap"
                   >
@@ -107,7 +107,7 @@
                     ID
                   </th>
                   <th
-                    class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
                     행사명
                   </th>
