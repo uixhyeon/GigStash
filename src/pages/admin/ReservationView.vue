@@ -134,6 +134,25 @@
             </select>
           </div>
 
+          <!-- 보관 기간 필터 -->
+          <div class="flex items-center gap-1.5 flex-shrink-0">
+            <label
+              class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
+            >
+              기간
+            </label>
+            <input
+              v-model="startDateFilter"
+              type="date"
+              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+            />
+            <span class="text-gray-500 dark:text-gray-400 text-xs">~</span>
+            <input
+              v-model="endDateFilter"
+              type="date"
+              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+            />
+          </div>
           <!-- 고객 검색 -->
           <div class="flex items-center gap-1.5 flex-shrink-0 min-w-0 flex-1 sm:flex-none">
             <label
@@ -170,26 +189,6 @@
               <option value="B">B 구역</option>
               <option value="C">C 구역</option>
             </select>
-          </div>
-
-          <!-- 보관 기간 필터 -->
-          <div class="flex items-center gap-1.5 flex-shrink-0">
-            <label
-              class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
-            >
-              기간
-            </label>
-            <input
-              v-model="startDateFilter"
-              type="date"
-              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
-            />
-            <span class="text-gray-500 dark:text-gray-400 text-xs">~</span>
-            <input
-              v-model="endDateFilter"
-              type="date"
-              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
-            />
           </div>
 
           <!-- 필터 초기화 버튼 -->
