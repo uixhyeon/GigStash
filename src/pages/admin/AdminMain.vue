@@ -233,19 +233,57 @@
         </section>
       </div>
 
-      <!-- 우측: 회원 등급별 현황 + 사용 고객 목록 -->
+      <!-- 우측: 고객 참여도 지표 + 사용 고객 목록 -->
       <div>
-        <!-- 회원 등급별 현황 -->
+        <!-- 고객 참여도 지표 -->
         <section class="mb-8">
           <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-            회원 등급별 현황
+            고객 참여도
           </h2>
-          <div
-            class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6"
-            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-          >
-            <div class="h-60">
-              <Doughnut :data="membershipChartData" :options="doughnutChartOptions" />
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <!-- 일일 활성 사용자 -->
+            <div
+              class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+              style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+            >
+              <div class="flex justify-between items-start gap-2">
+                <div class="min-w-0 flex-1">
+                  <div class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate">일일 활성 사용자</div>
+                  <div class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-blue-600 dark:text-blue-400">{{ dailyActiveUsers }}</div>
+                  <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">어제 대비 <span class="text-blue-600 dark:text-blue-400 font-medium">+12%</span></div>
+                </div>
+                <i class="fi fi-rr-users text-lg sm:text-xl flex-shrink-0" style="color: #3b82f6"></i>
+              </div>
+            </div>
+
+            <!-- 재방문율 -->
+            <div
+              class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-amber-100 dark:border-amber-900/30"
+              style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+            >
+              <div class="flex justify-between items-start gap-2">
+                <div class="min-w-0 flex-1">
+                  <div class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate">재방문율</div>
+                  <div class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-amber-600 dark:text-amber-400">{{ repeatVisitRate }}%</div>
+                  <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">지난달 대비 <span class="text-amber-600 dark:text-amber-400 font-medium">+5.2%</span></div>
+                </div>
+                <i class="fi fi-rr-rotate-clockwise text-lg sm:text-xl flex-shrink-0" style="color: #d97706"></i>
+              </div>
+            </div>
+
+            <!-- 신규 고객 비율 -->
+            <div
+              class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30 col-span-2 sm:col-span-1"
+              style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+            >
+              <div class="flex justify-between items-start gap-2">
+                <div class="min-w-0 flex-1">
+                  <div class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate">신규 고객</div>
+                  <div class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-green-600 dark:text-green-400">{{ newCustomerCount }}</div>
+                  <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">이번달 신규 ({{ newCustomerPercentage }}%)</div>
+                </div>
+                <i class="fi fi-rr-user-add text-lg sm:text-xl flex-shrink-0" style="color: #16a34a"></i>
+              </div>
             </div>
           </div>
         </section>
@@ -327,13 +365,12 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import { Bar, Doughnut } from 'vue-chartjs'
+import { Bar } from 'vue-chartjs'
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   BarElement,
-  ArcElement,
   Title,
   Tooltip,
   Legend,
@@ -345,7 +382,7 @@ import reservationsData from '@/data/reservations.json'
 import customersData from '@/data/customers.json'
 
 // Chart.js 등록
-ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend)
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 // 로딩 상태
 const loading = ref(true)
@@ -450,47 +487,42 @@ const chartOptions = {
   },
 }
 
-// 회원 등급별 차트 데이터
-const membershipChartData = computed(() => {
-  const membershipCounts = {
-    platinum: 0,
-    gold: 0,
-    silver: 0,
-    bronze: 0,
-  }
-
-  customers.value.forEach((customer) => {
-    if (membershipCounts[customer.membershipLevel] !== undefined) {
-      membershipCounts[customer.membershipLevel]++
-    }
-  })
-
-  return {
-    labels: ['플래티넘', '골드', '실버', '브론즈'],
-    datasets: [
-      {
-        data: [
-          membershipCounts.platinum,
-          membershipCounts.gold,
-          membershipCounts.silver,
-          membershipCounts.bronze,
-        ],
-        backgroundColor: ['#000000', '#ffd700', '#c0c0c0', '#cd7f32'],
-      },
-    ],
-  }
+// 고객 참여도 지표
+const dailyActiveUsers = computed(() => {
+  // 활성 예약 건수를 일일 활성 사용자 수로 계산
+  const activeCount = reservations.value.filter((r) => r.status === 'active').length
+  return Math.max(activeCount, 0)
 })
 
-// 도넛 차트 옵션
-const doughnutChartOptions = {
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      position: 'bottom',
-    },
-  },
-}
+const repeatVisitRate = computed(() => {
+  if (customers.value.length === 0) return 0
+  // 2회 이상 예약한 고객 비율 계산
+  const customerReservationCounts = {}
+  reservations.value.forEach((res) => {
+    customerReservationCounts[res.customerId] = (customerReservationCounts[res.customerId] || 0) + 1
+  })
+
+  const repeatCustomers = Object.values(customerReservationCounts).filter((count) => count >= 2).length
+  const rate = customers.value.length > 0 ? (repeatCustomers / customers.value.length) * 100 : 0
+  return Math.round(rate)
+})
+
+const newCustomerCount = computed(() => {
+  // 최근 30일 내 가입한 고객 수
+  const thirtyDaysAgo = new Date()
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
+
+  return customers.value.filter((customer) => {
+    const createdDate = new Date(customer.createdAt || 0)
+    return createdDate >= thirtyDaysAgo
+  }).length
+})
+
+const newCustomerPercentage = computed(() => {
+  if (customers.value.length === 0) return 0
+  const rate = (newCustomerCount.value / customers.value.length) * 100
+  return Math.round(rate)
+})
 
 // 유틸리티 함수
 const getReservationStatus = (status) => {
