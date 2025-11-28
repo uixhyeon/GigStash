@@ -327,7 +327,7 @@
             </h2>
             <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
               <div class="flex items-center justify-center gap-4">
-                <div class="w-32 h-32">
+                <div class="w-40 h-40">
                   <canvas ref="sizeRatioChartRef"></canvas>
                 </div>
                 <div class="space-y-2">
@@ -356,13 +356,13 @@
         <!-- 인사이트 -->
         <section>
           <div class="flex justify-between gap-4 mb-4 items-center">
-            <h2
+            <!-- <h2
               class="items-center text-lg font-semibold text-gray-900 dark:text-table-header-text"
             >
               인사이트
-            </h2>
+            </h2> -->
             <!-- 액션 버튼 (인사이트 카드 아래) -->
-            <div class="flex items-center gap-2 mt-3">
+            <!-- <div class="flex items-center gap-2 mt-3">
               <button
                 class="px-3 py-1.5 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg shadow-sm transition-all flex items-center gap-1.5 text-xs"
               >
@@ -376,10 +376,10 @@
                 <i class="fi fi-rr-envelope text-xs"></i>
                 이메일
               </button>
-            </div>
+            </div> -->
           </div>
 
-          <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
+          <!-- <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
             <div class="space-y-2">
               <div
                 v-for="(insight, index) in insights"
@@ -395,12 +395,12 @@
                 </p>
               </div>
             </div>
-          </div>
+          </div> -->
         </section>
 
         <!-- 피크타임 분석 -->
         <section>
-          <div class="flex justify-between items-center mb-2">
+          <div class="flex justify-between items-center mb-4">
             <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
               피크타임 분석
             </h2>
@@ -414,6 +414,7 @@
               </option>
             </select>
           </div>
+
           <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
             <div class="h-40">
               <canvas ref="peakTimeChartRef"></canvas>
