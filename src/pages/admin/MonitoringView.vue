@@ -327,7 +327,7 @@
             </h2>
             <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
               <div class="flex items-center justify-center gap-4">
-                <div class="w-32 h-40">
+                <div class="w-40 h-40">
                   <canvas ref="sizeRatioChartRef"></canvas>
                 </div>
                 <div class="space-y-2">
@@ -400,8 +400,10 @@
 
         <!-- 피크타임 분석 -->
         <section class="gap-5 mb-6">
-          <div class="flex justify-between items-center mb-2">
-            <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+          <div class="flex justify-between items-center mb-4">
+            <h2
+              class="text-lg items-center font-semibold text-gray-900 dark:text-table-header-text"
+            >
               피크타임 분석
             </h2>
             <select
@@ -423,8 +425,8 @@
         </section>
 
         <!-- 지역별 배송 -->
-        <section>
-          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+        <section class="mb-4">
+          <h2 class="text-lg font-semibold text-gray-900 dark:text-table-header-text">
             지역별 배송
           </h2>
           <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 overflow-x-auto">
