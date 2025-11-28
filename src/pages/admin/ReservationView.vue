@@ -19,7 +19,7 @@
               <div
                 class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-blue-600 dark:text-blue-400"
               >
-                {{ stats.all }}
+                {{ stats.all }} 건
               </div>
             </div>
             <i
@@ -44,7 +44,7 @@
               <div
                 class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-blue-600 dark:text-blue-400"
               >
-                {{ stats.active }}
+                {{ stats.active }} 건
               </div>
             </div>
             <i
@@ -69,7 +69,7 @@
               <div
                 class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-amber-600 dark:text-amber-400"
               >
-                {{ stats.waiting }}
+                {{ stats.waiting }} 건
               </div>
             </div>
             <i
@@ -94,7 +94,7 @@
               <div
                 class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-green-600 dark:text-green-400"
               >
-                {{ stats.completed }}
+                {{ stats.completed }} 건
               </div>
             </div>
             <i
@@ -246,7 +246,7 @@
                 <th
                   class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap"
                 >
-                  예약번호
+                  예약번호 (ID)
                 </th>
                 <th
                   class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
@@ -277,54 +277,44 @@
             </thead>
             <tbody>
               <tr
-                v-for="i in 10"
-                :key="i"
+                v-for="reservation in filteredReservations"
+                :key="reservation.id"
                 class="border-t border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors group h-10"
               >
                 <td
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
-                  RES-{{ String(i).padStart(4, '0') }}
+                  {{ reservation.id }}
                 </td>
                 <td
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
-                  사용자 {{ i }}
+                  {{ getCustomerInfo(reservation.customerId).name }}
                 </td>
                 <td
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
-                  사물함 #{{ i + 10 }}
+                  {{ reservation.lockerNumber }}
                 </td>
                 <td
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
-                  11/{{ 20 + i }} - 11/{{ 25 + i }}
+                  {{ formatDate(reservation.startTime) }} ~ {{ formatDate(reservation.endTime) }}
                 </td>
                 <td class="px-2 py-1 text-center">
                   <span
                     :class="[
                       'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-all whitespace-nowrap',
-                      i % 3 === 0
-                        ? 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400'
-                        : i % 3 === 1
-                          ? 'bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-400'
-                          : 'bg-blue-100 text-primary dark:bg-blue-500/20 dark:text-blue-400',
+                      getStatusClass(reservation.status),
                     ]"
                   >
                     <span
                       :class="[
                         'w-1.5 h-1.5 rounded-full flex-shrink-0',
-                        i % 3 === 0
-                          ? 'bg-gray-600 dark:bg-gray-400'
-                          : i % 3 === 1
-                            ? 'bg-warning dark:bg-amber-400'
-                            : 'bg-primary dark:bg-blue-400',
+                        getStatusDotColor(reservation.status),
                       ]"
                     ></span>
-                    <span class="leading-tight">{{
-                      i % 3 === 0 ? '완료' : i % 3 === 1 ? '대기' : '활성'
-                    }}</span>
+                    <span class="leading-tight">{{ statusMap[reservation.status] }}</span>
                   </span>
                 </td>
                 <td class="px-2 py-1 text-center text-xs whitespace-nowrap">
