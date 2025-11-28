@@ -213,11 +213,10 @@
             <!-- 이용률 카드 -->
             <div
               class="text-[#333] rounded-2xl shadow-sm flex-1"
-               style="
+              style="
                 padding: 12px;
                 background: white;
                 border: solid 1px;
-              "
               "
             >
               <div class="text-center mb-1">
