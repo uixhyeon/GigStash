@@ -1,14 +1,14 @@
 <template>
-  <div class="p-8 bg-slate-50 dark:bg-slate-900 min-h-screen">
+  <div class="p-6 bg-slate-50 dark:bg-slate-900 min-h-screen">
     <!-- <h1 class="text-3xl font-bold mb-8" style="color: #1e293b">Main Home</h1> -->
 
     <!-- 통계 카드 -->
     <section class="mb-12">
-      <h2 class="text-lg font-semibold mb-6 text-gray-900 dark:text-table-header-text">
+      <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
         당일 보관함 현황
       </h2>
 
-      <div v-if="loading" class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm">
+      <div v-if="loading" class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
         통계 로딩 중...
       </div>
       <div v-else class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -48,55 +48,79 @@
       <div>
         <!-- 최근 예약 테이블 -->
         <section class="mb-8">
-          <h2 class="text-lg font-semibold mb-6 text-gray-900 dark:text-table-header-text">
+          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
             최근 예약
           </h2>
           <div
             v-if="loading"
             class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm text-slate-600 dark:text-slate-400"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);"
           >
             예약 로딩 중...
           </div>
-          <table
-            v-else
-            class="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden text-sm"
-          >
-            <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
-              <tr>
-                <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">접수시간</th>
-                <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">이름</th>
-                <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">보관함</th>
-                <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">상태</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                v-for="reservation in recentReservations.slice(0, 5)"
-                :key="reservation.id"
-                class="border-t border-slate-200 dark:border-slate-700"
-              >
-                <td class="px-4 py-3 text-slate-900 dark:text-slate-100">
-                  {{ formatDateTime(reservation.createdAt) }}
-                </td>
-                <td class="px-4 py-3 text-slate-900 dark:text-slate-100">
-                  {{ reservation.customerName }}
-                </td>
-                <td class="px-4 py-3 text-slate-900 dark:text-slate-100">
-                  {{ reservation.lockerNumber }}
-                </td>
-                <td class="px-4 py-3">
-                  <StatusChip :status="getReservationStatus(reservation.status)" />
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div v-if="!loading" class="max-w-full overflow-x-auto scrollbar-hide">
+            <table
+              class="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden text-xs min-w-max"
+              style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);"
+            >
+              <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
+                <tr>
+                  <th
+                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  >
+                    접수시간
+                  </th>
+                  <th
+                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  >
+                    이름
+                  </th>
+                  <th
+                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  >
+                    보관함
+                  </th>
+                  <th
+                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  >
+                    상태
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  v-for="reservation in recentReservations.slice(0, 5)"
+                  :key="reservation.id"
+                  class="border-t border-slate-200 dark:border-slate-700 h-10"
+                >
+                  <td class="px-2 py-1 text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                    {{ formatDateTime(reservation.createdAt) }}
+                  </td>
+                  <td class="px-2 py-1 text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                    {{ reservation.customerName }}
+                  </td>
+                  <td class="px-2 py-1 text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                    {{ reservation.lockerNumber }}
+                  </td>
+                  <td class="px-2 py-1 whitespace-nowrap">
+                    <StatusChip :status="getReservationStatus(reservation.status)" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </section>
 
         <!-- 차트 영역 -->
-        <section class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
-          <h2 class="text-lg font-semibold mb-4" style="color: #1e293b">보관함 상태 분포</h2>
-          <div class="h-64">
-            <Bar :data="chartData" :options="chartOptions" />
+        <section class="mb-8">
+          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+            보관함 상태 분포
+          </h2>
+
+          <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+            <div class="h-64">
+              <Bar :data="chartData" :options="chartOptions" />
+            </div>
           </div>
         </section>
       </div>
@@ -105,10 +129,10 @@
       <div>
         <!-- 회원 등급별 현황 -->
         <section class="mb-8">
-          <h2 class="text-lg font-semibold mb-6 text-gray-900 dark:text-table-header-text">
+          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
             회원 등급별 현황
           </h2>
-          <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6">
+          <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
             <div class="h-64">
               <Doughnut :data="membershipChartData" :options="doughnutChartOptions" />
             </div>
@@ -117,51 +141,74 @@
 
         <!-- 사용 고객 목록 -->
         <section>
-          <h2 class="text-lg font-semibold mb-6 text-gray-900 dark:text-table-header-text">
+          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
             현재 사용 고객
           </h2>
           <div
             v-if="loading"
             class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm text-slate-600 dark:text-slate-400"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);"
           >
             고객 정보 로딩 중...
           </div>
-          <div v-else class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden">
-            <table class="w-full text-sm">
-              <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
-                <tr>
-                  <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">고객명</th>
-                  <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">보관함</th>
-                  <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">등급</th>
-                  <th class="px-4 py-3 text-left font-semibold" style="color: #1e293b">전화번호</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr
-                  v-for="customer in activeCustomers.slice(0, 6)"
-                  :key="customer.id"
-                  class="border-t border-slate-200 dark:border-slate-700"
-                >
-                  <td class="px-4 py-3 text-slate-900 dark:text-slate-100">
-                    {{ customer.name }}
-                  </td>
-                  <td class="px-4 py-3 text-slate-900 dark:text-slate-100">
-                    {{ customer.lockerNumber }}
-                  </td>
-                  <td class="px-4 py-3">
-                    <span
-                      class="px-2 py-1 rounded-full text-xs font-medium"
-                      :class="getMembershipClass(customer.membershipLevel)"
+          <div
+            v-else
+            class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden max-w-full"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);"
+          >
+            <div class="max-w-full overflow-x-auto scrollbar-hide">
+              <table class="w-full text-xs min-w-max">
+                <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
+                  <tr>
+                    <th
+                      class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                     >
-                      {{ getMembershipLabel(customer.membershipLevel) }}
-                    </span>
-                  </td>
-                  <td class="px-4 py-3 text-slate-900 dark:text-slate-100">
-                    {{ customer.phone }}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                      고객명
+                    </th>
+                    <th
+                      class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    >
+                      보관함
+                    </th>
+                    <th
+                      class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    >
+                      등급
+                    </th>
+                    <th
+                      class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    >
+                      전화번호
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    v-for="customer in activeCustomers.slice(0, 6)"
+                    :key="customer.id"
+                    class="border-t border-slate-200 dark:border-slate-700 h-10"
+                  >
+                    <td class="px-2 py-1 text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                      {{ customer.name }}
+                    </td>
+                    <td class="px-2 py-1 text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                      {{ customer.lockerNumber }}
+                    </td>
+                    <td class="px-2 py-1 whitespace-nowrap">
+                      <span
+                        class="px-2 py-0.5 rounded-full text-xs font-medium inline-block"
+                        :class="getMembershipClass(customer.membershipLevel)"
+                      >
+                        {{ getMembershipLabel(customer.membershipLevel) }}
+                      </span>
+                    </td>
+                    <td class="px-2 py-1 text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                      {{ customer.phone }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
       </div>

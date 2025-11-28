@@ -1,5 +1,5 @@
 <template>
-  <div class="p-8 bg-slate-50 dark:bg-slate-900 min-h-screen">
+  <div class="p-6 bg-slate-50 dark:bg-slate-900 h-[100vh - 64px]">
     <!-- 통계 카드 -->
     <section class="mb-12">
       <h2 class="text-lg font-semibold mb-6 text-slate-800 dark:text-slate-200">예약 통계</h2>
@@ -7,6 +7,7 @@
         <!-- Blue Card -->
         <div
           class="p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
         >
           <div class="flex justify-between items-start mb-4">
             <div>
@@ -20,6 +21,7 @@
         <!-- Dark Card -->
         <div
           class="p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700"
+          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
         >
           <div class="flex justify-between items-start mb-4">
             <div>
@@ -33,6 +35,7 @@
         <!-- Blue Card -->
         <div
           class="p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
         >
           <div class="flex justify-between items-start mb-4">
             <div>
@@ -46,6 +49,7 @@
         <!-- Dark Card -->
         <div
           class="p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700"
+          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
         >
           <div class="flex justify-between items-start mb-4">
             <div>
@@ -60,8 +64,13 @@
 
     <!-- 필터 및 검색 -->
     <section class="mb-12">
-      <h2 class="text-lg font-semibold mb-6 text-gray-900 dark:text-table-header-text">예약 목록</h2>
-      <div class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm p-6 mb-6">
+      <h2 class="text-lg font-semibold mb-6 text-gray-900 dark:text-table-header-text">
+        예약 목록
+      </h2>
+      <div
+        class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm p-6 mb-6"
+        style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+      >
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
           <input
             type="text"
@@ -90,38 +99,41 @@
       </div>
 
       <!-- 예약 목록 -->
-      <div class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden">
-        <div class="overflow-y-auto max-h-[700px] scrollbar-hide">
-          <table class="w-full text-sm">
+      <div
+        class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden max-w-full"
+        style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+      >
+        <div class="overflow-x-auto overflow-y-auto max-h-[700px] scrollbar-hide w-full">
+          <table class="w-full text-xs min-w-max">
             <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
               <tr>
                 <th
-                  class="px-4 py-3 text-left font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl"
+                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap"
                 >
                   예약번호
                 </th>
                 <th
-                  class="px-4 py-3 text-left font-semibold text-table-header-text dark:text-table-header-text-dark"
+                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                 >
                   사용자명
                 </th>
                 <th
-                  class="px-4 py-3 text-left font-semibold text-table-header-text dark:text-table-header-text-dark"
+                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                 >
                   사물함
                 </th>
                 <th
-                  class="px-4 py-3 text-left font-semibold text-table-header-text dark:text-table-header-text-dark"
+                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                 >
                   기간
                 </th>
                 <th
-                  class="px-4 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark"
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                 >
                   상태
                 </th>
                 <th
-                  class="px-4 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tr-2xl"
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tr-2xl whitespace-nowrap"
                 >
                   액션
                 </th>
@@ -131,24 +143,32 @@
               <tr
                 v-for="i in 10"
                 :key="i"
-                class="border-t border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors group"
+                class="border-t border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors group h-10"
               >
-                <td class="px-4 py-3 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900">
+                <td
+                  class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
+                >
                   RES-{{ String(i).padStart(4, '0') }}
                 </td>
-                <td class="px-4 py-3 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900">
+                <td
+                  class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
+                >
                   사용자 {{ i }}
                 </td>
-                <td class="px-4 py-3 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900">
+                <td
+                  class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
+                >
                   사물함 #{{ i + 10 }}
                 </td>
-                <td class="px-4 py-3 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900">
+                <td
+                  class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
+                >
                   11/{{ 20 + i }} - 11/{{ 25 + i }}
                 </td>
-                <td class="px-4 py-3 text-center">
+                <td class="px-2 py-1 text-center">
                   <span
                     :class="[
-                      'inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium transition-all',
+                      'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium transition-all whitespace-nowrap',
                       i % 3 === 0
                         ? 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400'
                         : i % 3 === 1
@@ -171,10 +191,8 @@
                     }}</span>
                   </span>
                 </td>
-                <td class="px-4 py-3 text-center text-sm">
-                  <button
-                    class="text-primary dark:text-blue-400 hover:underline mr-4 font-medium"
-                  >
+                <td class="px-2 py-1 text-center text-xs whitespace-nowrap">
+                  <button class="text-primary dark:text-blue-400 hover:underline mr-2 font-medium">
                     보기
                   </button>
                   <button class="text-error dark:text-red-400 hover:underline font-medium">
@@ -188,31 +206,6 @@
       </div>
 
       <!-- 페이지네이션 -->
-      <div class="flex justify-center gap-2 mt-6">
-        <button
-          class="px-3 py-2 border border-gray-300 dark:border-dark-border rounded-lg text-gray-900 dark:text-dark-text-primary hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary transition-colors"
-        >
-          ◀
-        </button>
-        <button class="px-3 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
-          1
-        </button>
-        <button
-          class="px-3 py-2 border border-gray-300 dark:border-dark-border rounded-lg text-gray-900 dark:text-dark-text-primary hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary transition-colors"
-        >
-          2
-        </button>
-        <button
-          class="px-3 py-2 border border-gray-300 dark:border-dark-border rounded-lg text-gray-900 dark:text-dark-text-primary hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary transition-colors"
-        >
-          3
-        </button>
-        <button
-          class="px-3 py-2 border border-gray-300 dark:border-dark-border rounded-lg text-gray-900 dark:text-dark-text-primary hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary transition-colors"
-        >
-          ▶
-        </button>
-      </div>
     </section>
   </div>
 </template>

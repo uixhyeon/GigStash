@@ -1,11 +1,14 @@
 <template>
   <div
-    class="bg-background dark:bg-dark-bg min-h-screen overflow-auto scrollbar-hide flex flex-col p-6"
+    class="p-6 bg-background dark:bg-dark-bg h-[100vh - 64px] scrollbar-hide flex flex-col justify-start"
   >
     <!-- 달력과 테이블 병렬 레이아웃 -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 min-h-0">
+    <div
+      class="grid grid-cols-1 xl:grid-cols-3 gap-6 flex-1 w-full"
+      style="max-width: 1400px; margin-left: auto; margin-right: auto"
+    >
       <!-- 달력 섹션 -->
-      <div class="lg:col-span-1">
+      <div class="xl:col-span-1">
         <EventCalendar
           v-model:current-date="currentDate"
           v-model:selected-date="selectedDate"
@@ -14,7 +17,7 @@
       </div>
 
       <!-- 필터 및 테이블 섹션 -->
-      <div class="lg:col-span-2 flex flex-col">
+      <div class="xl:col-span-2 flex flex-col">
         <!-- 행사 목록 헤더 (제목 + 필터) -->
         <div class="flex justify-between gap-4 mb-4 items-center">
           <h2 class="text-lg font-semibold text-gray-900 dark:text-table-header-text">행사 목록</h2>
@@ -85,28 +88,31 @@
         </div>
 
         <!-- 행사 list =============================================================-->
-        <div class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden">
-          <div class="overflow-y-auto max-h-[700px] scrollbar-hide">
-            <table class="w-full text-sm">
+        <div
+          class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden max-w-full"
+          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+        >
+          <div class="overflow-x-auto overflow-y-auto max-h-[700px] scrollbar-hide w-full">
+            <table class="w-full text-xs min-w-max">
               <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
                 <tr>
                   <th
-                    class="px-4 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl"
+                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap"
                   >
                     No
                   </th>
                   <th
-                    class="px-4 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark"
+                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
                     ID
                   </th>
                   <th
-                    class="px-4 py-3 text-left font-semibold text-table-header-text dark:text-table-header-text-dark"
+                    class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
                     행사명
                   </th>
                   <th
-                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark"
+                    class="px-2 py-2 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                     @click="toggleSort('startDate')"
                   >
                     <div class="flex items-center justify-center gap-1">
@@ -125,12 +131,12 @@
                     </div>
                   </th>
                   <th
-                    class="px-4 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark"
+                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
                     상태
                   </th>
                   <th
-                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark"
+                    class="px-2 py-2 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                     @click="toggleSort('busCount')"
                   >
                     <div class="flex items-center justify-center gap-1">
@@ -148,7 +154,7 @@
                     </div>
                   </th>
                   <th
-                    class="px-4 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark rounded-tr-2xl"
+                    class="px-2 py-2 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark rounded-tr-2xl whitespace-nowrap"
                     @click="toggleSort('reservations')"
                   >
                     <div class="flex items-center justify-center gap-1">
@@ -183,7 +189,7 @@
                   v-for="(event, index) in filteredEvents"
                   :key="event.id"
                   :class="[
-                    'border-t border-gray-200 dark:border-dark-border cursor-pointer transition-colors group',
+                    'border-t border-gray-200 dark:border-dark-border cursor-pointer transition-colors group h-10',
                     event.status === '취소'
                       ? 'bg-amber-50 dark:bg-amber-900/10 hover:bg-amber-100 dark:hover:bg-amber-900/20'
                       : 'hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50',
@@ -191,38 +197,38 @@
                   @dblclick="openEventModal(event)"
                 >
                   <td
-                    class="px-4 py-2 text-center text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900"
+                    class="px-2 py-1 text-center text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                   >
                     {{ index + 1 }}
                   </td>
                   <td
-                    class="px-4 py-2 text-center text-xs font-mono text-gray-700 dark:text-dark-text-secondary group-hover:dark:text-gray-700"
+                    class="px-2 py-1 text-center font-mono text-gray-700 dark:text-dark-text-secondary group-hover:dark:text-gray-700 whitespace-nowrap"
                   >
                     {{ event.id }}
                   </td>
                   <td
                     :class="[
-                      'px-4 py-2 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900',
+                      'px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap',
                       event.status === '취소' ? 'line-through' : '',
                     ]"
                   >
                     {{ event.name }}
                   </td>
                   <td
-                    class="px-4 py-2 text-center text-xs text-gray-700 dark:text-dark-text-secondary group-hover:dark:text-gray-700"
+                    class="px-2 py-1 text-center text-gray-700 dark:text-dark-text-secondary group-hover:dark:text-gray-700 whitespace-nowrap"
                   >
                     {{ event.startDate }}
                   </td>
-                  <td class="px-4 py-2 text-center">
+                  <td class="px-2 py-1 text-center whitespace-nowrap">
                     <StatusChip :status="event.status" />
                   </td>
                   <td
-                    class="px-4 py-2 text-center text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900"
+                    class="px-2 py-1 text-center text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                   >
                     {{ event.busCount }}대
                   </td>
                   <td
-                    class="px-4 py-2 text-center text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900"
+                    class="px-2 py-1 text-center text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                   >
                     {{ event.reservations }}건
                   </td>

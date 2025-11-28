@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-200">
+  <div class="flex h-screen bg-gray-50 dark:bg-slate-900 transition-colors duration-200">
     <!-- 오버레이 (모바일용) -->
     <div
       v-if="isMobileMenuOpen"
@@ -37,18 +37,15 @@
           >
             GigStash
           </h2>
+          <div
+            v-else
+            key="collapsed"
+            class="text-xs text-center flex-1 hidden lg:flex flex-col items-center justify-center text-slate-900 dark:text-slate-100"
+          >
+            <span class="font-bold leading-none">GS</span>
+            <span class="font-black text-sm leading-none">It!</span>
+          </div>
         </transition>
-        <!-- 데스크탑 사이드바 토글 버튼 -->
-        <button
-          @click="toggleSidebarDesktop"
-          class="hidden lg:flex items-center justify-center w-8 h-8 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-600 dark:text-gray-400"
-          :title="collapseButtonTitle"
-        >
-          <!-- 접기 아이콘 (펼쳐진 상태) - 왼쪽 화살표 -->
-          <i v-if="!isSidebarCollapsed" class="fi fi-br-chevron-left"></i>
-          <!-- 펴기 아이콘 (접힌 상태) - 햄버거바 -->
-          <i v-else class="fi fi-br-menu-burger"></i>
-        </button>
       </div>
 
       <!-- 네비게이션 ================================================== -->
@@ -63,17 +60,18 @@
             'flex items-center gap-3 px-3 py-2.5 mx-2 my-0.5 rounded-lg',
             'text-gray-700 dark:text-slate-300 font-medium transition-all duration-200 whitespace-nowrap',
             'hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 dark:hover:from-slate-700 dark:hover:to-slate-600',
-            'hover:text-blue-600 dark:hover:text-cyan-400 hover:shadow-md',
+            'hover:text-blue-700 dark:hover:text-white hover:shadow-md',
             isSidebarCollapsed ? 'lg:justify-center lg:px-2' : '',
           ]"
-          active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
+          active-class="!bg-blue-600 !text-white dark:!bg-blue-600 !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
         >
           <span class="text-xl flex-shrink-0">
             <component v-if="typeof item.icon !== 'string'" :is="item.icon" class="w-5 h-5 mr-3" />
             <i v-else :class="[item.icon, `mr-3`]"></i>
           </span>
+          <span class="flex-1 block lg:hidden">{{ item.label }}</span>
           <transition name="fade">
-            <span v-if="!isSidebarCollapsed" class="flex-1 block">{{ item.label }}</span>
+            <span v-if="!isSidebarCollapsed" class="hidden lg:block flex-1">{{ item.label }}</span>
           </transition>
         </RouterLink>
 
@@ -89,15 +87,16 @@
             'flex items-center gap-3 px-3 py-2.5 mx-2 my-0.5 rounded-lg',
             'text-gray-700 dark:text-slate-300 font-medium transition-all duration-200 whitespace-nowrap',
             'hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 dark:hover:from-slate-700 dark:hover:to-slate-600',
-            'hover:text-blue-600 dark:hover:text-cyan-400 hover:shadow-md',
+            'hover:text-blue-700 dark:hover:text-white hover:shadow-md',
             isSidebarCollapsed ? 'lg:justify-center lg:px-2' : '',
           ]"
-          active-class="!bg-primary !text-gray-g  dark:!blue-600 dark:!table-header-text !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
+          active-class="!bg-blue-600 !text-white dark:!bg-blue-600 !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
         >
           <!-- active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30" -->
           <span class="text-xl flex-shrink-0"><i :class="[item.icon, `mr-3`]"></i></span>
+          <span class="flex-1 block lg:hidden">{{ item.label }}</span>
           <transition name="fade">
-            <span v-if="!isSidebarCollapsed" class="flex-1 block">{{ item.label }}</span>
+            <span v-if="!isSidebarCollapsed" class="hidden lg:block flex-1">{{ item.label }}</span>
           </transition>
         </RouterLink>
       </nav>
@@ -112,22 +111,25 @@
     >
       <!-- 상단 헤더 -->
       <header
-        class="sticky top-0 z-20 bg-gray-50 dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 px-6 h-16 flex items-center shadow-sm"
+        class="sticky top-0 z-20 bg-gray-50 dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 px-6 h-16 flex items-center shadow-sm flex-shrink-0"
       >
         <div class="flex justify-between items-center w-full">
-          <!-- 모바일 햄버거 버튼 -->
-          <button
-            @click="toggleSidebar"
-            class="lg:hidden w-12 h-12 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-slate-700 rounded-lg transition-all active:bg-gray-300 dark:active:bg-slate-600"
-            title="사이드바 토글"
-          >
-            <i class="fi fi-br-bars text-2xl text-gray-600 dark:text-gray-300"></i>
-          </button>
+          <!-- 왼쪽: 토글 버튼 + 페이지 타이틀 -->
+          <div class="flex items-center gap-4">
+            <!-- 사이드바 토글 버튼 (모바일 + 데스크톱) -->
+            <button
+              @click="toggleSidebar"
+              class="w-10 h-10 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-slate-700 rounded-lg transition-all active:bg-gray-300 dark:active:bg-slate-600"
+              title="사이드바 토글"
+            >
+              <i class="fi fi-rr-sidebar-flip text-xl text-gray-600 dark:text-gray-300"></i>
+            </button>
 
-          <!-- 페이지 타이틀 -->
-          <h1 class="text-lg" style="color: #1e293b">
-            {{ pageTitle }}
-          </h1>
+            <!-- 페이지 타이틀 -->
+            <h1 class="text-lg" style="color: #1e293b">
+              {{ pageTitle }}
+            </h1>
+          </div>
 
           <!-- 헤더 오른쪽: 서치 + 다크모드 + 유저 프로필 -->
           <div class="flex items-center gap-4">
@@ -210,7 +212,7 @@
       </header>
 
       <!-- 페이지 콘텐츠 -->
-      <main class="flex-1 p-6 overflow-y-auto">
+      <main class="flex-1 p-6 overflow-y-auto overflow-x-auto min-w-0">
         <RouterView />
       </main>
     </div>
@@ -244,13 +246,13 @@ const menuItems = [
   {
     name: 'adminReservations',
     path: '/admin/reservations',
-    icon: 'fi fi-br-clipboard-list',
+    icon: 'fi fi-rr-clipboard-list',
     label: '예약관리',
   },
   {
     name: 'adminEventManagement',
     path: '/admin/event-management',
-    icon: 'fi fi-br-calendar',
+    icon: 'fi fi-rr-calendar',
     label: '행사관리',
   },
   {
@@ -261,7 +263,7 @@ const menuItems = [
   },
 ]
 const secondaryMenuItems = [
-  { name: 'adminComponentDemo', path: '/admin/demo', icon: 'fi fi-br-settings', label: '설정' },
+  { name: 'adminComponentDemo', path: '/admin/demo', icon: 'fi fi-rr-settings', label: '설정' },
 ]
 
 // menuItems과 secondaryMenuItems을 통합하여 route.name -> label 매핑
