@@ -112,11 +112,11 @@
         예약 목록
       </h2>
 
-      <div class="flex flex-end justify-between gap-4 mb-4 items-center">
+      <div class="flex flex-col gap-4 mb-6">
         <!-- 필터 조건 -->
-        <div class="flex items-center gap-3">
-          <!-- 상태 -->
-          <div class="flex items-center gap-2">
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+          <!-- 상태 필터 -->
+          <div class="flex items-center gap-1.5 flex-shrink-0">
             <label
               class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
             >
@@ -124,8 +124,7 @@
             </label>
             <select
               v-model="statusFilter"
-              placeholder="상태 선택"
-              class="px-2.5 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
             >
               <option value="전체">전체</option>
               <option value="활성">활성</option>
@@ -135,42 +134,68 @@
             </select>
           </div>
 
-          <!-- 행사명 -->
-          <label
-            class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
-          >
-            사용자 명
-          </label>
-          <div
-            class="flex items-center gap-2 w-full px-2.5 py-1.5 text-xs border border-gray-300 bg-white dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
-          >
-            <input
-              v-model="searchQuery"
-              type="text"
-              placeholder="검색"
-              class="bg-transparent placeholder-gray-500 dark:placeholder-gray-400 outline-none focus:outline-none focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
-            />
-            <i class="fi fi-br-search text-gray-600 dark:text-gray-300"></i>
-          </div>
-
-          <!-- 월 선택 -->
-          <div class="flex items-center gap-1.5">
+          <!-- 고객 검색 -->
+          <div class="flex items-center gap-1.5 flex-shrink-0 min-w-0 flex-1 sm:flex-none">
             <label
               class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
             >
-              월
+              고객
+            </label>
+            <div
+              class="flex items-center gap-2 px-2 py-1.5 text-xs border border-gray-300 bg-white dark:border-dark-border rounded-lg focus-within:ring-2 focus-within:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+            >
+              <input
+                v-model="searchQuery"
+                type="text"
+                placeholder="이름, ID, 핸드폰"
+                class="bg-transparent placeholder-gray-500 dark:placeholder-gray-400 outline-none focus:outline-none dark:bg-dark-bg-tertiary dark:text-dark-text-primary text-xs w-24 sm:w-32"
+              />
+              <i class="fi fi-br-search text-gray-600 dark:text-gray-300 flex-shrink-0"></i>
+            </div>
+          </div>
+
+          <!-- 사물함 필터 -->
+          <div class="flex items-center gap-1.5 flex-shrink-0">
+            <label
+              class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
+            >
+              사물함
+            </label>
+            <select
+              v-model="lockerFilter"
+              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+            >
+              <option value="">전체</option>
+              <option value="A">A 구역</option>
+              <option value="B">B 구역</option>
+              <option value="C">C 구역</option>
+            </select>
+          </div>
+
+          <!-- 보관 기간 필터 -->
+          <div class="flex items-center gap-1.5 flex-shrink-0">
+            <label
+              class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
+            >
+              기간
             </label>
             <input
-              v-model="monthFilter"
-              type="month"
-              class="px-2.5 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+              v-model="startDateFilter"
+              type="date"
+              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+            />
+            <span class="text-gray-500 dark:text-gray-400 text-xs">~</span>
+            <input
+              v-model="endDateFilter"
+              type="date"
+              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
             />
           </div>
 
           <!-- 필터 초기화 버튼 -->
           <button
             @click="resetFilters"
-            class="px-3 py-1.5 bg-transparent hover:bg-primary hover:text-white rounded-lg transition-all text-primary dark:text-primary font-medium text-xs flex-shrink-0 border border-primary"
+            class="px-3 py-1.5 bg-transparent hover:bg-primary hover:text-white rounded-lg transition-all text-primary dark:text-primary font-medium text-xs flex-shrink-0 border border-primary whitespace-nowrap"
             title="필터 초기화"
           >
             <i class="fi fi-br-refresh mr-1"></i>초기화
@@ -333,7 +358,9 @@ const customers = ref([])
 // 필터 상태
 const statusFilter = ref('전체')
 const searchQuery = ref('')
-const monthFilter = ref('')
+const lockerFilter = ref('')
+const startDateFilter = ref('')
+const endDateFilter = ref('')
 
 // 데이터 초기화
 const initializeData = () => {
@@ -389,30 +416,51 @@ const filteredReservations = computed(() => {
     filtered = filtered.filter((r) => r.status === statusCode)
   }
 
-  // 검색 쿼리 (고객명, 예약번호, 보관함 번호)
+  // 검색 쿼리 (고객명, 고객ID, 핸드폰번호, 예약번호)
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase()
     filtered = filtered.filter((r) => {
       const customer = getCustomerInfo(r.customerId)
+      const phone = customer.phone || ''
+      const customerId = customer.id || ''
       return (
         r.id.toLowerCase().includes(query) ||
         customer.name.toLowerCase().includes(query) ||
+        customerId.toLowerCase().includes(query) ||
+        phone.toLowerCase().includes(query) ||
         r.lockerNumber.toLowerCase().includes(query)
       )
     })
   }
 
-  // 월 필터
-  if (monthFilter.value) {
+  // 사물함 구역 필터 (사물함 번호의 첫 문자로 구역 판단)
+  if (lockerFilter.value) {
     filtered = filtered.filter((r) => {
-      const resDate = new Date(r.createdAt)
-      const [year, month] = monthFilter.value.split('-')
-      return resDate.getFullYear() === parseInt(year) && resDate.getMonth() + 1 === parseInt(month)
+      const section = r.lockerNumber.charAt(0)
+      return section === lockerFilter.value
+    })
+  }
+
+  // 보관 기간 필터 (startTime 기준으로 필터링)
+  if (startDateFilter.value) {
+    const startDate = new Date(startDateFilter.value)
+    filtered = filtered.filter((r) => {
+      const reservationDate = new Date(r.startTime)
+      return reservationDate >= startDate
+    })
+  }
+
+  if (endDateFilter.value) {
+    const endDate = new Date(endDateFilter.value)
+    endDate.setHours(23, 59, 59, 999)
+    filtered = filtered.filter((r) => {
+      const reservationDate = new Date(r.startTime)
+      return reservationDate <= endDate
     })
   }
 
   // 최신 순으로 정렬
-  return filtered.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+  return filtered.sort((a, b) => new Date(b.startTime) - new Date(a.startTime))
 })
 
 // 날짜 포맷 함수
@@ -464,7 +512,9 @@ const getStatusDotColor = (status) => {
 const resetFilters = () => {
   statusFilter.value = '전체'
   searchQuery.value = ''
-  monthFilter.value = ''
+  lockerFilter.value = ''
+  startDateFilter.value = ''
+  endDateFilter.value = ''
 }
 
 // 초기화
