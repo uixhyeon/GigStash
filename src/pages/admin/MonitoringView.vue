@@ -174,7 +174,7 @@
     <!-- 왼쪽/오른쪽 2분할 레이아웃 -->
     <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
       <!-- 왼쪽 컬럼 -->
-      <div class="space-y-3">
+      <div class="space-y-2">
         <!-- 주요 지표 -->
         <section class="gap-5">
           <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
@@ -183,7 +183,7 @@
           <div class="flex flex-wrap gap-3 mb-4">
             <!-- 이용률 카드 -->
             <div
-              class="flex-1 min-w-0 sm:min-w-[calc(50%-6px)] lg:min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
             >
               <div>
                 <div
@@ -199,7 +199,9 @@
                     <i :class="getChangeIcon(keyMetrics.utilizationChange)" class="mr-1"></i
                     >{{ Math.abs(keyMetrics.utilizationChange) }}%
                   </div>
-                  <div class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text">
+                  <div
+                    class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text"
+                  >
                     {{ keyMetrics.utilizationRate }}%
                   </div>
                 </div>
@@ -208,7 +210,7 @@
 
             <!-- 재방문율 카드 -->
             <div
-              class="flex-1 min-w-0 sm:min-w-[calc(50%-6px)] lg:min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30"
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30"
             >
               <div>
                 <div
@@ -225,7 +227,9 @@
                     <i :class="getChangeIcon(additionalMetrics.revisitChange)" class="mr-1"></i
                     >{{ Math.abs(additionalMetrics.revisitChange) }}%
                   </div>
-                  <div class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text">
+                  <div
+                    class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text"
+                  >
                     {{ additionalMetrics.revisitRate }}%
                   </div>
                 </div>
@@ -235,9 +239,11 @@
             <!-- 배송선택률 카드 -->
             <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-300/90 to-amber-400/95 text-gray-800" -->
             <div
-              class="flex-1 min-w-0 sm:min-w-[calc(50%-6px)] lg:min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-yellow-100 dark:border-yellow-900/30"
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-yellow-100 dark:border-yellow-900/30"
             >
-              <div class="text-xs sm:text-sm md:text-base font-medium opacity-90 text-gray-900 dark:text-table-header-text">
+              <div
+                class="text-xs sm:text-sm md:text-base font-medium opacity-90 text-gray-900 dark:text-table-header-text"
+              >
                 배송선택률
               </div>
               <div class="text-right">
@@ -248,7 +254,9 @@
                   <i :class="getChangeIcon(additionalMetrics.deliveryChange)" class="mr-1"></i
                   >{{ Math.abs(additionalMetrics.deliveryChange) }}%
                 </div>
-                <div class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text">
+                <div
+                  class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text"
+                >
                   {{ additionalMetrics.deliveryRate }}%
                 </div>
               </div>
@@ -260,7 +268,7 @@
             <!-- 이용객 카드 -->
             <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-gray-400/90 to-gray-600/95" -->
             <div
-              class="flex-1 min-w-0 sm:min-w-[calc(50%-6px)] p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-100 dark:border-none"
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-100 dark:border-none"
             >
               <div
                 class="text-xs sm:text-sm md:text-base font-semibold opacity-90 text-gray-900 dark:text-table-header-text"
@@ -275,7 +283,9 @@
                   <i :class="getChangeIcon(keyMetrics.usersChange)" class="mr-1"></i
                   >{{ Math.abs(keyMetrics.usersChange) }}%
                 </div>
-                <div class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text">
+                <div
+                  class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text"
+                >
                   {{ formatNumber(keyMetrics.users) }}명
                 </div>
               </div>
@@ -285,9 +295,11 @@
             <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-400/90 to-blue-600/95 text-white" -->
 
             <div
-              class="flex-1 min-w-0 sm:min-w-[calc(50%-6px)] p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95"
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95"
             >
-              <div class="text-xs sm:text-sm md:text-base font-semibold opacity-90 text-gray-900 dark:text-gray-900">
+              <div
+                class="text-xs sm:text-sm md:text-base font-semibold opacity-90 text-gray-900 dark:text-gray-900"
+              >
                 매출
               </div>
               <div class="text-right">
@@ -298,7 +310,9 @@
                   <i :class="getChangeIcon(keyMetrics.revenueChange)" class="mr-1"></i
                   >{{ Math.abs(keyMetrics.revenueChange) }}%
                 </div>
-                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-gray-900">
+                <div
+                  class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-gray-900"
+                >
                   {{ formatCurrency(keyMetrics.revenue) }}
                 </div>
               </div>
