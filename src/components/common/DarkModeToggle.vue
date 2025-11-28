@@ -1,6 +1,6 @@
 <template>
   <button
-    class="flex items-center justify-center w-10 h-10 p-2 border-none rounded bg-transparent text-gray-600 cursor-pointer transition-all outline-none hover:bg-gray-200 hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-95 dark:text-gray-200 dark:hover:bg-slate-700 dark:hover:text-white"
+    class="flex items-center justify-center w-10 h-10 border-none rounded bg-transparent text-gray-600 cursor-pointer transition-all outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary dark:text-white"
     @click="toggleDarkMode"
     :aria-label="isDark ? '라이트 모드로 전환' : '다크 모드로 전환'"
     :title="isDark ? '라이트 모드로 전환' : '다크 모드로 전환'"

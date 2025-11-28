@@ -40,11 +40,13 @@
         </button>
 
         <!-- 오른쪽: 다크모드 + 설정 -->
-        <div class="flex items-center gap-2">
-          <DarkModeToggle />
+        <div class="flex items-center gap-1">
+          <div class="flex items-center justify-center w-10 h-10 [&_button]:text-white [&_svg]:text-white">
+            <DarkModeToggle />
+          </div>
           <button
             @click="goToProfile"
-            class="text-white hover:bg-white/20 p-2 rounded-lg transition-colors"
+            class="flex items-center justify-center w-10 h-10 text-white rounded-lg"
           >
             <i class="fi fi-rr-settings text-xl"></i>
           </button>

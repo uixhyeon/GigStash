@@ -29,11 +29,11 @@
   <div class="pb-20">
     <!-- 날짜와 날씨 (카드 위) -->
     <div class="mx-4 mt-4 mb-2 flex items-center justify-between">
-      <div class="text-lg font-bold text-gray-900">
+      <div class="text-lg font-bold text-gray-900 dark:text-white">
         {{ formatDate(new Date()) }}
       </div>
       <!-- 날씨 정보 -->
-      <div class="flex items-center gap-2 text-gray-600 text-sm">
+      <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm">
         <div class="flex items-center gap-1">
           <span>☁️</span>
           <span>강수 19%</span>
@@ -43,30 +43,34 @@
     </div>
 
     <!-- 위치 정보 카드 -->
-    <div class="bg-white rounded-2xl shadow-sm mx-4 p-5">
-      <div class="text-base text-gray-900 mb-3">
+    <div
+      class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 p-5"
+    >
+      <div class="text-base text-gray-900 dark:text-white mb-3">
         {{ currentLocation }}
       </div>
-      <div class="border-t border-dashed border-gray-300 pt-3">
-        <div class="text-base text-gray-900">{{ arrivalTime }} 도착 예정</div>
+      <div class="border-t border-dashed border-gray-300 dark:border-gray-700 pt-3">
+        <div class="text-base text-gray-900 dark:text-white">{{ arrivalTime }} 도착 예정</div>
       </div>
     </div>
 
     <!-- 지도 섹션 -->
     <div class="mx-4 mt-4 relative">
       <div
-        class="bg-white rounded-2xl shadow-sm overflow-hidden"
+        class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm overflow-hidden"
         style="height: 400px"
       >
         <!-- 카카오 맵 영역 -->
         <div id="kakao-map" class="w-full h-full relative">
           <!-- 지도 상단 정보 -->
           <div
-            class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-2 shadow-md z-10"
+            class="absolute top-4 left-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-2 shadow-md z-10"
           >
             <div class="flex items-center gap-2">
-              <i class="fi fi-rr-marker text-blue-600"></i>
-              <div class="text-sm text-gray-600">{{ parkingLocationAddress }}</div>
+              <i class="fi fi-rr-marker text-blue-600 dark:text-blue-400"></i>
+              <div class="text-sm text-gray-600 dark:text-gray-300">
+                {{ parkingLocationAddress }}
+              </div>
             </div>
           </div>
 
@@ -92,62 +96,59 @@
     <!-- 액션 버튼 -->
     <div class="mx-4 mt-4 flex gap-4">
       <!-- 진행 인원 버튼 -->
-      <button
-        @click="showParticipantsModal = true"
-        class="flex-1 bg-white rounded-2xl shadow-sm p-5 text-left transition-shadow"
+      <router-link
+        to="/worker/workerMain/remain-customer"
+        class="flex-1 bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm p-5 text-left transition-shadow"
       >
-        <div class="text-sm text-gray-600 mb-2">남은 예약</div>
-        <div class="text-2xl font-bold text-blue-600">
-          {{ currentParticipants }}/{{ totalCapacity }}
+        <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">남은 예약</div>
+        <div class="font-bold text-blue-600 dark:text-blue-400 text-right" style="font-size: 30px">
+          {{ currentParticipants }} / {{ totalCapacity }}
         </div>
-      </button>
+      </router-link>
 
       <!-- 바코드찍기 버튼 -->
-      <button
-        @click="showBarcodeModal = true"
-        class="flex-1 bg-blue-600 text-white rounded-2xl shadow-sm p-5 text-base hover:bg-blue-700 transition-colors"
+      <router-link
+        to="/worker/workerMain/qr-code"
+        class="flex-1 bg-blue-600 text-white rounded-2xl shadow-sm p-5 text-base hover:bg-blue-700 transition-colors text-center flex items-center justify-center"
       >
         바코드찍기
-      </button>
+      </router-link>
     </div>
 
     <!-- 오늘 일정 카드 -->
     <div
-      class="block w-[calc(100%-2rem)] mx-4 mt-4 bg-white rounded-2xl shadow-sm p-5 text-left"
+      class="block w-[calc(100%-2rem)] mx-4 mt-4 bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm p-5 text-left"
     >
       <div class="flex justify-between items-center mb-4">
-        <div class="text-lg font-bold text-gray-900">오늘 일정</div>
-        <div class="text-base text-gray-900">
+        <div class="text-lg font-bold text-gray-900 dark:text-white">오늘 일정</div>
+        <div class="text-base text-gray-900 dark:text-white">
           {{ todaySchedule.title }}
         </div>
       </div>
 
-      <div class="border-t border-dashed border-gray-300 pt-4">
-
+      <div class="border-t border-dashed border-gray-300 dark:border-gray-700 pt-4">
         <div class="space-y-2">
           <div class="flex justify-between">
-            <span class="text-sm text-gray-600">장소</span>
-            <span class="text-base text-gray-900">{{ todaySchedule.location }}</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">장소</span>
+            <span class="text-base text-gray-900 dark:text-white">{{
+              todaySchedule.location
+            }}</span>
           </div>
           <div class="flex justify-between">
-            <span class="text-sm text-gray-600">운영 시간</span>
-            <span class="text-base text-gray-900"
-              >{{ todaySchedule.operatingHours }} ({{
-                todaySchedule.duration
-              }})</span
+            <span class="text-sm text-gray-600 dark:text-gray-400">운영 시간</span>
+            <span class="text-base text-gray-900 dark:text-white"
+              >{{ todaySchedule.operatingHours }} ({{ todaySchedule.duration }})</span
             >
           </div>
           <div class="flex justify-between">
-            <span class="text-sm text-gray-600">예약 인원</span>
-            <span class="text-base text-gray-900"
-              >{{ todaySchedule.bookedCapacity }}/{{
-                todaySchedule.totalCapacity
-              }}</span
+            <span class="text-sm text-gray-600 dark:text-gray-400">예약 인원</span>
+            <span class="text-base text-gray-900 dark:text-white"
+              >{{ todaySchedule.bookedCapacity }}/{{ todaySchedule.totalCapacity }}</span
             >
           </div>
           <div class="flex justify-between">
-            <span class="text-sm text-gray-600">상태</span>
-            <span class="text-base text-gray-900">{{ todaySchedule.status }}</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">상태</span>
+            <span class="text-base text-gray-900 dark:text-white">{{ todaySchedule.status }}</span>
           </div>
         </div>
       </div>
@@ -166,9 +167,7 @@
           class="sticky top-0 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-gray-700 p-5 flex justify-between items-center rounded-t-2xl z-10"
         >
           <div class="flex items-center gap-2">
-            <h2 class="text-lg font-bold text-gray-900 dark:text-white">
-              남은 예약
-            </h2>
+            <h2 class="text-lg font-bold text-gray-900 dark:text-white">남은 예약</h2>
             <span class="text-sm text-gray-600 dark:text-gray-400">
               {{ pendingReservations.length }}/{{ reservations.length }}
             </span>
@@ -184,68 +183,57 @@
           <!-- 왼쪽: 예약번호 (진행중) -->
           <div class="flex-1 border-r border-gray-200 dark:border-gray-700 overflow-y-auto">
             <div class="p-4 bg-blue-50 dark:bg-blue-900/20">
-              <h3
-                class="text-sm text-blue-700 dark:text-blue-300 mb-1"
-              >
-                예약번호
-              </h3>
+              <h3 class="text-sm text-blue-700 dark:text-blue-300 mb-1">예약번호</h3>
               <div class="text-sm text-blue-600 dark:text-blue-400">
                 {{ pendingReservations.length }}건
               </div>
             </div>
             <div class="p-4 space-y-2">
-            <!-- 진행중 예약 -->
-            <div
-              v-for="reservation in pendingReservations"
-              :key="reservation.id"
-              class="p-3 bg-white dark:bg-slate-700 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 transition-colors"
-            >
-              <div class="mb-2">
-                <span
-                  class="text-base text-gray-900 dark:text-white"
-                  >{{ reservation.id }}</span
-                >
+              <!-- 진행중 예약 -->
+              <div
+                v-for="reservation in pendingReservations"
+                :key="reservation.id"
+                class="p-3 bg-white dark:bg-slate-700 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 transition-colors"
+              >
+                <div class="mb-2">
+                  <span class="text-base text-gray-900 dark:text-white">{{ reservation.id }}</span>
+                </div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mb-1">
+                  {{ reservation.customerName }}
+                </div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                  {{ reservation.phone }}
+                </div>
+                <div class="flex justify-center">
+                  <button
+                    v-if="selectedReservationForComplete?.id !== reservation.id"
+                    @click="completeReservationFromList(reservation)"
+                    class="text-sm bg-blue-600 text-white px-3 py-1 rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    완료
+                  </button>
+                  <button
+                    v-else
+                    @click="cancelCompleteReservation(reservation)"
+                    class="text-sm bg-red-600 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition-colors"
+                  >
+                    완료 취소
+                  </button>
+                </div>
               </div>
-              <div class="text-sm text-gray-600 dark:text-gray-400 mb-1">
-                {{ reservation.customerName }}
+              <div
+                v-if="pendingReservations.length === 0"
+                class="text-center text-gray-400 dark:text-gray-500 text-sm py-8"
+              >
+                예약이 없습니다
               </div>
-              <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                {{ reservation.phone }}
-              </div>
-              <div class="flex justify-center">
-                <button
-                  v-if="selectedReservationForComplete?.id !== reservation.id"
-                  @click="completeReservationFromList(reservation)"
-                  class="text-sm bg-blue-600 text-white px-3 py-1 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  완료
-                </button>
-                <button
-                  v-else
-                  @click="cancelCompleteReservation(reservation)"
-                  class="text-sm bg-red-600 text-white px-3 py-1 rounded-lg hover:bg-red-700 transition-colors"
-                >
-                  완료 취소
-                </button>
-              </div>
-            </div>
-            <div
-              v-if="pendingReservations.length === 0"
-              class="text-center text-gray-400 dark:text-gray-500 text-sm py-8"
-            >
-              예약이 없습니다
-            </div>
             </div>
           </div>
 
           <!-- 오른쪽: 완료 예약 -->
           <div class="flex-1 overflow-y-auto">
             <div class="p-4 bg-gray-50 dark:bg-gray-800/50">
-              <h3
-                class="text-sm text-gray-600 dark:text-gray-400 mb-1"
-              >
-                완료 예약
-              </h3>
+              <h3 class="text-sm text-gray-600 dark:text-gray-400 mb-1">완료 예약</h3>
               <div class="text-sm text-gray-500 dark:text-gray-500">
                 {{ completedReservations.length }}건
               </div>
@@ -258,10 +246,9 @@
                 class="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-600 opacity-60"
               >
                 <div class="mb-2">
-                  <span
-                    class="text-base text-gray-500 dark:text-gray-400"
-                    >{{ reservation.id }}</span
-                  >
+                  <span class="text-base text-gray-500 dark:text-gray-400">{{
+                    reservation.id
+                  }}</span>
                 </div>
                 <div class="text-sm text-gray-400 dark:text-gray-500 mb-1">
                   {{ reservation.customerName }}
@@ -311,10 +298,7 @@
 
         <!-- 카메라 영역 (위쪽) -->
         <div class="flex-1 relative bg-black">
-          <div
-            id="barcode-scanner"
-            class="w-full h-full flex items-center justify-center"
-          >
+          <div id="barcode-scanner" class="w-full h-full flex items-center justify-center">
             <!-- 카메라 비디오가 여기에 표시됩니다 -->
           </div>
 
@@ -324,10 +308,18 @@
               <!-- 외곽 반투명 배경 -->
               <div class="absolute inset-0 bg-black/30"></div>
               <!-- 모서리 코너 (기역자 모양) -->
-              <div class="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-blue-500 rounded-tl-lg"></div>
-              <div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-blue-500 rounded-tr-lg"></div>
-              <div class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-blue-500 rounded-bl-lg"></div>
-              <div class="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-blue-500 rounded-br-lg"></div>
+              <div
+                class="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-blue-500 rounded-tl-lg"
+              ></div>
+              <div
+                class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-blue-500 rounded-tr-lg"
+              ></div>
+              <div
+                class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-blue-500 rounded-bl-lg"
+              ></div>
+              <div
+                class="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-blue-500 rounded-br-lg"
+              ></div>
             </div>
           </div>
 
@@ -405,9 +397,7 @@
               v-model="searchInput"
               type="text"
               :placeholder="
-                searchType === 'reservation'
-                  ? '예약번호를 입력하세요'
-                  : '전화번호를 입력하세요'
+                searchType === 'reservation' ? '예약번호를 입력하세요' : '전화번호를 입력하세요'
               "
               class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-blue-500 focus:outline-none"
               @keyup.enter="handleSearch"
@@ -441,44 +431,29 @@
               </div>
               <div class="flex justify-between">
                 <span class="text-sm text-gray-400">고객명</span>
-                <span class="text-base">{{
-                  selectedReservation.customerName
-                }}</span>
+                <span class="text-base">{{ selectedReservation.customerName }}</span>
               </div>
               <div class="flex justify-between">
                 <span class="text-sm text-gray-400">전화번호</span>
-                <span class="text-base">{{
-                  selectedReservation.phone
-                }}</span>
+                <span class="text-base">{{ selectedReservation.phone }}</span>
               </div>
               <div class="flex justify-between">
                 <span class="text-sm text-gray-400">주소</span>
-                <span class="text-base text-right">{{
-                  selectedReservation.address
-                }}</span>
+                <span class="text-base text-right">{{ selectedReservation.address }}</span>
               </div>
               <div class="flex justify-between">
                 <span class="text-sm text-gray-400">하차 시간</span>
-                <span class="text-base">{{
-                  selectedReservation.time
-                }}</span>
+                <span class="text-base">{{ selectedReservation.time }}</span>
               </div>
-              <div
-                v-if="selectedReservation.original"
-                class="flex justify-between"
-              >
+              <div v-if="selectedReservation.original" class="flex justify-between">
                 <span class="text-sm text-gray-400">상태</span>
                 <span
                   class="text-base"
                   :class="
-                    selectedReservation.status === 'done'
-                      ? 'text-green-400'
-                      : 'text-yellow-400'
+                    selectedReservation.status === 'done' ? 'text-green-400' : 'text-yellow-400'
                   "
                 >
-                  {{
-                    selectedReservation.status === "done" ? "완료" : "진행중"
-                  }}
+                  {{ selectedReservation.status === 'done' ? '완료' : '진행중' }}
                 </span>
               </div>
             </div>
@@ -490,20 +465,18 @@
     <!-- 주차장 사진 모달 -->
     <div
       v-if="showParkingModal"
-      class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
+      class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
       @click.self="showParkingModal = false"
     >
-      <div class="w-full max-w-[480px] h-full bg-black mx-auto flex flex-col">
-        <!-- 헤더 -->
-        <div
-          class="sticky top-0 bg-gray-900 border-b border-gray-700 p-5 flex justify-between items-center z-10"
-        >
-          <h2 class="text-lg font-bold text-white">주차장 위치</h2>
+      <div class="w-full max-w-[480px] h-full bg-transparent mx-auto flex flex-col">
+        <!-- 제목 -->
+        <div class="bg-black/95 pt-5 px-5 pb-2 flex justify-between items-center">
+          <h2 class="text-lg font-bold text-white">주차 장소 보기</h2>
           <button
             @click="showParkingModal = false"
-            class="text-white hover:text-gray-300 text-2xl w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+            class="text-white hover:text-gray-300 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
           >
-            ×
+            <i class="fi fi-rr-cross text-lg"></i>
           </button>
         </div>
 
@@ -543,15 +516,28 @@
           >
             <i class="fi fi-rr-angle-right text-xl"></i>
           </button>
+        </div>
 
-          <!-- 인디케이터 -->
-          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        <!-- 썸네일 이미지 목록 -->
+        <div class="bg-black/95 p-3 overflow-x-auto">
+          <div class="flex gap-2 justify-center">
             <div
               v-for="(image, index) in parkingImages"
               :key="index"
-              class="w-2 h-2 rounded-full transition-colors"
-              :class="currentImageIndex === index ? 'bg-white' : 'bg-white/50'"
-            ></div>
+              @click="currentImageIndex = index"
+              class="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden cursor-pointer border-2 transition-all"
+              :class="
+                currentImageIndex === index
+                  ? 'border-blue-500'
+                  : 'border-transparent opacity-60 hover:opacity-100'
+              "
+            >
+              <img
+                :src="image"
+                :alt="`주차장 사진 ${index + 1}`"
+                class="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -560,35 +546,35 @@
 </template>
 
 <script setup>
-import { ref, onUnmounted, watch, onMounted, nextTick, computed } from "vue";
-import reservationsData from "@/data/reservations_2025_12.json";
+import { ref, onUnmounted, watch, onMounted, nextTick, computed } from 'vue'
+import reservationsData from '@/data/reservations_2025_12.json'
 
 // 위치와 도착 시간은 todaySchedule에서 계산됨
 
-const showParticipantsModal = ref(false);
-const showBarcodeModal = ref(false);
-const showParkingModal = ref(false);
+const showParticipantsModal = ref(false)
+const showBarcodeModal = ref(false)
+const showParkingModal = ref(false)
 
 // 바코드 모달 관련
-const searchType = ref("reservation"); // 'reservation' or 'phone'
-const searchInput = ref("");
-const selectedReservation = ref(null);
+const searchType = ref('reservation') // 'reservation' or 'phone'
+const searchInput = ref('')
+const selectedReservation = ref(null)
 
 // 진행인원 모달 관련
 // 오늘 날짜 (computed로 만들어서 날짜가 바뀌면 자동 업데이트)
 const today = computed(() => {
-  const d = new Date();
-  d.setHours(0, 0, 0, 0);
-  return d;
-});
+  const d = new Date()
+  d.setHours(0, 0, 0, 0)
+  return d
+})
 
 const todayStr = computed(() => {
-  const d = today.value;
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-});
+  const d = today.value
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+})
 
 // 완료 상태 관리 (예약 ID를 키로 사용)
-const reservationStatusMap = ref(new Map());
+const reservationStatusMap = ref(new Map())
 
 // reservations_2025_12.json 데이터를 워커 페이지 형식으로 변환
 // 오늘 날짜의 예약만 필터링 (computed로 만들어서 날짜가 바뀌면 자동 업데이트)
@@ -597,310 +583,305 @@ const reservations = computed(() => {
     .filter((r) => {
       // dropoffTime 또는 eventDate 기준으로 오늘 날짜 확인
       if (r.dropoffTime) {
-        const dropoffDate = new Date(r.dropoffTime);
-        const dropoffDateStr = `${dropoffDate.getFullYear()}-${String(dropoffDate.getMonth() + 1).padStart(2, "0")}-${String(dropoffDate.getDate()).padStart(2, "0")}`;
-        return dropoffDateStr === todayStr.value;
+        const dropoffDate = new Date(r.dropoffTime)
+        const dropoffDateStr = `${dropoffDate.getFullYear()}-${String(dropoffDate.getMonth() + 1).padStart(2, '0')}-${String(dropoffDate.getDate()).padStart(2, '0')}`
+        return dropoffDateStr === todayStr.value
       }
       if (r.eventDate) {
-        return r.eventDate === todayStr.value;
+        return r.eventDate === todayStr.value
       }
-      return false;
+      return false
     })
     .map((r) => {
       // dropoffTime에서 시간 추출 (ISO 형식: "2025-11-01T15:33:00Z")
-      const dropoffDate = r.dropoffTime ? new Date(r.dropoffTime) : null;
+      const dropoffDate = r.dropoffTime ? new Date(r.dropoffTime) : null
       const timeStr = dropoffDate
-        ? `${String(dropoffDate.getHours()).padStart(2, "0")}:${String(dropoffDate.getMinutes()).padStart(2, "0")}`
-        : "";
+        ? `${String(dropoffDate.getHours()).padStart(2, '0')}:${String(dropoffDate.getMinutes()).padStart(2, '0')}`
+        : ''
 
       // 완료 상태 확인 (기본값은 "scheduled")
-      const status = reservationStatusMap.value.get(r.id) || "scheduled";
+      const status = reservationStatusMap.value.get(r.id) || 'scheduled'
 
       return {
         id: r.id,
         customerName: r.customerName,
         phone: r.customerPhone,
-        address: r.deliveryAddress || r.eventVenue || "",
+        address: r.deliveryAddress || r.eventVenue || '',
         time: timeStr,
         status: status,
         // 원본 데이터도 함께 저장 (추가 정보 표시용)
         original: r,
-      };
-    });
-});
-const selectedReservationForComplete = ref(null);
+      }
+    })
+})
+const selectedReservationForComplete = ref(null)
 
 // 진행중 예약 목록
 const pendingReservations = computed(() => {
-  return reservations.value.filter((r) => r.status !== "done");
-});
+  return reservations.value.filter((r) => r.status !== 'done')
+})
 
 // 완료된 예약 목록
 const completedReservations = computed(() => {
-  return reservations.value.filter((r) => r.status === "done");
-});
+  return reservations.value.filter((r) => r.status === 'done')
+})
 
 // 진행 인원 수는 완료되지 않은 예약 수로 계산 (오늘 날짜 기준)
 const currentParticipants = computed(() => {
-  return pendingReservations.value.length;
-});
+  return pendingReservations.value.length
+})
 
 // 전체 용량은 오늘 날짜의 전체 예약 수로 계산
 const totalCapacity = computed(() => {
-  return reservations.value.length;
-});
+  return reservations.value.length
+})
 
 // 주차장 사진 슬라이더
 const parkingImages = ref([
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop",
-  "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=600&fit=crop",
-]);
+  'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
+  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop',
+  'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=600&fit=crop',
+])
 
-const currentImageIndex = ref(0);
+const currentImageIndex = ref(0)
 
 const nextImage = () => {
   if (currentImageIndex.value < parkingImages.value.length - 1) {
-    currentImageIndex.value++;
+    currentImageIndex.value++
   }
-};
+}
 
 const prevImage = () => {
   if (currentImageIndex.value > 0) {
-    currentImageIndex.value--;
+    currentImageIndex.value--
   }
-};
+}
 
 // 카카오 맵 초기화
 onMounted(() => {
   // 카카오 맵 스크립트 로드
   if (!window.kakao || !window.kakao.maps) {
-    const kakaoApiKey = import.meta.env.VITE_KAKAO_MAP_APP_KEY;
+    const kakaoApiKey = import.meta.env.VITE_KAKAO_MAP_APP_KEY
     if (!kakaoApiKey) {
-      console.error("카카오맵 API 키가 설정되지 않았습니다. VITE_KAKAO_MAP_APP_KEY 환경 변수를 설정해주세요.");
-      return;
+      console.error(
+        '카카오맵 API 키가 설정되지 않았습니다. VITE_KAKAO_MAP_APP_KEY 환경 변수를 설정해주세요.',
+      )
+      return
     }
-    const script = document.createElement("script");
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${import.meta.env.VITE_KAKAO_MAP_APP_KEY}&autoload=false`;
+    const script = document.createElement('script')
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${import.meta.env.VITE_KAKAO_MAP_APP_KEY}&autoload=false`
     script.onload = () => {
       window.kakao.maps.load(() => {
-        initMap();
-      });
-    };
+        initMap()
+      })
+    }
     script.onerror = () => {
-      console.error("카카오맵 스크립트를 로드할 수 없습니다.");
-    };
-    document.head.appendChild(script);
+      console.error('카카오맵 스크립트를 로드할 수 없습니다.')
+    }
+    document.head.appendChild(script)
   } else {
-    initMap();
+    initMap()
   }
-});
+})
 
 const initMap = () => {
   nextTick(() => {
-    const container = document.getElementById("kakao-map");
-    if (!container || !window.kakao?.maps) return;
+    const container = document.getElementById('kakao-map')
+    if (!container || !window.kakao?.maps) return
 
     // 오늘 일정의 행사 장소에 맞는 좌표 가져오기
-    const venue = todaySchedule.value.venue;
-    const coordinates = venue && venue !== "-" 
-      ? (venueToCoordinates[venue] || venueToCoordinates["default"])
-      : venueToCoordinates["default"];
+    const venue = todaySchedule.value.venue
+    const coordinates =
+      venue && venue !== '-'
+        ? venueToCoordinates[venue] || venueToCoordinates['default']
+        : venueToCoordinates['default']
 
     const options = {
       center: new window.kakao.maps.LatLng(coordinates.lat, coordinates.lng),
       level: 3,
-    };
+    }
 
-    const map = new window.kakao.maps.Map(container, options);
+    const map = new window.kakao.maps.Map(container, options)
 
     // 마커 생성
-    const markerPosition = new window.kakao.maps.LatLng(coordinates.lat, coordinates.lng);
+    const markerPosition = new window.kakao.maps.LatLng(coordinates.lat, coordinates.lng)
     const marker = new window.kakao.maps.Marker({
       position: markerPosition,
-    });
-    marker.setMap(map);
+    })
+    marker.setMap(map)
 
     // 인포윈도우 생성 (현재 위치 표시)
     const infowindow = new window.kakao.maps.InfoWindow({
       content: `<div style="padding:5px;font-size:12px;">${currentLocation.value}</div>`,
-    });
-    infowindow.open(map, marker);
-  });
-};
+    })
+    infowindow.open(map, marker)
+  })
+}
 
 // 카카오 네비게이션 열기
 const openKakaoNavigation = () => {
   // 목적지 (현재 위치)
-  const destination = encodeURIComponent(currentLocation.value);
+  const destination = encodeURIComponent(currentLocation.value)
 
   // 카카오맵 앱 URL 스킴 (목적지만 지정, 앱에서 출발지 선택 가능)
   // 형식: kakaomap://route?ep=목적지
-  const appUrl = `kakaomap://route?ep=${destination}`;
+  const appUrl = `kakaomap://route?ep=${destination}`
 
   // 카카오맵 웹 URL (길찾기)
   // 형식: https://map.kakao.com/link/to/목적지
-  const webUrl = `https://map.kakao.com/link/to/${destination}`;
+  const webUrl = `https://map.kakao.com/link/to/${destination}`
 
   // 앱이 설치되어 있는지 확인 후 앱 열기, 없으면 웹 열기
-  const startTime = Date.now();
-  const iframe = document.createElement("iframe");
-  iframe.style.display = "none";
-  iframe.src = appUrl;
-  document.body.appendChild(iframe);
+  const startTime = Date.now()
+  const iframe = document.createElement('iframe')
+  iframe.style.display = 'none'
+  iframe.src = appUrl
+  document.body.appendChild(iframe)
 
   setTimeout(() => {
-    document.body.removeChild(iframe);
-    const elapsed = Date.now() - startTime;
+    document.body.removeChild(iframe)
+    const elapsed = Date.now() - startTime
 
     // 앱이 열리지 않았으면 웹으로 이동
     if (elapsed < 2000) {
-      window.location.href = webUrl;
+      window.location.href = webUrl
     }
-  }, 500);
-};
+  }, 500)
+}
 
 // 카메라 관련
-const isScanning = ref(false);
-const videoElement = ref(null);
-let stream = null;
+const isScanning = ref(false)
+const videoElement = ref(null)
+let stream = null
 
 const startCamera = async () => {
   try {
-    isScanning.value = true;
+    isScanning.value = true
 
     // 카메라 스트림 가져오기
     stream = await navigator.mediaDevices.getUserMedia({
       video: {
-        facingMode: "environment", // 후면 카메라 우선
+        facingMode: 'environment', // 후면 카메라 우선
       },
-    });
+    })
 
     // 비디오 요소에 스트림 연결
     if (videoElement.value) {
-      videoElement.value.srcObject = stream;
+      videoElement.value.srcObject = stream
     }
   } catch (err) {
-    console.error("카메라 시작 실패:", err);
-    alert("카메라에 접근할 수 없습니다. 권한을 확인해주세요.");
-    isScanning.value = false;
+    console.error('카메라 시작 실패:', err)
+    alert('카메라에 접근할 수 없습니다. 권한을 확인해주세요.')
+    isScanning.value = false
   }
-};
+}
 
 const stopCamera = () => {
   if (stream) {
-    stream.getTracks().forEach((track) => track.stop());
-    stream = null;
+    stream.getTracks().forEach((track) => track.stop())
+    stream = null
   }
   if (videoElement.value) {
-    videoElement.value.srcObject = null;
+    videoElement.value.srcObject = null
   }
-  isScanning.value = false;
-};
+  isScanning.value = false
+}
 
 const closeBarcodeModal = () => {
-  stopCamera();
-  searchInput.value = "";
-  selectedReservation.value = null;
-  showBarcodeModal.value = false;
-};
+  stopCamera()
+  searchInput.value = ''
+  selectedReservation.value = null
+  showBarcodeModal.value = false
+}
 
 // 예약번호/전화번호로 조회
 const handleSearch = () => {
-  if (!searchInput.value.trim()) return;
+  if (!searchInput.value.trim()) return
 
-  let found = null;
-  const searchTerm = searchInput.value.trim();
-  if (searchType.value === "reservation") {
-    found = reservations.value.find(
-      (r) => r.id === searchTerm || r.id.includes(searchTerm)
-    );
+  let found = null
+  const searchTerm = searchInput.value.trim()
+  if (searchType.value === 'reservation') {
+    found = reservations.value.find((r) => r.id === searchTerm || r.id.includes(searchTerm))
   } else {
     // 전화번호 검색 (하이픈 제거 후 비교)
-    const normalizedSearch = searchTerm.replace(/-/g, "");
+    const normalizedSearch = searchTerm.replace(/-/g, '')
     found = reservations.value.find((r) => {
-      const normalizedPhone = r.phone ? r.phone.replace(/-/g, "") : "";
+      const normalizedPhone = r.phone ? r.phone.replace(/-/g, '') : ''
       return (
-        normalizedPhone.includes(normalizedSearch) ||
-        normalizedSearch.includes(normalizedPhone)
-      );
-    });
+        normalizedPhone.includes(normalizedSearch) || normalizedSearch.includes(normalizedPhone)
+      )
+    })
   }
 
   if (found) {
-    selectedReservation.value = found;
+    selectedReservation.value = found
   } else {
-    alert("예약을 찾을 수 없습니다.");
-    selectedReservation.value = null;
+    alert('예약을 찾을 수 없습니다.')
+    selectedReservation.value = null
   }
-};
-
+}
 
 // 완료 처리
 const completeReservation = () => {
-  if (!selectedReservation.value) return;
+  if (!selectedReservation.value) return
 
-  reservationStatusMap.value.set(selectedReservation.value.id, "done");
-  alert("완료 처리되었습니다.");
-  selectedReservation.value = null;
-  searchInput.value = "";
-  closeBarcodeModal();
-};
+  reservationStatusMap.value.set(selectedReservation.value.id, 'done')
+  alert('완료 처리되었습니다.')
+  selectedReservation.value = null
+  searchInput.value = ''
+  closeBarcodeModal()
+}
 
 // 완료 취소 처리
 const cancelCompleteReservation = (reservation) => {
-  reservationStatusMap.value.set(reservation.id, "scheduled");
-  selectedReservationForComplete.value = null;
-};
+  reservationStatusMap.value.set(reservation.id, 'scheduled')
+  selectedReservationForComplete.value = null
+}
 
 // 진행인원 모달에서 완료 처리
 const completeReservationFromList = (reservation) => {
-  selectedReservationForComplete.value = reservation;
-  reservationStatusMap.value.set(reservation.id, "done");
-};
+  selectedReservationForComplete.value = reservation
+  reservationStatusMap.value.set(reservation.id, 'done')
+}
 
 // 모달이 닫힐 때 카메라 정리
 watch(showBarcodeModal, (newVal) => {
   if (!newVal) {
-    stopCamera();
+    stopCamera()
   }
-});
+})
 
 // 컴포넌트 언마운트 시 정리
 onUnmounted(() => {
-  stopCamera();
-});
+  stopCamera()
+})
 
 // 오늘 일정 계산 (오늘 날짜의 예약 데이터 기반)
 const todaySchedule = computed(() => {
   // reservations는 이미 오늘 날짜로 필터링되어 있음
   if (reservations.value.length === 0) {
     return {
-      title: "오늘 예정된 행사가 없습니다",
-      location: "-",
-      operatingHours: "-",
-      duration: "-",
+      title: '오늘 예정된 행사가 없습니다',
+      location: '-',
+      operatingHours: '-',
+      duration: '-',
       bookedCapacity: 0,
       totalCapacity: 0,
-      status: "없음",
-      venue: "-",
-    };
+      status: '없음',
+      venue: '-',
+    }
   }
 
   // 행사별로 그룹화 (같은 행사명, 같은 장소는 하나로)
-  const eventsByVenue = {};
+  const eventsByVenue = {}
   reservations.value.forEach((r) => {
-    const eventName = r.original?.eventName || "행사";
-    const venue = r.original?.eventVenue || "-";
-    const key = `${eventName}|${venue}`;
+    const eventName = r.original?.eventName || '행사'
+    const venue = r.original?.eventVenue || '-'
+    const key = `${eventName}|${venue}`
 
     if (!eventsByVenue[key]) {
-      const eventStart = r.original?.eventStartTime
-        ? new Date(r.original.eventStartTime)
-        : null;
-      const eventEnd = r.original?.eventEndTime
-        ? new Date(r.original.eventEndTime)
-        : null;
+      const eventStart = r.original?.eventStartTime ? new Date(r.original.eventStartTime) : null
+      const eventEnd = r.original?.eventEndTime ? new Date(r.original.eventEndTime) : null
 
       eventsByVenue[key] = {
         eventName,
@@ -908,68 +889,65 @@ const todaySchedule = computed(() => {
         reservations: [],
         startTime: eventStart,
         endTime: eventEnd,
-      };
+      }
     }
-    eventsByVenue[key].reservations.push(r);
-  });
+    eventsByVenue[key].reservations.push(r)
+  })
 
   // 가장 많은 예약이 있는 행사 선택
-  let mainEvent = null;
-  let maxReservations = 0;
+  let mainEvent = null
+  let maxReservations = 0
   for (const key in eventsByVenue) {
     if (eventsByVenue[key].reservations.length > maxReservations) {
-      maxReservations = eventsByVenue[key].reservations.length;
-      mainEvent = eventsByVenue[key];
+      maxReservations = eventsByVenue[key].reservations.length
+      mainEvent = eventsByVenue[key]
     }
   }
 
   if (!mainEvent) {
     return {
-      title: "오늘 예정된 행사가 없습니다",
-      location: "-",
-      operatingHours: "-",
-      duration: "-",
+      title: '오늘 예정된 행사가 없습니다',
+      location: '-',
+      operatingHours: '-',
+      duration: '-',
       bookedCapacity: 0,
       totalCapacity: 0,
-      status: "없음",
-      venue: "-",
-    };
+      status: '없음',
+      venue: '-',
+    }
   }
 
   // 시간 포맷팅
   const formatTime = (date) => {
-    if (!date) return "";
-    return `${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}`;
-  };
+    if (!date) return ''
+    return `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`
+  }
 
-  const startTime = formatTime(mainEvent.startTime);
-  const endTime = formatTime(mainEvent.endTime);
-  const operatingHours =
-    startTime && endTime ? `${startTime} ~ ${endTime}` : "-";
+  const startTime = formatTime(mainEvent.startTime)
+  const endTime = formatTime(mainEvent.endTime)
+  const operatingHours = startTime && endTime ? `${startTime} ~ ${endTime}` : '-'
 
   // 지속 시간 계산
-  let duration = "-";
+  let duration = '-'
   if (mainEvent.startTime && mainEvent.endTime) {
-    const diff = mainEvent.endTime.getTime() - mainEvent.startTime.getTime();
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const diff = mainEvent.endTime.getTime() - mainEvent.startTime.getTime()
+    const hours = Math.floor(diff / (1000 * 60 * 60))
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
     if (hours > 0) {
-      duration = minutes > 0 ? `${hours}시간 ${minutes}분` : `${hours}시간`;
+      duration = minutes > 0 ? `${hours}시간 ${minutes}분` : `${hours}시간`
     } else {
-      duration = `${minutes}분`;
+      duration = `${minutes}분`
     }
   }
 
   // 상태 결정
-  const completedCount = mainEvent.reservations.filter(
-    (r) => r.status === "done"
-  ).length;
+  const completedCount = mainEvent.reservations.filter((r) => r.status === 'done').length
   const status =
     completedCount === 0
-      ? "대기"
+      ? '대기'
       : completedCount === mainEvent.reservations.length
-        ? "완료"
-        : "진행중";
+        ? '완료'
+        : '진행중'
 
   return {
     title: mainEvent.eventName,
@@ -980,106 +958,102 @@ const todaySchedule = computed(() => {
     totalCapacity: mainEvent.reservations.length,
     status,
     venue: mainEvent.venue,
-  };
-});
+  }
+})
 
 // 행사 장소별 주차장 이름 매핑
 const venueToParkingName = {
-  "잠실실내체육관": "잠실실내체육관 남측 주차장",
-  "KSPO돔": "KSPO돔 주차장",
-  "올림픽공원": "올림픽공원 주차장",
-  "올림픽공원 올림픽홀": "올림픽공원 주차장",
+  잠실실내체육관: '잠실실내체육관 남측 주차장',
+  KSPO돔: 'KSPO돔 주차장',
+  올림픽공원: '올림픽공원 주차장',
+  '올림픽공원 올림픽홀': '올림픽공원 주차장',
   // 다른 행사 장소도 추가 가능
-};
+}
 
 // 행사 장소별 카카오맵 좌표 (위도, 경도)
 const venueToCoordinates = {
-  "잠실실내체육관": { lat: 37.5153, lng: 127.1028 },
-  "KSPO돔": { lat: 37.5219, lng: 127.1238 },
-  "올림픽공원": { lat: 37.5219, lng: 127.1238 },
-  "올림픽공원 올림픽홀": { lat: 37.5219, lng: 127.1238 },
+  잠실실내체육관: { lat: 37.5153, lng: 127.1028 },
+  KSPO돔: { lat: 37.5219, lng: 127.1238 },
+  올림픽공원: { lat: 37.5219, lng: 127.1238 },
+  '올림픽공원 올림픽홀': { lat: 37.5219, lng: 127.1238 },
   // 기본값 (잠실실내체육관)
-  "default": { lat: 37.5153, lng: 127.1028 },
-};
+  default: { lat: 37.5153, lng: 127.1028 },
+}
 
 // 행사 장소별 주차장 주소 매핑
 const venueToParkingAddress = {
-  "잠실실내체육관": "서울특별시 > 송파구 > 잠실동",
-  "KSPO돔": "서울특별시 > 송파구 > 올림픽로",
-  "올림픽공원": "서울특별시 > 송파구 > 올림픽로",
+  잠실실내체육관: '서울특별시 > 송파구 > 잠실동',
+  KSPO돔: '서울특별시 > 송파구 > 올림픽로',
+  올림픽공원: '서울특별시 > 송파구 > 올림픽로',
   // 다른 행사 장소도 추가 가능
-};
+}
 
 // 현재 위치 (오늘 일정의 행사 장소에 맞는 주차장)
 const currentLocation = computed(() => {
-  const venue = todaySchedule.value.venue;
-  if (!venue || venue === "-") {
-    return "잠실실내체육관 남측 주차장"; // 기본값
+  const venue = todaySchedule.value.venue
+  if (!venue || venue === '-') {
+    return '잠실실내체육관 남측 주차장' // 기본값
   }
-  return venueToParkingName[venue] || `${venue} 주차장`; // 매핑이 없으면 장소명 + 주차장
-});
+  return venueToParkingName[venue] || `${venue} 주차장` // 매핑이 없으면 장소명 + 주차장
+})
 
 // 도착 예정 시간 (이벤트 시작 시간 - 3시간)
 const arrivalTime = computed(() => {
   // todaySchedule에서 이벤트 시작 시간 가져오기
   if (reservations.value.length === 0) {
-    return "16:30"; // 기본값
+    return '16:30' // 기본값
   }
 
   // 행사별로 그룹화하여 가장 빠른 이벤트 시작 시간 찾기
-  let earliestStartTime = null;
+  let earliestStartTime = null
   reservations.value.forEach((r) => {
     if (r.original?.eventStartTime) {
-      const startTime = new Date(r.original.eventStartTime);
+      const startTime = new Date(r.original.eventStartTime)
       if (!earliestStartTime || startTime < earliestStartTime) {
-        earliestStartTime = startTime;
+        earliestStartTime = startTime
       }
     }
-  });
+  })
 
   if (!earliestStartTime) {
-    return "16:30"; // 기본값
+    return '16:30' // 기본값
   }
 
   // 이벤트 시작 시간에서 3시간 빼기
-  const arrivalDate = new Date(earliestStartTime);
-  arrivalDate.setHours(arrivalDate.getHours() - 3);
+  const arrivalDate = new Date(earliestStartTime)
+  arrivalDate.setHours(arrivalDate.getHours() - 3)
 
   // 시간 포맷팅
-  const hours = String(arrivalDate.getHours()).padStart(2, "0");
-  const minutes = String(arrivalDate.getMinutes()).padStart(2, "0");
-  return `${hours}:${minutes}`;
-});
+  const hours = String(arrivalDate.getHours()).padStart(2, '0')
+  const minutes = String(arrivalDate.getMinutes()).padStart(2, '0')
+  return `${hours}:${minutes}`
+})
 
 // 오늘 일정의 행사 장소에 맞는 주차장 주소
 const parkingLocationAddress = computed(() => {
-  const venue = todaySchedule.value.venue;
-  if (!venue || venue === "-") {
-    return "서울특별시 > 송파구 > 잠실동"; // 기본값
+  const venue = todaySchedule.value.venue
+  if (!venue || venue === '-') {
+    return '서울특별시 > 송파구 > 잠실동' // 기본값
   }
-  return venueToParkingAddress[venue] || "서울특별시 > 송파구 > 잠실동"; // 매핑이 없으면 기본값
-});
+  return venueToParkingAddress[venue] || '서울특별시 > 송파구 > 잠실동' // 매핑이 없으면 기본값
+})
 
 // todaySchedule이나 currentLocation이 변경되면 지도 업데이트
-watch([todaySchedule, currentLocation], () => {
-  if (window.kakao?.maps) {
-    initMap();
-  }
-}, { deep: true });
+watch(
+  [todaySchedule, currentLocation],
+  () => {
+    if (window.kakao?.maps) {
+      initMap()
+    }
+  },
+  { deep: true },
+)
 
 const formatDate = (date) => {
-  const weekdays = [
-    "일요일",
-    "월요일",
-    "화요일",
-    "수요일",
-    "목요일",
-    "금요일",
-    "토요일",
-  ];
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  const weekday = weekdays[date.getDay()];
-  return `${month}월 ${day}일 ${weekday}`;
-};
+  const weekdays = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const weekday = weekdays[date.getDay()]
+  return `${month}월 ${day}일 ${weekday}`
+}
 </script>
