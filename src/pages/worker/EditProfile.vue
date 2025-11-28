@@ -21,12 +21,12 @@
 <template>
   <div class="pb-20">
     <!-- 프로필 이미지 섹션 -->
-    <div class="bg-white rounded-2xl shadow-sm mx-4 mt-4 p-5">
+    <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 mt-4 p-5">
       <div class="flex flex-col items-center">
         <div class="relative">
-          <div class="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0 mb-3">
+          <div class="w-24 h-24 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden flex-shrink-0 mb-3">
             <img v-if="profileData.profileImage" :src="profileData.profileImage" alt="프로필" class="w-full h-full object-cover" />
-            <span v-else class="text-4xl text-gray-400">👤</span>
+            <span v-else class="text-4xl text-gray-400 dark:text-gray-500">👤</span>
           </div>
           <button
             @click="fileInput?.click()"
@@ -36,38 +36,38 @@
           </button>
           <input ref="fileInput" type="file" accept="image/*" class="hidden" @change="handleImageUpload" />
         </div>
-        <p class="text-sm text-gray-600">프로필 사진 변경</p>
+        <p class="text-sm text-gray-600 dark:text-gray-400">프로필 사진 변경</p>
       </div>
     </div>
 
     <!-- 기본 정보 섹션 -->
-    <div class="bg-white rounded-2xl shadow-sm mx-4 mt-4 p-5">
-      <h2 class="text-lg font-bold text-gray-900 mb-4">기본 정보</h2>
+    <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 mt-4 p-5">
+      <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">기본 정보</h2>
       <div class="space-y-4">
         <div>
-          <label class="block text-sm text-gray-600 mb-2">이름</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-2">이름</label>
           <input
             v-model="profileData.displayName"
             type="text"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
+            class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
             placeholder="이름을 입력하세요"
           />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-2">전화번호</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-2">전화번호</label>
           <input
             v-model="profileData.phone"
             type="tel"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
+            class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
             placeholder="010-1234-5678"
           />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-2">이메일</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-2">이메일</label>
           <input
             v-model="profileData.email"
             type="email"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
+            class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
             placeholder="email@example.com"
           />
         </div>
@@ -75,14 +75,14 @@
     </div>
 
     <!-- 계좌 정보 섹션 -->
-    <div class="bg-white rounded-2xl shadow-sm mx-4 mt-4 p-5">
-      <h2 class="text-lg font-bold text-gray-900 mb-4">계좌 정보</h2>
+    <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 mt-4 p-5">
+      <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">계좌 정보</h2>
       <div class="space-y-4">
         <div>
-          <label class="block text-sm text-gray-600 mb-2">은행</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-2">은행</label>
           <select
             v-model="profileData.bank"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
+            class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
           >
             <option value="">은행을 선택하세요</option>
             <option value="kb">국민은행</option>
@@ -96,20 +96,20 @@
           </select>
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-2">계좌번호</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-2">계좌번호</label>
           <input
             v-model="profileData.accountNumber"
             type="text"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
+            class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
             placeholder="계좌번호를 입력하세요"
           />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-2">예금주</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-2">예금주</label>
           <input
             v-model="profileData.accountHolder"
             type="text"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
+            class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
             placeholder="예금주명을 입력하세요"
           />
         </div>
@@ -117,33 +117,33 @@
     </div>
 
     <!-- 비밀번호 변경 섹션 -->
-    <div class="bg-white rounded-2xl shadow-sm mx-4 mt-4 p-5 mb-4">
-      <h2 class="text-lg font-bold text-gray-900 mb-4">비밀번호 변경</h2>
+    <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 mt-4 p-5 mb-4">
+      <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">비밀번호 변경</h2>
       <div class="space-y-4">
         <div>
-          <label class="block text-sm text-gray-600 mb-2">현재 비밀번호</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-2">현재 비밀번호</label>
           <input
             v-model="passwordData.currentPassword"
             type="password"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
+            class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
             placeholder="현재 비밀번호를 입력하세요"
           />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-2">새 비밀번호</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-2">새 비밀번호</label>
           <input
             v-model="passwordData.newPassword"
             type="password"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
+            class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
             placeholder="새 비밀번호를 입력하세요"
           />
         </div>
         <div>
-          <label class="block text-sm text-gray-600 mb-2">새 비밀번호 확인</label>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-2">새 비밀번호 확인</label>
           <input
             v-model="passwordData.confirmPassword"
             type="password"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
+            class="w-full px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-base"
             placeholder="새 비밀번호를 다시 입력하세요"
           />
         </div>

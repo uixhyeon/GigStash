@@ -141,30 +141,11 @@
     <!-- 운영 기간 안내 메시지 -->
     <div
       v-if="!isValidDateRange && filteredReservations.length === 0"
-      :class="[
-        'mb-4 p-4 rounded-xl border',
-        isBeforeNovember
-          ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800'
-          : 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800',
-      ]"
+      class="mb-4 p-4 rounded-xl border bg-gray-50 dark:bg-gray-900/20 border-gray-200 dark:border-gray-800"
     >
       <div class="flex items-center gap-2">
-        <i
-          :class="[
-            'fi fi-rr-info',
-            isBeforeNovember
-              ? 'text-green-600 dark:text-green-400'
-              : 'text-blue-600 dark:text-blue-400',
-          ]"
-        ></i>
-        <p
-          :class="[
-            'text-sm',
-            isBeforeNovember
-              ? 'text-green-800 dark:text-green-200'
-              : 'text-blue-800 dark:text-blue-200',
-          ]"
-        >
+        <i class="fi fi-rr-info text-gray-600 dark:text-gray-400"></i>
+        <p class="text-sm text-gray-800 dark:text-gray-200">
           <span v-if="isBeforeNovember">아직 서비스가 오픈되지 않았습니다.</span>
           <span v-else-if="isAfterNovember">이 기간은 운영 정보가 없습니다.</span>
         </p>
@@ -172,11 +153,11 @@
     </div>
 
     <!-- 왼쪽/오른쪽 2분할 레이아웃 -->
-    <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
       <!-- 왼쪽 컬럼 -->
       <div class="space-y-2">
         <!-- 주요 지표 -->
-        <section class="gap-5">
+        <section>
           <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
             금주 주요 지표
           </h2>
@@ -187,23 +168,26 @@
             >
               <div>
                 <div
-                  class="text-left text-xs sm:text-sm md:text-base font-medium text-gray-900 dark:text-table-header-text"
+                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400"
+                  style="font-size: 16px; font-weight: bold"
                 >
                   이용률
                 </div>
-                <div class="text-right">
-                  <div
-                    class="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold"
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-table-header-text"
+                  style="font-size: 30px"
+                >
+                  {{ keyMetrics.utilizationRate }}%
+                </div>
+                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                  전주 대비
+                  <span
+                    class="font-medium"
                     :style="{ color: getChangeColor(keyMetrics.utilizationChange) }"
                   >
                     <i :class="getChangeIcon(keyMetrics.utilizationChange)" class="mr-1"></i
                     >{{ Math.abs(keyMetrics.utilizationChange) }}%
-                  </div>
-                  <div
-                    class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text"
-                  >
-                    {{ keyMetrics.utilizationRate }}%
-                  </div>
+                  </span>
                 </div>
               </div>
             </div>
@@ -214,24 +198,26 @@
             >
               <div>
                 <div
-                  class="text-left text-xs sm:text-sm md:text-base font-medium text-gray-900 dark:text-table-header-text"
+                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400"
+                  style="font-size: 16px; font-weight: bold"
                 >
                   재방문율
                 </div>
-
-                <div class="text-right">
-                  <div
-                    class="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold"
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-table-header-text"
+                  style="font-size: 30px"
+                >
+                  {{ additionalMetrics.revisitRate }}%
+                </div>
+                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                  전주 대비
+                  <span
+                    class="font-medium"
                     :style="{ color: getChangeColor(additionalMetrics.revisitChange) }"
                   >
                     <i :class="getChangeIcon(additionalMetrics.revisitChange)" class="mr-1"></i
                     >{{ Math.abs(additionalMetrics.revisitChange) }}%
-                  </div>
-                  <div
-                    class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text"
-                  >
-                    {{ additionalMetrics.revisitRate }}%
-                  </div>
+                  </span>
                 </div>
               </div>
             </div>
@@ -241,23 +227,28 @@
             <div
               class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-yellow-100 dark:border-yellow-900/30"
             >
-              <div
-                class="text-xs sm:text-sm md:text-base font-medium opacity-90 text-gray-900 dark:text-table-header-text"
-              >
-                배송선택률
-              </div>
-              <div class="text-right">
+              <div>
                 <div
-                  class="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold"
-                  :style="{ color: getChangeColor(additionalMetrics.deliveryChange) }"
+                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400"
+                  style="font-size: 16px; font-weight: bold"
                 >
-                  <i :class="getChangeIcon(additionalMetrics.deliveryChange)" class="mr-1"></i
-                  >{{ Math.abs(additionalMetrics.deliveryChange) }}%
+                  배송선택률
                 </div>
                 <div
-                  class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text"
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-table-header-text"
+                  style="font-size: 30px"
                 >
                   {{ additionalMetrics.deliveryRate }}%
+                </div>
+                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                  전주 대비
+                  <span
+                    class="font-medium"
+                    :style="{ color: getChangeColor(additionalMetrics.deliveryChange) }"
+                  >
+                    <i :class="getChangeIcon(additionalMetrics.deliveryChange)" class="mr-1"></i
+                    >{{ Math.abs(additionalMetrics.deliveryChange) }}%
+                  </span>
                 </div>
               </div>
             </div>
@@ -268,23 +259,26 @@
             <!-- 이용객 카드 -->
             <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-gray-400/90 to-gray-600/95" -->
             <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-100 dark:border-none"
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-100/90 to-yellow-300/95"
             >
               <div
-                class="text-xs sm:text-sm md:text-base font-semibold opacity-90 text-gray-900 dark:text-table-header-text"
+                class="font-bold opacity-90 text-gray-900 dark:text-table-header-text"
+                style="font-size: 16px"
               >
                 이용객
               </div>
               <div class="text-right">
                 <div
-                  class="mt-1 sm:mt-2 text-xs sm:text-sm font-medium"
+                  class="mt-1 sm:mt-2 font-bold"
+                  style="font-size: 16px"
                   :style="{ color: getChangeColor(keyMetrics.usersChange) }"
                 >
                   <i :class="getChangeIcon(keyMetrics.usersChange)" class="mr-1"></i
                   >{{ Math.abs(keyMetrics.usersChange) }}%
                 </div>
                 <div
-                  class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text"
+                  class="font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text"
+                  style="font-size: 30px"
                 >
                   {{ formatNumber(keyMetrics.users) }}명
                 </div>
@@ -298,21 +292,79 @@
               class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95"
             >
               <div
-                class="text-xs sm:text-sm md:text-base font-semibold opacity-90 text-gray-900 dark:text-gray-900"
+                class="font-bold opacity-90 text-gray-900 dark:text-gray-900"
+                style="font-size: 16px"
               >
                 매출
               </div>
               <div class="text-right">
                 <div
-                  class="mt-1 sm:mt-2 text-xs sm:text-sm font-medium"
+                  class="mt-1 sm:mt-2 font-bold"
+                  style="font-size: 16px"
                   :style="{ color: getChangeColor(keyMetrics.revenueChange) }"
                 >
                   <i :class="getChangeIcon(keyMetrics.revenueChange)" class="mr-1"></i
                   >{{ Math.abs(keyMetrics.revenueChange) }}%
                 </div>
                 <div
-                  class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-gray-900"
+                  class="font-bold mt-1 sm:mt-2 text-gray-900 dark:text-gray-900"
+                  style="font-size: 30px"
                 >
+                  {{ formatCurrency(keyMetrics.revenue) }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 이용객 & 매출 카드 (배경 없는 버전) -->
+        <section>
+          <div class="flex flex-wrap gap-3">
+            <!-- 이용객 카드 (배경 없음) -->
+            <div
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-100 dark:border-gray-700"
+            >
+              <div
+                class="font-bold opacity-90 text-gray-900 dark:text-table-header-text"
+                style="font-size: 16px"
+              >
+                이용객
+              </div>
+              <div class="text-right">
+                <div
+                  class="mt-1 sm:mt-2 font-bold"
+                  style="font-size: 16px"
+                  :style="{ color: getChangeColor(keyMetrics.usersChange) }"
+                >
+                  <i :class="getChangeIcon(keyMetrics.usersChange)" class="mr-1"></i
+                  >{{ Math.abs(keyMetrics.usersChange) }}%
+                </div>
+                <div class="font-bold mt-1 sm:mt-2" style="font-size: 30px; color: #ea580c">
+                  {{ formatNumber(keyMetrics.users) }}명
+                </div>
+              </div>
+            </div>
+
+            <!-- 매출 카드 (배경 없음) -->
+            <div
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-100 dark:border-gray-700"
+            >
+              <div
+                class="font-bold opacity-90 text-gray-900 dark:text-table-header-text"
+                style="font-size: 16px"
+              >
+                매출
+              </div>
+              <div class="text-right">
+                <div
+                  class="mt-1 sm:mt-2 font-bold"
+                  style="font-size: 16px"
+                  :style="{ color: getChangeColor(keyMetrics.revenueChange) }"
+                >
+                  <i :class="getChangeIcon(keyMetrics.revenueChange)" class="mr-1"></i
+                  >{{ Math.abs(keyMetrics.revenueChange) }}%
+                </div>
+                <div class="font-bold mt-1 sm:mt-2" style="font-size: 30px; color: #2563eb">
                   {{ formatCurrency(keyMetrics.revenue) }}
                 </div>
               </div>
@@ -323,40 +375,55 @@
         <!-- 행사 유형별 매출 & 사이즈별 비율 (가로 배열) -->
         <div class="flex gap-3 flex-col xl:flex-row">
           <!-- 행사 유형별 매출 -->
-          <section class="flex-1">
+          <section class="flex-1 min-w-0">
             <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
               행사 유형별 매출
             </h2>
-            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
-              <div class="h-40">
+            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6">
+              <div style="height: 140px">
                 <canvas ref="eventTypeChartRef"></canvas>
               </div>
             </div>
           </section>
 
           <!-- 사이즈별 비율 -->
-          <section class="flex-1">
+          <section class="flex-1 min-w-0">
             <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
               사이즈별 비율
             </h2>
-            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
-              <div class="flex items-center justify-center gap-4">
-                <div class="w-40 h-40">
-                  <canvas ref="sizeRatioChartRef"></canvas>
-                </div>
-                <div class="space-y-2">
+            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6">
+              <div class="flex items-center justify-center">
+                <div class="relative flex-shrink-0" style="width: 140px; height: 140px">
+                  <canvas
+                    ref="sizeRatioChartRef"
+                    style="
+                      display: block;
+                      width: 140px;
+                      height: 140px;
+                      position: relative;
+                      z-index: 1;
+                    "
+                  ></canvas>
+                  <!-- 도넛 중앙 범례 -->
                   <div
-                    v-for="segment in sizeRatio"
-                    :key="segment.size"
-                    class="flex items-center gap-2"
+                    class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
+                    style="z-index: 1"
                   >
-                    <div
-                      class="w-4 h-4 rounded-full"
-                      :style="{ backgroundColor: segment.color }"
-                    ></div>
-                    <span class="text-sm text-slate-700 dark:text-slate-300">
-                      {{ segment.size }} : {{ segment.percentage }}%
-                    </span>
+                    <div class="space-y-1">
+                      <div
+                        v-for="segment in sizeRatio"
+                        :key="segment.size"
+                        class="flex items-center gap-1.5"
+                      >
+                        <div
+                          class="w-3 h-3 rounded-full flex-shrink-0"
+                          :style="{ backgroundColor: segment.color }"
+                        ></div>
+                        <span class="text-[10px] text-slate-700 dark:text-slate-300 font-medium">
+                          {{ segment.size }}
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -366,72 +433,46 @@
       </div>
 
       <!-- 오른쪽 컬럼 -->
-      <div class="space-y-3">
-        <!-- 인사이트 -->
-        <section>
-          <div class="flex justify-between gap-4 mb-4 items-center">
-            <!-- <h2
-              class="items-center text-lg font-semibold text-gray-900 dark:text-table-header-text"
-            >
-              인사이트
-            </h2> -->
-            <!-- 액션 버튼 (인사이트 카드 아래) -->
-            <!-- <div class="flex items-center gap-2 mt-3">
-              <button
-                class="px-3 py-1.5 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg shadow-sm transition-all flex items-center gap-1.5 text-xs"
-              >
-                <i class="fi fi-rr-download text-xs"></i>
-                PDF
-              </button>
-
-              <button
-                class="px-3 py-1.5 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg shadow-sm transition-all flex items-center gap-1.5 text-xs"
-              >
-                <i class="fi fi-rr-envelope text-xs"></i>
-                이메일
-              </button>
-            </div> -->
-          </div>
-
-          <!-- <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
-            <div class="space-y-2">
-              <div
-                v-for="(insight, index) in insights"
-                :key="index"
-                class="flex items-start gap-2 p-2 bg-slate-50 dark:bg-slate-900 rounded-lg"
-              >
-                <div
-                  class="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
-                  style="background-color: #3b82f6"
-                ></div>
-                <p class="text-xs text-slate-700 dark:text-slate-300">
-                  {{ insight }}
-                </p>
-              </div>
-            </div>
-          </div> -->
-        </section>
-
+      <div class="space-y-2">
         <!-- 피크타임 분석 -->
-        <section class="gap-5">
-          <div class="flex justify-between items-center mb-4">
-            <h2
-              class="text-lg items-center font-semibold text-gray-900 dark:text-table-header-text"
-            >
-              피크타임 분석
-            </h2>
-            <select
-              v-model="selectedEventTypeForPeakTime"
-              class="px-3 py-1.5 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600 text-sm focus:outline-none"
-            >
-              <option value="">전체</option>
-              <option v-for="eventType in availableEventTypes" :key="eventType" :value="eventType">
-                {{ eventType }}
-              </option>
-            </select>
-          </div>
+        <section>
+          <h2
+            class="text-lg items-center font-semibold mb-4 text-gray-900 dark:text-table-header-text"
+          >
+            피크타임 분석
+          </h2>
 
-          <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 mb-4">
+          <div
+            class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 mb-4"
+          >
+            <!-- 범례와 셀렉트 (가로 배치) -->
+            <div class="flex items-baseline justify-between gap-4 mb-3">
+              <!-- 커스텀 범례 -->
+              <div class="flex items-center gap-4">
+                <div class="flex items-center gap-1.5">
+                  <div class="w-3 h-3 rounded-full" style="background-color: #f59e0b"></div>
+                  <span class="text-sm text-slate-700 dark:text-slate-300 font-medium">맡기기</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <div class="w-3 h-3 rounded-full" style="background-color: #3b82f6"></div>
+                  <span class="text-sm text-slate-700 dark:text-slate-300 font-medium">찾기</span>
+                </div>
+              </div>
+              <!-- 셀렉트 박스 -->
+              <select
+                v-model="selectedEventTypeForPeakTime"
+                class="px-3 py-1.5 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-600 text-sm focus:outline-none"
+              >
+                <option value="">전체</option>
+                <option
+                  v-for="eventType in availableEventTypes"
+                  :key="eventType"
+                  :value="eventType"
+                >
+                  {{ eventType }}
+                </option>
+              </select>
+            </div>
             <div class="h-64 flex flex-col items-center gap-2 flex-1 w-full min-w-0">
               <canvas ref="peakTimeChartRef"></canvas>
             </div>
@@ -440,23 +481,25 @@
 
         <!-- 지역별 배송 -->
         <section class="mb-4">
-          <h2 class="text-lg font-semibold text-gray-900 dark:text-table-header-text">
+          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
             지역별 배송
           </h2>
-          <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 overflow-x-auto">
-            <!-- 히트맵과 Top 3를 나란히 배치 (큰 화면) -->
-            <div class="flex flex-col lg:flex-row gap-3 lg:items-start min-w-0">
+          <div
+            class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 overflow-x-auto"
+          >
+            <!-- 히트맵과 Top 5를 가로 배치 -->
+            <div class="flex flex-col lg:flex-row gap-3 lg:items-start">
               <!-- 히트맵 스타일 지도 -->
-              <div class="flex flex-col items-center gap-2 flex-1 w-full min-w-0 overflow-x-auto">
-                <!-- 1행: 서북권, 동북권 -->
-                <div class="flex justify-center gap-2 w-full flex-wrap">
+              <div class="flex flex-col items-center gap-2 flex-1 w-full">
+                <!-- 1행: 수도, 강원 -->
+                <div class="flex justify-center gap-2 w-full">
                   <div
                     v-if="deliveryHeatmap[0]"
                     :class="[
                       getHeatmapColor(deliveryHeatmap[0].count || 0),
                       getHeatmapTextColor(deliveryHeatmap[0].count || 0),
                     ]"
-                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
                     @click="selectRegion(deliveryHeatmap[0])"
                     @mouseenter="
                       (e) => {
@@ -481,7 +524,7 @@
                       getHeatmapColor(deliveryHeatmap[1].count || 0),
                       getHeatmapTextColor(deliveryHeatmap[1].count || 0),
                     ]"
-                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
                     @click="selectRegion(deliveryHeatmap[1])"
                     @mouseenter="
                       (e) => {
@@ -502,15 +545,15 @@
                   </div>
                 </div>
 
-                <!-- 2행: 서남권, 도심권, 동남권 -->
-                <div class="flex justify-center gap-2 w-full flex-wrap">
+                <!-- 2행: 충청, 호남, 대구경북 -->
+                <div class="flex justify-center gap-2 w-full">
                   <div
                     v-if="deliveryHeatmap[2]"
                     :class="[
                       getHeatmapColor(deliveryHeatmap[2].count || 0),
                       getHeatmapTextColor(deliveryHeatmap[2].count || 0),
                     ]"
-                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
                     @click="selectRegion(deliveryHeatmap[2])"
                     @mouseenter="
                       (e) => {
@@ -535,7 +578,7 @@
                       getHeatmapColor(deliveryHeatmap[3].count || 0),
                       getHeatmapTextColor(deliveryHeatmap[3].count || 0),
                     ]"
-                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
                     @click="selectRegion(deliveryHeatmap[3])"
                     @mouseenter="
                       (e) => {
@@ -560,7 +603,7 @@
                       getHeatmapColor(deliveryHeatmap[4].count || 0),
                       getHeatmapTextColor(deliveryHeatmap[4].count || 0),
                     ]"
-                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
                     @click="selectRegion(deliveryHeatmap[4])"
                     @mouseenter="
                       (e) => {
@@ -581,15 +624,15 @@
                   </div>
                 </div>
 
-                <!-- 3행: 인천&경기, 지방 -->
-                <div class="flex justify-center gap-2 w-full flex-wrap">
+                <!-- 3행: 부울경, 제주 -->
+                <div class="flex justify-center gap-2 w-full">
                   <div
                     v-if="deliveryHeatmap[5]"
                     :class="[
                       getHeatmapColor(deliveryHeatmap[5].count || 0),
                       getHeatmapTextColor(deliveryHeatmap[5].count || 0),
                     ]"
-                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
                     @click="selectRegion(deliveryHeatmap[5])"
                     @mouseenter="
                       (e) => {
@@ -614,7 +657,7 @@
                       getHeatmapColor(deliveryHeatmap[6].count || 0),
                       getHeatmapTextColor(deliveryHeatmap[6].count || 0),
                     ]"
-                    class="h-20 w-24 sm:w-28 min-w-20 sm:min-w-28 flex-shrink-0 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
                     @click="selectRegion(deliveryHeatmap[6])"
                     @mouseenter="
                       (e) => {
@@ -638,7 +681,7 @@
                 <!-- 지역별 배송 툴팁 -->
                 <div
                   v-if="hoveredRegion"
-                  class="fixed bg-slate-900 dark:bg-slate-700 text-white text-xs rounded-lg p-3 shadow-lg z-50 pointer-events-none transform -translate-x-1/2 -translate-y-full"
+                  class="fixed bg-slate-900 dark:bg-slate-700 text-white text-xs rounded-xl p-3 shadow-lg z-50 pointer-events-none transform -translate-x-1/2 -translate-y-full"
                   :style="{
                     left: `${regionTooltipPosition.x}px`,
                     top: `${regionTooltipPosition.y}px`,
@@ -647,40 +690,49 @@
                   <div class="font-semibold mb-2">{{ hoveredRegion.name }}</div>
                   <div class="mb-1">건수: {{ hoveredRegion.count || 0 }}건</div>
                   <div class="mb-1">비율: {{ hoveredRegion.percentage }}%</div>
+                  <!-- 말풍선 화살표 -->
+                  <div
+                    class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-slate-900 dark:border-t-slate-700"
+                  ></div>
                 </div>
               </div>
 
-              <!-- Top 3 리스트 (큰 화면에서는 오른쪽에 세로 배치) -->
-              <div class="w-full lg:w-auto lg:min-w-[140px] lg:max-w-[180px] flex-shrink-0">
+              <!-- Top 5 리스트 (세로 배치) -->
+              <div
+                class="w-full lg:w-auto lg:min-w-[120px] flex-shrink-0"
+                v-if="deliveryRegions.length > 0"
+              >
                 <div
-                  class="text-xs font-semibold mb-2.5 text-center lg:text-left"
-                  style="color: #1e293b"
+                  class="text-xs font-semibold mb-1.5 text-center lg:text-left text-gray-900 dark:text-table-header-text"
                 >
-                  Top 3
+                  Top 5
                 </div>
-                <div class="flex flex-row lg:flex-col gap-2.5">
+                <div class="flex flex-col gap-1">
                   <div
                     v-for="(region, index) in deliveryRegions"
                     :key="index"
-                    class="p-2 rounded-lg shadow-sm bg-white dark:bg-slate-800 flex-1 lg:flex-none transition-all hover:shadow-md min-w-0 overflow-hidden"
-                    :style="
-                      index === 0
-                        ? 'border: 2px solid #3b82f6; color: #3b82f6; background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(59, 130, 246, 0.1));'
-                        : index === 1
-                          ? 'border: 2px solid #16a34a; color: #16a34a; background: linear-gradient(135deg, rgba(22, 163, 74, 0.05), rgba(22, 163, 74, 0.1));'
-                          : 'border: 2px solid #f97316; color: #f97316; background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(249, 115, 22, 0.1));'
-                    "
+                    class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 min-w-0 overflow-hidden"
                   >
-                    <div class="flex items-center justify-between mb-1">
-                      <div class="text-[10px] font-bold opacity-90">{{ index + 1 }}위</div>
-                      <div class="text-[10px] font-semibold opacity-75">
+                    <div class="flex items-center gap-2 mb-0.5">
+                      <div
+                        class="text-[9px] font-bold text-gray-700 dark:text-slate-300 flex-shrink-0"
+                      >
+                        {{ index + 1 }}위
+                      </div>
+                      <div
+                        class="text-[10px] font-bold truncate text-gray-900 dark:text-slate-100 flex-1"
+                      >
+                        {{ region.name }}
+                      </div>
+                    </div>
+                    <div class="flex items-center justify-between gap-1">
+                      <div class="text-[8px] text-gray-500 dark:text-slate-500">
+                        {{ region.count || 0 }}건
+                      </div>
+                      <div class="text-[9px] font-semibold text-gray-600 dark:text-slate-400">
                         {{ region.percentage }}%
                       </div>
                     </div>
-                    <div class="text-sm font-bold truncate">
-                      {{ region.name }}
-                    </div>
-                    <div class="text-[9px] mt-0.5 opacity-70">{{ region.count || 0 }}건</div>
                   </div>
                 </div>
               </div>
@@ -994,9 +1046,9 @@ const formatNumber = (value) => {
 // 변화율 텍스트 색상 반환 (상승: 빨강색, 하강: 파란색)
 const getChangeColor = (changeValue) => {
   if (changeValue > 0) {
-    return '#ef4444' // 빨강색 (상승)
+    return '#3b82f6' // 파란색 (상승)
   } else if (changeValue < 0) {
-    return '#3b82f6' // 파란색 (하강)
+    return '#ef4444' // 빨간색 (하락)
   }
   return '#6b7280' // 회색 (변화 없음)
 }
@@ -1205,13 +1257,38 @@ const maxEventValue = computed(() => {
   return Math.max(...eventTypeSales.value.map((item) => item.value))
 })
 
-// 지역별 배송 (Top 3)
+// 이전 지역명을 새로운 지역명으로 매핑하는 함수
+const mapRegionName = (oldRegion) => {
+  const regionMapping = {
+    // 이전 지역명 -> 새로운 지역명
+    서북권: '수도',
+    동북권: '수도',
+    서남권: '수도',
+    도심권: '수도',
+    동남권: '수도',
+    '인천&경기': '수도',
+    지방: '부울경', // 임시로 부울경에 매핑, 실제 데이터에 따라 조정 필요
+    // 새로운 지역명은 그대로 사용
+    수도: '수도',
+    강원: '강원',
+    충청: '충청',
+    호남: '호남',
+    대구경북: '대구경북',
+    부울경: '부울경',
+    제주: '제주',
+  }
+  return regionMapping[oldRegion] || '기타'
+}
+
+// 지역별 배송 (Top 5) - 시/도 단위
 const deliveryRegions = computed(() => {
   const reservations = filteredReservations.value.filter((r) => r.deliveryType === '배송')
   const regionMap = {}
 
+  // 시/도 단위로 집계 (deliveryRegion 필드 사용)
   reservations.forEach((r) => {
-    const region = r.deliveryRegionGroup || '기타'
+    const region = r.deliveryRegion || '기타'
+
     if (!regionMap[region]) {
       regionMap[region] = { name: region, count: 0 }
     }
@@ -1226,36 +1303,78 @@ const deliveryRegions = computed(() => {
       count: item.count,
     }))
     .sort((a, b) => b.count - a.count)
-    .slice(0, 3)
+    .slice(0, 5)
+
+  // 항상 5개가 표시되도록 빈 데이터 추가
+  while (regions.length < 5) {
+    regions.push({
+      name: '-',
+      percentage: 0,
+      count: 0,
+    })
+  }
 
   return regions
 })
+
+// 시/도를 권역으로 매핑하는 함수
+const mapRegionToArea = (region) => {
+  const regionToAreaMap = {
+    // 수도권
+    서울: '수도',
+    인천: '수도',
+    경기: '수도',
+    // 강원
+    강원: '강원',
+    // 충청
+    충남: '충청',
+    충북: '충청',
+    대전: '충청',
+    세종: '충청',
+    // 호남
+    전남: '호남',
+    전북: '호남',
+    광주: '호남',
+    // 대구경북
+    대구: '대구경북',
+    경북: '대구경북',
+    // 부울경
+    부산: '부울경',
+    울산: '부울경',
+    경남: '부울경',
+    // 제주
+    제주: '제주',
+  }
+  return regionToAreaMap[region] || '기타'
+}
 
 // 지역별 배송 히트맵 데이터
 const deliveryHeatmap = computed(() => {
   const reservations = filteredReservations.value.filter((r) => r.deliveryType === '배송')
   const regionMap = {}
 
-  // JSON 파일의 deliveryRegionGroup을 그대로 사용 (이미 수정된 값)
+  // 시/도 데이터를 권역으로 매핑하여 집계
   reservations.forEach((r) => {
-    const region = r.deliveryRegionGroup || '기타'
-    if (!regionMap[region]) {
-      regionMap[region] = { name: region, count: 0 }
+    const region = r.deliveryRegion || '기타'
+    const area = mapRegionToArea(region)
+
+    if (!regionMap[area]) {
+      regionMap[area] = { name: area, count: 0 }
     }
-    regionMap[region].count += 1
+    regionMap[area].count += 1
   })
 
   const total = reservations.length
 
   // 고정된 순서로 지역 그룹 정의 (레이아웃 순서대로)
   const regionOrder = [
-    '서북권', // 1행 첫번째
-    '동북권', // 1행 두번째
-    '서남권', // 2행 첫번째
-    '도심권', // 2행 중앙
-    '동남권', // 2행 세번째
-    '인천&경기', // 3행 첫번째
-    '지방', // 3행 두번째
+    '수도', // 1행 첫번째
+    '강원', // 1행 두번째
+    '충청', // 2행 첫번째
+    '호남', // 2행 중앙
+    '대구경북', // 2행 세번째
+    '부울경', // 3행 첫번째
+    '제주', // 3행 두번째
   ]
 
   // 순서대로 지역 데이터 생성
@@ -1296,17 +1415,27 @@ const getHeatmapColor = (count) => {
     return 'bg-blue-100'
   }
 
-  // 실제 데이터의 최대값과 최소값 계산
+  // 실제 데이터의 최대값과 최소값 계산 (0 포함)
   const counts = deliveryHeatmap.value.map((r) => r.count || 0)
-  const maxCount = Math.max(...counts, 1)
-  const minCount = Math.min(...counts.filter((c) => c > 0), 0)
+  const maxCount = Math.max(...counts, 0)
+  const minCount = Math.min(...counts)
 
   // 빈 데이터인 경우
   if (maxCount === 0) return 'bg-blue-100'
 
-  // 최대값 기준으로 5단계로 나눔
-  const step = (maxCount - minCount) / 5
+  // 최대값과 최소값이 같으면 모두 같은 색상
+  if (maxCount === minCount) {
+    return count > 0 ? 'bg-blue-500' : 'bg-blue-100'
+  }
 
+  // 최대값 기준으로 5단계로 나눔
+  const range = maxCount - minCount
+  const step = range / 5
+
+  // 0인 경우 가장 밝은 색상
+  if (count === 0) return 'bg-blue-100'
+
+  // 단계별 색상 할당
   if (count >= maxCount - step) return 'bg-blue-900'
   if (count >= maxCount - step * 2) return 'bg-blue-700'
   if (count >= maxCount - step * 3) return 'bg-blue-500'
@@ -1321,12 +1450,18 @@ const getHeatmapTextColor = (count) => {
   }
 
   const counts = deliveryHeatmap.value.map((r) => r.count || 0)
-  const maxCount = Math.max(...counts, 1)
-  const minCount = Math.min(...counts.filter((c) => c > 0), 0)
+  const maxCount = Math.max(...counts, 0)
+  const minCount = Math.min(...counts)
 
   if (maxCount === 0) return 'text-slate-900'
 
-  const step = (maxCount - minCount) / 5
+  // 최대값과 최소값이 같으면
+  if (maxCount === minCount) {
+    return count > 0 ? 'text-white' : 'text-slate-900'
+  }
+
+  const range = maxCount - minCount
+  const step = range / 5
 
   // 가장 어두운 두 단계(bg-blue-900, bg-blue-700)일 때는 흰색
   if (count >= maxCount - step) return 'text-white'
@@ -1343,13 +1478,13 @@ const selectRegion = (region) => {
 // 지역 설명 반환 (포함된 구들)
 const getRegionDescription = (regionName) => {
   const descriptions = {
-    서북권: '마포·용산·영등포·종로·중구·성북',
-    동북권: '노원',
-    서남권: '동작·관악',
-    도심권: '강남·서초·송파·강동',
-    동남권: '강동 일부',
-    '인천&경기': '인천·경기 전역',
-    지방: '부산·대전·대구·광주·기타',
+    수도: '서울·인천·경기',
+    강원: '강원도',
+    충청: '충청남도·충청북도·대전·세종',
+    호남: '전라남도·전라북도·광주',
+    대구경북: '대구·경상북도',
+    부울경: '부산·울산·경상남도',
+    제주: '제주도',
   }
   return descriptions[regionName] || ''
 }
@@ -1524,6 +1659,7 @@ const createEventTypeChart = () => {
           bodyColor: '#fff',
           borderColor: isDark ? 'rgba(148, 163, 184, 0.2)' : 'rgba(148, 163, 184, 0.2)',
           borderWidth: 1,
+          borderRadius: 12,
           callbacks: {
             label: function (context) {
               const item = eventTypeSales.value[context.dataIndex]
@@ -1596,8 +1732,8 @@ const createPeakTimeChart = () => {
         {
           label: '맡기기',
           data: peakTimeData.value.storeValues,
-          borderColor: '#3b82f6',
-          backgroundColor: 'rgba(59, 130, 246, 0.1)',
+          borderColor: '#f59e0b', // Small 색상 (오렌지색)
+          backgroundColor: 'rgba(245, 158, 11, 0.1)',
           tension: 0.4,
           fill: false,
           pointRadius: 4,
@@ -1606,8 +1742,8 @@ const createPeakTimeChart = () => {
         {
           label: '찾기',
           data: peakTimeData.value.findValues,
-          borderColor: '#22c55e',
-          backgroundColor: 'rgba(34, 197, 94, 0.1)',
+          borderColor: '#3b82f6', // Medium 색상 (파란색)
+          backgroundColor: 'rgba(59, 130, 246, 0.1)',
           tension: 0.4,
           fill: false,
           pointRadius: 4,
@@ -1620,16 +1756,7 @@ const createPeakTimeChart = () => {
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          display: true,
-          position: 'top',
-          labels: {
-            color: textColor,
-            usePointStyle: true,
-            padding: 15,
-            font: {
-              size: 12,
-            },
-          },
+          display: false,
         },
         tooltip: {
           backgroundColor: isDark ? 'rgba(15, 23, 42, 0.9)' : 'rgba(15, 23, 42, 0.9)',
@@ -1802,10 +1929,24 @@ const createSizeRatioChart = () => {
           bodyColor: '#fff',
           borderColor: isDark ? 'rgba(148, 163, 184, 0.2)' : 'rgba(148, 163, 184, 0.2)',
           borderWidth: 1,
+          z: 10000,
           callbacks: {
+            title: function (context) {
+              const item = sizeRatio.value[context[0].dataIndex]
+              return item ? item.size : ''
+            },
             label: function (context) {
               const item = sizeRatio.value[context.dataIndex]
-              return [`${item.size}`, `비율: ${item.percentage}%`, `건수: ${item.count}건`]
+              if (!item) return []
+              return [`비율: ${item.percentage}%`, `건수: ${item.count}건`]
+            },
+            labelColor: function (context) {
+              const item = sizeRatio.value[context.dataIndex]
+              if (!item) return {}
+              return {
+                borderColor: item.color,
+                backgroundColor: item.color,
+              }
             },
           },
         },
@@ -1870,4 +2011,9 @@ watch(
 )
 </script>
 
-<style scoped></style>
+<style scoped>
+/* Chart.js 툴팁이 범례 위에 표시되도록 z-index 설정 */
+:deep(.chartjs-tooltip) {
+  z-index: 10000 !important;
+}
+</style>

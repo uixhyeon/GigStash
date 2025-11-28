@@ -82,6 +82,16 @@ const router = createRouter({
           name: 'WorkerSettings',
           component: () => import('../pages/worker/WorkerSettings.vue'),
         },
+        {
+          path: 'remain-customer',
+          name: 'WorkerRemainCustomer',
+          component: () => import('../pages/worker/RemainCustomer.vue'),
+        },
+        {
+          path: 'qr-code',
+          name: 'WorkerQrCode',
+          component: () => import('../pages/worker/QrCode.vue'),
+        },
       ],
     },
     // 404 처리 =============================

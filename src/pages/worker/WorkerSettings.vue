@@ -23,63 +23,63 @@
   <div class="pb-20">
     <div class="px-4 py-4">
       <!-- 프로필 정보 카드 -->
-      <div class="bg-white rounded-2xl shadow-sm p-5">
+      <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm p-5">
           <div class="flex items-center gap-4">
-          <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
+          <div class="w-20 h-20 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden flex-shrink-0">
             <img v-if="userInfo.profileImage" :src="userInfo.profileImage" alt="프로필" class="w-full h-full object-cover" />
-            <span v-else class="text-3xl text-gray-400">👤</span>
+            <span v-else class="text-3xl text-gray-400 dark:text-gray-500">👤</span>
           </div>
           <div class="flex-1">
-            <div class="text-lg font-bold text-gray-900 mb-1">{{ userInfo.displayName }}</div>
-            <div class="text-sm text-gray-600 mb-1">{{ userInfo.phone }}</div>
-            <div class="text-sm text-gray-600">{{ userInfo.email }}</div>
+            <div class="text-lg font-bold text-gray-900 dark:text-white mb-1">{{ userInfo.displayName }}</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400 mb-1">{{ userInfo.phone }}</div>
+            <div class="text-sm text-gray-600 dark:text-gray-400">{{ userInfo.email }}</div>
           </div>
         </div>
         <div class="mt-4 text-right">
-          <button @click="goToEditProfile" class="text-blue-600 text-sm">내정보 수정 ></button>
+          <button @click="goToEditProfile" class="text-blue-600 dark:text-blue-400 text-sm">내정보 수정 ></button>
         </div>
       </div>
 
       <!-- 일정 정보 카드 -->
-      <div class="bg-white rounded-2xl shadow-sm mt-4 p-5">
-        <div class="text-lg font-bold text-gray-900 mb-3">전체 운영 일정</div>
+      <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mt-4 p-5">
+        <div class="text-lg font-bold text-gray-900 dark:text-white mb-3">전체 운영 일정</div>
         <div class="space-y-3">
           <div class="flex justify-between items-center">
-            <span class="text-sm text-gray-600">오늘 행사</span>
-            <span class="text-base text-gray-900">{{ todayScheduleCount }}건</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">오늘 행사</span>
+            <span class="text-base text-gray-900 dark:text-white">{{ todayScheduleCount }}건</span>
           </div>
           <div class="flex justify-between items-center">
-            <span class="text-sm text-gray-600">이번 주 행사</span>
-            <span class="text-base text-gray-900">{{ weekScheduleCount }}건</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">이번 주 행사</span>
+            <span class="text-base text-gray-900 dark:text-white">{{ weekScheduleCount }}건</span>
           </div>
           <div class="flex justify-between items-center">
-            <span class="text-sm text-gray-600">이번 달 행사</span>
-            <span class="text-base text-gray-900">{{ monthScheduleCount }}건</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">이번 달 행사</span>
+            <span class="text-base text-gray-900 dark:text-white">{{ monthScheduleCount }}건</span>
           </div>
           <div class="flex justify-end mt-2">
-            <button @click="goToCalendar" class="text-blue-600 text-sm">자세히 보기 ></button>
+            <button @click="goToCalendar" class="text-blue-600 dark:text-blue-400 text-sm">자세히 보기 ></button>
           </div>
         </div>
       </div>
 
       <!-- 급여 카드 -->
-      <div class="bg-white rounded-2xl shadow-sm mt-4 p-5">
-        <div class="text-lg font-bold text-gray-900 mb-3">내 급여 현황</div>
+      <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mt-4 p-5">
+        <div class="text-lg font-bold text-gray-900 dark:text-white mb-3">내 급여 현황</div>
         <div class="space-y-3">
           <div class="flex justify-between items-center">
-            <span class="text-sm text-gray-600">오늘</span>
-            <span class="text-base text-gray-900">{{ formatCurrency(todaySalary) }}원</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">오늘</span>
+            <span class="text-base text-gray-900 dark:text-white">{{ formatCurrency(todaySalary) }}원</span>
           </div>
           <div class="flex justify-between items-center">
-            <span class="text-sm text-gray-600">이번 주</span>
-            <span class="text-base text-gray-900">{{ formatCurrency(weekSalary) }}원</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">이번 주</span>
+            <span class="text-base text-gray-900 dark:text-white">{{ formatCurrency(weekSalary) }}원</span>
           </div>
           <div class="flex justify-between items-center">
-            <span class="text-sm text-gray-600">이번 달</span>
-            <span class="text-base text-gray-900">{{ formatCurrency(monthSalary) }}원</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">이번 달</span>
+            <span class="text-base text-gray-900 dark:text-white">{{ formatCurrency(monthSalary) }}원</span>
           </div>
           <div class="flex justify-end mt-2">
-            <button @click="goToSalaryDetail" class="text-blue-600 text-sm">자세히 보기 ></button>
+            <button @click="goToSalaryDetail" class="text-blue-600 dark:text-blue-400 text-sm">자세히 보기 ></button>
           </div>
         </div>
       </div>

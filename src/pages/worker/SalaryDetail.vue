@@ -24,7 +24,7 @@
 
     <!-- 급여 상세 카드 -->
     <div class="mx-4 mt-4">
-      <div class="bg-white rounded-2xl shadow-sm p-5">
+      <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm p-5">
         <!-- 기간 필터 -->
         <div class="mb-4">
           <div class="flex gap-2 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
@@ -64,26 +64,26 @@
           </div>
         </div>
         
-        <h2 class="text-lg font-bold text-gray-900 mb-4">급여 상세</h2>
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">급여 상세</h2>
         
         <div class="space-y-3">
           <div
             v-for="item in filteredSalaryDetails"
             :key="item.id"
-            class="flex justify-between items-center py-3 border-b border-gray-100 last:border-0"
+            class="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-700 last:border-0"
           >
             <div>
-              <div class="text-base text-gray-900">{{ item.label }}</div>
-              <div class="text-sm text-gray-600 mt-1">{{ item.workHours }}시간</div>
+              <div class="text-base text-gray-900 dark:text-white">{{ item.label }}</div>
+              <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">{{ item.workHours }}시간</div>
             </div>
-            <div class="text-base text-gray-900">
+            <div class="text-base text-gray-900 dark:text-white">
               {{ formatCurrency(item.salary) }}원
             </div>
           </div>
           
           <div
             v-if="filteredSalaryDetails.length === 0"
-            class="text-center text-gray-400 text-sm py-8"
+            class="text-center text-gray-400 dark:text-gray-500 text-sm py-8"
           >
             급여 내역이 없습니다.
           </div>
@@ -92,10 +92,10 @@
         <!-- 총 급여 -->
         <div
           v-if="filteredSalaryDetails.length > 0"
-          class="mt-4 pt-4 border-t border-gray-200 flex justify-between items-center"
+          class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex justify-between items-center"
         >
-          <span class="text-base text-gray-900">총 급여</span>
-          <span class="text-2xl font-bold text-blue-600">
+          <span class="text-base text-gray-900 dark:text-white">총 급여</span>
+          <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">
             {{ formatCurrency(totalSalary) }}원
           </span>
         </div>
@@ -104,12 +104,12 @@
 
     <!-- 지급 내역 -->
     <div class="mx-4 mt-4">
-      <div class="bg-white rounded-2xl shadow-sm p-5">
-        <h2 class="text-lg font-bold text-gray-900 mb-4">지급 내역</h2>
+      <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm p-5">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">지급 내역</h2>
         
         <!-- 지급 완료 내역 -->
         <div class="mb-6">
-          <h3 class="text-sm text-gray-600 mb-3">지급 완료</h3>
+          <h3 class="text-sm text-gray-600 dark:text-gray-400 mb-3">지급 완료</h3>
           <div class="space-y-2">
             <div
               v-for="item in completedPayments"
@@ -117,16 +117,16 @@
               class="flex justify-between items-center py-2"
             >
               <div>
-                <div class="text-base text-gray-900">{{ item.period }}</div>
-                <div class="text-sm text-gray-600">{{ item.paymentDate }}</div>
+                <div class="text-base text-gray-900 dark:text-white">{{ item.period }}</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">{{ item.paymentDate }}</div>
               </div>
-              <div class="text-base text-gray-900">
+              <div class="text-base text-gray-900 dark:text-white">
                 {{ formatCurrency(item.amount) }}원
               </div>
             </div>
             <div
               v-if="completedPayments.length === 0"
-              class="text-center text-gray-400 text-sm py-4"
+              class="text-center text-gray-400 dark:text-gray-500 text-sm py-4"
             >
               지급 완료 내역이 없습니다.
             </div>
@@ -135,7 +135,7 @@
 
         <!-- 지급 예정 내역 -->
         <div>
-          <h3 class="text-sm text-gray-600 mb-3">지급 예정</h3>
+          <h3 class="text-sm text-gray-600 dark:text-gray-400 mb-3">지급 예정</h3>
           <div class="space-y-2">
             <div
               v-for="item in scheduledPayments"
@@ -143,16 +143,16 @@
               class="flex justify-between items-center py-2"
             >
               <div>
-                <div class="text-base text-gray-900">{{ item.period }}</div>
-                <div class="text-sm text-gray-600">예정일: {{ item.scheduledDate }}</div>
+                <div class="text-base text-gray-900 dark:text-white">{{ item.period }}</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400">예정일: {{ item.scheduledDate }}</div>
               </div>
-              <div class="text-base text-blue-600">
+              <div class="text-base text-blue-600 dark:text-blue-400">
                 {{ formatCurrency(item.amount) }}원
               </div>
             </div>
             <div
               v-if="scheduledPayments.length === 0"
-              class="text-center text-gray-400 text-sm py-4"
+              class="text-center text-gray-400 dark:text-gray-500 text-sm py-4"
             >
               지급 예정 내역이 없습니다.
             </div>
