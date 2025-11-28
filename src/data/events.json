@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "id": "EVT-251127-999",
+      "id": "EVT251127999",
       "createdAt": "2025-11-27T10:00:00Z",
       "customerId": "C001",
       "eventName": "[취소] 테스트 행사",
@@ -23,7 +23,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251101-001",
+      "id": "EVT251101001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "프로농구 삼성 vs KCC",
       "eventDate": "2025-11-01",
@@ -44,7 +44,7 @@
       "expectedAttendance": 90
     },
     {
-      "id": "EVT-251101-002",
+      "id": "EVT251101002",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "YUURI ASIA TOUR 2025 in SEOUL Day 1",
       "eventDate": "2025-11-01",
@@ -66,7 +66,7 @@
       "expectedAttendance": 135
     },
     {
-      "id": "EVT-251102-001",
+      "id": "EVT251102001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "YUURI ASIA TOUR 2025 in SEOUL Day 2",
       "eventDate": "2025-11-02",
@@ -89,7 +89,7 @@
       "expectedAttendance": 135
     },
     {
-      "id": "EVT-251103-001",
+      "id": "EVT251103001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "프로농구 삼성 vs 모비스",
       "eventDate": "2025-11-03",
@@ -110,7 +110,7 @@
       "expectedAttendance": 90
     },
     {
-      "id": "EVT-251105-001",
+      "id": "EVT251105001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "프로농구 삼성 vs 정관장",
       "eventDate": "2025-11-05",
@@ -131,7 +131,7 @@
       "expectedAttendance": 90
     },
     {
-      "id": "EVT-251108-001",
+      "id": "EVT251108001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "프로농구 삼성 vs 가스공사",
       "eventDate": "2025-11-08",
@@ -152,7 +152,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251108-002",
+      "id": "EVT251108002",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "ZEROBASEONE WORLD TOUR HERE&NOW 쿠알라룸푸르",
       "eventDate": "2025-11-08",
@@ -172,7 +172,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251109-001",
+      "id": "EVT251109001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "2025 롤드컵 결승전",
       "eventDate": "2025-11-09",
@@ -192,7 +192,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251109-002",
+      "id": "EVT251109002",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "프로농구 삼성 vs SK",
       "eventDate": "2025-11-09",
@@ -213,7 +213,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251112-001",
+      "id": "EVT251112001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "프로농구 삼성 vs LG",
       "eventDate": "2025-11-12",
@@ -234,7 +234,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251115-001",
+      "id": "EVT251115001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "대한민국 vs 볼리비아 축구 친선경기",
       "eventDate": "2025-11-15",
@@ -254,7 +254,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251115-002",
+      "id": "EVT251115002",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "ZEROBASEONE WORLD TOUR HERE&NOW 싱가포르",
       "eventDate": "2025-11-15",
@@ -274,7 +274,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251118-001",
+      "id": "EVT251118001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "대한민국 vs 가나 축구 친선경기",
       "eventDate": "2025-11-18",
@@ -294,7 +294,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251121-001",
+      "id": "EVT251121001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "2025 PLAVE Asia Tour DASH: Quantum Leap Encore Day 1",
       "eventDate": "2025-11-21",
@@ -316,7 +316,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251121-002",
+      "id": "EVT251121002",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "엑스디너리 히어로즈 콘서트 Day 1",
       "eventDate": "2025-11-21",
@@ -337,7 +337,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251122-001",
+      "id": "EVT251122001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "2025 PLAVE Asia Tour DASH: Quantum Leap Encore Day 2",
       "eventDate": "2025-11-22",
@@ -359,7 +359,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251122-002",
+      "id": "EVT251122002",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "LG 야구단 팬 행사 - Love Giving Festival",
       "eventDate": "2025-11-22",
@@ -380,7 +380,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251122-003",
+      "id": "EVT251122003",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "HANTEO MUSIC FESTIVAL Day 1",
       "eventDate": "2025-11-22",
@@ -402,7 +402,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251122-004",
+      "id": "EVT251122004",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "엑스디너리 히어로즈 콘서트 Day 2",
       "eventDate": "2025-11-22",
@@ -423,7 +423,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251123-001",
+      "id": "EVT251123001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "두산 야구단 팬 감사 행사",
       "eventDate": "2025-11-23",
@@ -444,7 +444,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251123-002",
+      "id": "EVT251123002",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "프로축구 이랜드FC vs 안산",
       "eventDate": "2025-11-23",
@@ -465,7 +465,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251123-003",
+      "id": "EVT251123003",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "엑스디너리 히어로즈 콘서트 Day 3",
       "eventDate": "2025-11-23",
@@ -486,7 +486,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251123-004",
+      "id": "EVT251123004",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "HANTEO MUSIC FESTIVAL Day 2",
       "eventDate": "2025-11-27",
@@ -508,7 +508,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251128-001",
+      "id": "EVT251128001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "2025 MAMA AWARDS Day 1",
       "eventDate": "2025-11-28",
@@ -530,7 +530,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251129-001",
+      "id": "EVT251129001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "2025 MAMA AWARDS Day 2",
       "eventDate": "2025-11-29",
@@ -552,7 +552,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251129-002",
+      "id": "EVT251129002",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "NMIXX 첫 월드투어 EPISODE 1: ZERO FRONTIER Day 1",
       "eventDate": "2025-11-29",
@@ -573,7 +573,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251129-003",
+      "id": "EVT251129003",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "우즈(WOODZ) 콘서트 Day 1",
       "eventDate": "2025-11-29",
@@ -594,7 +594,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251130-001",
+      "id": "EVT251130001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "NMIXX 첫 월드투어 EPISODE 1: ZERO FRONTIER Day 2",
       "eventDate": "2025-11-30",
@@ -615,7 +615,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251130-002",
+      "id": "EVT251130002",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "우즈(WOODZ) 콘서트 Day 2",
       "eventDate": "2025-11-30",
@@ -636,7 +636,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251201-001",
+      "id": "EVT251201001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "IVE 콘서트 Day 1",
       "eventDate": "2025-12-01",
@@ -658,7 +658,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251202-001",
+      "id": "EVT251202001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "IVE 콘서트 Day 2",
       "eventDate": "2025-12-02",
@@ -680,7 +680,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251205-001",
+      "id": "EVT251205001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "프로농구 삼성 vs NC",
       "eventDate": "2025-12-05",
@@ -701,7 +701,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251206-001",
+      "id": "EVT251206001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "메이즈(MAIZE) 콘서트",
       "eventDate": "2025-12-06",
@@ -722,7 +722,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251210-001",
+      "id": "EVT251210001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "뮤지컬 '빌리엘리어트' 서울 공연",
       "eventDate": "2025-12-10",
@@ -743,7 +743,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251215-001",
+      "id": "EVT251215001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "크리스마스 팝업 페스티벌",
       "eventDate": "2025-12-15",
@@ -764,7 +764,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251220-001",
+      "id": "EVT251220001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "뮤지컬 '재킬앤하이드' 서울 공연",
       "eventDate": "2025-12-20",
@@ -785,7 +785,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251225-001",
+      "id": "EVT251225001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "프로농구 삼성 vs 울산",
       "eventDate": "2025-12-25",
@@ -806,7 +806,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251230-001",
+      "id": "EVT251230001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "연말 콘서트 Special",
       "eventDate": "2025-12-30",
@@ -827,7 +827,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251005-001",
+      "id": "EVT251005001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "프로농구 삼성 vs 부산",
       "eventDate": "2025-10-05",
@@ -848,7 +848,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251010-001",
+      "id": "EVT251010001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "뮤지컬 '킹콩' 서울 공연 Day 1",
       "eventDate": "2025-10-10",
@@ -869,7 +869,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251011-001",
+      "id": "EVT251011001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "뮤지컬 '킹콩' 서울 공연 Day 2",
       "eventDate": "2025-10-11",
@@ -890,7 +890,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251015-001",
+      "id": "EVT251015001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "SEVENTEEN 콘서트 'ODE TO YOU' Day 1",
       "eventDate": "2025-10-15",
@@ -911,7 +911,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251016-001",
+      "id": "EVT251016001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "SEVENTEEN 콘서트 'ODE TO YOU' Day 2",
       "eventDate": "2025-10-16",
@@ -932,7 +932,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251020-001",
+      "id": "EVT251020001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "프로축구 K리그 클래식 결승전",
       "eventDate": "2025-10-20",
@@ -953,7 +953,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251025-001",
+      "id": "EVT251025001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "공연예술제 2025 프로그램 1",
       "eventDate": "2025-10-25",
@@ -974,7 +974,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251028-001",
+      "id": "EVT251028001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "뉴진스 콘서트 Day 1",
       "eventDate": "2025-10-28",
@@ -995,7 +995,7 @@
       "expectedAttendance": 0
     },
     {
-      "id": "EVT-251029-001",
+      "id": "EVT251029001",
       "createdAt": "2025-11-24T10:00:00Z",
       "eventName": "뉴진스 콘서트 Day 2",
       "eventDate": "2025-10-29",

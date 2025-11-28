@@ -2,7 +2,7 @@
   "vehicles": [
     {
       "id": "VEH-001",
-      "eventId": "EVT-251101-001",
+      "eventId": "EVT251101001",
       "vehicleType": "버스",
       "capacity": 50,
       "plateNumber": "서울12가1234",
@@ -11,7 +11,7 @@
     },
     {
       "id": "VEH-002",
-      "eventId": "EVT-251101-001",
+      "eventId": "EVT251101001",
       "vehicleType": "버스",
       "capacity": 45,
       "plateNumber": "서울12가1235",
@@ -20,7 +20,7 @@
     },
     {
       "id": "VEH-003",
-      "eventId": "EVT-251101-002",
+      "eventId": "EVT251101002",
       "vehicleType": "버스",
       "capacity": 55,
       "plateNumber": "경기12가1001",
@@ -29,7 +29,7 @@
     },
     {
       "id": "VEH-004",
-      "eventId": "EVT-251101-002",
+      "eventId": "EVT251101002",
       "vehicleType": "버스",
       "capacity": 50,
       "plateNumber": "경기12가1002",
@@ -38,7 +38,7 @@
     },
     {
       "id": "VEH-005",
-      "eventId": "EVT-251101-002",
+      "eventId": "EVT251101002",
       "vehicleType": "중형차",
       "capacity": 35,
       "plateNumber": "경기12가1003",
@@ -47,7 +47,7 @@
     },
     {
       "id": "VEH-006",
-      "eventId": "EVT-251102-001",
+      "eventId": "EVT251102001",
       "vehicleType": "버스",
       "capacity": 55,
       "plateNumber": "경기12가2001",
@@ -56,7 +56,7 @@
     },
     {
       "id": "VEH-007",
-      "eventId": "EVT-251102-001",
+      "eventId": "EVT251102001",
       "vehicleType": "버스",
       "capacity": 50,
       "plateNumber": "경기12가2002",
@@ -65,7 +65,7 @@
     },
     {
       "id": "VEH-008",
-      "eventId": "EVT-251102-001",
+      "eventId": "EVT251102001",
       "vehicleType": "중형차",
       "capacity": 35,
       "plateNumber": "경기12가2003",
@@ -74,7 +74,7 @@
     },
     {
       "id": "VEH-009",
-      "eventId": "EVT-251103-001",
+      "eventId": "EVT251103001",
       "vehicleType": "버스",
       "capacity": 50,
       "plateNumber": "서울12가2001",
@@ -83,7 +83,7 @@
     },
     {
       "id": "VEH-010",
-      "eventId": "EVT-251103-001",
+      "eventId": "EVT251103001",
       "vehicleType": "버스",
       "capacity": 45,
       "plateNumber": "서울12가2002",
@@ -128,7 +128,7 @@
     },
     {
       "id": "VEH-015",
-      "eventId": "EVT-251105-001",
+      "eventId": "EVT251105001",
       "vehicleType": "버스",
       "capacity": 55,
       "plateNumber": "서울12가4001",
@@ -137,7 +137,7 @@
     },
     {
       "id": "VEH-016",
-      "eventId": "EVT-251105-001",
+      "eventId": "EVT251105001",
       "vehicleType": "중형차",
       "capacity": 35,
       "plateNumber": "서울12가4002",

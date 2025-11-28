@@ -11,7 +11,7 @@
       "itemDescription": "도시락, 음료",
       "createdAt": "2025-01-09T15:30:00Z",
       "accessCode": "1234",
-      "eventId": "EVT-251101-001"
+      "eventId": "EVT251101001"
     },
     {
       "id": "RES2501090002",
@@ -24,7 +24,7 @@
       "itemDescription": "케이크",
       "createdAt": "2025-01-09T14:00:00Z",
       "accessCode": "5678",
-      "eventId": "EVT-251101-002"
+      "eventId": "EVT251101002"
     },
     {
       "id": "RES2501100003",
@@ -37,7 +37,7 @@
       "itemDescription": "샌드위치",
       "createdAt": "2025-01-10T09:15:00Z",
       "accessCode": "9012",
-      "eventId": "EVT-251102-001"
+      "eventId": "EVT251102001"
     },
     {
       "id": "RES2501100004",
@@ -50,7 +50,7 @@
       "itemDescription": "과일, 요거트",
       "createdAt": "2025-01-09T18:00:00Z",
       "accessCode": "3456",
-      "eventId": "EVT-251103-001"
+      "eventId": "EVT251103001"
     },
     {
       "id": "RES2501100005",
@@ -63,7 +63,7 @@
       "itemDescription": "도시락",
       "createdAt": "2025-01-10T08:00:00Z",
       "accessCode": "7890",
-      "eventId": "EVT-251104-001"
+      "eventId": "EVT251104001"
     },
     {
       "id": "RES2501100006",
@@ -76,7 +76,7 @@
       "itemDescription": "식자재",
       "createdAt": "2025-01-09T20:00:00Z",
       "accessCode": "2345",
-      "eventId": "EVT-251104-002"
+      "eventId": "EVT251104002"
     },
     {
       "id": "RES2501100007",
@@ -89,7 +89,7 @@
       "itemDescription": "음료수",
       "createdAt": "2025-01-10T09:45:00Z",
       "accessCode": "6789",
-      "eventId": "EVT-251101-001"
+      "eventId": "EVT251101001"
     },
     {
       "id": "RES2501100008",
@@ -102,7 +102,7 @@
       "itemDescription": "배달음식",
       "createdAt": "2025-01-09T22:00:00Z",
       "accessCode": "0123",
-      "eventId": "EVT-251101-002"
+      "eventId": "EVT251101002"
     },
     {
       "id": "RES2501090009",
@@ -116,7 +116,7 @@
       "createdAt": "2025-01-08T15:00:00Z",
       "completedAt": "2025-01-09T17:45:00Z",
       "accessCode": "4567",
-      "eventId": "EVT-251102-001"
+      "eventId": "EVT251102001"
     },
     {
       "id": "RES2501080010",
@@ -130,7 +130,7 @@
       "createdAt": "2025-01-08T14:30:00Z",
       "completedAt": "2025-01-09T16:50:00Z",
       "accessCode": "8901",
-      "eventId": "EVT-251103-001"
+      "eventId": "EVT251103001"
     },
     {
       "id": "RES2501090011",
@@ -145,7 +145,7 @@
       "cancelledAt": "2025-01-09T12:00:00Z",
       "cancelReason": "고객 요청",
       "accessCode": "1111",
-      "eventId": "EVT-251104-001"
+      "eventId": "EVT251104001"
     },
     {
       "id": "RES2501080012",
@@ -159,11 +159,11 @@
       "createdAt": "2025-01-07T16:00:00Z",
       "expiredAt": "2025-01-08T18:00:00Z",
       "accessCode": "2222",
-      "eventId": "EVT-251104-002"
+      "eventId": "EVT251104002"
     },
     {
       "id": "RES2510300013",
-      "eventId": "EVT-251101-001",
+      "eventId": "EVT251101001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C001",
@@ -176,7 +176,7 @@
     },
     {
       "id": "RES2510260014",
-      "eventId": "EVT-251101-001",
+      "eventId": "EVT251101001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C002",
@@ -189,7 +189,7 @@
     },
     {
       "id": "RES2510300015",
-      "eventId": "EVT-251101-001",
+      "eventId": "EVT251101001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C003",
@@ -202,7 +202,7 @@
     },
     {
       "id": "RES2510280016",
-      "eventId": "EVT-251101-002",
+      "eventId": "EVT251101002",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C004",
@@ -215,7 +215,7 @@
     },
     {
       "id": "RES2510300017",
-      "eventId": "EVT-251101-002",
+      "eventId": "EVT251101002",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C005",
@@ -228,7 +228,7 @@
     },
     {
       "id": "RES2510290018",
-      "eventId": "EVT-251101-002",
+      "eventId": "EVT251101002",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C006",
@@ -241,7 +241,7 @@
     },
     {
       "id": "RES2510300019",
-      "eventId": "EVT-251102-001",
+      "eventId": "EVT251102001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C007",
@@ -254,7 +254,7 @@
     },
     {
       "id": "RES2510260020",
-      "eventId": "EVT-251102-001",
+      "eventId": "EVT251102001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C008",
@@ -267,7 +267,7 @@
     },
     {
       "id": "RES2510280021",
-      "eventId": "EVT-251102-001",
+      "eventId": "EVT251102001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C009",
@@ -280,7 +280,7 @@
     },
     {
       "id": "RES2510280022",
-      "eventId": "EVT-251103-001",
+      "eventId": "EVT251103001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C010",
@@ -293,7 +293,7 @@
     },
     {
       "id": "RES2510310023",
-      "eventId": "EVT-251103-001",
+      "eventId": "EVT251103001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C011",
@@ -306,7 +306,7 @@
     },
     {
       "id": "RES2510290024",
-      "eventId": "EVT-251103-001",
+      "eventId": "EVT251103001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C012",
@@ -319,7 +319,7 @@
     },
     {
       "id": "RES2510290025",
-      "eventId": "EVT-251105-001",
+      "eventId": "EVT251105001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C013",
@@ -332,7 +332,7 @@
     },
     {
       "id": "RES2511020026",
-      "eventId": "EVT-251105-001",
+      "eventId": "EVT251105001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C014",
@@ -345,7 +345,7 @@
     },
     {
       "id": "RES2511030027",
-      "eventId": "EVT-251105-001",
+      "eventId": "EVT251105001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C015",
@@ -358,7 +358,7 @@
     },
     {
       "id": "RES2511070028",
-      "eventId": "EVT-251108-001",
+      "eventId": "EVT251108001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C001",
@@ -371,7 +371,7 @@
     },
     {
       "id": "RES2511030029",
-      "eventId": "EVT-251108-001",
+      "eventId": "EVT251108001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C002",
@@ -384,7 +384,7 @@
     },
     {
       "id": "RES2511060030",
-      "eventId": "EVT-251108-001",
+      "eventId": "EVT251108001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C003",
@@ -397,7 +397,7 @@
     },
     {
       "id": "RES2511040031",
-      "eventId": "EVT-251108-002",
+      "eventId": "EVT251108002",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C004",
@@ -410,7 +410,7 @@
     },
     {
       "id": "RES2511020032",
-      "eventId": "EVT-251108-002",
+      "eventId": "EVT251108002",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C005",
@@ -423,7 +423,7 @@
     },
     {
       "id": "RES2511070033",
-      "eventId": "EVT-251108-002",
+      "eventId": "EVT251108002",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C006",
@@ -436,7 +436,7 @@
     },
     {
       "id": "RES2511030034",
-      "eventId": "EVT-251109-001",
+      "eventId": "EVT251109001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C007",
@@ -449,7 +449,7 @@
     },
     {
       "id": "RES2511020035",
-      "eventId": "EVT-251109-001",
+      "eventId": "EVT251109001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C008",
@@ -462,7 +462,7 @@
     },
     {
       "id": "RES2511060036",
-      "eventId": "EVT-251109-001",
+      "eventId": "EVT251109001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C009",
@@ -475,7 +475,7 @@
     },
     {
       "id": "RES2511050037",
-      "eventId": "EVT-251109-002",
+      "eventId": "EVT251109002",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C010",
@@ -488,7 +488,7 @@
     },
     {
       "id": "RES2511020038",
-      "eventId": "EVT-251109-002",
+      "eventId": "EVT251109002",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C011",
@@ -501,7 +501,7 @@
     },
     {
       "id": "RES2511070039",
-      "eventId": "EVT-251109-002",
+      "eventId": "EVT251109002",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C012",
@@ -514,7 +514,7 @@
     },
     {
       "id": "RES2511080040",
-      "eventId": "EVT-251112-001",
+      "eventId": "EVT251112001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C013",
@@ -527,7 +527,7 @@
     },
     {
       "id": "RES2511060041",
-      "eventId": "EVT-251112-001",
+      "eventId": "EVT251112001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C014",
@@ -540,7 +540,7 @@
     },
     {
       "id": "RES2511060042",
-      "eventId": "EVT-251112-001",
+      "eventId": "EVT251112001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C015",
@@ -553,7 +553,7 @@
     },
     {
       "id": "RES2511120043",
-      "eventId": "EVT-251115-001",
+      "eventId": "EVT251115001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C001",
@@ -566,7 +566,7 @@
     },
     {
       "id": "RES2511090044",
-      "eventId": "EVT-251115-001",
+      "eventId": "EVT251115001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C002",
@@ -579,7 +579,7 @@
     },
     {
       "id": "RES2511120045",
-      "eventId": "EVT-251115-001",
+      "eventId": "EVT251115001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C003",
@@ -592,7 +592,7 @@
     },
     {
       "id": "RES2511100046",
-      "eventId": "EVT-251115-002",
+      "eventId": "EVT251115002",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C004",
@@ -605,7 +605,7 @@
     },
     {
       "id": "RES2511080047",
-      "eventId": "EVT-251115-002",
+      "eventId": "EVT251115002",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C005",
@@ -618,7 +618,7 @@
     },
     {
       "id": "RES2511080048",
-      "eventId": "EVT-251115-002",
+      "eventId": "EVT251115002",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C006",
@@ -631,7 +631,7 @@
     },
     {
       "id": "RES2511130049",
-      "eventId": "EVT-251118-001",
+      "eventId": "EVT251118001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C007",
@@ -644,7 +644,7 @@
     },
     {
       "id": "RES2511170050",
-      "eventId": "EVT-251118-001",
+      "eventId": "EVT251118001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C008",
@@ -657,7 +657,7 @@
     },
     {
       "id": "RES2511140051",
-      "eventId": "EVT-251118-001",
+      "eventId": "EVT251118001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C009",
@@ -670,7 +670,7 @@
     },
     {
       "id": "RES2511200052",
-      "eventId": "EVT-251121-001",
+      "eventId": "EVT251121001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C010",
@@ -683,7 +683,7 @@
     },
     {
       "id": "RES2511170053",
-      "eventId": "EVT-251121-001",
+      "eventId": "EVT251121001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C011",
@@ -696,7 +696,7 @@
     },
     {
       "id": "RES2511140054",
-      "eventId": "EVT-251121-001",
+      "eventId": "EVT251121001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C012",
@@ -709,7 +709,7 @@
     },
     {
       "id": "RES2511160055",
-      "eventId": "EVT-251121-002",
+      "eventId": "EVT251121002",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C013",
@@ -722,7 +722,7 @@
     },
     {
       "id": "RES2511170056",
-      "eventId": "EVT-251121-002",
+      "eventId": "EVT251121002",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C014",
@@ -735,7 +735,7 @@
     },
     {
       "id": "RES2511160057",
-      "eventId": "EVT-251121-002",
+      "eventId": "EVT251121002",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C015",
@@ -748,7 +748,7 @@
     },
     {
       "id": "RES2511150058",
-      "eventId": "EVT-251122-001",
+      "eventId": "EVT251122001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C001",
@@ -761,7 +761,7 @@
     },
     {
       "id": "RES2511160059",
-      "eventId": "EVT-251122-001",
+      "eventId": "EVT251122001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C002",
@@ -774,7 +774,7 @@
     },
     {
       "id": "RES2511210060",
-      "eventId": "EVT-251122-001",
+      "eventId": "EVT251122001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C003",
@@ -787,7 +787,7 @@
     },
     {
       "id": "RES2511160061",
-      "eventId": "EVT-251122-003",
+      "eventId": "EVT251122003",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C004",
@@ -800,7 +800,7 @@
     },
     {
       "id": "RES2511160062",
-      "eventId": "EVT-251122-003",
+      "eventId": "EVT251122003",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C005",
@@ -813,7 +813,7 @@
     },
     {
       "id": "RES2511190063",
-      "eventId": "EVT-251122-003",
+      "eventId": "EVT251122003",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C006",
@@ -826,7 +826,7 @@
     },
     {
       "id": "RES2511210064",
-      "eventId": "EVT-251122-004",
+      "eventId": "EVT251122004",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C007",
@@ -839,7 +839,7 @@
     },
     {
       "id": "RES2511150065",
-      "eventId": "EVT-251122-004",
+      "eventId": "EVT251122004",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C008",
@@ -852,7 +852,7 @@
     },
     {
       "id": "RES2511210066",
-      "eventId": "EVT-251122-004",
+      "eventId": "EVT251122004",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C009",
@@ -865,7 +865,7 @@
     },
     {
       "id": "RES2511200067",
-      "eventId": "EVT-251123-003",
+      "eventId": "EVT251123003",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C010",
@@ -878,7 +878,7 @@
     },
     {
       "id": "RES2511190068",
-      "eventId": "EVT-251123-003",
+      "eventId": "EVT251123003",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C011",
@@ -891,7 +891,7 @@
     },
     {
       "id": "RES2511200069",
-      "eventId": "EVT-251123-003",
+      "eventId": "EVT251123003",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C012",
@@ -904,7 +904,7 @@
     },
     {
       "id": "RES2511250070",
-      "eventId": "EVT-251123-004",
+      "eventId": "EVT251123004",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C013",
@@ -917,7 +917,7 @@
     },
     {
       "id": "RES2511200071",
-      "eventId": "EVT-251123-004",
+      "eventId": "EVT251123004",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C014",
@@ -930,7 +930,7 @@
     },
     {
       "id": "RES2511210072",
-      "eventId": "EVT-251123-004",
+      "eventId": "EVT251123004",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C015",
@@ -943,7 +943,7 @@
     },
     {
       "id": "RES2511240073",
-      "eventId": "EVT-251128-001",
+      "eventId": "EVT251128001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C001",
@@ -956,7 +956,7 @@
     },
     {
       "id": "RES2511270074",
-      "eventId": "EVT-251128-001",
+      "eventId": "EVT251128001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C002",
@@ -969,7 +969,7 @@
     },
     {
       "id": "RES2511260075",
-      "eventId": "EVT-251128-001",
+      "eventId": "EVT251128001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C003",
@@ -982,7 +982,7 @@
     },
     {
       "id": "RES2511280076",
-      "eventId": "EVT-251129-001",
+      "eventId": "EVT251129001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C004",
@@ -995,7 +995,7 @@
     },
     {
       "id": "RES2511250077",
-      "eventId": "EVT-251129-001",
+      "eventId": "EVT251129001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C005",
@@ -1008,7 +1008,7 @@
     },
     {
       "id": "RES2511220078",
-      "eventId": "EVT-251129-001",
+      "eventId": "EVT251129001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C006",
@@ -1021,7 +1021,7 @@
     },
     {
       "id": "RES2511250079",
-      "eventId": "EVT-251129-002",
+      "eventId": "EVT251129002",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C007",
@@ -1034,7 +1034,7 @@
     },
     {
       "id": "RES2511250080",
-      "eventId": "EVT-251129-002",
+      "eventId": "EVT251129002",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C008",
@@ -1047,7 +1047,7 @@
     },
     {
       "id": "RES2511240081",
-      "eventId": "EVT-251129-002",
+      "eventId": "EVT251129002",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C009",
@@ -1060,7 +1060,7 @@
     },
     {
       "id": "RES2511240082",
-      "eventId": "EVT-251129-003",
+      "eventId": "EVT251129003",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C010",
@@ -1073,7 +1073,7 @@
     },
     {
       "id": "RES2511240083",
-      "eventId": "EVT-251129-003",
+      "eventId": "EVT251129003",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C011",
@@ -1086,7 +1086,7 @@
     },
     {
       "id": "RES2511280084",
-      "eventId": "EVT-251129-003",
+      "eventId": "EVT251129003",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C012",
@@ -1099,7 +1099,7 @@
     },
     {
       "id": "RES2511280085",
-      "eventId": "EVT-251130-001",
+      "eventId": "EVT251130001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C013",
@@ -1112,7 +1112,7 @@
     },
     {
       "id": "RES2511260086",
-      "eventId": "EVT-251130-001",
+      "eventId": "EVT251130001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C014",
@@ -1125,7 +1125,7 @@
     },
     {
       "id": "RES2511260087",
-      "eventId": "EVT-251130-001",
+      "eventId": "EVT251130001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C015",
@@ -1138,7 +1138,7 @@
     },
     {
       "id": "RES2511230088",
-      "eventId": "EVT-251130-002",
+      "eventId": "EVT251130002",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C001",
@@ -1151,7 +1151,7 @@
     },
     {
       "id": "RES2511240089",
-      "eventId": "EVT-251130-002",
+      "eventId": "EVT251130002",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C002",
@@ -1164,7 +1164,7 @@
     },
     {
       "id": "RES2511250090",
-      "eventId": "EVT-251130-002",
+      "eventId": "EVT251130002",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C003",
@@ -1177,7 +1177,7 @@
     },
     {
       "id": "RES2511260091",
-      "eventId": "EVT-251201-001",
+      "eventId": "EVT251201001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C004",
@@ -1190,7 +1190,7 @@
     },
     {
       "id": "RES2511270092",
-      "eventId": "EVT-251201-001",
+      "eventId": "EVT251201001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C005",
@@ -1203,7 +1203,7 @@
     },
     {
       "id": "RES2511270093",
-      "eventId": "EVT-251201-001",
+      "eventId": "EVT251201001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C006",
@@ -1216,7 +1216,7 @@
     },
     {
       "id": "RES2511250094",
-      "eventId": "EVT-251202-001",
+      "eventId": "EVT251202001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C007",
@@ -1229,7 +1229,7 @@
     },
     {
       "id": "RES2511280095",
-      "eventId": "EVT-251202-001",
+      "eventId": "EVT251202001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C008",
@@ -1242,7 +1242,7 @@
     },
     {
       "id": "RES2512010096",
-      "eventId": "EVT-251202-001",
+      "eventId": "EVT251202001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C009",
@@ -1255,7 +1255,7 @@
     },
     {
       "id": "RES2511300097",
-      "eventId": "EVT-251205-001",
+      "eventId": "EVT251205001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C010",
@@ -1268,7 +1268,7 @@
     },
     {
       "id": "RES2512040098",
-      "eventId": "EVT-251205-001",
+      "eventId": "EVT251205001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C011",
@@ -1281,7 +1281,7 @@
     },
     {
       "id": "RES2511290099",
-      "eventId": "EVT-251205-001",
+      "eventId": "EVT251205001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C012",
@@ -1294,7 +1294,7 @@
     },
     {
       "id": "RES2512040100",
-      "eventId": "EVT-251206-001",
+      "eventId": "EVT251206001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C013",
@@ -1307,7 +1307,7 @@
     },
     {
       "id": "RES2511290101",
-      "eventId": "EVT-251206-001",
+      "eventId": "EVT251206001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C014",
@@ -1320,7 +1320,7 @@
     },
     {
       "id": "RES2512030102",
-      "eventId": "EVT-251206-001",
+      "eventId": "EVT251206001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C015",
@@ -1333,7 +1333,7 @@
     },
     {
       "id": "RES2512070103",
-      "eventId": "EVT-251210-001",
+      "eventId": "EVT251210001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C001",
@@ -1346,7 +1346,7 @@
     },
     {
       "id": "RES2512050104",
-      "eventId": "EVT-251210-001",
+      "eventId": "EVT251210001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C002",
@@ -1359,7 +1359,7 @@
     },
     {
       "id": "RES2512060105",
-      "eventId": "EVT-251210-001",
+      "eventId": "EVT251210001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C003",
@@ -1372,7 +1372,7 @@
     },
     {
       "id": "RES2512110106",
-      "eventId": "EVT-251215-001",
+      "eventId": "EVT251215001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C004",
@@ -1385,7 +1385,7 @@
     },
     {
       "id": "RES2512140107",
-      "eventId": "EVT-251215-001",
+      "eventId": "EVT251215001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C005",
@@ -1398,7 +1398,7 @@
     },
     {
       "id": "RES2512140108",
-      "eventId": "EVT-251215-001",
+      "eventId": "EVT251215001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C006",
@@ -1411,7 +1411,7 @@
     },
     {
       "id": "RES2512160109",
-      "eventId": "EVT-251220-001",
+      "eventId": "EVT251220001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C007",
@@ -1424,7 +1424,7 @@
     },
     {
       "id": "RES2512170110",
-      "eventId": "EVT-251220-001",
+      "eventId": "EVT251220001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C008",
@@ -1437,7 +1437,7 @@
     },
     {
       "id": "RES2512170111",
-      "eventId": "EVT-251220-001",
+      "eventId": "EVT251220001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C009",
@@ -1450,7 +1450,7 @@
     },
     {
       "id": "RES2512240112",
-      "eventId": "EVT-251225-001",
+      "eventId": "EVT251225001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C010",
@@ -1463,7 +1463,7 @@
     },
     {
       "id": "RES2512190113",
-      "eventId": "EVT-251225-001",
+      "eventId": "EVT251225001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C011",
@@ -1476,7 +1476,7 @@
     },
     {
       "id": "RES2512190114",
-      "eventId": "EVT-251225-001",
+      "eventId": "EVT251225001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C012",
@@ -1489,7 +1489,7 @@
     },
     {
       "id": "RES2512290115",
-      "eventId": "EVT-251230-001",
+      "eventId": "EVT251230001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C013",
@@ -1502,7 +1502,7 @@
     },
     {
       "id": "RES2512250116",
-      "eventId": "EVT-251230-001",
+      "eventId": "EVT251230001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C014",
@@ -1515,7 +1515,7 @@
     },
     {
       "id": "RES2512290117",
-      "eventId": "EVT-251230-001",
+      "eventId": "EVT251230001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C015",
@@ -1528,7 +1528,7 @@
     },
     {
       "id": "RES2510030118",
-      "eventId": "EVT-251005-001",
+      "eventId": "EVT251005001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C001",
@@ -1541,7 +1541,7 @@
     },
     {
       "id": "RES2510030119",
-      "eventId": "EVT-251005-001",
+      "eventId": "EVT251005001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C002",
@@ -1554,7 +1554,7 @@
     },
     {
       "id": "RES2510020120",
-      "eventId": "EVT-251005-001",
+      "eventId": "EVT251005001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C003",
@@ -1567,7 +1567,7 @@
     },
     {
       "id": "RES2510040121",
-      "eventId": "EVT-251010-001",
+      "eventId": "EVT251010001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C004",
@@ -1580,7 +1580,7 @@
     },
     {
       "id": "RES2510050122",
-      "eventId": "EVT-251010-001",
+      "eventId": "EVT251010001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C005",
@@ -1593,7 +1593,7 @@
     },
     {
       "id": "RES2510030123",
-      "eventId": "EVT-251010-001",
+      "eventId": "EVT251010001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C006",
@@ -1606,7 +1606,7 @@
     },
     {
       "id": "RES2510040124",
-      "eventId": "EVT-251011-001",
+      "eventId": "EVT251011001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C007",
@@ -1619,7 +1619,7 @@
     },
     {
       "id": "RES2510070125",
-      "eventId": "EVT-251011-001",
+      "eventId": "EVT251011001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C008",
@@ -1632,7 +1632,7 @@
     },
     {
       "id": "RES2510080126",
-      "eventId": "EVT-251011-001",
+      "eventId": "EVT251011001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C009",
@@ -1645,7 +1645,7 @@
     },
     {
       "id": "RES2510090127",
-      "eventId": "EVT-251015-001",
+      "eventId": "EVT251015001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C010",
@@ -1658,7 +1658,7 @@
     },
     {
       "id": "RES2510080128",
-      "eventId": "EVT-251015-001",
+      "eventId": "EVT251015001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C011",
@@ -1671,7 +1671,7 @@
     },
     {
       "id": "RES2510140129",
-      "eventId": "EVT-251015-001",
+      "eventId": "EVT251015001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C012",
@@ -1684,7 +1684,7 @@
     },
     {
       "id": "RES2510130130",
-      "eventId": "EVT-251016-001",
+      "eventId": "EVT251016001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C013",
@@ -1697,7 +1697,7 @@
     },
     {
       "id": "RES2510110131",
-      "eventId": "EVT-251016-001",
+      "eventId": "EVT251016001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C014",
@@ -1710,7 +1710,7 @@
     },
     {
       "id": "RES2510110132",
-      "eventId": "EVT-251016-001",
+      "eventId": "EVT251016001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C015",
@@ -1723,7 +1723,7 @@
     },
     {
       "id": "RES2510180133",
-      "eventId": "EVT-251020-001",
+      "eventId": "EVT251020001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C001",
@@ -1736,7 +1736,7 @@
     },
     {
       "id": "RES2510140134",
-      "eventId": "EVT-251020-001",
+      "eventId": "EVT251020001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C002",
@@ -1749,7 +1749,7 @@
     },
     {
       "id": "RES2510160135",
-      "eventId": "EVT-251020-001",
+      "eventId": "EVT251020001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C003",
@@ -1762,7 +1762,7 @@
     },
     {
       "id": "RES2510220136",
-      "eventId": "EVT-251025-001",
+      "eventId": "EVT251025001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C004",
@@ -1775,7 +1775,7 @@
     },
     {
       "id": "RES2510230137",
-      "eventId": "EVT-251025-001",
+      "eventId": "EVT251025001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C005",
@@ -1788,7 +1788,7 @@
     },
     {
       "id": "RES2510230138",
-      "eventId": "EVT-251025-001",
+      "eventId": "EVT251025001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C006",
@@ -1801,7 +1801,7 @@
     },
     {
       "id": "RES2510220139",
-      "eventId": "EVT-251028-001",
+      "eventId": "EVT251028001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C007",
@@ -1814,7 +1814,7 @@
     },
     {
       "id": "RES2510210140",
-      "eventId": "EVT-251028-001",
+      "eventId": "EVT251028001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C008",
@@ -1827,7 +1827,7 @@
     },
     {
       "id": "RES2510250141",
-      "eventId": "EVT-251028-001",
+      "eventId": "EVT251028001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C009",
@@ -1840,7 +1840,7 @@
     },
     {
       "id": "RES2510270142",
-      "eventId": "EVT-251029-001",
+      "eventId": "EVT251029001",
       "lockerId": "L000",
       "lockerNumber": "A-100",
       "customerId": "C010",
@@ -1853,7 +1853,7 @@
     },
     {
       "id": "RES2510220143",
-      "eventId": "EVT-251029-001",
+      "eventId": "EVT251029001",
       "lockerId": "L001",
       "lockerNumber": "B-101",
       "customerId": "C011",
@@ -1866,7 +1866,7 @@
     },
     {
       "id": "RES2510230144",
-      "eventId": "EVT-251029-001",
+      "eventId": "EVT251029001",
       "lockerId": "L002",
       "lockerNumber": "C-102",
       "customerId": "C012",
