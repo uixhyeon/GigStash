@@ -212,130 +212,79 @@
           <div class="flex gap-3">
             <!-- 이용률 카드 -->
             <div
-              class="text-[#333] rounded-2xl shadow-sm flex-1"
-              style="
-                padding: 12px;
-                background: white;
-                border: solid 1px;
-              "
+              class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
             >
-              <div class="text-center mb-1">
-                <div>
-                  <div class="font-medium opacity-90" style="font-size: 18px;">이용률</div>
-                  <div class="font-bold mt-0.5" style="font-size: 28px;">
-                    {{ keyMetrics.utilizationRate }}%
-                  </div>
-                  <div class="mt-0.5 text-[#333] font-bold " style="font-size: 18px;">
-                    <i class="fi fi-rr-arrow-down mr-1"></i
-                    >{{ Math.abs(keyMetrics.utilizationChange) }}%
-                  </div>
+              <div class="text-center">
+                <div class="text-sm font-medium text-gray-600 dark:text-gray-400">이용률</div>
+                <div class="text-4xl font-bold mt-2 text-blue-600 dark:text-blue-400">
+                  {{ keyMetrics.utilizationRate }}%
+                </div>
+                <div class="mt-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <i class="fi fi-rr-arrow-down mr-1"></i>{{ Math.abs(keyMetrics.utilizationChange) }}%
                 </div>
               </div>
             </div>
 
             <!-- 재방문율 카드 -->
             <div
-              class="text-[#333] rounded-2xl shadow-sm flex-1"
-              style="
-                padding: 12px;
-                background: white;
-                border: solid 1px;
-              "
+              class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30"
             >
-              <div class="text-center mb-1">
-                <div>
-                  <div class="font-medium opacity-90" style="font-size: 18px;">재방문율</div>
-                  <div class="font-bold mt-0.5" style="font-size: 28px;">
-                    {{ additionalMetrics.revisitRate }}%
-                  </div>
-                  <div class="mt-0.5 text-[#333] font-bold" style="font-size: 18px;">
-                    <i class="fi fi-rr-arrow-up mr-1"></i
-                    >{{ additionalMetrics.revisitChange }}%
-                  </div>
+              <div class="text-center">
+                <div class="text-sm font-medium text-gray-600 dark:text-gray-400">재방문율</div>
+                <div class="text-4xl font-bold mt-2 text-green-600 dark:text-green-400">
+                  {{ additionalMetrics.revisitRate }}%
+                </div>
+                <div class="mt-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <i class="fi fi-rr-arrow-up mr-1"></i>{{ additionalMetrics.revisitChange }}%
                 </div>
               </div>
             </div>
 
             <!-- 배송선택률 카드 -->
             <div
-              class="text-[#333] rounded-2xl shadow-sm flex-1"
-              style="
-                padding: 12px;
-                background: linear-gradient(
-                  135deg,
-                  rgba(251, 191, 36, 0.9),
-                  rgba(245, 158, 11, 0.95)
-                );
-              "
+              class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-300/90 to-amber-400/95 text-gray-800"
             >
-              <div class="text-center mb-1">
-                <div>
-                  <div class="font-medium opacity-90" style="font-size: 18px;">
-                  배송선택률
-                  </div>
-                  <div class="font-bold mt-0.5" style="font-size: 28px;">
-                    {{ additionalMetrics.deliveryRate }}%
-                  </div>
-                  <div class="mt-0.5 text-[#333]  font-bold" style="font-size: 18px;">
-                    <i class="fi fi-rr-arrow-up mr-1"></i
-                    >{{ additionalMetrics.deliveryChange }}%
-                  </div>
+              <div class="text-center">
+                <div class="text-sm font-medium opacity-90">배송선택률</div>
+                <div class="text-4xl font-bold mt-2">
+                  {{ additionalMetrics.deliveryRate }}%
+                </div>
+                <div class="mt-2 text-sm font-medium">
+                  <i class="fi fi-rr-arrow-up mr-1"></i>{{ additionalMetrics.deliveryChange }}%
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- 재방문율 & 배송선택률 카드 -->
+        <!-- 매출 & 이용객 카드 -->
         <div class="flex gap-3">
           <!-- 매출 카드 -->
           <div
-            class="text-[#333] rounded-2xl shadow-sm flex-1"
-            style="
-              padding: 12px;
-              background: linear-gradient(
-                135deg,
-                rgba(96, 165, 250, 0.9),
-                rgba(59, 130, 246, 0.95)
-              );
-            "
+            class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-400/90 to-blue-600/95 text-white"
           >
-            <div class="text-center mb-1">
-              <div>
-                <div class="font-medium opacity-90" style="font-size: 18px;">매출</div>
-                <div class="font-bold mt-0.5" style="font-size: 28px;">
-                  {{ formatCurrency(keyMetrics.revenue) }}
-                </div>
-                <div class="mt-0.5 text-[#333] font-bold" style="font-size: 18px;">
-                  <i class="fi fi-rr-arrow-up mr-1"></i
-                  >{{ keyMetrics.revenueChange }}%
-                </div>
+            <div class="text-center">
+              <div class="text-sm font-medium opacity-90">매출</div>
+              <div class="text-4xl font-bold mt-2">
+                {{ formatCurrency(keyMetrics.revenue) }}
+              </div>
+              <div class="mt-2 text-sm font-medium">
+                <i class="fi fi-rr-arrow-up mr-1"></i>{{ keyMetrics.revenueChange }}%
               </div>
             </div>
           </div>
 
           <!-- 이용객 카드 -->
           <div
-            class="text-[#333] rounded-2xl shadow-sm flex-1"
-            style="
-              padding: 12px;
-              background: linear-gradient(
-                135deg,
-                rgba(107, 114, 128, 0.9),
-                rgba(75, 85, 99, 0.95)
-              );
-            "
+            class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-gray-400/90 to-gray-600/95 text-white"
           >
-            <div class="text-center mb-1">
-              <div>
-                <div class="font-medium opacity-90" style="font-size: 18px;">이용객</div>
-                <div class="font-bold mt-0.5" style="font-size: 28px;">
-                  {{ formatNumber(keyMetrics.users) }}명
-                </div>
-                <div class="mt-0.5 text-[#333] font-bold" style="font-size: 18px;">
-                  <i class="fi fi-rr-arrow-up mr-1"></i
-                  >{{ keyMetrics.usersChange }}%
-                </div>
+            <div class="text-center">
+              <div class="text-sm font-medium opacity-90">이용객</div>
+              <div class="text-4xl font-bold mt-2">
+                {{ formatNumber(keyMetrics.users) }}명
+              </div>
+              <div class="mt-2 text-sm font-medium">
+                <i class="fi fi-rr-arrow-up mr-1"></i>{{ keyMetrics.usersChange }}%
               </div>
             </div>
           </div>
