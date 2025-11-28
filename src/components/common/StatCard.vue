@@ -1,12 +1,12 @@
 <template>
   <div class="rounded-3xl shadow-sm backdrop-blur-sm" :class="[cardClass, layoutClass]">
     <!-- 수평 레이아웃 -->
-    <div v-if="layout === 'horizontal'" class="p-6 flex justify-between items-start">
-      <div>
-        <div class="text-sm font-medium text-gray-600 dark:text-gray-400">{{ label }}</div>
-        <div class="text-4xl font-bold mt-2" :class="valueClass">{{ value }}</div>
+    <div v-if="layout === 'horizontal'" class="p-3 sm:p-4 md:p-6 flex justify-between items-start gap-2">
+      <div class="min-w-0 flex-1">
+        <div class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 truncate">{{ label }}</div>
+        <div class="text-2xl sm:text-3xl md:text-4xl font-bold mt-1 sm:mt-2" :class="valueClass">{{ value }}</div>
       </div>
-      <i :class="`fi ${icon} text-2xl`" :style="iconStyle"></i>
+      <i :class="`fi ${icon} text-lg sm:text-xl md:text-2xl flex-shrink-0`" :style="iconStyle"></i>
     </div>
 
     <!-- 수직 레이아웃 -->

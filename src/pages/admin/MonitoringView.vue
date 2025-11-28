@@ -9,7 +9,7 @@
 
       <!-- 날짜 범위 선택기 -->
       <div class="flex justify-center mb-3">
-        <div class="flex items-center gap-4 relative">
+        <div class="flex items-center gap-4">
           <button
             @click="prevDateRange"
             class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors flex items-center justify-center"
@@ -176,30 +176,30 @@
       <!-- 왼쪽 컬럼 -->
       <div class="space-y-3">
         <!-- 주요 지표 -->
-        <section class="gap-5 mb-6">
+        <section class="gap-5">
           <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
             금주 주요 지표
           </h2>
-          <div class="flex gap-3 mb-4">
+          <div class="flex flex-wrap gap-3 mb-4">
             <!-- 이용률 카드 -->
             <div
-              class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+              class="flex-1 min-w-0 sm:min-w-[calc(50%-6px)] lg:min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
             >
               <div>
                 <div
-                  class="text-left text-md font-medium text-gray-900 dark:text-table-header-text"
+                  class="text-left text-xs sm:text-sm md:text-base font-medium text-gray-900 dark:text-table-header-text"
                 >
                   이용률
                 </div>
                 <div class="text-right">
                   <div
-                    class="mt-2 text-sm font-semibold"
+                    class="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold"
                     :style="{ color: getChangeColor(keyMetrics.utilizationChange) }"
                   >
                     <i :class="getChangeIcon(keyMetrics.utilizationChange)" class="mr-1"></i
                     >{{ Math.abs(keyMetrics.utilizationChange) }}%
                   </div>
-                  <div class="text-5xl font-bold mt-2 text-gray-900 dark:text-table-header-text">
+                  <div class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text">
                     {{ keyMetrics.utilizationRate }}%
                   </div>
                 </div>
@@ -208,24 +208,24 @@
 
             <!-- 재방문율 카드 -->
             <div
-              class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30"
+              class="flex-1 min-w-0 sm:min-w-[calc(50%-6px)] lg:min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30"
             >
               <div>
                 <div
-                  class="text-left text-md font-medium text-gray-900 dark:text-table-header-text"
+                  class="text-left text-xs sm:text-sm md:text-base font-medium text-gray-900 dark:text-table-header-text"
                 >
                   재방문율
                 </div>
 
                 <div class="text-right">
                   <div
-                    class="mt-2 text-sm font-semibold"
+                    class="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold"
                     :style="{ color: getChangeColor(additionalMetrics.revisitChange) }"
                   >
                     <i :class="getChangeIcon(additionalMetrics.revisitChange)" class="mr-1"></i
                     >{{ Math.abs(additionalMetrics.revisitChange) }}%
                   </div>
-                  <div class="text-5xl font-bold mt-2 text-gray-900 dark:text-table-header-text">
+                  <div class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text">
                     {{ additionalMetrics.revisitRate }}%
                   </div>
                 </div>
@@ -235,20 +235,20 @@
             <!-- 배송선택률 카드 -->
             <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-300/90 to-amber-400/95 text-gray-800" -->
             <div
-              class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-yellow-100 dark:border-yellow-900/30"
+              class="flex-1 min-w-0 sm:min-w-[calc(50%-6px)] lg:min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-yellow-100 dark:border-yellow-900/30"
             >
-              <div class="text-md font-medium opacity-90 text-gray-900 dark:text-table-header-text">
+              <div class="text-xs sm:text-sm md:text-base font-medium opacity-90 text-gray-900 dark:text-table-header-text">
                 배송선택률
               </div>
               <div class="text-right">
                 <div
-                  class="mt-2 text-sm font-semibold"
+                  class="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold"
                   :style="{ color: getChangeColor(additionalMetrics.deliveryChange) }"
                 >
                   <i :class="getChangeIcon(additionalMetrics.deliveryChange)" class="mr-1"></i
                   >{{ Math.abs(additionalMetrics.deliveryChange) }}%
                 </div>
-                <div class="text-5xl font-bold mt-2 text-gray-900 dark:text-table-header-text">
+                <div class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text">
                   {{ additionalMetrics.deliveryRate }}%
                 </div>
               </div>
@@ -256,26 +256,26 @@
           </div>
 
           <!-- 매출 & 이용객 카드 -->
-          <div class="flex gap-3">
+          <div class="flex flex-wrap gap-3">
             <!-- 이용객 카드 -->
             <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-gray-400/90 to-gray-600/95" -->
             <div
-              class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-100 dark:border-none"
+              class="flex-1 min-w-0 sm:min-w-[calc(50%-6px)] p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-100 dark:border-none"
             >
               <div
-                class="text-lg font-semibold opacity-90 text-gray-900 dark:text-table-header-text"
+                class="text-xs sm:text-sm md:text-base font-semibold opacity-90 text-gray-900 dark:text-table-header-text"
               >
                 이용객
               </div>
               <div class="text-right">
                 <div
-                  class="mt-2 text-sm font-medium"
+                  class="mt-1 sm:mt-2 text-xs sm:text-sm font-medium"
                   :style="{ color: getChangeColor(keyMetrics.usersChange) }"
                 >
                   <i :class="getChangeIcon(keyMetrics.usersChange)" class="mr-1"></i
                   >{{ Math.abs(keyMetrics.usersChange) }}%
                 </div>
-                <div class="text-5xl font-bold mt-2 text-gray-900 dark:text-table-header-text">
+                <div class="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text">
                   {{ formatNumber(keyMetrics.users) }}명
                 </div>
               </div>
@@ -285,20 +285,20 @@
             <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-400/90 to-blue-600/95 text-white" -->
 
             <div
-              class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95"
+              class="flex-1 min-w-0 sm:min-w-[calc(50%-6px)] p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95"
             >
-              <div class="text-lg font-semibold opacity-90 text-gray-900 dark:text-gray-900">
+              <div class="text-xs sm:text-sm md:text-base font-semibold opacity-90 text-gray-900 dark:text-gray-900">
                 매출
               </div>
               <div class="text-right">
                 <div
-                  class="mt-2 text-sm font-medium"
+                  class="mt-1 sm:mt-2 text-xs sm:text-sm font-medium"
                   :style="{ color: getChangeColor(keyMetrics.revenueChange) }"
                 >
                   <i :class="getChangeIcon(keyMetrics.revenueChange)" class="mr-1"></i
                   >{{ Math.abs(keyMetrics.revenueChange) }}%
                 </div>
-                <div class="text-5xl font-bold mt-2 text-gray-900 dark:text-gray-900">
+                <div class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-1 sm:mt-2 text-gray-900 dark:text-gray-900">
                   {{ formatCurrency(keyMetrics.revenue) }}
                 </div>
               </div>
@@ -307,7 +307,7 @@
         </section>
 
         <!-- 행사 유형별 매출 & 사이즈별 비율 (가로 배열) -->
-        <div class="flex gap-3 flex-col lg:flex-row">
+        <div class="flex gap-3 flex-col xl:flex-row">
           <!-- 행사 유형별 매출 -->
           <section class="flex-1">
             <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
@@ -399,7 +399,7 @@
         </section>
 
         <!-- 피크타임 분석 -->
-        <section class="gap-5 mb-6">
+        <section class="gap-5">
           <div class="flex justify-between items-center mb-4">
             <h2
               class="text-lg items-center font-semibold text-gray-900 dark:text-table-header-text"
@@ -408,7 +408,7 @@
             </h2>
             <select
               v-model="selectedEventTypeForPeakTime"
-              class="px-3 py-1.5 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 min-w-[120px] w-[120px]"
+              class="px-3 py-1.5 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600 text-sm focus:outline-none"
             >
               <option value="">전체</option>
               <option v-for="eventType in availableEventTypes" :key="eventType" :value="eventType">
@@ -417,8 +417,8 @@
             </select>
           </div>
 
-          <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
-            <div class="flex flex-col items-center gap-2 flex-1 w-full min-w-0">
+          <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 mb-4">
+            <div class="h-64 flex flex-col items-center gap-2 flex-1 w-full min-w-0">
               <canvas ref="peakTimeChartRef"></canvas>
             </div>
           </div>
@@ -431,7 +431,7 @@
           </h2>
           <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 overflow-x-auto">
             <!-- 히트맵과 Top 3를 나란히 배치 (큰 화면) -->
-            <div class="flex flex-col lg:flex-row gap-3 items-start min-w-0">
+            <div class="flex flex-col lg:flex-row gap-3 lg:items-start min-w-0">
               <!-- 히트맵 스타일 지도 -->
               <div class="flex flex-col items-center gap-2 flex-1 w-full min-w-0 overflow-x-auto">
                 <!-- 1행: 서북권, 동북권 -->
