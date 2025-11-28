@@ -3,70 +3,8 @@
     <!-- <h1 class="text-3xl font-bold mb-8" style="color: #1e293b">Main Home</h1> -->
 
     <!-- 통계 카드 -->
-    <section class="mb-8">
-      <h2 class="text-lg font-semibold mb-4 text-slate-800 dark:text-slate-200">
-        당일 보관함 현황
-      </h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
-        <!-- Blue Card -->
-        <div
-          class="p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
-          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-        >
-          <div class="flex justify-between items-start gap-1 sm:gap-2 md:gap-3">
-            <div class="min-w-0">
-              <div class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate">전체 예약</div>
-              <div class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-blue-600 dark:text-blue-400">142</div>
-            </div>
-            <i class="fi fi-rr-arrow-up-right text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0" style="color: #3b82f6"></i>
-          </div>
-        </div>
 
-        <!-- Dark Card -->
-        <div
-          class="p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700"
-          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-        >
-          <div class="flex justify-between items-start gap-1 sm:gap-2 md:gap-3">
-            <div class="min-w-0">
-              <div class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate">활성 예약</div>
-              <div class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-gray-900 dark:text-white">32</div>
-            </div>
-            <i class="fi fi-rr-arrow-up-right text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0" style="color: #1f2937"></i>
-          </div>
-        </div>
-
-        <!-- Blue Card -->
-        <div
-          class="p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
-          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-        >
-          <div class="flex justify-between items-start gap-1 sm:gap-2 md:gap-3">
-            <div class="min-w-0">
-              <div class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate">대기 중</div>
-              <div class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-blue-600 dark:text-blue-400">8</div>
-            </div>
-            <i class="fi fi-rr-arrow-down-left text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0" style="color: #3b82f6"></i>
-          </div>
-        </div>
-
-        <!-- Dark Card -->
-        <div
-          class="p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700"
-          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-        >
-          <div class="flex justify-between items-start gap-1 sm:gap-2 md:gap-3">
-            <div class="min-w-0">
-              <div class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate">완료</div>
-              <div class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-gray-900 dark:text-white">102</div>
-            </div>
-            <i class="fi fi-rr-arrow-down-left text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0" style="color: #1f2937"></i>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- <section class="mb-12">
+    <section class="mb-12">
       <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
         당일 보관함 현황
       </h2>
@@ -107,7 +45,7 @@
           />
         </div>
       </div>
-    </section> -->
+    </section>
     <!-- =============================================================================================================== -->
     <!-- 두 컬럼 레이아웃 -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
@@ -248,11 +186,24 @@
             >
               <div class="flex justify-between items-start gap-2">
                 <div class="min-w-0 flex-1">
-                  <div class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate">일일 활성 사용자</div>
-                  <div class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-blue-600 dark:text-blue-400">{{ dailyActiveUsers }}</div>
-                  <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">어제 대비 <span class="text-blue-600 dark:text-blue-400 font-medium">+12%</span></div>
+                  <div
+                    class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                  >
+                    일일 활성 사용자
+                  </div>
+                  <div
+                    class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-blue-600 dark:text-blue-400"
+                  >
+                    {{ dailyActiveUsers }}
+                  </div>
+                  <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                    어제 대비 <span class="text-blue-600 dark:text-blue-400 font-medium">+12%</span>
+                  </div>
                 </div>
-                <i class="fi fi-rr-users text-lg sm:text-xl flex-shrink-0" style="color: #3b82f6"></i>
+                <i
+                  class="fi fi-rr-users text-lg sm:text-xl flex-shrink-0"
+                  style="color: #3b82f6"
+                ></i>
               </div>
             </div>
 
@@ -263,11 +214,25 @@
             >
               <div class="flex justify-between items-start gap-2">
                 <div class="min-w-0 flex-1">
-                  <div class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate">재방문율</div>
-                  <div class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-amber-600 dark:text-amber-400">{{ repeatVisitRate }}%</div>
-                  <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">지난달 대비 <span class="text-amber-600 dark:text-amber-400 font-medium">+5.2%</span></div>
+                  <div
+                    class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                  >
+                    재방문율
+                  </div>
+                  <div
+                    class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-amber-600 dark:text-amber-400"
+                  >
+                    {{ repeatVisitRate }}%
+                  </div>
+                  <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                    지난달 대비
+                    <span class="text-amber-600 dark:text-amber-400 font-medium">+5.2%</span>
+                  </div>
                 </div>
-                <i class="fi fi-rr-rotate-clockwise text-lg sm:text-xl flex-shrink-0" style="color: #d97706"></i>
+                <i
+                  class="fi fi-rr-rotate-clockwise text-lg sm:text-xl flex-shrink-0"
+                  style="color: #d97706"
+                ></i>
               </div>
             </div>
 
@@ -278,11 +243,24 @@
             >
               <div class="flex justify-between items-start gap-2">
                 <div class="min-w-0 flex-1">
-                  <div class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate">신규 고객</div>
-                  <div class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-green-600 dark:text-green-400">{{ newCustomerCount }}</div>
-                  <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">이번달 신규 ({{ newCustomerPercentage }}%)</div>
+                  <div
+                    class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                  >
+                    신규 고객
+                  </div>
+                  <div
+                    class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-green-600 dark:text-green-400"
+                  >
+                    {{ newCustomerCount }}
+                  </div>
+                  <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                    이번달 신규 ({{ newCustomerPercentage }}%)
+                  </div>
                 </div>
-                <i class="fi fi-rr-user-add text-lg sm:text-xl flex-shrink-0" style="color: #16a34a"></i>
+                <i
+                  class="fi fi-rr-user-add text-lg sm:text-xl flex-shrink-0"
+                  style="color: #16a34a"
+                ></i>
               </div>
             </div>
           </div>
@@ -502,7 +480,9 @@ const repeatVisitRate = computed(() => {
     customerReservationCounts[res.customerId] = (customerReservationCounts[res.customerId] || 0) + 1
   })
 
-  const repeatCustomers = Object.values(customerReservationCounts).filter((count) => count >= 2).length
+  const repeatCustomers = Object.values(customerReservationCounts).filter(
+    (count) => count >= 2,
+  ).length
   const rate = customers.value.length > 0 ? (repeatCustomers / customers.value.length) * 100 : 0
   return Math.round(rate)
 })

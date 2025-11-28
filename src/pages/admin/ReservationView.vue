@@ -263,7 +263,7 @@
                   class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
                 >
                   <div class="flex items-center justify-center gap-1">
-                    행사번호
+                    행사번호 (EVT ID)
                     <i
                       v-if="sortBy === 'eventId'"
                       :class="[
