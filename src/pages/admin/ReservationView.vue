@@ -3,60 +3,104 @@
     <!-- 통계 카드 -->
     <section class="mb-8">
       <h2 class="text-lg font-semibold mb-4 text-slate-800 dark:text-slate-200">예약 통계</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <!-- Blue Card -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
+        <!-- 전체 예약 -->
         <div
-          class="p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+          class="p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
           style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
         >
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <div class="text-sm font-medium text-gray-600 dark:text-gray-400">전체 예약</div>
-              <div class="text-4xl font-bold mt-2 text-blue-600 dark:text-blue-400">142</div>
+          <div class="flex justify-between items-start gap-1 sm:gap-2 md:gap-3">
+            <div class="min-w-0">
+              <div
+                class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate"
+              >
+                전체 예약
+              </div>
+              <div
+                class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-blue-600 dark:text-blue-400"
+              >
+                {{ stats.all }}
+              </div>
             </div>
-            <i class="fi fi-rr-arrow-up-right text-2xl" style="color: #3b82f6"></i>
+            <i
+              class="fi fi-rr-calendar text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0"
+              style="color: #3b82f6"
+            ></i>
           </div>
         </div>
 
-        <!-- Dark Card -->
+        <!-- 활성 예약 -->
         <div
-          class="p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700"
+          class="p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
           style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
         >
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <div class="text-sm font-medium text-gray-600 dark:text-gray-400">활성 예약</div>
-              <div class="text-4xl font-bold mt-2 text-gray-900 dark:text-white">32</div>
+          <div class="flex justify-between items-start gap-1 sm:gap-2 md:gap-3">
+            <div class="min-w-0">
+              <div
+                class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate"
+              >
+                활성 예약
+              </div>
+              <div
+                class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-blue-600 dark:text-blue-400"
+              >
+                {{ stats.active }}
+              </div>
             </div>
-            <i class="fi fi-rr-arrow-up-right text-2xl" style="color: #1f2937"></i>
+            <i
+              class="fi fi-rr-circle-check text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0"
+              style="color: #3b82f6"
+            ></i>
           </div>
         </div>
 
-        <!-- Blue Card -->
+        <!-- 대기 중 -->
         <div
-          class="p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+          class="p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-amber-100 dark:border-amber-900/30"
           style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
         >
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <div class="text-sm font-medium text-gray-600 dark:text-gray-400">대기 중</div>
-              <div class="text-4xl font-bold mt-2 text-blue-600 dark:text-blue-400">8</div>
+          <div class="flex justify-between items-start gap-1 sm:gap-2 md:gap-3">
+            <div class="min-w-0">
+              <div
+                class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate"
+              >
+                대기 중
+              </div>
+              <div
+                class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-amber-600 dark:text-amber-400"
+              >
+                {{ stats.waiting }}
+              </div>
             </div>
-            <i class="fi fi-rr-arrow-down-left text-2xl" style="color: #3b82f6"></i>
+            <i
+              class="fi fi-rr-hourglass text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0"
+              style="color: #d97706"
+            ></i>
           </div>
         </div>
 
-        <!-- Dark Card -->
+        <!-- 완료 -->
         <div
-          class="p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700"
+          class="p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30"
           style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
         >
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <div class="text-sm font-medium text-gray-600 dark:text-gray-400">완료</div>
-              <div class="text-4xl font-bold mt-2 text-gray-900 dark:text-white">102</div>
+          <div class="flex justify-between items-start gap-1 sm:gap-2 md:gap-3">
+            <div class="min-w-0">
+              <div
+                class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate"
+              >
+                완료
+              </div>
+              <div
+                class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-green-600 dark:text-green-400"
+              >
+                {{ stats.completed }}
+              </div>
             </div>
-            <i class="fi fi-rr-arrow-down-left text-2xl" style="color: #1f2937"></i>
+            <i
+              class="fi fi-rr-check text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0"
+              style="color: #16a34a"
+            ></i>
           </div>
         </div>
       </div>
@@ -84,9 +128,9 @@
               class="px-2.5 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
             >
               <option value="전체">전체</option>
-              <option value="예정">예정</option>
-              <option value="진행 중">진행 중</option>
-              <option value="종료">종료</option>
+              <option value="활성">활성</option>
+              <option value="대기">대기</option>
+              <option value="완료">완료</option>
               <option value="취소">취소</option>
             </select>
           </div>
@@ -95,7 +139,7 @@
           <label
             class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
           >
-            행사명
+            사용자 명
           </label>
           <div
             class="flex items-center gap-2 w-full px-2.5 py-1.5 text-xs border border-gray-300 bg-white dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
@@ -278,7 +322,153 @@
 </template>
 
 <script setup>
-// 예약관리 페이지 (현재 보류 상태 - 기본 UI만 제공)
+import { ref, computed } from 'vue'
+import reservationsData from '@/data/reservations.json'
+import customersData from '@/data/customers.json'
+
+// 예약 데이터
+const reservations = ref([])
+const customers = ref([])
+
+// 필터 상태
+const statusFilter = ref('전체')
+const searchQuery = ref('')
+const monthFilter = ref('')
+
+// 데이터 초기화
+const initializeData = () => {
+  reservations.value = reservationsData.reservations || []
+  customers.value = customersData.customers || []
+}
+
+// 고객 정보 조회 함수
+const getCustomerInfo = (customerId) => {
+  return customers.value.find((c) => c.id === customerId) || { name: '미정' }
+}
+
+// 상태 맵핑 (영문 -> 한글)
+const statusMap = {
+  active: '활성',
+  waiting: '대기',
+  completed: '완료',
+  cancelled: '취소',
+  pending: '예정',
+}
+
+// 한글 상태 -> 영문 상태 역맵
+const reverseStatusMap = {
+  활성: 'active',
+  대기: 'waiting',
+  완료: 'completed',
+  취소: 'cancelled',
+  예정: 'pending',
+}
+
+// 통계 계산
+const stats = computed(() => {
+  const all = reservations.value.length
+  const active = reservations.value.filter((r) => r.status === 'active').length
+  const waiting = reservations.value.filter((r) => r.status === 'waiting').length
+  const completed = reservations.value.filter((r) => r.status === 'completed').length
+
+  return {
+    all,
+    active,
+    waiting,
+    completed,
+  }
+})
+
+// 필터링된 예약 목록
+const filteredReservations = computed(() => {
+  let filtered = [...reservations.value]
+
+  // 상태 필터
+  if (statusFilter.value !== '전체') {
+    const statusCode = reverseStatusMap[statusFilter.value] || statusFilter.value
+    filtered = filtered.filter((r) => r.status === statusCode)
+  }
+
+  // 검색 쿼리 (고객명, 예약번호, 보관함 번호)
+  if (searchQuery.value) {
+    const query = searchQuery.value.toLowerCase()
+    filtered = filtered.filter((r) => {
+      const customer = getCustomerInfo(r.customerId)
+      return (
+        r.id.toLowerCase().includes(query) ||
+        customer.name.toLowerCase().includes(query) ||
+        r.lockerNumber.toLowerCase().includes(query)
+      )
+    })
+  }
+
+  // 월 필터
+  if (monthFilter.value) {
+    filtered = filtered.filter((r) => {
+      const resDate = new Date(r.createdAt)
+      const [year, month] = monthFilter.value.split('-')
+      return resDate.getFullYear() === parseInt(year) && resDate.getMonth() + 1 === parseInt(month)
+    })
+  }
+
+  // 최신 순으로 정렬
+  return filtered.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+})
+
+// 날짜 포맷 함수
+const formatDate = (dateStr) => {
+  const date = new Date(dateStr)
+  return date.toLocaleString('ko-KR', {
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+}
+
+// 기간 계산 함수
+const getDuration = (startTime, endTime) => {
+  if (!startTime || !endTime) return '-'
+  const start = new Date(startTime)
+  const end = new Date(endTime)
+  const diffMs = end - start
+  const diffHours = Math.round(diffMs / (1000 * 60 * 60))
+  return `${diffHours}시간`
+}
+
+// 상태 클래스 반환
+const getStatusClass = (status) => {
+  const classes = {
+    active: 'bg-blue-100 text-primary dark:bg-blue-500/20 dark:text-blue-400',
+    waiting: 'bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-400',
+    completed: 'bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400',
+    cancelled: 'bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-400',
+    pending: 'bg-gray-100 text-gray-700 dark:bg-gray-500/20 dark:text-gray-400',
+  }
+  return classes[status] || classes.pending
+}
+
+// 상태 도트 색상
+const getStatusDotColor = (status) => {
+  const colors = {
+    active: 'bg-primary',
+    waiting: 'bg-warning',
+    completed: 'bg-green-600',
+    cancelled: 'bg-red-600',
+    pending: 'bg-gray-600',
+  }
+  return colors[status] || colors.pending
+}
+
+// 필터 초기화
+const resetFilters = () => {
+  statusFilter.value = '전체'
+  searchQuery.value = ''
+  monthFilter.value = ''
+}
+
+// 초기화
+initializeData()
 </script>
 
 <style scoped>
