@@ -8,7 +8,11 @@
         당일 보관함 현황
       </h2>
 
-      <div v-if="loading" class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+      <div
+        v-if="loading"
+        class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm"
+        style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+      >
         통계 로딩 중...
       </div>
       <div v-else class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -54,56 +58,72 @@
           <div
             v-if="loading"
             class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm text-slate-600 dark:text-slate-400"
-            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
           >
             예약 로딩 중...
           </div>
           <div v-if="!loading" class="max-w-full overflow-x-auto scrollbar-hide">
             <table
               class="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden text-xs min-w-max"
-              style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);"
+              style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
             >
               <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
                 <tr>
                   <th
                     class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
-                    접수시간
+                    ID
                   </th>
                   <th
                     class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
-                    이름
+                    보관함 ID
                   </th>
                   <th
                     class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
-                    보관함
+                    보관함명
                   </th>
                   <th
                     class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
-                    상태
+                    보관 시작시간
+                  </th>
+                  <th
+                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  >
+                    고객명
+                  </th>
+                  <th
+                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  >
+                    접근코드
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr
-                  v-for="reservation in recentReservations.slice(0, 5)"
+                  v-for="reservation in recentReservations.slice(0, 6)"
                   :key="reservation.id"
                   class="border-t border-slate-200 dark:border-slate-700 h-10"
                 >
-                  <td class="px-2 py-1 text-slate-900 dark:text-slate-100 whitespace-nowrap">
-                    {{ formatDateTime(reservation.createdAt) }}
+                  <td class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                    {{ reservation.id }}
                   </td>
-                  <td class="px-2 py-1 text-slate-900 dark:text-slate-100 whitespace-nowrap">
-                    {{ reservation.customerName }}
+                  <td class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                    {{ reservation.lockerId }}
                   </td>
-                  <td class="px-2 py-1 text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                  <td class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap">
                     {{ reservation.lockerNumber }}
                   </td>
-                  <td class="px-2 py-1 whitespace-nowrap">
-                    <StatusChip :status="getReservationStatus(reservation.status)" />
+                  <td class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                    {{ formatDateTime(reservation.createdAt) }}
+                  </td>
+                  <td class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                    {{ reservation.customerName }}
+                  </td>
+                  <td class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                    {{ reservation.accessCode }}
                   </td>
                 </tr>
               </tbody>
@@ -112,12 +132,15 @@
         </section>
 
         <!-- 차트 영역 -->
-        <section class="mb-8">
+        <section>
           <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
             보관함 상태 분포
           </h2>
 
-          <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+          <div
+            class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
             <div class="h-64">
               <Bar :data="chartData" :options="chartOptions" />
             </div>
@@ -127,34 +150,21 @@
 
       <!-- 우측: 회원 등급별 현황 + 사용 고객 목록 -->
       <div>
-        <!-- 회원 등급별 현황 -->
-        <section class="mb-8">
-          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-            회원 등급별 현황
-          </h2>
-          <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
-            <div class="h-64">
-              <Doughnut :data="membershipChartData" :options="doughnutChartOptions" />
-            </div>
-          </div>
-        </section>
-
         <!-- 사용 고객 목록 -->
-        <section>
+        <section class="mb-8">
           <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
             현재 사용 고객
           </h2>
           <div
             v-if="loading"
             class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm text-slate-600 dark:text-slate-400"
-            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
           >
             고객 정보 로딩 중...
           </div>
           <div
             v-else
             class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden max-w-full"
-            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);"
           >
             <div class="max-w-full overflow-x-auto scrollbar-hide">
               <table class="w-full text-xs min-w-max">
@@ -208,6 +218,20 @@
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+        </section>
+        <!-- 회원 등급별 현황 -->
+        <section>
+          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+            회원 등급별 현황
+          </h2>
+          <div
+            class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm p-6"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
+            <div class="h-64">
+              <Doughnut :data="membershipChartData" :options="doughnutChartOptions" />
             </div>
           </div>
         </section>
@@ -267,7 +291,14 @@ const stats = computed(() => {
 const recentReservations = computed(() => {
   return [...reservations.value]
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-    .slice(0, 5)
+    .map((res) => {
+      const customer = customers.value.find((c) => c.id === res.customerId)
+      return {
+        ...res,
+        customerName: customer?.name || '고객정보없음',
+      }
+    })
+    .slice(0, 6)
 })
 
 // 현재 사용중인 고객 정보

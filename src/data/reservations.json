@@ -1,12 +1,10 @@
 {
   "reservations": [
     {
-      "id": "R001",
+      "id": "RES-0001",
       "lockerId": "L002",
       "lockerNumber": "A-102",
       "customerId": "C001",
-      "customerName": "김철수",
-      "customerPhone": "010-1234-5678",
       "status": "active",
       "startTime": "2025-01-10T09:00:00Z",
       "endTime": "2025-01-10T18:00:00Z",
@@ -15,12 +13,10 @@
       "accessCode": "1234"
     },
     {
-      "id": "R002",
+      "id": "RES-0002",
       "lockerId": "L004",
       "lockerNumber": "A-104",
       "customerId": "C002",
-      "customerName": "이영희",
-      "customerPhone": "010-2345-6789",
       "status": "active",
       "startTime": "2025-01-10T08:30:00Z",
       "endTime": "2025-01-10T17:30:00Z",
@@ -29,12 +25,10 @@
       "accessCode": "5678"
     },
     {
-      "id": "R003",
+      "id": "RES-0003",
       "lockerId": "L007",
       "lockerNumber": "B-202",
       "customerId": "C003",
-      "customerName": "박민수",
-      "customerPhone": "010-3456-7890",
       "status": "active",
       "startTime": "2025-01-10T10:00:00Z",
       "endTime": "2025-01-10T19:00:00Z",
@@ -43,12 +37,10 @@
       "accessCode": "9012"
     },
     {
-      "id": "R004",
+      "id": "RES-0004",
       "lockerId": "L009",
       "lockerNumber": "B-204",
       "customerId": "C004",
-      "customerName": "최지은",
-      "customerPhone": "010-4567-8901",
       "status": "active",
       "startTime": "2025-01-10T07:00:00Z",
       "endTime": "2025-01-10T20:00:00Z",
@@ -57,12 +49,10 @@
       "accessCode": "3456"
     },
     {
-      "id": "R005",
+      "id": "RES-0005",
       "lockerId": "L013",
       "lockerNumber": "C-303",
       "customerId": "C005",
-      "customerName": "정수진",
-      "customerPhone": "010-5678-9012",
       "status": "active",
       "startTime": "2025-01-10T09:30:00Z",
       "endTime": "2025-01-10T18:30:00Z",
@@ -71,12 +61,10 @@
       "accessCode": "7890"
     },
     {
-      "id": "R006",
+      "id": "RES-0006",
       "lockerId": "L015",
       "lockerNumber": "C-305",
       "customerId": "C006",
-      "customerName": "강동욱",
-      "customerPhone": "010-6789-0123",
       "status": "active",
       "startTime": "2025-01-10T08:00:00Z",
       "endTime": "2025-01-10T21:00:00Z",
@@ -85,12 +73,10 @@
       "accessCode": "2345"
     },
     {
-      "id": "R007",
+      "id": "RES-0007",
       "lockerId": "L018",
       "lockerNumber": "D-403",
       "customerId": "C007",
-      "customerName": "윤서연",
-      "customerPhone": "010-7890-1234",
       "status": "active",
       "startTime": "2025-01-10T10:30:00Z",
       "endTime": "2025-01-10T16:30:00Z",
@@ -99,12 +85,10 @@
       "accessCode": "6789"
     },
     {
-      "id": "R008",
+      "id": "RES-0008",
       "lockerId": "L020",
       "lockerNumber": "D-405",
       "customerId": "C008",
-      "customerName": "임태희",
-      "customerPhone": "010-8901-2345",
       "status": "active",
       "startTime": "2025-01-10T06:00:00Z",
       "endTime": "2025-01-10T22:00:00Z",
@@ -113,12 +97,10 @@
       "accessCode": "0123"
     },
     {
-      "id": "R009",
+      "id": "RES-0009",
       "lockerId": "L001",
       "lockerNumber": "A-101",
       "customerId": "C009",
-      "customerName": "한지우",
-      "customerPhone": "010-9012-3456",
       "status": "completed",
       "startTime": "2025-01-09T09:00:00Z",
       "endTime": "2025-01-09T18:00:00Z",
@@ -128,12 +110,10 @@
       "accessCode": "4567"
     },
     {
-      "id": "R010",
+      "id": "RES-0010",
       "lockerId": "L003",
       "lockerNumber": "A-103",
       "customerId": "C010",
-      "customerName": "오민지",
-      "customerPhone": "010-0123-4567",
       "status": "completed",
       "startTime": "2025-01-09T08:00:00Z",
       "endTime": "2025-01-09T17:00:00Z",
@@ -143,12 +123,10 @@
       "accessCode": "8901"
     },
     {
-      "id": "R011",
+      "id": "RES-0011",
       "lockerId": "L006",
       "lockerNumber": "B-201",
       "customerId": "C011",
-      "customerName": "서준호",
-      "customerPhone": "010-1111-2222",
       "status": "cancelled",
       "startTime": "2025-01-10T10:00:00Z",
       "endTime": "2025-01-10T19:00:00Z",
@@ -159,12 +137,10 @@
       "accessCode": "1111"
     },
     {
-      "id": "R012",
+      "id": "RES-0012",
       "lockerId": "L008",
       "lockerNumber": "B-203",
       "customerId": "C012",
-      "customerName": "조예린",
-      "customerPhone": "010-2222-3333",
       "status": "expired",
       "startTime": "2025-01-08T09:00:00Z",
       "endTime": "2025-01-08T18:00:00Z",
