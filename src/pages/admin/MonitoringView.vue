@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-4 bg-slate-50 dark:bg-slate-900 min-h-screen relative"
+    class="p-6 bg-background dark:bg-dark-bg h-[100vh - 64px] scrollbar-hide flex flex-col justify-start"
     @click="showCalendar = false"
   >
     <!-- 리포트 & 통계 헤더 -->
@@ -327,7 +327,7 @@
             </h2>
             <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
               <div class="flex items-center justify-center gap-4">
-                <div class="w-40 h-40">
+                <div class="w-32 h-32">
                   <canvas ref="sizeRatioChartRef"></canvas>
                 </div>
                 <div class="space-y-2">
@@ -399,8 +399,8 @@
         </section>
 
         <!-- 피크타임 분석 -->
-        <section>
-          <div class="flex justify-between items-center mb-4">
+        <section class="gap-5 mb-6">
+          <div class="flex justify-between items-center mb-2">
             <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
               피크타임 분석
             </h2>
@@ -416,7 +416,7 @@
           </div>
 
           <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3">
-            <div class="h-40">
+            <div class="flex flex-col items-center gap-2 flex-1 w-full min-w-0">
               <canvas ref="peakTimeChartRef"></canvas>
             </div>
           </div>
