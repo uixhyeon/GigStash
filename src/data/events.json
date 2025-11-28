@@ -18,7 +18,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "취소",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251101-001",
@@ -37,7 +39,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "14:00"
+      "performanceTime": "14:00",
+      "vehicleCount": 2,
+      "expectedAttendance": 90
     },
     {
       "id": "EVT-251101-002",
@@ -57,7 +61,9 @@
       "totalPrice": 0,
       "status": "완료",
       "performanceTime": "18:00",
-      "runningTime": "90분"
+      "runningTime": "90분",
+      "vehicleCount": 3,
+      "expectedAttendance": 135
     },
     {
       "id": "EVT-251102-001",
@@ -78,7 +84,9 @@
       "status": "완료",
       "performanceTime": "17:00",
       "runningTime": "90분",
-      "attendance": "6,322명"
+      "attendance": "6,322명",
+      "vehicleCount": 3,
+      "expectedAttendance": 135
     },
     {
       "id": "EVT-251103-001",
@@ -97,7 +105,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 2,
+      "expectedAttendance": 90
     },
     {
       "id": "EVT-251105-001",
@@ -116,7 +126,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 2,
+      "expectedAttendance": 90
     },
     {
       "id": "EVT-251108-001",
@@ -135,7 +147,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "16:30"
+      "performanceTime": "16:30",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251108-002",
@@ -153,7 +167,9 @@
       "deliveryCity": "쿠알라룸푸르",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료"
+      "status": "완료",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251109-001",
@@ -171,7 +187,9 @@
       "deliveryCity": "청두",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료"
+      "status": "완료",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251109-002",
@@ -190,7 +208,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "16:30"
+      "performanceTime": "16:30",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251112-001",
@@ -209,7 +229,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251115-001",
@@ -227,7 +249,9 @@
       "deliveryCity": "",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료"
+      "status": "완료",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251115-002",
@@ -245,7 +269,9 @@
       "deliveryCity": "싱가포르",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료"
+      "status": "완료",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251118-001",
@@ -263,7 +289,9 @@
       "deliveryCity": "마포구",
       "paymentMethod": "",
       "totalPrice": 0,
-      "status": "완료"
+      "status": "완료",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251121-001",
@@ -283,7 +311,9 @@
       "totalPrice": 0,
       "status": "완료",
       "performanceTime": "19:00",
-      "ticketPrice": "154,000원"
+      "ticketPrice": "154,000원",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251121-002",
@@ -302,7 +332,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251122-001",
@@ -322,7 +354,9 @@
       "totalPrice": 0,
       "status": "완료",
       "performanceTime": "18:00",
-      "ticketPrice": "154,000원"
+      "ticketPrice": "154,000원",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251122-002",
@@ -341,7 +375,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "취소",
-      "performanceTime": "13:00"
+      "performanceTime": "13:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251122-003",
@@ -361,7 +397,9 @@
       "totalPrice": 0,
       "status": "완료",
       "lineup": "H.O.T., 틴탑, 프로미스나인, 트리플에스",
-      "performanceTime": "17:30-20:30"
+      "performanceTime": "17:30-20:30",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251122-004",
@@ -380,7 +418,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "18:00"
+      "performanceTime": "18:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251123-001",
@@ -399,7 +439,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "취소",
-      "performanceTime": "13:00"
+      "performanceTime": "13:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251123-002",
@@ -418,7 +460,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "취소",
-      "performanceTime": "14:00"
+      "performanceTime": "14:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251123-003",
@@ -437,7 +481,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "17:00"
+      "performanceTime": "17:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251123-004",
@@ -457,7 +503,9 @@
       "totalPrice": 0,
       "status": "완료",
       "lineup": "H.O.T., 2AM, 솔라(마마무), 오마이걸",
-      "performanceTime": "17:30-20:30"
+      "performanceTime": "17:30-20:30",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251128-001",
@@ -477,7 +525,9 @@
       "totalPrice": 0,
       "status": "예정",
       "lineup": "알파드라이브원, 베이비몬스터, 보이넥스트도어, 범접, 엔하이픈, 하츠투하츠, 아이브, 슈퍼주니어, 투어스",
-      "performanceTime": "17:00 레드카펫, 19:00 본행사"
+      "performanceTime": "17:00 레드카펫, 19:00 본행사",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251129-001",
@@ -497,7 +547,9 @@
       "totalPrice": 0,
       "status": "예정",
       "lineup": "올데이프로젝트, 코르티스, 이즈나, 킥플립, 라이즈, 스트레이키즈, 제로베이스원, 지드래곤",
-      "performanceTime": "17:00 레드카펫, 19:00 본행사"
+      "performanceTime": "17:00 레드카펫, 19:00 본행사",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251129-002",
@@ -516,7 +568,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "예정",
-      "performanceTime": "17:00"
+      "performanceTime": "17:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251129-003",
@@ -535,7 +589,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "예정",
-      "performanceTime": "18:00"
+      "performanceTime": "18:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251130-001",
@@ -554,7 +610,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "예정",
-      "performanceTime": "16:00"
+      "performanceTime": "16:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251130-002",
@@ -573,7 +631,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "예정",
-      "performanceTime": "17:00"
+      "performanceTime": "17:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251201-001",
@@ -593,7 +653,9 @@
       "totalPrice": 0,
       "status": "예정",
       "performanceTime": "18:00",
-      "ticketPrice": "110,000원"
+      "ticketPrice": "110,000원",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251202-001",
@@ -613,7 +675,9 @@
       "totalPrice": 0,
       "status": "예정",
       "performanceTime": "18:00",
-      "ticketPrice": "110,000원"
+      "ticketPrice": "110,000원",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251205-001",
@@ -632,7 +696,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "예정",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251206-001",
@@ -651,7 +717,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "예정",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251210-001",
@@ -670,7 +738,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "예정",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251215-001",
@@ -689,7 +759,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "예정",
-      "performanceTime": "10:00-22:00"
+      "performanceTime": "10:00-22:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251220-001",
@@ -708,7 +780,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "예정",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251225-001",
@@ -727,7 +801,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "예정",
-      "performanceTime": "16:30"
+      "performanceTime": "16:30",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251230-001",
@@ -746,7 +822,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "예정",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251005-001",
@@ -765,7 +843,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251010-001",
@@ -784,7 +864,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251011-001",
@@ -803,7 +885,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "14:00"
+      "performanceTime": "14:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251015-001",
@@ -822,7 +906,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "18:00"
+      "performanceTime": "18:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251016-001",
@@ -841,7 +927,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "18:00"
+      "performanceTime": "18:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251020-001",
@@ -860,7 +948,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251025-001",
@@ -879,7 +969,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "19:00"
+      "performanceTime": "19:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251028-001",
@@ -898,7 +990,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "18:00"
+      "performanceTime": "18:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     },
     {
       "id": "EVT-251029-001",
@@ -917,7 +1011,9 @@
       "paymentMethod": "",
       "totalPrice": 0,
       "status": "완료",
-      "performanceTime": "18:00"
+      "performanceTime": "18:00",
+      "vehicleCount": 0,
+      "expectedAttendance": 0
     }
   ]
 }
