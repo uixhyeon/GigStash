@@ -3,6 +3,17 @@ import apiClient from './index'
 import { API_CONFIG } from '@/config/api.config'
 import customersData from '@/data/customers.json'
 
+// Firebase Imports
+import {
+  collection,
+  query,
+  where,
+  getDocs
+} from 'firebase/firestore'
+import { db } from '@/config/firebase.config'
+
+const COLLECTION = 'customers'
+
 const mockResponse = (data) => {
   return new Promise((resolve) => {
     setTimeout(() => resolve({ data }), API_CONFIG.mockDelay)
@@ -36,7 +47,41 @@ export const customerService = {
 
       return mockResponse(filtered)
     } else {
-      return apiClient.get('/customers', { params })
+      // Firebase 모드
+      try {
+        const constraints = []
+
+        if (params.membershipLevel) {
+          constraints.push(where('membershipLevel', '==', params.membershipLevel))
+        }
+
+        const q = query(
+          collection(db, COLLECTION),
+          ...constraints
+        )
+        const snapshot = await getDocs(q)
+
+        let data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+
+        // 검색어 필터링 (클라이언트에서 수행)
+        if (params.search) {
+          const searchLower = params.search.toLowerCase()
+          data = data.filter(
+            (c) =>
+              c.name.toLowerCase().includes(searchLower) ||
+              c.phone.includes(params.search) ||
+              c.email.toLowerCase().includes(searchLower)
+          )
+        }
+
+        // 정렬 (최근 가입순)
+        data.sort((a, b) => new Date(b.registeredAt) - new Date(a.registeredAt))
+
+        return { data }
+      } catch (error) {
+        console.error('customerService.getAll error:', error)
+        throw error
+      }
     }
   },
 

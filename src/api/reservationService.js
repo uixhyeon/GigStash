@@ -78,16 +78,25 @@ export const reservationService = {
           constraints.push(where('lockerId', '==', params.lockerId))
         }
 
+        // orderBy는 constraint가 없을 때만 쿼리에 포함
+        const queryConstraints = constraints.length === 0
+          ? [orderBy('createdAt', 'desc')]
+          : []
+
         const q = query(
           collection(db, COLLECTION),
           ...constraints,
-          orderBy('createdAt', 'desc')
+          ...queryConstraints
         )
         const snapshot = await getDocs(q)
 
-        return {
-          data: snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+        // constraint가 있으면 클라이언트에서 정렬
+        const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+        if (constraints.length > 0) {
+          data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
         }
+
+        return { data }
       } catch (error) {
         console.error('reservationService.getAll error:', error)
         throw error

@@ -8,38 +8,38 @@
  * 4. 아래 firebaseConfig 업데이트
  */
 
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from 'firebase/app'
+// import { getFirestore } from 'firebase/firestore'
+
 // export const firebaseConfig = {
 //   apiKey: process.env.VITE_FIREBASE_API_KEY || 'YOUR_API_KEY',
 //   authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN || 'YOUR_AUTH_DOMAIN',
 //   projectId: process.env.VITE_FIREBASE_PROJECT_ID || 'YOUR_PROJECT_ID',
 //   storageBucket: process.env.VITE_FIREBASE_STORAGE_BUCKET || 'YOUR_STORAGE_BUCKET',
 //   messagingSenderId: process.env.VITE_FIREBASE_MESSAGING_SENDER_ID || 'YOUR_MESSAGING_SENDER_ID',
-//   appId: process.env.VITE_FIREBASE_APP_ID || 'YOUR_APP_ID'
+//   appId: process.env.VITE_FIREBASE_APP_ID || 'YOUR_APP_ID',
 // }
-
-// Import the functions you need from the SDKs you need
+// const app = initializeApp(firebaseConfig)
+// export const db = getFirestore(app)
 import { initializeApp } from 'firebase/app'
-import { getAnalytics } from 'firebase/analytics'
 import { getFirestore } from 'firebase/firestore'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: 'AIzaSyDZMwpE-vd_Cdknrnb5VN27krjRDwiknkk',
-  authDomain: 'gigstash-91197.firebaseapp.com',
-  projectId: 'gigstash-91197',
-  storageBucket: 'gigstash-91197.firebasestorage.app',
-  messagingSenderId: '512678869188',
-  appId: '1:512678869188:web:a8e9ea80667d7dbebcb191',
-  measurementId: 'G-5ZMJM5CKWH',
+export const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 }
 
-// Initialize Firebase
+// Firebase 초기화는 export 전에 딱 1번
 const app = initializeApp(firebaseConfig)
-const analytics = getAnalytics(app)
-const db = getFirestore(app)
+
+// Firestore 인스턴스 export
+export const db = getFirestore(app)
+
 /**
  * Firestore 컬렉션 구조
  *
@@ -99,4 +99,4 @@ export const FIRESTORE_COLLECTIONS = {
   EVENTS: 'events',
 }
 
-export { db, firebaseConfig }
+// export { db, firebaseConfig }

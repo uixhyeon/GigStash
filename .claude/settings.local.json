@@ -4,7 +4,8 @@
       "Bash(tree:*)",
       "Bash(node scripts/migrate-to-firestore.js:*)",
       "Bash(node scripts/update-locker-locations.js:*)",
-      "Bash(node scripts/migrate-to-firestore-clean.js:*)"
+      "Bash(node scripts/migrate-to-firestore-clean.js:*)",
+      "Bash(node scripts/generate-lockers-50-per-vehicle.js:*)"
     ],
     "deny": [],
     "ask": []
