@@ -23,10 +23,14 @@ export const useDataStore = defineStore('data', () => {
   // Events: 정규화된 행사 데이터 (id -> 행사 객체)
   const eventMap = ref(new Map())
 
+  // Lockers: 정규화된 사물함 데이터 (id -> 사물함 객체)
+  const lockerMap = ref(new Map())
+
   // 조회 순서 추적 (성능 최적화용)
   const customerIds = ref([])
   const reservationIds = ref([])
   const eventIds = ref([])
+  const lockerIds = ref([])
 
   // 로딩 상태
   const isLoading = ref(false)
@@ -53,6 +57,13 @@ export const useDataStore = defineStore('data', () => {
    */
   const events = computed(() => {
     return eventIds.value.map(id => eventMap.value.get(id))
+  })
+
+  /**
+   * 모든 사물함을 배열로 반환 (정렬된 순서 유지)
+   */
+  const lockers = computed(() => {
+    return lockerIds.value.map(id => lockerMap.value.get(id))
   })
 
   /**
@@ -157,6 +168,19 @@ export const useDataStore = defineStore('data', () => {
     events.forEach(event => {
       eventMap.value.set(event.id, { ...event })
       eventIds.value.push(event.id)
+    })
+  }
+
+  /**
+   * 사물함 데이터 일괄 로드
+   */
+  const setLockers = (lockersData) => {
+    lockerMap.value.clear()
+    lockerIds.value = []
+
+    lockersData.forEach(locker => {
+      lockerMap.value.set(locker.id, { ...locker })
+      lockerIds.value.push(locker.id)
     })
   }
 
@@ -358,9 +382,11 @@ export const useDataStore = defineStore('data', () => {
     customerMap.value.clear()
     reservationMap.value.clear()
     eventMap.value.clear()
+    lockerMap.value.clear()
     customerIds.value = []
     reservationIds.value = []
     eventIds.value = []
+    lockerIds.value = []
     error.value = null
   }
 
@@ -385,9 +411,11 @@ export const useDataStore = defineStore('data', () => {
     customerMap,
     reservationMap,
     eventMap,
+    lockerMap,
     customerIds,
     reservationIds,
     eventIds,
+    lockerIds,
     isLoading,
     error,
 
@@ -395,6 +423,7 @@ export const useDataStore = defineStore('data', () => {
     customers,
     reservations,
     events,
+    lockers,
     activeReservations,
     completedReservations,
     cancelledReservations,
@@ -406,6 +435,7 @@ export const useDataStore = defineStore('data', () => {
     setCustomers,
     setReservations,
     setEvents,
+    setLockers,
     addCustomer,
     addReservation,
     addEvent,
