@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(tree:*)",
-      "Bash(node scripts/migrate-to-firestore.js:*)"
+      "Bash(node scripts/migrate-to-firestore.js:*)",
+      "Bash(node scripts/update-locker-locations.js:*)"
     ],
     "deny": [],
     "ask": []
