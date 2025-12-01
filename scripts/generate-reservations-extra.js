@@ -14,8 +14,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
 
-// 상태
-const statuses = ['pending', 'confirmed', 'active', 'completed', 'cancelled']
+// 상태 (UI의 statusMap과 일치하도록 정규화)
+const statuses = ['pending', 'waiting', 'active', 'completed', 'cancelled']
 
 // 예약 생성
 const generateReservation = (id, baseId) => {

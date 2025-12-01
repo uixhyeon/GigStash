@@ -5,7 +5,10 @@
       "Bash(node scripts/migrate-to-firestore.js:*)",
       "Bash(node scripts/update-locker-locations.js:*)",
       "Bash(node scripts/migrate-to-firestore-clean.js:*)",
-      "Bash(node scripts/generate-lockers-50-per-vehicle.js:*)"
+      "Bash(node scripts/generate-lockers-50-per-vehicle.js:*)",
+      "Bash(node scripts/generate-customers-550.js:*)",
+      "Bash(node scripts/generate-reservations-extra.js:*)",
+      "Bash(node scripts/fix-reservation-statuses.js:*)"
     ],
     "deny": [],
     "ask": []

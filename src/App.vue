@@ -5,6 +5,7 @@ import { useDarkMode } from './composables/useDarkMode'
 import { useDataStore } from './stores/dataStore'
 import { reservationService } from './api/reservationService'
 import { customerService } from './api/customerService'
+import { lockerService } from './api/lockerService'
 import eventsData from './data/events.json'
 
 // 다크모드 초기화
@@ -50,9 +51,10 @@ onMounted(async () => {
 
   // 앱 로드 시 데이터 초기화
   try {
-    const [reservationsRes, customersRes] = await Promise.all([
+    const [reservationsRes, customersRes, lockersRes] = await Promise.all([
       reservationService.getAll(),
-      customerService.getAll()
+      customerService.getAll(),
+      lockerService.getAll()
     ])
 
     // 이벤트 데이터 로드 (로컬 JSON)
@@ -63,6 +65,7 @@ onMounted(async () => {
 
     dataStore.setReservations(normalizedReservations)
     dataStore.setCustomers(customersRes.data)
+    dataStore.setLockers(lockersRes.data)
     dataStore.setEvents(events)
   } catch (err) {
     console.error('Failed to load initial data:', err)

@@ -39,7 +39,10 @@
     </div>
 
     <!-- 달력 그리드 -->
-    <div class="px-6 bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+    <div
+      class="px-6 bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm"
+      style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+    >
       <!-- 요일 헤더 -->
       <div
         class="grid grid-cols-7 gap-2 mb-2 flex-shrink-0 -mx-6 px-6 py-3 bg-table-header-bg dark:bg-table-header-bg-dark rounded-t-2xl"
@@ -106,34 +109,37 @@
               {{ date.date }}
             </span>
             <!-- 상태별 건수 표시 -->
-            <div v-if="date.isCurrentMonth" class="flex flex-col gap-0.5 mt-1 justify-center items-center w-full">
+            <div
+              v-if="date.isCurrentMonth"
+              class="flex flex-col gap-0.5 mt-1 justify-center items-center w-full"
+            >
               <!-- 예정 건수 -->
               <span
                 v-if="date.scheduledCount > 0"
                 class="text-[10px] px-1 py-0.5 rounded bg-blue-100 dark:bg-blue-500/20 text-primary dark:text-blue-300 font-medium whitespace-nowrap"
               >
-                {{ date.scheduledCount }} 건
+                예정 {{ date.scheduledCount }} 건
               </span>
               <!-- 진행중 건수 (사용중 칩 색상) -->
               <span
                 v-if="date.inProgressCount > 0"
                 class="text-[10px] px-1 py-0.5 rounded bg-teal-100 dark:bg-teal-500/20 text-teal-700 dark:text-accent-400 font-medium whitespace-nowrap"
               >
-                {{ date.inProgressCount }} 건
+                진행 {{ date.inProgressCount }} 건
               </span>
               <!-- 취소 건수 -->
               <span
                 v-if="date.cancelledCount > 0"
                 class="text-[10px] px-1 py-0.5 rounded bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 font-medium whitespace-nowrap"
               >
-                {{ date.cancelledCount }} 건
+                취소 {{ date.cancelledCount }} 건
               </span>
               <!-- 종료 건수 -->
               <span
                 v-if="date.completedCount > 0"
                 class="text-[10px] px-1 py-0.5 rounded bg-gray-100 dark:bg-gray-900/30 text-gray-800 dark:text-gray-400 font-medium whitespace-nowrap"
               >
-                {{ date.completedCount }} 건
+                종료 {{ date.completedCount }} 건
               </span>
             </div>
           </button>
