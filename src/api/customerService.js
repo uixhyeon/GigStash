@@ -1,40 +1,52 @@
-// 고객 API 서비스
-import apiClient from './index'
-import { API_CONFIG } from '@/config/api.config'
-import customersData from '@/data/customers.json'
+/**
+ * 고객 관리 서비스 (Firebase Firestore)
+ *
+ * Firebase를 데이터 소스로 사용하는 고객 관리 API
+ * Mock 모드 제거 - Firebase 전용
+ */
 
-// Firebase Imports
 import {
   collection,
   query,
   where,
-  getDocs
+  getDocs,
+  getDoc,
+  doc,
+  updateDoc,
+  addDoc,
+  onSnapshot,
+  orderBy,
+  serverTimestamp
 } from 'firebase/firestore'
 import { db } from '@/config/firebase.config'
 
 const COLLECTION = 'customers'
 
-const mockResponse = (data) => {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve({ data }), API_CONFIG.mockDelay)
-  })
-}
-
 export const customerService = {
-  // 전체 고객 조회
+  /**
+   * 전체 고객 조회
+   * @param {Object} params - 필터 파라미터
+   * @param {string} params.membershipLevel - 멤버십 레벨 필터
+   * @param {string} params.search - 검색어 (이름, 이메일, 전화번호)
+   * @returns {Promise<{data: Array}>} 고객 배열
+   */
   async getAll(params = {}) {
-    if (API_CONFIG.mode === 'mock') {
-      let filtered = [...customersData.customers]
+    try {
+      const constraints = []
 
-      // 멤버십 레벨 필터링
       if (params.membershipLevel) {
-        filtered = filtered.filter((c) => c.membershipLevel === params.membershipLevel)
+        constraints.push(where('membershipLevel', '==', params.membershipLevel))
       }
 
-      // 검색어 필터링 (이름, 전화번호, 이메일)
+      const q = query(collection(db, COLLECTION), ...constraints)
+      const snapshot = await getDocs(q)
+
+      let data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+
+      // 검색어 필터링 (클라이언트에서 수행)
       if (params.search) {
         const searchLower = params.search.toLowerCase()
-        filtered = filtered.filter(
+        data = data.filter(
           (c) =>
             c.name.toLowerCase().includes(searchLower) ||
             c.phone.includes(params.search) ||
@@ -43,176 +55,160 @@ export const customerService = {
       }
 
       // 정렬 (최근 가입순)
-      filtered.sort((a, b) => new Date(b.registeredAt) - new Date(a.registeredAt))
+      data.sort((a, b) => new Date(b.registeredAt) - new Date(a.registeredAt))
 
-      return mockResponse(filtered)
-    } else {
-      // Firebase 모드
-      try {
-        const constraints = []
-
-        if (params.membershipLevel) {
-          constraints.push(where('membershipLevel', '==', params.membershipLevel))
-        }
-
-        const q = query(
-          collection(db, COLLECTION),
-          ...constraints
-        )
-        const snapshot = await getDocs(q)
-
-        let data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
-
-        // 검색어 필터링 (클라이언트에서 수행)
-        if (params.search) {
-          const searchLower = params.search.toLowerCase()
-          data = data.filter(
-            (c) =>
-              c.name.toLowerCase().includes(searchLower) ||
-              c.phone.includes(params.search) ||
-              c.email.toLowerCase().includes(searchLower)
-          )
-        }
-
-        // 정렬 (최근 가입순)
-        data.sort((a, b) => new Date(b.registeredAt) - new Date(a.registeredAt))
-
-        return { data }
-      } catch (error) {
-        console.error('customerService.getAll error:', error)
-        throw error
-      }
+      return { data }
+    } catch (error) {
+      console.error('customerService.getAll error:', error)
+      throw error
     }
   },
 
-  // 고객 상세 조회
+  /**
+   * 고객 상세 조회
+   * @param {string} id - 고객 ID
+   * @returns {Promise<{data: Object}>} 고객 정보
+   */
   async getById(id) {
-    if (API_CONFIG.mode === 'mock') {
-      const customer = customersData.customers.find((c) => c.id === id)
-      if (!customer) {
-        return Promise.reject(new Error('고객을 찾을 수 없습니다.'))
+    try {
+      const docSnap = await getDoc(doc(db, COLLECTION, id))
+      if (!docSnap.exists()) {
+        throw new Error('고객을 찾을 수 없습니다.')
       }
-      return mockResponse(customer)
-    } else {
-      return apiClient.get(`/customers/${id}`)
+      return { data: { id: docSnap.id, ...docSnap.data() } }
+    } catch (error) {
+      console.error('customerService.getById error:', error)
+      throw error
     }
   },
 
-  // 고객 생성
+  /**
+   * 고객 생성
+   * @param {Object} data - 고객 데이터
+   * @returns {Promise<{data: Object}>} 생성된 고객
+   */
   async create(data) {
-    if (API_CONFIG.mode === 'mock') {
+    try {
       const newCustomer = {
-        id: `C${String(customersData.customers.length + 1).padStart(3, '0')}`,
         ...data,
         membershipLevel: data.membershipLevel || 'bronze',
-        registeredAt: new Date().toISOString(),
+        registeredAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
         totalReservations: 0,
         activeReservations: 0,
         lastReservation: null
       }
-      // 배열 복제 후 수정 (불변성 유지)
-      customersData.customers = [...customersData.customers, newCustomer]
-      return mockResponse(newCustomer)
-    } else {
-      return apiClient.post('/customers', data)
+      const docRef = await addDoc(collection(db, COLLECTION), newCustomer)
+      return { data: { id: docRef.id, ...newCustomer } }
+    } catch (error) {
+      console.error('customerService.create error:', error)
+      throw error
     }
   },
 
-  // 고객 수정
+  /**
+   * 고객 정보 수정
+   * @param {string} id - 고객 ID
+   * @param {Object} data - 수정할 데이터
+   * @returns {Promise<{data: Object}>} 수정된 고객
+   */
   async update(id, data) {
-    if (API_CONFIG.mode === 'mock') {
-      const index = customersData.customers.findIndex((c) => c.id === id)
-      if (index === -1) {
-        return Promise.reject(new Error('고객을 찾을 수 없습니다.'))
-      }
-      const updated = {
-        ...customersData.customers[index],
+    try {
+      const updateData = {
         ...data,
-        updatedAt: new Date().toISOString()
+        updatedAt: serverTimestamp()
       }
-      // 배열 복제 후 수정 (불변성 유지)
-      customersData.customers = [
-        ...customersData.customers.slice(0, index),
-        updated,
-        ...customersData.customers.slice(index + 1)
-      ]
-      return mockResponse(updated)
-    } else {
-      return apiClient.patch(`/customers/${id}`, data)
+      await updateDoc(doc(db, COLLECTION, id), updateData)
+      const docSnap = await getDoc(doc(db, COLLECTION, id))
+      return { data: { id: docSnap.id, ...docSnap.data() } }
+    } catch (error) {
+      console.error('customerService.update error:', error)
+      throw error
     }
   },
 
-  // 고객 삭제
+  /**
+   * 고객 삭제
+   * @param {string} id - 고객 ID
+   * @returns {Promise<void>}
+   */
   async delete(id) {
-    if (API_CONFIG.mode === 'mock') {
-      const index = customersData.customers.findIndex((c) => c.id === id)
-      if (index === -1) {
-        return Promise.reject(new Error('고객을 찾을 수 없습니다.'))
-      }
-      const deleted = customersData.customers[index]
-      // 배열 복제 후 수정 (불변성 유지)
-      customersData.customers = [
-        ...customersData.customers.slice(0, index),
-        ...customersData.customers.slice(index + 1)
-      ]
-      return mockResponse(deleted)
-    } else {
-      return apiClient.delete(`/customers/${id}`)
+    try {
+      await updateDoc(doc(db, COLLECTION, id), {
+        status: 'deleted',
+        deletedAt: serverTimestamp()
+      })
+    } catch (error) {
+      console.error('customerService.delete error:', error)
+      throw error
     }
   },
 
-  // 전화번호로 고객 조회
+  /**
+   * 전화번호로 고객 조회
+   * @param {string} phone - 전화번호
+   * @returns {Promise<{data: Object}>} 고객 정보
+   */
   async getByPhone(phone) {
-    if (API_CONFIG.mode === 'mock') {
-      const customer = customersData.customers.find((c) => c.phone === phone)
-      if (!customer) {
-        return Promise.reject(new Error('고객을 찾을 수 없습니다.'))
+    try {
+      const q = query(
+        collection(db, COLLECTION),
+        where('phone', '==', phone)
+      )
+      const snapshot = await getDocs(q)
+
+      if (snapshot.empty) {
+        throw new Error('고객을 찾을 수 없습니다.')
       }
-      return mockResponse(customer)
-    } else {
-      return apiClient.get('/customers/phone', { params: { phone } })
+
+      const doc = snapshot.docs[0]
+      return { data: { id: doc.id, ...doc.data() } }
+    } catch (error) {
+      console.error('customerService.getByPhone error:', error)
+      throw error
     }
   },
 
-  // 고객 예약 이력 조회
-  async getReservationHistory(id) {
-    if (API_CONFIG.mode === 'mock') {
-      // 이 부분은 reservationService와 연동 필요
-      // 여기서는 간단히 mock 데이터 반환
-      const mockHistory = [
-        {
-          id: 'R001',
-          date: '2025-01-10',
-          lockerNumber: 'A-102',
-          status: 'completed'
-        }
-      ]
-      return mockResponse(mockHistory)
-    } else {
-      return apiClient.get(`/customers/${id}/reservations`)
-    }
-  },
-
-  // 멤버십 레벨 업데이트
+  /**
+   * 멤버십 레벨 업데이트
+   * @param {string} id - 고객 ID
+   * @param {string} level - 멤버십 레벨
+   * @returns {Promise<{data: Object}>} 수정된 고객
+   */
   async updateMembershipLevel(id, level) {
-    if (API_CONFIG.mode === 'mock') {
-      const index = customersData.customers.findIndex((c) => c.id === id)
-      if (index === -1) {
-        return Promise.reject(new Error('고객을 찾을 수 없습니다.'))
+    try {
+      const updateData = {
+        membershipLevel: level,
+        updatedAt: serverTimestamp()
       }
-      const updated = {
-        ...customersData.customers[index],
-        membershipLevel: level
-      }
-      // 배열 복제 후 수정 (불변성 유지)
-      customersData.customers = [
-        ...customersData.customers.slice(0, index),
-        updated,
-        ...customersData.customers.slice(index + 1)
-      ]
-      return mockResponse(updated)
-    } else {
-      return apiClient.patch(`/customers/${id}/membership`, { level })
+      await updateDoc(doc(db, COLLECTION, id), updateData)
+      const docSnap = await getDoc(doc(db, COLLECTION, id))
+      return { data: { id: docSnap.id, ...docSnap.data() } }
+    } catch (error) {
+      console.error('customerService.updateMembershipLevel error:', error)
+      throw error
+    }
+  },
+
+  /**
+   * 실시간 고객 변경 리스너
+   * @param {Function} callback - 데이터 변경 시 호출될 콜백
+   * @returns {Function} 리스너 해제 함수
+   */
+  onCustomerChange(callback) {
+    try {
+      const q = query(
+        collection(db, COLLECTION),
+        orderBy('registeredAt', 'desc')
+      )
+      const unsubscribe = onSnapshot(q, (snapshot) => {
+        const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+        callback(data)
+      })
+      return unsubscribe
+    } catch (error) {
+      console.error('customerService.onCustomerChange error:', error)
+      return () => {}
     }
   }
 }

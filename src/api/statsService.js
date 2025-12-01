@@ -1,42 +1,56 @@
-// 통계 API 서비스
-import apiClient from './index'
-import { API_CONFIG } from '../config/api.config'
-import lockersData from '../data/lockers.json'
-import reservationsData from '../data/reservations.json'
-import customersData from '../data/customers.json'
+/**
+ * 통계 서비스 (Firebase Firestore)
+ *
+ * Firebase를 데이터 소스로 사용하는 대시보드 통계 API
+ * Mock 모드 제거 - Firebase 전용
+ */
 
-const mockResponse = (data) => {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve({ data }), API_CONFIG.mockDelay)
-  })
-}
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+  orderBy
+} from 'firebase/firestore'
+import { db } from '@/config/firebase.config'
+import { reservationService } from './reservationService'
+import { customerService } from './customerService'
+import { lockerService } from './lockerService'
 
 export const statsService = {
-  // 대시보드 통계
+  /**
+   * 대시보드 통계
+   * @returns {Promise<{data: Object}>} 대시보드 통계 데이터
+   */
   async getDashboard() {
-    if (API_CONFIG.mode === 'mock') {
-      const totalLockers = lockersData.lockers.length
-      const availableLockers = lockersData.lockers.filter((l) => l.status === 'available').length
-      const inUseLockers = lockersData.lockers.filter((l) => l.status === 'in-use').length
-      const maintenanceLockers = lockersData.lockers.filter(
-        (l) => l.status === 'maintenance',
-      ).length
-      const brokenLockers = lockersData.lockers.filter((l) => l.status === 'broken').length
+    try {
+      // 사물함 통계
+      const lockersRes = await lockerService.getAll()
+      const totalLockers = lockersRes.data.length
+      const availableLockers = lockersRes.data.filter((l) => l.status === 'available').length
+      const inUseLockers = lockersRes.data.filter((l) => l.status === 'in-use').length
+      const maintenanceLockers = lockersRes.data.filter((l) => l.status === 'maintenance').length
+      const brokenLockers = lockersRes.data.filter((l) => l.status === 'broken').length
 
+      // 예약 통계
+      const reservationsRes = await reservationService.getAll()
       const today = new Date().toISOString().split('T')[0]
-      const todayReservations = reservationsData.reservations.filter((r) =>
-        r.startTime.startsWith(today),
+      const todayReservations = reservationsRes.data.filter((r) =>
+        r.startTime.toString().startsWith(today)
+      ).length
+      const activeReservations = reservationsRes.data.filter((r) => r.status === 'active').length
+      const completedToday = reservationsRes.data.filter(
+        (r) => r.status === 'completed' && r.completedAt && r.completedAt.toString().startsWith(today)
       ).length
 
-      const activeReservations = reservationsData.reservations.filter(
-        (r) => r.status === 'active',
-      ).length
+      // 고객 통계
+      const customersRes = await customerService.getAll()
+      const totalCustomers = customersRes.data.length
 
-      const completedToday = reservationsData.reservations.filter(
-        (r) => r.status === 'completed' && r.completedAt && r.completedAt.startsWith(today),
-      ).length
-
-      const usageRate = ((inUseLockers / totalLockers) * 100).toFixed(1)
+      // 계산
+      const usageRate = totalLockers > 0 ? ((inUseLockers / totalLockers) * 100).toFixed(1) : 0
+      const revenueToday = todayReservations * 5000 // 가정: 건당 5000원
+      const revenueMonth = reservationsRes.data.length * 5000
 
       const stats = {
         totalLockers,
@@ -48,147 +62,204 @@ export const statsService = {
         todayReservations,
         activeReservations,
         todayPickups: completedToday,
-        totalCustomers: customersData.customers.length,
-        revenueToday: todayReservations * 5000, // 가정: 건당 5000원
-        revenueMonth: reservationsData.reservations.length * 5000,
+        totalCustomers,
+        revenueToday,
+        revenueMonth,
       }
 
-      return mockResponse(stats)
-    } else {
-      return apiClient.get('/stats/dashboard')
+      return { data: stats }
+    } catch (error) {
+      console.error('statsService.getDashboard error:', error)
+      throw error
     }
   },
 
-  // 사용률 이력
-  async getUsageHistory(period = '7d') {
-    if (API_CONFIG.mode === 'mock') {
-      const days = period === '7d' ? 7 : period === '30d' ? 30 : 7
+  /**
+   * 사물함 크기별 통계
+   * @returns {Promise<{data: Object}>} 크기별 통계
+   */
+  async getLockerSizeStats() {
+    try {
+      const lockersRes = await lockerService.getAll()
+      const lockers = lockersRes.data
 
-      // Mock 사용률 데이터 (날짜별)
+      const sizeStats = {
+        small: {
+          total: lockers.filter((l) => l.size === 'small').length,
+          available: lockers.filter((l) => l.size === 'small' && l.status === 'available').length,
+          inUse: lockers.filter((l) => l.size === 'small' && l.status === 'in-use').length,
+        },
+        medium: {
+          total: lockers.filter((l) => l.size === 'medium').length,
+          available: lockers.filter((l) => l.size === 'medium' && l.status === 'available').length,
+          inUse: lockers.filter((l) => l.size === 'medium' && l.status === 'in-use').length,
+        },
+        large: {
+          total: lockers.filter((l) => l.size === 'large').length,
+          available: lockers.filter((l) => l.size === 'large' && l.status === 'available').length,
+          inUse: lockers.filter((l) => l.size === 'large' && l.status === 'in-use').length,
+        },
+      }
+
+      return { data: sizeStats }
+    } catch (error) {
+      console.error('statsService.getLockerSizeStats error:', error)
+      throw error
+    }
+  },
+
+  /**
+   * 차량별 통계
+   * @returns {Promise<{data: Array}>} 차량별 통계
+   */
+  async getVehicleStats() {
+    try {
+      const lockersRes = await lockerService.getAll()
+      const lockers = lockersRes.data
+
+      // 차량별로 그룹화
+      const vehicleMap = new Map()
+      lockers.forEach((locker) => {
+        if (!vehicleMap.has(locker.vehicleId)) {
+          vehicleMap.set(locker.vehicleId, [])
+        }
+        vehicleMap.get(locker.vehicleId).push(locker)
+      })
+
+      const vehicleStats = Array.from(vehicleMap.entries()).map(([vehicleId, vehicleLockers]) => {
+        const available = vehicleLockers.filter((l) => l.status === 'available').length
+        const inUse = vehicleLockers.filter((l) => l.status === 'in-use').length
+        const usageRate = vehicleLockers.length > 0
+          ? ((inUse / vehicleLockers.length) * 100).toFixed(1)
+          : 0
+
+        return {
+          vehicleId,
+          total: vehicleLockers.length,
+          available,
+          inUse,
+          usageRate: parseFloat(usageRate),
+        }
+      })
+
+      return { data: vehicleStats }
+    } catch (error) {
+      console.error('statsService.getVehicleStats error:', error)
+      throw error
+    }
+  },
+
+  /**
+   * 고객 멤버십 통계
+   * @returns {Promise<{data: Object}>} 멤버십별 통계
+   */
+  async getMembershipStats() {
+    try {
+      const customersRes = await customerService.getAll()
+      const customers = customersRes.data
+
+      const membershipStats = {
+        bronze: customers.filter((c) => c.membershipLevel === 'bronze').length,
+        silver: customers.filter((c) => c.membershipLevel === 'silver').length,
+        gold: customers.filter((c) => c.membershipLevel === 'gold').length,
+        platinum: customers.filter((c) => c.membershipLevel === 'platinum').length,
+      }
+
+      return { data: membershipStats }
+    } catch (error) {
+      console.error('statsService.getMembershipStats error:', error)
+      throw error
+    }
+  },
+
+  /**
+   * 예약 상태별 통계
+   * @returns {Promise<{data: Object}>} 상태별 통계
+   */
+  async getReservationStats() {
+    try {
+      const reservationsRes = await reservationService.getAll()
+      const reservations = reservationsRes.data
+
+      const reservationStats = {
+        pending: reservations.filter((r) => r.status === 'pending').length,
+        confirmed: reservations.filter((r) => r.status === 'confirmed').length,
+        active: reservations.filter((r) => r.status === 'active').length,
+        completed: reservations.filter((r) => r.status === 'completed').length,
+        cancelled: reservations.filter((r) => r.status === 'cancelled').length,
+      }
+
+      return { data: reservationStats }
+    } catch (error) {
+      console.error('statsService.getReservationStats error:', error)
+      throw error
+    }
+  },
+
+  /**
+   * 시간대별 예약 통계
+   * @param {string} date - 조회 날짜 (YYYY-MM-DD)
+   * @returns {Promise<{data: Array}>} 시간대별 통계
+   */
+  async getHourlyReservationStats(date = null) {
+    try {
+      const reservationsRes = await reservationService.getAll()
+      const targetDate = date || new Date().toISOString().split('T')[0]
+      const dayReservations = reservationsRes.data.filter((r) =>
+        r.startTime.toString().startsWith(targetDate)
+      )
+
+      // 시간별로 그룹화
+      const hourlyData = Array.from({ length: 24 }, (_, hour) => {
+        const hourReservations = dayReservations.filter((r) => {
+          const reservationHour = new Date(r.startTime).getHours()
+          return reservationHour === hour
+        })
+
+        return {
+          hour,
+          reservations: hourReservations.length,
+          pickups: hourReservations.filter((r) => r.status === 'completed').length,
+        }
+      })
+
+      return { data: hourlyData }
+    } catch (error) {
+      console.error('statsService.getHourlyReservationStats error:', error)
+      throw error
+    }
+  },
+
+  /**
+   * 사용률 이력
+   * @param {string} period - 조회 기간 ('7d' | '30d')
+   * @returns {Promise<{data: Array}>} 기간별 사용률
+   */
+  async getUsageHistory(period = '7d') {
+    try {
+      const days = period === '7d' ? 7 : period === '30d' ? 30 : 7
+      const reservationsRes = await reservationService.getAll()
+      const reservations = reservationsRes.data
+
       const history = Array.from({ length: days }, (_, i) => {
         const date = new Date(Date.now() - (days - 1 - i) * 86400000)
         const dateStr = date.toISOString().split('T')[0]
 
+        const dayReservations = reservations.filter((r) =>
+          r.startTime.toString().startsWith(dateStr)
+        )
+
         return {
           date: dateStr,
-          usage: 50 + Math.random() * 30, // 50~80% 사이
-          reservations: Math.floor(5 + Math.random() * 15), // 5~20건
-          revenue: Math.floor((5 + Math.random() * 15) * 5000),
+          reservations: dayReservations.length,
+          revenue: dayReservations.length * 5000,
         }
       })
 
-      return mockResponse(history)
-    } else {
-      return apiClient.get('/stats/usage', { params: { period } })
+      return { data: history }
+    } catch (error) {
+      console.error('statsService.getUsageHistory error:', error)
+      throw error
     }
-  },
-
-  // 시간대별 사용 통계
-  async getHourlyUsage(date = null) {
-    if (API_CONFIG.mode === 'mock') {
-      // Mock 시간대별 데이터 (0~23시)
-      const hourlyData = Array.from({ length: 24 }, (_, hour) => ({
-        hour,
-        reservations: Math.floor(Math.random() * 10),
-        pickups: Math.floor(Math.random() * 8),
-      }))
-
-      return mockResponse(hourlyData)
-    } else {
-      return apiClient.get('/stats/hourly', { params: { date } })
-    }
-  },
-
-  // 사물함 크기별 통계
-  async getLockerSizeStats() {
-    if (API_CONFIG.mode === 'mock') {
-      const sizeStats = {
-        small: {
-          total: lockersData.lockers.filter((l) => l.size === 'small').length,
-          available: lockersData.lockers.filter(
-            (l) => l.size === 'small' && l.status === 'available',
-          ).length,
-          inUse: lockersData.lockers.filter((l) => l.size === 'small' && l.status === 'in-use')
-            .length,
-        },
-        medium: {
-          total: lockersData.lockers.filter((l) => l.size === 'medium').length,
-          available: lockersData.lockers.filter(
-            (l) => l.size === 'medium' && l.status === 'available',
-          ).length,
-          inUse: lockersData.lockers.filter((l) => l.size === 'medium' && l.status === 'in-use')
-            .length,
-        },
-        large: {
-          total: lockersData.lockers.filter((l) => l.size === 'large').length,
-          available: lockersData.lockers.filter(
-            (l) => l.size === 'large' && l.status === 'available',
-          ).length,
-          inUse: lockersData.lockers.filter((l) => l.size === 'large' && l.status === 'in-use')
-            .length,
-        },
-      }
-
-      return mockResponse(sizeStats)
-    } else {
-      return apiClient.get('/stats/locker-size')
-    }
-  },
-
-  // 위치별 통계
-  async getLocationStats() {
-    if (API_CONFIG.mode === 'mock') {
-      const locations = [...new Set(lockersData.lockers.map((l) => l.location))]
-
-      const locationStats = locations.map((location) => {
-        const lockers = lockersData.lockers.filter((l) => l.location === location)
-        const available = lockers.filter((l) => l.status === 'available').length
-        const inUse = lockers.filter((l) => l.status === 'in-use').length
-
-        return {
-          location,
-          total: lockers.length,
-          available,
-          inUse,
-          usageRate: ((inUse / lockers.length) * 100).toFixed(1),
-        }
-      })
-
-      return mockResponse(locationStats)
-    } else {
-      return apiClient.get('/stats/location')
-    }
-  },
-
-  // 고객 멤버십 통계
-  async getMembershipStats() {
-    if (API_CONFIG.mode === 'mock') {
-      const membershipStats = {
-        bronze: customersData.customers.filter((c) => c.membershipLevel === 'bronze').length,
-        silver: customersData.customers.filter((c) => c.membershipLevel === 'silver').length,
-        gold: customersData.customers.filter((c) => c.membershipLevel === 'gold').length,
-        platinum: customersData.customers.filter((c) => c.membershipLevel === 'platinum').length,
-      }
-
-      return mockResponse(membershipStats)
-    } else {
-      return apiClient.get('/stats/membership')
-    }
-  },
-
-  // 예약 상태별 통계
-  async getReservationStats() {
-    if (API_CONFIG.mode === 'mock') {
-      const reservationStats = {
-        active: reservationsData.reservations.filter((r) => r.status === 'active').length,
-        completed: reservationsData.reservations.filter((r) => r.status === 'completed').length,
-        cancelled: reservationsData.reservations.filter((r) => r.status === 'cancelled').length,
-        expired: reservationsData.reservations.filter((r) => r.status === 'expired').length,
-      }
-
-      return mockResponse(reservationStats)
-    } else {
-      return apiClient.get('/stats/reservations')
-    }
-  },
+  }
 }

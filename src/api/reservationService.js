@@ -1,14 +1,10 @@
 /**
- * 예약 관리 서비스
+ * 예약 관리 서비스 (Firebase Firestore)
  *
- * Mock 모드 + Firebase Firestore 이중 지원
+ * Firebase를 데이터 소스로 사용하는 예약 관리 API
+ * Mock 모드 제거 - Firebase 전용
  */
 
-import apiClient from './index'
-import { API_CONFIG } from '@/config/api.config'
-import reservationsData from '@/data/reservations.json'
-
-// Firebase Imports
 import {
   collection,
   query,
@@ -20,305 +16,236 @@ import {
   addDoc,
   onSnapshot,
   orderBy,
-  Timestamp,
   serverTimestamp
 } from 'firebase/firestore'
 import { db } from '@/config/firebase.config'
 
 const COLLECTION = 'reservations'
 
-const mockResponse = (data) => {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve({ data }), API_CONFIG.mockDelay)
-  })
-}
-
 export const reservationService = {
-  // 전체 예약 조회
+  /**
+   * 전체 예약 조회
+   * @param {Object} params - 필터 파라미터
+   * @param {string} params.status - 예약 상태 필터
+   * @param {string} params.customerId - 고객 ID 필터
+   * @param {string} params.lockerId - 사물함 ID 필터
+   * @returns {Promise<{data: Array}>} 예약 배열
+   */
   async getAll(params = {}) {
-    if (API_CONFIG.mode === 'mock') {
-      let filtered = [...reservationsData.reservations]
+    try {
+      const constraints = []
 
-      // 상태 필터링
       if (params.status) {
-        filtered = filtered.filter((r) => r.status === params.status)
+        constraints.push(where('status', '==', params.status))
       }
-
-      // 날짜 필터링
-      if (params.date) {
-        filtered = filtered.filter((r) => r.startTime.startsWith(params.date))
-      }
-
-      // 고객 ID 필터링
       if (params.customerId) {
-        filtered = filtered.filter((r) => r.customerId === params.customerId)
+        constraints.push(where('customerId', '==', params.customerId))
       }
-
-      // 사물함 ID 필터링
       if (params.lockerId) {
-        filtered = filtered.filter((r) => r.lockerId === params.lockerId)
+        constraints.push(where('lockerId', '==', params.lockerId))
       }
 
-      // 정렬 (최신순)
-      filtered.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+      // Firestore 제한: 여러 constraints가 있으면 orderBy 사용 불가
+      const queryConstraints = constraints.length === 0
+        ? [orderBy('createdAt', 'desc')]
+        : []
 
-      return mockResponse(filtered)
-    } else {
-      // Firebase 모드
-      try {
-        const constraints = []
+      const q = query(
+        collection(db, COLLECTION),
+        ...constraints,
+        ...queryConstraints
+      )
+      const snapshot = await getDocs(q)
 
-        if (params.status) {
-          constraints.push(where('status', '==', params.status))
-        }
-        if (params.customerId) {
-          constraints.push(where('customerId', '==', params.customerId))
-        }
-        if (params.lockerId) {
-          constraints.push(where('lockerId', '==', params.lockerId))
-        }
-
-        // orderBy는 constraint가 없을 때만 쿼리에 포함
-        const queryConstraints = constraints.length === 0
-          ? [orderBy('createdAt', 'desc')]
-          : []
-
-        const q = query(
-          collection(db, COLLECTION),
-          ...constraints,
-          ...queryConstraints
-        )
-        const snapshot = await getDocs(q)
-
-        // constraint가 있으면 클라이언트에서 정렬
-        const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
-        if (constraints.length > 0) {
-          data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-        }
-
-        return { data }
-      } catch (error) {
-        console.error('reservationService.getAll error:', error)
-        throw error
+      // constraints가 있으면 클라이언트에서 정렬
+      const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+      if (constraints.length > 0) {
+        data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
       }
+
+      return { data }
+    } catch (error) {
+      console.error('reservationService.getAll error:', error)
+      throw error
     }
   },
 
-  // 예약 상세 조회
+  /**
+   * 예약 상세 조회
+   * @param {string} id - 예약 ID
+   * @returns {Promise<{data: Object}>} 예약 정보
+   */
   async getById(id) {
-    if (API_CONFIG.mode === 'mock') {
-      const reservation = reservationsData.reservations.find((r) => r.id === id)
-      if (!reservation) {
-        return Promise.reject(new Error('예약을 찾을 수 없습니다.'))
+    try {
+      const docSnap = await getDoc(doc(db, COLLECTION, id))
+      if (!docSnap.exists()) {
+        throw new Error('예약을 찾을 수 없습니다.')
       }
-      return mockResponse(reservation)
-    } else {
-      try {
-        const docSnap = await getDoc(doc(db, COLLECTION, id))
-        if (!docSnap.exists()) {
-          throw new Error('예약을 찾을 수 없습니다.')
-        }
-        return { data: { id: docSnap.id, ...docSnap.data() } }
-      } catch (error) {
-        console.error('reservationService.getById error:', error)
-        throw error
-      }
+      return { data: { id: docSnap.id, ...docSnap.data() } }
+    } catch (error) {
+      console.error('reservationService.getById error:', error)
+      throw error
     }
   },
 
-  // 예약 생성
+  /**
+   * 예약 생성
+   * @param {Object} data - 예약 데이터
+   * @returns {Promise<{data: Object}>} 생성된 예약
+   */
   async create(data) {
-    if (API_CONFIG.mode === 'mock') {
+    try {
       const newReservation = {
-        id: `R${String(reservationsData.reservations.length + 1).padStart(3, '0')}`,
         ...data,
-        status: 'active',
-        createdAt: new Date().toISOString(),
+        status: 'pending',
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
         accessCode: String(Math.floor(1000 + Math.random() * 9000)),
       }
-      // 원본 데이터 복제 후 수정 (불변성 유지)
-      reservationsData.reservations = [...reservationsData.reservations, newReservation]
-      return mockResponse(newReservation)
-    } else {
-      try {
-        const newReservation = {
-          ...data,
-          status: 'active',
-          createdAt: serverTimestamp(),
-          accessCode: String(Math.floor(1000 + Math.random() * 9000)),
-        }
-        const docRef = await addDoc(collection(db, COLLECTION), newReservation)
-        return { data: { id: docRef.id, ...newReservation } }
-      } catch (error) {
-        console.error('reservationService.create error:', error)
-        throw error
-      }
+      const docRef = await addDoc(collection(db, COLLECTION), newReservation)
+      return { data: { id: docRef.id, ...newReservation } }
+    } catch (error) {
+      console.error('reservationService.create error:', error)
+      throw error
     }
   },
 
-  // 예약 수정
+  /**
+   * 예약 수정
+   * @param {string} id - 예약 ID
+   * @param {Object} data - 수정할 데이터
+   * @returns {Promise<{data: Object}>} 수정된 예약
+   */
   async update(id, data) {
-    if (API_CONFIG.mode === 'mock') {
-      const index = reservationsData.reservations.findIndex((r) => r.id === id)
-      if (index === -1) {
-        return Promise.reject(new Error('예약을 찾을 수 없습니다.'))
-      }
-      const updated = {
-        ...reservationsData.reservations[index],
+    try {
+      const updateData = {
         ...data,
-        updatedAt: new Date().toISOString(),
+        updatedAt: serverTimestamp(),
       }
-      // 배열 복제 후 수정 (불변성 유지)
-      reservationsData.reservations = [
-        ...reservationsData.reservations.slice(0, index),
-        updated,
-        ...reservationsData.reservations.slice(index + 1)
-      ]
-      return mockResponse(updated)
-    } else {
-      try {
-        const updateData = {
-          ...data,
-          updatedAt: serverTimestamp(),
-        }
-        await updateDoc(doc(db, COLLECTION, id), updateData)
-        const docSnap = await getDoc(doc(db, COLLECTION, id))
-        return { data: { id: docSnap.id, ...docSnap.data() } }
-      } catch (error) {
-        console.error('reservationService.update error:', error)
-        throw error
-      }
+      await updateDoc(doc(db, COLLECTION, id), updateData)
+      const docSnap = await getDoc(doc(db, COLLECTION, id))
+      return { data: { id: docSnap.id, ...docSnap.data() } }
+    } catch (error) {
+      console.error('reservationService.update error:', error)
+      throw error
     }
   },
 
-  // 예약 취소
+  /**
+   * 예약 취소
+   * @param {string} id - 예약 ID
+   * @param {string} reason - 취소 사유
+   * @returns {Promise<{data: Object}>} 취소된 예약
+   */
   async cancel(id, reason) {
-    if (API_CONFIG.mode === 'mock') {
-      const index = reservationsData.reservations.findIndex((r) => r.id === id)
-      if (index === -1) {
-        return Promise.reject(new Error('예약을 찾을 수 없습니다.'))
-      }
-      const updated = {
-        ...reservationsData.reservations[index],
+    try {
+      const updateData = {
         status: 'cancelled',
-        cancelledAt: new Date().toISOString(),
-        cancelReason: reason
+        cancelledAt: serverTimestamp(),
+        cancelReason: reason,
+        updatedAt: serverTimestamp()
       }
-      // 배열 복제 후 수정 (불변성 유지)
-      reservationsData.reservations = [
-        ...reservationsData.reservations.slice(0, index),
-        updated,
-        ...reservationsData.reservations.slice(index + 1)
-      ]
-      return mockResponse(updated)
-    } else {
-      try {
-        const updateData = {
-          status: 'cancelled',
-          cancelledAt: serverTimestamp(),
-          cancelReason: reason
-        }
-        await updateDoc(doc(db, COLLECTION, id), updateData)
-        const docSnap = await getDoc(doc(db, COLLECTION, id))
-        return { data: { id: docSnap.id, ...docSnap.data() } }
-      } catch (error) {
-        console.error('reservationService.cancel error:', error)
-        throw error
-      }
+      await updateDoc(doc(db, COLLECTION, id), updateData)
+      const docSnap = await getDoc(doc(db, COLLECTION, id))
+      return { data: { id: docSnap.id, ...docSnap.data() } }
+    } catch (error) {
+      console.error('reservationService.cancel error:', error)
+      throw error
     }
   },
 
-  // 예약 완료 처리
+  /**
+   * 예약 완료 처리
+   * @param {string} id - 예약 ID
+   * @returns {Promise<{data: Object}>} 완료된 예약
+   */
   async complete(id) {
-    if (API_CONFIG.mode === 'mock') {
-      const index = reservationsData.reservations.findIndex((r) => r.id === id)
-      if (index === -1) {
-        return Promise.reject(new Error('예약을 찾을 수 없습니다.'))
-      }
-      const updated = {
-        ...reservationsData.reservations[index],
+    try {
+      const updateData = {
         status: 'completed',
-        completedAt: new Date().toISOString()
+        completedAt: serverTimestamp(),
+        updatedAt: serverTimestamp()
       }
-      // 배열 복제 후 수정 (불변성 유지)
-      reservationsData.reservations = [
-        ...reservationsData.reservations.slice(0, index),
-        updated,
-        ...reservationsData.reservations.slice(index + 1)
-      ]
-      return mockResponse(updated)
-    } else {
-      try {
-        const updateData = {
-          status: 'completed',
-          completedAt: serverTimestamp()
-        }
-        await updateDoc(doc(db, COLLECTION, id), updateData)
-        const docSnap = await getDoc(doc(db, COLLECTION, id))
-        return { data: { id: docSnap.id, ...docSnap.data() } }
-      } catch (error) {
-        console.error('reservationService.complete error:', error)
-        throw error
-      }
+      await updateDoc(doc(db, COLLECTION, id), updateData)
+      const docSnap = await getDoc(doc(db, COLLECTION, id))
+      return { data: { id: docSnap.id, ...docSnap.data() } }
+    } catch (error) {
+      console.error('reservationService.complete error:', error)
+      throw error
     }
   },
 
-  // 오늘의 예약 조회
+  /**
+   * 오늘의 예약 조회
+   * @returns {Promise<{data: Array}>} 오늘의 예약 배열
+   */
   async getToday() {
-    if (API_CONFIG.mode === 'mock') {
-      const today = new Date().toISOString().split('T')[0]
-      const filtered = reservationsData.reservations.filter((r) => r.startTime.startsWith(today))
-      return mockResponse(filtered)
-    } else {
-      try {
-        const today = new Date()
-        today.setHours(0, 0, 0, 0)
-        const tomorrow = new Date(today)
-        tomorrow.setDate(tomorrow.getDate() + 1)
+    try {
+      const today = new Date()
+      today.setHours(0, 0, 0, 0)
+      const tomorrow = new Date(today)
+      tomorrow.setDate(tomorrow.getDate() + 1)
 
-        // where 조건만 사용하고 orderBy는 클라이언트에서 처리
-        const q = query(
-          collection(db, COLLECTION),
-          where('startTime', '>=', today),
-          where('startTime', '<', tomorrow)
-        )
-        const snapshot = await getDocs(q)
-        const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+      const q = query(
+        collection(db, COLLECTION),
+        where('startTime', '>=', today),
+        where('startTime', '<', tomorrow)
+      )
+      const snapshot = await getDocs(q)
+      const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
 
-        // 클라이언트에서 정렬
-        data.sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
+      // 클라이언트에서 정렬
+      data.sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
 
-        return { data }
-      } catch (error) {
-        console.error('reservationService.getToday error:', error)
-        throw error
-      }
+      return { data }
+    } catch (error) {
+      console.error('reservationService.getToday error:', error)
+      throw error
     }
   },
 
-  // 활성 예약 조회
+  /**
+   * 활성 예약 조회
+   * @returns {Promise<{data: Array}>} 활성 예약 배열
+   */
   async getActive() {
-    if (API_CONFIG.mode === 'mock') {
-      const filtered = reservationsData.reservations.filter((r) => r.status === 'active')
-      return mockResponse(filtered)
-    } else {
-      try {
-        // where 조건만 사용하고 orderBy는 클라이언트에서 처리
-        const q = query(
-          collection(db, COLLECTION),
-          where('status', '==', 'active')
-        )
-        const snapshot = await getDocs(q)
-        const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+    try {
+      const q = query(
+        collection(db, COLLECTION),
+        where('status', '==', 'active')
+      )
+      const snapshot = await getDocs(q)
+      const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
 
-        // 클라이언트에서 정렬 (최신순)
-        data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+      // 클라이언트에서 정렬 (최신순)
+      data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
 
-        return { data }
-      } catch (error) {
-        console.error('reservationService.getActive error:', error)
-        throw error
-      }
+      return { data }
+    } catch (error) {
+      console.error('reservationService.getActive error:', error)
+      throw error
     }
   },
+
+  /**
+   * 실시간 예약 변경 리스너
+   * @param {Function} callback - 데이터 변경 시 호출될 콜백
+   * @returns {Function} 리스너 해제 함수
+   */
+  onReservationChange(callback) {
+    try {
+      const q = query(
+        collection(db, COLLECTION),
+        orderBy('createdAt', 'desc')
+      )
+      const unsubscribe = onSnapshot(q, (snapshot) => {
+        const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+        callback(data)
+      })
+      return unsubscribe
+    } catch (error) {
+      console.error('reservationService.onReservationChange error:', error)
+      return () => {}
+    }
+  }
 }
