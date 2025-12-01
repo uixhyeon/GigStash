@@ -276,16 +276,19 @@ export const reservationService = {
         const tomorrow = new Date(today)
         tomorrow.setDate(tomorrow.getDate() + 1)
 
+        // where 조건만 사용하고 orderBy는 클라이언트에서 처리
         const q = query(
           collection(db, COLLECTION),
           where('startTime', '>=', today),
-          where('startTime', '<', tomorrow),
-          orderBy('startTime', 'asc')
+          where('startTime', '<', tomorrow)
         )
         const snapshot = await getDocs(q)
-        return {
-          data: snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
-        }
+        const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+
+        // 클라이언트에서 정렬
+        data.sort((a, b) => new Date(a.startTime) - new Date(b.startTime))
+
+        return { data }
       } catch (error) {
         console.error('reservationService.getToday error:', error)
         throw error
@@ -300,15 +303,18 @@ export const reservationService = {
       return mockResponse(filtered)
     } else {
       try {
+        // where 조건만 사용하고 orderBy는 클라이언트에서 처리
         const q = query(
           collection(db, COLLECTION),
-          where('status', '==', 'active'),
-          orderBy('createdAt', 'desc')
+          where('status', '==', 'active')
         )
         const snapshot = await getDocs(q)
-        return {
-          data: snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
-        }
+        const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+
+        // 클라이언트에서 정렬 (최신순)
+        data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+
+        return { data }
       } catch (error) {
         console.error('reservationService.getActive error:', error)
         throw error
