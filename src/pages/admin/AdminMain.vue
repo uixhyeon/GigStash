@@ -358,7 +358,6 @@ import {
 import { useDataStore } from '@/stores/dataStore'
 import ComStatusChip from '@/components/common/ComStatusChip.vue'
 import ComCard from '@/components/common/ComCard.vue'
-import lockersData from '@/data/lockers.json'
 
 // Chart.js 등록
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
@@ -371,8 +370,8 @@ const reservations = computed(() => dataStore.reservations)
 const customers = computed(() => dataStore.customers)
 const loading = computed(() => dataStore.isLoading)
 
-// 로커는 JSON에서 직접 로드 (현재는 Store에 없음)
-const lockers = computed(() => lockersData.lockers)
+// Firebase Firestore에서 로드된 사물함 데이터 사용
+const lockers = computed(() => dataStore.lockers)
 
 // 통계 계산
 const stats = computed(() => {
