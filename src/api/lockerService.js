@@ -65,12 +65,22 @@ export const lockerService = {
           constraints.push(where('size', '==', params.size))
         }
 
-        const q = query(collection(db, COLLECTION), ...constraints, orderBy('number'))
+        // orderBy는 constraint가 없을 때만 쿼리에 포함
+        const queryConstraints = constraints.length === 0
+          ? [orderBy('number')]
+          : []
+
+        const q = query(collection(db, COLLECTION), ...constraints, ...queryConstraints)
         const snapshot = await getDocs(q)
 
-        return {
-          data: snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+        const data = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+
+        // constraint가 있으면 클라이언트에서 정렬
+        if (constraints.length > 0) {
+          data.sort((a, b) => (a.number || a.id).localeCompare(b.number || b.id))
         }
+
+        return { data }
       } catch (error) {
         console.error('lockerService.getAll error:', error)
         throw error
