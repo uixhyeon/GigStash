@@ -371,15 +371,34 @@ const customers = computed(() => dataStore.customers)
 const loading = computed(() => dataStore.isLoading)
 
 // Firebase Firestore에서 로드된 사물함 데이터 사용
-const lockers = computed(() => dataStore.lockers)
+const lockers = computed(() => {
+  const data = dataStore.lockers
+  console.log('🔍 AdminMain.vue: lockers computed 실행', {
+    length: data.length,
+    data: data.slice(0, 2)
+  })
+  return data
+})
 
 // 통계 계산
 const stats = computed(() => {
   const total = lockers.value.length
-  const available = lockers.value.filter((l) => l.status === 'available').length
-  const inUse = lockers.value.filter((l) => l.status === 'in-use').length
+  const inUse = lockers.value.filter((l) => l.status === 'active').length
+  const maintenance = lockers.value.filter((l) => l.status === 'maintenance').length
+  const broken = lockers.value.filter((l) => l.status === 'broken').length
+  const available = total - inUse - maintenance - broken
   const activeReservations = reservations.value.filter((r) => r.status === 'active').length
   const usageRate = total > 0 ? Math.round((inUse / total) * 100) : 0
+
+  console.log('📊 AdminMain.vue: stats 계산', {
+    total,
+    available,
+    inUse,
+    maintenance,
+    broken,
+    usageRate,
+    activeReservations
+  })
 
   return {
     available,
@@ -425,6 +444,9 @@ const activeCustomers = computed(() => {
 
 // 보관함 상태 차트 데이터 (stats 데이터 재사용)
 const chartData = computed(() => {
+  const maintenance = lockers.value.filter((l) => l.status === 'maintenance').length
+  const broken = lockers.value.filter((l) => l.status === 'broken').length
+
   return {
     labels: ['미사용', '사용중', '정비중', '고장'],
     datasets: [
@@ -433,11 +455,10 @@ const chartData = computed(() => {
         data: [
           stats.value.available,
           stats.value.inUse,
-          // 정비중과 고장 상태는 lockers.json 데이터에서 직접 계산
-          lockers.value.filter((l) => l.status === 'maintenance').length,
-          lockers.value.filter((l) => l.status === 'broken').length,
+          maintenance,
+          broken,
         ],
-        backgroundColor: ['#007aff', '#000000', '#ff9500', '#ff3b30'],
+        backgroundColor: ['#007aff', '#34c759', '#ff9500', '#ff3b30'],
         borderRadius: 8,
       },
     ],

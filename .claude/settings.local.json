@@ -8,7 +8,9 @@
       "Bash(node scripts/generate-lockers-50-per-vehicle.js:*)",
       "Bash(node scripts/generate-customers-550.js:*)",
       "Bash(node scripts/generate-reservations-extra.js:*)",
-      "Bash(node scripts/fix-reservation-statuses.js:*)"
+      "Bash(node scripts/fix-reservation-statuses.js:*)",
+      "Bash(node -e:*)",
+      "Bash(node scripts/normalize-data.js:*)"
     ],
     "deny": [],
     "ask": []

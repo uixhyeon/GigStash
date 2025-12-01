@@ -1,18 +1,21 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { RouterView } from 'vue-router'
 import { useDarkMode } from './composables/useDarkMode'
 import { useDataStore } from './stores/dataStore'
-import { reservationService } from './api/reservationService'
-import { customerService } from './api/customerService'
-import { lockerService } from './api/lockerService'
 import eventsData from './data/events.json'
+import reservationsData from './data/reservations.json'
+import customersData from './data/customers.json'
+import lockersData from './data/lockers.json'
 
 // 다크모드 초기화
 const { initDarkMode } = useDarkMode()
 
 // 데이터 스토어 초기화
 const dataStore = useDataStore()
+
+// 데이터 로드 완료 플래그 (race condition 방지)
+const dataLoaded = ref(false)
 
 /**
  * 예약 데이터 정규화
@@ -46,37 +49,62 @@ const normalizeReservations = (reservations, events) => {
   })
 }
 
-onMounted(async () => {
+onMounted(() => {
   initDarkMode()
 
-  // 앱 로드 시 데이터 초기화
+  // 앱 로드 시 데이터 초기화 (로컬 JSON 사용)
   try {
-    const [reservationsRes, customersRes, lockersRes] = await Promise.all([
-      reservationService.getAll(),
-      customerService.getAll(),
-      lockerService.getAll()
-    ])
+    console.log('🚀 App.vue: 데이터 로드 시작')
 
-    // 이벤트 데이터 로드 (로컬 JSON)
-    const events = eventsData.events
+    // 로컬 JSON 데이터 로드
+    const reservations = reservationsData.reservations || []
+    const customers = customersData.customers || []
+    const lockers = lockersData.lockers || []
+    const events = eventsData.events || []
+
+    console.log('📊 App.vue: 로드된 데이터')
+    console.log(`  - 예약: ${reservations.length}개`)
+    console.log(`  - 고객: ${customers.length}개`)
+    console.log(`  - 사물함: ${lockers.length}개`)
+    console.log(`  - 행사: ${events.length}개`)
 
     // 예약 데이터 정규화
-    const normalizedReservations = normalizeReservations(reservationsRes.data, events)
+    const normalizedReservations = normalizeReservations(reservations, events)
 
+    console.log('💾 App.vue: dataStore에 데이터 저장 중...')
     dataStore.setReservations(normalizedReservations)
-    dataStore.setCustomers(customersRes.data)
-    dataStore.setLockers(lockersRes.data)
+    dataStore.setCustomers(customers)
+    dataStore.setLockers(lockers)
     dataStore.setEvents(events)
+
+    console.log('✅ App.vue: 데이터 로드 완료')
+    console.log(`  - 스토어 예약: ${dataStore.reservations.length}개`)
+    console.log(`  - 스토어 고객: ${dataStore.customers.length}개`)
+    console.log(`  - 스토어 사물함: ${dataStore.lockers.length}개`)
+    console.log(`  - 스토어 행사: ${dataStore.events.length}개`)
+
+    // 데이터 로드 완료 플래그 설정 (자식 컴포넌트 렌더링 허용)
+    dataLoaded.value = true
   } catch (err) {
-    console.error('Failed to load initial data:', err)
+    console.error('❌ Failed to load initial data:', err)
     dataStore.setError(err)
+    // 에러 발생 시에도 UI 렌더링 허용
+    dataLoaded.value = true
   }
 })
 </script>
 
 <template>
-  <!-- 라우터가 레이아웃을 결정 -->
-  <RouterView />
+  <div v-if="dataLoaded">
+    <!-- 라우터가 레이아웃을 결정 -->
+    <RouterView />
+  </div>
+  <div v-else class="flex items-center justify-center h-screen bg-white dark:bg-gray-900">
+    <div class="text-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+      <p class="text-gray-600 dark:text-gray-300">데이터 로딩 중...</p>
+    </div>
+  </div>
 </template>
 
 <style>
