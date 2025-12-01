@@ -1527,7 +1527,46 @@
       "accessCode": "8675"
     },
     {
-      "id": "RES2510030118",
+      "id": "RES2512290118",
+      "eventId": "EVT251230002",
+      "lockerId": "L000",
+      "lockerNumber": "A-100",
+      "customerId": "C001",
+      "status": "active",
+      "startTime": "2025-12-30T09:00:00.000Z",
+      "endTime": "2025-12-30T18:00:00.000Z",
+      "itemDescription": "샌드위치",
+      "createdAt": "2025-12-29T00:00:00.000Z",
+      "accessCode": "2391"
+    },
+    {
+      "id": "RES2512280119",
+      "eventId": "EVT251230002",
+      "lockerId": "L001",
+      "lockerNumber": "B-101",
+      "customerId": "C002",
+      "status": "active",
+      "startTime": "2025-12-30T09:00:00.000Z",
+      "endTime": "2025-12-30T18:00:00.000Z",
+      "itemDescription": "음료",
+      "createdAt": "2025-12-28T00:00:00.000Z",
+      "accessCode": "5627"
+    },
+    {
+      "id": "RES2512260120",
+      "eventId": "EVT251230002",
+      "lockerId": "L002",
+      "lockerNumber": "C-102",
+      "customerId": "C003",
+      "status": "active",
+      "startTime": "2025-12-30T09:00:00.000Z",
+      "endTime": "2025-12-30T18:00:00.000Z",
+      "itemDescription": "과일",
+      "createdAt": "2025-12-26T00:00:00.000Z",
+      "accessCode": "7843"
+    },
+    {
+      "id": "RES2510030121",
       "eventId": "EVT251005001",
       "lockerId": "L000",
       "lockerNumber": "A-100",

@@ -165,6 +165,7 @@ const emit = defineEmits(['update:currentDate', 'update:selectedDate', 'date-sel
 
 // 현재 월 표시
 const currentMonth = computed(() => {
+  if (!props.currentDate) return '로딩 중...'
   const year = props.currentDate.getFullYear()
   const month = props.currentDate.getMonth() + 1
   return `${year}년 ${month}월`
@@ -183,6 +184,7 @@ const normalizeStatus = (startDate, endDate) => {
 
 // 달력 날짜 생성
 const calendarDates = computed(() => {
+  if (!props.currentDate) return []
   const year = props.currentDate.getFullYear()
   const month = props.currentDate.getMonth()
 
@@ -262,6 +264,7 @@ const calendarDates = computed(() => {
 
 // 현재 월의 행사 개수
 const currentMonthEventCount = computed(() => {
+  if (!props.currentDate) return 0
   const year = props.currentDate.getFullYear()
   const month = props.currentDate.getMonth()
   const monthStart = new Date(year, month, 1)

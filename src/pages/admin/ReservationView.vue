@@ -238,7 +238,7 @@
         class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden max-w-full"
         style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
       >
-        <div class="overflow-x-auto overflow-y-auto max-h-[700px] scrollbar-hide w-full">
+        <div class="overflow-x-auto overflow-y-auto max-h-[500px] scrollbar-hide w-full">
           <table class="w-full text-xs min-w-max">
             <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
               <tr>
@@ -407,12 +407,14 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import reservationsData from '@/data/reservations.json'
-import customersData from '@/data/customers.json'
+import { useDataStore } from '@/stores/dataStore'
 
-// 예약 데이터
-const reservations = ref([])
-const customers = ref([])
+// 중앙 데이터 스토어 사용
+const dataStore = useDataStore()
+
+// 메모이제이션: 스토어의 상태를 직접 사용
+const reservations = computed(() => dataStore.reservations)
+const customers = computed(() => dataStore.customers)
 
 // 필터 상태
 const statusFilter = ref('전체')
@@ -425,15 +427,16 @@ const endDateFilter = ref('')
 const sortBy = ref('startTime')
 const sortDirection = ref('desc')
 
-// 데이터 초기화
-const initializeData = () => {
-  reservations.value = reservationsData.reservations || []
-  customers.value = customersData.customers || []
-}
+// 고객 맵 (메모이제이션: 빠른 조회를 위한 캐시)
+const customerMap = computed(() => {
+  const map = new Map()
+  customers.value.forEach(c => map.set(c.id, c))
+  return map
+})
 
-// 고객 정보 조회 함수
+// 고객 정보 조회 함수 (메모이제이션)
 const getCustomerInfo = (customerId) => {
-  return customers.value.find((c) => c.id === customerId) || { name: '미정' }
+  return customerMap.value.get(customerId) || { name: '미정' }
 }
 
 // 상태 맵핑 (영문 -> 한글)
@@ -454,18 +457,16 @@ const reverseStatusMap = {
   예정: 'pending',
 }
 
-// 통계 계산
+// 통계 계산 (메모이제이션: 스토어의 reservationStats 사용)
 const stats = computed(() => {
-  const all = reservations.value.length
-  const active = reservations.value.filter((r) => r.status === 'active').length
+  const statsFromStore = dataStore.reservationStats
   const waiting = reservations.value.filter((r) => r.status === 'waiting').length
-  const completed = reservations.value.filter((r) => r.status === 'completed').length
 
   return {
-    all,
-    active,
+    all: statsFromStore.total,
+    active: statsFromStore.active,
     waiting,
-    completed,
+    completed: statsFromStore.completed,
   }
 })
 
@@ -627,9 +628,6 @@ const resetFilters = () => {
   startDateFilter.value = ''
   endDateFilter.value = ''
 }
-
-// 초기화
-initializeData()
 </script>
 
 <style scoped>

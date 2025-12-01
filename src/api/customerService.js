@@ -65,7 +65,8 @@ export const customerService = {
         activeReservations: 0,
         lastReservation: null
       }
-      customersData.customers.push(newCustomer)
+      // 배열 복제 후 수정 (불변성 유지)
+      customersData.customers = [...customersData.customers, newCustomer]
       return mockResponse(newCustomer)
     } else {
       return apiClient.post('/customers', data)
@@ -84,7 +85,12 @@ export const customerService = {
         ...data,
         updatedAt: new Date().toISOString()
       }
-      customersData.customers[index] = updated
+      // 배열 복제 후 수정 (불변성 유지)
+      customersData.customers = [
+        ...customersData.customers.slice(0, index),
+        updated,
+        ...customersData.customers.slice(index + 1)
+      ]
       return mockResponse(updated)
     } else {
       return apiClient.patch(`/customers/${id}`, data)
@@ -98,7 +104,12 @@ export const customerService = {
       if (index === -1) {
         return Promise.reject(new Error('고객을 찾을 수 없습니다.'))
       }
-      const deleted = customersData.customers.splice(index, 1)[0]
+      const deleted = customersData.customers[index]
+      // 배열 복제 후 수정 (불변성 유지)
+      customersData.customers = [
+        ...customersData.customers.slice(0, index),
+        ...customersData.customers.slice(index + 1)
+      ]
       return mockResponse(deleted)
     } else {
       return apiClient.delete(`/customers/${id}`)
@@ -140,12 +151,21 @@ export const customerService = {
   // 멤버십 레벨 업데이트
   async updateMembershipLevel(id, level) {
     if (API_CONFIG.mode === 'mock') {
-      const customer = customersData.customers.find((c) => c.id === id)
-      if (!customer) {
+      const index = customersData.customers.findIndex((c) => c.id === id)
+      if (index === -1) {
         return Promise.reject(new Error('고객을 찾을 수 없습니다.'))
       }
-      customer.membershipLevel = level
-      return mockResponse(customer)
+      const updated = {
+        ...customersData.customers[index],
+        membershipLevel: level
+      }
+      // 배열 복제 후 수정 (불변성 유지)
+      customersData.customers = [
+        ...customersData.customers.slice(0, index),
+        updated,
+        ...customersData.customers.slice(index + 1)
+      ]
+      return mockResponse(updated)
     } else {
       return apiClient.patch(`/customers/${id}/membership`, { level })
     }

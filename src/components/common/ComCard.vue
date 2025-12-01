@@ -41,7 +41,7 @@ const props = defineProps({
   variant: {
     type: String,
     default: 'blue',
-    validator: (value) => ['blue', 'black', 'gradient-blue', 'gradient-black', 'gradient-yellow', 'gradient-gray'].includes(value),
+    validator: (value) => ['blue', 'black', 'gradient-blue', 'gradient-black', 'gradient-yellow', 'gradient-gray', 'gradient-blue-revenue'].includes(value),
   },
   layout: {
     type: String,
@@ -87,6 +87,7 @@ const cardClass = computed(() => {
     'gradient-black': 'bg-white/80 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700',
     'gradient-yellow': 'bg-gradient-to-br from-yellow-300/90 to-amber-400/95',
     'gradient-gray': 'bg-gradient-to-br from-gray-400/90 to-gray-600/95 text-white',
+    'gradient-blue-revenue': 'bg-gradient-to-br from-blue-100/90 to-blue-300/95',
   }
   return variants[props.variant] || variants.blue
 })
@@ -103,6 +104,7 @@ const valueClass = computed(() => {
     'gradient-black': 'text-gray-900 dark:text-white',
     'gradient-yellow': 'text-gray-800',
     'gradient-gray': 'text-white',
+    'gradient-blue-revenue': 'text-gray-900 dark:text-gray-900',
   }
   return variants[props.variant] || variants.blue
 })
@@ -115,6 +117,7 @@ const iconStyle = computed(() => {
     'gradient-black': 'color: #1f2937;',
     'gradient-yellow': 'color: #1f2937;',
     'gradient-gray': 'color: #ffffff;',
+    'gradient-blue-revenue': 'color: #1f2937;',
   }
   return variants[props.variant] || variants.blue
 })

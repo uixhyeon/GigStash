@@ -9,7 +9,7 @@
     >
       <!-- 달력 섹션 -->
       <div class="xl:col-span-2 2xl:col-span-3">
-        <EventCalendar
+        <ComEventCalendar
           v-model:current-date="currentDate"
           v-model:selected-date="selectedDate"
           :events="events"
@@ -112,6 +112,11 @@
                     행사명
                   </th>
                   <th
+                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  >
+                    행사장소
+                  </th>
+                  <th
                     class="px-2 py-2 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                     @click="toggleSort('startDate')"
                   >
@@ -129,6 +134,11 @@
                         ]"
                       ></i>
                     </div>
+                  </th>
+                  <th
+                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  >
+                    행사 시간
                   </th>
                   <th
                     class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
@@ -179,7 +189,7 @@
                   class="border-t border-gray-200 dark:border-dark-border"
                 >
                   <td
-                    colspan="7"
+                    colspan="9"
                     class="px-4 py-8 text-center text-gray-500 dark:text-dark-text-tertiary"
                   >
                     검색 결과가 없습니다.
@@ -217,10 +227,20 @@
                   <td
                     class="px-2 py-1 text-center text-gray-700 dark:text-dark-text-secondary group-hover:dark:text-gray-700 whitespace-nowrap"
                   >
+                    {{ event.venue }}
+                  </td>
+                  <td
+                    class="px-2 py-1 text-center text-gray-700 dark:text-dark-text-secondary group-hover:dark:text-gray-700 whitespace-nowrap"
+                  >
                     {{ event.startDate }}
                   </td>
+                  <td
+                    class="px-2 py-1 text-left text-gray-700 dark:text-dark-text-secondary group-hover:dark:text-gray-700 whitespace-nowrap"
+                  >
+                    {{ event.performanceTime }}
+                  </td>
                   <td class="px-2 py-1 text-center whitespace-nowrap">
-                    <StatusChip :status="event.status" />
+                    <ComStatusChip :status="event.status" />
                   </td>
                   <td
                     class="px-2 py-1 text-center text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
@@ -254,8 +274,8 @@
 import { ref, computed } from 'vue'
 import eventsData from '@/data/events.json'
 import EventDetailModal from '@/components/EventDetailModal.vue'
-import StatusChip from '@/components/common/StatusChip.vue'
-import EventCalendar from '@/components/common/EventCalendar.vue'
+import ComStatusChip from '@/components/common/ComStatusChip.vue'
+import ComEventCalendar from '@/components/common/ComEventCalendar.vue'
 
 // 현재 월
 const currentDate = ref(new Date())
@@ -294,6 +314,7 @@ const events = ref(
     reservations: Math.floor(Math.random() * 100) + 1,
     venue: event.eventVenue,
     type: event.eventType,
+    performanceTime: event.performanceTime || '',
   })),
 )
 

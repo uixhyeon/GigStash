@@ -169,7 +169,8 @@
       "totalPrice": 0,
       "status": "완료",
       "vehicleCount": 0,
-      "expectedAttendance": 0
+      "expectedAttendance": 0,
+      "performanceTime": "17:00"
     },
     {
       "id": "EVT251109001",
@@ -189,7 +190,8 @@
       "totalPrice": 0,
       "status": "완료",
       "vehicleCount": 0,
-      "expectedAttendance": 0
+      "expectedAttendance": 0,
+      "performanceTime": "18:00"
     },
     {
       "id": "EVT251109002",
@@ -251,7 +253,8 @@
       "totalPrice": 0,
       "status": "완료",
       "vehicleCount": 0,
-      "expectedAttendance": 0
+      "expectedAttendance": 0,
+      "performanceTime": "14:00"
     },
     {
       "id": "EVT251115002",
@@ -271,7 +274,8 @@
       "totalPrice": 0,
       "status": "완료",
       "vehicleCount": 0,
-      "expectedAttendance": 0
+      "expectedAttendance": 0,
+      "performanceTime": "19:30"
     },
     {
       "id": "EVT251118001",
@@ -291,7 +295,8 @@
       "totalPrice": 0,
       "status": "완료",
       "vehicleCount": 0,
-      "expectedAttendance": 0
+      "expectedAttendance": 0,
+      "performanceTime": "19:00"
     },
     {
       "id": "EVT251121001",

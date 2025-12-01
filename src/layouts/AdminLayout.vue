@@ -206,7 +206,7 @@
             </div>
 
             <!-- 다크모드 토글 -->
-            <DarkModeToggle />
+            <ComDarkModeToggle />
           </div>
         </div>
       </header>
@@ -225,7 +225,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
-import DarkModeToggle from '@/components/common/DarkModeToggle.vue'
+import DarkModeToggle from '@/components/common/ComDarkModeToggle.vue'
 import ApiDebugPanel from '@/components/dev/ApiDebugPanel.vue'
 import { useAuthStore } from '@/stores/auth'
 

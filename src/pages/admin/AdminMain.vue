@@ -1,58 +1,227 @@
 <template>
-  <div class="p-6 bg-slate-50 dark:bg-slate-900 min-h-screen">
+  <div class="p-6 bg-slate-50 dark:bg-slate-900 h-[100vh - 64px] scrollbar-hide">
     <!-- <h1 class="text-3xl font-bold mb-8" style="color: #1e293b">Main Home</h1> -->
 
     <!-- 통계 카드 -->
+    <div class="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <section>
+        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+          당일 보관함 현황
+        </h2>
 
-    <section class="mb-12">
-      <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-        당일 보관함 현황
-      </h2>
-
-      <div
-        v-if="loading"
-        class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm"
-        style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-      >
-        통계 로딩 중...
-      </div>
-      <div v-else class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        <StatCard
-          label="미사용"
-          :value="stats.available"
-          icon="fi-rr-box"
-          variant="gradient-blue"
-        />
-        <StatCard label="사용중" :value="stats.inUse" icon="fi-rr-lock" variant="gradient-black" />
-        <StatCard
-          label="사용률"
-          :value="`${stats.usageRate}%`"
-          icon="fi-rr-chart-pie"
-          variant="gradient-blue"
-        />
-        <StatCard
-          label="활성 예약"
-          :value="stats.activeReservations"
-          icon="fi-rr-calendar-check"
-          variant="gradient-black"
-        />
-        <div class="hidden lg:block">
-          <StatCard
-            label="총 고객"
-            :value="stats.totalCustomers"
-            icon="fi-rr-users"
-            variant="gradient-blue"
-          />
+        <div
+          v-if="loading"
+          class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm"
+          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+        >
+          통계 로딩 중...
         </div>
-      </div>
-    </section>
-    <!-- =============================================================================================================== -->
-    <!-- 두 컬럼 레이아웃 -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-      <!-- 좌측: 최근 예약 + 차트 -->
-      <div>
+        <div v-else class="grid grid-cols-2 gap-3 mb-4">
+          <!-- 미사용 -->
+          <div
+            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0 flex-1">
+                <div
+                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                >
+                  미사용
+                </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-blue-600 dark:text-blue-400"
+                >
+                  {{ stats.available }}
+                </div>
+                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                  현재 가용
+                </div>
+              </div>
+              <i class="fi fi-rr-box text-lg sm:text-xl flex-shrink-0" style="color: #3b82f6"></i>
+            </div>
+          </div>
+
+          <!-- 사용중 -->
+          <div
+            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-amber-100 dark:border-amber-900/30"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0 flex-1">
+                <div
+                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                >
+                  사용중
+                </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-amber-600 dark:text-amber-400"
+                >
+                  {{ stats.inUse }}
+                </div>
+                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                  현재 사용 중
+                </div>
+              </div>
+              <i class="fi fi-rr-lock text-lg sm:text-xl flex-shrink-0" style="color: #d97706"></i>
+            </div>
+          </div>
+
+          <!-- 사용률 -->
+          <div
+            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0 flex-1">
+                <div
+                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                >
+                  사용률
+                </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-green-600 dark:text-green-400"
+                >
+                  {{ stats.usageRate }}%
+                </div>
+                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                  오늘의 사용률
+                </div>
+              </div>
+              <i
+                class="fi fi-rr-chart-pie text-lg sm:text-xl flex-shrink-0"
+                style="color: #16a34a"
+              ></i>
+            </div>
+          </div>
+
+          <!-- 활성 예약 -->
+          <div
+            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-purple-100 dark:border-purple-900/30 col-span-2 sm:col-span-1"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0 flex-1">
+                <div
+                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                >
+                  활성 예약
+                </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-purple-600 dark:text-purple-400"
+                >
+                  {{ stats.activeReservations }}
+                </div>
+                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                  진행 중인 예약
+                </div>
+              </div>
+              <i
+                class="fi fi-rr-calendar-check text-lg sm:text-xl flex-shrink-0"
+                style="color: #a855f7"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+          고객 참여도
+        </h2>
+        <div class="grid grid-cols-2 gap-3 mb-4">
+          <!-- 일일 활성 사용자 -->
+          <div
+            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0 flex-1">
+                <div
+                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                >
+                  일일 활성 사용자
+                </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-blue-600 dark:text-blue-400"
+                >
+                  {{ dailyActiveUsers }}
+                </div>
+                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                  어제 대비 <span class="text-blue-600 dark:text-blue-400 font-medium">+12%</span>
+                </div>
+              </div>
+              <i class="fi fi-rr-users text-lg sm:text-xl flex-shrink-0" style="color: #3b82f6"></i>
+            </div>
+          </div>
+
+          <!-- 재방문율 -->
+          <div
+            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-amber-100 dark:border-amber-900/30"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0 flex-1">
+                <div
+                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                >
+                  재방문율
+                </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-amber-600 dark:text-amber-400"
+                >
+                  {{ repeatVisitRate }}%
+                </div>
+                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                  지난달 대비
+                  <span class="text-amber-600 dark:text-amber-400 font-medium">+5.2%</span>
+                </div>
+              </div>
+              <i
+                class="fi fi-rr-rotate-clockwise text-lg sm:text-xl flex-shrink-0"
+                style="color: #d97706"
+              ></i>
+            </div>
+          </div>
+
+          <!-- 신규 고객 비율 -->
+          <div
+            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30 col-span-2 sm:col-span-1"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
+            <div class="flex justify-between items-start gap-2">
+              <div class="min-w-0 flex-1">
+                <div
+                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                >
+                  신규 고객
+                </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-green-600 dark:text-green-400"
+                >
+                  {{ newCustomerCount }}
+                </div>
+                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                  이번달 신규 ({{ newCustomerPercentage }}%)
+                </div>
+              </div>
+              <i
+                class="fi fi-rr-user-add text-lg sm:text-xl flex-shrink-0"
+                style="color: #16a34a"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--통계 카드 끝 =============================================================================================================== -->
+
+    <!-- 좌측: 최근 예약 테이블 + 차트 (2칼럼) -->
+    <div class="lg:col-span-2">
+      <!-- 테이블과 차트 그리드 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- 최근 예약 테이블 -->
-        <section class="mb-8">
+        <section>
           <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
             최근 예약
           </h2>
@@ -101,10 +270,10 @@
                     고객명
                   </th>
                   <!-- <th
-                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
-                  >
-                    접근코드
-                  </th> -->
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                >
+                  접근코드
+                </th> -->
                 </tr>
               </thead>
               <tbody>
@@ -144,10 +313,10 @@
                     {{ reservation.customerName }}
                   </td>
                   <!-- <td
-                    class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap"
-                  >
-                    {{ reservation.accessCode }}
-                  </td> -->
+                  class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                >
+                  {{ reservation.accessCode }}
+                </td> -->
                 </tr>
               </tbody>
             </table>
@@ -170,179 +339,12 @@
           </div>
         </section>
       </div>
-
-      <!-- 우측: 고객 참여도 지표 + 사용 고객 목록 -->
-      <div>
-        <!-- 고객 참여도 지표 -->
-        <section class="mb-8">
-          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-            고객 참여도
-          </h2>
-          <div class="grid grid-cols-2 gap-3 mb-4">
-            <!-- 일일 활성 사용자 -->
-            <div
-              class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
-              style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-            >
-              <div class="flex justify-between items-start gap-2">
-                <div class="min-w-0 flex-1">
-                  <div
-                    class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
-                  >
-                    일일 활성 사용자
-                  </div>
-                  <div
-                    class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-blue-600 dark:text-blue-400"
-                  >
-                    {{ dailyActiveUsers }}
-                  </div>
-                  <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                    어제 대비 <span class="text-blue-600 dark:text-blue-400 font-medium">+12%</span>
-                  </div>
-                </div>
-                <i
-                  class="fi fi-rr-users text-lg sm:text-xl flex-shrink-0"
-                  style="color: #3b82f6"
-                ></i>
-              </div>
-            </div>
-
-            <!-- 재방문율 -->
-            <div
-              class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-amber-100 dark:border-amber-900/30"
-              style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-            >
-              <div class="flex justify-between items-start gap-2">
-                <div class="min-w-0 flex-1">
-                  <div
-                    class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
-                  >
-                    재방문율
-                  </div>
-                  <div
-                    class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-amber-600 dark:text-amber-400"
-                  >
-                    {{ repeatVisitRate }}%
-                  </div>
-                  <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                    지난달 대비
-                    <span class="text-amber-600 dark:text-amber-400 font-medium">+5.2%</span>
-                  </div>
-                </div>
-                <i
-                  class="fi fi-rr-rotate-clockwise text-lg sm:text-xl flex-shrink-0"
-                  style="color: #d97706"
-                ></i>
-              </div>
-            </div>
-
-            <!-- 신규 고객 비율 -->
-            <div
-              class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30 col-span-2 sm:col-span-1"
-              style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-            >
-              <div class="flex justify-between items-start gap-2">
-                <div class="min-w-0 flex-1">
-                  <div
-                    class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
-                  >
-                    신규 고객
-                  </div>
-                  <div
-                    class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-green-600 dark:text-green-400"
-                  >
-                    {{ newCustomerCount }}
-                  </div>
-                  <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                    이번달 신규 ({{ newCustomerPercentage }}%)
-                  </div>
-                </div>
-                <i
-                  class="fi fi-rr-user-add text-lg sm:text-xl flex-shrink-0"
-                  style="color: #16a34a"
-                ></i>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- 사용 고객 목록 -->
-        <section>
-          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-            현재 사용 고객
-          </h2>
-          <div
-            v-if="loading"
-            class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm text-slate-600 dark:text-slate-400"
-            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-          >
-            고객 정보 로딩 중...
-          </div>
-          <div
-            v-else
-            class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden max-w-full"
-          >
-            <div class="max-w-full overflow-x-auto scrollbar-hide">
-              <table class="w-full text-xs min-w-max">
-                <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
-                  <tr>
-                    <th
-                      class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
-                    >
-                      고객명
-                    </th>
-                    <th
-                      class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
-                    >
-                      보관함
-                    </th>
-                    <th
-                      class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
-                    >
-                      등급
-                    </th>
-                    <th
-                      class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
-                    >
-                      전화번호
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr
-                    v-for="customer in activeCustomers.slice(0, 6)"
-                    :key="customer.id"
-                    class="border-t border-slate-200 dark:border-slate-700 h-10"
-                  >
-                    <td class="px-2 py-1 text-slate-900 dark:text-slate-100 whitespace-nowrap">
-                      {{ customer.name }}
-                    </td>
-                    <td class="px-2 py-1 text-slate-900 dark:text-slate-100 whitespace-nowrap">
-                      {{ customer.lockerNumber }}
-                    </td>
-                    <td class="px-2 py-1 whitespace-nowrap">
-                      <span
-                        class="px-2 py-0.5 rounded-full text-xs font-medium inline-block"
-                        :class="getMembershipClass(customer.membershipLevel)"
-                      >
-                        {{ getMembershipLabel(customer.membershipLevel) }}
-                      </span>
-                    </td>
-                    <td class="px-2 py-1 text-slate-900 dark:text-slate-100 whitespace-nowrap">
-                      {{ customer.phone }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { onMounted, computed } from 'vue'
 import { Bar } from 'vue-chartjs'
 import {
   Chart as ChartJS,
@@ -353,22 +355,24 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js'
-import StatusChip from '@/components/common/StatusChip.vue'
-import StatCard from '@/components/common/StatCard.vue'
+import { useDataStore } from '@/stores/dataStore'
+import ComStatusChip from '@/components/common/ComStatusChip.vue'
+import ComCard from '@/components/common/ComCard.vue'
 import lockersData from '@/data/lockers.json'
-import reservationsData from '@/data/reservations.json'
-import customersData from '@/data/customers.json'
 
 // Chart.js 등록
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
-// 로딩 상태
-const loading = ref(true)
+// 중앙 데이터 스토어 사용
+const dataStore = useDataStore()
 
-// 데이터
-const lockers = ref([])
-const reservations = ref([])
-const customers = ref([])
+// 메모이제이션: 스토어의 상태를 직접 사용
+const reservations = computed(() => dataStore.reservations)
+const customers = computed(() => dataStore.customers)
+const loading = computed(() => dataStore.isLoading)
+
+// 로커는 JSON에서 직접 로드 (현재는 Store에 없음)
+const lockers = computed(() => lockersData.lockers)
 
 // 통계 계산
 const stats = computed(() => {
@@ -387,12 +391,19 @@ const stats = computed(() => {
   }
 })
 
-// 최근 예약 목록
+// 고객 맵 (메모이제이션: 빠른 조회를 위한 캐시)
+const customerMap = computed(() => {
+  const map = new Map()
+  customers.value.forEach((c) => map.set(c.id, c))
+  return map
+})
+
+// 최근 예약 목록 (메모이제이션)
 const recentReservations = computed(() => {
   return [...reservations.value]
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     .map((res) => {
-      const customer = customers.value.find((c) => c.id === res.customerId)
+      const customer = customerMap.value.get(res.customerId)
       return {
         ...res,
         customerName: customer?.name || '고객정보없음',
@@ -401,11 +412,11 @@ const recentReservations = computed(() => {
     .slice(0, 6)
 })
 
-// 현재 사용중인 고객 정보
+// 현재 사용중인 고객 정보 (메모이제이션)
 const activeCustomers = computed(() => {
   const activeRes = reservations.value.filter((r) => r.status === 'active')
   return activeRes.map((res) => {
-    const customer = customers.value.find((c) => c.id === res.customerId)
+    const customer = customerMap.value.get(res.customerId)
     return {
       ...customer,
       lockerNumber: res.lockerNumber,
@@ -413,31 +424,19 @@ const activeCustomers = computed(() => {
   })
 })
 
-// 보관함 상태 차트 데이터
+// 보관함 상태 차트 데이터 (stats 데이터 재사용)
 const chartData = computed(() => {
-  const statusCounts = {
-    available: 0,
-    'in-use': 0,
-    maintenance: 0,
-    broken: 0,
-  }
-
-  lockers.value.forEach((locker) => {
-    if (statusCounts[locker.status] !== undefined) {
-      statusCounts[locker.status]++
-    }
-  })
-
   return {
     labels: ['미사용', '사용중', '정비중', '고장'],
     datasets: [
       {
         label: '보관함 수',
         data: [
-          statusCounts.available,
-          statusCounts['in-use'],
-          statusCounts.maintenance,
-          statusCounts.broken,
+          stats.value.available,
+          stats.value.inUse,
+          // 정비중과 고장 상태는 lockers.json 데이터에서 직접 계산
+          lockers.value.filter((l) => l.status === 'maintenance').length,
+          lockers.value.filter((l) => l.status === 'broken').length,
         ],
         backgroundColor: ['#007aff', '#000000', '#ff9500', '#ff3b30'],
         borderRadius: 8,
@@ -472,15 +471,10 @@ const dailyActiveUsers = computed(() => {
   return Math.max(activeCount, 0)
 })
 
+// 재방문율 (메모이제이션: 스토어의 고객별 예약 수 사용)
 const repeatVisitRate = computed(() => {
   if (customers.value.length === 0) return 0
-  // 2회 이상 예약한 고객 비율 계산
-  const customerReservationCounts = {}
-  reservations.value.forEach((res) => {
-    customerReservationCounts[res.customerId] = (customerReservationCounts[res.customerId] || 0) + 1
-  })
-
-  const repeatCustomers = Object.values(customerReservationCounts).filter(
+  const repeatCustomers = Array.from(dataStore.customerReservationCount.values()).filter(
     (count) => count >= 2,
   ).length
   const rate = customers.value.length > 0 ? (repeatCustomers / customers.value.length) * 100 : 0
@@ -545,20 +539,9 @@ const getMembershipClass = (level) => {
   return classes[level] || 'bg-gray-200 text-black'
 }
 
-// 데이터 로드
-const loadData = () => {
-  loading.value = true
-  try {
-    lockers.value = lockersData.lockers
-    reservations.value = reservationsData.reservations
-    customers.value = customersData.customers
-  } finally {
-    loading.value = false
-  }
-}
-
-// 초기 데이터 로드
+// 스토어에서 데이터를 가져오므로 별도의 로드가 필요 없음
+// App.vue에서 초기화할 때 이미 로드됨
 onMounted(() => {
-  loadData()
+  // 필요시 추가 초기화 작업
 })
 </script>

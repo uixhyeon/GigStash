@@ -42,7 +42,7 @@
         <!-- 오른쪽: 다크모드 + 설정 -->
         <div class="flex items-center gap-1">
           <div class="flex items-center justify-center w-10 h-10 [&_button]:text-white [&_svg]:text-white">
-            <DarkModeToggle />
+            <ComDarkModeToggle />
           </div>
           <button
             @click="goToProfile"
@@ -62,7 +62,7 @@
 </template>
 
 <script setup>
-import DarkModeToggle from "@/components/common/DarkModeToggle.vue";
+import DarkModeToggle from "@/components/common/ComDarkModeToggle.vue";
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
 

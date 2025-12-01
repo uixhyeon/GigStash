@@ -1,7 +1,31 @@
-// 예약 API 서비스
+/**
+ * 예약 관리 서비스
+ *
+ * Mock 모드 + Firebase Firestore 이중 지원
+ */
+
 import apiClient from './index'
 import { API_CONFIG } from '@/config/api.config'
 import reservationsData from '@/data/reservations.json'
+
+// Firebase Imports
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+  getDoc,
+  doc,
+  updateDoc,
+  addDoc,
+  onSnapshot,
+  orderBy,
+  Timestamp,
+  serverTimestamp
+} from 'firebase/firestore'
+import { db } from '@/config/firebase.config'
+
+const COLLECTION = 'reservations'
 
 const mockResponse = (data) => {
   return new Promise((resolve) => {
@@ -40,7 +64,34 @@ export const reservationService = {
 
       return mockResponse(filtered)
     } else {
-      return apiClient.get('/reservations', { params })
+      // Firebase 모드
+      try {
+        const constraints = []
+
+        if (params.status) {
+          constraints.push(where('status', '==', params.status))
+        }
+        if (params.customerId) {
+          constraints.push(where('customerId', '==', params.customerId))
+        }
+        if (params.lockerId) {
+          constraints.push(where('lockerId', '==', params.lockerId))
+        }
+
+        const q = query(
+          collection(db, COLLECTION),
+          ...constraints,
+          orderBy('createdAt', 'desc')
+        )
+        const snapshot = await getDocs(q)
+
+        return {
+          data: snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+        }
+      } catch (error) {
+        console.error('reservationService.getAll error:', error)
+        throw error
+      }
     }
   },
 
@@ -53,7 +104,16 @@ export const reservationService = {
       }
       return mockResponse(reservation)
     } else {
-      return apiClient.get(`/reservations/${id}`)
+      try {
+        const docSnap = await getDoc(doc(db, COLLECTION, id))
+        if (!docSnap.exists()) {
+          throw new Error('예약을 찾을 수 없습니다.')
+        }
+        return { data: { id: docSnap.id, ...docSnap.data() } }
+      } catch (error) {
+        console.error('reservationService.getById error:', error)
+        throw error
+      }
     }
   },
 
@@ -67,10 +127,23 @@ export const reservationService = {
         createdAt: new Date().toISOString(),
         accessCode: String(Math.floor(1000 + Math.random() * 9000)),
       }
-      reservationsData.reservations.push(newReservation)
+      // 원본 데이터 복제 후 수정 (불변성 유지)
+      reservationsData.reservations = [...reservationsData.reservations, newReservation]
       return mockResponse(newReservation)
     } else {
-      return apiClient.post('/reservations', data)
+      try {
+        const newReservation = {
+          ...data,
+          status: 'active',
+          createdAt: serverTimestamp(),
+          accessCode: String(Math.floor(1000 + Math.random() * 9000)),
+        }
+        const docRef = await addDoc(collection(db, COLLECTION), newReservation)
+        return { data: { id: docRef.id, ...newReservation } }
+      } catch (error) {
+        console.error('reservationService.create error:', error)
+        throw error
+      }
     }
   },
 
@@ -86,41 +159,98 @@ export const reservationService = {
         ...data,
         updatedAt: new Date().toISOString(),
       }
-      reservationsData.reservations[index] = updated
+      // 배열 복제 후 수정 (불변성 유지)
+      reservationsData.reservations = [
+        ...reservationsData.reservations.slice(0, index),
+        updated,
+        ...reservationsData.reservations.slice(index + 1)
+      ]
       return mockResponse(updated)
     } else {
-      return apiClient.patch(`/reservations/${id}`, data)
+      try {
+        const updateData = {
+          ...data,
+          updatedAt: serverTimestamp(),
+        }
+        await updateDoc(doc(db, COLLECTION, id), updateData)
+        const docSnap = await getDoc(doc(db, COLLECTION, id))
+        return { data: { id: docSnap.id, ...docSnap.data() } }
+      } catch (error) {
+        console.error('reservationService.update error:', error)
+        throw error
+      }
     }
   },
 
   // 예약 취소
   async cancel(id, reason) {
     if (API_CONFIG.mode === 'mock') {
-      const reservation = reservationsData.reservations.find((r) => r.id === id)
-      if (!reservation) {
+      const index = reservationsData.reservations.findIndex((r) => r.id === id)
+      if (index === -1) {
         return Promise.reject(new Error('예약을 찾을 수 없습니다.'))
       }
-      reservation.status = 'cancelled'
-      reservation.cancelledAt = new Date().toISOString()
-      reservation.cancelReason = reason
-      return mockResponse(reservation)
+      const updated = {
+        ...reservationsData.reservations[index],
+        status: 'cancelled',
+        cancelledAt: new Date().toISOString(),
+        cancelReason: reason
+      }
+      // 배열 복제 후 수정 (불변성 유지)
+      reservationsData.reservations = [
+        ...reservationsData.reservations.slice(0, index),
+        updated,
+        ...reservationsData.reservations.slice(index + 1)
+      ]
+      return mockResponse(updated)
     } else {
-      return apiClient.patch(`/reservations/${id}/cancel`, { reason })
+      try {
+        const updateData = {
+          status: 'cancelled',
+          cancelledAt: serverTimestamp(),
+          cancelReason: reason
+        }
+        await updateDoc(doc(db, COLLECTION, id), updateData)
+        const docSnap = await getDoc(doc(db, COLLECTION, id))
+        return { data: { id: docSnap.id, ...docSnap.data() } }
+      } catch (error) {
+        console.error('reservationService.cancel error:', error)
+        throw error
+      }
     }
   },
 
   // 예약 완료 처리
   async complete(id) {
     if (API_CONFIG.mode === 'mock') {
-      const reservation = reservationsData.reservations.find((r) => r.id === id)
-      if (!reservation) {
+      const index = reservationsData.reservations.findIndex((r) => r.id === id)
+      if (index === -1) {
         return Promise.reject(new Error('예약을 찾을 수 없습니다.'))
       }
-      reservation.status = 'completed'
-      reservation.completedAt = new Date().toISOString()
-      return mockResponse(reservation)
+      const updated = {
+        ...reservationsData.reservations[index],
+        status: 'completed',
+        completedAt: new Date().toISOString()
+      }
+      // 배열 복제 후 수정 (불변성 유지)
+      reservationsData.reservations = [
+        ...reservationsData.reservations.slice(0, index),
+        updated,
+        ...reservationsData.reservations.slice(index + 1)
+      ]
+      return mockResponse(updated)
     } else {
-      return apiClient.patch(`/reservations/${id}/complete`)
+      try {
+        const updateData = {
+          status: 'completed',
+          completedAt: serverTimestamp()
+        }
+        await updateDoc(doc(db, COLLECTION, id), updateData)
+        const docSnap = await getDoc(doc(db, COLLECTION, id))
+        return { data: { id: docSnap.id, ...docSnap.data() } }
+      } catch (error) {
+        console.error('reservationService.complete error:', error)
+        throw error
+      }
     }
   },
 
@@ -131,7 +261,26 @@ export const reservationService = {
       const filtered = reservationsData.reservations.filter((r) => r.startTime.startsWith(today))
       return mockResponse(filtered)
     } else {
-      return apiClient.get('/reservations/today')
+      try {
+        const today = new Date()
+        today.setHours(0, 0, 0, 0)
+        const tomorrow = new Date(today)
+        tomorrow.setDate(tomorrow.getDate() + 1)
+
+        const q = query(
+          collection(db, COLLECTION),
+          where('startTime', '>=', today),
+          where('startTime', '<', tomorrow),
+          orderBy('startTime', 'asc')
+        )
+        const snapshot = await getDocs(q)
+        return {
+          data: snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+        }
+      } catch (error) {
+        console.error('reservationService.getToday error:', error)
+        throw error
+      }
     }
   },
 
@@ -141,7 +290,20 @@ export const reservationService = {
       const filtered = reservationsData.reservations.filter((r) => r.status === 'active')
       return mockResponse(filtered)
     } else {
-      return apiClient.get('/reservations', { params: { status: 'active' } })
+      try {
+        const q = query(
+          collection(db, COLLECTION),
+          where('status', '==', 'active'),
+          orderBy('createdAt', 'desc')
+        )
+        const snapshot = await getDocs(q)
+        return {
+          data: snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+        }
+      } catch (error) {
+        console.error('reservationService.getActive error:', error)
+        throw error
+      }
     }
   },
 }

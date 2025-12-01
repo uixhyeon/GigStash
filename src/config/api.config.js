@@ -2,9 +2,9 @@
 import { reactive } from 'vue'
 
 export const API_CONFIG = reactive({
-  // 서버 연결 시 'real'로 변경
-  mode: 'mock',
-  // mode: 'real',
+  // Firebase Firestore 모드 활성화
+  mode: 'firebase',
+  // mode: 'mock',  // 로컬 JSON 모드로 전환하려면 이것을 활성화
 
   // 실제 서버 URL (나중에 사용)
   baseURL: 'http://localhost:3000/api',
@@ -15,7 +15,7 @@ export const API_CONFIG = reactive({
 
 // 개발 도구: 런타임에 모드 전환 가능
 export const toggleApiMode = () => {
-  API_CONFIG.mode = API_CONFIG.mode === 'mock' ? 'real' : 'mock'
+  API_CONFIG.mode = API_CONFIG.mode === 'mock' ? 'firebase' : 'mock'
   console.log(`🔄 API Mode switched to: ${API_CONFIG.mode}`)
 }
 

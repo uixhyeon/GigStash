@@ -17,12 +17,13 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useEventsStore } from '@/stores/events'
+// TODO: Events Store 생성 후 사용
+// import { useEventsStore } from '@/stores/events'
 
 const props = defineProps({ currentDate: Date })
 const emit = defineEmits(['select'])
 
-const store = useEventsStore()
+// const store = useEventsStore()
 
 const calendar = computed(() => {
   const year = props.currentDate.getFullYear()
@@ -34,7 +35,8 @@ const calendar = computed(() => {
 
   for (let d = 1; d <= days; d++) {
     const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`
-    const count = store.eventMap[dateStr]?.length || 0
+    // const count = store.eventMap[dateStr]?.length || 0
+    const count = 0 // TODO: Events Store에서 동적으로 가져오기
 
     list.push({
       key: dateStr,
