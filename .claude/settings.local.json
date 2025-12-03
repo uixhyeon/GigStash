@@ -10,7 +10,8 @@
       "Bash(node scripts/generate-reservations-extra.js:*)",
       "Bash(node scripts/fix-reservation-statuses.js:*)",
       "Bash(node -e:*)",
-      "Bash(node scripts/normalize-data.js:*)"
+      "Bash(node scripts/normalize-data.js:*)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []

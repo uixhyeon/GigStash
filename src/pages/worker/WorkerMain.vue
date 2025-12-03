@@ -547,7 +547,7 @@
 
 <script setup>
 import { ref, onUnmounted, watch, onMounted, nextTick, computed } from 'vue'
-import reservationsData from '@/data/reservations_2025_12.json'
+import reservationsData from '@/data/reservations_monthly.json'
 
 // 위치와 도착 시간은 todaySchedule에서 계산됨
 
@@ -576,7 +576,7 @@ const todayStr = computed(() => {
 // 완료 상태 관리 (예약 ID를 키로 사용)
 const reservationStatusMap = ref(new Map())
 
-// reservations_2025_12.json 데이터를 워커 페이지 형식으로 변환
+// reservations_monthly.json 데이터를 워커 페이지 형식으로 변환
 // 오늘 날짜의 예약만 필터링 (computed로 만들어서 날짜가 바뀌면 자동 업데이트)
 const reservations = computed(() => {
   return reservationsData.reservations

@@ -3,10 +3,11 @@ import { onMounted, ref } from 'vue'
 import { RouterView } from 'vue-router'
 import { useDarkMode } from './composables/useDarkMode'
 import { useDataStore } from './stores/dataStore'
-import eventsData from './data/events.json'
-import reservationsData from './data/reservations.json'
-import customersData from './data/customers.json'
-import lockersData from './data/lockers.json'
+import { events } from './data/events.js'
+import { reservations as reservationsData } from './data/reservations.js'
+import { customers as customersData } from './data/customers.js'
+import { lockers as lockersData } from './data/lockers.js'
+import { vehicles as vehiclesData } from './data/vehicles.js'
 
 // 다크모드 초기화
 const { initDarkMode } = useDarkMode()
@@ -56,17 +57,18 @@ onMounted(() => {
   try {
     console.log('🚀 App.vue: 데이터 로드 시작')
 
-    // 로컬 JSON 데이터 로드
-    const reservations = reservationsData.reservations || []
-    const customers = customersData.customers || []
-    const lockers = lockersData.lockers || []
-    const events = eventsData.events || []
+    // JS 파일에서 로드된 데이터 사용
+    const reservations = reservationsData || []
+    const customers = customersData || []
+    const lockers = lockersData || []
+    const vehicles = vehiclesData || []
 
     console.log('📊 App.vue: 로드된 데이터')
     console.log(`  - 예약: ${reservations.length}개`)
     console.log(`  - 고객: ${customers.length}개`)
     console.log(`  - 사물함: ${lockers.length}개`)
     console.log(`  - 행사: ${events.length}개`)
+    console.log(`  - 차량: ${vehicles.length}개`)
 
     // 예약 데이터 정규화
     const normalizedReservations = normalizeReservations(reservations, events)
@@ -76,12 +78,14 @@ onMounted(() => {
     dataStore.setCustomers(customers)
     dataStore.setLockers(lockers)
     dataStore.setEvents(events)
+    dataStore.setVehicles(vehicles)
 
     console.log('✅ App.vue: 데이터 로드 완료')
     console.log(`  - 스토어 예약: ${dataStore.reservations.length}개`)
     console.log(`  - 스토어 고객: ${dataStore.customers.length}개`)
     console.log(`  - 스토어 사물함: ${dataStore.lockers.length}개`)
     console.log(`  - 스토어 행사: ${dataStore.events.length}개`)
+    console.log(`  - 스토어 차량: ${dataStore.vehicles.length}개`)
 
     // 데이터 로드 완료 플래그 설정 (자식 컴포넌트 렌더링 허용)
     dataLoaded.value = true

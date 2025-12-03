@@ -26,11 +26,15 @@ export const useDataStore = defineStore('data', () => {
   // Lockers: 정규화된 사물함 데이터 (id -> 사물함 객체)
   const lockerMap = ref(new Map())
 
+  // Vehicles: 정규화된 차량 데이터 (id -> 차량 객체)
+  const vehicleMap = ref(new Map())
+
   // 조회 순서 추적 (성능 최적화용)
   const customerIds = ref([])
   const reservationIds = ref([])
   const eventIds = ref([])
   const lockerIds = ref([])
+  const vehicleIds = ref([])
 
   // 로딩 상태
   const isLoading = ref(false)
@@ -64,6 +68,54 @@ export const useDataStore = defineStore('data', () => {
    */
   const lockers = computed(() => {
     return lockerIds.value.map(id => lockerMap.value.get(id))
+  })
+
+  /**
+   * 모든 차량을 배열로 반환 (정렬된 순서 유지)
+   */
+  const vehicles = computed(() => {
+    return vehicleIds.value.map(id => vehicleMap.value.get(id))
+  })
+
+  /**
+   * 행사별 배차 수를 조인해서 반환 (eventId로 vehicles 필터링)
+   * @param {string} eventId - 행사 ID
+   * @returns {number} 배차 대수
+   */
+  const getVehicleCountByEventId = (eventId) => {
+    return vehicles.value.filter(v => v.eventId === eventId).length
+  }
+
+  /**
+   * 행사별 예상 인원을 계산해서 반환 (배차 대수 * 50)
+   * @param {string} eventId - 행사 ID
+   * @returns {number} 예상 인원
+   */
+  const getExpectedAttendanceByEventId = (eventId) => {
+    const vehicleCount = getVehicleCountByEventId(eventId)
+    return vehicleCount * 50
+  }
+
+  /**
+   * 행사에 배차 정보를 조인해서 반환
+   * @param {object} event - 행사 객체
+   * @returns {object} 배차 정보가 추가된 행사 객체
+   */
+  const enrichEventWithVehicles = (event) => {
+    const vehicleCount = getVehicleCountByEventId(event.id)
+    return {
+      ...event,
+      vehicleCount,
+      expectedAttendance: vehicleCount * 50,
+      busCount: vehicleCount // 별칭
+    }
+  }
+
+  /**
+   * 모든 행사에 배차 정보를 조인해서 반환 (메모이제이션)
+   */
+  const eventsWithVehicles = computed(() => {
+    return events.value.map(event => enrichEventWithVehicles(event))
   })
 
   /**
@@ -181,6 +233,19 @@ export const useDataStore = defineStore('data', () => {
     lockersData.forEach(locker => {
       lockerMap.value.set(locker.id, { ...locker })
       lockerIds.value.push(locker.id)
+    })
+  }
+
+  /**
+   * 차량 데이터 일괄 로드
+   */
+  const setVehicles = (vehiclesData) => {
+    vehicleMap.value.clear()
+    vehicleIds.value = []
+
+    vehiclesData.forEach(vehicle => {
+      vehicleMap.value.set(vehicle.id, { ...vehicle })
+      vehicleIds.value.push(vehicle.id)
     })
   }
 
@@ -383,10 +448,12 @@ export const useDataStore = defineStore('data', () => {
     reservationMap.value.clear()
     eventMap.value.clear()
     lockerMap.value.clear()
+    vehicleMap.value.clear()
     customerIds.value = []
     reservationIds.value = []
     eventIds.value = []
     lockerIds.value = []
+    vehicleIds.value = []
     error.value = null
   }
 
@@ -412,10 +479,12 @@ export const useDataStore = defineStore('data', () => {
     reservationMap,
     eventMap,
     lockerMap,
+    vehicleMap,
     customerIds,
     reservationIds,
     eventIds,
     lockerIds,
+    vehicleIds,
     isLoading,
     error,
 
@@ -424,6 +493,8 @@ export const useDataStore = defineStore('data', () => {
     reservations,
     events,
     lockers,
+    vehicles,
+    eventsWithVehicles,
     activeReservations,
     completedReservations,
     cancelledReservations,
@@ -436,6 +507,7 @@ export const useDataStore = defineStore('data', () => {
     setReservations,
     setEvents,
     setLockers,
+    setVehicles,
     addCustomer,
     addReservation,
     addEvent,
@@ -456,6 +528,11 @@ export const useDataStore = defineStore('data', () => {
     getReservationsByStatus,
     clearAll,
     setError,
-    clearError
+    clearError,
+
+    // Join Methods (vehicles와 조인)
+    getVehicleCountByEventId,
+    getExpectedAttendanceByEventId,
+    enrichEventWithVehicles
   }
 })

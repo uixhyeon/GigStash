@@ -102,7 +102,7 @@
 import { ref, computed } from "vue";
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
-import reservationsData from "@/data/reservations_2025_12.json";
+import reservationsData from "@/data/reservations_monthly.json";
 
 const authStore = useAuthStore();
 const router = useRouter();

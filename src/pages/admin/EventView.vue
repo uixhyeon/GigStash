@@ -272,10 +272,12 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import eventsData from '@/data/events.json'
+import { useDataStore } from '@/stores/dataStore'
 import EventDetailModal from '@/components/EventDetailModal.vue'
 import ComStatusChip from '@/components/common/ComStatusChip.vue'
 import ComEventCalendar from '@/components/common/ComEventCalendar.vue'
+
+const dataStore = useDataStore()
 
 // 현재 월
 const currentDate = ref(new Date())
@@ -302,16 +304,27 @@ const normalizeStatus = (startDate, endDate, originalStatus) => {
   return '진행 중'
 }
 
-const events = ref(
-  eventsData.events.map((event) => ({
+// 행사별 예약 건수 계산 (dataStore에서 조회)
+const getReservationCountByEvent = (eventId) => {
+  return dataStore.reservations.filter((res) => res.eventId === eventId).length
+}
+
+// 행사별 배차 차량 수 조회 (vehicles와 조인)
+const getVehicleCountByEvent = (eventId) => {
+  return dataStore.vehicles.filter((vehicle) => vehicle.eventId === eventId).length
+}
+
+// dataStore의 행사 데이터를 UI 형식으로 변환
+const events = computed(() =>
+  dataStore.events.map((event) => ({
     id: event.id,
     name: event.eventName,
     startDate: event.eventDate,
     endDate: event.eventDate,
     status: normalizeStatus(event.eventDate, event.eventDate, event.status),
     participants: 0,
-    busCount: Math.floor(Math.random() * 10) + 1,
-    reservations: Math.floor(Math.random() * 100) + 1,
+    busCount: getVehicleCountByEvent(event.id),
+    reservations: getReservationCountByEvent(event.id),
     venue: event.eventVenue,
     type: event.eventType,
     performanceTime: event.performanceTime || '',
@@ -343,12 +356,20 @@ const closeEventModal = () => {
 // 상태 변경 핸들러
 const handleStatusChange = (newStatus) => {
   if (selectedEventDetail.value) {
-    // events 배열에서 해당 이벤트를 찾아서 상태 업데이트
-    const eventIndex = events.value.findIndex((e) => e.id === selectedEventDetail.value.id)
-    if (eventIndex !== -1) {
-      events.value[eventIndex].status = newStatus
-      // 모달에 표시되는 selectedEventDetail도 업데이트
-      selectedEventDetail.value.status = newStatus
+    const eventId = selectedEventDetail.value.id
+
+    // dataStore의 event 데이터 업데이트 (영속성 유지)
+    try {
+      dataStore.updateEvent(eventId, { status: newStatus })
+
+      // UI 업데이트 (events 배열과 selectedEventDetail)
+      const eventIndex = events.value.findIndex((e) => e.id === eventId)
+      if (eventIndex !== -1) {
+        events.value[eventIndex].status = newStatus
+        selectedEventDetail.value.status = newStatus
+      }
+    } catch (error) {
+      console.error('행사 상태 업데이트 실패:', error)
     }
   }
 }

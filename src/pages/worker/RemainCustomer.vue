@@ -150,7 +150,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import reservationsData from '@/data/reservations_2025_12.json'
+import reservationsData from '@/data/reservations_monthly.json'
 
 const router = useRouter()
 

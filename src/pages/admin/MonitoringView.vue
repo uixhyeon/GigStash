@@ -747,7 +747,7 @@
 <script setup>
 import { ref, computed, onMounted, watch, nextTick } from 'vue'
 import { Chart, registerables } from 'chart.js'
-import reservationsData from '@/data/reservations_2025_11.json'
+import reservationsData from '@/data/reservations_monthly.json'
 
 Chart.register(...registerables)
 

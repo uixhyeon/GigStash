@@ -99,7 +99,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import reservationsData from "@/data/reservations_2025_12.json";
+import reservationsData from "@/data/reservations_monthly.json";
 
 // 현재 날짜 및 뷰 날짜
 const today = new Date();

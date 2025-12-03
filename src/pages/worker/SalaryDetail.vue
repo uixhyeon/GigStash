@@ -165,7 +165,7 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import reservationsData from "@/data/reservations_2025_12.json";
+import reservationsData from "@/data/reservations_monthly.json";
 
 const periodFilter = ref("month"); // 'day', 'week', 'month'
 
