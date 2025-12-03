@@ -1,23 +1,3 @@
-<!--
-  ╔══════════════════════════════════════════════════════════════════════╗
-  ║ 페이지: WorkerSettings.vue                                           ║
-  ╠══════════════════════════════════════════════════════════════════════╣
-  ║ 타입: 페이지 (Page - components 폴더에 있지만 페이지로 사용됨)       ║
-  ║                                                                      ║
-  ║ 주요 기능:                                                           ║
-  ║ - 워커(기사) 설정 및 정보 페이지                                     ║
-  ║ - 프로필 정보 표시 (이름, 연락처, 이메일)                            ║
-  ║ - 일정 정보 요약 (오늘, 이번 주, 이번 달 행사 건수)                  ║
-  ║ - 급여 현황 요약                                                     ║
-  ║ - 로그아웃 기능                                                      ║
-  ║                                                                      ║
-  ║ 특징:                                                                ║
-  ║ - 프로필 수정 페이지로 이동                                          ║
-  ║ - 급여 상세 페이지로 이동                                            ║
-  ║ - 캘린더 페이지로 이동                                               ║
-  ║ - JSON 데이터 기반 일정 통계 계산                                    ║
-  ╚══════════════════════════════════════════════════════════════════════╝
--->
 
 <template>
   <div class="pb-20">
@@ -84,8 +64,9 @@
         </div>
       </div>
 
-      <!-- 로그아웃 버튼 -->
-      <div class="mt-4 mb-4 flex justify-end">
+      <!-- 다크모드 토글 & 로그아웃 버튼 -->
+      <div class="mt-4 mb-4 flex justify-end items-center gap-3">
+        <ComDarkModeToggle />
         <button
           @click="handleLogout"
           class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-lg text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-gray-200 dark:border-gray-700"
@@ -102,16 +83,21 @@
 import { ref, computed } from "vue";
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
-import reservationsData from "@/data/reservations_monthly.json";
+import { customers } from "@/data/customers";
+import { events } from "@/data/events";
+import { vehicles } from "@/data/vehicles";
+import { lockers } from "@/data/lockers";
+import { reservations as allReservations } from "@/data/reservations";
+import ComDarkModeToggle from "@/components/common/ComDarkModeToggle.vue";
 
 const authStore = useAuthStore();
 const router = useRouter();
 
 const userInfo = ref({
   name: authStore.user?.name || "김운전",
-  displayName: "김기사",
+  displayName: authStore.user?.name || "김운전",
   phone: "010-1234-5678",
-  email: "driver@example.com",
+  email: authStore.user?.email || "driver@example.com",
   profileImage: null,
 });
 
@@ -139,17 +125,56 @@ const handleLogout = () => {
 const today = new Date();
 today.setHours(0, 0, 0, 0);
 
+// 로그인 이름을 vehicles.js의 driver 이름으로 매핑
+const workerNameToDriverName = (name) => {
+  const mapping = {
+    '박기사': '김운전',
+    '김기사': '김운전',
+    '이기사': '이운전',
+    // 추가 매핑 필요시 여기에 추가
+  }
+  return mapping[name] || name
+}
+
+// 현재 로그인 워커 이름 (없으면 기본값 사용)
+const currentWorkerName = computed(() => authStore.user?.name || "김운전");
+
+// 워커가 담당하는 차량
+const workerVehicles = computed(() => {
+  const driverName = workerNameToDriverName(currentWorkerName.value)
+  return vehicles.filter((v) => v.driver === driverName);
+});
+
+// 워커 차량에 연결된 보관함
+const workerLockers = computed(() => {
+  const vehicleIds = new Set(workerVehicles.value.map((v) => v.id));
+  return lockers.filter((l) => vehicleIds.has(l.vehicleId));
+});
+
+// 워커 보관함에 연결된 예약
+const workerRawReservations = computed(() => {
+  const lockerIds = new Set(workerLockers.value.map((l) => l.id));
+  return allReservations.filter((r) => lockerIds.has(r.lockerId));
+});
+
+// 워커가 실제로 참여하는 행사 목록
+const workerEvents = computed(() => {
+  const eventIds = new Set(workerRawReservations.value.map((r) => r.eventId));
+  return events.filter((e) => eventIds.has(e.id) && e.eventDate);
+});
+
 // 날짜별 행사 그룹화
 const eventsByDate = computed(() => {
   const eventsMap = {};
 
-  reservationsData.reservations.forEach((r) => {
-    const eventDate = r.eventDate || (r.dropoffTime ? r.dropoffTime.split("T")[0] : null);
+  workerEvents.value.forEach((e) => {
+    const eventDate = e.eventDate;
     if (!eventDate) return;
 
-    const key = `${eventDate}|${r.eventName || "행사"}|${r.eventVenue || "-"}`;
+    const key = `${eventDate}|${e.eventName || "행사"}|${e.eventVenue || "-"}`;
     if (!eventsMap[key]) {
-      eventsMap[key] = { date: eventDate };
+      const dateObj = new Date(eventDate);
+      eventsMap[key] = { date: eventDate, dateObj };
     }
   });
 
@@ -187,53 +212,100 @@ const monthScheduleCount = computed(() => {
 });
 
 // 급여 계산 로직
-const HOURLY_WAGE = 20000; // 시급 20,000원
+const HOURLY_WAGE = 25000; // 기본 시급 25,000원
 
 // 근무시간 계산 (행사 시간 + 6시간)
 const calculateWorkHours = (eventStartTime, eventEndTime) => {
   if (!eventStartTime || !eventEndTime) return 0;
-  
-  const start = new Date(eventStartTime);
-  const end = new Date(eventEndTime);
-  
+
+  const start = eventStartTime instanceof Date ? eventStartTime : new Date(eventStartTime);
+  const end = eventEndTime instanceof Date ? eventEndTime : new Date(eventEndTime);
+
   // 행사 시간
   const eventDuration = (end.getTime() - start.getTime()) / (1000 * 60 * 60);
   // 행사 시간 + 6시간
   return eventDuration + 6;
 };
 
-// 급여 계산
+// 급여 계산 (1일 8시간까지 기본, 초과분은 1.5배 가산)
 const calculateSalary = (workHours) => {
-  return Math.round(workHours * HOURLY_WAGE);
+  if (!workHours || workHours <= 0) return 0;
+
+  const baseHours = Math.min(workHours, 8);
+  const overtimeHours = Math.max(workHours - 8, 0);
+
+  const basePay = baseHours * HOURLY_WAGE;
+  const overtimePay = overtimeHours * HOURLY_WAGE * 1.5;
+
+  return Math.round(basePay + overtimePay);
+};
+
+// 이벤트 performanceTime을 Date로 변환
+const buildEventTimes = (event) => {
+  if (!event.eventDate || !event.performanceTime) {
+    return { start: null, end: null };
+  }
+
+  const dateStr = event.eventDate;
+  const perf = event.performanceTime;
+
+  // "HH:MM-HH:MM" 또는 "HH:MM-??:??" 형태
+  if (perf.includes("-")) {
+    const [startStr, endStr] = perf.split("-");
+    const [sh, sm] = startStr.split(":").map((v) => parseInt(v, 10) || 0);
+
+    const start = new Date(
+      `${dateStr}T${String(sh).padStart(2, "0")}:${String(sm).padStart(2, "0")}:00Z`
+    );
+
+    // 끝 시간이 명시된 경우 그대로 사용, 아니면 기본 3시간으로 가정
+    if (endStr && endStr.includes(":")) {
+      const [eh, em] = endStr.split(":").map((v) => parseInt(v, 10) || 0);
+      const end = new Date(
+        `${dateStr}T${String(eh).padStart(2, "0")}:${String(em).padStart(2, "0")}:00Z`
+      );
+      return { start, end };
+    } else {
+      const end = new Date(start);
+      end.setHours(end.getHours() + 3);
+      return { start, end };
+    }
+  }
+
+  // "HH:MM" 단일 값이면 3시간 공연으로 가정
+  const [h, m] = perf.split(":").map((v) => parseInt(v, 10) || 0);
+  const start = new Date(
+    `${dateStr}T${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:00Z`
+  );
+  const end = new Date(start);
+  end.setHours(end.getHours() + 3);
+  return { start, end };
 };
 
 // 급여 내역 계산 (같은 날짜, 같은 행사는 하나로 묶음)
 const salaryDetails = computed(() => {
   const eventMap = {}; // 날짜 + 행사명 + 장소를 키로 사용
-  
-  reservationsData.reservations.forEach((r) => {
-    if (r.eventStartTime && r.eventEndTime) {
-      const eventDate = r.eventDate || (r.dropoffTime ? r.dropoffTime.split("T")[0] : null);
-      
-      if (eventDate) {
-        // 같은 날짜, 같은 행사명, 같은 장소는 하나의 행사로 취급
-        const eventKey = `${eventDate}|${r.eventName || "행사"}|${r.eventVenue || "-"}`;
-        
-        if (!eventMap[eventKey]) {
-          const workHours = calculateWorkHours(r.eventStartTime, r.eventEndTime);
-          const salary = calculateSalary(workHours);
-          const date = new Date(eventDate);
-          
-          eventMap[eventKey] = {
-            date: eventDate,
-            dateObj: date,
-            salary: salary,
-          };
-        }
-      }
+
+  workerEvents.value.forEach((e) => {
+    const eventDate = e.eventDate;
+    if (!eventDate) return;
+
+    const eventKey = `${eventDate}|${e.eventName || "행사"}|${e.eventVenue || "-"}`;
+
+    if (!eventMap[eventKey]) {
+      const { start, end } = buildEventTimes(e);
+      const workHours = calculateWorkHours(start, end);
+      const salary = calculateSalary(workHours);
+      const date = new Date(eventDate);
+
+      eventMap[eventKey] = {
+        date: eventDate,
+        dateObj: date,
+        salary: salary,
+      };
     }
   });
-  
+
   return Object.values(eventMap);
 });
 

@@ -1,20 +1,9 @@
-<!--
-  ╔══════════════════════════════════════════════════════════════════════╗
-  ║ 페이지: RemainCustomer.vue                                           ║
-  ╠══════════════════════════════════════════════════════════════════════╣
-  ║ 타입: 페이지 (Page)                                                  ║
-  ║                                                                      ║
-  ║ 주요 기능:                                                           ║
-  ║ - 남은 예약 목록 표시 (진행중/완료)                                  ║
-  ║ - 예약 완료 처리 및 취소                                             ║
-  ╚══════════════════════════════════════════════════════════════════════╝
--->
 
 <template>
-  <div class="pb-20">
+  <div class="h-screen flex flex-col overflow-hidden">
     <!-- 탭 -->
     <div
-      class="sticky top-0 bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-gray-700 z-10"
+      class="bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-gray-700 flex-shrink-0"
     >
       <div class="flex">
         <button
@@ -49,7 +38,7 @@
     </div>
 
     <!-- 예약 목록 -->
-    <div class="overflow-y-auto h-[calc(100vh-60px)]">
+    <div class="flex-1 overflow-y-auto min-h-0">
       <!-- 예약번호 탭 -->
       <div v-if="activeTab === 'pending'" class="p-4 space-y-2">
         <div
@@ -150,12 +139,21 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import reservationsData from '@/data/reservations_monthly.json'
+import { useAuthStore } from '@/stores/auth'
+import { customers } from '@/data/customers'
+import { events } from '@/data/events'
+import { vehicles } from '@/data/vehicles'
+import { lockers } from '@/data/lockers'
+import { reservations as allReservations } from '@/data/reservations'
 
 const router = useRouter()
+const authStore = useAuthStore()
 
 // 탭 상태 관리
 const activeTab = ref('pending')
+
+// 완료 상태 관리 (예약 ID를 키로 사용)
+const reservationStatusMap = ref(new Map())
 
 // 오늘 날짜 (computed로 만들어서 날짜가 바뀌면 자동 업데이트)
 const today = computed(() => {
@@ -166,43 +164,150 @@ const today = computed(() => {
 
 const todayStr = computed(() => {
   const d = today.value
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(
+    d.getDate(),
+  ).padStart(2, '0')}`
 })
 
-// 완료 상태 관리 (예약 ID를 키로 사용)
-const reservationStatusMap = ref(new Map())
+// 로그인 이름을 vehicles.js의 driver 이름으로 매핑
+const workerNameToDriverName = (name) => {
+  const mapping = {
+    '박기사': '김운전',
+    '김기사': '김운전',
+    '이기사': '이운전',
+    // 추가 매핑 필요시 여기에 추가
+  }
+  return mapping[name] || name
+}
 
-// reservations_2025_12.json 데이터를 워커 페이지 형식으로 변환
-// 오늘 날짜의 예약만 필터링 (computed로 만들어서 날짜가 바뀌면 자동 업데이트)
+// 현재 로그인 워커 이름 (없으면 기본값 사용)
+const currentWorkerName = computed(() => authStore.user?.name || '김운전')
+
+// 워커가 담당하는 차량
+const workerVehicles = computed(() => {
+  const driverName = workerNameToDriverName(currentWorkerName.value)
+  return vehicles.filter((v) => v.driver === driverName)
+})
+
+// 워커 차량에 연결된 보관함
+const workerLockers = computed(() => {
+  const vehicleIds = new Set(workerVehicles.value.map((v) => v.id))
+  return lockers.filter((l) => vehicleIds.has(l.vehicleId))
+})
+
+// 워커 보관함에 연결된 예약 (정규화된 reservations.js 기반)
+const workerRawReservations = computed(() => {
+  const lockerIds = new Set(workerLockers.value.map((l) => l.id))
+  return allReservations.filter((r) => lockerIds.has(r.lockerId))
+})
+
+// 배정된 예약 정보 (상단 표시용)
+const assignedReservationInfo = computed(() => {
+  const customerMap = new Map(customers.map((c) => [c.id, c]))
+  const eventMap = new Map(events.map((e) => [e.id, e]))
+
+  // 워커에게 배정된 당일 예약 찾기
+  const assignedReservation = workerRawReservations.value.find((r) => {
+    const event = eventMap.get(r.eventId)
+
+    // 오늘 날짜 기준으로 필터링
+    if (event?.eventDate) {
+      return event.eventDate === todayStr.value
+    }
+
+    if (r.startTime) {
+      const d = new Date(r.startTime)
+      const dStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(
+        d.getDate(),
+      ).padStart(2, '0')}`
+      return dStr === todayStr.value
+    }
+
+    if (r.endTime) {
+      const d = new Date(r.endTime)
+      const dStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(
+        d.getDate(),
+      ).padStart(2, '0')}`
+      return dStr === todayStr.value
+    }
+
+    return false
+  })
+
+  if (!assignedReservation) return null
+
+  const event = eventMap.get(assignedReservation.eventId)
+
+  // 도착 시간 계산 (운영 시작 시간 - 30분)
+  let arrivalTime = null
+  if (event?.startTime) {
+    const startTime = new Date(event.startTime)
+    startTime.setMinutes(startTime.getMinutes() - 30)
+    arrivalTime = `${String(startTime.getHours()).padStart(2, '0')}:${String(
+      startTime.getMinutes(),
+    ).padStart(2, '0')}`
+  }
+
+  return {
+    venue: event?.venue || '장소 미정',
+    arrivalTime: arrivalTime || '시간 미정',
+  }
+})
+
+// 고객/행사 정보를 join 해서 워커 페이지에서 쓰기 편한 형태로 변환
+// 당일 + 워커 배정된 예약만 필터링
 const reservations = computed(() => {
-  return reservationsData.reservations
+  const customerMap = new Map(customers.map((c) => [c.id, c]))
+  const eventMap = new Map(events.map((e) => [e.id, e]))
+
+  return workerRawReservations.value
     .filter((r) => {
-      // dropoffTime 또는 eventDate 기준으로 오늘 날짜 확인
-      if (r.dropoffTime) {
-        const dropoffDate = new Date(r.dropoffTime)
-        const dropoffDateStr = `${dropoffDate.getFullYear()}-${String(dropoffDate.getMonth() + 1).padStart(2, '0')}-${String(dropoffDate.getDate()).padStart(2, '0')}`
-        return dropoffDateStr === todayStr.value
+      // 오늘 날짜 기준으로 필터링 (행사 날짜 또는 시작/종료 시간 기준)
+      const event = eventMap.get(r.eventId)
+
+      if (event?.eventDate) {
+        return event.eventDate === todayStr.value
       }
-      if (r.eventDate) {
-        return r.eventDate === todayStr.value
+
+      if (r.startTime) {
+        const d = new Date(r.startTime)
+        const dStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(
+          d.getDate(),
+        ).padStart(2, '0')}`
+        return dStr === todayStr.value
       }
+
+      if (r.endTime) {
+        const d = new Date(r.endTime)
+        const dStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(
+          d.getDate(),
+        ).padStart(2, '0')}`
+        return dStr === todayStr.value
+      }
+
       return false
     })
     .map((r) => {
-      // dropoffTime에서 시간 추출 (ISO 형식: "2025-11-01T15:33:00Z")
-      const dropoffDate = r.dropoffTime ? new Date(r.dropoffTime) : null
+      const customer = customerMap.get(r.customerId)
+      const event = eventMap.get(r.eventId)
+
+      // 하차 시간은 예약 endTime 기준
+      const dropoffDate = r.endTime ? new Date(r.endTime) : null
       const timeStr = dropoffDate
-        ? `${String(dropoffDate.getHours()).padStart(2, '0')}:${String(dropoffDate.getMinutes()).padStart(2, '0')}`
+        ? `${String(dropoffDate.getHours()).padStart(2, '0')}:${String(
+            dropoffDate.getMinutes(),
+          ).padStart(2, '0')}`
         : ''
 
       // 완료 상태 확인 (기본값은 "scheduled")
-      const status = reservationStatusMap.value.get(r.id) || 'scheduled'
+      const status =
+        reservationStatusMap.value.get(r.id) || (r.status === 'completed' ? 'done' : 'scheduled')
 
       return {
         id: r.id,
-        customerName: r.customerName,
-        phone: r.customerPhone,
-        address: r.deliveryAddress || r.eventVenue || '',
+        customerName: customer?.name || '고객',
+        phone: customer?.phone || '',
+        address: event?.venue || '',
         time: timeStr,
         status: status,
         // 원본 데이터도 함께 저장 (추가 정보 표시용)

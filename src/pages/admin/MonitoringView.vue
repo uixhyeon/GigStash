@@ -13,16 +13,13 @@
           <button
             @click="prevDateRange"
             class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors flex items-center justify-center"
-            title="이전 주"
+            title="이전 달"
           >
             <i class="fi fi-rr-angle-left text-2xl text-slate-700 dark:text-slate-300"></i>
           </button>
-          <div
-            @click.stop="showCalendar = !showCalendar"
-            class="px-4 py-2 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors flex flex-col items-center text-center"
-          >
+          <div class="px-4 py-2 rounded-lg flex flex-col items-center text-center">
             <div class="text-lg font-semibold text-slate-900 dark:text-slate-100">
-              {{ getWeekLabel(dateRange.start) }}
+              {{ getMonthLabel(dateRange.start) }}
             </div>
             <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">
               {{ formatDateRange(dateRange.start) }} ~
@@ -32,108 +29,10 @@
           <button
             @click="nextDateRange"
             class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors flex items-center justify-center"
-            title="다음 주"
+            title="다음 달"
           >
             <i class="fi fi-rr-angle-right text-2xl text-slate-700 dark:text-slate-300"></i>
           </button>
-
-          <!-- 달력 모달 -->
-          <div
-            v-if="showCalendar"
-            class="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-6 z-50 border border-slate-200 dark:border-slate-700 min-w-[320px]"
-            @click.stop
-          >
-            <!-- 헤더 -->
-            <div class="flex items-center justify-between mb-6">
-              <button
-                @click="prevCalendarMonth"
-                class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
-                title="이전 달"
-              >
-                <i class="fi fi-rr-angle-left text-lg"></i>
-              </button>
-              <div class="text-lg font-bold text-slate-900 dark:text-white px-4">
-                {{ calendarYear }}년 {{ String(calendarMonth + 1).padStart(2, '0') }}월
-              </div>
-              <button
-                @click="nextCalendarMonth"
-                class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors"
-                title="다음 달"
-              >
-                <i class="fi fi-rr-angle-right text-lg"></i>
-              </button>
-            </div>
-
-            <!-- 요일 헤더 -->
-            <div class="grid grid-cols-7 gap-1 mb-2">
-              <div
-                v-for="day in ['일', '월', '화', '수', '목', '금', '토']"
-                :key="day"
-                :class="[
-                  'text-center text-xs font-semibold py-2',
-                  day === '일' ? 'text-red-500 dark:text-red-400' : '',
-                  day === '토' ? 'text-blue-500 dark:text-blue-400' : '',
-                  day !== '일' && day !== '토' ? 'text-slate-500 dark:text-slate-400' : '',
-                ]"
-              >
-                {{ day }}
-              </div>
-            </div>
-
-            <!-- 달력 그리드 -->
-            <div class="grid grid-cols-7 gap-0.5">
-              <div
-                v-for="d in calendarDays"
-                :key="d.key"
-                :class="[
-                  'aspect-square flex items-center justify-center text-sm cursor-pointer select-none transition-all duration-200 relative',
-                  d.outside
-                    ? 'text-slate-300 dark:text-slate-600'
-                    : isDateInRange(d.date)
-                      ? 'font-semibold text-white'
-                      : 'text-slate-700 dark:text-slate-200',
-                  // 주간의 첫 번째 날짜 (월요일)
-                  isDateInRange(d.date) && isWeekStart(d.date) && !d.outside ? 'rounded-l-xl' : '',
-                  // 주간의 마지막 날짜 (일요일)
-                  isDateInRange(d.date) && d.date.getDay() === 0 && !d.outside
-                    ? 'rounded-r-xl'
-                    : '',
-                  // 주간의 중간 날짜들
-                  isDateInRange(d.date) &&
-                  !isWeekStart(d.date) &&
-                  d.date.getDay() !== 0 &&
-                  !d.outside
-                    ? ''
-                    : '',
-                  // 선택되지 않은 날짜는 둥근 모서리
-                  !isDateInRange(d.date) && !d.outside ? 'rounded-xl' : '',
-                ]"
-                :style="isDateInRange(d.date) && !d.outside ? 'background-color: #3b82f6;' : ''"
-                @click="selectWeekFromDate(d.date)"
-                @mouseenter="hoveredCalendarDate = d.date"
-                @mouseleave="hoveredCalendarDate = null"
-              >
-                <span :class="['relative z-10']">
-                  {{ d.date.getDate() }}
-                </span>
-                <!-- 오늘 표시 -->
-                <span
-                  v-if="isToday(d.date) && !isDateInRange(d.date)"
-                  class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 rounded-full"
-                  style="background-color: #3b82f6"
-                ></span>
-              </div>
-            </div>
-
-            <!-- 선택된 주간 표시 -->
-            <div v-if="dateRange" class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-700">
-              <div class="text-xs text-slate-500 dark:text-slate-400 text-center">선택된 주간</div>
-              <div class="text-sm font-semibold text-slate-900 dark:text-white text-center mt-1">
-                {{ formatDateRange(dateRange.start) }} ~
-                {{ formatDateRange(dateRange.end) }}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -159,7 +58,7 @@
         <!-- 주요 지표 -->
         <section>
           <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-            금주 주요 지표
+            이번 달 주요 지표
           </h2>
           <div class="flex flex-wrap gap-3 mb-4">
             <!-- 이용률 카드 -->
@@ -180,7 +79,7 @@
                   {{ keyMetrics.utilizationRate }}%
                 </div>
                 <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  전주 대비
+                  전월 대비
                   <span
                     class="font-medium"
                     :style="{ color: getChangeColor(keyMetrics.utilizationChange) }"
@@ -210,7 +109,7 @@
                   {{ additionalMetrics.revisitRate }}%
                 </div>
                 <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  전주 대비
+                  전월 대비
                   <span
                     class="font-medium"
                     :style="{ color: getChangeColor(additionalMetrics.revisitChange) }"
@@ -241,7 +140,7 @@
                   {{ additionalMetrics.deliveryRate }}%
                 </div>
                 <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  전주 대비
+                  전월 대비
                   <span
                     class="font-medium"
                     :style="{ color: getChangeColor(additionalMetrics.deliveryChange) }"
@@ -379,9 +278,35 @@
             <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
               행사 유형별 매출
             </h2>
-            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6">
-              <div style="height: 140px">
+            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 md:p-4 lg:p-6">
+              <!-- 가로 막대 그래프 (높이 절반으로 축소) -->
+              <div style="height: 100px; position: relative">
                 <canvas ref="eventTypeChartRef"></canvas>
+              </div>
+              <!-- 아래 범례 -->
+              <div class="mt-4 space-y-2">
+                <div
+                  v-for="(item, index) in eventTypeSales"
+                  :key="item.type"
+                  class="flex items-center justify-between gap-2 cursor-pointer"
+                  @mouseenter="highlightEventType(index)"
+                  @mouseleave="clearHighlightEventType"
+                >
+                  <div class="flex items-center gap-2 min-w-0">
+                    <span
+                      class="w-3 h-3 rounded-full flex-shrink-0"
+                      :style="{ backgroundColor: item.color }"
+                    ></span>
+                    <span
+                      class="text-[11px] text-slate-700 dark:text-slate-200 font-medium truncate"
+                    >
+                      {{ item.type }}
+                    </span>
+                  </div>
+                  <span class="text-[11px] font-semibold text-slate-900 dark:text-slate-100">
+                    {{ formatCurrency(item.value) }}
+                  </span>
+                </div>
               </div>
             </div>
           </section>
@@ -391,39 +316,46 @@
             <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
               사이즈별 비율
             </h2>
-            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6">
-              <div class="flex items-center justify-center">
-                <div class="relative flex-shrink-0" style="width: 140px; height: 140px">
-                  <canvas
-                    ref="sizeRatioChartRef"
-                    style="
-                      display: block;
-                      width: 140px;
-                      height: 140px;
-                      position: relative;
-                      z-index: 1;
-                    "
-                  ></canvas>
-                  <!-- 도넛 중앙 범례 -->
+            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 md:p-4 lg:p-6">
+              <div class="flex flex-col items-center gap-4" style="min-height: 200px">
+                <!-- 도넛 차트 -->
+                <div class="flex items-center justify-center">
+                  <div class="relative" style="width: 140px; height: 140px">
+                    <canvas
+                      ref="sizeRatioChartRef"
+                      style="
+                        display: block;
+                        width: 140px;
+                        height: 140px;
+                        position: relative;
+                        z-index: 1;
+                      "
+                    ></canvas>
+                  </div>
+                </div>
+                <!-- 아래 범례 -->
+                <div class="w-full space-y-2">
                   <div
-                    class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
-                    style="z-index: 1"
+                    v-for="(segment, index) in sizeRatio"
+                    :key="segment.size"
+                    class="flex items-center justify-between gap-2 cursor-pointer"
+                    @mouseenter="highlightSizeSegment(index)"
+                    @mouseleave="clearHighlightSizeSegment"
                   >
-                    <div class="space-y-1">
-                      <div
-                        v-for="segment in sizeRatio"
-                        :key="segment.size"
-                        class="flex items-center gap-1.5"
+                    <div class="flex items-center gap-2 min-w-0">
+                      <span
+                        class="w-3 h-3 rounded-full flex-shrink-0"
+                        :style="{ backgroundColor: segment.color }"
+                      ></span>
+                      <span
+                        class="text-[11px] text-slate-700 dark:text-slate-200 font-medium truncate"
                       >
-                        <div
-                          class="w-3 h-3 rounded-full flex-shrink-0"
-                          :style="{ backgroundColor: segment.color }"
-                        ></div>
-                        <span class="text-[10px] text-slate-700 dark:text-slate-300 font-medium">
-                          {{ segment.size }}
-                        </span>
-                      </div>
+                        {{ segment.size }}
+                      </span>
                     </div>
+                    <span class="text-[11px] font-semibold text-slate-900 dark:text-slate-100">
+                      {{ segment.percentage }}%
+                    </span>
                   </div>
                 </div>
               </div>
@@ -491,19 +423,20 @@
             <div class="flex flex-col lg:flex-row gap-3 lg:items-start">
               <!-- 히트맵 스타일 지도 -->
               <div class="flex flex-col items-center gap-2 flex-1 w-full">
-                <!-- 1행: 수도, 강원 -->
-                <div class="flex justify-center gap-2 w-full">
+                <!-- 3x3 그리드: 서울, 인천, 경기, 강원, 충청, 전라, 경북, 경남, 제주 -->
+                <div class="grid grid-cols-3 gap-2 w-full">
                   <div
-                    v-if="deliveryHeatmap[0]"
+                    v-for="(region, index) in deliveryHeatmap"
+                    :key="region.name"
                     :class="[
-                      getHeatmapColor(deliveryHeatmap[0].count || 0),
-                      getHeatmapTextColor(deliveryHeatmap[0].count || 0),
+                      getHeatmapColor(region.count || 0),
+                      getHeatmapTextColor(region.count || 0),
                     ]"
-                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
-                    @click="selectRegion(deliveryHeatmap[0])"
+                    class="h-20 w-full rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                    @click="selectRegion(region)"
                     @mouseenter="
                       (e) => {
-                        hoveredRegion = deliveryHeatmap[0]
+                        hoveredRegion = region
                         const rect = e.currentTarget.getBoundingClientRect()
                         regionTooltipPosition.x = rect.left + rect.width / 2
                         regionTooltipPosition.y = rect.top - 10
@@ -512,168 +445,10 @@
                     @mouseleave="hoveredRegion = null"
                   >
                     <div class="font-bold text-xs sm:text-sm">
-                      {{ deliveryHeatmap[0].name }}
+                      {{ region.name }}
                     </div>
                     <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
-                      {{ getRegionDescription(deliveryHeatmap[0].name) }}
-                    </div>
-                  </div>
-                  <div
-                    v-if="deliveryHeatmap[1]"
-                    :class="[
-                      getHeatmapColor(deliveryHeatmap[1].count || 0),
-                      getHeatmapTextColor(deliveryHeatmap[1].count || 0),
-                    ]"
-                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
-                    @click="selectRegion(deliveryHeatmap[1])"
-                    @mouseenter="
-                      (e) => {
-                        hoveredRegion = deliveryHeatmap[1]
-                        const rect = e.currentTarget.getBoundingClientRect()
-                        regionTooltipPosition.x = rect.left + rect.width / 2
-                        regionTooltipPosition.y = rect.top - 10
-                      }
-                    "
-                    @mouseleave="hoveredRegion = null"
-                  >
-                    <div class="font-bold text-xs sm:text-sm">
-                      {{ deliveryHeatmap[1].name }}
-                    </div>
-                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
-                      {{ getRegionDescription(deliveryHeatmap[1].name) }}
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 2행: 충청, 호남, 대구경북 -->
-                <div class="flex justify-center gap-2 w-full">
-                  <div
-                    v-if="deliveryHeatmap[2]"
-                    :class="[
-                      getHeatmapColor(deliveryHeatmap[2].count || 0),
-                      getHeatmapTextColor(deliveryHeatmap[2].count || 0),
-                    ]"
-                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
-                    @click="selectRegion(deliveryHeatmap[2])"
-                    @mouseenter="
-                      (e) => {
-                        hoveredRegion = deliveryHeatmap[2]
-                        const rect = e.currentTarget.getBoundingClientRect()
-                        regionTooltipPosition.x = rect.left + rect.width / 2
-                        regionTooltipPosition.y = rect.top - 10
-                      }
-                    "
-                    @mouseleave="hoveredRegion = null"
-                  >
-                    <div class="font-bold text-xs sm:text-sm">
-                      {{ deliveryHeatmap[2].name }}
-                    </div>
-                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
-                      {{ getRegionDescription(deliveryHeatmap[2].name) }}
-                    </div>
-                  </div>
-                  <div
-                    v-if="deliveryHeatmap[3]"
-                    :class="[
-                      getHeatmapColor(deliveryHeatmap[3].count || 0),
-                      getHeatmapTextColor(deliveryHeatmap[3].count || 0),
-                    ]"
-                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
-                    @click="selectRegion(deliveryHeatmap[3])"
-                    @mouseenter="
-                      (e) => {
-                        hoveredRegion = deliveryHeatmap[3]
-                        const rect = e.currentTarget.getBoundingClientRect()
-                        regionTooltipPosition.x = rect.left + rect.width / 2
-                        regionTooltipPosition.y = rect.top - 10
-                      }
-                    "
-                    @mouseleave="hoveredRegion = null"
-                  >
-                    <div class="font-bold text-xs sm:text-sm">
-                      {{ deliveryHeatmap[3].name }}
-                    </div>
-                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
-                      {{ getRegionDescription(deliveryHeatmap[3].name) }}
-                    </div>
-                  </div>
-                  <div
-                    v-if="deliveryHeatmap[4]"
-                    :class="[
-                      getHeatmapColor(deliveryHeatmap[4].count || 0),
-                      getHeatmapTextColor(deliveryHeatmap[4].count || 0),
-                    ]"
-                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
-                    @click="selectRegion(deliveryHeatmap[4])"
-                    @mouseenter="
-                      (e) => {
-                        hoveredRegion = deliveryHeatmap[4]
-                        const rect = e.currentTarget.getBoundingClientRect()
-                        regionTooltipPosition.x = rect.left + rect.width / 2
-                        regionTooltipPosition.y = rect.top - 10
-                      }
-                    "
-                    @mouseleave="hoveredRegion = null"
-                  >
-                    <div class="font-bold text-xs sm:text-sm">
-                      {{ deliveryHeatmap[4].name }}
-                    </div>
-                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
-                      {{ getRegionDescription(deliveryHeatmap[4].name) }}
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 3행: 부울경, 제주 -->
-                <div class="flex justify-center gap-2 w-full">
-                  <div
-                    v-if="deliveryHeatmap[5]"
-                    :class="[
-                      getHeatmapColor(deliveryHeatmap[5].count || 0),
-                      getHeatmapTextColor(deliveryHeatmap[5].count || 0),
-                    ]"
-                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
-                    @click="selectRegion(deliveryHeatmap[5])"
-                    @mouseenter="
-                      (e) => {
-                        hoveredRegion = deliveryHeatmap[5]
-                        const rect = e.currentTarget.getBoundingClientRect()
-                        regionTooltipPosition.x = rect.left + rect.width / 2
-                        regionTooltipPosition.y = rect.top - 10
-                      }
-                    "
-                    @mouseleave="hoveredRegion = null"
-                  >
-                    <div class="font-bold text-xs sm:text-sm">
-                      {{ deliveryHeatmap[5].name }}
-                    </div>
-                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
-                      {{ getRegionDescription(deliveryHeatmap[5].name) }}
-                    </div>
-                  </div>
-                  <div
-                    v-if="deliveryHeatmap[6]"
-                    :class="[
-                      getHeatmapColor(deliveryHeatmap[6].count || 0),
-                      getHeatmapTextColor(deliveryHeatmap[6].count || 0),
-                    ]"
-                    class="h-20 w-24 sm:w-28 rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
-                    @click="selectRegion(deliveryHeatmap[6])"
-                    @mouseenter="
-                      (e) => {
-                        hoveredRegion = deliveryHeatmap[6]
-                        const rect = e.currentTarget.getBoundingClientRect()
-                        regionTooltipPosition.x = rect.left + rect.width / 2
-                        regionTooltipPosition.y = rect.top - 10
-                      }
-                    "
-                    @mouseleave="hoveredRegion = null"
-                  >
-                    <div class="font-bold text-xs sm:text-sm">
-                      {{ deliveryHeatmap[6].name }}
-                    </div>
-                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
-                      {{ getRegionDescription(deliveryHeatmap[6].name) }}
+                      {{ getRegionDescription(region.name) }}
                     </div>
                   </div>
                 </div>
@@ -747,16 +522,17 @@
 <script setup>
 import { ref, computed, onMounted, watch, nextTick } from 'vue'
 import { Chart, registerables } from 'chart.js'
+import reservationsMonthly from '@/data/reservations_monthly.json'
 
 Chart.register(...registerables)
 
-// 전체 예약 데이터
+// 전체 예약 데이터 (월간 예약 원본 연결)
 const allReservations = ref([])
 
-// 날짜 범위 관리 (주간 설정)
+// 날짜 범위 관리 (월간 설정)
 const dateRange = ref({
-  start: new Date(2025, 10, 17), // 2025-11-17
-  end: new Date(2025, 10, 23), // 2025-11-23 (7일 범위)
+  start: new Date(2025, 10, 1), // 2025-11-01
+  end: new Date(2025, 10, 30), // 2025-11-30
 })
 
 // 달력 표시 여부
@@ -778,41 +554,25 @@ const formatDateRange = (date) => {
   return `${year}-${month}-${day}`
 }
 
-// 주차 레이블 생성 (예: "11월 첫째주")
-const getWeekLabel = (date) => {
-  const month = date.getMonth() + 1
+// 월 레이블 생성 (예: "2025년 11월")
+const getMonthLabel = (date) => {
   const year = date.getFullYear()
-
-  // 해당 월의 첫 번째 날짜
-  const firstDayOfMonth = new Date(year, date.getMonth(), 1)
-  const firstDayWeekday = firstDayOfMonth.getDay() // 0(일) ~ 6(토)
-
-  // 첫 번째 월요일 찾기
-  const daysToFirstMonday = firstDayWeekday === 0 ? 6 : firstDayWeekday - 1
-  const firstMonday = new Date(firstDayOfMonth)
-  firstMonday.setDate(firstMonday.getDate() + (7 - daysToFirstMonday))
-
-  // 주차 계산
-  const daysDiff = Math.floor((date.getTime() - firstMonday.getTime()) / (1000 * 60 * 60 * 24))
-  let weekNumber = Math.floor(daysDiff / 7) + 1
-
-  // weekNumber가 0 이하인 경우 첫째주로 처리
-  if (weekNumber <= 0) {
-    weekNumber = 1
-  }
-
-  // 주차 한글 표현
-  const weekLabels = ['첫째', '둘째', '셋째', '넷째', '다섯째']
-  const weekLabel = weekLabels[weekNumber - 1] || `${weekNumber}째`
-
-  return `${month}월 ${weekLabel}주`
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  return `${year}년 ${month}월`
 }
 
+// 이전/다음 월로 이동
 const prevDateRange = () => {
-  const days = 7 // 주간(7일) 범위
-  const newStart = new Date(dateRange.value.start.getTime() - days * 24 * 60 * 60 * 1000)
-  const newEnd = new Date(dateRange.value.end.getTime() - days * 24 * 60 * 60 * 1000)
-  // 반응성을 보장하기 위해 새로운 객체 할당
+  const currentStart = dateRange.value.start
+  const year = currentStart.getFullYear()
+  const month = currentStart.getMonth()
+
+  const prevMonthYear = month === 0 ? year - 1 : year
+  const prevMonth = month === 0 ? 11 : month - 1
+
+  const newStart = new Date(prevMonthYear, prevMonth, 1)
+  const newEnd = new Date(prevMonthYear, prevMonth + 1, 0)
+
   dateRange.value = {
     start: newStart,
     end: newEnd,
@@ -820,10 +580,16 @@ const prevDateRange = () => {
 }
 
 const nextDateRange = () => {
-  const days = 7 // 주간(7일) 범위
-  const newStart = new Date(dateRange.value.start.getTime() + days * 24 * 60 * 60 * 1000)
-  const newEnd = new Date(dateRange.value.end.getTime() + days * 24 * 60 * 60 * 1000)
-  // 반응성을 보장하기 위해 새로운 객체 할당
+  const currentStart = dateRange.value.start
+  const year = currentStart.getFullYear()
+  const month = currentStart.getMonth()
+
+  const nextMonthYear = month === 11 ? year + 1 : year
+  const nextMonth = month === 11 ? 0 : month + 1
+
+  const newStart = new Date(nextMonthYear, nextMonth, 1)
+  const newEnd = new Date(nextMonthYear, nextMonth + 1, 0)
+
   dateRange.value = {
     start: newStart,
     end: newEnd,
@@ -875,17 +641,12 @@ const nextCalendarMonth = () => {
   calendarViewDate.value = new Date(calendarYear.value, calendarMonth.value + 1, 1)
 }
 
-// 날짜가 현재 선택된 주간 범위에 있는지 확인
+// 날짜가 현재 선택된 월간 범위에 있는지 확인
 const isDateInRange = (date) => {
   const dateStr = fmtKey(date)
   const startStr = formatDateRange(dateRange.value.start)
   const endStr = formatDateRange(dateRange.value.end)
   return dateStr >= startStr && dateStr <= endStr
-}
-
-// 주간 시작일인지 확인 (월요일)
-const isWeekStart = (date) => {
-  return date.getDay() === 1 // 월요일
 }
 
 // 오늘 날짜인지 확인
@@ -898,22 +659,21 @@ const isToday = (date) => {
   )
 }
 
-// 날짜 클릭 시 주간 선택
-const selectWeekFromDate = (date) => {
-  // 클릭한 날짜가 속한 주간 계산 (월요일~일요일)
-  const dayOfWeek = date.getDay()
-  const daysToMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1
+// 날짜 클릭 시 해당 월 선택
+const selectMonthFromDate = (date) => {
+  const year = date.getFullYear()
+  const month = date.getMonth()
 
-  const weekStart = new Date(date)
-  weekStart.setDate(weekStart.getDate() - daysToMonday)
-
-  const weekEnd = new Date(weekStart)
-  weekEnd.setDate(weekEnd.getDate() + 6)
+  const monthStart = new Date(year, month, 1)
+  const monthEnd = new Date(year, month + 1, 0)
 
   dateRange.value = {
-    start: weekStart,
-    end: weekEnd,
+    start: monthStart,
+    end: monthEnd,
   }
+
+  // 달력도 선택한 월로 이동
+  calendarViewDate.value = new Date(year, month, 1)
 
   showCalendar.value = false
 }
@@ -939,11 +699,16 @@ const filteredReservations = computed(() => {
 const previousPeriodReservations = computed(() => {
   if (!allReservations.value.length) return []
 
-  // dateRange.value를 명시적으로 참조하여 반응성 보장
-  const range = dateRange.value
-  const days = 7
-  const prevStart = new Date(range.start.getTime() - days * 24 * 60 * 60 * 1000)
-  const prevEnd = new Date(range.end.getTime() - days * 24 * 60 * 60 * 1000)
+  // 현재 선택된 월의 이전 달 범위 계산
+  const currentStart = dateRange.value.start
+  const year = currentStart.getFullYear()
+  const month = currentStart.getMonth()
+
+  const prevMonthYear = month === 0 ? year - 1 : year
+  const prevMonth = month === 0 ? 11 : month - 1
+
+  const prevStart = new Date(prevMonthYear, prevMonth, 1)
+  const prevEnd = new Date(prevMonthYear, prevMonth + 1, 0)
 
   const startDate = formatDateRange(prevStart)
   const endDate = formatDateRange(prevEnd)
@@ -1042,12 +807,12 @@ const formatNumber = (value) => {
   return value.toLocaleString('ko-KR')
 }
 
-// 변화율 텍스트 색상 반환 (상승: 빨강색, 하강: 파란색)
+// 변화율 텍스트 색상 반환 (상승: 빨간색, 하강: 파란색)
 const getChangeColor = (changeValue) => {
   if (changeValue > 0) {
-    return '#3b82f6' // 파란색 (상승)
+    return '#ef4444' // 빨간색 (상승)
   } else if (changeValue < 0) {
-    return '#ef4444' // 빨간색 (하락)
+    return '#3b82f6' // 파란색 (하락)
   }
   return '#6b7280' // 회색 (변화 없음)
 }
@@ -1316,13 +1081,13 @@ const deliveryRegions = computed(() => {
   return regions
 })
 
-// 시/도를 권역으로 매핑하는 함수
+// 시/도를 권역으로 매핑하는 함수 (서울·인천·경기·강원·충청·전라·경북·경남·제주 9개 권역)
 const mapRegionToArea = (region) => {
   const regionToAreaMap = {
-    // 수도권
-    서울: '수도',
-    인천: '수도',
-    경기: '수도',
+    // 서울 / 인천 / 경기
+    서울: '서울',
+    인천: '인천',
+    경기: '경기',
     // 강원
     강원: '강원',
     // 충청
@@ -1330,17 +1095,17 @@ const mapRegionToArea = (region) => {
     충북: '충청',
     대전: '충청',
     세종: '충청',
-    // 호남
-    전남: '호남',
-    전북: '호남',
-    광주: '호남',
-    // 대구경북
-    대구: '대구경북',
-    경북: '대구경북',
-    // 부울경
-    부산: '부울경',
-    울산: '부울경',
-    경남: '부울경',
+    // 전라
+    전남: '전라',
+    전북: '전라',
+    광주: '전라',
+    // 경북
+    대구: '경북',
+    경북: '경북',
+    // 경남
+    부산: '경남',
+    울산: '경남',
+    경남: '경남',
     // 제주
     제주: '제주',
   }
@@ -1365,16 +1130,8 @@ const deliveryHeatmap = computed(() => {
 
   const total = reservations.length
 
-  // 고정된 순서로 지역 그룹 정의 (레이아웃 순서대로)
-  const regionOrder = [
-    '수도', // 1행 첫번째
-    '강원', // 1행 두번째
-    '충청', // 2행 첫번째
-    '호남', // 2행 중앙
-    '대구경북', // 2행 세번째
-    '부울경', // 3행 첫번째
-    '제주', // 3행 두번째
-  ]
+  // 고정된 순서로 지역 그룹 정의 (서울·인천·경기·강원·충청·전라·경북·경남·제주)
+  const regionOrder = ['서울', '인천', '경기', '강원', '충청', '전라', '경북', '경남', '제주']
 
   // 순서대로 지역 데이터 생성
   const mappedRegions = regionOrder.map((regionName) => {
@@ -1387,25 +1144,6 @@ const deliveryHeatmap = computed(() => {
   })
 
   return mappedRegions
-})
-
-// 3x3 그리드 구조로 매핑 (빈칸 위치: 4, 7)
-const heatmapGrid = computed(() => {
-  const grid = []
-  const emptyPositions = [4, 7] // 2행 중앙, 3행 중앙
-
-  for (let i = 0; i < 9; i++) {
-    if (emptyPositions.includes(i)) {
-      grid.push({ region: null })
-    } else {
-      const regionIndex = i < 4 ? i : i - 1 // 빈칸 위치를 제외한 인덱스
-      grid.push({
-        region: deliveryHeatmap.value[regionIndex] || null,
-      })
-    }
-  }
-
-  return grid
 })
 
 // 배송량에 따른 색상 클래스 반환 (동적 계산) - 푸른 계열
@@ -1474,16 +1212,18 @@ const selectRegion = (region) => {
   // 여기에 상세 정보 모달이나 페이지 이동 로직 추가 가능
 }
 
-// 지역 설명 반환 (포함된 구들)
+// 지역 설명 반환 (포함된 시/도)
 const getRegionDescription = (regionName) => {
   const descriptions = {
-    수도: '서울·인천·경기',
-    강원: '강원도',
-    충청: '충청남도·충청북도·대전·세종',
-    호남: '전라남도·전라북도·광주',
-    대구경북: '대구·경상북도',
-    부울경: '부산·울산·경상남도',
-    제주: '제주도',
+    서울: '서울특별시',
+    인천: '인천광역시',
+    경기: '경기도 (31개 시·군)',
+    강원: '강원특별자치도',
+    충청: '대전광역시, 세종특별자치시, 충청북도, 충청남도',
+    전라: '광주광역시, 전라북도, 전라남도',
+    경북: '대구광역시, 경상북도',
+    경남: '부산광역시, 울산광역시, 경상남도',
+    제주: '제주특별자치도',
   }
   return descriptions[regionName] || ''
 }
@@ -1601,6 +1341,21 @@ const insights = computed(() => {
 
 // 데이터 로드
 onMounted(() => {
+  // ERD 기반 월간 예약 데이터 연결
+  if (reservationsMonthly && Array.isArray(reservationsMonthly.reservations)) {
+    allReservations.value = reservationsMonthly.reservations.map((r) => ({
+      ...r,
+      // 안전장치: 누락 필드 기본값 설정
+      totalPrice: r.totalPrice ?? 0,
+      customerPhone: r.customerPhone ?? '',
+      isReturningCustomer: r.isReturningCustomer ?? false,
+      deliveryType: r.deliveryType ?? '',
+      deliveryRegion: r.deliveryRegion ?? '',
+      paymentMethod: r.paymentMethod ?? '',
+      itemSize: r.itemSize ?? '기타',
+    }))
+  }
+
   // Chart.js 차트 생성
   nextTick(() => {
     createEventTypeChart()
@@ -1624,26 +1379,28 @@ const createEventTypeChart = () => {
   const gridColor = isDark ? 'rgba(148, 163, 184, 0.1)' : 'rgba(226, 232, 240, 1)'
   const textColor = isDark ? 'rgba(148, 163, 184, 1)' : 'rgba(100, 116, 139, 1)'
 
+  // 1개의 막대 안에 행사 유형별 비율을 색상으로 구분한 100% 누적 막대 그래프
   eventTypeChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: eventTypeSales.value.map((item) => item.type),
-      datasets: [
-        {
-          label: '매출',
-          data: eventTypeSales.value.map((item) => item.value),
-          backgroundColor: eventTypeSales.value.map((item) => item.color + 'CC'), // 투명도 추가
-          borderColor: eventTypeSales.value.map((item) => item.color),
-          borderWidth: 0,
-          borderRadius: 8,
-          borderSkipped: false,
-          barThickness: 48, // 고정 바 두께 (5개 기준 적절한 크기)
-        },
-      ],
+      labels: ['전체'],
+      datasets: eventTypeSales.value.map((item) => ({
+        label: item.type,
+        data: [item.percentage],
+        backgroundColor: item.color + 'CC',
+        borderColor: item.color,
+        borderWidth: 0,
+        // 네 모서리 모두 0으로 해서 완전 직사각 막대
+        borderRadius: 0,
+        borderSkipped: false,
+        stack: 'eventType',
+        barThickness: 40,
+      })),
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      indexAxis: 'y', // 가로 막대
       plugins: {
         legend: {
           display: false,
@@ -1656,9 +1413,13 @@ const createEventTypeChart = () => {
           borderWidth: 1,
           borderRadius: 12,
           callbacks: {
+            title: function () {
+              return '행사 유형별 매출 비중'
+            },
             label: function (context) {
-              const item = eventTypeSales.value[context.dataIndex]
+              const item = eventTypeSales.value[context.datasetIndex]
               return [
+                `${item.type}`,
                 `매출: ${formatNumber(item.value)}원`,
                 `비율: ${item.percentage}%`,
                 `건수: ${item.count || 0}건`,
@@ -1668,18 +1429,11 @@ const createEventTypeChart = () => {
         },
       },
       scales: {
+        // 세로축(카테고리 축): '전체' 라벨만 사용, 눈금 숫자는 숨김
         y: {
-          beginAtZero: true,
-          max: 500000,
+          stacked: true,
           ticks: {
-            stepSize: 100000,
-            callback: function (value) {
-              return value / 10000 + '만'
-            },
-            color: textColor,
-            font: {
-              size: 11,
-            },
+            display: false,
           },
           grid: {
             color: gridColor,
@@ -1687,8 +1441,17 @@ const createEventTypeChart = () => {
             lineWidth: 1,
           },
         },
+        // 가로축(값 축): 0~100% 구간, 퍼센트 라벨 표시
         x: {
+          beginAtZero: true,
+          max: 100,
+          stacked: true,
           ticks: {
+            // 0, 25, 50, 75, 100 형태로 표시
+            stepSize: 25,
+            callback: function (value) {
+              return value + '%'
+            },
             color: textColor,
             font: {
               size: 11,
@@ -1697,12 +1460,64 @@ const createEventTypeChart = () => {
           grid: {
             display: false,
           },
-          categoryPercentage: 0.6, // 카테고리 간격 비율 (5개 기준 적절한 여백)
-          barPercentage: 0.8, // 바 너비 비율 (바 사이 여백)
+          categoryPercentage: 0.6,
+          barPercentage: 0.8,
         },
       },
     },
   })
+}
+
+// 행사 유형 범례 호버 시 해당 구간을 강조하고 툴팁 표시
+const highlightEventType = (datasetIndex) => {
+  if (!eventTypeChart) return
+
+  const meta = eventTypeChart.getDatasetMeta(datasetIndex)
+  if (!meta || !meta.data || !meta.data[0]) return
+
+  const element = { datasetIndex, index: 0 }
+
+  eventTypeChart.setActiveElements([element])
+  // 툴팁을 막대 오른쪽 안쪽에 표시해서 잘리지 않도록 살짝 우측으로 이동
+  const baseX = meta.data[0].x
+  const baseY = meta.data[0].y
+  eventTypeChart.tooltip.setActiveElements([element], {
+    x: baseX + 40,
+    y: baseY,
+  })
+  eventTypeChart.update()
+}
+
+const clearHighlightEventType = () => {
+  if (!eventTypeChart) return
+  eventTypeChart.setActiveElements([])
+  eventTypeChart.tooltip.setActiveElements([], { x: 0, y: 0 })
+  eventTypeChart.update()
+}
+
+// 사이즈 범례 호버 시 도넛 차트에서 해당 세그먼트를 강조하고 툴팁 표시
+const highlightSizeSegment = (index) => {
+  if (!sizeRatioChart) return
+
+  const meta = sizeRatioChart.getDatasetMeta(0)
+  if (!meta || !meta.data || !meta.data[index]) return
+
+  const element = { datasetIndex: 0, index }
+  const point = meta.data[index]
+
+  sizeRatioChart.setActiveElements([element])
+  sizeRatioChart.tooltip.setActiveElements([element], {
+    x: point.x,
+    y: point.y,
+  })
+  sizeRatioChart.update()
+}
+
+const clearHighlightSizeSegment = () => {
+  if (!sizeRatioChart) return
+  sizeRatioChart.setActiveElements([])
+  sizeRatioChart.tooltip.setActiveElements([], { x: 0, y: 0 })
+  sizeRatioChart.update()
 }
 
 // 피크타임 분석 차트 생성
@@ -1769,9 +1584,11 @@ const createPeakTimeChart = () => {
       scales: {
         y: {
           beginAtZero: true,
-          max: 50,
+          // 피크타임은 0~200건까지 여유 있게 커버
+          max: 200,
           ticks: {
-            stepSize: 10,
+            // 50건 단위 눈금 (0, 50, 100, 150, 200)
+            stepSize: 50,
             callback: function (value) {
               return value + '건'
             },
@@ -1965,21 +1782,17 @@ watch(
   () => {
     nextTick(() => {
       if (eventTypeChart) {
-        eventTypeChart.data.labels = eventTypeSales.value.map((item) => item.type)
-        eventTypeChart.data.datasets[0].data = eventTypeSales.value.map((item) => item.value)
-        eventTypeChart.data.datasets[0].backgroundColor = eventTypeSales.value.map(
-          (item) => item.color + 'CC',
-        )
-        eventTypeChart.data.datasets[0].borderColor = eventTypeSales.value.map((item) => item.color)
-        eventTypeChart.update()
+        // 행사 유형별 매출 차트는 1개의 100% 누적 막대이므로, 다시 생성해서 최신 데이터 반영
+        createEventTypeChart()
       }
 
       if (peakTimeChart) {
         peakTimeChart.data.labels = peakTimeData.value.hours.map((h) => h + '시')
         peakTimeChart.data.datasets[0].data = peakTimeData.value.storeValues
         peakTimeChart.data.datasets[1].data = peakTimeData.value.findValues
-        peakTimeChart.options.scales.y.max = 50
-        peakTimeChart.options.scales.y.ticks.stepSize = 10
+        // 고정 축 범위와 단위 유지 (0~200건, 50건 단위)
+        peakTimeChart.options.scales.y.max = 200
+        peakTimeChart.options.scales.y.ticks.stepSize = 50
         peakTimeChart.update()
       }
 
