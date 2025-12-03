@@ -39,7 +39,7 @@
               <div
                 class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate"
               >
-                활성 예약
+                금일 활성 예약
               </div>
               <div
                 class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-blue-600 dark:text-blue-400"
@@ -48,7 +48,7 @@
               </div>
             </div>
             <i
-              class="fi fi-rs-rotate-left text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0"
+              class="fi fi-rs-calendar-check text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0"
               style="color: #3b82f6"
             ></i>
           </div>
@@ -340,6 +340,7 @@
                 </th>
               </tr>
             </thead>
+
             <tbody>
               <tr
                 v-for="reservation in filteredReservations"
@@ -347,15 +348,16 @@
                 class="border-t text-center border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors group h-10"
               >
                 <td
-                  class="text-left px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
-                >
-                  {{ reservation.id }}
-                </td>
-                <td
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
                   {{ reservation.eventId }}
                 </td>
+                <td
+                  class="text-left px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
+                >
+                  {{ reservation.id }}
+                </td>
+
                 <td
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
@@ -477,20 +479,30 @@ const stats = computed(() => {
   const today = new Date()
   today.setHours(0, 0, 0, 0)
 
+  // 오늘 날짜 (YYYY-MM-DD 형식)
+  const todayStr = today.toISOString().split('T')[0]
+
   // 오늘 이후의 예약만 필터링
   const upcomingReservations = reservations.value.filter((r) => {
     const reservationDate = new Date(r.startTime)
     return reservationDate >= today
   })
 
+  // 오늘 당일 행사의 활성 예약 계산
+  const events = dataStore.events
+  const todayEventIds = new Set(events.filter((e) => e.eventDate === todayStr).map((e) => e.id))
+
+  const todayActiveReservations = reservations.value.filter(
+    (r) => todayEventIds.has(r.eventId) && r.status === 'active',
+  )
+
   // 상태별 통계 계산
-  const active = upcomingReservations.filter((r) => r.status === 'active').length
   const waiting = upcomingReservations.filter((r) => r.status === 'waiting').length
   const completed = upcomingReservations.filter((r) => r.status === 'completed').length
 
   return {
     all: upcomingReservations.length,
-    active,
+    active: todayActiveReservations.length, // 오늘 당일 행사의 활성 예약 수
     waiting,
     completed,
   }
