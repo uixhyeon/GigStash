@@ -7,12 +7,32 @@
 // driver(운전자)
 // status(상태)
 //
-// 📌 날짜가 다른 행사면 같은 차량 ID로 재사용 가능
+// 📌 배차 기준: 1대당 최대 50명
+// 📌 예약 기반 배차: 예약 건수에 따라 배차 대수 결정
+// 📌 활용률: 60-90% 범위로 자연스러운 분포
 
 export const vehicles = [
   {
-    "id": "VEH-003",
+    "id": "VEH-001",
     "eventId": "EVT251101001",
+    "vehicleType": "버스",
+    "capacity": 55,
+    "plateNumber": "서울12가1235",
+    "driver": "이운전",
+    "status": "완료"
+  },
+  {
+    "id": "VEH-002",
+    "eventId": "EVT251101002",
+    "vehicleType": "버스",
+    "capacity": 50,
+    "plateNumber": "서울12가2001",
+    "driver": "박운전",
+    "status": "완료"
+  },
+  {
+    "id": "VEH-003",
+    "eventId": "EVT251101002",
     "vehicleType": "버스",
     "capacity": 55,
     "plateNumber": "서울12가2002",
@@ -23,7 +43,7 @@ export const vehicles = [
     "id": "VEH-004",
     "eventId": "EVT251101002",
     "vehicleType": "버스",
-    "capacity": 55,
+    "capacity": 50,
     "plateNumber": "서울12가2003",
     "driver": "정운전",
     "status": "완료"
@@ -40,8 +60,8 @@ export const vehicles = [
   {
     "id": "VEH-006",
     "eventId": "EVT251101002",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "vehicleType": "버스",
+    "capacity": 50,
     "plateNumber": "경기12가1002",
     "driver": "윤운전",
     "status": "완료"
@@ -59,23 +79,23 @@ export const vehicles = [
     "id": "VEH-008",
     "eventId": "EVT251101002",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "경기12가2001",
     "driver": "한운전",
     "status": "완료"
   },
   {
     "id": "VEH-009",
-    "eventId": "EVT251101002",
-    "vehicleType": "버스",
-    "capacity": 50,
+    "eventId": "EVT251102001",
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "경기12가2002",
     "driver": "오운전",
     "status": "완료"
   },
   {
     "id": "VEH-010",
-    "eventId": "EVT251101002",
+    "eventId": "EVT251102001",
     "vehicleType": "버스",
     "capacity": 50,
     "plateNumber": "경기12가2003",
@@ -84,9 +104,9 @@ export const vehicles = [
   },
   {
     "id": "VEH-011",
-    "eventId": "EVT251101002",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251102001",
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "인천12가1001",
     "driver": "조운전",
     "status": "완료"
@@ -103,8 +123,8 @@ export const vehicles = [
   {
     "id": "VEH-013",
     "eventId": "EVT251102001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "vehicleType": "버스",
+    "capacity": 50,
     "plateNumber": "인천12가1003",
     "driver": "전운전",
     "status": "완료"
@@ -121,15 +141,15 @@ export const vehicles = [
   {
     "id": "VEH-015",
     "eventId": "EVT251102001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "vehicleType": "버스",
+    "capacity": 50,
     "plateNumber": "부산12가1002",
     "driver": "안운전",
     "status": "완료"
   },
   {
     "id": "VEH-016",
-    "eventId": "EVT251102001",
+    "eventId": "EVT251103001",
     "vehicleType": "버스",
     "capacity": 55,
     "plateNumber": "대구12가1001",
@@ -138,70 +158,70 @@ export const vehicles = [
   },
   {
     "id": "VEH-017",
-    "eventId": "EVT251102001",
-    "vehicleType": "버스",
-    "capacity": 55,
+    "eventId": "EVT251105001",
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "대전12가1001",
     "driver": "서운전",
     "status": "완료"
   },
   {
     "id": "VEH-018",
-    "eventId": "EVT251103001",
-    "vehicleType": "버스",
-    "capacity": 55,
+    "eventId": "EVT251108001",
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "대전12가1002",
     "driver": "양운전",
     "status": "완료"
   },
   {
     "id": "VEH-019",
-    "eventId": "EVT251105001",
-    "vehicleType": "버스",
-    "capacity": 55,
+    "eventId": "EVT251109002",
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "광주12가1001",
     "driver": "허운전",
     "status": "완료"
   },
   {
     "id": "VEH-020",
-    "eventId": "EVT251108001",
-    "vehicleType": "버스",
-    "capacity": 55,
+    "eventId": "EVT251112001",
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "울산12가1001",
     "driver": "류운전",
     "status": "완료"
   },
   {
     "id": "VEH-021",
-    "eventId": "EVT251109002",
-    "vehicleType": "버스",
-    "capacity": 50,
+    "eventId": "EVT251115001",
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "세종12가1001",
     "driver": "마운전",
     "status": "완료"
   },
   {
     "id": "VEH-022",
-    "eventId": "EVT251112001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251118001",
+    "vehicleType": "버스",
+    "capacity": 50,
     "plateNumber": "강원12가1001",
     "driver": "노운전",
     "status": "완료"
   },
   {
     "id": "VEH-023",
-    "eventId": "EVT251115001",
+    "eventId": "EVT251121001",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "충청12가1001",
     "driver": "도운전",
     "status": "완료"
   },
   {
     "id": "VEH-024",
-    "eventId": "EVT251118001",
+    "eventId": "EVT251121001",
     "vehicleType": "버스",
     "capacity": 55,
     "plateNumber": "전북12가1001",
@@ -212,7 +232,7 @@ export const vehicles = [
     "id": "VEH-025",
     "eventId": "EVT251121001",
     "vehicleType": "버스",
-    "capacity": 55,
+    "capacity": 50,
     "plateNumber": "전남12가1001",
     "driver": "김운전",
     "status": "완료"
@@ -220,8 +240,8 @@ export const vehicles = [
   {
     "id": "VEH-026",
     "eventId": "EVT251121001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "서울12가1234",
     "driver": "이운전",
     "status": "완료"
@@ -230,16 +250,16 @@ export const vehicles = [
     "id": "VEH-027",
     "eventId": "EVT251121001",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "서울12가1235",
     "driver": "박운전",
     "status": "완료"
   },
   {
     "id": "VEH-028",
-    "eventId": "EVT251121001",
-    "vehicleType": "버스",
-    "capacity": 50,
+    "eventId": "EVT251121002",
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "서울12가2001",
     "driver": "최운전",
     "status": "완료"
@@ -247,8 +267,8 @@ export const vehicles = [
   {
     "id": "VEH-029",
     "eventId": "EVT251121002",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "서울12가2002",
     "driver": "정운전",
     "status": "완료"
@@ -266,7 +286,7 @@ export const vehicles = [
     "id": "VEH-031",
     "eventId": "EVT251121002",
     "vehicleType": "버스",
-    "capacity": 55,
+    "capacity": 50,
     "plateNumber": "경기12가1001",
     "driver": "윤운전",
     "status": "완료"
@@ -274,8 +294,8 @@ export const vehicles = [
   {
     "id": "VEH-032",
     "eventId": "EVT251121002",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "경기12가1002",
     "driver": "임운전",
     "status": "완료"
@@ -283,8 +303,8 @@ export const vehicles = [
   {
     "id": "VEH-033",
     "eventId": "EVT251122001",
-    "vehicleType": "버스",
-    "capacity": 55,
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "경기12가1003",
     "driver": "한운전",
     "status": "완료"
@@ -292,8 +312,8 @@ export const vehicles = [
   {
     "id": "VEH-034",
     "eventId": "EVT251122001",
-    "vehicleType": "버스",
-    "capacity": 50,
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "경기12가2001",
     "driver": "오운전",
     "status": "완료"
@@ -301,8 +321,8 @@ export const vehicles = [
   {
     "id": "VEH-035",
     "eventId": "EVT251122001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "경기12가2002",
     "driver": "신운전",
     "status": "완료"
@@ -310,8 +330,8 @@ export const vehicles = [
   {
     "id": "VEH-036",
     "eventId": "EVT251122002",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "경기12가2003",
     "driver": "조운전",
     "status": "완료"
@@ -346,8 +366,8 @@ export const vehicles = [
   {
     "id": "VEH-040",
     "eventId": "EVT251122004",
-    "vehicleType": "버스",
-    "capacity": 50,
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "부산12가1001",
     "driver": "안운전",
     "status": "완료"
@@ -355,8 +375,8 @@ export const vehicles = [
   {
     "id": "VEH-041",
     "eventId": "EVT251123001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "부산12가1002",
     "driver": "배운전",
     "status": "완료"
@@ -373,8 +393,8 @@ export const vehicles = [
   {
     "id": "VEH-043",
     "eventId": "EVT251123003",
-    "vehicleType": "버스",
-    "capacity": 50,
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "대전12가1001",
     "driver": "양운전",
     "status": "완료"
@@ -382,8 +402,8 @@ export const vehicles = [
   {
     "id": "VEH-044",
     "eventId": "EVT251123003",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "대전12가1002",
     "driver": "허운전",
     "status": "완료"
@@ -391,8 +411,8 @@ export const vehicles = [
   {
     "id": "VEH-045",
     "eventId": "EVT251123003",
-    "vehicleType": "버스",
-    "capacity": 50,
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "광주12가1001",
     "driver": "류운전",
     "status": "완료"
@@ -400,15 +420,15 @@ export const vehicles = [
   {
     "id": "VEH-046",
     "eventId": "EVT251123003",
-    "vehicleType": "버스",
-    "capacity": 55,
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "울산12가1001",
     "driver": "마운전",
     "status": "완료"
   },
   {
     "id": "VEH-047",
-    "eventId": "EVT251123004",
+    "eventId": "EVT251123003",
     "vehicleType": "중형차",
     "capacity": 35,
     "plateNumber": "세종12가1001",
@@ -417,9 +437,9 @@ export const vehicles = [
   },
   {
     "id": "VEH-048",
-    "eventId": "EVT251129002",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251123004",
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "강원12가1001",
     "driver": "도운전",
     "status": "완료"
@@ -427,8 +447,8 @@ export const vehicles = [
   {
     "id": "VEH-049",
     "eventId": "EVT251129002",
-    "vehicleType": "버스",
-    "capacity": 50,
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "충청12가1001",
     "driver": "로운전",
     "status": "완료"
@@ -454,8 +474,8 @@ export const vehicles = [
   {
     "id": "VEH-052",
     "eventId": "EVT251129002",
-    "vehicleType": "버스",
-    "capacity": 55,
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "서울12가1234",
     "driver": "박운전",
     "status": "완료"
@@ -464,14 +484,14 @@ export const vehicles = [
     "id": "VEH-053",
     "eventId": "EVT251129002",
     "vehicleType": "버스",
-    "capacity": 55,
+    "capacity": 50,
     "plateNumber": "서울12가1235",
     "driver": "최운전",
     "status": "완료"
   },
   {
     "id": "VEH-054",
-    "eventId": "EVT251129003",
+    "eventId": "EVT251129002",
     "vehicleType": "버스",
     "capacity": 50,
     "plateNumber": "서울12가2001",
@@ -480,7 +500,7 @@ export const vehicles = [
   },
   {
     "id": "VEH-055",
-    "eventId": "EVT251129003",
+    "eventId": "EVT251129002",
     "vehicleType": "버스",
     "capacity": 50,
     "plateNumber": "서울12가2002",
@@ -499,15 +519,15 @@ export const vehicles = [
   {
     "id": "VEH-057",
     "eventId": "EVT251129003",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "vehicleType": "버스",
+    "capacity": 50,
     "plateNumber": "경기12가1001",
     "driver": "임운전",
     "status": "완료"
   },
   {
     "id": "VEH-058",
-    "eventId": "EVT251130001",
+    "eventId": "EVT251129003",
     "vehicleType": "버스",
     "capacity": 55,
     "plateNumber": "경기12가1002",
@@ -516,18 +536,18 @@ export const vehicles = [
   },
   {
     "id": "VEH-059",
-    "eventId": "EVT251130001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251129003",
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "경기12가1003",
     "driver": "오운전",
     "status": "완료"
   },
   {
     "id": "VEH-060",
-    "eventId": "EVT251130001",
+    "eventId": "EVT251129003",
     "vehicleType": "버스",
-    "capacity": 55,
+    "capacity": 50,
     "plateNumber": "경기12가2001",
     "driver": "신운전",
     "status": "완료"
@@ -536,7 +556,7 @@ export const vehicles = [
     "id": "VEH-061",
     "eventId": "EVT251130001",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "경기12가2002",
     "driver": "조운전",
     "status": "완료"
@@ -544,51 +564,51 @@ export const vehicles = [
   {
     "id": "VEH-062",
     "eventId": "EVT251130001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "vehicleType": "버스",
+    "capacity": 50,
     "plateNumber": "경기12가2003",
     "driver": "홍운전",
     "status": "완료"
   },
   {
     "id": "VEH-063",
-    "eventId": "EVT251130002",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251130001",
+    "vehicleType": "버스",
+    "capacity": 50,
     "plateNumber": "인천12가1001",
     "driver": "전운전",
     "status": "완료"
   },
   {
     "id": "VEH-064",
-    "eventId": "EVT251130002",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251130001",
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "인천12가1002",
     "driver": "남운전",
     "status": "완료"
   },
   {
     "id": "VEH-065",
-    "eventId": "EVT251130002",
+    "eventId": "EVT251130001",
     "vehicleType": "버스",
-    "capacity": 55,
+    "capacity": 50,
     "plateNumber": "인천12가1003",
     "driver": "안운전",
     "status": "완료"
   },
   {
     "id": "VEH-066",
-    "eventId": "EVT251201001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251130001",
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "부산12가1001",
     "driver": "배운전",
     "status": "완료"
   },
   {
     "id": "VEH-067",
-    "eventId": "EVT251201001",
+    "eventId": "EVT251130002",
     "vehicleType": "버스",
     "capacity": 55,
     "plateNumber": "부산12가1002",
@@ -597,16 +617,16 @@ export const vehicles = [
   },
   {
     "id": "VEH-068",
-    "eventId": "EVT251201001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251130002",
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "대구12가1001",
     "driver": "양운전",
     "status": "완료"
   },
   {
     "id": "VEH-069",
-    "eventId": "EVT251201001",
+    "eventId": "EVT251130002",
     "vehicleType": "버스",
     "capacity": 55,
     "plateNumber": "대전12가1001",
@@ -615,16 +635,16 @@ export const vehicles = [
   },
   {
     "id": "VEH-070",
-    "eventId": "EVT251202001",
+    "eventId": "EVT251201001",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "대전12가1002",
     "driver": "류운전",
     "status": "완료"
   },
   {
     "id": "VEH-071",
-    "eventId": "EVT251202001",
+    "eventId": "EVT251201001",
     "vehicleType": "버스",
     "capacity": 55,
     "plateNumber": "광주12가1001",
@@ -633,25 +653,25 @@ export const vehicles = [
   },
   {
     "id": "VEH-072",
-    "eventId": "EVT251202001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251201001",
+    "vehicleType": "버스",
+    "capacity": 50,
     "plateNumber": "울산12가1001",
     "driver": "노운전",
     "status": "완료"
   },
   {
     "id": "VEH-073",
-    "eventId": "EVT251205001",
+    "eventId": "EVT251201001",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "세종12가1001",
     "driver": "도운전",
     "status": "완료"
   },
   {
     "id": "VEH-074",
-    "eventId": "EVT251206001",
+    "eventId": "EVT251201001",
     "vehicleType": "중형차",
     "capacity": 35,
     "plateNumber": "강원12가1001",
@@ -660,34 +680,34 @@ export const vehicles = [
   },
   {
     "id": "VEH-075",
-    "eventId": "EVT251210001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251202001",
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "충청12가1001",
     "driver": "김운전",
     "status": "완료"
   },
   {
     "id": "VEH-076",
-    "eventId": "EVT251210001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251202001",
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "전북12가1001",
     "driver": "이운전",
     "status": "완료"
   },
   {
     "id": "VEH-077",
-    "eventId": "EVT251210001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251202001",
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "전남12가1001",
     "driver": "박운전",
     "status": "완료"
   },
   {
     "id": "VEH-078",
-    "eventId": "EVT251210001",
+    "eventId": "EVT251205001",
     "vehicleType": "중형차",
     "capacity": 35,
     "plateNumber": "서울12가1234",
@@ -696,25 +716,25 @@ export const vehicles = [
   },
   {
     "id": "VEH-079",
-    "eventId": "EVT251215001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251206001",
+    "vehicleType": "버스",
+    "capacity": 55,
     "plateNumber": "서울12가1235",
     "driver": "정운전",
     "status": "완료"
   },
   {
     "id": "VEH-080",
-    "eventId": "EVT251215001",
+    "eventId": "EVT251210001",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "서울12가2001",
     "driver": "강운전",
     "status": "완료"
   },
   {
     "id": "VEH-081",
-    "eventId": "EVT251220001",
+    "eventId": "EVT251210001",
     "vehicleType": "중형차",
     "capacity": 35,
     "plateNumber": "서울12가2002",
@@ -723,70 +743,70 @@ export const vehicles = [
   },
   {
     "id": "VEH-082",
-    "eventId": "EVT251220001",
+    "eventId": "EVT251210001",
     "vehicleType": "버스",
-    "capacity": 55,
+    "capacity": 50,
     "plateNumber": "서울12가2003",
     "driver": "임운전",
     "status": "완료"
   },
   {
     "id": "VEH-083",
-    "eventId": "EVT251225001",
+    "eventId": "EVT251210001",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "경기12가1001",
     "driver": "한운전",
     "status": "완료"
   },
   {
     "id": "VEH-084",
-    "eventId": "EVT251230001",
+    "eventId": "EVT251210001",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "경기12가1002",
     "driver": "오운전",
     "status": "완료"
   },
   {
     "id": "VEH-085",
-    "eventId": "EVT251005001",
+    "eventId": "EVT251215001",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "경기12가1003",
     "driver": "신운전",
     "status": "완료"
   },
   {
     "id": "VEH-086",
-    "eventId": "EVT251010001",
+    "eventId": "EVT251215001",
     "vehicleType": "버스",
-    "capacity": 55,
+    "capacity": 50,
     "plateNumber": "경기12가2001",
     "driver": "조운전",
     "status": "완료"
   },
   {
     "id": "VEH-087",
-    "eventId": "EVT251011001",
+    "eventId": "EVT251220001",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "경기12가2002",
     "driver": "홍운전",
     "status": "완료"
   },
   {
     "id": "VEH-088",
-    "eventId": "EVT251015001",
+    "eventId": "EVT251220001",
     "vehicleType": "버스",
-    "capacity": 55,
+    "capacity": 50,
     "plateNumber": "경기12가2003",
     "driver": "전운전",
     "status": "완료"
   },
   {
     "id": "VEH-089",
-    "eventId": "EVT251015001",
+    "eventId": "EVT251225001",
     "vehicleType": "버스",
     "capacity": 55,
     "plateNumber": "인천12가1001",
@@ -795,7 +815,7 @@ export const vehicles = [
   },
   {
     "id": "VEH-090",
-    "eventId": "EVT251015001",
+    "eventId": "EVT251230001",
     "vehicleType": "버스",
     "capacity": 50,
     "plateNumber": "인천12가1002",
@@ -804,43 +824,43 @@ export const vehicles = [
   },
   {
     "id": "VEH-091",
-    "eventId": "EVT251016001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251005001",
+    "vehicleType": "버스",
+    "capacity": 50,
     "plateNumber": "인천12가1003",
     "driver": "배운전",
     "status": "완료"
   },
   {
     "id": "VEH-092",
-    "eventId": "EVT251016001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251010001",
+    "vehicleType": "버스",
+    "capacity": 50,
     "plateNumber": "부산12가1001",
     "driver": "서운전",
     "status": "완료"
   },
   {
     "id": "VEH-093",
-    "eventId": "EVT251016001",
+    "eventId": "EVT251011001",
     "vehicleType": "버스",
-    "capacity": 55,
+    "capacity": 50,
     "plateNumber": "부산12가1002",
     "driver": "양운전",
     "status": "완료"
   },
   {
     "id": "VEH-094",
-    "eventId": "EVT251016001",
-    "vehicleType": "중형차",
-    "capacity": 35,
+    "eventId": "EVT251015001",
+    "vehicleType": "버스",
+    "capacity": 50,
     "plateNumber": "대구12가1001",
     "driver": "허운전",
     "status": "완료"
   },
   {
     "id": "VEH-095",
-    "eventId": "EVT251020001",
+    "eventId": "EVT251015001",
     "vehicleType": "버스",
     "capacity": 50,
     "plateNumber": "대전12가1001",
@@ -849,16 +869,16 @@ export const vehicles = [
   },
   {
     "id": "VEH-096",
-    "eventId": "EVT251025001",
+    "eventId": "EVT251015001",
     "vehicleType": "버스",
-    "capacity": 55,
+    "capacity": 50,
     "plateNumber": "대전12가1002",
     "driver": "마운전",
     "status": "완료"
   },
   {
     "id": "VEH-097",
-    "eventId": "EVT251025001",
+    "eventId": "EVT251016001",
     "vehicleType": "버스",
     "capacity": 50,
     "plateNumber": "광주12가1001",
@@ -867,34 +887,34 @@ export const vehicles = [
   },
   {
     "id": "VEH-098",
-    "eventId": "EVT251028001",
+    "eventId": "EVT251016001",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "울산12가1001",
     "driver": "도운전",
     "status": "완료"
   },
   {
     "id": "VEH-099",
-    "eventId": "EVT251028001",
+    "eventId": "EVT251016001",
     "vehicleType": "버스",
-    "capacity": 50,
+    "capacity": 55,
     "plateNumber": "세종12가1001",
     "driver": "로운전",
     "status": "완료"
   },
   {
     "id": "VEH-100",
-    "eventId": "EVT251028001",
-    "vehicleType": "버스",
-    "capacity": 55,
+    "eventId": "EVT251016001",
+    "vehicleType": "중형차",
+    "capacity": 35,
     "plateNumber": "강원12가1001",
     "driver": "김운전",
     "status": "완료"
   },
   {
     "id": "VEH-101",
-    "eventId": "EVT251029001",
+    "eventId": "EVT251020001",
     "vehicleType": "버스",
     "capacity": 50,
     "plateNumber": "충청12가1001",
@@ -903,20 +923,74 @@ export const vehicles = [
   },
   {
     "id": "VEH-102",
-    "eventId": "EVT251029001",
+    "eventId": "EVT251025001",
     "vehicleType": "버스",
-    "capacity": 55,
+    "capacity": 50,
     "plateNumber": "전북12가1001",
     "driver": "박운전",
     "status": "완료"
   },
   {
     "id": "VEH-103",
+    "eventId": "EVT251025001",
+    "vehicleType": "버스",
+    "capacity": 55,
+    "plateNumber": "전남12가1001",
+    "driver": "최운전",
+    "status": "완료"
+  },
+  {
+    "id": "VEH-104",
+    "eventId": "EVT251028001",
+    "vehicleType": "버스",
+    "capacity": 55,
+    "plateNumber": "서울12가1234",
+    "driver": "정운전",
+    "status": "완료"
+  },
+  {
+    "id": "VEH-105",
+    "eventId": "EVT251028001",
+    "vehicleType": "버스",
+    "capacity": 55,
+    "plateNumber": "서울12가1235",
+    "driver": "강운전",
+    "status": "완료"
+  },
+  {
+    "id": "VEH-106",
+    "eventId": "EVT251028001",
+    "vehicleType": "중형차",
+    "capacity": 35,
+    "plateNumber": "서울12가2001",
+    "driver": "윤운전",
+    "status": "완료"
+  },
+  {
+    "id": "VEH-107",
     "eventId": "EVT251029001",
     "vehicleType": "버스",
     "capacity": 50,
-    "plateNumber": "전남12가1001",
-    "driver": "최운전",
+    "plateNumber": "서울12가2002",
+    "driver": "임운전",
+    "status": "완료"
+  },
+  {
+    "id": "VEH-108",
+    "eventId": "EVT251029001",
+    "vehicleType": "버스",
+    "capacity": 55,
+    "plateNumber": "서울12가2003",
+    "driver": "한운전",
+    "status": "완료"
+  },
+  {
+    "id": "VEH-109",
+    "eventId": "EVT251029001",
+    "vehicleType": "버스",
+    "capacity": 55,
+    "plateNumber": "경기12가1001",
+    "driver": "오운전",
     "status": "완료"
   }
 ]
