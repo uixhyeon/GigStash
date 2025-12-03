@@ -471,16 +471,28 @@ const reverseStatusMap = {
   예정: 'pending',
 }
 
-// 통계 계산 (메모이제이션: 스토어의 reservationStats 사용)
+// 통계 계산 (메모이제이션: 오늘 기준 미래 예약만 포함)
 const stats = computed(() => {
-  const statsFromStore = dataStore.reservationStats
-  const waiting = reservations.value.filter((r) => r.status === 'waiting').length
+  // 오늘 자정
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+
+  // 오늘 이후의 예약만 필터링
+  const upcomingReservations = reservations.value.filter((r) => {
+    const reservationDate = new Date(r.startTime)
+    return reservationDate >= today
+  })
+
+  // 상태별 통계 계산
+  const active = upcomingReservations.filter((r) => r.status === 'active').length
+  const waiting = upcomingReservations.filter((r) => r.status === 'waiting').length
+  const completed = upcomingReservations.filter((r) => r.status === 'completed').length
 
   return {
-    all: statsFromStore.total,
-    active: statsFromStore.active,
+    all: upcomingReservations.length,
+    active,
     waiting,
-    completed: statsFromStore.completed,
+    completed,
   }
 })
 
