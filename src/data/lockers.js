@@ -1,6 +1,6 @@
 // AUTO-GENERATED FILE
-// 생성 날짜: 2025-12-03T08:20:44.397Z
-// 설명: 모든 사물함에 크기 속성 추가
+// 생성 날짜: 2025-12-03T08:26:48.285Z
+// 설명: 사물함 크기 균등 재분배 (small, medium, large, extra_large 각 25%)
 
 export const lockers = [
   {
@@ -407,7 +407,7 @@ export const lockers = [
     "id": "LM0026",
     "number": "LM0026",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M01",
     "position": "position-26",
     "status": "active",
@@ -424,7 +424,7 @@ export const lockers = [
     "id": "LM0027",
     "number": "LM0027",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M02",
     "position": "position-27",
     "status": "active",
@@ -441,7 +441,7 @@ export const lockers = [
     "id": "LM0028",
     "number": "LM0028",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M03",
     "position": "position-28",
     "status": "active",
@@ -458,7 +458,7 @@ export const lockers = [
     "id": "LM0029",
     "number": "LM0029",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M04",
     "position": "position-29",
     "status": "active",
@@ -475,7 +475,7 @@ export const lockers = [
     "id": "LM0030",
     "number": "LM0030",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M05",
     "position": "position-30",
     "status": "active",
@@ -492,7 +492,7 @@ export const lockers = [
     "id": "LM0031",
     "number": "LM0031",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M06",
     "position": "position-31",
     "status": "active",
@@ -509,7 +509,7 @@ export const lockers = [
     "id": "LM0032",
     "number": "LM0032",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M07",
     "position": "position-32",
     "status": "active",
@@ -526,7 +526,7 @@ export const lockers = [
     "id": "LM0033",
     "number": "LM0033",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M08",
     "position": "position-33",
     "status": "active",
@@ -543,7 +543,7 @@ export const lockers = [
     "id": "LM0034",
     "number": "LM0034",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M09",
     "position": "position-34",
     "status": "active",
@@ -560,7 +560,7 @@ export const lockers = [
     "id": "LM0035",
     "number": "LM0035",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M10",
     "position": "position-35",
     "status": "active",
@@ -577,7 +577,7 @@ export const lockers = [
     "id": "LM0036",
     "number": "LM0036",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M11",
     "position": "position-36",
     "status": "active",
@@ -594,7 +594,7 @@ export const lockers = [
     "id": "LM0037",
     "number": "LM0037",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M12",
     "position": "position-37",
     "status": "active",
@@ -611,7 +611,7 @@ export const lockers = [
     "id": "LM0038",
     "number": "LM0038",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M13",
     "position": "position-38",
     "status": "active",
@@ -628,7 +628,7 @@ export const lockers = [
     "id": "LM0039",
     "number": "LM0039",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M14",
     "position": "position-39",
     "status": "active",
@@ -645,7 +645,7 @@ export const lockers = [
     "id": "LM0040",
     "number": "LM0040",
     "vehicleId": "VEH-001",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-001-M15",
     "position": "position-40",
     "status": "active",
@@ -662,7 +662,7 @@ export const lockers = [
     "id": "LL0041",
     "number": "LL0041",
     "vehicleId": "VEH-001",
-    "size": "large",
+    "size": "small",
     "location": "VEH-001-L01",
     "position": "position-41",
     "status": "active",
@@ -680,7 +680,7 @@ export const lockers = [
     "id": "LL0042",
     "number": "LL0042",
     "vehicleId": "VEH-001",
-    "size": "large",
+    "size": "small",
     "location": "VEH-001-L02",
     "position": "position-42",
     "status": "active",
@@ -698,7 +698,7 @@ export const lockers = [
     "id": "LL0043",
     "number": "LL0043",
     "vehicleId": "VEH-001",
-    "size": "large",
+    "size": "small",
     "location": "VEH-001-L03",
     "position": "position-43",
     "status": "active",
@@ -716,7 +716,7 @@ export const lockers = [
     "id": "LL0044",
     "number": "LL0044",
     "vehicleId": "VEH-001",
-    "size": "large",
+    "size": "small",
     "location": "VEH-001-L04",
     "position": "position-44",
     "status": "active",
@@ -734,7 +734,7 @@ export const lockers = [
     "id": "LL0045",
     "number": "LL0045",
     "vehicleId": "VEH-001",
-    "size": "large",
+    "size": "small",
     "location": "VEH-001-L05",
     "position": "position-45",
     "status": "active",
@@ -752,7 +752,7 @@ export const lockers = [
     "id": "LL0046",
     "number": "LL0046",
     "vehicleId": "VEH-001",
-    "size": "large",
+    "size": "small",
     "location": "VEH-001-L06",
     "position": "position-46",
     "status": "active",
@@ -770,7 +770,7 @@ export const lockers = [
     "id": "LL0047",
     "number": "LL0047",
     "vehicleId": "VEH-001",
-    "size": "large",
+    "size": "small",
     "location": "VEH-001-L07",
     "position": "position-47",
     "status": "active",
@@ -788,7 +788,7 @@ export const lockers = [
     "id": "LL0048",
     "number": "LL0048",
     "vehicleId": "VEH-001",
-    "size": "large",
+    "size": "small",
     "location": "VEH-001-L08",
     "position": "position-48",
     "status": "active",
@@ -806,7 +806,7 @@ export const lockers = [
     "id": "LL0049",
     "number": "LL0049",
     "vehicleId": "VEH-001",
-    "size": "large",
+    "size": "small",
     "location": "VEH-001-L09",
     "position": "position-49",
     "status": "active",
@@ -824,7 +824,7 @@ export const lockers = [
     "id": "LL0050",
     "number": "LL0050",
     "vehicleId": "VEH-001",
-    "size": "large",
+    "size": "small",
     "location": "VEH-001-L10",
     "position": "position-50",
     "status": "active",
@@ -1242,7 +1242,7 @@ export const lockers = [
     "id": "LM0076",
     "number": "LM0076",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M01",
     "position": "position-26",
     "status": "active",
@@ -1259,7 +1259,7 @@ export const lockers = [
     "id": "LM0077",
     "number": "LM0077",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M02",
     "position": "position-27",
     "status": "active",
@@ -1276,7 +1276,7 @@ export const lockers = [
     "id": "LM0078",
     "number": "LM0078",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M03",
     "position": "position-28",
     "status": "active",
@@ -1293,7 +1293,7 @@ export const lockers = [
     "id": "LM0079",
     "number": "LM0079",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M04",
     "position": "position-29",
     "status": "active",
@@ -1310,7 +1310,7 @@ export const lockers = [
     "id": "LM0080",
     "number": "LM0080",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M05",
     "position": "position-30",
     "status": "active",
@@ -1327,7 +1327,7 @@ export const lockers = [
     "id": "LM0081",
     "number": "LM0081",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M06",
     "position": "position-31",
     "status": "active",
@@ -1344,7 +1344,7 @@ export const lockers = [
     "id": "LM0082",
     "number": "LM0082",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M07",
     "position": "position-32",
     "status": "active",
@@ -1361,7 +1361,7 @@ export const lockers = [
     "id": "LM0083",
     "number": "LM0083",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M08",
     "position": "position-33",
     "status": "active",
@@ -1378,7 +1378,7 @@ export const lockers = [
     "id": "LM0084",
     "number": "LM0084",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M09",
     "position": "position-34",
     "status": "active",
@@ -1395,7 +1395,7 @@ export const lockers = [
     "id": "LM0085",
     "number": "LM0085",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M10",
     "position": "position-35",
     "status": "active",
@@ -1412,7 +1412,7 @@ export const lockers = [
     "id": "LM0086",
     "number": "LM0086",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M11",
     "position": "position-36",
     "status": "active",
@@ -1429,7 +1429,7 @@ export const lockers = [
     "id": "LM0087",
     "number": "LM0087",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M12",
     "position": "position-37",
     "status": "active",
@@ -1446,7 +1446,7 @@ export const lockers = [
     "id": "LM0088",
     "number": "LM0088",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M13",
     "position": "position-38",
     "status": "active",
@@ -1463,7 +1463,7 @@ export const lockers = [
     "id": "LM0089",
     "number": "LM0089",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M14",
     "position": "position-39",
     "status": "active",
@@ -1480,7 +1480,7 @@ export const lockers = [
     "id": "LM0090",
     "number": "LM0090",
     "vehicleId": "VEH-002",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-002-M15",
     "position": "position-40",
     "status": "active",
@@ -1497,7 +1497,7 @@ export const lockers = [
     "id": "LL0091",
     "number": "LL0091",
     "vehicleId": "VEH-002",
-    "size": "large",
+    "size": "small",
     "location": "VEH-002-L01",
     "position": "position-41",
     "status": "active",
@@ -1515,7 +1515,7 @@ export const lockers = [
     "id": "LL0092",
     "number": "LL0092",
     "vehicleId": "VEH-002",
-    "size": "large",
+    "size": "small",
     "location": "VEH-002-L02",
     "position": "position-42",
     "status": "active",
@@ -1533,7 +1533,7 @@ export const lockers = [
     "id": "LL0093",
     "number": "LL0093",
     "vehicleId": "VEH-002",
-    "size": "large",
+    "size": "small",
     "location": "VEH-002-L03",
     "position": "position-43",
     "status": "active",
@@ -1551,7 +1551,7 @@ export const lockers = [
     "id": "LL0094",
     "number": "LL0094",
     "vehicleId": "VEH-002",
-    "size": "large",
+    "size": "small",
     "location": "VEH-002-L04",
     "position": "position-44",
     "status": "active",
@@ -1569,7 +1569,7 @@ export const lockers = [
     "id": "LL0095",
     "number": "LL0095",
     "vehicleId": "VEH-002",
-    "size": "large",
+    "size": "small",
     "location": "VEH-002-L05",
     "position": "position-45",
     "status": "active",
@@ -1587,7 +1587,7 @@ export const lockers = [
     "id": "LL0096",
     "number": "LL0096",
     "vehicleId": "VEH-002",
-    "size": "large",
+    "size": "small",
     "location": "VEH-002-L06",
     "position": "position-46",
     "status": "active",
@@ -1605,7 +1605,7 @@ export const lockers = [
     "id": "LL0097",
     "number": "LL0097",
     "vehicleId": "VEH-002",
-    "size": "large",
+    "size": "small",
     "location": "VEH-002-L07",
     "position": "position-47",
     "status": "active",
@@ -1623,7 +1623,7 @@ export const lockers = [
     "id": "LL0098",
     "number": "LL0098",
     "vehicleId": "VEH-002",
-    "size": "large",
+    "size": "small",
     "location": "VEH-002-L08",
     "position": "position-48",
     "status": "active",
@@ -1641,7 +1641,7 @@ export const lockers = [
     "id": "LL0099",
     "number": "LL0099",
     "vehicleId": "VEH-002",
-    "size": "large",
+    "size": "small",
     "location": "VEH-002-L09",
     "position": "position-49",
     "status": "active",
@@ -1659,7 +1659,7 @@ export const lockers = [
     "id": "LL0100",
     "number": "LL0100",
     "vehicleId": "VEH-002",
-    "size": "large",
+    "size": "small",
     "location": "VEH-002-L10",
     "position": "position-50",
     "status": "active",
@@ -2077,7 +2077,7 @@ export const lockers = [
     "id": "LM0126",
     "number": "LM0126",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M01",
     "position": "position-26",
     "status": "active",
@@ -2094,7 +2094,7 @@ export const lockers = [
     "id": "LM0127",
     "number": "LM0127",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M02",
     "position": "position-27",
     "status": "active",
@@ -2111,7 +2111,7 @@ export const lockers = [
     "id": "LM0128",
     "number": "LM0128",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M03",
     "position": "position-28",
     "status": "active",
@@ -2128,7 +2128,7 @@ export const lockers = [
     "id": "LM0129",
     "number": "LM0129",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M04",
     "position": "position-29",
     "status": "active",
@@ -2145,7 +2145,7 @@ export const lockers = [
     "id": "LM0130",
     "number": "LM0130",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M05",
     "position": "position-30",
     "status": "active",
@@ -2162,7 +2162,7 @@ export const lockers = [
     "id": "LM0131",
     "number": "LM0131",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M06",
     "position": "position-31",
     "status": "active",
@@ -2179,7 +2179,7 @@ export const lockers = [
     "id": "LM0132",
     "number": "LM0132",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M07",
     "position": "position-32",
     "status": "active",
@@ -2196,7 +2196,7 @@ export const lockers = [
     "id": "LM0133",
     "number": "LM0133",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M08",
     "position": "position-33",
     "status": "active",
@@ -2213,7 +2213,7 @@ export const lockers = [
     "id": "LM0134",
     "number": "LM0134",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M09",
     "position": "position-34",
     "status": "active",
@@ -2230,7 +2230,7 @@ export const lockers = [
     "id": "LM0135",
     "number": "LM0135",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M10",
     "position": "position-35",
     "status": "active",
@@ -2247,7 +2247,7 @@ export const lockers = [
     "id": "LM0136",
     "number": "LM0136",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M11",
     "position": "position-36",
     "status": "active",
@@ -2264,7 +2264,7 @@ export const lockers = [
     "id": "LM0137",
     "number": "LM0137",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M12",
     "position": "position-37",
     "status": "active",
@@ -2281,7 +2281,7 @@ export const lockers = [
     "id": "LM0138",
     "number": "LM0138",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M13",
     "position": "position-38",
     "status": "active",
@@ -2298,7 +2298,7 @@ export const lockers = [
     "id": "LM0139",
     "number": "LM0139",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M14",
     "position": "position-39",
     "status": "active",
@@ -2315,7 +2315,7 @@ export const lockers = [
     "id": "LM0140",
     "number": "LM0140",
     "vehicleId": "VEH-003",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-003-M15",
     "position": "position-40",
     "status": "active",
@@ -2332,7 +2332,7 @@ export const lockers = [
     "id": "LL0141",
     "number": "LL0141",
     "vehicleId": "VEH-003",
-    "size": "large",
+    "size": "small",
     "location": "VEH-003-L01",
     "position": "position-41",
     "status": "active",
@@ -2350,7 +2350,7 @@ export const lockers = [
     "id": "LL0142",
     "number": "LL0142",
     "vehicleId": "VEH-003",
-    "size": "large",
+    "size": "small",
     "location": "VEH-003-L02",
     "position": "position-42",
     "status": "active",
@@ -2368,7 +2368,7 @@ export const lockers = [
     "id": "LL0143",
     "number": "LL0143",
     "vehicleId": "VEH-003",
-    "size": "large",
+    "size": "small",
     "location": "VEH-003-L03",
     "position": "position-43",
     "status": "active",
@@ -2386,7 +2386,7 @@ export const lockers = [
     "id": "LL0144",
     "number": "LL0144",
     "vehicleId": "VEH-003",
-    "size": "large",
+    "size": "small",
     "location": "VEH-003-L04",
     "position": "position-44",
     "status": "active",
@@ -2404,7 +2404,7 @@ export const lockers = [
     "id": "LL0145",
     "number": "LL0145",
     "vehicleId": "VEH-003",
-    "size": "large",
+    "size": "small",
     "location": "VEH-003-L05",
     "position": "position-45",
     "status": "active",
@@ -2422,7 +2422,7 @@ export const lockers = [
     "id": "LL0146",
     "number": "LL0146",
     "vehicleId": "VEH-003",
-    "size": "large",
+    "size": "small",
     "location": "VEH-003-L06",
     "position": "position-46",
     "status": "active",
@@ -2440,7 +2440,7 @@ export const lockers = [
     "id": "LL0147",
     "number": "LL0147",
     "vehicleId": "VEH-003",
-    "size": "large",
+    "size": "small",
     "location": "VEH-003-L07",
     "position": "position-47",
     "status": "active",
@@ -2458,7 +2458,7 @@ export const lockers = [
     "id": "LL0148",
     "number": "LL0148",
     "vehicleId": "VEH-003",
-    "size": "large",
+    "size": "small",
     "location": "VEH-003-L08",
     "position": "position-48",
     "status": "active",
@@ -2476,7 +2476,7 @@ export const lockers = [
     "id": "LL0149",
     "number": "LL0149",
     "vehicleId": "VEH-003",
-    "size": "large",
+    "size": "small",
     "location": "VEH-003-L09",
     "position": "position-49",
     "status": "active",
@@ -2494,7 +2494,7 @@ export const lockers = [
     "id": "LL0150",
     "number": "LL0150",
     "vehicleId": "VEH-003",
-    "size": "large",
+    "size": "small",
     "location": "VEH-003-L10",
     "position": "position-50",
     "status": "active",
@@ -2912,7 +2912,7 @@ export const lockers = [
     "id": "LM0176",
     "number": "LM0176",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M01",
     "position": "position-26",
     "status": "active",
@@ -2929,7 +2929,7 @@ export const lockers = [
     "id": "LM0177",
     "number": "LM0177",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M02",
     "position": "position-27",
     "status": "active",
@@ -2946,7 +2946,7 @@ export const lockers = [
     "id": "LM0178",
     "number": "LM0178",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M03",
     "position": "position-28",
     "status": "active",
@@ -2963,7 +2963,7 @@ export const lockers = [
     "id": "LM0179",
     "number": "LM0179",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M04",
     "position": "position-29",
     "status": "active",
@@ -2980,7 +2980,7 @@ export const lockers = [
     "id": "LM0180",
     "number": "LM0180",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M05",
     "position": "position-30",
     "status": "active",
@@ -2997,7 +2997,7 @@ export const lockers = [
     "id": "LM0181",
     "number": "LM0181",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M06",
     "position": "position-31",
     "status": "active",
@@ -3014,7 +3014,7 @@ export const lockers = [
     "id": "LM0182",
     "number": "LM0182",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M07",
     "position": "position-32",
     "status": "active",
@@ -3031,7 +3031,7 @@ export const lockers = [
     "id": "LM0183",
     "number": "LM0183",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M08",
     "position": "position-33",
     "status": "active",
@@ -3048,7 +3048,7 @@ export const lockers = [
     "id": "LM0184",
     "number": "LM0184",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M09",
     "position": "position-34",
     "status": "active",
@@ -3065,7 +3065,7 @@ export const lockers = [
     "id": "LM0185",
     "number": "LM0185",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M10",
     "position": "position-35",
     "status": "active",
@@ -3082,7 +3082,7 @@ export const lockers = [
     "id": "LM0186",
     "number": "LM0186",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M11",
     "position": "position-36",
     "status": "active",
@@ -3099,7 +3099,7 @@ export const lockers = [
     "id": "LM0187",
     "number": "LM0187",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M12",
     "position": "position-37",
     "status": "active",
@@ -3116,7 +3116,7 @@ export const lockers = [
     "id": "LM0188",
     "number": "LM0188",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M13",
     "position": "position-38",
     "status": "active",
@@ -3133,7 +3133,7 @@ export const lockers = [
     "id": "LM0189",
     "number": "LM0189",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M14",
     "position": "position-39",
     "status": "active",
@@ -3150,7 +3150,7 @@ export const lockers = [
     "id": "LM0190",
     "number": "LM0190",
     "vehicleId": "VEH-004",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-004-M15",
     "position": "position-40",
     "status": "active",
@@ -3167,7 +3167,7 @@ export const lockers = [
     "id": "LL0191",
     "number": "LL0191",
     "vehicleId": "VEH-004",
-    "size": "large",
+    "size": "small",
     "location": "VEH-004-L01",
     "position": "position-41",
     "status": "active",
@@ -3185,7 +3185,7 @@ export const lockers = [
     "id": "LL0192",
     "number": "LL0192",
     "vehicleId": "VEH-004",
-    "size": "large",
+    "size": "small",
     "location": "VEH-004-L02",
     "position": "position-42",
     "status": "active",
@@ -3203,7 +3203,7 @@ export const lockers = [
     "id": "LL0193",
     "number": "LL0193",
     "vehicleId": "VEH-004",
-    "size": "large",
+    "size": "small",
     "location": "VEH-004-L03",
     "position": "position-43",
     "status": "active",
@@ -3221,7 +3221,7 @@ export const lockers = [
     "id": "LL0194",
     "number": "LL0194",
     "vehicleId": "VEH-004",
-    "size": "large",
+    "size": "small",
     "location": "VEH-004-L04",
     "position": "position-44",
     "status": "active",
@@ -3239,7 +3239,7 @@ export const lockers = [
     "id": "LL0195",
     "number": "LL0195",
     "vehicleId": "VEH-004",
-    "size": "large",
+    "size": "small",
     "location": "VEH-004-L05",
     "position": "position-45",
     "status": "active",
@@ -3257,7 +3257,7 @@ export const lockers = [
     "id": "LL0196",
     "number": "LL0196",
     "vehicleId": "VEH-004",
-    "size": "large",
+    "size": "small",
     "location": "VEH-004-L06",
     "position": "position-46",
     "status": "active",
@@ -3275,7 +3275,7 @@ export const lockers = [
     "id": "LL0197",
     "number": "LL0197",
     "vehicleId": "VEH-004",
-    "size": "large",
+    "size": "small",
     "location": "VEH-004-L07",
     "position": "position-47",
     "status": "active",
@@ -3293,7 +3293,7 @@ export const lockers = [
     "id": "LL0198",
     "number": "LL0198",
     "vehicleId": "VEH-004",
-    "size": "large",
+    "size": "small",
     "location": "VEH-004-L08",
     "position": "position-48",
     "status": "active",
@@ -3311,7 +3311,7 @@ export const lockers = [
     "id": "LL0199",
     "number": "LL0199",
     "vehicleId": "VEH-004",
-    "size": "large",
+    "size": "small",
     "location": "VEH-004-L09",
     "position": "position-49",
     "status": "active",
@@ -3329,7 +3329,7 @@ export const lockers = [
     "id": "LL0200",
     "number": "LL0200",
     "vehicleId": "VEH-004",
-    "size": "large",
+    "size": "small",
     "location": "VEH-004-L10",
     "position": "position-50",
     "status": "active",
@@ -3747,7 +3747,7 @@ export const lockers = [
     "id": "LM0226",
     "number": "LM0226",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M01",
     "position": "position-26",
     "status": "active",
@@ -3764,7 +3764,7 @@ export const lockers = [
     "id": "LM0227",
     "number": "LM0227",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M02",
     "position": "position-27",
     "status": "active",
@@ -3781,7 +3781,7 @@ export const lockers = [
     "id": "LM0228",
     "number": "LM0228",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M03",
     "position": "position-28",
     "status": "active",
@@ -3798,7 +3798,7 @@ export const lockers = [
     "id": "LM0229",
     "number": "LM0229",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M04",
     "position": "position-29",
     "status": "active",
@@ -3815,7 +3815,7 @@ export const lockers = [
     "id": "LM0230",
     "number": "LM0230",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M05",
     "position": "position-30",
     "status": "active",
@@ -3832,7 +3832,7 @@ export const lockers = [
     "id": "LM0231",
     "number": "LM0231",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M06",
     "position": "position-31",
     "status": "active",
@@ -3849,7 +3849,7 @@ export const lockers = [
     "id": "LM0232",
     "number": "LM0232",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M07",
     "position": "position-32",
     "status": "active",
@@ -3866,7 +3866,7 @@ export const lockers = [
     "id": "LM0233",
     "number": "LM0233",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M08",
     "position": "position-33",
     "status": "active",
@@ -3883,7 +3883,7 @@ export const lockers = [
     "id": "LM0234",
     "number": "LM0234",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M09",
     "position": "position-34",
     "status": "active",
@@ -3900,7 +3900,7 @@ export const lockers = [
     "id": "LM0235",
     "number": "LM0235",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M10",
     "position": "position-35",
     "status": "active",
@@ -3917,7 +3917,7 @@ export const lockers = [
     "id": "LM0236",
     "number": "LM0236",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M11",
     "position": "position-36",
     "status": "active",
@@ -3934,7 +3934,7 @@ export const lockers = [
     "id": "LM0237",
     "number": "LM0237",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M12",
     "position": "position-37",
     "status": "active",
@@ -3951,7 +3951,7 @@ export const lockers = [
     "id": "LM0238",
     "number": "LM0238",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M13",
     "position": "position-38",
     "status": "active",
@@ -3968,7 +3968,7 @@ export const lockers = [
     "id": "LM0239",
     "number": "LM0239",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M14",
     "position": "position-39",
     "status": "active",
@@ -3985,7 +3985,7 @@ export const lockers = [
     "id": "LM0240",
     "number": "LM0240",
     "vehicleId": "VEH-005",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-005-M15",
     "position": "position-40",
     "status": "active",
@@ -4002,7 +4002,7 @@ export const lockers = [
     "id": "LL0241",
     "number": "LL0241",
     "vehicleId": "VEH-005",
-    "size": "large",
+    "size": "small",
     "location": "VEH-005-L01",
     "position": "position-41",
     "status": "active",
@@ -4020,7 +4020,7 @@ export const lockers = [
     "id": "LL0242",
     "number": "LL0242",
     "vehicleId": "VEH-005",
-    "size": "large",
+    "size": "small",
     "location": "VEH-005-L02",
     "position": "position-42",
     "status": "active",
@@ -4038,7 +4038,7 @@ export const lockers = [
     "id": "LL0243",
     "number": "LL0243",
     "vehicleId": "VEH-005",
-    "size": "large",
+    "size": "small",
     "location": "VEH-005-L03",
     "position": "position-43",
     "status": "active",
@@ -4056,7 +4056,7 @@ export const lockers = [
     "id": "LL0244",
     "number": "LL0244",
     "vehicleId": "VEH-005",
-    "size": "large",
+    "size": "small",
     "location": "VEH-005-L04",
     "position": "position-44",
     "status": "active",
@@ -4074,7 +4074,7 @@ export const lockers = [
     "id": "LL0245",
     "number": "LL0245",
     "vehicleId": "VEH-005",
-    "size": "large",
+    "size": "small",
     "location": "VEH-005-L05",
     "position": "position-45",
     "status": "active",
@@ -4092,7 +4092,7 @@ export const lockers = [
     "id": "LL0246",
     "number": "LL0246",
     "vehicleId": "VEH-005",
-    "size": "large",
+    "size": "small",
     "location": "VEH-005-L06",
     "position": "position-46",
     "status": "active",
@@ -4110,7 +4110,7 @@ export const lockers = [
     "id": "LL0247",
     "number": "LL0247",
     "vehicleId": "VEH-005",
-    "size": "large",
+    "size": "small",
     "location": "VEH-005-L07",
     "position": "position-47",
     "status": "active",
@@ -4128,7 +4128,7 @@ export const lockers = [
     "id": "LL0248",
     "number": "LL0248",
     "vehicleId": "VEH-005",
-    "size": "large",
+    "size": "small",
     "location": "VEH-005-L08",
     "position": "position-48",
     "status": "active",
@@ -4146,7 +4146,7 @@ export const lockers = [
     "id": "LL0249",
     "number": "LL0249",
     "vehicleId": "VEH-005",
-    "size": "large",
+    "size": "small",
     "location": "VEH-005-L09",
     "position": "position-49",
     "status": "active",
@@ -4164,7 +4164,7 @@ export const lockers = [
     "id": "LL0250",
     "number": "LL0250",
     "vehicleId": "VEH-005",
-    "size": "large",
+    "size": "small",
     "location": "VEH-005-L10",
     "position": "position-50",
     "status": "active",
@@ -4582,7 +4582,7 @@ export const lockers = [
     "id": "LM0276",
     "number": "LM0276",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M01",
     "position": "position-26",
     "status": "active",
@@ -4599,7 +4599,7 @@ export const lockers = [
     "id": "LM0277",
     "number": "LM0277",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M02",
     "position": "position-27",
     "status": "active",
@@ -4616,7 +4616,7 @@ export const lockers = [
     "id": "LM0278",
     "number": "LM0278",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M03",
     "position": "position-28",
     "status": "active",
@@ -4633,7 +4633,7 @@ export const lockers = [
     "id": "LM0279",
     "number": "LM0279",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M04",
     "position": "position-29",
     "status": "active",
@@ -4650,7 +4650,7 @@ export const lockers = [
     "id": "LM0280",
     "number": "LM0280",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M05",
     "position": "position-30",
     "status": "active",
@@ -4667,7 +4667,7 @@ export const lockers = [
     "id": "LM0281",
     "number": "LM0281",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M06",
     "position": "position-31",
     "status": "active",
@@ -4684,7 +4684,7 @@ export const lockers = [
     "id": "LM0282",
     "number": "LM0282",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M07",
     "position": "position-32",
     "status": "active",
@@ -4701,7 +4701,7 @@ export const lockers = [
     "id": "LM0283",
     "number": "LM0283",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M08",
     "position": "position-33",
     "status": "active",
@@ -4718,7 +4718,7 @@ export const lockers = [
     "id": "LM0284",
     "number": "LM0284",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M09",
     "position": "position-34",
     "status": "active",
@@ -4735,7 +4735,7 @@ export const lockers = [
     "id": "LM0285",
     "number": "LM0285",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M10",
     "position": "position-35",
     "status": "active",
@@ -4752,7 +4752,7 @@ export const lockers = [
     "id": "LM0286",
     "number": "LM0286",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M11",
     "position": "position-36",
     "status": "active",
@@ -4769,7 +4769,7 @@ export const lockers = [
     "id": "LM0287",
     "number": "LM0287",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M12",
     "position": "position-37",
     "status": "active",
@@ -4786,7 +4786,7 @@ export const lockers = [
     "id": "LM0288",
     "number": "LM0288",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M13",
     "position": "position-38",
     "status": "active",
@@ -4803,7 +4803,7 @@ export const lockers = [
     "id": "LM0289",
     "number": "LM0289",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M14",
     "position": "position-39",
     "status": "active",
@@ -4820,7 +4820,7 @@ export const lockers = [
     "id": "LM0290",
     "number": "LM0290",
     "vehicleId": "VEH-006",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-006-M15",
     "position": "position-40",
     "status": "active",
@@ -4837,7 +4837,7 @@ export const lockers = [
     "id": "LL0291",
     "number": "LL0291",
     "vehicleId": "VEH-006",
-    "size": "large",
+    "size": "small",
     "location": "VEH-006-L01",
     "position": "position-41",
     "status": "active",
@@ -4855,7 +4855,7 @@ export const lockers = [
     "id": "LL0292",
     "number": "LL0292",
     "vehicleId": "VEH-006",
-    "size": "large",
+    "size": "small",
     "location": "VEH-006-L02",
     "position": "position-42",
     "status": "active",
@@ -4873,7 +4873,7 @@ export const lockers = [
     "id": "LL0293",
     "number": "LL0293",
     "vehicleId": "VEH-006",
-    "size": "large",
+    "size": "small",
     "location": "VEH-006-L03",
     "position": "position-43",
     "status": "active",
@@ -4891,7 +4891,7 @@ export const lockers = [
     "id": "LL0294",
     "number": "LL0294",
     "vehicleId": "VEH-006",
-    "size": "large",
+    "size": "small",
     "location": "VEH-006-L04",
     "position": "position-44",
     "status": "active",
@@ -4909,7 +4909,7 @@ export const lockers = [
     "id": "LL0295",
     "number": "LL0295",
     "vehicleId": "VEH-006",
-    "size": "large",
+    "size": "small",
     "location": "VEH-006-L05",
     "position": "position-45",
     "status": "active",
@@ -4927,7 +4927,7 @@ export const lockers = [
     "id": "LL0296",
     "number": "LL0296",
     "vehicleId": "VEH-006",
-    "size": "large",
+    "size": "small",
     "location": "VEH-006-L06",
     "position": "position-46",
     "status": "active",
@@ -4945,7 +4945,7 @@ export const lockers = [
     "id": "LL0297",
     "number": "LL0297",
     "vehicleId": "VEH-006",
-    "size": "large",
+    "size": "small",
     "location": "VEH-006-L07",
     "position": "position-47",
     "status": "active",
@@ -4963,7 +4963,7 @@ export const lockers = [
     "id": "LL0298",
     "number": "LL0298",
     "vehicleId": "VEH-006",
-    "size": "large",
+    "size": "small",
     "location": "VEH-006-L08",
     "position": "position-48",
     "status": "active",
@@ -4981,7 +4981,7 @@ export const lockers = [
     "id": "LL0299",
     "number": "LL0299",
     "vehicleId": "VEH-006",
-    "size": "large",
+    "size": "small",
     "location": "VEH-006-L09",
     "position": "position-49",
     "status": "active",
@@ -4999,7 +4999,7 @@ export const lockers = [
     "id": "LL0300",
     "number": "LL0300",
     "vehicleId": "VEH-006",
-    "size": "large",
+    "size": "small",
     "location": "VEH-006-L10",
     "position": "position-50",
     "status": "active",
@@ -5417,7 +5417,7 @@ export const lockers = [
     "id": "LM0326",
     "number": "LM0326",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M01",
     "position": "position-26",
     "status": "active",
@@ -5434,7 +5434,7 @@ export const lockers = [
     "id": "LM0327",
     "number": "LM0327",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M02",
     "position": "position-27",
     "status": "active",
@@ -5451,7 +5451,7 @@ export const lockers = [
     "id": "LM0328",
     "number": "LM0328",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M03",
     "position": "position-28",
     "status": "active",
@@ -5468,7 +5468,7 @@ export const lockers = [
     "id": "LM0329",
     "number": "LM0329",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M04",
     "position": "position-29",
     "status": "active",
@@ -5485,7 +5485,7 @@ export const lockers = [
     "id": "LM0330",
     "number": "LM0330",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M05",
     "position": "position-30",
     "status": "active",
@@ -5502,7 +5502,7 @@ export const lockers = [
     "id": "LM0331",
     "number": "LM0331",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M06",
     "position": "position-31",
     "status": "active",
@@ -5519,7 +5519,7 @@ export const lockers = [
     "id": "LM0332",
     "number": "LM0332",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M07",
     "position": "position-32",
     "status": "active",
@@ -5536,7 +5536,7 @@ export const lockers = [
     "id": "LM0333",
     "number": "LM0333",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M08",
     "position": "position-33",
     "status": "active",
@@ -5553,7 +5553,7 @@ export const lockers = [
     "id": "LM0334",
     "number": "LM0334",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M09",
     "position": "position-34",
     "status": "active",
@@ -5570,7 +5570,7 @@ export const lockers = [
     "id": "LM0335",
     "number": "LM0335",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M10",
     "position": "position-35",
     "status": "active",
@@ -5587,7 +5587,7 @@ export const lockers = [
     "id": "LM0336",
     "number": "LM0336",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M11",
     "position": "position-36",
     "status": "active",
@@ -5604,7 +5604,7 @@ export const lockers = [
     "id": "LM0337",
     "number": "LM0337",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M12",
     "position": "position-37",
     "status": "active",
@@ -5621,7 +5621,7 @@ export const lockers = [
     "id": "LM0338",
     "number": "LM0338",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M13",
     "position": "position-38",
     "status": "active",
@@ -5638,7 +5638,7 @@ export const lockers = [
     "id": "LM0339",
     "number": "LM0339",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M14",
     "position": "position-39",
     "status": "active",
@@ -5655,7 +5655,7 @@ export const lockers = [
     "id": "LM0340",
     "number": "LM0340",
     "vehicleId": "VEH-007",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-007-M15",
     "position": "position-40",
     "status": "active",
@@ -5672,7 +5672,7 @@ export const lockers = [
     "id": "LL0341",
     "number": "LL0341",
     "vehicleId": "VEH-007",
-    "size": "large",
+    "size": "small",
     "location": "VEH-007-L01",
     "position": "position-41",
     "status": "active",
@@ -5690,7 +5690,7 @@ export const lockers = [
     "id": "LL0342",
     "number": "LL0342",
     "vehicleId": "VEH-007",
-    "size": "large",
+    "size": "small",
     "location": "VEH-007-L02",
     "position": "position-42",
     "status": "active",
@@ -5708,7 +5708,7 @@ export const lockers = [
     "id": "LL0343",
     "number": "LL0343",
     "vehicleId": "VEH-007",
-    "size": "large",
+    "size": "small",
     "location": "VEH-007-L03",
     "position": "position-43",
     "status": "active",
@@ -5726,7 +5726,7 @@ export const lockers = [
     "id": "LL0344",
     "number": "LL0344",
     "vehicleId": "VEH-007",
-    "size": "large",
+    "size": "small",
     "location": "VEH-007-L04",
     "position": "position-44",
     "status": "active",
@@ -5744,7 +5744,7 @@ export const lockers = [
     "id": "LL0345",
     "number": "LL0345",
     "vehicleId": "VEH-007",
-    "size": "large",
+    "size": "small",
     "location": "VEH-007-L05",
     "position": "position-45",
     "status": "active",
@@ -5762,7 +5762,7 @@ export const lockers = [
     "id": "LL0346",
     "number": "LL0346",
     "vehicleId": "VEH-007",
-    "size": "large",
+    "size": "small",
     "location": "VEH-007-L06",
     "position": "position-46",
     "status": "active",
@@ -5780,7 +5780,7 @@ export const lockers = [
     "id": "LL0347",
     "number": "LL0347",
     "vehicleId": "VEH-007",
-    "size": "large",
+    "size": "small",
     "location": "VEH-007-L07",
     "position": "position-47",
     "status": "active",
@@ -5798,7 +5798,7 @@ export const lockers = [
     "id": "LL0348",
     "number": "LL0348",
     "vehicleId": "VEH-007",
-    "size": "large",
+    "size": "small",
     "location": "VEH-007-L08",
     "position": "position-48",
     "status": "active",
@@ -5816,7 +5816,7 @@ export const lockers = [
     "id": "LL0349",
     "number": "LL0349",
     "vehicleId": "VEH-007",
-    "size": "large",
+    "size": "small",
     "location": "VEH-007-L09",
     "position": "position-49",
     "status": "active",
@@ -5834,7 +5834,7 @@ export const lockers = [
     "id": "LL0350",
     "number": "LL0350",
     "vehicleId": "VEH-007",
-    "size": "large",
+    "size": "small",
     "location": "VEH-007-L10",
     "position": "position-50",
     "status": "active",
@@ -6252,7 +6252,7 @@ export const lockers = [
     "id": "LM0376",
     "number": "LM0376",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M01",
     "position": "position-26",
     "status": "active",
@@ -6269,7 +6269,7 @@ export const lockers = [
     "id": "LM0377",
     "number": "LM0377",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M02",
     "position": "position-27",
     "status": "active",
@@ -6286,7 +6286,7 @@ export const lockers = [
     "id": "LM0378",
     "number": "LM0378",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M03",
     "position": "position-28",
     "status": "active",
@@ -6303,7 +6303,7 @@ export const lockers = [
     "id": "LM0379",
     "number": "LM0379",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M04",
     "position": "position-29",
     "status": "active",
@@ -6320,7 +6320,7 @@ export const lockers = [
     "id": "LM0380",
     "number": "LM0380",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M05",
     "position": "position-30",
     "status": "active",
@@ -6337,7 +6337,7 @@ export const lockers = [
     "id": "LM0381",
     "number": "LM0381",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M06",
     "position": "position-31",
     "status": "active",
@@ -6354,7 +6354,7 @@ export const lockers = [
     "id": "LM0382",
     "number": "LM0382",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M07",
     "position": "position-32",
     "status": "active",
@@ -6371,7 +6371,7 @@ export const lockers = [
     "id": "LM0383",
     "number": "LM0383",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M08",
     "position": "position-33",
     "status": "active",
@@ -6388,7 +6388,7 @@ export const lockers = [
     "id": "LM0384",
     "number": "LM0384",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M09",
     "position": "position-34",
     "status": "active",
@@ -6405,7 +6405,7 @@ export const lockers = [
     "id": "LM0385",
     "number": "LM0385",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M10",
     "position": "position-35",
     "status": "active",
@@ -6422,7 +6422,7 @@ export const lockers = [
     "id": "LM0386",
     "number": "LM0386",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M11",
     "position": "position-36",
     "status": "active",
@@ -6439,7 +6439,7 @@ export const lockers = [
     "id": "LM0387",
     "number": "LM0387",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M12",
     "position": "position-37",
     "status": "active",
@@ -6456,7 +6456,7 @@ export const lockers = [
     "id": "LM0388",
     "number": "LM0388",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M13",
     "position": "position-38",
     "status": "active",
@@ -6473,7 +6473,7 @@ export const lockers = [
     "id": "LM0389",
     "number": "LM0389",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M14",
     "position": "position-39",
     "status": "active",
@@ -6490,7 +6490,7 @@ export const lockers = [
     "id": "LM0390",
     "number": "LM0390",
     "vehicleId": "VEH-008",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-008-M15",
     "position": "position-40",
     "status": "active",
@@ -6507,7 +6507,7 @@ export const lockers = [
     "id": "LL0391",
     "number": "LL0391",
     "vehicleId": "VEH-008",
-    "size": "large",
+    "size": "small",
     "location": "VEH-008-L01",
     "position": "position-41",
     "status": "active",
@@ -6525,7 +6525,7 @@ export const lockers = [
     "id": "LL0392",
     "number": "LL0392",
     "vehicleId": "VEH-008",
-    "size": "large",
+    "size": "small",
     "location": "VEH-008-L02",
     "position": "position-42",
     "status": "active",
@@ -6543,7 +6543,7 @@ export const lockers = [
     "id": "LL0393",
     "number": "LL0393",
     "vehicleId": "VEH-008",
-    "size": "large",
+    "size": "small",
     "location": "VEH-008-L03",
     "position": "position-43",
     "status": "active",
@@ -6561,7 +6561,7 @@ export const lockers = [
     "id": "LL0394",
     "number": "LL0394",
     "vehicleId": "VEH-008",
-    "size": "large",
+    "size": "small",
     "location": "VEH-008-L04",
     "position": "position-44",
     "status": "active",
@@ -6579,7 +6579,7 @@ export const lockers = [
     "id": "LL0395",
     "number": "LL0395",
     "vehicleId": "VEH-008",
-    "size": "large",
+    "size": "small",
     "location": "VEH-008-L05",
     "position": "position-45",
     "status": "active",
@@ -6597,7 +6597,7 @@ export const lockers = [
     "id": "LL0396",
     "number": "LL0396",
     "vehicleId": "VEH-008",
-    "size": "large",
+    "size": "small",
     "location": "VEH-008-L06",
     "position": "position-46",
     "status": "active",
@@ -6615,7 +6615,7 @@ export const lockers = [
     "id": "LL0397",
     "number": "LL0397",
     "vehicleId": "VEH-008",
-    "size": "large",
+    "size": "small",
     "location": "VEH-008-L07",
     "position": "position-47",
     "status": "active",
@@ -6633,7 +6633,7 @@ export const lockers = [
     "id": "LL0398",
     "number": "LL0398",
     "vehicleId": "VEH-008",
-    "size": "large",
+    "size": "small",
     "location": "VEH-008-L08",
     "position": "position-48",
     "status": "active",
@@ -6651,7 +6651,7 @@ export const lockers = [
     "id": "LL0399",
     "number": "LL0399",
     "vehicleId": "VEH-008",
-    "size": "large",
+    "size": "small",
     "location": "VEH-008-L09",
     "position": "position-49",
     "status": "active",
@@ -6669,7 +6669,7 @@ export const lockers = [
     "id": "LL0400",
     "number": "LL0400",
     "vehicleId": "VEH-008",
-    "size": "large",
+    "size": "small",
     "location": "VEH-008-L10",
     "position": "position-50",
     "status": "active",
@@ -7087,7 +7087,7 @@ export const lockers = [
     "id": "LM0426",
     "number": "LM0426",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M01",
     "position": "position-26",
     "status": "active",
@@ -7104,7 +7104,7 @@ export const lockers = [
     "id": "LM0427",
     "number": "LM0427",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M02",
     "position": "position-27",
     "status": "active",
@@ -7121,7 +7121,7 @@ export const lockers = [
     "id": "LM0428",
     "number": "LM0428",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M03",
     "position": "position-28",
     "status": "active",
@@ -7138,7 +7138,7 @@ export const lockers = [
     "id": "LM0429",
     "number": "LM0429",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M04",
     "position": "position-29",
     "status": "active",
@@ -7155,7 +7155,7 @@ export const lockers = [
     "id": "LM0430",
     "number": "LM0430",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M05",
     "position": "position-30",
     "status": "active",
@@ -7172,7 +7172,7 @@ export const lockers = [
     "id": "LM0431",
     "number": "LM0431",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M06",
     "position": "position-31",
     "status": "active",
@@ -7189,7 +7189,7 @@ export const lockers = [
     "id": "LM0432",
     "number": "LM0432",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M07",
     "position": "position-32",
     "status": "active",
@@ -7206,7 +7206,7 @@ export const lockers = [
     "id": "LM0433",
     "number": "LM0433",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M08",
     "position": "position-33",
     "status": "active",
@@ -7223,7 +7223,7 @@ export const lockers = [
     "id": "LM0434",
     "number": "LM0434",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M09",
     "position": "position-34",
     "status": "active",
@@ -7240,7 +7240,7 @@ export const lockers = [
     "id": "LM0435",
     "number": "LM0435",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M10",
     "position": "position-35",
     "status": "active",
@@ -7257,7 +7257,7 @@ export const lockers = [
     "id": "LM0436",
     "number": "LM0436",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M11",
     "position": "position-36",
     "status": "active",
@@ -7274,7 +7274,7 @@ export const lockers = [
     "id": "LM0437",
     "number": "LM0437",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M12",
     "position": "position-37",
     "status": "active",
@@ -7291,7 +7291,7 @@ export const lockers = [
     "id": "LM0438",
     "number": "LM0438",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M13",
     "position": "position-38",
     "status": "active",
@@ -7308,7 +7308,7 @@ export const lockers = [
     "id": "LM0439",
     "number": "LM0439",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M14",
     "position": "position-39",
     "status": "active",
@@ -7325,7 +7325,7 @@ export const lockers = [
     "id": "LM0440",
     "number": "LM0440",
     "vehicleId": "VEH-009",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-009-M15",
     "position": "position-40",
     "status": "active",
@@ -7342,7 +7342,7 @@ export const lockers = [
     "id": "LL0441",
     "number": "LL0441",
     "vehicleId": "VEH-009",
-    "size": "large",
+    "size": "small",
     "location": "VEH-009-L01",
     "position": "position-41",
     "status": "active",
@@ -7360,7 +7360,7 @@ export const lockers = [
     "id": "LL0442",
     "number": "LL0442",
     "vehicleId": "VEH-009",
-    "size": "large",
+    "size": "small",
     "location": "VEH-009-L02",
     "position": "position-42",
     "status": "active",
@@ -7378,7 +7378,7 @@ export const lockers = [
     "id": "LL0443",
     "number": "LL0443",
     "vehicleId": "VEH-009",
-    "size": "large",
+    "size": "small",
     "location": "VEH-009-L03",
     "position": "position-43",
     "status": "active",
@@ -7396,7 +7396,7 @@ export const lockers = [
     "id": "LL0444",
     "number": "LL0444",
     "vehicleId": "VEH-009",
-    "size": "large",
+    "size": "small",
     "location": "VEH-009-L04",
     "position": "position-44",
     "status": "active",
@@ -7414,7 +7414,7 @@ export const lockers = [
     "id": "LL0445",
     "number": "LL0445",
     "vehicleId": "VEH-009",
-    "size": "large",
+    "size": "small",
     "location": "VEH-009-L05",
     "position": "position-45",
     "status": "active",
@@ -7432,7 +7432,7 @@ export const lockers = [
     "id": "LL0446",
     "number": "LL0446",
     "vehicleId": "VEH-009",
-    "size": "large",
+    "size": "small",
     "location": "VEH-009-L06",
     "position": "position-46",
     "status": "active",
@@ -7450,7 +7450,7 @@ export const lockers = [
     "id": "LL0447",
     "number": "LL0447",
     "vehicleId": "VEH-009",
-    "size": "large",
+    "size": "small",
     "location": "VEH-009-L07",
     "position": "position-47",
     "status": "active",
@@ -7468,7 +7468,7 @@ export const lockers = [
     "id": "LL0448",
     "number": "LL0448",
     "vehicleId": "VEH-009",
-    "size": "large",
+    "size": "small",
     "location": "VEH-009-L08",
     "position": "position-48",
     "status": "active",
@@ -7486,7 +7486,7 @@ export const lockers = [
     "id": "LL0449",
     "number": "LL0449",
     "vehicleId": "VEH-009",
-    "size": "large",
+    "size": "small",
     "location": "VEH-009-L09",
     "position": "position-49",
     "status": "active",
@@ -7504,7 +7504,7 @@ export const lockers = [
     "id": "LL0450",
     "number": "LL0450",
     "vehicleId": "VEH-009",
-    "size": "large",
+    "size": "small",
     "location": "VEH-009-L10",
     "position": "position-50",
     "status": "active",
@@ -7922,7 +7922,7 @@ export const lockers = [
     "id": "LM0476",
     "number": "LM0476",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M01",
     "position": "position-26",
     "status": "active",
@@ -7939,7 +7939,7 @@ export const lockers = [
     "id": "LM0477",
     "number": "LM0477",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M02",
     "position": "position-27",
     "status": "active",
@@ -7956,7 +7956,7 @@ export const lockers = [
     "id": "LM0478",
     "number": "LM0478",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M03",
     "position": "position-28",
     "status": "active",
@@ -7973,7 +7973,7 @@ export const lockers = [
     "id": "LM0479",
     "number": "LM0479",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M04",
     "position": "position-29",
     "status": "active",
@@ -7990,7 +7990,7 @@ export const lockers = [
     "id": "LM0480",
     "number": "LM0480",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M05",
     "position": "position-30",
     "status": "active",
@@ -8007,7 +8007,7 @@ export const lockers = [
     "id": "LM0481",
     "number": "LM0481",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M06",
     "position": "position-31",
     "status": "active",
@@ -8024,7 +8024,7 @@ export const lockers = [
     "id": "LM0482",
     "number": "LM0482",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M07",
     "position": "position-32",
     "status": "active",
@@ -8041,7 +8041,7 @@ export const lockers = [
     "id": "LM0483",
     "number": "LM0483",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M08",
     "position": "position-33",
     "status": "active",
@@ -8058,7 +8058,7 @@ export const lockers = [
     "id": "LM0484",
     "number": "LM0484",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M09",
     "position": "position-34",
     "status": "active",
@@ -8075,7 +8075,7 @@ export const lockers = [
     "id": "LM0485",
     "number": "LM0485",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M10",
     "position": "position-35",
     "status": "active",
@@ -8092,7 +8092,7 @@ export const lockers = [
     "id": "LM0486",
     "number": "LM0486",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M11",
     "position": "position-36",
     "status": "active",
@@ -8109,7 +8109,7 @@ export const lockers = [
     "id": "LM0487",
     "number": "LM0487",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M12",
     "position": "position-37",
     "status": "active",
@@ -8126,7 +8126,7 @@ export const lockers = [
     "id": "LM0488",
     "number": "LM0488",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M13",
     "position": "position-38",
     "status": "active",
@@ -8143,7 +8143,7 @@ export const lockers = [
     "id": "LM0489",
     "number": "LM0489",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M14",
     "position": "position-39",
     "status": "active",
@@ -8160,7 +8160,7 @@ export const lockers = [
     "id": "LM0490",
     "number": "LM0490",
     "vehicleId": "VEH-010",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-010-M15",
     "position": "position-40",
     "status": "active",
@@ -8177,7 +8177,7 @@ export const lockers = [
     "id": "LL0491",
     "number": "LL0491",
     "vehicleId": "VEH-010",
-    "size": "large",
+    "size": "small",
     "location": "VEH-010-L01",
     "position": "position-41",
     "status": "active",
@@ -8195,7 +8195,7 @@ export const lockers = [
     "id": "LL0492",
     "number": "LL0492",
     "vehicleId": "VEH-010",
-    "size": "large",
+    "size": "small",
     "location": "VEH-010-L02",
     "position": "position-42",
     "status": "active",
@@ -8213,7 +8213,7 @@ export const lockers = [
     "id": "LL0493",
     "number": "LL0493",
     "vehicleId": "VEH-010",
-    "size": "large",
+    "size": "small",
     "location": "VEH-010-L03",
     "position": "position-43",
     "status": "active",
@@ -8231,7 +8231,7 @@ export const lockers = [
     "id": "LL0494",
     "number": "LL0494",
     "vehicleId": "VEH-010",
-    "size": "large",
+    "size": "small",
     "location": "VEH-010-L04",
     "position": "position-44",
     "status": "active",
@@ -8249,7 +8249,7 @@ export const lockers = [
     "id": "LL0495",
     "number": "LL0495",
     "vehicleId": "VEH-010",
-    "size": "large",
+    "size": "small",
     "location": "VEH-010-L05",
     "position": "position-45",
     "status": "active",
@@ -8267,7 +8267,7 @@ export const lockers = [
     "id": "LL0496",
     "number": "LL0496",
     "vehicleId": "VEH-010",
-    "size": "large",
+    "size": "small",
     "location": "VEH-010-L06",
     "position": "position-46",
     "status": "active",
@@ -8285,7 +8285,7 @@ export const lockers = [
     "id": "LL0497",
     "number": "LL0497",
     "vehicleId": "VEH-010",
-    "size": "large",
+    "size": "small",
     "location": "VEH-010-L07",
     "position": "position-47",
     "status": "active",
@@ -8303,7 +8303,7 @@ export const lockers = [
     "id": "LL0498",
     "number": "LL0498",
     "vehicleId": "VEH-010",
-    "size": "large",
+    "size": "small",
     "location": "VEH-010-L08",
     "position": "position-48",
     "status": "active",
@@ -8321,7 +8321,7 @@ export const lockers = [
     "id": "LL0499",
     "number": "LL0499",
     "vehicleId": "VEH-010",
-    "size": "large",
+    "size": "small",
     "location": "VEH-010-L09",
     "position": "position-49",
     "status": "active",
@@ -8339,7 +8339,7 @@ export const lockers = [
     "id": "LL0500",
     "number": "LL0500",
     "vehicleId": "VEH-010",
-    "size": "large",
+    "size": "small",
     "location": "VEH-010-L10",
     "position": "position-50",
     "status": "active",
@@ -8757,7 +8757,7 @@ export const lockers = [
     "id": "LM0526",
     "number": "LM0526",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M01",
     "position": "position-26",
     "status": "active",
@@ -8774,7 +8774,7 @@ export const lockers = [
     "id": "LM0527",
     "number": "LM0527",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M02",
     "position": "position-27",
     "status": "active",
@@ -8791,7 +8791,7 @@ export const lockers = [
     "id": "LM0528",
     "number": "LM0528",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M03",
     "position": "position-28",
     "status": "active",
@@ -8808,7 +8808,7 @@ export const lockers = [
     "id": "LM0529",
     "number": "LM0529",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M04",
     "position": "position-29",
     "status": "active",
@@ -8825,7 +8825,7 @@ export const lockers = [
     "id": "LM0530",
     "number": "LM0530",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M05",
     "position": "position-30",
     "status": "active",
@@ -8842,7 +8842,7 @@ export const lockers = [
     "id": "LM0531",
     "number": "LM0531",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M06",
     "position": "position-31",
     "status": "active",
@@ -8859,7 +8859,7 @@ export const lockers = [
     "id": "LM0532",
     "number": "LM0532",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M07",
     "position": "position-32",
     "status": "active",
@@ -8876,7 +8876,7 @@ export const lockers = [
     "id": "LM0533",
     "number": "LM0533",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M08",
     "position": "position-33",
     "status": "active",
@@ -8893,7 +8893,7 @@ export const lockers = [
     "id": "LM0534",
     "number": "LM0534",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M09",
     "position": "position-34",
     "status": "active",
@@ -8910,7 +8910,7 @@ export const lockers = [
     "id": "LM0535",
     "number": "LM0535",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M10",
     "position": "position-35",
     "status": "active",
@@ -8927,7 +8927,7 @@ export const lockers = [
     "id": "LM0536",
     "number": "LM0536",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M11",
     "position": "position-36",
     "status": "active",
@@ -8944,7 +8944,7 @@ export const lockers = [
     "id": "LM0537",
     "number": "LM0537",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M12",
     "position": "position-37",
     "status": "active",
@@ -8961,7 +8961,7 @@ export const lockers = [
     "id": "LM0538",
     "number": "LM0538",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M13",
     "position": "position-38",
     "status": "active",
@@ -8978,7 +8978,7 @@ export const lockers = [
     "id": "LM0539",
     "number": "LM0539",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M14",
     "position": "position-39",
     "status": "active",
@@ -8995,7 +8995,7 @@ export const lockers = [
     "id": "LM0540",
     "number": "LM0540",
     "vehicleId": "VEH-011",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-011-M15",
     "position": "position-40",
     "status": "active",
@@ -9012,7 +9012,7 @@ export const lockers = [
     "id": "LL0541",
     "number": "LL0541",
     "vehicleId": "VEH-011",
-    "size": "large",
+    "size": "small",
     "location": "VEH-011-L01",
     "position": "position-41",
     "status": "active",
@@ -9030,7 +9030,7 @@ export const lockers = [
     "id": "LL0542",
     "number": "LL0542",
     "vehicleId": "VEH-011",
-    "size": "large",
+    "size": "small",
     "location": "VEH-011-L02",
     "position": "position-42",
     "status": "active",
@@ -9048,7 +9048,7 @@ export const lockers = [
     "id": "LL0543",
     "number": "LL0543",
     "vehicleId": "VEH-011",
-    "size": "large",
+    "size": "small",
     "location": "VEH-011-L03",
     "position": "position-43",
     "status": "active",
@@ -9066,7 +9066,7 @@ export const lockers = [
     "id": "LL0544",
     "number": "LL0544",
     "vehicleId": "VEH-011",
-    "size": "large",
+    "size": "small",
     "location": "VEH-011-L04",
     "position": "position-44",
     "status": "active",
@@ -9084,7 +9084,7 @@ export const lockers = [
     "id": "LL0545",
     "number": "LL0545",
     "vehicleId": "VEH-011",
-    "size": "large",
+    "size": "small",
     "location": "VEH-011-L05",
     "position": "position-45",
     "status": "active",
@@ -9102,7 +9102,7 @@ export const lockers = [
     "id": "LL0546",
     "number": "LL0546",
     "vehicleId": "VEH-011",
-    "size": "large",
+    "size": "small",
     "location": "VEH-011-L06",
     "position": "position-46",
     "status": "active",
@@ -9120,7 +9120,7 @@ export const lockers = [
     "id": "LL0547",
     "number": "LL0547",
     "vehicleId": "VEH-011",
-    "size": "large",
+    "size": "small",
     "location": "VEH-011-L07",
     "position": "position-47",
     "status": "active",
@@ -9138,7 +9138,7 @@ export const lockers = [
     "id": "LL0548",
     "number": "LL0548",
     "vehicleId": "VEH-011",
-    "size": "large",
+    "size": "small",
     "location": "VEH-011-L08",
     "position": "position-48",
     "status": "active",
@@ -9156,7 +9156,7 @@ export const lockers = [
     "id": "LL0549",
     "number": "LL0549",
     "vehicleId": "VEH-011",
-    "size": "large",
+    "size": "small",
     "location": "VEH-011-L09",
     "position": "position-49",
     "status": "active",
@@ -9174,7 +9174,7 @@ export const lockers = [
     "id": "LL0550",
     "number": "LL0550",
     "vehicleId": "VEH-011",
-    "size": "large",
+    "size": "small",
     "location": "VEH-011-L10",
     "position": "position-50",
     "status": "active",
@@ -9592,7 +9592,7 @@ export const lockers = [
     "id": "LM0576",
     "number": "LM0576",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M01",
     "position": "position-26",
     "status": "active",
@@ -9609,7 +9609,7 @@ export const lockers = [
     "id": "LM0577",
     "number": "LM0577",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M02",
     "position": "position-27",
     "status": "active",
@@ -9626,7 +9626,7 @@ export const lockers = [
     "id": "LM0578",
     "number": "LM0578",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M03",
     "position": "position-28",
     "status": "active",
@@ -9643,7 +9643,7 @@ export const lockers = [
     "id": "LM0579",
     "number": "LM0579",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M04",
     "position": "position-29",
     "status": "active",
@@ -9660,7 +9660,7 @@ export const lockers = [
     "id": "LM0580",
     "number": "LM0580",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M05",
     "position": "position-30",
     "status": "active",
@@ -9677,7 +9677,7 @@ export const lockers = [
     "id": "LM0581",
     "number": "LM0581",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M06",
     "position": "position-31",
     "status": "active",
@@ -9694,7 +9694,7 @@ export const lockers = [
     "id": "LM0582",
     "number": "LM0582",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M07",
     "position": "position-32",
     "status": "active",
@@ -9711,7 +9711,7 @@ export const lockers = [
     "id": "LM0583",
     "number": "LM0583",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M08",
     "position": "position-33",
     "status": "active",
@@ -9728,7 +9728,7 @@ export const lockers = [
     "id": "LM0584",
     "number": "LM0584",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M09",
     "position": "position-34",
     "status": "active",
@@ -9745,7 +9745,7 @@ export const lockers = [
     "id": "LM0585",
     "number": "LM0585",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M10",
     "position": "position-35",
     "status": "active",
@@ -9762,7 +9762,7 @@ export const lockers = [
     "id": "LM0586",
     "number": "LM0586",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M11",
     "position": "position-36",
     "status": "active",
@@ -9779,7 +9779,7 @@ export const lockers = [
     "id": "LM0587",
     "number": "LM0587",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M12",
     "position": "position-37",
     "status": "active",
@@ -9796,7 +9796,7 @@ export const lockers = [
     "id": "LM0588",
     "number": "LM0588",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M13",
     "position": "position-38",
     "status": "active",
@@ -9813,7 +9813,7 @@ export const lockers = [
     "id": "LM0589",
     "number": "LM0589",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M14",
     "position": "position-39",
     "status": "active",
@@ -9830,7 +9830,7 @@ export const lockers = [
     "id": "LM0590",
     "number": "LM0590",
     "vehicleId": "VEH-012",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-012-M15",
     "position": "position-40",
     "status": "active",
@@ -9847,7 +9847,7 @@ export const lockers = [
     "id": "LL0591",
     "number": "LL0591",
     "vehicleId": "VEH-012",
-    "size": "large",
+    "size": "small",
     "location": "VEH-012-L01",
     "position": "position-41",
     "status": "active",
@@ -9865,7 +9865,7 @@ export const lockers = [
     "id": "LL0592",
     "number": "LL0592",
     "vehicleId": "VEH-012",
-    "size": "large",
+    "size": "small",
     "location": "VEH-012-L02",
     "position": "position-42",
     "status": "active",
@@ -9883,7 +9883,7 @@ export const lockers = [
     "id": "LL0593",
     "number": "LL0593",
     "vehicleId": "VEH-012",
-    "size": "large",
+    "size": "small",
     "location": "VEH-012-L03",
     "position": "position-43",
     "status": "active",
@@ -9901,7 +9901,7 @@ export const lockers = [
     "id": "LL0594",
     "number": "LL0594",
     "vehicleId": "VEH-012",
-    "size": "large",
+    "size": "small",
     "location": "VEH-012-L04",
     "position": "position-44",
     "status": "active",
@@ -9919,7 +9919,7 @@ export const lockers = [
     "id": "LL0595",
     "number": "LL0595",
     "vehicleId": "VEH-012",
-    "size": "large",
+    "size": "small",
     "location": "VEH-012-L05",
     "position": "position-45",
     "status": "active",
@@ -9937,7 +9937,7 @@ export const lockers = [
     "id": "LL0596",
     "number": "LL0596",
     "vehicleId": "VEH-012",
-    "size": "large",
+    "size": "small",
     "location": "VEH-012-L06",
     "position": "position-46",
     "status": "active",
@@ -9955,7 +9955,7 @@ export const lockers = [
     "id": "LL0597",
     "number": "LL0597",
     "vehicleId": "VEH-012",
-    "size": "large",
+    "size": "small",
     "location": "VEH-012-L07",
     "position": "position-47",
     "status": "active",
@@ -9973,7 +9973,7 @@ export const lockers = [
     "id": "LL0598",
     "number": "LL0598",
     "vehicleId": "VEH-012",
-    "size": "large",
+    "size": "small",
     "location": "VEH-012-L08",
     "position": "position-48",
     "status": "active",
@@ -9991,7 +9991,7 @@ export const lockers = [
     "id": "LL0599",
     "number": "LL0599",
     "vehicleId": "VEH-012",
-    "size": "large",
+    "size": "small",
     "location": "VEH-012-L09",
     "position": "position-49",
     "status": "active",
@@ -10009,7 +10009,7 @@ export const lockers = [
     "id": "LL0600",
     "number": "LL0600",
     "vehicleId": "VEH-012",
-    "size": "large",
+    "size": "small",
     "location": "VEH-012-L10",
     "position": "position-50",
     "status": "active",
@@ -10427,7 +10427,7 @@ export const lockers = [
     "id": "LM0626",
     "number": "LM0626",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M01",
     "position": "position-26",
     "status": "active",
@@ -10444,7 +10444,7 @@ export const lockers = [
     "id": "LM0627",
     "number": "LM0627",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M02",
     "position": "position-27",
     "status": "active",
@@ -10461,7 +10461,7 @@ export const lockers = [
     "id": "LM0628",
     "number": "LM0628",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M03",
     "position": "position-28",
     "status": "active",
@@ -10478,7 +10478,7 @@ export const lockers = [
     "id": "LM0629",
     "number": "LM0629",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M04",
     "position": "position-29",
     "status": "active",
@@ -10495,7 +10495,7 @@ export const lockers = [
     "id": "LM0630",
     "number": "LM0630",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M05",
     "position": "position-30",
     "status": "active",
@@ -10512,7 +10512,7 @@ export const lockers = [
     "id": "LM0631",
     "number": "LM0631",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M06",
     "position": "position-31",
     "status": "active",
@@ -10529,7 +10529,7 @@ export const lockers = [
     "id": "LM0632",
     "number": "LM0632",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M07",
     "position": "position-32",
     "status": "active",
@@ -10546,7 +10546,7 @@ export const lockers = [
     "id": "LM0633",
     "number": "LM0633",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M08",
     "position": "position-33",
     "status": "active",
@@ -10563,7 +10563,7 @@ export const lockers = [
     "id": "LM0634",
     "number": "LM0634",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M09",
     "position": "position-34",
     "status": "active",
@@ -10580,7 +10580,7 @@ export const lockers = [
     "id": "LM0635",
     "number": "LM0635",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M10",
     "position": "position-35",
     "status": "active",
@@ -10597,7 +10597,7 @@ export const lockers = [
     "id": "LM0636",
     "number": "LM0636",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M11",
     "position": "position-36",
     "status": "active",
@@ -10614,7 +10614,7 @@ export const lockers = [
     "id": "LM0637",
     "number": "LM0637",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M12",
     "position": "position-37",
     "status": "active",
@@ -10631,7 +10631,7 @@ export const lockers = [
     "id": "LM0638",
     "number": "LM0638",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M13",
     "position": "position-38",
     "status": "active",
@@ -10648,7 +10648,7 @@ export const lockers = [
     "id": "LM0639",
     "number": "LM0639",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M14",
     "position": "position-39",
     "status": "active",
@@ -10665,7 +10665,7 @@ export const lockers = [
     "id": "LM0640",
     "number": "LM0640",
     "vehicleId": "VEH-013",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-013-M15",
     "position": "position-40",
     "status": "active",
@@ -10682,7 +10682,7 @@ export const lockers = [
     "id": "LL0641",
     "number": "LL0641",
     "vehicleId": "VEH-013",
-    "size": "large",
+    "size": "small",
     "location": "VEH-013-L01",
     "position": "position-41",
     "status": "active",
@@ -10700,7 +10700,7 @@ export const lockers = [
     "id": "LL0642",
     "number": "LL0642",
     "vehicleId": "VEH-013",
-    "size": "large",
+    "size": "small",
     "location": "VEH-013-L02",
     "position": "position-42",
     "status": "active",
@@ -10718,7 +10718,7 @@ export const lockers = [
     "id": "LL0643",
     "number": "LL0643",
     "vehicleId": "VEH-013",
-    "size": "large",
+    "size": "small",
     "location": "VEH-013-L03",
     "position": "position-43",
     "status": "active",
@@ -10736,7 +10736,7 @@ export const lockers = [
     "id": "LL0644",
     "number": "LL0644",
     "vehicleId": "VEH-013",
-    "size": "large",
+    "size": "small",
     "location": "VEH-013-L04",
     "position": "position-44",
     "status": "active",
@@ -10754,7 +10754,7 @@ export const lockers = [
     "id": "LL0645",
     "number": "LL0645",
     "vehicleId": "VEH-013",
-    "size": "large",
+    "size": "small",
     "location": "VEH-013-L05",
     "position": "position-45",
     "status": "active",
@@ -10772,7 +10772,7 @@ export const lockers = [
     "id": "LL0646",
     "number": "LL0646",
     "vehicleId": "VEH-013",
-    "size": "large",
+    "size": "small",
     "location": "VEH-013-L06",
     "position": "position-46",
     "status": "active",
@@ -10790,7 +10790,7 @@ export const lockers = [
     "id": "LL0647",
     "number": "LL0647",
     "vehicleId": "VEH-013",
-    "size": "large",
+    "size": "small",
     "location": "VEH-013-L07",
     "position": "position-47",
     "status": "active",
@@ -10808,7 +10808,7 @@ export const lockers = [
     "id": "LL0648",
     "number": "LL0648",
     "vehicleId": "VEH-013",
-    "size": "large",
+    "size": "small",
     "location": "VEH-013-L08",
     "position": "position-48",
     "status": "active",
@@ -10826,7 +10826,7 @@ export const lockers = [
     "id": "LL0649",
     "number": "LL0649",
     "vehicleId": "VEH-013",
-    "size": "large",
+    "size": "small",
     "location": "VEH-013-L09",
     "position": "position-49",
     "status": "active",
@@ -10844,7 +10844,7 @@ export const lockers = [
     "id": "LL0650",
     "number": "LL0650",
     "vehicleId": "VEH-013",
-    "size": "large",
+    "size": "small",
     "location": "VEH-013-L10",
     "position": "position-50",
     "status": "active",
@@ -11262,7 +11262,7 @@ export const lockers = [
     "id": "LM0676",
     "number": "LM0676",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M01",
     "position": "position-26",
     "status": "maintenance",
@@ -11279,7 +11279,7 @@ export const lockers = [
     "id": "LM0677",
     "number": "LM0677",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M02",
     "position": "position-27",
     "status": "maintenance",
@@ -11296,7 +11296,7 @@ export const lockers = [
     "id": "LM0678",
     "number": "LM0678",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M03",
     "position": "position-28",
     "status": "maintenance",
@@ -11313,7 +11313,7 @@ export const lockers = [
     "id": "LM0679",
     "number": "LM0679",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M04",
     "position": "position-29",
     "status": "maintenance",
@@ -11330,7 +11330,7 @@ export const lockers = [
     "id": "LM0680",
     "number": "LM0680",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M05",
     "position": "position-30",
     "status": "maintenance",
@@ -11347,7 +11347,7 @@ export const lockers = [
     "id": "LM0681",
     "number": "LM0681",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M06",
     "position": "position-31",
     "status": "maintenance",
@@ -11364,7 +11364,7 @@ export const lockers = [
     "id": "LM0682",
     "number": "LM0682",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M07",
     "position": "position-32",
     "status": "maintenance",
@@ -11381,7 +11381,7 @@ export const lockers = [
     "id": "LM0683",
     "number": "LM0683",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M08",
     "position": "position-33",
     "status": "maintenance",
@@ -11398,7 +11398,7 @@ export const lockers = [
     "id": "LM0684",
     "number": "LM0684",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M09",
     "position": "position-34",
     "status": "maintenance",
@@ -11415,7 +11415,7 @@ export const lockers = [
     "id": "LM0685",
     "number": "LM0685",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M10",
     "position": "position-35",
     "status": "maintenance",
@@ -11432,7 +11432,7 @@ export const lockers = [
     "id": "LM0686",
     "number": "LM0686",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M11",
     "position": "position-36",
     "status": "maintenance",
@@ -11449,7 +11449,7 @@ export const lockers = [
     "id": "LM0687",
     "number": "LM0687",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M12",
     "position": "position-37",
     "status": "maintenance",
@@ -11466,7 +11466,7 @@ export const lockers = [
     "id": "LM0688",
     "number": "LM0688",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M13",
     "position": "position-38",
     "status": "maintenance",
@@ -11483,7 +11483,7 @@ export const lockers = [
     "id": "LM0689",
     "number": "LM0689",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M14",
     "position": "position-39",
     "status": "maintenance",
@@ -11500,7 +11500,7 @@ export const lockers = [
     "id": "LM0690",
     "number": "LM0690",
     "vehicleId": "VEH-014",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-014-M15",
     "position": "position-40",
     "status": "maintenance",
@@ -11517,7 +11517,7 @@ export const lockers = [
     "id": "LL0691",
     "number": "LL0691",
     "vehicleId": "VEH-014",
-    "size": "large",
+    "size": "small",
     "location": "VEH-014-L01",
     "position": "position-41",
     "status": "maintenance",
@@ -11535,7 +11535,7 @@ export const lockers = [
     "id": "LL0692",
     "number": "LL0692",
     "vehicleId": "VEH-014",
-    "size": "large",
+    "size": "small",
     "location": "VEH-014-L02",
     "position": "position-42",
     "status": "maintenance",
@@ -11553,7 +11553,7 @@ export const lockers = [
     "id": "LL0693",
     "number": "LL0693",
     "vehicleId": "VEH-014",
-    "size": "large",
+    "size": "small",
     "location": "VEH-014-L03",
     "position": "position-43",
     "status": "maintenance",
@@ -11571,7 +11571,7 @@ export const lockers = [
     "id": "LL0694",
     "number": "LL0694",
     "vehicleId": "VEH-014",
-    "size": "large",
+    "size": "small",
     "location": "VEH-014-L04",
     "position": "position-44",
     "status": "maintenance",
@@ -11589,7 +11589,7 @@ export const lockers = [
     "id": "LL0695",
     "number": "LL0695",
     "vehicleId": "VEH-014",
-    "size": "large",
+    "size": "small",
     "location": "VEH-014-L05",
     "position": "position-45",
     "status": "maintenance",
@@ -11607,7 +11607,7 @@ export const lockers = [
     "id": "LL0696",
     "number": "LL0696",
     "vehicleId": "VEH-014",
-    "size": "large",
+    "size": "small",
     "location": "VEH-014-L06",
     "position": "position-46",
     "status": "maintenance",
@@ -11625,7 +11625,7 @@ export const lockers = [
     "id": "LL0697",
     "number": "LL0697",
     "vehicleId": "VEH-014",
-    "size": "large",
+    "size": "small",
     "location": "VEH-014-L07",
     "position": "position-47",
     "status": "maintenance",
@@ -11643,7 +11643,7 @@ export const lockers = [
     "id": "LL0698",
     "number": "LL0698",
     "vehicleId": "VEH-014",
-    "size": "large",
+    "size": "small",
     "location": "VEH-014-L08",
     "position": "position-48",
     "status": "maintenance",
@@ -11661,7 +11661,7 @@ export const lockers = [
     "id": "LL0699",
     "number": "LL0699",
     "vehicleId": "VEH-014",
-    "size": "large",
+    "size": "small",
     "location": "VEH-014-L09",
     "position": "position-49",
     "status": "maintenance",
@@ -11679,7 +11679,7 @@ export const lockers = [
     "id": "LL0700",
     "number": "LL0700",
     "vehicleId": "VEH-014",
-    "size": "large",
+    "size": "small",
     "location": "VEH-014-L10",
     "position": "position-50",
     "status": "maintenance",
@@ -12097,7 +12097,7 @@ export const lockers = [
     "id": "LM0726",
     "number": "LM0726",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M01",
     "position": "position-26",
     "status": "maintenance",
@@ -12114,7 +12114,7 @@ export const lockers = [
     "id": "LM0727",
     "number": "LM0727",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M02",
     "position": "position-27",
     "status": "maintenance",
@@ -12131,7 +12131,7 @@ export const lockers = [
     "id": "LM0728",
     "number": "LM0728",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M03",
     "position": "position-28",
     "status": "maintenance",
@@ -12148,7 +12148,7 @@ export const lockers = [
     "id": "LM0729",
     "number": "LM0729",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M04",
     "position": "position-29",
     "status": "maintenance",
@@ -12165,7 +12165,7 @@ export const lockers = [
     "id": "LM0730",
     "number": "LM0730",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M05",
     "position": "position-30",
     "status": "maintenance",
@@ -12182,7 +12182,7 @@ export const lockers = [
     "id": "LM0731",
     "number": "LM0731",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M06",
     "position": "position-31",
     "status": "maintenance",
@@ -12199,7 +12199,7 @@ export const lockers = [
     "id": "LM0732",
     "number": "LM0732",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M07",
     "position": "position-32",
     "status": "maintenance",
@@ -12216,7 +12216,7 @@ export const lockers = [
     "id": "LM0733",
     "number": "LM0733",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M08",
     "position": "position-33",
     "status": "maintenance",
@@ -12233,7 +12233,7 @@ export const lockers = [
     "id": "LM0734",
     "number": "LM0734",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M09",
     "position": "position-34",
     "status": "maintenance",
@@ -12250,7 +12250,7 @@ export const lockers = [
     "id": "LM0735",
     "number": "LM0735",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M10",
     "position": "position-35",
     "status": "maintenance",
@@ -12267,7 +12267,7 @@ export const lockers = [
     "id": "LM0736",
     "number": "LM0736",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M11",
     "position": "position-36",
     "status": "maintenance",
@@ -12284,7 +12284,7 @@ export const lockers = [
     "id": "LM0737",
     "number": "LM0737",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M12",
     "position": "position-37",
     "status": "maintenance",
@@ -12301,7 +12301,7 @@ export const lockers = [
     "id": "LM0738",
     "number": "LM0738",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M13",
     "position": "position-38",
     "status": "maintenance",
@@ -12318,7 +12318,7 @@ export const lockers = [
     "id": "LM0739",
     "number": "LM0739",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M14",
     "position": "position-39",
     "status": "maintenance",
@@ -12335,7 +12335,7 @@ export const lockers = [
     "id": "LM0740",
     "number": "LM0740",
     "vehicleId": "VEH-015",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-015-M15",
     "position": "position-40",
     "status": "maintenance",
@@ -12352,7 +12352,7 @@ export const lockers = [
     "id": "LL0741",
     "number": "LL0741",
     "vehicleId": "VEH-015",
-    "size": "large",
+    "size": "small",
     "location": "VEH-015-L01",
     "position": "position-41",
     "status": "maintenance",
@@ -12370,7 +12370,7 @@ export const lockers = [
     "id": "LL0742",
     "number": "LL0742",
     "vehicleId": "VEH-015",
-    "size": "large",
+    "size": "small",
     "location": "VEH-015-L02",
     "position": "position-42",
     "status": "maintenance",
@@ -12388,7 +12388,7 @@ export const lockers = [
     "id": "LL0743",
     "number": "LL0743",
     "vehicleId": "VEH-015",
-    "size": "large",
+    "size": "small",
     "location": "VEH-015-L03",
     "position": "position-43",
     "status": "maintenance",
@@ -12406,7 +12406,7 @@ export const lockers = [
     "id": "LL0744",
     "number": "LL0744",
     "vehicleId": "VEH-015",
-    "size": "large",
+    "size": "small",
     "location": "VEH-015-L04",
     "position": "position-44",
     "status": "maintenance",
@@ -12424,7 +12424,7 @@ export const lockers = [
     "id": "LL0745",
     "number": "LL0745",
     "vehicleId": "VEH-015",
-    "size": "large",
+    "size": "small",
     "location": "VEH-015-L05",
     "position": "position-45",
     "status": "maintenance",
@@ -12442,7 +12442,7 @@ export const lockers = [
     "id": "LL0746",
     "number": "LL0746",
     "vehicleId": "VEH-015",
-    "size": "large",
+    "size": "small",
     "location": "VEH-015-L06",
     "position": "position-46",
     "status": "maintenance",
@@ -12460,7 +12460,7 @@ export const lockers = [
     "id": "LL0747",
     "number": "LL0747",
     "vehicleId": "VEH-015",
-    "size": "large",
+    "size": "small",
     "location": "VEH-015-L07",
     "position": "position-47",
     "status": "maintenance",
@@ -12478,7 +12478,7 @@ export const lockers = [
     "id": "LL0748",
     "number": "LL0748",
     "vehicleId": "VEH-015",
-    "size": "large",
+    "size": "small",
     "location": "VEH-015-L08",
     "position": "position-48",
     "status": "maintenance",
@@ -12496,7 +12496,7 @@ export const lockers = [
     "id": "LL0749",
     "number": "LL0749",
     "vehicleId": "VEH-015",
-    "size": "large",
+    "size": "small",
     "location": "VEH-015-L09",
     "position": "position-49",
     "status": "maintenance",
@@ -12514,7 +12514,7 @@ export const lockers = [
     "id": "LL0750",
     "number": "LL0750",
     "vehicleId": "VEH-015",
-    "size": "large",
+    "size": "small",
     "location": "VEH-015-L10",
     "position": "position-50",
     "status": "maintenance",
@@ -12932,7 +12932,7 @@ export const lockers = [
     "id": "LM0776",
     "number": "LM0776",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M01",
     "position": "position-26",
     "status": "maintenance",
@@ -12949,7 +12949,7 @@ export const lockers = [
     "id": "LM0777",
     "number": "LM0777",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M02",
     "position": "position-27",
     "status": "maintenance",
@@ -12966,7 +12966,7 @@ export const lockers = [
     "id": "LM0778",
     "number": "LM0778",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M03",
     "position": "position-28",
     "status": "maintenance",
@@ -12983,7 +12983,7 @@ export const lockers = [
     "id": "LM0779",
     "number": "LM0779",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M04",
     "position": "position-29",
     "status": "maintenance",
@@ -13000,7 +13000,7 @@ export const lockers = [
     "id": "LM0780",
     "number": "LM0780",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M05",
     "position": "position-30",
     "status": "maintenance",
@@ -13017,7 +13017,7 @@ export const lockers = [
     "id": "LM0781",
     "number": "LM0781",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M06",
     "position": "position-31",
     "status": "maintenance",
@@ -13034,7 +13034,7 @@ export const lockers = [
     "id": "LM0782",
     "number": "LM0782",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M07",
     "position": "position-32",
     "status": "maintenance",
@@ -13051,7 +13051,7 @@ export const lockers = [
     "id": "LM0783",
     "number": "LM0783",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M08",
     "position": "position-33",
     "status": "maintenance",
@@ -13068,7 +13068,7 @@ export const lockers = [
     "id": "LM0784",
     "number": "LM0784",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M09",
     "position": "position-34",
     "status": "maintenance",
@@ -13085,7 +13085,7 @@ export const lockers = [
     "id": "LM0785",
     "number": "LM0785",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M10",
     "position": "position-35",
     "status": "maintenance",
@@ -13102,7 +13102,7 @@ export const lockers = [
     "id": "LM0786",
     "number": "LM0786",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M11",
     "position": "position-36",
     "status": "maintenance",
@@ -13119,7 +13119,7 @@ export const lockers = [
     "id": "LM0787",
     "number": "LM0787",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M12",
     "position": "position-37",
     "status": "maintenance",
@@ -13136,7 +13136,7 @@ export const lockers = [
     "id": "LM0788",
     "number": "LM0788",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M13",
     "position": "position-38",
     "status": "maintenance",
@@ -13153,7 +13153,7 @@ export const lockers = [
     "id": "LM0789",
     "number": "LM0789",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M14",
     "position": "position-39",
     "status": "maintenance",
@@ -13170,7 +13170,7 @@ export const lockers = [
     "id": "LM0790",
     "number": "LM0790",
     "vehicleId": "VEH-016",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-016-M15",
     "position": "position-40",
     "status": "maintenance",
@@ -13187,7 +13187,7 @@ export const lockers = [
     "id": "LL0791",
     "number": "LL0791",
     "vehicleId": "VEH-016",
-    "size": "large",
+    "size": "small",
     "location": "VEH-016-L01",
     "position": "position-41",
     "status": "maintenance",
@@ -13205,7 +13205,7 @@ export const lockers = [
     "id": "LL0792",
     "number": "LL0792",
     "vehicleId": "VEH-016",
-    "size": "large",
+    "size": "small",
     "location": "VEH-016-L02",
     "position": "position-42",
     "status": "maintenance",
@@ -13223,7 +13223,7 @@ export const lockers = [
     "id": "LL0793",
     "number": "LL0793",
     "vehicleId": "VEH-016",
-    "size": "large",
+    "size": "small",
     "location": "VEH-016-L03",
     "position": "position-43",
     "status": "maintenance",
@@ -13241,7 +13241,7 @@ export const lockers = [
     "id": "LL0794",
     "number": "LL0794",
     "vehicleId": "VEH-016",
-    "size": "large",
+    "size": "small",
     "location": "VEH-016-L04",
     "position": "position-44",
     "status": "maintenance",
@@ -13259,7 +13259,7 @@ export const lockers = [
     "id": "LL0795",
     "number": "LL0795",
     "vehicleId": "VEH-016",
-    "size": "large",
+    "size": "small",
     "location": "VEH-016-L05",
     "position": "position-45",
     "status": "maintenance",
@@ -13277,7 +13277,7 @@ export const lockers = [
     "id": "LL0796",
     "number": "LL0796",
     "vehicleId": "VEH-016",
-    "size": "large",
+    "size": "small",
     "location": "VEH-016-L06",
     "position": "position-46",
     "status": "maintenance",
@@ -13295,7 +13295,7 @@ export const lockers = [
     "id": "LL0797",
     "number": "LL0797",
     "vehicleId": "VEH-016",
-    "size": "large",
+    "size": "small",
     "location": "VEH-016-L07",
     "position": "position-47",
     "status": "maintenance",
@@ -13313,7 +13313,7 @@ export const lockers = [
     "id": "LL0798",
     "number": "LL0798",
     "vehicleId": "VEH-016",
-    "size": "large",
+    "size": "small",
     "location": "VEH-016-L08",
     "position": "position-48",
     "status": "maintenance",
@@ -13331,7 +13331,7 @@ export const lockers = [
     "id": "LL0799",
     "number": "LL0799",
     "vehicleId": "VEH-016",
-    "size": "large",
+    "size": "small",
     "location": "VEH-016-L09",
     "position": "position-49",
     "status": "maintenance",
@@ -13349,7 +13349,7 @@ export const lockers = [
     "id": "LL0800",
     "number": "LL0800",
     "vehicleId": "VEH-016",
-    "size": "large",
+    "size": "small",
     "location": "VEH-016-L10",
     "position": "position-50",
     "status": "maintenance",
@@ -13767,7 +13767,7 @@ export const lockers = [
     "id": "LM0826",
     "number": "LM0826",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M01",
     "position": "position-26",
     "status": "maintenance",
@@ -13784,7 +13784,7 @@ export const lockers = [
     "id": "LM0827",
     "number": "LM0827",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M02",
     "position": "position-27",
     "status": "maintenance",
@@ -13801,7 +13801,7 @@ export const lockers = [
     "id": "LM0828",
     "number": "LM0828",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M03",
     "position": "position-28",
     "status": "maintenance",
@@ -13818,7 +13818,7 @@ export const lockers = [
     "id": "LM0829",
     "number": "LM0829",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M04",
     "position": "position-29",
     "status": "maintenance",
@@ -13835,7 +13835,7 @@ export const lockers = [
     "id": "LM0830",
     "number": "LM0830",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M05",
     "position": "position-30",
     "status": "maintenance",
@@ -13852,7 +13852,7 @@ export const lockers = [
     "id": "LM0831",
     "number": "LM0831",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M06",
     "position": "position-31",
     "status": "maintenance",
@@ -13869,7 +13869,7 @@ export const lockers = [
     "id": "LM0832",
     "number": "LM0832",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M07",
     "position": "position-32",
     "status": "maintenance",
@@ -13886,7 +13886,7 @@ export const lockers = [
     "id": "LM0833",
     "number": "LM0833",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M08",
     "position": "position-33",
     "status": "maintenance",
@@ -13903,7 +13903,7 @@ export const lockers = [
     "id": "LM0834",
     "number": "LM0834",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M09",
     "position": "position-34",
     "status": "maintenance",
@@ -13920,7 +13920,7 @@ export const lockers = [
     "id": "LM0835",
     "number": "LM0835",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M10",
     "position": "position-35",
     "status": "maintenance",
@@ -13937,7 +13937,7 @@ export const lockers = [
     "id": "LM0836",
     "number": "LM0836",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M11",
     "position": "position-36",
     "status": "maintenance",
@@ -13954,7 +13954,7 @@ export const lockers = [
     "id": "LM0837",
     "number": "LM0837",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M12",
     "position": "position-37",
     "status": "maintenance",
@@ -13971,7 +13971,7 @@ export const lockers = [
     "id": "LM0838",
     "number": "LM0838",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M13",
     "position": "position-38",
     "status": "maintenance",
@@ -13988,7 +13988,7 @@ export const lockers = [
     "id": "LM0839",
     "number": "LM0839",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M14",
     "position": "position-39",
     "status": "maintenance",
@@ -14005,7 +14005,7 @@ export const lockers = [
     "id": "LM0840",
     "number": "LM0840",
     "vehicleId": "VEH-017",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-017-M15",
     "position": "position-40",
     "status": "maintenance",
@@ -14022,7 +14022,7 @@ export const lockers = [
     "id": "LL0841",
     "number": "LL0841",
     "vehicleId": "VEH-017",
-    "size": "large",
+    "size": "small",
     "location": "VEH-017-L01",
     "position": "position-41",
     "status": "maintenance",
@@ -14040,7 +14040,7 @@ export const lockers = [
     "id": "LL0842",
     "number": "LL0842",
     "vehicleId": "VEH-017",
-    "size": "large",
+    "size": "small",
     "location": "VEH-017-L02",
     "position": "position-42",
     "status": "maintenance",
@@ -14058,7 +14058,7 @@ export const lockers = [
     "id": "LL0843",
     "number": "LL0843",
     "vehicleId": "VEH-017",
-    "size": "large",
+    "size": "small",
     "location": "VEH-017-L03",
     "position": "position-43",
     "status": "maintenance",
@@ -14076,7 +14076,7 @@ export const lockers = [
     "id": "LL0844",
     "number": "LL0844",
     "vehicleId": "VEH-017",
-    "size": "large",
+    "size": "small",
     "location": "VEH-017-L04",
     "position": "position-44",
     "status": "maintenance",
@@ -14094,7 +14094,7 @@ export const lockers = [
     "id": "LL0845",
     "number": "LL0845",
     "vehicleId": "VEH-017",
-    "size": "large",
+    "size": "small",
     "location": "VEH-017-L05",
     "position": "position-45",
     "status": "maintenance",
@@ -14112,7 +14112,7 @@ export const lockers = [
     "id": "LL0846",
     "number": "LL0846",
     "vehicleId": "VEH-017",
-    "size": "large",
+    "size": "small",
     "location": "VEH-017-L06",
     "position": "position-46",
     "status": "maintenance",
@@ -14130,7 +14130,7 @@ export const lockers = [
     "id": "LL0847",
     "number": "LL0847",
     "vehicleId": "VEH-017",
-    "size": "large",
+    "size": "small",
     "location": "VEH-017-L07",
     "position": "position-47",
     "status": "maintenance",
@@ -14148,7 +14148,7 @@ export const lockers = [
     "id": "LL0848",
     "number": "LL0848",
     "vehicleId": "VEH-017",
-    "size": "large",
+    "size": "small",
     "location": "VEH-017-L08",
     "position": "position-48",
     "status": "maintenance",
@@ -14166,7 +14166,7 @@ export const lockers = [
     "id": "LL0849",
     "number": "LL0849",
     "vehicleId": "VEH-017",
-    "size": "large",
+    "size": "small",
     "location": "VEH-017-L09",
     "position": "position-49",
     "status": "maintenance",
@@ -14184,7 +14184,7 @@ export const lockers = [
     "id": "LL0850",
     "number": "LL0850",
     "vehicleId": "VEH-017",
-    "size": "large",
+    "size": "small",
     "location": "VEH-017-L10",
     "position": "position-50",
     "status": "maintenance",
@@ -14602,7 +14602,7 @@ export const lockers = [
     "id": "LM0876",
     "number": "LM0876",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M01",
     "position": "position-26",
     "status": "broken",
@@ -14619,7 +14619,7 @@ export const lockers = [
     "id": "LM0877",
     "number": "LM0877",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M02",
     "position": "position-27",
     "status": "broken",
@@ -14636,7 +14636,7 @@ export const lockers = [
     "id": "LM0878",
     "number": "LM0878",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M03",
     "position": "position-28",
     "status": "broken",
@@ -14653,7 +14653,7 @@ export const lockers = [
     "id": "LM0879",
     "number": "LM0879",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M04",
     "position": "position-29",
     "status": "broken",
@@ -14670,7 +14670,7 @@ export const lockers = [
     "id": "LM0880",
     "number": "LM0880",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M05",
     "position": "position-30",
     "status": "broken",
@@ -14687,7 +14687,7 @@ export const lockers = [
     "id": "LM0881",
     "number": "LM0881",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M06",
     "position": "position-31",
     "status": "broken",
@@ -14704,7 +14704,7 @@ export const lockers = [
     "id": "LM0882",
     "number": "LM0882",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M07",
     "position": "position-32",
     "status": "broken",
@@ -14721,7 +14721,7 @@ export const lockers = [
     "id": "LM0883",
     "number": "LM0883",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M08",
     "position": "position-33",
     "status": "broken",
@@ -14738,7 +14738,7 @@ export const lockers = [
     "id": "LM0884",
     "number": "LM0884",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M09",
     "position": "position-34",
     "status": "broken",
@@ -14755,7 +14755,7 @@ export const lockers = [
     "id": "LM0885",
     "number": "LM0885",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M10",
     "position": "position-35",
     "status": "broken",
@@ -14772,7 +14772,7 @@ export const lockers = [
     "id": "LM0886",
     "number": "LM0886",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M11",
     "position": "position-36",
     "status": "broken",
@@ -14789,7 +14789,7 @@ export const lockers = [
     "id": "LM0887",
     "number": "LM0887",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M12",
     "position": "position-37",
     "status": "broken",
@@ -14806,7 +14806,7 @@ export const lockers = [
     "id": "LM0888",
     "number": "LM0888",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M13",
     "position": "position-38",
     "status": "broken",
@@ -14823,7 +14823,7 @@ export const lockers = [
     "id": "LM0889",
     "number": "LM0889",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M14",
     "position": "position-39",
     "status": "broken",
@@ -14840,7 +14840,7 @@ export const lockers = [
     "id": "LM0890",
     "number": "LM0890",
     "vehicleId": "VEH-018",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-018-M15",
     "position": "position-40",
     "status": "broken",
@@ -14857,7 +14857,7 @@ export const lockers = [
     "id": "LL0891",
     "number": "LL0891",
     "vehicleId": "VEH-018",
-    "size": "large",
+    "size": "small",
     "location": "VEH-018-L01",
     "position": "position-41",
     "status": "broken",
@@ -14875,7 +14875,7 @@ export const lockers = [
     "id": "LL0892",
     "number": "LL0892",
     "vehicleId": "VEH-018",
-    "size": "large",
+    "size": "small",
     "location": "VEH-018-L02",
     "position": "position-42",
     "status": "broken",
@@ -14893,7 +14893,7 @@ export const lockers = [
     "id": "LL0893",
     "number": "LL0893",
     "vehicleId": "VEH-018",
-    "size": "large",
+    "size": "small",
     "location": "VEH-018-L03",
     "position": "position-43",
     "status": "broken",
@@ -14911,7 +14911,7 @@ export const lockers = [
     "id": "LL0894",
     "number": "LL0894",
     "vehicleId": "VEH-018",
-    "size": "large",
+    "size": "small",
     "location": "VEH-018-L04",
     "position": "position-44",
     "status": "broken",
@@ -14929,7 +14929,7 @@ export const lockers = [
     "id": "LL0895",
     "number": "LL0895",
     "vehicleId": "VEH-018",
-    "size": "large",
+    "size": "small",
     "location": "VEH-018-L05",
     "position": "position-45",
     "status": "broken",
@@ -14947,7 +14947,7 @@ export const lockers = [
     "id": "LL0896",
     "number": "LL0896",
     "vehicleId": "VEH-018",
-    "size": "large",
+    "size": "small",
     "location": "VEH-018-L06",
     "position": "position-46",
     "status": "broken",
@@ -14965,7 +14965,7 @@ export const lockers = [
     "id": "LL0897",
     "number": "LL0897",
     "vehicleId": "VEH-018",
-    "size": "large",
+    "size": "small",
     "location": "VEH-018-L07",
     "position": "position-47",
     "status": "broken",
@@ -14983,7 +14983,7 @@ export const lockers = [
     "id": "LL0898",
     "number": "LL0898",
     "vehicleId": "VEH-018",
-    "size": "large",
+    "size": "small",
     "location": "VEH-018-L08",
     "position": "position-48",
     "status": "broken",
@@ -15001,7 +15001,7 @@ export const lockers = [
     "id": "LL0899",
     "number": "LL0899",
     "vehicleId": "VEH-018",
-    "size": "large",
+    "size": "small",
     "location": "VEH-018-L09",
     "position": "position-49",
     "status": "broken",
@@ -15019,7 +15019,7 @@ export const lockers = [
     "id": "LL0900",
     "number": "LL0900",
     "vehicleId": "VEH-018",
-    "size": "large",
+    "size": "small",
     "location": "VEH-018-L10",
     "position": "position-50",
     "status": "broken",
@@ -15437,7 +15437,7 @@ export const lockers = [
     "id": "LM0926",
     "number": "LM0926",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M01",
     "position": "position-26",
     "status": "broken",
@@ -15454,7 +15454,7 @@ export const lockers = [
     "id": "LM0927",
     "number": "LM0927",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M02",
     "position": "position-27",
     "status": "broken",
@@ -15471,7 +15471,7 @@ export const lockers = [
     "id": "LM0928",
     "number": "LM0928",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M03",
     "position": "position-28",
     "status": "broken",
@@ -15488,7 +15488,7 @@ export const lockers = [
     "id": "LM0929",
     "number": "LM0929",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M04",
     "position": "position-29",
     "status": "broken",
@@ -15505,7 +15505,7 @@ export const lockers = [
     "id": "LM0930",
     "number": "LM0930",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M05",
     "position": "position-30",
     "status": "broken",
@@ -15522,7 +15522,7 @@ export const lockers = [
     "id": "LM0931",
     "number": "LM0931",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M06",
     "position": "position-31",
     "status": "broken",
@@ -15539,7 +15539,7 @@ export const lockers = [
     "id": "LM0932",
     "number": "LM0932",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M07",
     "position": "position-32",
     "status": "broken",
@@ -15556,7 +15556,7 @@ export const lockers = [
     "id": "LM0933",
     "number": "LM0933",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M08",
     "position": "position-33",
     "status": "broken",
@@ -15573,7 +15573,7 @@ export const lockers = [
     "id": "LM0934",
     "number": "LM0934",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M09",
     "position": "position-34",
     "status": "broken",
@@ -15590,7 +15590,7 @@ export const lockers = [
     "id": "LM0935",
     "number": "LM0935",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M10",
     "position": "position-35",
     "status": "broken",
@@ -15607,7 +15607,7 @@ export const lockers = [
     "id": "LM0936",
     "number": "LM0936",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M11",
     "position": "position-36",
     "status": "broken",
@@ -15624,7 +15624,7 @@ export const lockers = [
     "id": "LM0937",
     "number": "LM0937",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M12",
     "position": "position-37",
     "status": "broken",
@@ -15641,7 +15641,7 @@ export const lockers = [
     "id": "LM0938",
     "number": "LM0938",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M13",
     "position": "position-38",
     "status": "broken",
@@ -15658,7 +15658,7 @@ export const lockers = [
     "id": "LM0939",
     "number": "LM0939",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M14",
     "position": "position-39",
     "status": "broken",
@@ -15675,7 +15675,7 @@ export const lockers = [
     "id": "LM0940",
     "number": "LM0940",
     "vehicleId": "VEH-019",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-019-M15",
     "position": "position-40",
     "status": "broken",
@@ -15692,7 +15692,7 @@ export const lockers = [
     "id": "LL0941",
     "number": "LL0941",
     "vehicleId": "VEH-019",
-    "size": "large",
+    "size": "small",
     "location": "VEH-019-L01",
     "position": "position-41",
     "status": "broken",
@@ -15710,7 +15710,7 @@ export const lockers = [
     "id": "LL0942",
     "number": "LL0942",
     "vehicleId": "VEH-019",
-    "size": "large",
+    "size": "small",
     "location": "VEH-019-L02",
     "position": "position-42",
     "status": "broken",
@@ -15728,7 +15728,7 @@ export const lockers = [
     "id": "LL0943",
     "number": "LL0943",
     "vehicleId": "VEH-019",
-    "size": "large",
+    "size": "small",
     "location": "VEH-019-L03",
     "position": "position-43",
     "status": "broken",
@@ -15746,7 +15746,7 @@ export const lockers = [
     "id": "LL0944",
     "number": "LL0944",
     "vehicleId": "VEH-019",
-    "size": "large",
+    "size": "small",
     "location": "VEH-019-L04",
     "position": "position-44",
     "status": "broken",
@@ -15764,7 +15764,7 @@ export const lockers = [
     "id": "LL0945",
     "number": "LL0945",
     "vehicleId": "VEH-019",
-    "size": "large",
+    "size": "small",
     "location": "VEH-019-L05",
     "position": "position-45",
     "status": "broken",
@@ -15782,7 +15782,7 @@ export const lockers = [
     "id": "LL0946",
     "number": "LL0946",
     "vehicleId": "VEH-019",
-    "size": "large",
+    "size": "small",
     "location": "VEH-019-L06",
     "position": "position-46",
     "status": "broken",
@@ -15800,7 +15800,7 @@ export const lockers = [
     "id": "LL0947",
     "number": "LL0947",
     "vehicleId": "VEH-019",
-    "size": "large",
+    "size": "small",
     "location": "VEH-019-L07",
     "position": "position-47",
     "status": "broken",
@@ -15818,7 +15818,7 @@ export const lockers = [
     "id": "LL0948",
     "number": "LL0948",
     "vehicleId": "VEH-019",
-    "size": "large",
+    "size": "small",
     "location": "VEH-019-L08",
     "position": "position-48",
     "status": "broken",
@@ -15836,7 +15836,7 @@ export const lockers = [
     "id": "LL0949",
     "number": "LL0949",
     "vehicleId": "VEH-019",
-    "size": "large",
+    "size": "small",
     "location": "VEH-019-L09",
     "position": "position-49",
     "status": "broken",
@@ -15854,7 +15854,7 @@ export const lockers = [
     "id": "LL0950",
     "number": "LL0950",
     "vehicleId": "VEH-019",
-    "size": "large",
+    "size": "small",
     "location": "VEH-019-L10",
     "position": "position-50",
     "status": "broken",
@@ -16272,7 +16272,7 @@ export const lockers = [
     "id": "LM0976",
     "number": "LM0976",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M01",
     "position": "position-26",
     "status": "broken",
@@ -16289,7 +16289,7 @@ export const lockers = [
     "id": "LM0977",
     "number": "LM0977",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M02",
     "position": "position-27",
     "status": "broken",
@@ -16306,7 +16306,7 @@ export const lockers = [
     "id": "LM0978",
     "number": "LM0978",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M03",
     "position": "position-28",
     "status": "broken",
@@ -16323,7 +16323,7 @@ export const lockers = [
     "id": "LM0979",
     "number": "LM0979",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M04",
     "position": "position-29",
     "status": "broken",
@@ -16340,7 +16340,7 @@ export const lockers = [
     "id": "LM0980",
     "number": "LM0980",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M05",
     "position": "position-30",
     "status": "broken",
@@ -16357,7 +16357,7 @@ export const lockers = [
     "id": "LM0981",
     "number": "LM0981",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M06",
     "position": "position-31",
     "status": "broken",
@@ -16374,7 +16374,7 @@ export const lockers = [
     "id": "LM0982",
     "number": "LM0982",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M07",
     "position": "position-32",
     "status": "broken",
@@ -16391,7 +16391,7 @@ export const lockers = [
     "id": "LM0983",
     "number": "LM0983",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M08",
     "position": "position-33",
     "status": "broken",
@@ -16408,7 +16408,7 @@ export const lockers = [
     "id": "LM0984",
     "number": "LM0984",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M09",
     "position": "position-34",
     "status": "broken",
@@ -16425,7 +16425,7 @@ export const lockers = [
     "id": "LM0985",
     "number": "LM0985",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M10",
     "position": "position-35",
     "status": "broken",
@@ -16442,7 +16442,7 @@ export const lockers = [
     "id": "LM0986",
     "number": "LM0986",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M11",
     "position": "position-36",
     "status": "broken",
@@ -16459,7 +16459,7 @@ export const lockers = [
     "id": "LM0987",
     "number": "LM0987",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M12",
     "position": "position-37",
     "status": "broken",
@@ -16476,7 +16476,7 @@ export const lockers = [
     "id": "LM0988",
     "number": "LM0988",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M13",
     "position": "position-38",
     "status": "broken",
@@ -16493,7 +16493,7 @@ export const lockers = [
     "id": "LM0989",
     "number": "LM0989",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M14",
     "position": "position-39",
     "status": "broken",
@@ -16510,7 +16510,7 @@ export const lockers = [
     "id": "LM0990",
     "number": "LM0990",
     "vehicleId": "VEH-020",
-    "size": "medium",
+    "size": "small",
     "location": "VEH-020-M15",
     "position": "position-40",
     "status": "broken",
@@ -16527,7 +16527,7 @@ export const lockers = [
     "id": "LL0991",
     "number": "LL0991",
     "vehicleId": "VEH-020",
-    "size": "large",
+    "size": "small",
     "location": "VEH-020-L01",
     "position": "position-41",
     "status": "broken",
@@ -16545,7 +16545,7 @@ export const lockers = [
     "id": "LL0992",
     "number": "LL0992",
     "vehicleId": "VEH-020",
-    "size": "large",
+    "size": "small",
     "location": "VEH-020-L02",
     "position": "position-42",
     "status": "broken",
@@ -16563,7 +16563,7 @@ export const lockers = [
     "id": "LL0993",
     "number": "LL0993",
     "vehicleId": "VEH-020",
-    "size": "large",
+    "size": "small",
     "location": "VEH-020-L03",
     "position": "position-43",
     "status": "broken",
@@ -16581,7 +16581,7 @@ export const lockers = [
     "id": "LL0994",
     "number": "LL0994",
     "vehicleId": "VEH-020",
-    "size": "large",
+    "size": "small",
     "location": "VEH-020-L04",
     "position": "position-44",
     "status": "broken",
@@ -16599,7 +16599,7 @@ export const lockers = [
     "id": "LL0995",
     "number": "LL0995",
     "vehicleId": "VEH-020",
-    "size": "large",
+    "size": "small",
     "location": "VEH-020-L05",
     "position": "position-45",
     "status": "broken",
@@ -16617,7 +16617,7 @@ export const lockers = [
     "id": "LL0996",
     "number": "LL0996",
     "vehicleId": "VEH-020",
-    "size": "large",
+    "size": "small",
     "location": "VEH-020-L06",
     "position": "position-46",
     "status": "broken",
@@ -16635,7 +16635,7 @@ export const lockers = [
     "id": "LL0997",
     "number": "LL0997",
     "vehicleId": "VEH-020",
-    "size": "large",
+    "size": "small",
     "location": "VEH-020-L07",
     "position": "position-47",
     "status": "broken",
@@ -16653,7 +16653,7 @@ export const lockers = [
     "id": "LL0998",
     "number": "LL0998",
     "vehicleId": "VEH-020",
-    "size": "large",
+    "size": "small",
     "location": "VEH-020-L08",
     "position": "position-48",
     "status": "broken",
@@ -16671,7 +16671,7 @@ export const lockers = [
     "id": "LL0999",
     "number": "LL0999",
     "vehicleId": "VEH-020",
-    "size": "large",
+    "size": "small",
     "location": "VEH-020-L09",
     "position": "position-49",
     "status": "broken",
@@ -16689,7 +16689,7 @@ export const lockers = [
     "id": "LL1000",
     "number": "LL1000",
     "vehicleId": "VEH-020",
-    "size": "large",
+    "size": "small",
     "location": "VEH-020-L10",
     "position": "position-50",
     "status": "broken",
@@ -19605,7 +19605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1364",
@@ -19613,7 +19613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1365",
@@ -19621,7 +19621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1366",
@@ -19629,7 +19629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1367",
@@ -19637,7 +19637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1368",
@@ -19645,7 +19645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1369",
@@ -19653,7 +19653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1370",
@@ -19661,7 +19661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1371",
@@ -19669,7 +19669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1372",
@@ -19677,7 +19677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1373",
@@ -19685,7 +19685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1374",
@@ -19693,7 +19693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1375",
@@ -19701,7 +19701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1376",
@@ -19709,7 +19709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1377",
@@ -19717,7 +19717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1378",
@@ -19725,7 +19725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1379",
@@ -19733,7 +19733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1380",
@@ -19741,7 +19741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1381",
@@ -19749,7 +19749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1382",
@@ -19757,7 +19757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1383",
@@ -19765,7 +19765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1384",
@@ -19773,7 +19773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1385",
@@ -19781,7 +19781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1386",
@@ -19789,7 +19789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1387",
@@ -19797,7 +19797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1388",
@@ -19805,7 +19805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1389",
@@ -19813,7 +19813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1390",
@@ -19821,7 +19821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1391",
@@ -19829,7 +19829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1392",
@@ -19837,7 +19837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1393",
@@ -19845,7 +19845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1394",
@@ -19853,7 +19853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1395",
@@ -19861,7 +19861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1396",
@@ -19869,7 +19869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1397",
@@ -19877,7 +19877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1398",
@@ -19885,7 +19885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1399",
@@ -19893,7 +19893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1400",
@@ -19901,7 +19901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1401",
@@ -19909,7 +19909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1402",
@@ -19917,7 +19917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1403",
@@ -19925,7 +19925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1404",
@@ -19933,7 +19933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1405",
@@ -19941,7 +19941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1406",
@@ -19949,7 +19949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1407",
@@ -19957,7 +19957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1408",
@@ -19965,7 +19965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1409",
@@ -19973,7 +19973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1410",
@@ -19981,7 +19981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1411",
@@ -19989,7 +19989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1412",
@@ -19997,7 +19997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1413",
@@ -20005,7 +20005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1414",
@@ -20013,7 +20013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1415",
@@ -20021,7 +20021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1416",
@@ -20029,7 +20029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1417",
@@ -20037,7 +20037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1418",
@@ -20045,7 +20045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1419",
@@ -20053,7 +20053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1420",
@@ -20061,7 +20061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1421",
@@ -20069,7 +20069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1422",
@@ -20077,7 +20077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1423",
@@ -20085,7 +20085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1424",
@@ -20093,7 +20093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1425",
@@ -20101,7 +20101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1426",
@@ -20109,7 +20109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1427",
@@ -20117,7 +20117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1428",
@@ -20125,7 +20125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1429",
@@ -20133,7 +20133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1430",
@@ -20141,7 +20141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1431",
@@ -20149,7 +20149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1432",
@@ -20157,7 +20157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1433",
@@ -20165,7 +20165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1434",
@@ -20173,7 +20173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1435",
@@ -20181,7 +20181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1436",
@@ -20189,7 +20189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1437",
@@ -20197,7 +20197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1438",
@@ -20205,7 +20205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1439",
@@ -20213,7 +20213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1440",
@@ -20221,7 +20221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1441",
@@ -20229,7 +20229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1442",
@@ -20237,7 +20237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1443",
@@ -20245,7 +20245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1444",
@@ -20253,7 +20253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1445",
@@ -20261,7 +20261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1446",
@@ -20269,7 +20269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1447",
@@ -20277,7 +20277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1448",
@@ -20285,7 +20285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1449",
@@ -20293,7 +20293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1450",
@@ -20301,7 +20301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1451",
@@ -20309,7 +20309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1452",
@@ -20317,7 +20317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1453",
@@ -20325,7 +20325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1454",
@@ -20333,7 +20333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1455",
@@ -20341,7 +20341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1456",
@@ -20349,7 +20349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1457",
@@ -20357,7 +20357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1458",
@@ -20365,7 +20365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1459",
@@ -20373,7 +20373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1460",
@@ -20381,7 +20381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1461",
@@ -20389,7 +20389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1462",
@@ -20397,7 +20397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1463",
@@ -20405,7 +20405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1464",
@@ -20413,7 +20413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1465",
@@ -20421,7 +20421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1466",
@@ -20429,7 +20429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1467",
@@ -20437,7 +20437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1468",
@@ -20445,7 +20445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1469",
@@ -20453,7 +20453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1470",
@@ -20461,7 +20461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1471",
@@ -20469,7 +20469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1472",
@@ -20477,7 +20477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1473",
@@ -20485,7 +20485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1474",
@@ -20493,7 +20493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1475",
@@ -20501,7 +20501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1476",
@@ -20509,7 +20509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1477",
@@ -20517,7 +20517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1478",
@@ -20525,7 +20525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1479",
@@ -20533,7 +20533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1480",
@@ -20541,7 +20541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1481",
@@ -20549,7 +20549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1482",
@@ -20557,7 +20557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1483",
@@ -20565,7 +20565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1484",
@@ -20573,7 +20573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1485",
@@ -20581,7 +20581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1486",
@@ -20589,7 +20589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1487",
@@ -20597,7 +20597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1488",
@@ -20605,7 +20605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1489",
@@ -20613,7 +20613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1490",
@@ -20621,7 +20621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1491",
@@ -20629,7 +20629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1492",
@@ -20637,7 +20637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1493",
@@ -20645,7 +20645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1494",
@@ -20653,7 +20653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1495",
@@ -20661,7 +20661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1496",
@@ -20669,7 +20669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1497",
@@ -20677,7 +20677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1498",
@@ -20685,7 +20685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1499",
@@ -20693,7 +20693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1500",
@@ -20701,7 +20701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1501",
@@ -20709,7 +20709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1502",
@@ -20717,7 +20717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1503",
@@ -20725,7 +20725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1504",
@@ -20733,7 +20733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1505",
@@ -20741,7 +20741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1506",
@@ -20749,7 +20749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1507",
@@ -20757,7 +20757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1508",
@@ -20765,7 +20765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1509",
@@ -20773,7 +20773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1510",
@@ -20781,7 +20781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1511",
@@ -20789,7 +20789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1512",
@@ -20797,7 +20797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1513",
@@ -20805,7 +20805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1514",
@@ -20813,7 +20813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1515",
@@ -20821,7 +20821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1516",
@@ -20829,7 +20829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1517",
@@ -20837,7 +20837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1518",
@@ -20845,7 +20845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1519",
@@ -20853,7 +20853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1520",
@@ -20861,7 +20861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1521",
@@ -20869,7 +20869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1522",
@@ -20877,7 +20877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1523",
@@ -20885,7 +20885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1524",
@@ -20893,7 +20893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1525",
@@ -20901,7 +20901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1526",
@@ -20909,7 +20909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1527",
@@ -20917,7 +20917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1528",
@@ -20925,7 +20925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1529",
@@ -20933,7 +20933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1530",
@@ -20941,7 +20941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1531",
@@ -20949,7 +20949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1532",
@@ -20957,7 +20957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1533",
@@ -20965,7 +20965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1534",
@@ -20973,7 +20973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1535",
@@ -20981,7 +20981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1536",
@@ -20989,7 +20989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1537",
@@ -20997,7 +20997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1538",
@@ -21005,7 +21005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1539",
@@ -21013,7 +21013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1540",
@@ -21021,7 +21021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1541",
@@ -21029,7 +21029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1542",
@@ -21037,7 +21037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1543",
@@ -21045,7 +21045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1544",
@@ -21053,7 +21053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1545",
@@ -21061,7 +21061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1546",
@@ -21069,7 +21069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1547",
@@ -21077,7 +21077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1548",
@@ -21085,7 +21085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1549",
@@ -21093,7 +21093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1550",
@@ -21101,7 +21101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1551",
@@ -21109,7 +21109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1552",
@@ -21117,7 +21117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1553",
@@ -21125,7 +21125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1554",
@@ -21133,7 +21133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1555",
@@ -21141,7 +21141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1556",
@@ -21149,7 +21149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1557",
@@ -21157,7 +21157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1558",
@@ -21165,7 +21165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1559",
@@ -21173,7 +21173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1560",
@@ -21181,7 +21181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1561",
@@ -21189,7 +21189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1562",
@@ -21197,7 +21197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1563",
@@ -21205,7 +21205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1564",
@@ -21213,7 +21213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1565",
@@ -21221,7 +21221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1566",
@@ -21229,7 +21229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1567",
@@ -21237,7 +21237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1568",
@@ -21245,7 +21245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1569",
@@ -21253,7 +21253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1570",
@@ -21261,7 +21261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1571",
@@ -21269,7 +21269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1572",
@@ -21277,7 +21277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1573",
@@ -21285,7 +21285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1574",
@@ -21293,7 +21293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1575",
@@ -21301,7 +21301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1576",
@@ -21309,7 +21309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1577",
@@ -21317,7 +21317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1578",
@@ -21325,7 +21325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1579",
@@ -21333,7 +21333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1580",
@@ -21341,7 +21341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1581",
@@ -21349,7 +21349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1582",
@@ -21357,7 +21357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1583",
@@ -21365,7 +21365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1584",
@@ -21373,7 +21373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1585",
@@ -21381,7 +21381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1586",
@@ -21389,7 +21389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1587",
@@ -21397,7 +21397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1588",
@@ -21405,7 +21405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1589",
@@ -21413,7 +21413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1590",
@@ -21421,7 +21421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1591",
@@ -21429,7 +21429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1592",
@@ -21437,7 +21437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1593",
@@ -21445,7 +21445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1594",
@@ -21453,7 +21453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1595",
@@ -21461,7 +21461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1596",
@@ -21469,7 +21469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1597",
@@ -21477,7 +21477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1598",
@@ -21485,7 +21485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1599",
@@ -21493,7 +21493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1600",
@@ -21501,7 +21501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1601",
@@ -21509,7 +21509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1602",
@@ -21517,7 +21517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1603",
@@ -21525,7 +21525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1604",
@@ -21533,7 +21533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1605",
@@ -21541,7 +21541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1606",
@@ -21549,7 +21549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1607",
@@ -21557,7 +21557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1608",
@@ -21565,7 +21565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1609",
@@ -21573,7 +21573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1610",
@@ -21581,7 +21581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1611",
@@ -21589,7 +21589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1612",
@@ -21597,7 +21597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1613",
@@ -21605,7 +21605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1614",
@@ -21613,7 +21613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1615",
@@ -21621,7 +21621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1616",
@@ -21629,7 +21629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1617",
@@ -21637,7 +21637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1618",
@@ -21645,7 +21645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1619",
@@ -21653,7 +21653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1620",
@@ -21661,7 +21661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1621",
@@ -21669,7 +21669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1622",
@@ -21677,7 +21677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1623",
@@ -21685,7 +21685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1624",
@@ -21693,7 +21693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1625",
@@ -21701,7 +21701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1626",
@@ -21709,7 +21709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1627",
@@ -21717,7 +21717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1628",
@@ -21725,7 +21725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1629",
@@ -21733,7 +21733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1630",
@@ -21741,7 +21741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1631",
@@ -21749,7 +21749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1632",
@@ -21757,7 +21757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1633",
@@ -21765,7 +21765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1634",
@@ -21773,7 +21773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1635",
@@ -21781,7 +21781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1636",
@@ -21789,7 +21789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1637",
@@ -21797,7 +21797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1638",
@@ -21805,7 +21805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1639",
@@ -21813,7 +21813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1640",
@@ -21821,7 +21821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1641",
@@ -21829,7 +21829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1642",
@@ -21837,7 +21837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1643",
@@ -21845,7 +21845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1644",
@@ -21853,7 +21853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1645",
@@ -21861,7 +21861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1646",
@@ -21869,7 +21869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1647",
@@ -21877,7 +21877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1648",
@@ -21885,7 +21885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1649",
@@ -21893,7 +21893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1650",
@@ -21901,7 +21901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1651",
@@ -21909,7 +21909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1652",
@@ -21917,7 +21917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1653",
@@ -21925,7 +21925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1654",
@@ -21933,7 +21933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1655",
@@ -21941,7 +21941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1656",
@@ -21949,7 +21949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1657",
@@ -21957,7 +21957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1658",
@@ -21965,7 +21965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1659",
@@ -21973,7 +21973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1660",
@@ -21981,7 +21981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1661",
@@ -21989,7 +21989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1662",
@@ -21997,7 +21997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1663",
@@ -22005,7 +22005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1664",
@@ -22013,7 +22013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1665",
@@ -22021,7 +22021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1666",
@@ -22029,7 +22029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1667",
@@ -22037,7 +22037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1668",
@@ -22045,7 +22045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1669",
@@ -22053,7 +22053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1670",
@@ -22061,7 +22061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1671",
@@ -22069,7 +22069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1672",
@@ -22077,7 +22077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1673",
@@ -22085,7 +22085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1674",
@@ -22093,7 +22093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1675",
@@ -22101,7 +22101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1676",
@@ -22109,7 +22109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1677",
@@ -22117,7 +22117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1678",
@@ -22125,7 +22125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1679",
@@ -22133,7 +22133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1680",
@@ -22141,7 +22141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1681",
@@ -22149,7 +22149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1682",
@@ -22157,7 +22157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1683",
@@ -22165,7 +22165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1684",
@@ -22173,7 +22173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1685",
@@ -22181,7 +22181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1686",
@@ -22189,7 +22189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1687",
@@ -22197,7 +22197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1688",
@@ -22205,7 +22205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1689",
@@ -22213,7 +22213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1690",
@@ -22221,7 +22221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1691",
@@ -22229,7 +22229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1692",
@@ -22237,7 +22237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1693",
@@ -22245,7 +22245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1694",
@@ -22253,7 +22253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1695",
@@ -22261,7 +22261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1696",
@@ -22269,7 +22269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1697",
@@ -22277,7 +22277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1698",
@@ -22285,7 +22285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1699",
@@ -22293,7 +22293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1700",
@@ -22301,7 +22301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1701",
@@ -22309,7 +22309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1702",
@@ -22317,7 +22317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1703",
@@ -22325,7 +22325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1704",
@@ -22333,7 +22333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1705",
@@ -22341,7 +22341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1706",
@@ -22349,7 +22349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1707",
@@ -22357,7 +22357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1708",
@@ -22365,7 +22365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1709",
@@ -22373,7 +22373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1710",
@@ -22381,7 +22381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1711",
@@ -22389,7 +22389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1712",
@@ -22397,7 +22397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1713",
@@ -22405,7 +22405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1714",
@@ -22413,7 +22413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1715",
@@ -22421,7 +22421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1716",
@@ -22429,7 +22429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1717",
@@ -22437,7 +22437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1718",
@@ -22445,7 +22445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1719",
@@ -22453,7 +22453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1720",
@@ -22461,7 +22461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1721",
@@ -22469,7 +22469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1722",
@@ -22477,7 +22477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1723",
@@ -22485,7 +22485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1724",
@@ -22493,7 +22493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1725",
@@ -22501,7 +22501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1726",
@@ -22509,7 +22509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1727",
@@ -22517,7 +22517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1728",
@@ -22525,7 +22525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1729",
@@ -22533,7 +22533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1730",
@@ -22541,7 +22541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1731",
@@ -22549,7 +22549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1732",
@@ -22557,7 +22557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1733",
@@ -22565,7 +22565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1734",
@@ -22573,7 +22573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1735",
@@ -22581,7 +22581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1736",
@@ -22589,7 +22589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1737",
@@ -22597,7 +22597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1738",
@@ -22605,7 +22605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1739",
@@ -22613,7 +22613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1740",
@@ -22621,7 +22621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1741",
@@ -22629,7 +22629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1742",
@@ -22637,7 +22637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1743",
@@ -22645,7 +22645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1744",
@@ -22653,7 +22653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1745",
@@ -22661,7 +22661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1746",
@@ -22669,7 +22669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1747",
@@ -22677,7 +22677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1748",
@@ -22685,7 +22685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1749",
@@ -22693,7 +22693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1750",
@@ -22701,7 +22701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1751",
@@ -22709,7 +22709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1752",
@@ -22717,7 +22717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1753",
@@ -22725,7 +22725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1754",
@@ -22733,7 +22733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1755",
@@ -22741,7 +22741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1756",
@@ -22749,7 +22749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1757",
@@ -22757,7 +22757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1758",
@@ -22765,7 +22765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1759",
@@ -22773,7 +22773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1760",
@@ -22781,7 +22781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1761",
@@ -22789,7 +22789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1762",
@@ -22797,7 +22797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1763",
@@ -22805,7 +22805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1764",
@@ -22813,7 +22813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1765",
@@ -22821,7 +22821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1766",
@@ -22829,7 +22829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1767",
@@ -22837,7 +22837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1768",
@@ -22845,7 +22845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1769",
@@ -22853,7 +22853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1770",
@@ -22861,7 +22861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1771",
@@ -22869,7 +22869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1772",
@@ -22877,7 +22877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1773",
@@ -22885,7 +22885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1774",
@@ -22893,7 +22893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1775",
@@ -22901,7 +22901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1776",
@@ -22909,7 +22909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1777",
@@ -22917,7 +22917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1778",
@@ -22925,7 +22925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1779",
@@ -22933,7 +22933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1780",
@@ -22941,7 +22941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1781",
@@ -22949,7 +22949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1782",
@@ -22957,7 +22957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1783",
@@ -22965,7 +22965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1784",
@@ -22973,7 +22973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1785",
@@ -22981,7 +22981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1786",
@@ -22989,7 +22989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1787",
@@ -22997,7 +22997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1788",
@@ -23005,7 +23005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1789",
@@ -23013,7 +23013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1790",
@@ -23021,7 +23021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1791",
@@ -23029,7 +23029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1792",
@@ -23037,7 +23037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1793",
@@ -23045,7 +23045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1794",
@@ -23053,7 +23053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1795",
@@ -23061,7 +23061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1796",
@@ -23069,7 +23069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1797",
@@ -23077,7 +23077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1798",
@@ -23085,7 +23085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1799",
@@ -23093,7 +23093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1800",
@@ -23101,7 +23101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1801",
@@ -23109,7 +23109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1802",
@@ -23117,7 +23117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1803",
@@ -23125,7 +23125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1804",
@@ -23133,7 +23133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1805",
@@ -23141,7 +23141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1806",
@@ -23149,7 +23149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1807",
@@ -23157,7 +23157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1808",
@@ -23165,7 +23165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1809",
@@ -23173,7 +23173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1810",
@@ -23181,7 +23181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1811",
@@ -23189,7 +23189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1812",
@@ -23197,7 +23197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1813",
@@ -23205,7 +23205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1814",
@@ -23213,7 +23213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1815",
@@ -23221,7 +23221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1816",
@@ -23229,7 +23229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1817",
@@ -23237,7 +23237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1818",
@@ -23245,7 +23245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1819",
@@ -23253,7 +23253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1820",
@@ -23261,7 +23261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1821",
@@ -23269,7 +23269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1822",
@@ -23277,7 +23277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1823",
@@ -23285,7 +23285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1824",
@@ -23293,7 +23293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1825",
@@ -23301,7 +23301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1826",
@@ -23309,7 +23309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1827",
@@ -23317,7 +23317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1828",
@@ -23325,7 +23325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1829",
@@ -23333,7 +23333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1830",
@@ -23341,7 +23341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1831",
@@ -23349,7 +23349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1832",
@@ -23357,7 +23357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1833",
@@ -23365,7 +23365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1834",
@@ -23373,7 +23373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1835",
@@ -23381,7 +23381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1836",
@@ -23389,7 +23389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1837",
@@ -23397,7 +23397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1838",
@@ -23405,7 +23405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1839",
@@ -23413,7 +23413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1840",
@@ -23421,7 +23421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1841",
@@ -23429,7 +23429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1842",
@@ -23437,7 +23437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1843",
@@ -23445,7 +23445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1844",
@@ -23453,7 +23453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1845",
@@ -23461,7 +23461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1846",
@@ -23469,7 +23469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1847",
@@ -23477,7 +23477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1848",
@@ -23485,7 +23485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1849",
@@ -23493,7 +23493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1850",
@@ -23501,7 +23501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1851",
@@ -23509,7 +23509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1852",
@@ -23517,7 +23517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1853",
@@ -23525,7 +23525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1854",
@@ -23533,7 +23533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1855",
@@ -23541,7 +23541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1856",
@@ -23549,7 +23549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1857",
@@ -23557,7 +23557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1858",
@@ -23565,7 +23565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1859",
@@ -23573,7 +23573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1860",
@@ -23581,7 +23581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1861",
@@ -23589,7 +23589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1862",
@@ -23597,7 +23597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1863",
@@ -23605,7 +23605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1864",
@@ -23613,7 +23613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1865",
@@ -23621,7 +23621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1866",
@@ -23629,7 +23629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1867",
@@ -23637,7 +23637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1868",
@@ -23645,7 +23645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1869",
@@ -23653,7 +23653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1870",
@@ -23661,7 +23661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1871",
@@ -23669,7 +23669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1872",
@@ -23677,7 +23677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1873",
@@ -23685,7 +23685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1874",
@@ -23693,7 +23693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1875",
@@ -23701,7 +23701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1876",
@@ -23709,7 +23709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1877",
@@ -23717,7 +23717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1878",
@@ -23725,7 +23725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1879",
@@ -23733,7 +23733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1880",
@@ -23741,7 +23741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1881",
@@ -23749,7 +23749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1882",
@@ -23757,7 +23757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1883",
@@ -23765,7 +23765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1884",
@@ -23773,7 +23773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1885",
@@ -23781,7 +23781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1886",
@@ -23789,7 +23789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1887",
@@ -23797,7 +23797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1888",
@@ -23805,7 +23805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1889",
@@ -23813,7 +23813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1890",
@@ -23821,7 +23821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1891",
@@ -23829,7 +23829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1892",
@@ -23837,7 +23837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1893",
@@ -23845,7 +23845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1894",
@@ -23853,7 +23853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1895",
@@ -23861,7 +23861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1896",
@@ -23869,7 +23869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1897",
@@ -23877,7 +23877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1898",
@@ -23885,7 +23885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1899",
@@ -23893,7 +23893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1900",
@@ -23901,7 +23901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1901",
@@ -23909,7 +23909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1902",
@@ -23917,7 +23917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1903",
@@ -23925,7 +23925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1904",
@@ -23933,7 +23933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1905",
@@ -23941,7 +23941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1906",
@@ -23949,7 +23949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1907",
@@ -23957,7 +23957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1908",
@@ -23965,7 +23965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1909",
@@ -23973,7 +23973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1910",
@@ -23981,7 +23981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1911",
@@ -23989,7 +23989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1912",
@@ -23997,7 +23997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1913",
@@ -24005,7 +24005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1914",
@@ -24013,7 +24013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1915",
@@ -24021,7 +24021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1916",
@@ -24029,7 +24029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1917",
@@ -24037,7 +24037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1918",
@@ -24045,7 +24045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1919",
@@ -24053,7 +24053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1920",
@@ -24061,7 +24061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1921",
@@ -24069,7 +24069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1922",
@@ -24077,7 +24077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1923",
@@ -24085,7 +24085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1924",
@@ -24093,7 +24093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1925",
@@ -24101,7 +24101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1926",
@@ -24109,7 +24109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1927",
@@ -24117,7 +24117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1928",
@@ -24125,7 +24125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1929",
@@ -24133,7 +24133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1930",
@@ -24141,7 +24141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1931",
@@ -24149,7 +24149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1932",
@@ -24157,7 +24157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1933",
@@ -24165,7 +24165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1934",
@@ -24173,7 +24173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1935",
@@ -24181,7 +24181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1936",
@@ -24189,7 +24189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1937",
@@ -24197,7 +24197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1938",
@@ -24205,7 +24205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1939",
@@ -24213,7 +24213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1940",
@@ -24221,7 +24221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1941",
@@ -24229,7 +24229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1942",
@@ -24237,7 +24237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1943",
@@ -24245,7 +24245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1944",
@@ -24253,7 +24253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1945",
@@ -24261,7 +24261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1946",
@@ -24269,7 +24269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1947",
@@ -24277,7 +24277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1948",
@@ -24285,7 +24285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1949",
@@ -24293,7 +24293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1950",
@@ -24301,7 +24301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1951",
@@ -24309,7 +24309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1952",
@@ -24317,7 +24317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1953",
@@ -24325,7 +24325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1954",
@@ -24333,7 +24333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1955",
@@ -24341,7 +24341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1956",
@@ -24349,7 +24349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1957",
@@ -24357,7 +24357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1958",
@@ -24365,7 +24365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1959",
@@ -24373,7 +24373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1960",
@@ -24381,7 +24381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1961",
@@ -24389,7 +24389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1962",
@@ -24397,7 +24397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1963",
@@ -24405,7 +24405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1964",
@@ -24413,7 +24413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1965",
@@ -24421,7 +24421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1966",
@@ -24429,7 +24429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1967",
@@ -24437,7 +24437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1968",
@@ -24445,7 +24445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1969",
@@ -24453,7 +24453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1970",
@@ -24461,7 +24461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1971",
@@ -24469,7 +24469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1972",
@@ -24477,7 +24477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1973",
@@ -24485,7 +24485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1974",
@@ -24493,7 +24493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1975",
@@ -24501,7 +24501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1976",
@@ -24509,7 +24509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1977",
@@ -24517,7 +24517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1978",
@@ -24525,7 +24525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1979",
@@ -24533,7 +24533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1980",
@@ -24541,7 +24541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1981",
@@ -24549,7 +24549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1982",
@@ -24557,7 +24557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1983",
@@ -24565,7 +24565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1984",
@@ -24573,7 +24573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1985",
@@ -24581,7 +24581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1986",
@@ -24589,7 +24589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1987",
@@ -24597,7 +24597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1988",
@@ -24605,7 +24605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1989",
@@ -24613,7 +24613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1990",
@@ -24621,7 +24621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1991",
@@ -24629,7 +24629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1992",
@@ -24637,7 +24637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1993",
@@ -24645,7 +24645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1994",
@@ -24653,7 +24653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1995",
@@ -24661,7 +24661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1996",
@@ -24669,7 +24669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1997",
@@ -24677,7 +24677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1998",
@@ -24685,7 +24685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS1999",
@@ -24693,7 +24693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2000",
@@ -24701,7 +24701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2001",
@@ -24709,7 +24709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2002",
@@ -24717,7 +24717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2003",
@@ -24725,7 +24725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2004",
@@ -24733,7 +24733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2005",
@@ -24741,7 +24741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2006",
@@ -24749,7 +24749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2007",
@@ -24757,7 +24757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2008",
@@ -24765,7 +24765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2009",
@@ -24773,7 +24773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2010",
@@ -24781,7 +24781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2011",
@@ -24789,7 +24789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2012",
@@ -24797,7 +24797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2013",
@@ -24805,7 +24805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2014",
@@ -24813,7 +24813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2015",
@@ -24821,7 +24821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2016",
@@ -24829,7 +24829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2017",
@@ -24837,7 +24837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2018",
@@ -24845,7 +24845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2019",
@@ -24853,7 +24853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2020",
@@ -24861,7 +24861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2021",
@@ -24869,7 +24869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2022",
@@ -24877,7 +24877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2023",
@@ -24885,7 +24885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2024",
@@ -24893,7 +24893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2025",
@@ -24901,7 +24901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2026",
@@ -24909,7 +24909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2027",
@@ -24917,7 +24917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2028",
@@ -24925,7 +24925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2029",
@@ -24933,7 +24933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2030",
@@ -24941,7 +24941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2031",
@@ -24949,7 +24949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2032",
@@ -24957,7 +24957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2033",
@@ -24965,7 +24965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2034",
@@ -24973,7 +24973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2035",
@@ -24981,7 +24981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2036",
@@ -24989,7 +24989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2037",
@@ -24997,7 +24997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2038",
@@ -25005,7 +25005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2039",
@@ -25013,7 +25013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2040",
@@ -25021,7 +25021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2041",
@@ -25029,7 +25029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2042",
@@ -25037,7 +25037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2043",
@@ -25045,7 +25045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2044",
@@ -25053,7 +25053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2045",
@@ -25061,7 +25061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2046",
@@ -25069,7 +25069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2047",
@@ -25077,7 +25077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2048",
@@ -25085,7 +25085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2049",
@@ -25093,7 +25093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2050",
@@ -25101,7 +25101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2051",
@@ -25109,7 +25109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2052",
@@ -25117,7 +25117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2053",
@@ -25125,7 +25125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2054",
@@ -25133,7 +25133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2055",
@@ -25141,7 +25141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2056",
@@ -25149,7 +25149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2057",
@@ -25157,7 +25157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2058",
@@ -25165,7 +25165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2059",
@@ -25173,7 +25173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2060",
@@ -25181,7 +25181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2061",
@@ -25189,7 +25189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2062",
@@ -25197,7 +25197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2063",
@@ -25205,7 +25205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2064",
@@ -25213,7 +25213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2065",
@@ -25221,7 +25221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2066",
@@ -25229,7 +25229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2067",
@@ -25237,7 +25237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2068",
@@ -25245,7 +25245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2069",
@@ -25253,7 +25253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2070",
@@ -25261,7 +25261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2071",
@@ -25269,7 +25269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2072",
@@ -25277,7 +25277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2073",
@@ -25285,7 +25285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2074",
@@ -25293,7 +25293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2075",
@@ -25301,7 +25301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2076",
@@ -25309,7 +25309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2077",
@@ -25317,7 +25317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2078",
@@ -25325,7 +25325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2079",
@@ -25333,7 +25333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2080",
@@ -25341,7 +25341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2081",
@@ -25349,7 +25349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2082",
@@ -25357,7 +25357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2083",
@@ -25365,7 +25365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2084",
@@ -25373,7 +25373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2085",
@@ -25381,7 +25381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2086",
@@ -25389,7 +25389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2087",
@@ -25397,7 +25397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2088",
@@ -25405,7 +25405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2089",
@@ -25413,7 +25413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2090",
@@ -25421,7 +25421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2091",
@@ -25429,7 +25429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2092",
@@ -25437,7 +25437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2093",
@@ -25445,7 +25445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2094",
@@ -25453,7 +25453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2095",
@@ -25461,7 +25461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2096",
@@ -25469,7 +25469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2097",
@@ -25477,7 +25477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2098",
@@ -25485,7 +25485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2099",
@@ -25493,7 +25493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2100",
@@ -25501,7 +25501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2101",
@@ -25509,7 +25509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2102",
@@ -25517,7 +25517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2103",
@@ -25525,7 +25525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2104",
@@ -25533,7 +25533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2105",
@@ -25541,7 +25541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2106",
@@ -25549,7 +25549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2107",
@@ -25557,7 +25557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2108",
@@ -25565,7 +25565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2109",
@@ -25573,7 +25573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2110",
@@ -25581,7 +25581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2111",
@@ -25589,7 +25589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2112",
@@ -25597,7 +25597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2113",
@@ -25605,7 +25605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2114",
@@ -25613,7 +25613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2115",
@@ -25621,7 +25621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2116",
@@ -25629,7 +25629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2117",
@@ -25637,7 +25637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2118",
@@ -25645,7 +25645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2119",
@@ -25653,7 +25653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2120",
@@ -25661,7 +25661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2121",
@@ -25669,7 +25669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2122",
@@ -25677,7 +25677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2123",
@@ -25685,7 +25685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2124",
@@ -25693,7 +25693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2125",
@@ -25701,7 +25701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2126",
@@ -25709,7 +25709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2127",
@@ -25717,7 +25717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2128",
@@ -25725,7 +25725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2129",
@@ -25733,7 +25733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2130",
@@ -25741,7 +25741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2131",
@@ -25749,7 +25749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2132",
@@ -25757,7 +25757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2133",
@@ -25765,7 +25765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2134",
@@ -25773,7 +25773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2135",
@@ -25781,7 +25781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2136",
@@ -25789,7 +25789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2137",
@@ -25797,7 +25797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2138",
@@ -25805,7 +25805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2139",
@@ -25813,7 +25813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2140",
@@ -25821,7 +25821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2141",
@@ -25829,7 +25829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2142",
@@ -25837,7 +25837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2143",
@@ -25845,7 +25845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2144",
@@ -25853,7 +25853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2145",
@@ -25861,7 +25861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2146",
@@ -25869,7 +25869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2147",
@@ -25877,7 +25877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2148",
@@ -25885,7 +25885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2149",
@@ -25893,7 +25893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2150",
@@ -25901,7 +25901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2151",
@@ -25909,7 +25909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2152",
@@ -25917,7 +25917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2153",
@@ -25925,7 +25925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2154",
@@ -25933,7 +25933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2155",
@@ -25941,7 +25941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2156",
@@ -25949,7 +25949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2157",
@@ -25957,7 +25957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2158",
@@ -25965,7 +25965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2159",
@@ -25973,7 +25973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2160",
@@ -25981,7 +25981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2161",
@@ -25989,7 +25989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2162",
@@ -25997,7 +25997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2163",
@@ -26005,7 +26005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2164",
@@ -26013,7 +26013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2165",
@@ -26021,7 +26021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2166",
@@ -26029,7 +26029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2167",
@@ -26037,7 +26037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2168",
@@ -26045,7 +26045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2169",
@@ -26053,7 +26053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2170",
@@ -26061,7 +26061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2171",
@@ -26069,7 +26069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2172",
@@ -26077,7 +26077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2173",
@@ -26085,7 +26085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2174",
@@ -26093,7 +26093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2175",
@@ -26101,7 +26101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2176",
@@ -26109,7 +26109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2177",
@@ -26117,7 +26117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2178",
@@ -26125,7 +26125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2179",
@@ -26133,7 +26133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2180",
@@ -26141,7 +26141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2181",
@@ -26149,7 +26149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2182",
@@ -26157,7 +26157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2183",
@@ -26165,7 +26165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2184",
@@ -26173,7 +26173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2185",
@@ -26181,7 +26181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2186",
@@ -26189,7 +26189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2187",
@@ -26197,7 +26197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2188",
@@ -26205,7 +26205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2189",
@@ -26213,7 +26213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2190",
@@ -26221,7 +26221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2191",
@@ -26229,7 +26229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2192",
@@ -26237,7 +26237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2193",
@@ -26245,7 +26245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2194",
@@ -26253,7 +26253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2195",
@@ -26261,7 +26261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2196",
@@ -26269,7 +26269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2197",
@@ -26277,7 +26277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2198",
@@ -26285,7 +26285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2199",
@@ -26293,7 +26293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2200",
@@ -26301,7 +26301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2201",
@@ -26309,7 +26309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2202",
@@ -26317,7 +26317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2203",
@@ -26325,7 +26325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2204",
@@ -26333,7 +26333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2205",
@@ -26341,7 +26341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2206",
@@ -26349,7 +26349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2207",
@@ -26357,7 +26357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2208",
@@ -26365,7 +26365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2209",
@@ -26373,7 +26373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2210",
@@ -26381,7 +26381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2211",
@@ -26389,7 +26389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2212",
@@ -26397,7 +26397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2213",
@@ -26405,7 +26405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2214",
@@ -26413,7 +26413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2215",
@@ -26421,7 +26421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2216",
@@ -26429,7 +26429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2217",
@@ -26437,7 +26437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2218",
@@ -26445,7 +26445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2219",
@@ -26453,7 +26453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2220",
@@ -26461,7 +26461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2221",
@@ -26469,7 +26469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2222",
@@ -26477,7 +26477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2223",
@@ -26485,7 +26485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2224",
@@ -26493,7 +26493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2225",
@@ -26501,7 +26501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2226",
@@ -26509,7 +26509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2227",
@@ -26517,7 +26517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2228",
@@ -26525,7 +26525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2229",
@@ -26533,7 +26533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2230",
@@ -26541,7 +26541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2231",
@@ -26549,7 +26549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2232",
@@ -26557,7 +26557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2233",
@@ -26565,7 +26565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2234",
@@ -26573,7 +26573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2235",
@@ -26581,7 +26581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2236",
@@ -26589,7 +26589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2237",
@@ -26597,7 +26597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2238",
@@ -26605,7 +26605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2239",
@@ -26613,7 +26613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2240",
@@ -26621,7 +26621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2241",
@@ -26629,7 +26629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2242",
@@ -26637,7 +26637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2243",
@@ -26645,7 +26645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2244",
@@ -26653,7 +26653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2245",
@@ -26661,7 +26661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2246",
@@ -26669,7 +26669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2247",
@@ -26677,7 +26677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2248",
@@ -26685,7 +26685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2249",
@@ -26693,7 +26693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2250",
@@ -26701,7 +26701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2251",
@@ -26709,7 +26709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2252",
@@ -26717,7 +26717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2253",
@@ -26725,7 +26725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2254",
@@ -26733,7 +26733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2255",
@@ -26741,7 +26741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2256",
@@ -26749,7 +26749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2257",
@@ -26757,7 +26757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2258",
@@ -26765,7 +26765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2259",
@@ -26773,7 +26773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2260",
@@ -26781,7 +26781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2261",
@@ -26789,7 +26789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2262",
@@ -26797,7 +26797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2263",
@@ -26805,7 +26805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2264",
@@ -26813,7 +26813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2265",
@@ -26821,7 +26821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2266",
@@ -26829,7 +26829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2267",
@@ -26837,7 +26837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2268",
@@ -26845,7 +26845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2269",
@@ -26853,7 +26853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2270",
@@ -26861,7 +26861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2271",
@@ -26869,7 +26869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2272",
@@ -26877,7 +26877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2273",
@@ -26885,7 +26885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2274",
@@ -26893,7 +26893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2275",
@@ -26901,7 +26901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2276",
@@ -26909,7 +26909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2277",
@@ -26917,7 +26917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2278",
@@ -26925,7 +26925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2279",
@@ -26933,7 +26933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2280",
@@ -26941,7 +26941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2281",
@@ -26949,7 +26949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2282",
@@ -26957,7 +26957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2283",
@@ -26965,7 +26965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2284",
@@ -26973,7 +26973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2285",
@@ -26981,7 +26981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2286",
@@ -26989,7 +26989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2287",
@@ -26997,7 +26997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2288",
@@ -27005,7 +27005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2289",
@@ -27013,7 +27013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2290",
@@ -27021,7 +27021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2291",
@@ -27029,7 +27029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2292",
@@ -27037,7 +27037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2293",
@@ -27045,7 +27045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2294",
@@ -27053,7 +27053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2295",
@@ -27061,7 +27061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2296",
@@ -27069,7 +27069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2297",
@@ -27077,7 +27077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2298",
@@ -27085,7 +27085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2299",
@@ -27093,7 +27093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2300",
@@ -27101,7 +27101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2301",
@@ -27109,7 +27109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2302",
@@ -27117,7 +27117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2303",
@@ -27125,7 +27125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2304",
@@ -27133,7 +27133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2305",
@@ -27141,7 +27141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2306",
@@ -27149,7 +27149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2307",
@@ -27157,7 +27157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2308",
@@ -27165,7 +27165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2309",
@@ -27173,7 +27173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2310",
@@ -27181,7 +27181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2311",
@@ -27189,7 +27189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2312",
@@ -27197,7 +27197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2313",
@@ -27205,7 +27205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2314",
@@ -27213,7 +27213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2315",
@@ -27221,7 +27221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2316",
@@ -27229,7 +27229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2317",
@@ -27237,7 +27237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2318",
@@ -27245,7 +27245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2319",
@@ -27253,7 +27253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2320",
@@ -27261,7 +27261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2321",
@@ -27269,7 +27269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2322",
@@ -27277,7 +27277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2323",
@@ -27285,7 +27285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2324",
@@ -27293,7 +27293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2325",
@@ -27301,7 +27301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2326",
@@ -27309,7 +27309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2327",
@@ -27317,7 +27317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2328",
@@ -27325,7 +27325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2329",
@@ -27333,7 +27333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2330",
@@ -27341,7 +27341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2331",
@@ -27349,7 +27349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2332",
@@ -27357,7 +27357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2333",
@@ -27365,7 +27365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2334",
@@ -27373,7 +27373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2335",
@@ -27381,7 +27381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2336",
@@ -27389,7 +27389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2337",
@@ -27397,7 +27397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2338",
@@ -27405,7 +27405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2339",
@@ -27413,7 +27413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2340",
@@ -27421,7 +27421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2341",
@@ -27429,7 +27429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2342",
@@ -27437,7 +27437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2343",
@@ -27445,7 +27445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2344",
@@ -27453,7 +27453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2345",
@@ -27461,7 +27461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2346",
@@ -27469,7 +27469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2347",
@@ -27477,7 +27477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2348",
@@ -27485,7 +27485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2349",
@@ -27493,7 +27493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2350",
@@ -27501,7 +27501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2351",
@@ -27509,7 +27509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2352",
@@ -27517,7 +27517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2353",
@@ -27525,7 +27525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2354",
@@ -27533,7 +27533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2355",
@@ -27541,7 +27541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2356",
@@ -27549,7 +27549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2357",
@@ -27557,7 +27557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2358",
@@ -27565,7 +27565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2359",
@@ -27573,7 +27573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2360",
@@ -27581,7 +27581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2361",
@@ -27589,7 +27589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2362",
@@ -27597,7 +27597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2363",
@@ -27605,7 +27605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2364",
@@ -27613,7 +27613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2365",
@@ -27621,7 +27621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2366",
@@ -27629,7 +27629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2367",
@@ -27637,7 +27637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2368",
@@ -27645,7 +27645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2369",
@@ -27653,7 +27653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2370",
@@ -27661,7 +27661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2371",
@@ -27669,7 +27669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2372",
@@ -27677,7 +27677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2373",
@@ -27685,7 +27685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2374",
@@ -27693,7 +27693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2375",
@@ -27701,7 +27701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2376",
@@ -27709,7 +27709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2377",
@@ -27717,7 +27717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2378",
@@ -27725,7 +27725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2379",
@@ -27733,7 +27733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2380",
@@ -27741,7 +27741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2381",
@@ -27749,7 +27749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2382",
@@ -27757,7 +27757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2383",
@@ -27765,7 +27765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2384",
@@ -27773,7 +27773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2385",
@@ -27781,7 +27781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2386",
@@ -27789,7 +27789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2387",
@@ -27797,7 +27797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2388",
@@ -27805,7 +27805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2389",
@@ -27813,7 +27813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2390",
@@ -27821,7 +27821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2391",
@@ -27829,7 +27829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2392",
@@ -27837,7 +27837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2393",
@@ -27845,7 +27845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2394",
@@ -27853,7 +27853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2395",
@@ -27861,7 +27861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2396",
@@ -27869,7 +27869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2397",
@@ -27877,7 +27877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2398",
@@ -27885,7 +27885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2399",
@@ -27893,7 +27893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2400",
@@ -27901,7 +27901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2401",
@@ -27909,7 +27909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2402",
@@ -27917,7 +27917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2403",
@@ -27925,7 +27925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2404",
@@ -27933,7 +27933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2405",
@@ -27941,7 +27941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2406",
@@ -27949,7 +27949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2407",
@@ -27957,7 +27957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2408",
@@ -27965,7 +27965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2409",
@@ -27973,7 +27973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2410",
@@ -27981,7 +27981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2411",
@@ -27989,7 +27989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2412",
@@ -27997,7 +27997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2413",
@@ -28005,7 +28005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2414",
@@ -28013,7 +28013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2415",
@@ -28021,7 +28021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2416",
@@ -28029,7 +28029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2417",
@@ -28037,7 +28037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2418",
@@ -28045,7 +28045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2419",
@@ -28053,7 +28053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2420",
@@ -28061,7 +28061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2421",
@@ -28069,7 +28069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2422",
@@ -28077,7 +28077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2423",
@@ -28085,7 +28085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2424",
@@ -28093,7 +28093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2425",
@@ -28101,7 +28101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2426",
@@ -28109,7 +28109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2427",
@@ -28117,7 +28117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2428",
@@ -28125,7 +28125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2429",
@@ -28133,7 +28133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2430",
@@ -28141,7 +28141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2431",
@@ -28149,7 +28149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2432",
@@ -28157,7 +28157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2433",
@@ -28165,7 +28165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2434",
@@ -28173,7 +28173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2435",
@@ -28181,7 +28181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2436",
@@ -28189,7 +28189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2437",
@@ -28197,7 +28197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2438",
@@ -28205,7 +28205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2439",
@@ -28213,7 +28213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2440",
@@ -28221,7 +28221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2441",
@@ -28229,7 +28229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2442",
@@ -28237,7 +28237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2443",
@@ -28245,7 +28245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2444",
@@ -28253,7 +28253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2445",
@@ -28261,7 +28261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2446",
@@ -28269,7 +28269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2447",
@@ -28277,7 +28277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2448",
@@ -28285,7 +28285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2449",
@@ -28293,7 +28293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2450",
@@ -28301,7 +28301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2451",
@@ -28309,7 +28309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2452",
@@ -28317,7 +28317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2453",
@@ -28325,7 +28325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2454",
@@ -28333,7 +28333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2455",
@@ -28341,7 +28341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2456",
@@ -28349,7 +28349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2457",
@@ -28357,7 +28357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2458",
@@ -28365,7 +28365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2459",
@@ -28373,7 +28373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2460",
@@ -28381,7 +28381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2461",
@@ -28389,7 +28389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2462",
@@ -28397,7 +28397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2463",
@@ -28405,7 +28405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2464",
@@ -28413,7 +28413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2465",
@@ -28421,7 +28421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2466",
@@ -28429,7 +28429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2467",
@@ -28437,7 +28437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2468",
@@ -28445,7 +28445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2469",
@@ -28453,7 +28453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2470",
@@ -28461,7 +28461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2471",
@@ -28469,7 +28469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2472",
@@ -28477,7 +28477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2473",
@@ -28485,7 +28485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2474",
@@ -28493,7 +28493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2475",
@@ -28501,7 +28501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2476",
@@ -28509,7 +28509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2477",
@@ -28517,7 +28517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2478",
@@ -28525,7 +28525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2479",
@@ -28533,7 +28533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2480",
@@ -28541,7 +28541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2481",
@@ -28549,7 +28549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2482",
@@ -28557,7 +28557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2483",
@@ -28565,7 +28565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2484",
@@ -28573,7 +28573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2485",
@@ -28581,7 +28581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2486",
@@ -28589,7 +28589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2487",
@@ -28597,7 +28597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2488",
@@ -28605,7 +28605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2489",
@@ -28613,7 +28613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2490",
@@ -28621,7 +28621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2491",
@@ -28629,7 +28629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2492",
@@ -28637,7 +28637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2493",
@@ -28645,7 +28645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2494",
@@ -28653,7 +28653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2495",
@@ -28661,7 +28661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2496",
@@ -28669,7 +28669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2497",
@@ -28677,7 +28677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2498",
@@ -28685,7 +28685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2499",
@@ -28693,7 +28693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2500",
@@ -28701,7 +28701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2501",
@@ -28709,7 +28709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2502",
@@ -28717,7 +28717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2503",
@@ -28725,7 +28725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2504",
@@ -28733,7 +28733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2505",
@@ -28741,7 +28741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2506",
@@ -28749,7 +28749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2507",
@@ -28757,7 +28757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2508",
@@ -28765,7 +28765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2509",
@@ -28773,7 +28773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2510",
@@ -28781,7 +28781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2511",
@@ -28789,7 +28789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2512",
@@ -28797,7 +28797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2513",
@@ -28805,7 +28805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2514",
@@ -28813,7 +28813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2515",
@@ -28821,7 +28821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2516",
@@ -28829,7 +28829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2517",
@@ -28837,7 +28837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2518",
@@ -28845,7 +28845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2519",
@@ -28853,7 +28853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2520",
@@ -28861,7 +28861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2521",
@@ -28869,7 +28869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2522",
@@ -28877,7 +28877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2523",
@@ -28885,7 +28885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2524",
@@ -28893,7 +28893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2525",
@@ -28901,7 +28901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2526",
@@ -28909,7 +28909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2527",
@@ -28917,7 +28917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2528",
@@ -28925,7 +28925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2529",
@@ -28933,7 +28933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2530",
@@ -28941,7 +28941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2531",
@@ -28949,7 +28949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2532",
@@ -28957,7 +28957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2533",
@@ -28965,7 +28965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2534",
@@ -28973,7 +28973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2535",
@@ -28981,7 +28981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2536",
@@ -28989,7 +28989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2537",
@@ -28997,7 +28997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2538",
@@ -29005,7 +29005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2539",
@@ -29013,7 +29013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2540",
@@ -29021,7 +29021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2541",
@@ -29029,7 +29029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2542",
@@ -29037,7 +29037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2543",
@@ -29045,7 +29045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2544",
@@ -29053,7 +29053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2545",
@@ -29061,7 +29061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2546",
@@ -29069,7 +29069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2547",
@@ -29077,7 +29077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2548",
@@ -29085,7 +29085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2549",
@@ -29093,7 +29093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2550",
@@ -29101,7 +29101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2551",
@@ -29109,7 +29109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2552",
@@ -29117,7 +29117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2553",
@@ -29125,7 +29125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2554",
@@ -29133,7 +29133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2555",
@@ -29141,7 +29141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2556",
@@ -29149,7 +29149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2557",
@@ -29157,7 +29157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2558",
@@ -29165,7 +29165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2559",
@@ -29173,7 +29173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2560",
@@ -29181,7 +29181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2561",
@@ -29189,7 +29189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2562",
@@ -29197,7 +29197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2563",
@@ -29205,7 +29205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2564",
@@ -29213,7 +29213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2565",
@@ -29221,7 +29221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2566",
@@ -29229,7 +29229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2567",
@@ -29237,7 +29237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2568",
@@ -29245,7 +29245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2569",
@@ -29253,7 +29253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2570",
@@ -29261,7 +29261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2571",
@@ -29269,7 +29269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2572",
@@ -29277,7 +29277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2573",
@@ -29285,7 +29285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2574",
@@ -29293,7 +29293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2575",
@@ -29301,7 +29301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2576",
@@ -29309,7 +29309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2577",
@@ -29317,7 +29317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2578",
@@ -29325,7 +29325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2579",
@@ -29333,7 +29333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2580",
@@ -29341,7 +29341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2581",
@@ -29349,7 +29349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2582",
@@ -29357,7 +29357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2583",
@@ -29365,7 +29365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2584",
@@ -29373,7 +29373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2585",
@@ -29381,7 +29381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2586",
@@ -29389,7 +29389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2587",
@@ -29397,7 +29397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2588",
@@ -29405,7 +29405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2589",
@@ -29413,7 +29413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2590",
@@ -29421,7 +29421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2591",
@@ -29429,7 +29429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2592",
@@ -29437,7 +29437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2593",
@@ -29445,7 +29445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2594",
@@ -29453,7 +29453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2595",
@@ -29461,7 +29461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2596",
@@ -29469,7 +29469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2597",
@@ -29477,7 +29477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2598",
@@ -29485,7 +29485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2599",
@@ -29493,7 +29493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2600",
@@ -29501,7 +29501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2601",
@@ -29509,7 +29509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2602",
@@ -29517,7 +29517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2603",
@@ -29525,7 +29525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2604",
@@ -29533,7 +29533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2605",
@@ -29541,7 +29541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2606",
@@ -29549,7 +29549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2607",
@@ -29557,7 +29557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2608",
@@ -29565,7 +29565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2609",
@@ -29573,7 +29573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2610",
@@ -29581,7 +29581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2611",
@@ -29589,7 +29589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2612",
@@ -29597,7 +29597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2613",
@@ -29605,7 +29605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2614",
@@ -29613,7 +29613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2615",
@@ -29621,7 +29621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2616",
@@ -29629,7 +29629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2617",
@@ -29637,7 +29637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2618",
@@ -29645,7 +29645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2619",
@@ -29653,7 +29653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2620",
@@ -29661,7 +29661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2621",
@@ -29669,7 +29669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2622",
@@ -29677,7 +29677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2623",
@@ -29685,7 +29685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2624",
@@ -29693,7 +29693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2625",
@@ -29701,7 +29701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2626",
@@ -29709,7 +29709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2627",
@@ -29717,7 +29717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2628",
@@ -29725,7 +29725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2629",
@@ -29733,7 +29733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2630",
@@ -29741,7 +29741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2631",
@@ -29749,7 +29749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2632",
@@ -29757,7 +29757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2633",
@@ -29765,7 +29765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2634",
@@ -29773,7 +29773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2635",
@@ -29781,7 +29781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2636",
@@ -29789,7 +29789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2637",
@@ -29797,7 +29797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2638",
@@ -29805,7 +29805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2639",
@@ -29813,7 +29813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2640",
@@ -29821,7 +29821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2641",
@@ -29829,7 +29829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2642",
@@ -29837,7 +29837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2643",
@@ -29845,7 +29845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2644",
@@ -29853,7 +29853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2645",
@@ -29861,7 +29861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2646",
@@ -29869,7 +29869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2647",
@@ -29877,7 +29877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2648",
@@ -29885,7 +29885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2649",
@@ -29893,7 +29893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2650",
@@ -29901,7 +29901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2651",
@@ -29909,7 +29909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2652",
@@ -29917,7 +29917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2653",
@@ -29925,7 +29925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2654",
@@ -29933,7 +29933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2655",
@@ -29941,7 +29941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2656",
@@ -29949,7 +29949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2657",
@@ -29957,7 +29957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2658",
@@ -29965,7 +29965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2659",
@@ -29973,7 +29973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2660",
@@ -29981,7 +29981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2661",
@@ -29989,7 +29989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2662",
@@ -29997,7 +29997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2663",
@@ -30005,7 +30005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2664",
@@ -30013,7 +30013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2665",
@@ -30021,7 +30021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2666",
@@ -30029,7 +30029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2667",
@@ -30037,7 +30037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2668",
@@ -30045,7 +30045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2669",
@@ -30053,7 +30053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2670",
@@ -30061,7 +30061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2671",
@@ -30069,7 +30069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2672",
@@ -30077,7 +30077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2673",
@@ -30085,7 +30085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2674",
@@ -30093,7 +30093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2675",
@@ -30101,7 +30101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2676",
@@ -30109,7 +30109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2677",
@@ -30117,7 +30117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2678",
@@ -30125,7 +30125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2679",
@@ -30133,7 +30133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2680",
@@ -30141,7 +30141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2681",
@@ -30149,7 +30149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2682",
@@ -30157,7 +30157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2683",
@@ -30165,7 +30165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2684",
@@ -30173,7 +30173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2685",
@@ -30181,7 +30181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2686",
@@ -30189,7 +30189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2687",
@@ -30197,7 +30197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2688",
@@ -30205,7 +30205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2689",
@@ -30213,7 +30213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2690",
@@ -30221,7 +30221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2691",
@@ -30229,7 +30229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2692",
@@ -30237,7 +30237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2693",
@@ -30245,7 +30245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2694",
@@ -30253,7 +30253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2695",
@@ -30261,7 +30261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2696",
@@ -30269,7 +30269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2697",
@@ -30277,7 +30277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2698",
@@ -30285,7 +30285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2699",
@@ -30293,7 +30293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2700",
@@ -30301,7 +30301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2701",
@@ -30309,7 +30309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2702",
@@ -30317,7 +30317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2703",
@@ -30325,7 +30325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2704",
@@ -30333,7 +30333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2705",
@@ -30341,7 +30341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2706",
@@ -30349,7 +30349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2707",
@@ -30357,7 +30357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2708",
@@ -30365,7 +30365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2709",
@@ -30373,7 +30373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2710",
@@ -30381,7 +30381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2711",
@@ -30389,7 +30389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2712",
@@ -30397,7 +30397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2713",
@@ -30405,7 +30405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2714",
@@ -30413,7 +30413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2715",
@@ -30421,7 +30421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2716",
@@ -30429,7 +30429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2717",
@@ -30437,7 +30437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2718",
@@ -30445,7 +30445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2719",
@@ -30453,7 +30453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2720",
@@ -30461,7 +30461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2721",
@@ -30469,7 +30469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2722",
@@ -30477,7 +30477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2723",
@@ -30485,7 +30485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2724",
@@ -30493,7 +30493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "medium"
   },
   {
     "id": "LS2725",
@@ -30501,7 +30501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2726",
@@ -30509,7 +30509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2727",
@@ -30517,7 +30517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2728",
@@ -30525,7 +30525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2729",
@@ -30533,7 +30533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2730",
@@ -30541,7 +30541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2731",
@@ -30549,7 +30549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2732",
@@ -30557,7 +30557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2733",
@@ -30565,7 +30565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2734",
@@ -30573,7 +30573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2735",
@@ -30581,7 +30581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2736",
@@ -30589,7 +30589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2737",
@@ -30597,7 +30597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2738",
@@ -30605,7 +30605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2739",
@@ -30613,7 +30613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2740",
@@ -30621,7 +30621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2741",
@@ -30629,7 +30629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2742",
@@ -30637,7 +30637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2743",
@@ -30645,7 +30645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2744",
@@ -30653,7 +30653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2745",
@@ -30661,7 +30661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2746",
@@ -30669,7 +30669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2747",
@@ -30677,7 +30677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2748",
@@ -30685,7 +30685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2749",
@@ -30693,7 +30693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2750",
@@ -30701,7 +30701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2751",
@@ -30709,7 +30709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2752",
@@ -30717,7 +30717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2753",
@@ -30725,7 +30725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2754",
@@ -30733,7 +30733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2755",
@@ -30741,7 +30741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2756",
@@ -30749,7 +30749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2757",
@@ -30757,7 +30757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2758",
@@ -30765,7 +30765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2759",
@@ -30773,7 +30773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2760",
@@ -30781,7 +30781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2761",
@@ -30789,7 +30789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2762",
@@ -30797,7 +30797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2763",
@@ -30805,7 +30805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2764",
@@ -30813,7 +30813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2765",
@@ -30821,7 +30821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2766",
@@ -30829,7 +30829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2767",
@@ -30837,7 +30837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2768",
@@ -30845,7 +30845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2769",
@@ -30853,7 +30853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2770",
@@ -30861,7 +30861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2771",
@@ -30869,7 +30869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2772",
@@ -30877,7 +30877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2773",
@@ -30885,7 +30885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2774",
@@ -30893,7 +30893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2775",
@@ -30901,7 +30901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2776",
@@ -30909,7 +30909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2777",
@@ -30917,7 +30917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2778",
@@ -30925,7 +30925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2779",
@@ -30933,7 +30933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2780",
@@ -30941,7 +30941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2781",
@@ -30949,7 +30949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2782",
@@ -30957,7 +30957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2783",
@@ -30965,7 +30965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2784",
@@ -30973,7 +30973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2785",
@@ -30981,7 +30981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2786",
@@ -30989,7 +30989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2787",
@@ -30997,7 +30997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2788",
@@ -31005,7 +31005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2789",
@@ -31013,7 +31013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2790",
@@ -31021,7 +31021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2791",
@@ -31029,7 +31029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2792",
@@ -31037,7 +31037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2793",
@@ -31045,7 +31045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2794",
@@ -31053,7 +31053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2795",
@@ -31061,7 +31061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2796",
@@ -31069,7 +31069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2797",
@@ -31077,7 +31077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2798",
@@ -31085,7 +31085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2799",
@@ -31093,7 +31093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2800",
@@ -31101,7 +31101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2801",
@@ -31109,7 +31109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2802",
@@ -31117,7 +31117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2803",
@@ -31125,7 +31125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2804",
@@ -31133,7 +31133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2805",
@@ -31141,7 +31141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2806",
@@ -31149,7 +31149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2807",
@@ -31157,7 +31157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2808",
@@ -31165,7 +31165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2809",
@@ -31173,7 +31173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2810",
@@ -31181,7 +31181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2811",
@@ -31189,7 +31189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2812",
@@ -31197,7 +31197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2813",
@@ -31205,7 +31205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2814",
@@ -31213,7 +31213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2815",
@@ -31221,7 +31221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2816",
@@ -31229,7 +31229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2817",
@@ -31237,7 +31237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2818",
@@ -31245,7 +31245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2819",
@@ -31253,7 +31253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2820",
@@ -31261,7 +31261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2821",
@@ -31269,7 +31269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2822",
@@ -31277,7 +31277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2823",
@@ -31285,7 +31285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2824",
@@ -31293,7 +31293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2825",
@@ -31301,7 +31301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2826",
@@ -31309,7 +31309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2827",
@@ -31317,7 +31317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2828",
@@ -31325,7 +31325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2829",
@@ -31333,7 +31333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2830",
@@ -31341,7 +31341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2831",
@@ -31349,7 +31349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2832",
@@ -31357,7 +31357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2833",
@@ -31365,7 +31365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2834",
@@ -31373,7 +31373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2835",
@@ -31381,7 +31381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2836",
@@ -31389,7 +31389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2837",
@@ -31397,7 +31397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2838",
@@ -31405,7 +31405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2839",
@@ -31413,7 +31413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2840",
@@ -31421,7 +31421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2841",
@@ -31429,7 +31429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2842",
@@ -31437,7 +31437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2843",
@@ -31445,7 +31445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2844",
@@ -31453,7 +31453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2845",
@@ -31461,7 +31461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2846",
@@ -31469,7 +31469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2847",
@@ -31477,7 +31477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2848",
@@ -31485,7 +31485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2849",
@@ -31493,7 +31493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2850",
@@ -31501,7 +31501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2851",
@@ -31509,7 +31509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2852",
@@ -31517,7 +31517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2853",
@@ -31525,7 +31525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2854",
@@ -31533,7 +31533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2855",
@@ -31541,7 +31541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2856",
@@ -31549,7 +31549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2857",
@@ -31557,7 +31557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2858",
@@ -31565,7 +31565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2859",
@@ -31573,7 +31573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2860",
@@ -31581,7 +31581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2861",
@@ -31589,7 +31589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2862",
@@ -31597,7 +31597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2863",
@@ -31605,7 +31605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2864",
@@ -31613,7 +31613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2865",
@@ -31621,7 +31621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2866",
@@ -31629,7 +31629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2867",
@@ -31637,7 +31637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2868",
@@ -31645,7 +31645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2869",
@@ -31653,7 +31653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2870",
@@ -31661,7 +31661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2871",
@@ -31669,7 +31669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2872",
@@ -31677,7 +31677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2873",
@@ -31685,7 +31685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2874",
@@ -31693,7 +31693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2875",
@@ -31701,7 +31701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2876",
@@ -31709,7 +31709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2877",
@@ -31717,7 +31717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2878",
@@ -31725,7 +31725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2879",
@@ -31733,7 +31733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2880",
@@ -31741,7 +31741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2881",
@@ -31749,7 +31749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2882",
@@ -31757,7 +31757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2883",
@@ -31765,7 +31765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2884",
@@ -31773,7 +31773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2885",
@@ -31781,7 +31781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2886",
@@ -31789,7 +31789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2887",
@@ -31797,7 +31797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2888",
@@ -31805,7 +31805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2889",
@@ -31813,7 +31813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2890",
@@ -31821,7 +31821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2891",
@@ -31829,7 +31829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2892",
@@ -31837,7 +31837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2893",
@@ -31845,7 +31845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2894",
@@ -31853,7 +31853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2895",
@@ -31861,7 +31861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2896",
@@ -31869,7 +31869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2897",
@@ -31877,7 +31877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2898",
@@ -31885,7 +31885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2899",
@@ -31893,7 +31893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2900",
@@ -31901,7 +31901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2901",
@@ -31909,7 +31909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2902",
@@ -31917,7 +31917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2903",
@@ -31925,7 +31925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2904",
@@ -31933,7 +31933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2905",
@@ -31941,7 +31941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2906",
@@ -31949,7 +31949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2907",
@@ -31957,7 +31957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2908",
@@ -31965,7 +31965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2909",
@@ -31973,7 +31973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2910",
@@ -31981,7 +31981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2911",
@@ -31989,7 +31989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2912",
@@ -31997,7 +31997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2913",
@@ -32005,7 +32005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2914",
@@ -32013,7 +32013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2915",
@@ -32021,7 +32021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2916",
@@ -32029,7 +32029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2917",
@@ -32037,7 +32037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2918",
@@ -32045,7 +32045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2919",
@@ -32053,7 +32053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2920",
@@ -32061,7 +32061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2921",
@@ -32069,7 +32069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2922",
@@ -32077,7 +32077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2923",
@@ -32085,7 +32085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2924",
@@ -32093,7 +32093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2925",
@@ -32101,7 +32101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2926",
@@ -32109,7 +32109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2927",
@@ -32117,7 +32117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2928",
@@ -32125,7 +32125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2929",
@@ -32133,7 +32133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2930",
@@ -32141,7 +32141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2931",
@@ -32149,7 +32149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2932",
@@ -32157,7 +32157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2933",
@@ -32165,7 +32165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2934",
@@ -32173,7 +32173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2935",
@@ -32181,7 +32181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2936",
@@ -32189,7 +32189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2937",
@@ -32197,7 +32197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2938",
@@ -32205,7 +32205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2939",
@@ -32213,7 +32213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2940",
@@ -32221,7 +32221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2941",
@@ -32229,7 +32229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2942",
@@ -32237,7 +32237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2943",
@@ -32245,7 +32245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2944",
@@ -32253,7 +32253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2945",
@@ -32261,7 +32261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2946",
@@ -32269,7 +32269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2947",
@@ -32277,7 +32277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2948",
@@ -32285,7 +32285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2949",
@@ -32293,7 +32293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2950",
@@ -32301,7 +32301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2951",
@@ -32309,7 +32309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2952",
@@ -32317,7 +32317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2953",
@@ -32325,7 +32325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2954",
@@ -32333,7 +32333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2955",
@@ -32341,7 +32341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2956",
@@ -32349,7 +32349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2957",
@@ -32357,7 +32357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2958",
@@ -32365,7 +32365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2959",
@@ -32373,7 +32373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2960",
@@ -32381,7 +32381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2961",
@@ -32389,7 +32389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2962",
@@ -32397,7 +32397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2963",
@@ -32405,7 +32405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2964",
@@ -32413,7 +32413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2965",
@@ -32421,7 +32421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2966",
@@ -32429,7 +32429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2967",
@@ -32437,7 +32437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2968",
@@ -32445,7 +32445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2969",
@@ -32453,7 +32453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2970",
@@ -32461,7 +32461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2971",
@@ -32469,7 +32469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2972",
@@ -32477,7 +32477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2973",
@@ -32485,7 +32485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2974",
@@ -32493,7 +32493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2975",
@@ -32501,7 +32501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2976",
@@ -32509,7 +32509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2977",
@@ -32517,7 +32517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2978",
@@ -32525,7 +32525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2979",
@@ -32533,7 +32533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2980",
@@ -32541,7 +32541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2981",
@@ -32549,7 +32549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2982",
@@ -32557,7 +32557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2983",
@@ -32565,7 +32565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2984",
@@ -32573,7 +32573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2985",
@@ -32581,7 +32581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2986",
@@ -32589,7 +32589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2987",
@@ -32597,7 +32597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2988",
@@ -32605,7 +32605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2989",
@@ -32613,7 +32613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2990",
@@ -32621,7 +32621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2991",
@@ -32629,7 +32629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2992",
@@ -32637,7 +32637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2993",
@@ -32645,7 +32645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2994",
@@ -32653,7 +32653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2995",
@@ -32661,7 +32661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2996",
@@ -32669,7 +32669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2997",
@@ -32677,7 +32677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2998",
@@ -32685,7 +32685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS2999",
@@ -32693,7 +32693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3000",
@@ -32701,7 +32701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3001",
@@ -32709,7 +32709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3002",
@@ -32717,7 +32717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3003",
@@ -32725,7 +32725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3004",
@@ -32733,7 +32733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3005",
@@ -32741,7 +32741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3006",
@@ -32749,7 +32749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3007",
@@ -32757,7 +32757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3008",
@@ -32765,7 +32765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3009",
@@ -32773,7 +32773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3010",
@@ -32781,7 +32781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3011",
@@ -32789,7 +32789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3012",
@@ -32797,7 +32797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3013",
@@ -32805,7 +32805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3014",
@@ -32813,7 +32813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3015",
@@ -32821,7 +32821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3016",
@@ -32829,7 +32829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3017",
@@ -32837,7 +32837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3018",
@@ -32845,7 +32845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3019",
@@ -32853,7 +32853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3020",
@@ -32861,7 +32861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3021",
@@ -32869,7 +32869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3022",
@@ -32877,7 +32877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3023",
@@ -32885,7 +32885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3024",
@@ -32893,7 +32893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3025",
@@ -32901,7 +32901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3026",
@@ -32909,7 +32909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3027",
@@ -32917,7 +32917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3028",
@@ -32925,7 +32925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3029",
@@ -32933,7 +32933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3030",
@@ -32941,7 +32941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3031",
@@ -32949,7 +32949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3032",
@@ -32957,7 +32957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3033",
@@ -32965,7 +32965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3034",
@@ -32973,7 +32973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3035",
@@ -32981,7 +32981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3036",
@@ -32989,7 +32989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3037",
@@ -32997,7 +32997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3038",
@@ -33005,7 +33005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3039",
@@ -33013,7 +33013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3040",
@@ -33021,7 +33021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3041",
@@ -33029,7 +33029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3042",
@@ -33037,7 +33037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3043",
@@ -33045,7 +33045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3044",
@@ -33053,7 +33053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3045",
@@ -33061,7 +33061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3046",
@@ -33069,7 +33069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3047",
@@ -33077,7 +33077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3048",
@@ -33085,7 +33085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3049",
@@ -33093,7 +33093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3050",
@@ -33101,7 +33101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3051",
@@ -33109,7 +33109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3052",
@@ -33117,7 +33117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3053",
@@ -33125,7 +33125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3054",
@@ -33133,7 +33133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3055",
@@ -33141,7 +33141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3056",
@@ -33149,7 +33149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3057",
@@ -33157,7 +33157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3058",
@@ -33165,7 +33165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3059",
@@ -33173,7 +33173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3060",
@@ -33181,7 +33181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3061",
@@ -33189,7 +33189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3062",
@@ -33197,7 +33197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3063",
@@ -33205,7 +33205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3064",
@@ -33213,7 +33213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3065",
@@ -33221,7 +33221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3066",
@@ -33229,7 +33229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3067",
@@ -33237,7 +33237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3068",
@@ -33245,7 +33245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3069",
@@ -33253,7 +33253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3070",
@@ -33261,7 +33261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3071",
@@ -33269,7 +33269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3072",
@@ -33277,7 +33277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3073",
@@ -33285,7 +33285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3074",
@@ -33293,7 +33293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3075",
@@ -33301,7 +33301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3076",
@@ -33309,7 +33309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3077",
@@ -33317,7 +33317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3078",
@@ -33325,7 +33325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3079",
@@ -33333,7 +33333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3080",
@@ -33341,7 +33341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3081",
@@ -33349,7 +33349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3082",
@@ -33357,7 +33357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3083",
@@ -33365,7 +33365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3084",
@@ -33373,7 +33373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3085",
@@ -33381,7 +33381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3086",
@@ -33389,7 +33389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3087",
@@ -33397,7 +33397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3088",
@@ -33405,7 +33405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3089",
@@ -33413,7 +33413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3090",
@@ -33421,7 +33421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3091",
@@ -33429,7 +33429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3092",
@@ -33437,7 +33437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3093",
@@ -33445,7 +33445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3094",
@@ -33453,7 +33453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3095",
@@ -33461,7 +33461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3096",
@@ -33469,7 +33469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3097",
@@ -33477,7 +33477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3098",
@@ -33485,7 +33485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3099",
@@ -33493,7 +33493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3100",
@@ -33501,7 +33501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3101",
@@ -33509,7 +33509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3102",
@@ -33517,7 +33517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3103",
@@ -33525,7 +33525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3104",
@@ -33533,7 +33533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3105",
@@ -33541,7 +33541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3106",
@@ -33549,7 +33549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3107",
@@ -33557,7 +33557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3108",
@@ -33565,7 +33565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3109",
@@ -33573,7 +33573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3110",
@@ -33581,7 +33581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3111",
@@ -33589,7 +33589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3112",
@@ -33597,7 +33597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3113",
@@ -33605,7 +33605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3114",
@@ -33613,7 +33613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3115",
@@ -33621,7 +33621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3116",
@@ -33629,7 +33629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3117",
@@ -33637,7 +33637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3118",
@@ -33645,7 +33645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3119",
@@ -33653,7 +33653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3120",
@@ -33661,7 +33661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3121",
@@ -33669,7 +33669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3122",
@@ -33677,7 +33677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3123",
@@ -33685,7 +33685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3124",
@@ -33693,7 +33693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3125",
@@ -33701,7 +33701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3126",
@@ -33709,7 +33709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3127",
@@ -33717,7 +33717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3128",
@@ -33725,7 +33725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3129",
@@ -33733,7 +33733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3130",
@@ -33741,7 +33741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3131",
@@ -33749,7 +33749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3132",
@@ -33757,7 +33757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3133",
@@ -33765,7 +33765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3134",
@@ -33773,7 +33773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3135",
@@ -33781,7 +33781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3136",
@@ -33789,7 +33789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3137",
@@ -33797,7 +33797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3138",
@@ -33805,7 +33805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3139",
@@ -33813,7 +33813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3140",
@@ -33821,7 +33821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3141",
@@ -33829,7 +33829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3142",
@@ -33837,7 +33837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3143",
@@ -33845,7 +33845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3144",
@@ -33853,7 +33853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3145",
@@ -33861,7 +33861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3146",
@@ -33869,7 +33869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3147",
@@ -33877,7 +33877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3148",
@@ -33885,7 +33885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3149",
@@ -33893,7 +33893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3150",
@@ -33901,7 +33901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3151",
@@ -33909,7 +33909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3152",
@@ -33917,7 +33917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3153",
@@ -33925,7 +33925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3154",
@@ -33933,7 +33933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3155",
@@ -33941,7 +33941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3156",
@@ -33949,7 +33949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3157",
@@ -33957,7 +33957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3158",
@@ -33965,7 +33965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3159",
@@ -33973,7 +33973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3160",
@@ -33981,7 +33981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3161",
@@ -33989,7 +33989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3162",
@@ -33997,7 +33997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3163",
@@ -34005,7 +34005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3164",
@@ -34013,7 +34013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3165",
@@ -34021,7 +34021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3166",
@@ -34029,7 +34029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3167",
@@ -34037,7 +34037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3168",
@@ -34045,7 +34045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3169",
@@ -34053,7 +34053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3170",
@@ -34061,7 +34061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3171",
@@ -34069,7 +34069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3172",
@@ -34077,7 +34077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3173",
@@ -34085,7 +34085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3174",
@@ -34093,7 +34093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3175",
@@ -34101,7 +34101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3176",
@@ -34109,7 +34109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3177",
@@ -34117,7 +34117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3178",
@@ -34125,7 +34125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3179",
@@ -34133,7 +34133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3180",
@@ -34141,7 +34141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3181",
@@ -34149,7 +34149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3182",
@@ -34157,7 +34157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3183",
@@ -34165,7 +34165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3184",
@@ -34173,7 +34173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3185",
@@ -34181,7 +34181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3186",
@@ -34189,7 +34189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3187",
@@ -34197,7 +34197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3188",
@@ -34205,7 +34205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3189",
@@ -34213,7 +34213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3190",
@@ -34221,7 +34221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3191",
@@ -34229,7 +34229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3192",
@@ -34237,7 +34237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3193",
@@ -34245,7 +34245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3194",
@@ -34253,7 +34253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3195",
@@ -34261,7 +34261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3196",
@@ -34269,7 +34269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3197",
@@ -34277,7 +34277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3198",
@@ -34285,7 +34285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3199",
@@ -34293,7 +34293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3200",
@@ -34301,7 +34301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3201",
@@ -34309,7 +34309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3202",
@@ -34317,7 +34317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3203",
@@ -34325,7 +34325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3204",
@@ -34333,7 +34333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3205",
@@ -34341,7 +34341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3206",
@@ -34349,7 +34349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3207",
@@ -34357,7 +34357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3208",
@@ -34365,7 +34365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3209",
@@ -34373,7 +34373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3210",
@@ -34381,7 +34381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3211",
@@ -34389,7 +34389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3212",
@@ -34397,7 +34397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3213",
@@ -34405,7 +34405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3214",
@@ -34413,7 +34413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3215",
@@ -34421,7 +34421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3216",
@@ -34429,7 +34429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3217",
@@ -34437,7 +34437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3218",
@@ -34445,7 +34445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3219",
@@ -34453,7 +34453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3220",
@@ -34461,7 +34461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3221",
@@ -34469,7 +34469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3222",
@@ -34477,7 +34477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3223",
@@ -34485,7 +34485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3224",
@@ -34493,7 +34493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3225",
@@ -34501,7 +34501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3226",
@@ -34509,7 +34509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3227",
@@ -34517,7 +34517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3228",
@@ -34525,7 +34525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3229",
@@ -34533,7 +34533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3230",
@@ -34541,7 +34541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3231",
@@ -34549,7 +34549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3232",
@@ -34557,7 +34557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3233",
@@ -34565,7 +34565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3234",
@@ -34573,7 +34573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3235",
@@ -34581,7 +34581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3236",
@@ -34589,7 +34589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3237",
@@ -34597,7 +34597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3238",
@@ -34605,7 +34605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3239",
@@ -34613,7 +34613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3240",
@@ -34621,7 +34621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3241",
@@ -34629,7 +34629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3242",
@@ -34637,7 +34637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3243",
@@ -34645,7 +34645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3244",
@@ -34653,7 +34653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3245",
@@ -34661,7 +34661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3246",
@@ -34669,7 +34669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3247",
@@ -34677,7 +34677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3248",
@@ -34685,7 +34685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3249",
@@ -34693,7 +34693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3250",
@@ -34701,7 +34701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3251",
@@ -34709,7 +34709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3252",
@@ -34717,7 +34717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3253",
@@ -34725,7 +34725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3254",
@@ -34733,7 +34733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3255",
@@ -34741,7 +34741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3256",
@@ -34749,7 +34749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3257",
@@ -34757,7 +34757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3258",
@@ -34765,7 +34765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3259",
@@ -34773,7 +34773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3260",
@@ -34781,7 +34781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3261",
@@ -34789,7 +34789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3262",
@@ -34797,7 +34797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3263",
@@ -34805,7 +34805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3264",
@@ -34813,7 +34813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3265",
@@ -34821,7 +34821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3266",
@@ -34829,7 +34829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3267",
@@ -34837,7 +34837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3268",
@@ -34845,7 +34845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3269",
@@ -34853,7 +34853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3270",
@@ -34861,7 +34861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3271",
@@ -34869,7 +34869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3272",
@@ -34877,7 +34877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3273",
@@ -34885,7 +34885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3274",
@@ -34893,7 +34893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3275",
@@ -34901,7 +34901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3276",
@@ -34909,7 +34909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3277",
@@ -34917,7 +34917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3278",
@@ -34925,7 +34925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3279",
@@ -34933,7 +34933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3280",
@@ -34941,7 +34941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3281",
@@ -34949,7 +34949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3282",
@@ -34957,7 +34957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3283",
@@ -34965,7 +34965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3284",
@@ -34973,7 +34973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3285",
@@ -34981,7 +34981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3286",
@@ -34989,7 +34989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3287",
@@ -34997,7 +34997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3288",
@@ -35005,7 +35005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3289",
@@ -35013,7 +35013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3290",
@@ -35021,7 +35021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3291",
@@ -35029,7 +35029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3292",
@@ -35037,7 +35037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3293",
@@ -35045,7 +35045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3294",
@@ -35053,7 +35053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3295",
@@ -35061,7 +35061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3296",
@@ -35069,7 +35069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3297",
@@ -35077,7 +35077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3298",
@@ -35085,7 +35085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3299",
@@ -35093,7 +35093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3300",
@@ -35101,7 +35101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3301",
@@ -35109,7 +35109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3302",
@@ -35117,7 +35117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3303",
@@ -35125,7 +35125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3304",
@@ -35133,7 +35133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3305",
@@ -35141,7 +35141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3306",
@@ -35149,7 +35149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3307",
@@ -35157,7 +35157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3308",
@@ -35165,7 +35165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3309",
@@ -35173,7 +35173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3310",
@@ -35181,7 +35181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3311",
@@ -35189,7 +35189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3312",
@@ -35197,7 +35197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3313",
@@ -35205,7 +35205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3314",
@@ -35213,7 +35213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3315",
@@ -35221,7 +35221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3316",
@@ -35229,7 +35229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3317",
@@ -35237,7 +35237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3318",
@@ -35245,7 +35245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3319",
@@ -35253,7 +35253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3320",
@@ -35261,7 +35261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3321",
@@ -35269,7 +35269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3322",
@@ -35277,7 +35277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3323",
@@ -35285,7 +35285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3324",
@@ -35293,7 +35293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3325",
@@ -35301,7 +35301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3326",
@@ -35309,7 +35309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3327",
@@ -35317,7 +35317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3328",
@@ -35325,7 +35325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3329",
@@ -35333,7 +35333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3330",
@@ -35341,7 +35341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3331",
@@ -35349,7 +35349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3332",
@@ -35357,7 +35357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3333",
@@ -35365,7 +35365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3334",
@@ -35373,7 +35373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3335",
@@ -35381,7 +35381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3336",
@@ -35389,7 +35389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3337",
@@ -35397,7 +35397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3338",
@@ -35405,7 +35405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3339",
@@ -35413,7 +35413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3340",
@@ -35421,7 +35421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3341",
@@ -35429,7 +35429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3342",
@@ -35437,7 +35437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3343",
@@ -35445,7 +35445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3344",
@@ -35453,7 +35453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3345",
@@ -35461,7 +35461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3346",
@@ -35469,7 +35469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3347",
@@ -35477,7 +35477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3348",
@@ -35485,7 +35485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3349",
@@ -35493,7 +35493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3350",
@@ -35501,7 +35501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3351",
@@ -35509,7 +35509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3352",
@@ -35517,7 +35517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3353",
@@ -35525,7 +35525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3354",
@@ -35533,7 +35533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3355",
@@ -35541,7 +35541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3356",
@@ -35549,7 +35549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3357",
@@ -35557,7 +35557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3358",
@@ -35565,7 +35565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3359",
@@ -35573,7 +35573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3360",
@@ -35581,7 +35581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3361",
@@ -35589,7 +35589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3362",
@@ -35597,7 +35597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3363",
@@ -35605,7 +35605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3364",
@@ -35613,7 +35613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3365",
@@ -35621,7 +35621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3366",
@@ -35629,7 +35629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3367",
@@ -35637,7 +35637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3368",
@@ -35645,7 +35645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3369",
@@ -35653,7 +35653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3370",
@@ -35661,7 +35661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3371",
@@ -35669,7 +35669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3372",
@@ -35677,7 +35677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3373",
@@ -35685,7 +35685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3374",
@@ -35693,7 +35693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3375",
@@ -35701,7 +35701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3376",
@@ -35709,7 +35709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3377",
@@ -35717,7 +35717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3378",
@@ -35725,7 +35725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3379",
@@ -35733,7 +35733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3380",
@@ -35741,7 +35741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3381",
@@ -35749,7 +35749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3382",
@@ -35757,7 +35757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3383",
@@ -35765,7 +35765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3384",
@@ -35773,7 +35773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3385",
@@ -35781,7 +35781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3386",
@@ -35789,7 +35789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3387",
@@ -35797,7 +35797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3388",
@@ -35805,7 +35805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3389",
@@ -35813,7 +35813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3390",
@@ -35821,7 +35821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3391",
@@ -35829,7 +35829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3392",
@@ -35837,7 +35837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3393",
@@ -35845,7 +35845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3394",
@@ -35853,7 +35853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3395",
@@ -35861,7 +35861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3396",
@@ -35869,7 +35869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3397",
@@ -35877,7 +35877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3398",
@@ -35885,7 +35885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3399",
@@ -35893,7 +35893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3400",
@@ -35901,7 +35901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3401",
@@ -35909,7 +35909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3402",
@@ -35917,7 +35917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3403",
@@ -35925,7 +35925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3404",
@@ -35933,7 +35933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3405",
@@ -35941,7 +35941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3406",
@@ -35949,7 +35949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3407",
@@ -35957,7 +35957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3408",
@@ -35965,7 +35965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3409",
@@ -35973,7 +35973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3410",
@@ -35981,7 +35981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3411",
@@ -35989,7 +35989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3412",
@@ -35997,7 +35997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3413",
@@ -36005,7 +36005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3414",
@@ -36013,7 +36013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3415",
@@ -36021,7 +36021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3416",
@@ -36029,7 +36029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3417",
@@ -36037,7 +36037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3418",
@@ -36045,7 +36045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3419",
@@ -36053,7 +36053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3420",
@@ -36061,7 +36061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3421",
@@ -36069,7 +36069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3422",
@@ -36077,7 +36077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3423",
@@ -36085,7 +36085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3424",
@@ -36093,7 +36093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3425",
@@ -36101,7 +36101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3426",
@@ -36109,7 +36109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3427",
@@ -36117,7 +36117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3428",
@@ -36125,7 +36125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3429",
@@ -36133,7 +36133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3430",
@@ -36141,7 +36141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3431",
@@ -36149,7 +36149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3432",
@@ -36157,7 +36157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3433",
@@ -36165,7 +36165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3434",
@@ -36173,7 +36173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3435",
@@ -36181,7 +36181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3436",
@@ -36189,7 +36189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3437",
@@ -36197,7 +36197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3438",
@@ -36205,7 +36205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3439",
@@ -36213,7 +36213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3440",
@@ -36221,7 +36221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3441",
@@ -36229,7 +36229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3442",
@@ -36237,7 +36237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3443",
@@ -36245,7 +36245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3444",
@@ -36253,7 +36253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3445",
@@ -36261,7 +36261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3446",
@@ -36269,7 +36269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3447",
@@ -36277,7 +36277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3448",
@@ -36285,7 +36285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3449",
@@ -36293,7 +36293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3450",
@@ -36301,7 +36301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3451",
@@ -36309,7 +36309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3452",
@@ -36317,7 +36317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3453",
@@ -36325,7 +36325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3454",
@@ -36333,7 +36333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3455",
@@ -36341,7 +36341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3456",
@@ -36349,7 +36349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3457",
@@ -36357,7 +36357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3458",
@@ -36365,7 +36365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3459",
@@ -36373,7 +36373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3460",
@@ -36381,7 +36381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3461",
@@ -36389,7 +36389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3462",
@@ -36397,7 +36397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3463",
@@ -36405,7 +36405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3464",
@@ -36413,7 +36413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3465",
@@ -36421,7 +36421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3466",
@@ -36429,7 +36429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3467",
@@ -36437,7 +36437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3468",
@@ -36445,7 +36445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3469",
@@ -36453,7 +36453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3470",
@@ -36461,7 +36461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3471",
@@ -36469,7 +36469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3472",
@@ -36477,7 +36477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3473",
@@ -36485,7 +36485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3474",
@@ -36493,7 +36493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3475",
@@ -36501,7 +36501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3476",
@@ -36509,7 +36509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3477",
@@ -36517,7 +36517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3478",
@@ -36525,7 +36525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3479",
@@ -36533,7 +36533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3480",
@@ -36541,7 +36541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3481",
@@ -36549,7 +36549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3482",
@@ -36557,7 +36557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3483",
@@ -36565,7 +36565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3484",
@@ -36573,7 +36573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3485",
@@ -36581,7 +36581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3486",
@@ -36589,7 +36589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3487",
@@ -36597,7 +36597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3488",
@@ -36605,7 +36605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3489",
@@ -36613,7 +36613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3490",
@@ -36621,7 +36621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3491",
@@ -36629,7 +36629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3492",
@@ -36637,7 +36637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3493",
@@ -36645,7 +36645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3494",
@@ -36653,7 +36653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3495",
@@ -36661,7 +36661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3496",
@@ -36669,7 +36669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3497",
@@ -36677,7 +36677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3498",
@@ -36685,7 +36685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3499",
@@ -36693,7 +36693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3500",
@@ -36701,7 +36701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3501",
@@ -36709,7 +36709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3502",
@@ -36717,7 +36717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3503",
@@ -36725,7 +36725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3504",
@@ -36733,7 +36733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3505",
@@ -36741,7 +36741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3506",
@@ -36749,7 +36749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3507",
@@ -36757,7 +36757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3508",
@@ -36765,7 +36765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3509",
@@ -36773,7 +36773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3510",
@@ -36781,7 +36781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3511",
@@ -36789,7 +36789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3512",
@@ -36797,7 +36797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3513",
@@ -36805,7 +36805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3514",
@@ -36813,7 +36813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3515",
@@ -36821,7 +36821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3516",
@@ -36829,7 +36829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3517",
@@ -36837,7 +36837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3518",
@@ -36845,7 +36845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3519",
@@ -36853,7 +36853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3520",
@@ -36861,7 +36861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3521",
@@ -36869,7 +36869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3522",
@@ -36877,7 +36877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3523",
@@ -36885,7 +36885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3524",
@@ -36893,7 +36893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3525",
@@ -36901,7 +36901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3526",
@@ -36909,7 +36909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3527",
@@ -36917,7 +36917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3528",
@@ -36925,7 +36925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3529",
@@ -36933,7 +36933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3530",
@@ -36941,7 +36941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3531",
@@ -36949,7 +36949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3532",
@@ -36957,7 +36957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3533",
@@ -36965,7 +36965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3534",
@@ -36973,7 +36973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3535",
@@ -36981,7 +36981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3536",
@@ -36989,7 +36989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3537",
@@ -36997,7 +36997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3538",
@@ -37005,7 +37005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3539",
@@ -37013,7 +37013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3540",
@@ -37021,7 +37021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3541",
@@ -37029,7 +37029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3542",
@@ -37037,7 +37037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3543",
@@ -37045,7 +37045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3544",
@@ -37053,7 +37053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3545",
@@ -37061,7 +37061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3546",
@@ -37069,7 +37069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3547",
@@ -37077,7 +37077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3548",
@@ -37085,7 +37085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3549",
@@ -37093,7 +37093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3550",
@@ -37101,7 +37101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3551",
@@ -37109,7 +37109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3552",
@@ -37117,7 +37117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3553",
@@ -37125,7 +37125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3554",
@@ -37133,7 +37133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3555",
@@ -37141,7 +37141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3556",
@@ -37149,7 +37149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3557",
@@ -37157,7 +37157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3558",
@@ -37165,7 +37165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3559",
@@ -37173,7 +37173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3560",
@@ -37181,7 +37181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3561",
@@ -37189,7 +37189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3562",
@@ -37197,7 +37197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3563",
@@ -37205,7 +37205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3564",
@@ -37213,7 +37213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3565",
@@ -37221,7 +37221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3566",
@@ -37229,7 +37229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3567",
@@ -37237,7 +37237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3568",
@@ -37245,7 +37245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3569",
@@ -37253,7 +37253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3570",
@@ -37261,7 +37261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3571",
@@ -37269,7 +37269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3572",
@@ -37277,7 +37277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3573",
@@ -37285,7 +37285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3574",
@@ -37293,7 +37293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3575",
@@ -37301,7 +37301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3576",
@@ -37309,7 +37309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3577",
@@ -37317,7 +37317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3578",
@@ -37325,7 +37325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3579",
@@ -37333,7 +37333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3580",
@@ -37341,7 +37341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3581",
@@ -37349,7 +37349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3582",
@@ -37357,7 +37357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3583",
@@ -37365,7 +37365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3584",
@@ -37373,7 +37373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3585",
@@ -37381,7 +37381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3586",
@@ -37389,7 +37389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3587",
@@ -37397,7 +37397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3588",
@@ -37405,7 +37405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3589",
@@ -37413,7 +37413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3590",
@@ -37421,7 +37421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3591",
@@ -37429,7 +37429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3592",
@@ -37437,7 +37437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3593",
@@ -37445,7 +37445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3594",
@@ -37453,7 +37453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3595",
@@ -37461,7 +37461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3596",
@@ -37469,7 +37469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3597",
@@ -37477,7 +37477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3598",
@@ -37485,7 +37485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3599",
@@ -37493,7 +37493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3600",
@@ -37501,7 +37501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3601",
@@ -37509,7 +37509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3602",
@@ -37517,7 +37517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3603",
@@ -37525,7 +37525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3604",
@@ -37533,7 +37533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3605",
@@ -37541,7 +37541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3606",
@@ -37549,7 +37549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3607",
@@ -37557,7 +37557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3608",
@@ -37565,7 +37565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3609",
@@ -37573,7 +37573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3610",
@@ -37581,7 +37581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3611",
@@ -37589,7 +37589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3612",
@@ -37597,7 +37597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3613",
@@ -37605,7 +37605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3614",
@@ -37613,7 +37613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3615",
@@ -37621,7 +37621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3616",
@@ -37629,7 +37629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3617",
@@ -37637,7 +37637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3618",
@@ -37645,7 +37645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3619",
@@ -37653,7 +37653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3620",
@@ -37661,7 +37661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3621",
@@ -37669,7 +37669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3622",
@@ -37677,7 +37677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3623",
@@ -37685,7 +37685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3624",
@@ -37693,7 +37693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3625",
@@ -37701,7 +37701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3626",
@@ -37709,7 +37709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3627",
@@ -37717,7 +37717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3628",
@@ -37725,7 +37725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3629",
@@ -37733,7 +37733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3630",
@@ -37741,7 +37741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3631",
@@ -37749,7 +37749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3632",
@@ -37757,7 +37757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3633",
@@ -37765,7 +37765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3634",
@@ -37773,7 +37773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3635",
@@ -37781,7 +37781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3636",
@@ -37789,7 +37789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3637",
@@ -37797,7 +37797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3638",
@@ -37805,7 +37805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3639",
@@ -37813,7 +37813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3640",
@@ -37821,7 +37821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3641",
@@ -37829,7 +37829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3642",
@@ -37837,7 +37837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3643",
@@ -37845,7 +37845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3644",
@@ -37853,7 +37853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3645",
@@ -37861,7 +37861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3646",
@@ -37869,7 +37869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3647",
@@ -37877,7 +37877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3648",
@@ -37885,7 +37885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3649",
@@ -37893,7 +37893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3650",
@@ -37901,7 +37901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3651",
@@ -37909,7 +37909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3652",
@@ -37917,7 +37917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3653",
@@ -37925,7 +37925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3654",
@@ -37933,7 +37933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3655",
@@ -37941,7 +37941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3656",
@@ -37949,7 +37949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3657",
@@ -37957,7 +37957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3658",
@@ -37965,7 +37965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3659",
@@ -37973,7 +37973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3660",
@@ -37981,7 +37981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3661",
@@ -37989,7 +37989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3662",
@@ -37997,7 +37997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3663",
@@ -38005,7 +38005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3664",
@@ -38013,7 +38013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3665",
@@ -38021,7 +38021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3666",
@@ -38029,7 +38029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3667",
@@ -38037,7 +38037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3668",
@@ -38045,7 +38045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3669",
@@ -38053,7 +38053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3670",
@@ -38061,7 +38061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3671",
@@ -38069,7 +38069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3672",
@@ -38077,7 +38077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3673",
@@ -38085,7 +38085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3674",
@@ -38093,7 +38093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3675",
@@ -38101,7 +38101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3676",
@@ -38109,7 +38109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3677",
@@ -38117,7 +38117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3678",
@@ -38125,7 +38125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3679",
@@ -38133,7 +38133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3680",
@@ -38141,7 +38141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3681",
@@ -38149,7 +38149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3682",
@@ -38157,7 +38157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3683",
@@ -38165,7 +38165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3684",
@@ -38173,7 +38173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3685",
@@ -38181,7 +38181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3686",
@@ -38189,7 +38189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3687",
@@ -38197,7 +38197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3688",
@@ -38205,7 +38205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3689",
@@ -38213,7 +38213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3690",
@@ -38221,7 +38221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3691",
@@ -38229,7 +38229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3692",
@@ -38237,7 +38237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3693",
@@ -38245,7 +38245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3694",
@@ -38253,7 +38253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3695",
@@ -38261,7 +38261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3696",
@@ -38269,7 +38269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3697",
@@ -38277,7 +38277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3698",
@@ -38285,7 +38285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3699",
@@ -38293,7 +38293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3700",
@@ -38301,7 +38301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3701",
@@ -38309,7 +38309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3702",
@@ -38317,7 +38317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3703",
@@ -38325,7 +38325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3704",
@@ -38333,7 +38333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3705",
@@ -38341,7 +38341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3706",
@@ -38349,7 +38349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3707",
@@ -38357,7 +38357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3708",
@@ -38365,7 +38365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3709",
@@ -38373,7 +38373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3710",
@@ -38381,7 +38381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3711",
@@ -38389,7 +38389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3712",
@@ -38397,7 +38397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3713",
@@ -38405,7 +38405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3714",
@@ -38413,7 +38413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3715",
@@ -38421,7 +38421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3716",
@@ -38429,7 +38429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3717",
@@ -38437,7 +38437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3718",
@@ -38445,7 +38445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3719",
@@ -38453,7 +38453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3720",
@@ -38461,7 +38461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3721",
@@ -38469,7 +38469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3722",
@@ -38477,7 +38477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3723",
@@ -38485,7 +38485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3724",
@@ -38493,7 +38493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3725",
@@ -38501,7 +38501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3726",
@@ -38509,7 +38509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3727",
@@ -38517,7 +38517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3728",
@@ -38525,7 +38525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3729",
@@ -38533,7 +38533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3730",
@@ -38541,7 +38541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3731",
@@ -38549,7 +38549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3732",
@@ -38557,7 +38557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3733",
@@ -38565,7 +38565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3734",
@@ -38573,7 +38573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3735",
@@ -38581,7 +38581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3736",
@@ -38589,7 +38589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3737",
@@ -38597,7 +38597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3738",
@@ -38605,7 +38605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3739",
@@ -38613,7 +38613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3740",
@@ -38621,7 +38621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3741",
@@ -38629,7 +38629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3742",
@@ -38637,7 +38637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3743",
@@ -38645,7 +38645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3744",
@@ -38653,7 +38653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3745",
@@ -38661,7 +38661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3746",
@@ -38669,7 +38669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3747",
@@ -38677,7 +38677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3748",
@@ -38685,7 +38685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3749",
@@ -38693,7 +38693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3750",
@@ -38701,7 +38701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3751",
@@ -38709,7 +38709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3752",
@@ -38717,7 +38717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3753",
@@ -38725,7 +38725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3754",
@@ -38733,7 +38733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3755",
@@ -38741,7 +38741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3756",
@@ -38749,7 +38749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3757",
@@ -38757,7 +38757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3758",
@@ -38765,7 +38765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3759",
@@ -38773,7 +38773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3760",
@@ -38781,7 +38781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3761",
@@ -38789,7 +38789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3762",
@@ -38797,7 +38797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3763",
@@ -38805,7 +38805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3764",
@@ -38813,7 +38813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3765",
@@ -38821,7 +38821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3766",
@@ -38829,7 +38829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3767",
@@ -38837,7 +38837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3768",
@@ -38845,7 +38845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3769",
@@ -38853,7 +38853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3770",
@@ -38861,7 +38861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3771",
@@ -38869,7 +38869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3772",
@@ -38877,7 +38877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3773",
@@ -38885,7 +38885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3774",
@@ -38893,7 +38893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3775",
@@ -38901,7 +38901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3776",
@@ -38909,7 +38909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3777",
@@ -38917,7 +38917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3778",
@@ -38925,7 +38925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3779",
@@ -38933,7 +38933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3780",
@@ -38941,7 +38941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3781",
@@ -38949,7 +38949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3782",
@@ -38957,7 +38957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3783",
@@ -38965,7 +38965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3784",
@@ -38973,7 +38973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3785",
@@ -38981,7 +38981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3786",
@@ -38989,7 +38989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3787",
@@ -38997,7 +38997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3788",
@@ -39005,7 +39005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3789",
@@ -39013,7 +39013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3790",
@@ -39021,7 +39021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3791",
@@ -39029,7 +39029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3792",
@@ -39037,7 +39037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3793",
@@ -39045,7 +39045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3794",
@@ -39053,7 +39053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3795",
@@ -39061,7 +39061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3796",
@@ -39069,7 +39069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3797",
@@ -39077,7 +39077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3798",
@@ -39085,7 +39085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3799",
@@ -39093,7 +39093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3800",
@@ -39101,7 +39101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3801",
@@ -39109,7 +39109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3802",
@@ -39117,7 +39117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3803",
@@ -39125,7 +39125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3804",
@@ -39133,7 +39133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3805",
@@ -39141,7 +39141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3806",
@@ -39149,7 +39149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3807",
@@ -39157,7 +39157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3808",
@@ -39165,7 +39165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3809",
@@ -39173,7 +39173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3810",
@@ -39181,7 +39181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3811",
@@ -39189,7 +39189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3812",
@@ -39197,7 +39197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3813",
@@ -39205,7 +39205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3814",
@@ -39213,7 +39213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3815",
@@ -39221,7 +39221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3816",
@@ -39229,7 +39229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3817",
@@ -39237,7 +39237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3818",
@@ -39245,7 +39245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3819",
@@ -39253,7 +39253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3820",
@@ -39261,7 +39261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3821",
@@ -39269,7 +39269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3822",
@@ -39277,7 +39277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3823",
@@ -39285,7 +39285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3824",
@@ -39293,7 +39293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3825",
@@ -39301,7 +39301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3826",
@@ -39309,7 +39309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3827",
@@ -39317,7 +39317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3828",
@@ -39325,7 +39325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3829",
@@ -39333,7 +39333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3830",
@@ -39341,7 +39341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3831",
@@ -39349,7 +39349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3832",
@@ -39357,7 +39357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3833",
@@ -39365,7 +39365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3834",
@@ -39373,7 +39373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3835",
@@ -39381,7 +39381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3836",
@@ -39389,7 +39389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3837",
@@ -39397,7 +39397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3838",
@@ -39405,7 +39405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3839",
@@ -39413,7 +39413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3840",
@@ -39421,7 +39421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3841",
@@ -39429,7 +39429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3842",
@@ -39437,7 +39437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3843",
@@ -39445,7 +39445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3844",
@@ -39453,7 +39453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3845",
@@ -39461,7 +39461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3846",
@@ -39469,7 +39469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3847",
@@ -39477,7 +39477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3848",
@@ -39485,7 +39485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3849",
@@ -39493,7 +39493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3850",
@@ -39501,7 +39501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3851",
@@ -39509,7 +39509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3852",
@@ -39517,7 +39517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3853",
@@ -39525,7 +39525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3854",
@@ -39533,7 +39533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3855",
@@ -39541,7 +39541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3856",
@@ -39549,7 +39549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3857",
@@ -39557,7 +39557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3858",
@@ -39565,7 +39565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3859",
@@ -39573,7 +39573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3860",
@@ -39581,7 +39581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3861",
@@ -39589,7 +39589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3862",
@@ -39597,7 +39597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3863",
@@ -39605,7 +39605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3864",
@@ -39613,7 +39613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3865",
@@ -39621,7 +39621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3866",
@@ -39629,7 +39629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3867",
@@ -39637,7 +39637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3868",
@@ -39645,7 +39645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3869",
@@ -39653,7 +39653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3870",
@@ -39661,7 +39661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3871",
@@ -39669,7 +39669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3872",
@@ -39677,7 +39677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3873",
@@ -39685,7 +39685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3874",
@@ -39693,7 +39693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3875",
@@ -39701,7 +39701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3876",
@@ -39709,7 +39709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3877",
@@ -39717,7 +39717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3878",
@@ -39725,7 +39725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3879",
@@ -39733,7 +39733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3880",
@@ -39741,7 +39741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3881",
@@ -39749,7 +39749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3882",
@@ -39757,7 +39757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3883",
@@ -39765,7 +39765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3884",
@@ -39773,7 +39773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3885",
@@ -39781,7 +39781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3886",
@@ -39789,7 +39789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3887",
@@ -39797,7 +39797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3888",
@@ -39805,7 +39805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3889",
@@ -39813,7 +39813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3890",
@@ -39821,7 +39821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3891",
@@ -39829,7 +39829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3892",
@@ -39837,7 +39837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3893",
@@ -39845,7 +39845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3894",
@@ -39853,7 +39853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3895",
@@ -39861,7 +39861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3896",
@@ -39869,7 +39869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3897",
@@ -39877,7 +39877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3898",
@@ -39885,7 +39885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3899",
@@ -39893,7 +39893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3900",
@@ -39901,7 +39901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3901",
@@ -39909,7 +39909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3902",
@@ -39917,7 +39917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3903",
@@ -39925,7 +39925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3904",
@@ -39933,7 +39933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3905",
@@ -39941,7 +39941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3906",
@@ -39949,7 +39949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3907",
@@ -39957,7 +39957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3908",
@@ -39965,7 +39965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3909",
@@ -39973,7 +39973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3910",
@@ -39981,7 +39981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3911",
@@ -39989,7 +39989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3912",
@@ -39997,7 +39997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3913",
@@ -40005,7 +40005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3914",
@@ -40013,7 +40013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3915",
@@ -40021,7 +40021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3916",
@@ -40029,7 +40029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3917",
@@ -40037,7 +40037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3918",
@@ -40045,7 +40045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3919",
@@ -40053,7 +40053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3920",
@@ -40061,7 +40061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3921",
@@ -40069,7 +40069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3922",
@@ -40077,7 +40077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3923",
@@ -40085,7 +40085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3924",
@@ -40093,7 +40093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3925",
@@ -40101,7 +40101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3926",
@@ -40109,7 +40109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3927",
@@ -40117,7 +40117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3928",
@@ -40125,7 +40125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3929",
@@ -40133,7 +40133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3930",
@@ -40141,7 +40141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3931",
@@ -40149,7 +40149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3932",
@@ -40157,7 +40157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3933",
@@ -40165,7 +40165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3934",
@@ -40173,7 +40173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3935",
@@ -40181,7 +40181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3936",
@@ -40189,7 +40189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3937",
@@ -40197,7 +40197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3938",
@@ -40205,7 +40205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3939",
@@ -40213,7 +40213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3940",
@@ -40221,7 +40221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3941",
@@ -40229,7 +40229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3942",
@@ -40237,7 +40237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3943",
@@ -40245,7 +40245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3944",
@@ -40253,7 +40253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3945",
@@ -40261,7 +40261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3946",
@@ -40269,7 +40269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3947",
@@ -40277,7 +40277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3948",
@@ -40285,7 +40285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3949",
@@ -40293,7 +40293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3950",
@@ -40301,7 +40301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3951",
@@ -40309,7 +40309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3952",
@@ -40317,7 +40317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3953",
@@ -40325,7 +40325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3954",
@@ -40333,7 +40333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3955",
@@ -40341,7 +40341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3956",
@@ -40349,7 +40349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3957",
@@ -40357,7 +40357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3958",
@@ -40365,7 +40365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3959",
@@ -40373,7 +40373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3960",
@@ -40381,7 +40381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3961",
@@ -40389,7 +40389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3962",
@@ -40397,7 +40397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3963",
@@ -40405,7 +40405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3964",
@@ -40413,7 +40413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3965",
@@ -40421,7 +40421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3966",
@@ -40429,7 +40429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3967",
@@ -40437,7 +40437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3968",
@@ -40445,7 +40445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3969",
@@ -40453,7 +40453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3970",
@@ -40461,7 +40461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3971",
@@ -40469,7 +40469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3972",
@@ -40477,7 +40477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3973",
@@ -40485,7 +40485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3974",
@@ -40493,7 +40493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3975",
@@ -40501,7 +40501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3976",
@@ -40509,7 +40509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3977",
@@ -40517,7 +40517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3978",
@@ -40525,7 +40525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3979",
@@ -40533,7 +40533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3980",
@@ -40541,7 +40541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3981",
@@ -40549,7 +40549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3982",
@@ -40557,7 +40557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3983",
@@ -40565,7 +40565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3984",
@@ -40573,7 +40573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3985",
@@ -40581,7 +40581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3986",
@@ -40589,7 +40589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3987",
@@ -40597,7 +40597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3988",
@@ -40605,7 +40605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3989",
@@ -40613,7 +40613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3990",
@@ -40621,7 +40621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3991",
@@ -40629,7 +40629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3992",
@@ -40637,7 +40637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3993",
@@ -40645,7 +40645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3994",
@@ -40653,7 +40653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3995",
@@ -40661,7 +40661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3996",
@@ -40669,7 +40669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3997",
@@ -40677,7 +40677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3998",
@@ -40685,7 +40685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS3999",
@@ -40693,7 +40693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4000",
@@ -40701,7 +40701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4001",
@@ -40709,7 +40709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4002",
@@ -40717,7 +40717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4003",
@@ -40725,7 +40725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4004",
@@ -40733,7 +40733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4005",
@@ -40741,7 +40741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4006",
@@ -40749,7 +40749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4007",
@@ -40757,7 +40757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4008",
@@ -40765,7 +40765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4009",
@@ -40773,7 +40773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4010",
@@ -40781,7 +40781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4011",
@@ -40789,7 +40789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4012",
@@ -40797,7 +40797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4013",
@@ -40805,7 +40805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4014",
@@ -40813,7 +40813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4015",
@@ -40821,7 +40821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4016",
@@ -40829,7 +40829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4017",
@@ -40837,7 +40837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4018",
@@ -40845,7 +40845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4019",
@@ -40853,7 +40853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4020",
@@ -40861,7 +40861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4021",
@@ -40869,7 +40869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4022",
@@ -40877,7 +40877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4023",
@@ -40885,7 +40885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4024",
@@ -40893,7 +40893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4025",
@@ -40901,7 +40901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4026",
@@ -40909,7 +40909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4027",
@@ -40917,7 +40917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4028",
@@ -40925,7 +40925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4029",
@@ -40933,7 +40933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4030",
@@ -40941,7 +40941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4031",
@@ -40949,7 +40949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4032",
@@ -40957,7 +40957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4033",
@@ -40965,7 +40965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4034",
@@ -40973,7 +40973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4035",
@@ -40981,7 +40981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4036",
@@ -40989,7 +40989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4037",
@@ -40997,7 +40997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4038",
@@ -41005,7 +41005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4039",
@@ -41013,7 +41013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4040",
@@ -41021,7 +41021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4041",
@@ -41029,7 +41029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4042",
@@ -41037,7 +41037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4043",
@@ -41045,7 +41045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4044",
@@ -41053,7 +41053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4045",
@@ -41061,7 +41061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4046",
@@ -41069,7 +41069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4047",
@@ -41077,7 +41077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4048",
@@ -41085,7 +41085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4049",
@@ -41093,7 +41093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4050",
@@ -41101,7 +41101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4051",
@@ -41109,7 +41109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4052",
@@ -41117,7 +41117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4053",
@@ -41125,7 +41125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4054",
@@ -41133,7 +41133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4055",
@@ -41141,7 +41141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4056",
@@ -41149,7 +41149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4057",
@@ -41157,7 +41157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4058",
@@ -41165,7 +41165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4059",
@@ -41173,7 +41173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4060",
@@ -41181,7 +41181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4061",
@@ -41189,7 +41189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4062",
@@ -41197,7 +41197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4063",
@@ -41205,7 +41205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4064",
@@ -41213,7 +41213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4065",
@@ -41221,7 +41221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4066",
@@ -41229,7 +41229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4067",
@@ -41237,7 +41237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4068",
@@ -41245,7 +41245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4069",
@@ -41253,7 +41253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4070",
@@ -41261,7 +41261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4071",
@@ -41269,7 +41269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4072",
@@ -41277,7 +41277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4073",
@@ -41285,7 +41285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4074",
@@ -41293,7 +41293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4075",
@@ -41301,7 +41301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4076",
@@ -41309,7 +41309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4077",
@@ -41317,7 +41317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4078",
@@ -41325,7 +41325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4079",
@@ -41333,7 +41333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4080",
@@ -41341,7 +41341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4081",
@@ -41349,7 +41349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4082",
@@ -41357,7 +41357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4083",
@@ -41365,7 +41365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4084",
@@ -41373,7 +41373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4085",
@@ -41381,7 +41381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4086",
@@ -41389,7 +41389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "large"
   },
   {
     "id": "LS4087",
@@ -41397,7 +41397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4088",
@@ -41405,7 +41405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4089",
@@ -41413,7 +41413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4090",
@@ -41421,7 +41421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4091",
@@ -41429,7 +41429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4092",
@@ -41437,7 +41437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4093",
@@ -41445,7 +41445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4094",
@@ -41453,7 +41453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4095",
@@ -41461,7 +41461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4096",
@@ -41469,7 +41469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4097",
@@ -41477,7 +41477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4098",
@@ -41485,7 +41485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4099",
@@ -41493,7 +41493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4100",
@@ -41501,7 +41501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4101",
@@ -41509,7 +41509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4102",
@@ -41517,7 +41517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4103",
@@ -41525,7 +41525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4104",
@@ -41533,7 +41533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4105",
@@ -41541,7 +41541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4106",
@@ -41549,7 +41549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4107",
@@ -41557,7 +41557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4108",
@@ -41565,7 +41565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4109",
@@ -41573,7 +41573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4110",
@@ -41581,7 +41581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4111",
@@ -41589,7 +41589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4112",
@@ -41597,7 +41597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4113",
@@ -41605,7 +41605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4114",
@@ -41613,7 +41613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4115",
@@ -41621,7 +41621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4116",
@@ -41629,7 +41629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4117",
@@ -41637,7 +41637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4118",
@@ -41645,7 +41645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4119",
@@ -41653,7 +41653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4120",
@@ -41661,7 +41661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4121",
@@ -41669,7 +41669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4122",
@@ -41677,7 +41677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4123",
@@ -41685,7 +41685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4124",
@@ -41693,7 +41693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4125",
@@ -41701,7 +41701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4126",
@@ -41709,7 +41709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4127",
@@ -41717,7 +41717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4128",
@@ -41725,7 +41725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4129",
@@ -41733,7 +41733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4130",
@@ -41741,7 +41741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4131",
@@ -41749,7 +41749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4132",
@@ -41757,7 +41757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4133",
@@ -41765,7 +41765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4134",
@@ -41773,7 +41773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4135",
@@ -41781,7 +41781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4136",
@@ -41789,7 +41789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4137",
@@ -41797,7 +41797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4138",
@@ -41805,7 +41805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4139",
@@ -41813,7 +41813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4140",
@@ -41821,7 +41821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4141",
@@ -41829,7 +41829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4142",
@@ -41837,7 +41837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4143",
@@ -41845,7 +41845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4144",
@@ -41853,7 +41853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4145",
@@ -41861,7 +41861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4146",
@@ -41869,7 +41869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4147",
@@ -41877,7 +41877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4148",
@@ -41885,7 +41885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4149",
@@ -41893,7 +41893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4150",
@@ -41901,7 +41901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4151",
@@ -41909,7 +41909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4152",
@@ -41917,7 +41917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4153",
@@ -41925,7 +41925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4154",
@@ -41933,7 +41933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4155",
@@ -41941,7 +41941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4156",
@@ -41949,7 +41949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4157",
@@ -41957,7 +41957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4158",
@@ -41965,7 +41965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4159",
@@ -41973,7 +41973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4160",
@@ -41981,7 +41981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4161",
@@ -41989,7 +41989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4162",
@@ -41997,7 +41997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4163",
@@ -42005,7 +42005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4164",
@@ -42013,7 +42013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4165",
@@ -42021,7 +42021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4166",
@@ -42029,7 +42029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4167",
@@ -42037,7 +42037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4168",
@@ -42045,7 +42045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4169",
@@ -42053,7 +42053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4170",
@@ -42061,7 +42061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4171",
@@ -42069,7 +42069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4172",
@@ -42077,7 +42077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4173",
@@ -42085,7 +42085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4174",
@@ -42093,7 +42093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4175",
@@ -42101,7 +42101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4176",
@@ -42109,7 +42109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4177",
@@ -42117,7 +42117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4178",
@@ -42125,7 +42125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4179",
@@ -42133,7 +42133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4180",
@@ -42141,7 +42141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4181",
@@ -42149,7 +42149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4182",
@@ -42157,7 +42157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4183",
@@ -42165,7 +42165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4184",
@@ -42173,7 +42173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4185",
@@ -42181,7 +42181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4186",
@@ -42189,7 +42189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4187",
@@ -42197,7 +42197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4188",
@@ -42205,7 +42205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4189",
@@ -42213,7 +42213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4190",
@@ -42221,7 +42221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4191",
@@ -42229,7 +42229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4192",
@@ -42237,7 +42237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4193",
@@ -42245,7 +42245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4194",
@@ -42253,7 +42253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4195",
@@ -42261,7 +42261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4196",
@@ -42269,7 +42269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4197",
@@ -42277,7 +42277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4198",
@@ -42285,7 +42285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4199",
@@ -42293,7 +42293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4200",
@@ -42301,7 +42301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4201",
@@ -42309,7 +42309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4202",
@@ -42317,7 +42317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4203",
@@ -42325,7 +42325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4204",
@@ -42333,7 +42333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4205",
@@ -42341,7 +42341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4206",
@@ -42349,7 +42349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4207",
@@ -42357,7 +42357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4208",
@@ -42365,7 +42365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4209",
@@ -42373,7 +42373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4210",
@@ -42381,7 +42381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4211",
@@ -42389,7 +42389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4212",
@@ -42397,7 +42397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4213",
@@ -42405,7 +42405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4214",
@@ -42413,7 +42413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4215",
@@ -42421,7 +42421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4216",
@@ -42429,7 +42429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4217",
@@ -42437,7 +42437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4218",
@@ -42445,7 +42445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4219",
@@ -42453,7 +42453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4220",
@@ -42461,7 +42461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4221",
@@ -42469,7 +42469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4222",
@@ -42477,7 +42477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4223",
@@ -42485,7 +42485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4224",
@@ -42493,7 +42493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4225",
@@ -42501,7 +42501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4226",
@@ -42509,7 +42509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4227",
@@ -42517,7 +42517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4228",
@@ -42525,7 +42525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4229",
@@ -42533,7 +42533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4230",
@@ -42541,7 +42541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4231",
@@ -42549,7 +42549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4232",
@@ -42557,7 +42557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4233",
@@ -42565,7 +42565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4234",
@@ -42573,7 +42573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4235",
@@ -42581,7 +42581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4236",
@@ -42589,7 +42589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4237",
@@ -42597,7 +42597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4238",
@@ -42605,7 +42605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4239",
@@ -42613,7 +42613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4240",
@@ -42621,7 +42621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4241",
@@ -42629,7 +42629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4242",
@@ -42637,7 +42637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4243",
@@ -42645,7 +42645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4244",
@@ -42653,7 +42653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4245",
@@ -42661,7 +42661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4246",
@@ -42669,7 +42669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4247",
@@ -42677,7 +42677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4248",
@@ -42685,7 +42685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4249",
@@ -42693,7 +42693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4250",
@@ -42701,7 +42701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4251",
@@ -42709,7 +42709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4252",
@@ -42717,7 +42717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4253",
@@ -42725,7 +42725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4254",
@@ -42733,7 +42733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4255",
@@ -42741,7 +42741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4256",
@@ -42749,7 +42749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4257",
@@ -42757,7 +42757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4258",
@@ -42765,7 +42765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4259",
@@ -42773,7 +42773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4260",
@@ -42781,7 +42781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4261",
@@ -42789,7 +42789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4262",
@@ -42797,7 +42797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4263",
@@ -42805,7 +42805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4264",
@@ -42813,7 +42813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4265",
@@ -42821,7 +42821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4266",
@@ -42829,7 +42829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4267",
@@ -42837,7 +42837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4268",
@@ -42845,7 +42845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4269",
@@ -42853,7 +42853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4270",
@@ -42861,7 +42861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4271",
@@ -42869,7 +42869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4272",
@@ -42877,7 +42877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4273",
@@ -42885,7 +42885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4274",
@@ -42893,7 +42893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4275",
@@ -42901,7 +42901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4276",
@@ -42909,7 +42909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4277",
@@ -42917,7 +42917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4278",
@@ -42925,7 +42925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4279",
@@ -42933,7 +42933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4280",
@@ -42941,7 +42941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4281",
@@ -42949,7 +42949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4282",
@@ -42957,7 +42957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4283",
@@ -42965,7 +42965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4284",
@@ -42973,7 +42973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4285",
@@ -42981,7 +42981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4286",
@@ -42989,7 +42989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4287",
@@ -42997,7 +42997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4288",
@@ -43005,7 +43005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4289",
@@ -43013,7 +43013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4290",
@@ -43021,7 +43021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4291",
@@ -43029,7 +43029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4292",
@@ -43037,7 +43037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4293",
@@ -43045,7 +43045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4294",
@@ -43053,7 +43053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4295",
@@ -43061,7 +43061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4296",
@@ -43069,7 +43069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4297",
@@ -43077,7 +43077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4298",
@@ -43085,7 +43085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4299",
@@ -43093,7 +43093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4300",
@@ -43101,7 +43101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4301",
@@ -43109,7 +43109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4302",
@@ -43117,7 +43117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4303",
@@ -43125,7 +43125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4304",
@@ -43133,7 +43133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4305",
@@ -43141,7 +43141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4306",
@@ -43149,7 +43149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4307",
@@ -43157,7 +43157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4308",
@@ -43165,7 +43165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4309",
@@ -43173,7 +43173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4310",
@@ -43181,7 +43181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4311",
@@ -43189,7 +43189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4312",
@@ -43197,7 +43197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4313",
@@ -43205,7 +43205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4314",
@@ -43213,7 +43213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4315",
@@ -43221,7 +43221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4316",
@@ -43229,7 +43229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4317",
@@ -43237,7 +43237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4318",
@@ -43245,7 +43245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4319",
@@ -43253,7 +43253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4320",
@@ -43261,7 +43261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4321",
@@ -43269,7 +43269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4322",
@@ -43277,7 +43277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4323",
@@ -43285,7 +43285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4324",
@@ -43293,7 +43293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4325",
@@ -43301,7 +43301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4326",
@@ -43309,7 +43309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4327",
@@ -43317,7 +43317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4328",
@@ -43325,7 +43325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4329",
@@ -43333,7 +43333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4330",
@@ -43341,7 +43341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4331",
@@ -43349,7 +43349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4332",
@@ -43357,7 +43357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4333",
@@ -43365,7 +43365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4334",
@@ -43373,7 +43373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4335",
@@ -43381,7 +43381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4336",
@@ -43389,7 +43389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4337",
@@ -43397,7 +43397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4338",
@@ -43405,7 +43405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4339",
@@ -43413,7 +43413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4340",
@@ -43421,7 +43421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4341",
@@ -43429,7 +43429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4342",
@@ -43437,7 +43437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4343",
@@ -43445,7 +43445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4344",
@@ -43453,7 +43453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4345",
@@ -43461,7 +43461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4346",
@@ -43469,7 +43469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4347",
@@ -43477,7 +43477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4348",
@@ -43485,7 +43485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4349",
@@ -43493,7 +43493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4350",
@@ -43501,7 +43501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4351",
@@ -43509,7 +43509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4352",
@@ -43517,7 +43517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4353",
@@ -43525,7 +43525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4354",
@@ -43533,7 +43533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4355",
@@ -43541,7 +43541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4356",
@@ -43549,7 +43549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4357",
@@ -43557,7 +43557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4358",
@@ -43565,7 +43565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4359",
@@ -43573,7 +43573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4360",
@@ -43581,7 +43581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4361",
@@ -43589,7 +43589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4362",
@@ -43597,7 +43597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4363",
@@ -43605,7 +43605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4364",
@@ -43613,7 +43613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4365",
@@ -43621,7 +43621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4366",
@@ -43629,7 +43629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4367",
@@ -43637,7 +43637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4368",
@@ -43645,7 +43645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4369",
@@ -43653,7 +43653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4370",
@@ -43661,7 +43661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4371",
@@ -43669,7 +43669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4372",
@@ -43677,7 +43677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4373",
@@ -43685,7 +43685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4374",
@@ -43693,7 +43693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4375",
@@ -43701,7 +43701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4376",
@@ -43709,7 +43709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4377",
@@ -43717,7 +43717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4378",
@@ -43725,7 +43725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4379",
@@ -43733,7 +43733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4380",
@@ -43741,7 +43741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4381",
@@ -43749,7 +43749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4382",
@@ -43757,7 +43757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4383",
@@ -43765,7 +43765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4384",
@@ -43773,7 +43773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4385",
@@ -43781,7 +43781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4386",
@@ -43789,7 +43789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4387",
@@ -43797,7 +43797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4388",
@@ -43805,7 +43805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4389",
@@ -43813,7 +43813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4390",
@@ -43821,7 +43821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4391",
@@ -43829,7 +43829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4392",
@@ -43837,7 +43837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4393",
@@ -43845,7 +43845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4394",
@@ -43853,7 +43853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4395",
@@ -43861,7 +43861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4396",
@@ -43869,7 +43869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4397",
@@ -43877,7 +43877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4398",
@@ -43885,7 +43885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4399",
@@ -43893,7 +43893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4400",
@@ -43901,7 +43901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4401",
@@ -43909,7 +43909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4402",
@@ -43917,7 +43917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4403",
@@ -43925,7 +43925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4404",
@@ -43933,7 +43933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4405",
@@ -43941,7 +43941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4406",
@@ -43949,7 +43949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4407",
@@ -43957,7 +43957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4408",
@@ -43965,7 +43965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4409",
@@ -43973,7 +43973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4410",
@@ -43981,7 +43981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4411",
@@ -43989,7 +43989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4412",
@@ -43997,7 +43997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4413",
@@ -44005,7 +44005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4414",
@@ -44013,7 +44013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4415",
@@ -44021,7 +44021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4416",
@@ -44029,7 +44029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4417",
@@ -44037,7 +44037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4418",
@@ -44045,7 +44045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4419",
@@ -44053,7 +44053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4420",
@@ -44061,7 +44061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4421",
@@ -44069,7 +44069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4422",
@@ -44077,7 +44077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4423",
@@ -44085,7 +44085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4424",
@@ -44093,7 +44093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4425",
@@ -44101,7 +44101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4426",
@@ -44109,7 +44109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4427",
@@ -44117,7 +44117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4428",
@@ -44125,7 +44125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4429",
@@ -44133,7 +44133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4430",
@@ -44141,7 +44141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4431",
@@ -44149,7 +44149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4432",
@@ -44157,7 +44157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4433",
@@ -44165,7 +44165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4434",
@@ -44173,7 +44173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4435",
@@ -44181,7 +44181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4436",
@@ -44189,7 +44189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4437",
@@ -44197,7 +44197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4438",
@@ -44205,7 +44205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4439",
@@ -44213,7 +44213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4440",
@@ -44221,7 +44221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4441",
@@ -44229,7 +44229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4442",
@@ -44237,7 +44237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4443",
@@ -44245,7 +44245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4444",
@@ -44253,7 +44253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4445",
@@ -44261,7 +44261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4446",
@@ -44269,7 +44269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4447",
@@ -44277,7 +44277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4448",
@@ -44285,7 +44285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4449",
@@ -44293,7 +44293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4450",
@@ -44301,7 +44301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4451",
@@ -44309,7 +44309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4452",
@@ -44317,7 +44317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4453",
@@ -44325,7 +44325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4454",
@@ -44333,7 +44333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4455",
@@ -44341,7 +44341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4456",
@@ -44349,7 +44349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4457",
@@ -44357,7 +44357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4458",
@@ -44365,7 +44365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4459",
@@ -44373,7 +44373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4460",
@@ -44381,7 +44381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4461",
@@ -44389,7 +44389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4462",
@@ -44397,7 +44397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4463",
@@ -44405,7 +44405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4464",
@@ -44413,7 +44413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4465",
@@ -44421,7 +44421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4466",
@@ -44429,7 +44429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4467",
@@ -44437,7 +44437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4468",
@@ -44445,7 +44445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4469",
@@ -44453,7 +44453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4470",
@@ -44461,7 +44461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4471",
@@ -44469,7 +44469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4472",
@@ -44477,7 +44477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4473",
@@ -44485,7 +44485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4474",
@@ -44493,7 +44493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4475",
@@ -44501,7 +44501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4476",
@@ -44509,7 +44509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4477",
@@ -44517,7 +44517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4478",
@@ -44525,7 +44525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4479",
@@ -44533,7 +44533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4480",
@@ -44541,7 +44541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4481",
@@ -44549,7 +44549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4482",
@@ -44557,7 +44557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4483",
@@ -44565,7 +44565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4484",
@@ -44573,7 +44573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4485",
@@ -44581,7 +44581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4486",
@@ -44589,7 +44589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4487",
@@ -44597,7 +44597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4488",
@@ -44605,7 +44605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4489",
@@ -44613,7 +44613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4490",
@@ -44621,7 +44621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4491",
@@ -44629,7 +44629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4492",
@@ -44637,7 +44637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4493",
@@ -44645,7 +44645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4494",
@@ -44653,7 +44653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4495",
@@ -44661,7 +44661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4496",
@@ -44669,7 +44669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4497",
@@ -44677,7 +44677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4498",
@@ -44685,7 +44685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4499",
@@ -44693,7 +44693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4500",
@@ -44701,7 +44701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4501",
@@ -44709,7 +44709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4502",
@@ -44717,7 +44717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4503",
@@ -44725,7 +44725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4504",
@@ -44733,7 +44733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4505",
@@ -44741,7 +44741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4506",
@@ -44749,7 +44749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4507",
@@ -44757,7 +44757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4508",
@@ -44765,7 +44765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4509",
@@ -44773,7 +44773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4510",
@@ -44781,7 +44781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4511",
@@ -44789,7 +44789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4512",
@@ -44797,7 +44797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4513",
@@ -44805,7 +44805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4514",
@@ -44813,7 +44813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4515",
@@ -44821,7 +44821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4516",
@@ -44829,7 +44829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4517",
@@ -44837,7 +44837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4518",
@@ -44845,7 +44845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4519",
@@ -44853,7 +44853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4520",
@@ -44861,7 +44861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4521",
@@ -44869,7 +44869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4522",
@@ -44877,7 +44877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4523",
@@ -44885,7 +44885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4524",
@@ -44893,7 +44893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4525",
@@ -44901,7 +44901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4526",
@@ -44909,7 +44909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4527",
@@ -44917,7 +44917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4528",
@@ -44925,7 +44925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4529",
@@ -44933,7 +44933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4530",
@@ -44941,7 +44941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4531",
@@ -44949,7 +44949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4532",
@@ -44957,7 +44957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4533",
@@ -44965,7 +44965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4534",
@@ -44973,7 +44973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4535",
@@ -44981,7 +44981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4536",
@@ -44989,7 +44989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4537",
@@ -44997,7 +44997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4538",
@@ -45005,7 +45005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4539",
@@ -45013,7 +45013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4540",
@@ -45021,7 +45021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4541",
@@ -45029,7 +45029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4542",
@@ -45037,7 +45037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4543",
@@ -45045,7 +45045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4544",
@@ -45053,7 +45053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4545",
@@ -45061,7 +45061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4546",
@@ -45069,7 +45069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4547",
@@ -45077,7 +45077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4548",
@@ -45085,7 +45085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4549",
@@ -45093,7 +45093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4550",
@@ -45101,7 +45101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4551",
@@ -45109,7 +45109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4552",
@@ -45117,7 +45117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4553",
@@ -45125,7 +45125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4554",
@@ -45133,7 +45133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4555",
@@ -45141,7 +45141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4556",
@@ -45149,7 +45149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4557",
@@ -45157,7 +45157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4558",
@@ -45165,7 +45165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4559",
@@ -45173,7 +45173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4560",
@@ -45181,7 +45181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4561",
@@ -45189,7 +45189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4562",
@@ -45197,7 +45197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4563",
@@ -45205,7 +45205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4564",
@@ -45213,7 +45213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4565",
@@ -45221,7 +45221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4566",
@@ -45229,7 +45229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4567",
@@ -45237,7 +45237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4568",
@@ -45245,7 +45245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4569",
@@ -45253,7 +45253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4570",
@@ -45261,7 +45261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4571",
@@ -45269,7 +45269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4572",
@@ -45277,7 +45277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4573",
@@ -45285,7 +45285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4574",
@@ -45293,7 +45293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4575",
@@ -45301,7 +45301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4576",
@@ -45309,7 +45309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4577",
@@ -45317,7 +45317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4578",
@@ -45325,7 +45325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4579",
@@ -45333,7 +45333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4580",
@@ -45341,7 +45341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4581",
@@ -45349,7 +45349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4582",
@@ -45357,7 +45357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4583",
@@ -45365,7 +45365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4584",
@@ -45373,7 +45373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4585",
@@ -45381,7 +45381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4586",
@@ -45389,7 +45389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4587",
@@ -45397,7 +45397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4588",
@@ -45405,7 +45405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4589",
@@ -45413,7 +45413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4590",
@@ -45421,7 +45421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4591",
@@ -45429,7 +45429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4592",
@@ -45437,7 +45437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4593",
@@ -45445,7 +45445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4594",
@@ -45453,7 +45453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4595",
@@ -45461,7 +45461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4596",
@@ -45469,7 +45469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4597",
@@ -45477,7 +45477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4598",
@@ -45485,7 +45485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4599",
@@ -45493,7 +45493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4600",
@@ -45501,7 +45501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4601",
@@ -45509,7 +45509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4602",
@@ -45517,7 +45517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4603",
@@ -45525,7 +45525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4604",
@@ -45533,7 +45533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4605",
@@ -45541,7 +45541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4606",
@@ -45549,7 +45549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4607",
@@ -45557,7 +45557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4608",
@@ -45565,7 +45565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4609",
@@ -45573,7 +45573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4610",
@@ -45581,7 +45581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4611",
@@ -45589,7 +45589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4612",
@@ -45597,7 +45597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4613",
@@ -45605,7 +45605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4614",
@@ -45613,7 +45613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4615",
@@ -45621,7 +45621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4616",
@@ -45629,7 +45629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4617",
@@ -45637,7 +45637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4618",
@@ -45645,7 +45645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4619",
@@ -45653,7 +45653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4620",
@@ -45661,7 +45661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4621",
@@ -45669,7 +45669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4622",
@@ -45677,7 +45677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4623",
@@ -45685,7 +45685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4624",
@@ -45693,7 +45693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4625",
@@ -45701,7 +45701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4626",
@@ -45709,7 +45709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4627",
@@ -45717,7 +45717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4628",
@@ -45725,7 +45725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4629",
@@ -45733,7 +45733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4630",
@@ -45741,7 +45741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4631",
@@ -45749,7 +45749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4632",
@@ -45757,7 +45757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4633",
@@ -45765,7 +45765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4634",
@@ -45773,7 +45773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4635",
@@ -45781,7 +45781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4636",
@@ -45789,7 +45789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4637",
@@ -45797,7 +45797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4638",
@@ -45805,7 +45805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4639",
@@ -45813,7 +45813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4640",
@@ -45821,7 +45821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4641",
@@ -45829,7 +45829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4642",
@@ -45837,7 +45837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4643",
@@ -45845,7 +45845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4644",
@@ -45853,7 +45853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4645",
@@ -45861,7 +45861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4646",
@@ -45869,7 +45869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4647",
@@ -45877,7 +45877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4648",
@@ -45885,7 +45885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4649",
@@ -45893,7 +45893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4650",
@@ -45901,7 +45901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4651",
@@ -45909,7 +45909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4652",
@@ -45917,7 +45917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4653",
@@ -45925,7 +45925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4654",
@@ -45933,7 +45933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4655",
@@ -45941,7 +45941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4656",
@@ -45949,7 +45949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4657",
@@ -45957,7 +45957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4658",
@@ -45965,7 +45965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4659",
@@ -45973,7 +45973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4660",
@@ -45981,7 +45981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4661",
@@ -45989,7 +45989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4662",
@@ -45997,7 +45997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4663",
@@ -46005,7 +46005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4664",
@@ -46013,7 +46013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4665",
@@ -46021,7 +46021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4666",
@@ -46029,7 +46029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4667",
@@ -46037,7 +46037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4668",
@@ -46045,7 +46045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4669",
@@ -46053,7 +46053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4670",
@@ -46061,7 +46061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4671",
@@ -46069,7 +46069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4672",
@@ -46077,7 +46077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4673",
@@ -46085,7 +46085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4674",
@@ -46093,7 +46093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4675",
@@ -46101,7 +46101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4676",
@@ -46109,7 +46109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4677",
@@ -46117,7 +46117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4678",
@@ -46125,7 +46125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4679",
@@ -46133,7 +46133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4680",
@@ -46141,7 +46141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4681",
@@ -46149,7 +46149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4682",
@@ -46157,7 +46157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4683",
@@ -46165,7 +46165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4684",
@@ -46173,7 +46173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4685",
@@ -46181,7 +46181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4686",
@@ -46189,7 +46189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4687",
@@ -46197,7 +46197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4688",
@@ -46205,7 +46205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4689",
@@ -46213,7 +46213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4690",
@@ -46221,7 +46221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4691",
@@ -46229,7 +46229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4692",
@@ -46237,7 +46237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4693",
@@ -46245,7 +46245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4694",
@@ -46253,7 +46253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4695",
@@ -46261,7 +46261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4696",
@@ -46269,7 +46269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4697",
@@ -46277,7 +46277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4698",
@@ -46285,7 +46285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4699",
@@ -46293,7 +46293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4700",
@@ -46301,7 +46301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4701",
@@ -46309,7 +46309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4702",
@@ -46317,7 +46317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4703",
@@ -46325,7 +46325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4704",
@@ -46333,7 +46333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4705",
@@ -46341,7 +46341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4706",
@@ -46349,7 +46349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4707",
@@ -46357,7 +46357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4708",
@@ -46365,7 +46365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4709",
@@ -46373,7 +46373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4710",
@@ -46381,7 +46381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4711",
@@ -46389,7 +46389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4712",
@@ -46397,7 +46397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4713",
@@ -46405,7 +46405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4714",
@@ -46413,7 +46413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4715",
@@ -46421,7 +46421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4716",
@@ -46429,7 +46429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4717",
@@ -46437,7 +46437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4718",
@@ -46445,7 +46445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4719",
@@ -46453,7 +46453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4720",
@@ -46461,7 +46461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4721",
@@ -46469,7 +46469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4722",
@@ -46477,7 +46477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4723",
@@ -46485,7 +46485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4724",
@@ -46493,7 +46493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4725",
@@ -46501,7 +46501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4726",
@@ -46509,7 +46509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4727",
@@ -46517,7 +46517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4728",
@@ -46525,7 +46525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4729",
@@ -46533,7 +46533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4730",
@@ -46541,7 +46541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4731",
@@ -46549,7 +46549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4732",
@@ -46557,7 +46557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4733",
@@ -46565,7 +46565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4734",
@@ -46573,7 +46573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4735",
@@ -46581,7 +46581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4736",
@@ -46589,7 +46589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4737",
@@ -46597,7 +46597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4738",
@@ -46605,7 +46605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4739",
@@ -46613,7 +46613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4740",
@@ -46621,7 +46621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4741",
@@ -46629,7 +46629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4742",
@@ -46637,7 +46637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4743",
@@ -46645,7 +46645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4744",
@@ -46653,7 +46653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4745",
@@ -46661,7 +46661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4746",
@@ -46669,7 +46669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4747",
@@ -46677,7 +46677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4748",
@@ -46685,7 +46685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4749",
@@ -46693,7 +46693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4750",
@@ -46701,7 +46701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4751",
@@ -46709,7 +46709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4752",
@@ -46717,7 +46717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4753",
@@ -46725,7 +46725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4754",
@@ -46733,7 +46733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4755",
@@ -46741,7 +46741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4756",
@@ -46749,7 +46749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4757",
@@ -46757,7 +46757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4758",
@@ -46765,7 +46765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4759",
@@ -46773,7 +46773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4760",
@@ -46781,7 +46781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4761",
@@ -46789,7 +46789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4762",
@@ -46797,7 +46797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4763",
@@ -46805,7 +46805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4764",
@@ -46813,7 +46813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4765",
@@ -46821,7 +46821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4766",
@@ -46829,7 +46829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4767",
@@ -46837,7 +46837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4768",
@@ -46845,7 +46845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4769",
@@ -46853,7 +46853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4770",
@@ -46861,7 +46861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4771",
@@ -46869,7 +46869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4772",
@@ -46877,7 +46877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4773",
@@ -46885,7 +46885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4774",
@@ -46893,7 +46893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4775",
@@ -46901,7 +46901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4776",
@@ -46909,7 +46909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4777",
@@ -46917,7 +46917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4778",
@@ -46925,7 +46925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4779",
@@ -46933,7 +46933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4780",
@@ -46941,7 +46941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4781",
@@ -46949,7 +46949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4782",
@@ -46957,7 +46957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4783",
@@ -46965,7 +46965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4784",
@@ -46973,7 +46973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4785",
@@ -46981,7 +46981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4786",
@@ -46989,7 +46989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4787",
@@ -46997,7 +46997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4788",
@@ -47005,7 +47005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4789",
@@ -47013,7 +47013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4790",
@@ -47021,7 +47021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4791",
@@ -47029,7 +47029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4792",
@@ -47037,7 +47037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4793",
@@ -47045,7 +47045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4794",
@@ -47053,7 +47053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4795",
@@ -47061,7 +47061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4796",
@@ -47069,7 +47069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4797",
@@ -47077,7 +47077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4798",
@@ -47085,7 +47085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4799",
@@ -47093,7 +47093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4800",
@@ -47101,7 +47101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4801",
@@ -47109,7 +47109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4802",
@@ -47117,7 +47117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4803",
@@ -47125,7 +47125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4804",
@@ -47133,7 +47133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4805",
@@ -47141,7 +47141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4806",
@@ -47149,7 +47149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4807",
@@ -47157,7 +47157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4808",
@@ -47165,7 +47165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4809",
@@ -47173,7 +47173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4810",
@@ -47181,7 +47181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4811",
@@ -47189,7 +47189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4812",
@@ -47197,7 +47197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4813",
@@ -47205,7 +47205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4814",
@@ -47213,7 +47213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4815",
@@ -47221,7 +47221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4816",
@@ -47229,7 +47229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4817",
@@ -47237,7 +47237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4818",
@@ -47245,7 +47245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4819",
@@ -47253,7 +47253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4820",
@@ -47261,7 +47261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4821",
@@ -47269,7 +47269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4822",
@@ -47277,7 +47277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4823",
@@ -47285,7 +47285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4824",
@@ -47293,7 +47293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4825",
@@ -47301,7 +47301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4826",
@@ -47309,7 +47309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4827",
@@ -47317,7 +47317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4828",
@@ -47325,7 +47325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4829",
@@ -47333,7 +47333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4830",
@@ -47341,7 +47341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4831",
@@ -47349,7 +47349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4832",
@@ -47357,7 +47357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4833",
@@ -47365,7 +47365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4834",
@@ -47373,7 +47373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4835",
@@ -47381,7 +47381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4836",
@@ -47389,7 +47389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4837",
@@ -47397,7 +47397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4838",
@@ -47405,7 +47405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4839",
@@ -47413,7 +47413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4840",
@@ -47421,7 +47421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4841",
@@ -47429,7 +47429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4842",
@@ -47437,7 +47437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4843",
@@ -47445,7 +47445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4844",
@@ -47453,7 +47453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4845",
@@ -47461,7 +47461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4846",
@@ -47469,7 +47469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4847",
@@ -47477,7 +47477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4848",
@@ -47485,7 +47485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4849",
@@ -47493,7 +47493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4850",
@@ -47501,7 +47501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4851",
@@ -47509,7 +47509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4852",
@@ -47517,7 +47517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4853",
@@ -47525,7 +47525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4854",
@@ -47533,7 +47533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4855",
@@ -47541,7 +47541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4856",
@@ -47549,7 +47549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4857",
@@ -47557,7 +47557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4858",
@@ -47565,7 +47565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4859",
@@ -47573,7 +47573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4860",
@@ -47581,7 +47581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4861",
@@ -47589,7 +47589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4862",
@@ -47597,7 +47597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4863",
@@ -47605,7 +47605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4864",
@@ -47613,7 +47613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4865",
@@ -47621,7 +47621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4866",
@@ -47629,7 +47629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4867",
@@ -47637,7 +47637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4868",
@@ -47645,7 +47645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4869",
@@ -47653,7 +47653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4870",
@@ -47661,7 +47661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4871",
@@ -47669,7 +47669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4872",
@@ -47677,7 +47677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4873",
@@ -47685,7 +47685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4874",
@@ -47693,7 +47693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4875",
@@ -47701,7 +47701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4876",
@@ -47709,7 +47709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4877",
@@ -47717,7 +47717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4878",
@@ -47725,7 +47725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4879",
@@ -47733,7 +47733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4880",
@@ -47741,7 +47741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4881",
@@ -47749,7 +47749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4882",
@@ -47757,7 +47757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4883",
@@ -47765,7 +47765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4884",
@@ -47773,7 +47773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4885",
@@ -47781,7 +47781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4886",
@@ -47789,7 +47789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4887",
@@ -47797,7 +47797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4888",
@@ -47805,7 +47805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4889",
@@ -47813,7 +47813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4890",
@@ -47821,7 +47821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4891",
@@ -47829,7 +47829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4892",
@@ -47837,7 +47837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4893",
@@ -47845,7 +47845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4894",
@@ -47853,7 +47853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4895",
@@ -47861,7 +47861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4896",
@@ -47869,7 +47869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4897",
@@ -47877,7 +47877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4898",
@@ -47885,7 +47885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4899",
@@ -47893,7 +47893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4900",
@@ -47901,7 +47901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4901",
@@ -47909,7 +47909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4902",
@@ -47917,7 +47917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4903",
@@ -47925,7 +47925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4904",
@@ -47933,7 +47933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4905",
@@ -47941,7 +47941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4906",
@@ -47949,7 +47949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4907",
@@ -47957,7 +47957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4908",
@@ -47965,7 +47965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4909",
@@ -47973,7 +47973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4910",
@@ -47981,7 +47981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4911",
@@ -47989,7 +47989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4912",
@@ -47997,7 +47997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4913",
@@ -48005,7 +48005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4914",
@@ -48013,7 +48013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4915",
@@ -48021,7 +48021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4916",
@@ -48029,7 +48029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4917",
@@ -48037,7 +48037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4918",
@@ -48045,7 +48045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4919",
@@ -48053,7 +48053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4920",
@@ -48061,7 +48061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4921",
@@ -48069,7 +48069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4922",
@@ -48077,7 +48077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4923",
@@ -48085,7 +48085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4924",
@@ -48093,7 +48093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4925",
@@ -48101,7 +48101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4926",
@@ -48109,7 +48109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4927",
@@ -48117,7 +48117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4928",
@@ -48125,7 +48125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4929",
@@ -48133,7 +48133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4930",
@@ -48141,7 +48141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4931",
@@ -48149,7 +48149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4932",
@@ -48157,7 +48157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4933",
@@ -48165,7 +48165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4934",
@@ -48173,7 +48173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4935",
@@ -48181,7 +48181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4936",
@@ -48189,7 +48189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4937",
@@ -48197,7 +48197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4938",
@@ -48205,7 +48205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4939",
@@ -48213,7 +48213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4940",
@@ -48221,7 +48221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4941",
@@ -48229,7 +48229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4942",
@@ -48237,7 +48237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4943",
@@ -48245,7 +48245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4944",
@@ -48253,7 +48253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4945",
@@ -48261,7 +48261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4946",
@@ -48269,7 +48269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4947",
@@ -48277,7 +48277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4948",
@@ -48285,7 +48285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4949",
@@ -48293,7 +48293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4950",
@@ -48301,7 +48301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4951",
@@ -48309,7 +48309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4952",
@@ -48317,7 +48317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4953",
@@ -48325,7 +48325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4954",
@@ -48333,7 +48333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4955",
@@ -48341,7 +48341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4956",
@@ -48349,7 +48349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4957",
@@ -48357,7 +48357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4958",
@@ -48365,7 +48365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4959",
@@ -48373,7 +48373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4960",
@@ -48381,7 +48381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4961",
@@ -48389,7 +48389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4962",
@@ -48397,7 +48397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4963",
@@ -48405,7 +48405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4964",
@@ -48413,7 +48413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4965",
@@ -48421,7 +48421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4966",
@@ -48429,7 +48429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4967",
@@ -48437,7 +48437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4968",
@@ -48445,7 +48445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4969",
@@ -48453,7 +48453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4970",
@@ -48461,7 +48461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4971",
@@ -48469,7 +48469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4972",
@@ -48477,7 +48477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4973",
@@ -48485,7 +48485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4974",
@@ -48493,7 +48493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4975",
@@ -48501,7 +48501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4976",
@@ -48509,7 +48509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4977",
@@ -48517,7 +48517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4978",
@@ -48525,7 +48525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4979",
@@ -48533,7 +48533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4980",
@@ -48541,7 +48541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4981",
@@ -48549,7 +48549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4982",
@@ -48557,7 +48557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4983",
@@ -48565,7 +48565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4984",
@@ -48573,7 +48573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4985",
@@ -48581,7 +48581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4986",
@@ -48589,7 +48589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4987",
@@ -48597,7 +48597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4988",
@@ -48605,7 +48605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4989",
@@ -48613,7 +48613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4990",
@@ -48621,7 +48621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4991",
@@ -48629,7 +48629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4992",
@@ -48637,7 +48637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4993",
@@ -48645,7 +48645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4994",
@@ -48653,7 +48653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4995",
@@ -48661,7 +48661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4996",
@@ -48669,7 +48669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4997",
@@ -48677,7 +48677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4998",
@@ -48685,7 +48685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS4999",
@@ -48693,7 +48693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5000",
@@ -48701,7 +48701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5001",
@@ -48709,7 +48709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5002",
@@ -48717,7 +48717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5003",
@@ -48725,7 +48725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5004",
@@ -48733,7 +48733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5005",
@@ -48741,7 +48741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5006",
@@ -48749,7 +48749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5007",
@@ -48757,7 +48757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5008",
@@ -48765,7 +48765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5009",
@@ -48773,7 +48773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5010",
@@ -48781,7 +48781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5011",
@@ -48789,7 +48789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5012",
@@ -48797,7 +48797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5013",
@@ -48805,7 +48805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5014",
@@ -48813,7 +48813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5015",
@@ -48821,7 +48821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5016",
@@ -48829,7 +48829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5017",
@@ -48837,7 +48837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5018",
@@ -48845,7 +48845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5019",
@@ -48853,7 +48853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5020",
@@ -48861,7 +48861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5021",
@@ -48869,7 +48869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5022",
@@ -48877,7 +48877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5023",
@@ -48885,7 +48885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5024",
@@ -48893,7 +48893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5025",
@@ -48901,7 +48901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5026",
@@ -48909,7 +48909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5027",
@@ -48917,7 +48917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5028",
@@ -48925,7 +48925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5029",
@@ -48933,7 +48933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5030",
@@ -48941,7 +48941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5031",
@@ -48949,7 +48949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5032",
@@ -48957,7 +48957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5033",
@@ -48965,7 +48965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5034",
@@ -48973,7 +48973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5035",
@@ -48981,7 +48981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5036",
@@ -48989,7 +48989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5037",
@@ -48997,7 +48997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5038",
@@ -49005,7 +49005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5039",
@@ -49013,7 +49013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5040",
@@ -49021,7 +49021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5041",
@@ -49029,7 +49029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5042",
@@ -49037,7 +49037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5043",
@@ -49045,7 +49045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5044",
@@ -49053,7 +49053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5045",
@@ -49061,7 +49061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5046",
@@ -49069,7 +49069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5047",
@@ -49077,7 +49077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5048",
@@ -49085,7 +49085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5049",
@@ -49093,7 +49093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5050",
@@ -49101,7 +49101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5051",
@@ -49109,7 +49109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5052",
@@ -49117,7 +49117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5053",
@@ -49125,7 +49125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5054",
@@ -49133,7 +49133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5055",
@@ -49141,7 +49141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5056",
@@ -49149,7 +49149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5057",
@@ -49157,7 +49157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5058",
@@ -49165,7 +49165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5059",
@@ -49173,7 +49173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5060",
@@ -49181,7 +49181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5061",
@@ -49189,7 +49189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5062",
@@ -49197,7 +49197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5063",
@@ -49205,7 +49205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5064",
@@ -49213,7 +49213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5065",
@@ -49221,7 +49221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5066",
@@ -49229,7 +49229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5067",
@@ -49237,7 +49237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5068",
@@ -49245,7 +49245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5069",
@@ -49253,7 +49253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5070",
@@ -49261,7 +49261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5071",
@@ -49269,7 +49269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5072",
@@ -49277,7 +49277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5073",
@@ -49285,7 +49285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5074",
@@ -49293,7 +49293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5075",
@@ -49301,7 +49301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5076",
@@ -49309,7 +49309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5077",
@@ -49317,7 +49317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5078",
@@ -49325,7 +49325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5079",
@@ -49333,7 +49333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5080",
@@ -49341,7 +49341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5081",
@@ -49349,7 +49349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5082",
@@ -49357,7 +49357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5083",
@@ -49365,7 +49365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5084",
@@ -49373,7 +49373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5085",
@@ -49381,7 +49381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5086",
@@ -49389,7 +49389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5087",
@@ -49397,7 +49397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5088",
@@ -49405,7 +49405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5089",
@@ -49413,7 +49413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5090",
@@ -49421,7 +49421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5091",
@@ -49429,7 +49429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5092",
@@ -49437,7 +49437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5093",
@@ -49445,7 +49445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5094",
@@ -49453,7 +49453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5095",
@@ -49461,7 +49461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5096",
@@ -49469,7 +49469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5097",
@@ -49477,7 +49477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5098",
@@ -49485,7 +49485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5099",
@@ -49493,7 +49493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5100",
@@ -49501,7 +49501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5101",
@@ -49509,7 +49509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5102",
@@ -49517,7 +49517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5103",
@@ -49525,7 +49525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5104",
@@ -49533,7 +49533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5105",
@@ -49541,7 +49541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5106",
@@ -49549,7 +49549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5107",
@@ -49557,7 +49557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5108",
@@ -49565,7 +49565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5109",
@@ -49573,7 +49573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5110",
@@ -49581,7 +49581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5111",
@@ -49589,7 +49589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5112",
@@ -49597,7 +49597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5113",
@@ -49605,7 +49605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5114",
@@ -49613,7 +49613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5115",
@@ -49621,7 +49621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5116",
@@ -49629,7 +49629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5117",
@@ -49637,7 +49637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5118",
@@ -49645,7 +49645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5119",
@@ -49653,7 +49653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5120",
@@ -49661,7 +49661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5121",
@@ -49669,7 +49669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5122",
@@ -49677,7 +49677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5123",
@@ -49685,7 +49685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5124",
@@ -49693,7 +49693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5125",
@@ -49701,7 +49701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5126",
@@ -49709,7 +49709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5127",
@@ -49717,7 +49717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5128",
@@ -49725,7 +49725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5129",
@@ -49733,7 +49733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5130",
@@ -49741,7 +49741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5131",
@@ -49749,7 +49749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5132",
@@ -49757,7 +49757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5133",
@@ -49765,7 +49765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5134",
@@ -49773,7 +49773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5135",
@@ -49781,7 +49781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5136",
@@ -49789,7 +49789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5137",
@@ -49797,7 +49797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5138",
@@ -49805,7 +49805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5139",
@@ -49813,7 +49813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5140",
@@ -49821,7 +49821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5141",
@@ -49829,7 +49829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5142",
@@ -49837,7 +49837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5143",
@@ -49845,7 +49845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5144",
@@ -49853,7 +49853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5145",
@@ -49861,7 +49861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5146",
@@ -49869,7 +49869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5147",
@@ -49877,7 +49877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5148",
@@ -49885,7 +49885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5149",
@@ -49893,7 +49893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5150",
@@ -49901,7 +49901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5151",
@@ -49909,7 +49909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5152",
@@ -49917,7 +49917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5153",
@@ -49925,7 +49925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5154",
@@ -49933,7 +49933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5155",
@@ -49941,7 +49941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5156",
@@ -49949,7 +49949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5157",
@@ -49957,7 +49957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5158",
@@ -49965,7 +49965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5159",
@@ -49973,7 +49973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5160",
@@ -49981,7 +49981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5161",
@@ -49989,7 +49989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5162",
@@ -49997,7 +49997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5163",
@@ -50005,7 +50005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5164",
@@ -50013,7 +50013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5165",
@@ -50021,7 +50021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5166",
@@ -50029,7 +50029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5167",
@@ -50037,7 +50037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5168",
@@ -50045,7 +50045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5169",
@@ -50053,7 +50053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5170",
@@ -50061,7 +50061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5171",
@@ -50069,7 +50069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5172",
@@ -50077,7 +50077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5173",
@@ -50085,7 +50085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5174",
@@ -50093,7 +50093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5175",
@@ -50101,7 +50101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5176",
@@ -50109,7 +50109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5177",
@@ -50117,7 +50117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5178",
@@ -50125,7 +50125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5179",
@@ -50133,7 +50133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5180",
@@ -50141,7 +50141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5181",
@@ -50149,7 +50149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5182",
@@ -50157,7 +50157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5183",
@@ -50165,7 +50165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5184",
@@ -50173,7 +50173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5185",
@@ -50181,7 +50181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5186",
@@ -50189,7 +50189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5187",
@@ -50197,7 +50197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5188",
@@ -50205,7 +50205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5189",
@@ -50213,7 +50213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5190",
@@ -50221,7 +50221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5191",
@@ -50229,7 +50229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5192",
@@ -50237,7 +50237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5193",
@@ -50245,7 +50245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5194",
@@ -50253,7 +50253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5195",
@@ -50261,7 +50261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5196",
@@ -50269,7 +50269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5197",
@@ -50277,7 +50277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5198",
@@ -50285,7 +50285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5199",
@@ -50293,7 +50293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5200",
@@ -50301,7 +50301,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5201",
@@ -50309,7 +50309,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5202",
@@ -50317,7 +50317,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5203",
@@ -50325,7 +50325,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5204",
@@ -50333,7 +50333,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5205",
@@ -50341,7 +50341,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5206",
@@ -50349,7 +50349,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5207",
@@ -50357,7 +50357,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5208",
@@ -50365,7 +50365,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5209",
@@ -50373,7 +50373,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5210",
@@ -50381,7 +50381,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5211",
@@ -50389,7 +50389,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5212",
@@ -50397,7 +50397,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5213",
@@ -50405,7 +50405,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5214",
@@ -50413,7 +50413,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5215",
@@ -50421,7 +50421,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5216",
@@ -50429,7 +50429,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5217",
@@ -50437,7 +50437,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5218",
@@ -50445,7 +50445,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5219",
@@ -50453,7 +50453,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5220",
@@ -50461,7 +50461,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5221",
@@ -50469,7 +50469,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5222",
@@ -50477,7 +50477,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5223",
@@ -50485,7 +50485,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5224",
@@ -50493,7 +50493,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5225",
@@ -50501,7 +50501,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5226",
@@ -50509,7 +50509,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5227",
@@ -50517,7 +50517,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5228",
@@ -50525,7 +50525,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5229",
@@ -50533,7 +50533,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5230",
@@ -50541,7 +50541,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5231",
@@ -50549,7 +50549,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5232",
@@ -50557,7 +50557,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5233",
@@ -50565,7 +50565,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5234",
@@ -50573,7 +50573,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5235",
@@ -50581,7 +50581,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5236",
@@ -50589,7 +50589,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5237",
@@ -50597,7 +50597,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5238",
@@ -50605,7 +50605,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5239",
@@ -50613,7 +50613,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5240",
@@ -50621,7 +50621,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5241",
@@ -50629,7 +50629,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5242",
@@ -50637,7 +50637,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5243",
@@ -50645,7 +50645,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5244",
@@ -50653,7 +50653,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5245",
@@ -50661,7 +50661,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5246",
@@ -50669,7 +50669,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5247",
@@ -50677,7 +50677,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5248",
@@ -50685,7 +50685,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5249",
@@ -50693,7 +50693,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5250",
@@ -50701,7 +50701,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5251",
@@ -50709,7 +50709,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5252",
@@ -50717,7 +50717,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5253",
@@ -50725,7 +50725,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5254",
@@ -50733,7 +50733,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5255",
@@ -50741,7 +50741,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5256",
@@ -50749,7 +50749,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5257",
@@ -50757,7 +50757,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5258",
@@ -50765,7 +50765,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5259",
@@ -50773,7 +50773,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5260",
@@ -50781,7 +50781,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5261",
@@ -50789,7 +50789,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5262",
@@ -50797,7 +50797,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5263",
@@ -50805,7 +50805,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5264",
@@ -50813,7 +50813,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5265",
@@ -50821,7 +50821,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5266",
@@ -50829,7 +50829,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5267",
@@ -50837,7 +50837,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5268",
@@ -50845,7 +50845,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5269",
@@ -50853,7 +50853,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5270",
@@ -50861,7 +50861,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5271",
@@ -50869,7 +50869,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5272",
@@ -50877,7 +50877,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5273",
@@ -50885,7 +50885,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5274",
@@ -50893,7 +50893,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5275",
@@ -50901,7 +50901,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5276",
@@ -50909,7 +50909,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5277",
@@ -50917,7 +50917,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5278",
@@ -50925,7 +50925,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5279",
@@ -50933,7 +50933,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5280",
@@ -50941,7 +50941,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5281",
@@ -50949,7 +50949,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5282",
@@ -50957,7 +50957,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5283",
@@ -50965,7 +50965,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5284",
@@ -50973,7 +50973,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5285",
@@ -50981,7 +50981,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5286",
@@ -50989,7 +50989,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5287",
@@ -50997,7 +50997,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5288",
@@ -51005,7 +51005,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5289",
@@ -51013,7 +51013,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5290",
@@ -51021,7 +51021,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5291",
@@ -51029,7 +51029,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5292",
@@ -51037,7 +51037,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5293",
@@ -51045,7 +51045,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5294",
@@ -51053,7 +51053,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5295",
@@ -51061,7 +51061,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5296",
@@ -51069,7 +51069,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5297",
@@ -51077,7 +51077,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5298",
@@ -51085,7 +51085,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5299",
@@ -51093,7 +51093,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5300",
@@ -51101,7 +51101,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5301",
@@ -51109,7 +51109,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5302",
@@ -51117,7 +51117,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5303",
@@ -51125,7 +51125,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5304",
@@ -51133,7 +51133,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5305",
@@ -51141,7 +51141,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5306",
@@ -51149,7 +51149,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5307",
@@ -51157,7 +51157,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5308",
@@ -51165,7 +51165,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5309",
@@ -51173,7 +51173,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5310",
@@ -51181,7 +51181,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5311",
@@ -51189,7 +51189,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5312",
@@ -51197,7 +51197,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5313",
@@ -51205,7 +51205,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5314",
@@ -51213,7 +51213,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5315",
@@ -51221,7 +51221,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5316",
@@ -51229,7 +51229,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5317",
@@ -51237,7 +51237,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5318",
@@ -51245,7 +51245,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5319",
@@ -51253,7 +51253,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5320",
@@ -51261,7 +51261,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5321",
@@ -51269,7 +51269,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5322",
@@ -51277,7 +51277,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5323",
@@ -51285,7 +51285,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5324",
@@ -51293,7 +51293,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5325",
@@ -51301,7 +51301,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5326",
@@ -51309,7 +51309,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5327",
@@ -51317,7 +51317,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5328",
@@ -51325,7 +51325,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5329",
@@ -51333,7 +51333,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5330",
@@ -51341,7 +51341,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5331",
@@ -51349,7 +51349,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5332",
@@ -51357,7 +51357,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5333",
@@ -51365,7 +51365,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5334",
@@ -51373,7 +51373,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5335",
@@ -51381,7 +51381,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5336",
@@ -51389,7 +51389,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5337",
@@ -51397,7 +51397,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5338",
@@ -51405,7 +51405,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5339",
@@ -51413,7 +51413,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5340",
@@ -51421,7 +51421,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5341",
@@ -51429,7 +51429,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5342",
@@ -51437,7 +51437,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5343",
@@ -51445,7 +51445,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5344",
@@ -51453,7 +51453,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5345",
@@ -51461,7 +51461,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5346",
@@ -51469,7 +51469,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5347",
@@ -51477,7 +51477,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5348",
@@ -51485,7 +51485,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5349",
@@ -51493,7 +51493,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5350",
@@ -51501,7 +51501,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5351",
@@ -51509,7 +51509,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5352",
@@ -51517,7 +51517,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5353",
@@ -51525,7 +51525,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5354",
@@ -51533,7 +51533,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5355",
@@ -51541,7 +51541,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5356",
@@ -51549,7 +51549,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5357",
@@ -51557,7 +51557,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5358",
@@ -51565,7 +51565,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5359",
@@ -51573,7 +51573,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5360",
@@ -51581,7 +51581,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5361",
@@ -51589,7 +51589,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5362",
@@ -51597,7 +51597,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5363",
@@ -51605,7 +51605,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5364",
@@ -51613,7 +51613,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5365",
@@ -51621,7 +51621,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5366",
@@ -51629,7 +51629,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5367",
@@ -51637,7 +51637,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5368",
@@ -51645,7 +51645,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5369",
@@ -51653,7 +51653,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5370",
@@ -51661,7 +51661,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5371",
@@ -51669,7 +51669,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5372",
@@ -51677,7 +51677,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5373",
@@ -51685,7 +51685,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5374",
@@ -51693,7 +51693,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5375",
@@ -51701,7 +51701,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5376",
@@ -51709,7 +51709,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5377",
@@ -51717,7 +51717,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5378",
@@ -51725,7 +51725,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5379",
@@ -51733,7 +51733,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5380",
@@ -51741,7 +51741,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5381",
@@ -51749,7 +51749,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5382",
@@ -51757,7 +51757,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5383",
@@ -51765,7 +51765,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5384",
@@ -51773,7 +51773,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5385",
@@ -51781,7 +51781,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5386",
@@ -51789,7 +51789,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5387",
@@ -51797,7 +51797,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5388",
@@ -51805,7 +51805,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5389",
@@ -51813,7 +51813,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5390",
@@ -51821,7 +51821,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5391",
@@ -51829,7 +51829,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5392",
@@ -51837,7 +51837,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5393",
@@ -51845,7 +51845,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5394",
@@ -51853,7 +51853,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5395",
@@ -51861,7 +51861,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5396",
@@ -51869,7 +51869,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5397",
@@ -51877,7 +51877,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5398",
@@ -51885,7 +51885,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5399",
@@ -51893,7 +51893,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5400",
@@ -51901,7 +51901,7 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5401",
@@ -51909,7 +51909,7 @@ export const lockers = [
     "number": "01",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5402",
@@ -51917,7 +51917,7 @@ export const lockers = [
     "number": "02",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5403",
@@ -51925,7 +51925,7 @@ export const lockers = [
     "number": "03",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5404",
@@ -51933,7 +51933,7 @@ export const lockers = [
     "number": "04",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5405",
@@ -51941,7 +51941,7 @@ export const lockers = [
     "number": "05",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5406",
@@ -51949,7 +51949,7 @@ export const lockers = [
     "number": "06",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5407",
@@ -51957,7 +51957,7 @@ export const lockers = [
     "number": "07",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5408",
@@ -51965,7 +51965,7 @@ export const lockers = [
     "number": "08",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5409",
@@ -51973,7 +51973,7 @@ export const lockers = [
     "number": "09",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5410",
@@ -51981,7 +51981,7 @@ export const lockers = [
     "number": "10",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5411",
@@ -51989,7 +51989,7 @@ export const lockers = [
     "number": "11",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5412",
@@ -51997,7 +51997,7 @@ export const lockers = [
     "number": "12",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5413",
@@ -52005,7 +52005,7 @@ export const lockers = [
     "number": "13",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5414",
@@ -52013,7 +52013,7 @@ export const lockers = [
     "number": "14",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5415",
@@ -52021,7 +52021,7 @@ export const lockers = [
     "number": "15",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5416",
@@ -52029,7 +52029,7 @@ export const lockers = [
     "number": "16",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5417",
@@ -52037,7 +52037,7 @@ export const lockers = [
     "number": "17",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5418",
@@ -52045,7 +52045,7 @@ export const lockers = [
     "number": "18",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5419",
@@ -52053,7 +52053,7 @@ export const lockers = [
     "number": "19",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5420",
@@ -52061,7 +52061,7 @@ export const lockers = [
     "number": "20",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5421",
@@ -52069,7 +52069,7 @@ export const lockers = [
     "number": "21",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5422",
@@ -52077,7 +52077,7 @@ export const lockers = [
     "number": "22",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5423",
@@ -52085,7 +52085,7 @@ export const lockers = [
     "number": "23",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5424",
@@ -52093,7 +52093,7 @@ export const lockers = [
     "number": "24",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5425",
@@ -52101,7 +52101,7 @@ export const lockers = [
     "number": "25",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5426",
@@ -52109,7 +52109,7 @@ export const lockers = [
     "number": "26",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5427",
@@ -52117,7 +52117,7 @@ export const lockers = [
     "number": "27",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5428",
@@ -52125,7 +52125,7 @@ export const lockers = [
     "number": "28",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5429",
@@ -52133,7 +52133,7 @@ export const lockers = [
     "number": "29",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5430",
@@ -52141,7 +52141,7 @@ export const lockers = [
     "number": "30",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5431",
@@ -52149,7 +52149,7 @@ export const lockers = [
     "number": "31",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5432",
@@ -52157,7 +52157,7 @@ export const lockers = [
     "number": "32",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5433",
@@ -52165,7 +52165,7 @@ export const lockers = [
     "number": "33",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5434",
@@ -52173,7 +52173,7 @@ export const lockers = [
     "number": "34",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5435",
@@ -52181,7 +52181,7 @@ export const lockers = [
     "number": "35",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5436",
@@ -52189,7 +52189,7 @@ export const lockers = [
     "number": "36",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5437",
@@ -52197,7 +52197,7 @@ export const lockers = [
     "number": "37",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5438",
@@ -52205,7 +52205,7 @@ export const lockers = [
     "number": "38",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5439",
@@ -52213,7 +52213,7 @@ export const lockers = [
     "number": "39",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5440",
@@ -52221,7 +52221,7 @@ export const lockers = [
     "number": "40",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5441",
@@ -52229,7 +52229,7 @@ export const lockers = [
     "number": "41",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5442",
@@ -52237,7 +52237,7 @@ export const lockers = [
     "number": "42",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5443",
@@ -52245,7 +52245,7 @@ export const lockers = [
     "number": "43",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5444",
@@ -52253,7 +52253,7 @@ export const lockers = [
     "number": "44",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5445",
@@ -52261,7 +52261,7 @@ export const lockers = [
     "number": "45",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5446",
@@ -52269,7 +52269,7 @@ export const lockers = [
     "number": "46",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5447",
@@ -52277,7 +52277,7 @@ export const lockers = [
     "number": "47",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5448",
@@ -52285,7 +52285,7 @@ export const lockers = [
     "number": "48",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5449",
@@ -52293,7 +52293,7 @@ export const lockers = [
     "number": "49",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   },
   {
     "id": "LS5450",
@@ -52301,6 +52301,6 @@ export const lockers = [
     "number": "50",
     "type": "bag_storage",
     "status": "available",
-    "size": "small"
+    "size": "extra_large"
   }
 ]
