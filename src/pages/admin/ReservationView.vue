@@ -244,7 +244,7 @@
               <tr>
                 <th
                   @click="toggleSort('eventId')"
-                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
+                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
                 >
                   <div class="flex items-center justify-center gap-1">
                     행사번호 (EVT ID)
@@ -259,7 +259,7 @@
                 </th>
                 <th
                   @click="toggleSort('id')"
-                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
                 >
                   <div class="flex items-center gap-1">
                     예약번호 (ID)
@@ -348,7 +348,7 @@
                 class="border-t text-center border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors group h-10"
               >
                 <td
-                  class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
+                  class="text-left px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
                   {{ reservation.eventId }}
                 </td>
@@ -428,8 +428,8 @@ const startDateFilter = ref('')
 const endDateFilter = ref('')
 
 // 정렬 상태
-const sortBy = ref('startTime')
-const sortDirection = ref('desc')
+const sortBy = ref('eventId')
+const sortDirection = ref('asc')
 
 // 고객 맵 (메모이제이션: 빠른 조회를 위한 캐시)
 const customerMap = computed(() => {
