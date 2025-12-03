@@ -112,7 +112,7 @@
         예약 목록
       </h2>
 
-      <div class="flex flex-col gap-4 mb-6">
+      <div class="flex flex-col gap-3 mb-4">
         <!-- 필터 조건 -->
         <div class="flex flex-wrap items-center gap-2 sm:gap-3">
           <!-- 상태 필터 -->
@@ -134,25 +134,6 @@
             </select>
           </div>
 
-          <!-- 보관 기간 필터 -->
-          <div class="flex items-center gap-1.5 flex-shrink-0">
-            <label
-              class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
-            >
-              기간
-            </label>
-            <input
-              v-model="startDateFilter"
-              type="date"
-              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
-            />
-            <span class="text-gray-500 dark:text-gray-400 text-xs">~</span>
-            <input
-              v-model="endDateFilter"
-              type="date"
-              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
-            />
-          </div>
           <!-- 고객 검색 -->
           <div class="flex items-center gap-1.5 flex-shrink-0 min-w-0 flex-1 sm:flex-none">
             <label
@@ -173,24 +154,6 @@
             </div>
           </div>
 
-          <!-- 사물함 필터 -->
-          <!-- <div class="flex items-center gap-1.5 flex-shrink-0">
-            <label
-              class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
-            >
-              사물함
-            </label>
-            <select
-              v-model="lockerFilter"
-              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
-            >
-              <option value="">전체</option>
-              <option value="A">A 구역</option>
-              <option value="B">B 구역</option>
-              <option value="C">C 구역</option>
-            </select>
-          </div> -->
-
           <!-- 필터 초기화 버튼 -->
           <button
             @click="resetFilters"
@@ -199,6 +162,53 @@
           >
             <i class="fi fi-br-refresh mr-1"></i>초기화
           </button>
+
+          <!-- 조회 기간 라디오 버튼 -->
+          <div class="flex items-center gap-3 ml-auto pl-4 border-l border-gray-300 dark:border-dark-border">
+            <label class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap">기간</label>
+            <div class="flex items-center gap-3">
+              <div class="flex items-center gap-1.5">
+                <input
+                  v-model="dateRangeMode"
+                  type="radio"
+                  value="all"
+                  id="radio-all-2"
+                  class="w-3.5 h-3.5 cursor-pointer accent-primary"
+                />
+                <label for="radio-all-2" class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary cursor-pointer whitespace-nowrap">
+                  전체
+                </label>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <input
+                  v-model="dateRangeMode"
+                  type="radio"
+                  value="custom"
+                  id="radio-custom-2"
+                  class="w-3.5 h-3.5 cursor-pointer accent-primary"
+                />
+                <label for="radio-custom-2" class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary cursor-pointer whitespace-nowrap">
+                  선택
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 이전기간 선택 시 표시되는 기간 입력 필드 -->
+        <div v-if="dateRangeMode === 'custom'" class="flex flex-wrap items-center gap-2 sm:gap-3 p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+          <label class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap">기간 선택</label>
+          <input
+            v-model="startDateFilter"
+            type="date"
+            class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+          />
+          <span class="text-gray-500 dark:text-gray-400 text-xs">~</span>
+          <input
+            v-model="endDateFilter"
+            type="date"
+            class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+          />
         </div>
       </div>
 
@@ -238,7 +248,7 @@
         class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden max-w-full"
         style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
       >
-        <div class="overflow-x-auto overflow-y-auto max-h-[500px] scrollbar-hide w-full">
+        <div class="overflow-x-auto overflow-y-auto max-h-[300px] scrollbar-hide w-full">
           <table class="w-full text-xs min-w-max">
             <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
               <tr>
@@ -293,7 +303,7 @@
                   class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
                 >
                   <div class="flex items-center justify-center gap-1">
-                    사물함
+                    예약 사이즈
                     <i
                       v-if="sortBy === 'lockerNumber'"
                       :class="[
@@ -348,7 +358,7 @@
                 class="border-t text-center border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors group h-10"
               >
                 <td
-                  class="text-left px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
+                  class="text-center px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
                   {{ reservation.eventId }}
                 </td>
