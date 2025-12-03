@@ -41,6 +41,30 @@ Event (행사)
 
 ---
 
+## 추가 수정 사항 (2025-12-03 오후)
+
+### 예약 시간 데이터 정합성 개선
+
+**문제:** 모든 예약의 startTime/endTime이 2025-12-03 ~ 2025-12-04로 고정
+- 행사 날짜(eventDate)와 무관하게 설정됨
+- 데이터 의미가 맞지 않음
+
+**해결:** 예약 시간을 행사 날짜 기반으로 수정
+```bash
+npm run data:fix-times
+```
+
+**수정 규칙:**
+- startTime: 행사 날짜의 09:00:00 UTC
+- endTime: 행사 다음날의 18:00:00 UTC (33시간 보관)
+
+**결과:**
+- 866개 예약 모두 수정 완료
+- 데이터 정합성 개선
+- 행사 관리에서 예약 건수 정확성 향상
+
+---
+
 ## 해결 방안 3가지
 
 ### 방안 1: 예약 데이터 재생성 (올바른 로직)
@@ -177,6 +201,15 @@ npm run data:test && npm run build
 
 ## 실행 명령어
 
+### 예약 시간 수정 (신규)
+```bash
+# 예약 시간을 행사 날짜 기반으로 수정
+npm run data:fix-times
+
+# 또는
+node scripts/fix-reservation-times.js
+```
+
 ### 일일 검증
 ```bash
 # 모든 데이터 검증 (권장)
@@ -203,7 +236,10 @@ npm run data:validate
 # 2. 자동화 테스트
 npm run data:test
 
-# 3. 빌드 확인
+# 3. 예약 시간 수정 (선택사항)
+npm run data:fix-times
+
+# 4. 빌드 확인
 npm run build
 ```
 
@@ -349,9 +385,10 @@ package.json에 훅 추가:
 ## 참고 자료
 
 ### 스크립트 위치
-- 재생성: `scripts/regenerate-reservations-correct.js`
-- 검증: `scripts/validate-data-integrity.js`
-- 테스트: `scripts/test-data-validation.js`
+- 재생성: `scripts/regenerate-reservations-correct.js` (npm run data:regenerate)
+- 검증: `scripts/validate-data-integrity.js` (npm run data:validate)
+- 테스트: `scripts/test-data-validation.js` (npm run data:test)
+- 시간 수정: `scripts/fix-reservation-times.js` (npm run data:fix-times)
 
 ### 데이터 파일 위치
 - 행사: `src/data/events.js`
@@ -381,7 +418,32 @@ package.json에 훅 추가:
 ### Q: 새로운 행사를 추가하면?
 **A:** 1. 행사 추가 2. 차량 배치 3. 예약 생성 후 `npm run data:validate` 실행
 
+### Q: 예약 시간을 수정하려면?
+**A:** `npm run data:fix-times` 실행 후 `npm run data:validate`로 검증
+
 ---
 
-**최종 업데이트:** 2025-12-03
-**상태:** ✅ 무결성 100% (예약 866개, 활용률 86.60%)
+## 최종 상태
+
+### 2025-12-03 (최종 업데이트)
+
+| 항목 | 상태 | 수치 |
+|------|------|------|
+| **무결성** | ✅ | 100% (866/866) |
+| **예약 시간 정합성** | ✅ | 행사 날짜 기반 수정 완료 |
+| **데이터 검증** | ✅ | 26/26 테스트 통과 |
+| **빌드** | ✅ | 성공 (6.91초) |
+| **사물함 활용률** | ✅ | 86.60% (866/1000) |
+
+### 개선 이력
+
+```
+[1차] 데이터 무결성 개선 (3가지 방안)
+  - 예약 데이터 재생성 (866건)
+  - 데이터 검증 도구
+  - 자동화 테스트
+
+[2차] 데이터 정합성 개선
+  - 예약 시간을 행사 날짜 기반으로 수정
+  - 행사 관리의 예약 건수 표시 정확성 향상
+```
