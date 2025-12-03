@@ -217,8 +217,6 @@
       </main>
     </div>
 
-    <!-- API 디버그 패널 -->
-    <ApiDebugPanel />
   </div>
 </template>
 
@@ -226,7 +224,6 @@
 import { ref, computed } from 'vue'
 import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
 import DarkModeToggle from '@/components/common/ComDarkModeToggle.vue'
-import ApiDebugPanel from '@/components/dev/ApiDebugPanel.vue'
 import { useAuthStore } from '@/stores/auth'
 
 const route = useRoute()
