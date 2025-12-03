@@ -50,14 +50,13 @@
               </thead>
               <tbody>
                 <tr
-                  v-for="reservation in recentReservations.slice(0, 6)"
-                  :key="reservation.id"
+                  v-for="i in 5 > 0"
                   class="border-t border-slate-200 dark:border-slate-700 h-8 sm:h-10"
                 >
                   <td
                     class="text-left px-1 sm:px-2 py-0.5 sm:py-1 text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
                   >
-                    {{ reservation.id }}
+                    {{ i }}
                   </td>
                   <td
                     class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"

@@ -80,12 +80,15 @@ onMounted(() => {
     dataStore.setEvents(events)
     dataStore.setVehicles(vehicles)
 
-    console.log('✅ App.vue: 데이터 로드 완료')
-    console.log(`  - 스토어 예약: ${dataStore.reservations.length}개`)
-    console.log(`  - 스토어 고객: ${dataStore.customers.length}개`)
-    console.log(`  - 스토어 사물함: ${dataStore.lockers.length}개`)
-    console.log(`  - 스토어 행사: ${dataStore.events.length}개`)
-    console.log(`  - 스토어 차량: ${dataStore.vehicles.length}개`)
+    // 짧은 지연 후 검증 (reactive dependency 확보)
+    setTimeout(() => {
+      console.log('✅ App.vue: 데이터 로드 완료')
+      console.log(`  - 스토어 예약: ${dataStore.reservations.length}개`)
+      console.log(`  - 스토어 고객: ${dataStore.customers.length}개`)
+      console.log(`  - 스토어 사물함: ${dataStore.lockers.length}개`)
+      console.log(`  - 스토어 행사: ${dataStore.events.length}개`)
+      console.log(`  - 스토어 차량: ${dataStore.vehicles.length}개`)
+    }, 0)
 
     // 데이터 로드 완료 플래그 설정 (자식 컴포넌트 렌더링 허용)
     dataLoaded.value = true
