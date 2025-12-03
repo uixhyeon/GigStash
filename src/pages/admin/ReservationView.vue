@@ -174,7 +174,7 @@
           </div>
 
           <!-- 사물함 필터 -->
-          <div class="flex items-center gap-1.5 flex-shrink-0">
+          <!-- <div class="flex items-center gap-1.5 flex-shrink-0">
             <label
               class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
             >
@@ -189,7 +189,7 @@
               <option value="B">B 구역</option>
               <option value="C">C 구역</option>
             </select>
-          </div>
+          </div> -->
 
           <!-- 필터 초기화 버튼 -->
           <button
@@ -426,6 +426,7 @@ const searchQuery = ref('')
 const lockerFilter = ref('')
 const startDateFilter = ref('')
 const endDateFilter = ref('')
+const dateRangeMode = ref('all') // 'all' 또는 'custom'
 
 // 정렬 상태
 const sortBy = ref('eventId')
@@ -518,13 +519,33 @@ const stats = computed(() => {
 const filteredReservations = computed(() => {
   let filtered = [...reservations.value]
 
-  // 오늘 자정 이후의 예약만 조회 (기본 필터)
-  const today = new Date()
-  today.setHours(0, 0, 0, 0)
-  filtered = filtered.filter((r) => {
-    const reservationDate = new Date(r.startTime)
-    return reservationDate >= today
-  })
+  // 기간 필터링 로직
+  if (dateRangeMode.value === 'all') {
+    // 전체기간: 오늘 자정 이후의 예약만 조회
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+    filtered = filtered.filter((r) => {
+      const reservationDate = new Date(r.startTime)
+      return reservationDate >= today
+    })
+  } else if (dateRangeMode.value === 'custom') {
+    // 이전기간: 사용자가 지정한 기간으로 필터링
+    if (startDateFilter.value) {
+      const startDate = new Date(startDateFilter.value)
+      filtered = filtered.filter((r) => {
+        const reservationDate = new Date(r.startTime)
+        return reservationDate >= startDate
+      })
+    }
+    if (endDateFilter.value) {
+      const endDate = new Date(endDateFilter.value)
+      endDate.setHours(23, 59, 59, 999)
+      filtered = filtered.filter((r) => {
+        const reservationDate = new Date(r.startTime)
+        return reservationDate <= endDate
+      })
+    }
+  }
 
   // 상태 필터
   if (statusFilter.value !== '전체') {
@@ -532,7 +553,7 @@ const filteredReservations = computed(() => {
     filtered = filtered.filter((r) => r.status === statusCode)
   }
 
-  // 검색 쿼리 (고객명, 고객ID, 핸드폰번호, 예약번호, 사물함)
+  // 검색 쿼리 (고객명, 고객ID, 핸드폰번호, 예약번호,  )
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase()
     filtered = filtered.filter((r) => {
@@ -540,43 +561,23 @@ const filteredReservations = computed(() => {
       const locker = getLockerInfo(r.lockerId)
       const phone = customer.phone || ''
       const customerId = customer.id || ''
-      const lockerNumber = locker.number || ''
       return (
         r.id.toLowerCase().includes(query) ||
         customer.name.toLowerCase().includes(query) ||
         customerId.toLowerCase().includes(query) ||
-        phone.toLowerCase().includes(query) ||
-        lockerNumber.toLowerCase().includes(query)
+        phone.toLowerCase().includes(query)
       )
     })
   }
 
   // 사물함 구역 필터 (사물함 번호의 첫 문자로 구역 판단)
-  if (lockerFilter.value) {
-    filtered = filtered.filter((r) => {
-      const locker = getLockerInfo(r.lockerId)
-      const section = locker.number.charAt(0)
-      return section === lockerFilter.value
-    })
-  }
-
-  // 보관 기간 필터 (startTime 기준으로 필터링)
-  if (startDateFilter.value) {
-    const startDate = new Date(startDateFilter.value)
-    filtered = filtered.filter((r) => {
-      const reservationDate = new Date(r.startTime)
-      return reservationDate >= startDate
-    })
-  }
-
-  if (endDateFilter.value) {
-    const endDate = new Date(endDateFilter.value)
-    endDate.setHours(23, 59, 59, 999)
-    filtered = filtered.filter((r) => {
-      const reservationDate = new Date(r.startTime)
-      return reservationDate <= endDate
-    })
-  }
+  // if (lockerFilter.value) {
+  //   filtered = filtered.filter((r) => {
+  //     const locker = getLockerInfo(r.lockerId)
+  //     const section = locker.number.charAt(0)
+  //     return section === lockerFilter.value
+  //   })
+  // }
 
   // 정렬 로직
   return filtered.sort((a, b) => {
@@ -682,6 +683,7 @@ const resetFilters = () => {
   lockerFilter.value = ''
   startDateFilter.value = ''
   endDateFilter.value = ''
+  dateRangeMode.value = 'all'
 }
 </script>
 
