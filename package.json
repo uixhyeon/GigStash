@@ -14,7 +14,8 @@
     "format": "prettier --write src/",
     "data:validate": "node scripts/validate-data-integrity.js",
     "data:test": "node scripts/test-data-validation.js",
-    "data:regenerate": "node scripts/regenerate-reservations-correct.js"
+    "data:regenerate": "node scripts/regenerate-reservations-correct.js",
+    "data:fix-times": "node scripts/fix-reservation-times.js"
   },
   "dependencies": {
     "@flaticon/flaticon-uicons": "^3.3.1",

@@ -26,7 +26,7 @@
               <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
                 <tr>
                   <th
-                    class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    class="text-left px-1 sm:px-2 py-1 sm:py-2 font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
                     No.
                   </th>
@@ -55,19 +55,14 @@
                   class="border-t border-slate-200 dark:border-slate-700 h-8 sm:h-10"
                 >
                   <td
-                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                    class="text-left px-1 sm:px-2 py-0.5 sm:py-1 text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
                   >
                     {{ reservation.id }}
                   </td>
                   <td
                     class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
                   >
-                    {{ reservation.eventId }}
-                  </td>
-                  <td
-                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
-                  >
-                    {{ reservation.lockerId }}
+                    {{ reservation.customerName }}
                   </td>
 
                   <td
@@ -75,11 +70,7 @@
                   >
                     {{ formatDateTime(reservation.createdAt) }}
                   </td>
-                  <td
-                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
-                  >
-                    {{ reservation.customerName }}
-                  </td>
+
                   <!-- <td
                   class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap"
                 >
