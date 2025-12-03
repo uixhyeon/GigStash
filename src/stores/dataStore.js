@@ -78,6 +78,32 @@ export const useDataStore = defineStore('data', () => {
   })
 
   /**
+   * 행사별 예약 건수를 조회 (eventId, 날짜, 상태 필터링)
+   * @param {string} eventId - 행사 ID
+   * @returns {number} 예약 건수
+   */
+  const getReservationCountByEventId = (eventId) => {
+    const event = events.value.find((e) => e.id === eventId)
+    if (!event) return 0
+
+    // 행사 날짜를 기준으로 필터링
+    const eventDate = event.eventDate
+    return reservations.value.filter((res) => {
+      // 1. 같은 행사인지 확인
+      if (res.eventId !== eventId) return false
+
+      // 2. 취소된 예약은 제외
+      if (res.status === 'cancelled') return false
+
+      // 3. 예약 시작일이 행사 날짜와 일치하는지 확인
+      const reservationDate = res.startTime.split('T')[0]
+      if (reservationDate !== eventDate) return false
+
+      return true
+    }).length
+  }
+
+  /**
    * 행사별 배차 수를 조인해서 반환 (eventId로 vehicles 필터링)
    * @param {string} eventId - 행사 ID
    * @returns {number} 배차 대수
@@ -533,6 +559,9 @@ export const useDataStore = defineStore('data', () => {
     // Join Methods (vehicles와 조인)
     getVehicleCountByEventId,
     getExpectedAttendanceByEventId,
-    enrichEventWithVehicles
+    enrichEventWithVehicles,
+
+    // Join Methods (reservations과 조인)
+    getReservationCountByEventId
   }
 })

@@ -305,8 +305,26 @@ const normalizeStatus = (startDate, endDate, originalStatus) => {
 }
 
 // 행사별 예약 건수 계산 (dataStore에서 조회)
+// 개선사항: 취소된 예약은 제외하고, 행사 날짜와 일치하는 예약만 계산
 const getReservationCountByEvent = (eventId) => {
-  return dataStore.reservations.filter((res) => res.eventId === eventId).length
+  const event = dataStore.events.find((e) => e.id === eventId)
+  if (!event) return 0
+
+  // 행사 날짜를 기준으로 필터링
+  const eventDate = event.eventDate
+  return dataStore.reservations.filter((res) => {
+    // 1. 같은 행사인지 확인
+    if (res.eventId !== eventId) return false
+
+    // 2. 취소된 예약은 제외
+    if (res.status === 'cancelled') return false
+
+    // 3. 예약 시작일이 행사 날짜와 일치하는지 확인
+    const reservationDate = res.startTime.split('T')[0]
+    if (reservationDate !== eventDate) return false
+
+    return true
+  }).length
 }
 
 // 행사별 배차 차량 수 조회 (vehicles와 조인)
