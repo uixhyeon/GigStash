@@ -1,0 +1,402 @@
+{
+  "timestamp": "2025-12-03T02:52:10.057Z",
+  "summary": {
+    "totalEvents": 43,
+    "currentTotalVehicles": 77,
+    "recommendedTotalVehicles": 213,
+    "increaseCount": 37,
+    "decreaseCount": 0,
+    "unchangedCount": 6
+  },
+  "redistribution": {
+    "EVT251127999": {
+      "name": "[취소] 테스트 행사",
+      "type": "테스트",
+      "sizeFactor": "50%",
+      "current": 1,
+      "recommended": 3,
+      "change": 2
+    },
+    "EVT251101001": {
+      "name": "프로농구 삼성 vs KCC",
+      "type": "스포츠",
+      "sizeFactor": "70%",
+      "current": 2,
+      "recommended": 2,
+      "change": 0
+    },
+    "EVT251101002": {
+      "name": "YUURI ASIA TOUR 2025 in SEOUL Day 1",
+      "type": "내한공연",
+      "sizeFactor": "90%",
+      "current": 8,
+      "recommended": 11,
+      "change": 3
+    },
+    "EVT251102001": {
+      "name": "YUURI ASIA TOUR 2025 in SEOUL Day 2",
+      "type": "내한공연",
+      "sizeFactor": "90%",
+      "current": 8,
+      "recommended": 9,
+      "change": 1
+    },
+    "EVT251103001": {
+      "name": "프로농구 삼성 vs 모비스",
+      "type": "스포츠",
+      "sizeFactor": "70%",
+      "current": 2,
+      "recommended": 2,
+      "change": 0
+    },
+    "EVT251105001": {
+      "name": "프로농구 삼성 vs 정관장",
+      "type": "스포츠",
+      "sizeFactor": "70%",
+      "current": 2,
+      "recommended": 3,
+      "change": 1
+    },
+    "EVT251108001": {
+      "name": "프로농구 삼성 vs 가스공사",
+      "type": "스포츠",
+      "sizeFactor": "70%",
+      "current": 1,
+      "recommended": 2,
+      "change": 1
+    },
+    "EVT251109002": {
+      "name": "프로농구 삼성 vs SK",
+      "type": "스포츠",
+      "sizeFactor": "70%",
+      "current": 1,
+      "recommended": 2,
+      "change": 1
+    },
+    "EVT251112001": {
+      "name": "프로농구 삼성 vs LG",
+      "type": "스포츠",
+      "sizeFactor": "70%",
+      "current": 1,
+      "recommended": 2,
+      "change": 1
+    },
+    "EVT251115001": {
+      "name": "대한민국 vs 볼리비아 축구 친선경기",
+      "type": "스포츠",
+      "sizeFactor": "40%",
+      "current": 1,
+      "recommended": 1,
+      "change": 0
+    },
+    "EVT251118001": {
+      "name": "대한민국 vs 가나 축구 친선경기",
+      "type": "스포츠",
+      "sizeFactor": "40%",
+      "current": 1,
+      "recommended": 1,
+      "change": 0
+    },
+    "EVT251121001": {
+      "name": "2025 PLAVE Asia Tour DASH: Quantum Leap Encore Day 1",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 6,
+      "change": 5
+    },
+    "EVT251121002": {
+      "name": "엑스디너리 히어로즈 콘서트 Day 1",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 7,
+      "change": 6
+    },
+    "EVT251122001": {
+      "name": "2025 PLAVE Asia Tour DASH: Quantum Leap Encore Day 2",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 5,
+      "change": 4
+    },
+    "EVT251122002": {
+      "name": "LG 야구단 팬 행사 - Love Giving Festival",
+      "type": "스포츠",
+      "sizeFactor": "70%",
+      "current": 1,
+      "recommended": 3,
+      "change": 2
+    },
+    "EVT251122003": {
+      "name": "HANTEO MUSIC FESTIVAL Day 1",
+      "type": "페스티벌",
+      "sizeFactor": "75%",
+      "current": 1,
+      "recommended": 5,
+      "change": 4
+    },
+    "EVT251122004": {
+      "name": "엑스디너리 히어로즈 콘서트 Day 2",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 5,
+      "change": 4
+    },
+    "EVT251123001": {
+      "name": "두산 야구단 팬 감사 행사",
+      "type": "스포츠",
+      "sizeFactor": "70%",
+      "current": 1,
+      "recommended": 2,
+      "change": 1
+    },
+    "EVT251123002": {
+      "name": "프로축구 이랜드FC vs 안산",
+      "type": "스포츠",
+      "sizeFactor": "40%",
+      "current": 1,
+      "recommended": 1,
+      "change": 0
+    },
+    "EVT251123003": {
+      "name": "엑스디너리 히어로즈 콘서트 Day 3",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 7,
+      "change": 6
+    },
+    "EVT251123004": {
+      "name": "HANTEO MUSIC FESTIVAL Day 2",
+      "type": "페스티벌",
+      "sizeFactor": "75%",
+      "current": 1,
+      "recommended": 5,
+      "change": 4
+    },
+    "EVT251129002": {
+      "name": "NMIXX 첫 월드투어 EPISODE 1: ZERO FRONTIER Day 1",
+      "type": "아이돌",
+      "sizeFactor": "90%",
+      "current": 8,
+      "recommended": 10,
+      "change": 2
+    },
+    "EVT251129003": {
+      "name": "우즈(WOODZ) 콘서트 Day 1",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 7,
+      "change": 6
+    },
+    "EVT251130001": {
+      "name": "NMIXX 첫 월드투어 EPISODE 1: ZERO FRONTIER Day 2",
+      "type": "아이돌",
+      "sizeFactor": "90%",
+      "current": 8,
+      "recommended": 9,
+      "change": 1
+    },
+    "EVT251130002": {
+      "name": "우즈(WOODZ) 콘서트 Day 2",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 6,
+      "change": 5
+    },
+    "EVT251201001": {
+      "name": "IVE 콘서트 Day 1",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 6,
+      "change": 5
+    },
+    "EVT251202001": {
+      "name": "IVE 콘서트 Day 2",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 7,
+      "change": 6
+    },
+    "EVT251205001": {
+      "name": "프로농구 삼성 vs NC",
+      "type": "스포츠",
+      "sizeFactor": "70%",
+      "current": 1,
+      "recommended": 2,
+      "change": 1
+    },
+    "EVT251206001": {
+      "name": "메이즈(MAIZE) 콘서트",
+      "type": "음악",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 7,
+      "change": 6
+    },
+    "EVT251210001": {
+      "name": "뮤지컬 '빌리엘리어트' 서울 공연",
+      "type": "뮤지컬",
+      "sizeFactor": "75%",
+      "current": 1,
+      "recommended": 7,
+      "change": 6
+    },
+    "EVT251215001": {
+      "name": "크리스마스 팝업 페스티벌",
+      "type": "페스티벌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 7,
+      "change": 6
+    },
+    "EVT251220001": {
+      "name": "뮤지컬 '재킬앤하이드' 서울 공연",
+      "type": "뮤지컬",
+      "sizeFactor": "75%",
+      "current": 1,
+      "recommended": 6,
+      "change": 5
+    },
+    "EVT251225001": {
+      "name": "프로농구 삼성 vs 울산",
+      "type": "스포츠",
+      "sizeFactor": "70%",
+      "current": 1,
+      "recommended": 2,
+      "change": 1
+    },
+    "EVT251230001": {
+      "name": "연말 콘서트 Special",
+      "type": "음악",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 7,
+      "change": 6
+    },
+    "EVT251005001": {
+      "name": "프로농구 삼성 vs 부산",
+      "type": "스포츠",
+      "sizeFactor": "70%",
+      "current": 1,
+      "recommended": 2,
+      "change": 1
+    },
+    "EVT251010001": {
+      "name": "뮤지컬 '킹콩' 서울 공연 Day 1",
+      "type": "뮤지컬",
+      "sizeFactor": "75%",
+      "current": 1,
+      "recommended": 7,
+      "change": 6
+    },
+    "EVT251011001": {
+      "name": "뮤지컬 '킹콩' 서울 공연 Day 2",
+      "type": "뮤지컬",
+      "sizeFactor": "75%",
+      "current": 1,
+      "recommended": 5,
+      "change": 4
+    },
+    "EVT251015001": {
+      "name": "SEVENTEEN 콘서트 'ODE TO YOU' Day 1",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 7,
+      "change": 6
+    },
+    "EVT251016001": {
+      "name": "SEVENTEEN 콘서트 'ODE TO YOU' Day 2",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 7,
+      "change": 6
+    },
+    "EVT251020001": {
+      "name": "프로축구 K리그 클래식 결승전",
+      "type": "스포츠",
+      "sizeFactor": "40%",
+      "current": 1,
+      "recommended": 1,
+      "change": 0
+    },
+    "EVT251025001": {
+      "name": "공연예술제 2025 프로그램 1",
+      "type": "공연",
+      "sizeFactor": "70%",
+      "current": 4,
+      "recommended": 6,
+      "change": 2
+    },
+    "EVT251028001": {
+      "name": "뉴진스 콘서트 Day 1",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 5,
+      "change": 4
+    },
+    "EVT251029001": {
+      "name": "뉴진스 콘서트 Day 2",
+      "type": "아이돌",
+      "sizeFactor": "80%",
+      "current": 1,
+      "recommended": 6,
+      "change": 5
+    }
+  },
+  "sizeFactor": {
+    "EVT251127999": 0.5,
+    "EVT251101001": 0.7,
+    "EVT251101002": 0.9,
+    "EVT251102001": 0.9,
+    "EVT251103001": 0.7,
+    "EVT251105001": 0.7,
+    "EVT251108001": 0.7,
+    "EVT251109002": 0.7,
+    "EVT251112001": 0.7,
+    "EVT251115001": 0.4,
+    "EVT251118001": 0.4,
+    "EVT251121001": 0.8,
+    "EVT251121002": 0.8,
+    "EVT251122001": 0.8,
+    "EVT251122002": 0.7,
+    "EVT251122003": 0.75,
+    "EVT251122004": 0.8,
+    "EVT251123001": 0.7,
+    "EVT251123002": 0.4,
+    "EVT251123003": 0.8,
+    "EVT251123004": 0.75,
+    "EVT251129002": 0.9,
+    "EVT251129003": 0.8,
+    "EVT251130001": 0.9,
+    "EVT251130002": 0.8,
+    "EVT251201001": 0.8,
+    "EVT251202001": 0.8,
+    "EVT251205001": 0.7,
+    "EVT251206001": 0.8,
+    "EVT251210001": 0.75,
+    "EVT251215001": 0.8,
+    "EVT251220001": 0.75,
+    "EVT251225001": 0.7,
+    "EVT251230001": 0.8,
+    "EVT251005001": 0.7,
+    "EVT251010001": 0.75,
+    "EVT251011001": 0.75,
+    "EVT251015001": 0.8,
+    "EVT251016001": 0.8,
+    "EVT251020001": 0.4,
+    "EVT251025001": 0.7,
+    "EVT251028001": 0.8,
+    "EVT251029001": 0.8
+  }
+}
