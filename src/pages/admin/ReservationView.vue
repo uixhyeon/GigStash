@@ -168,7 +168,10 @@
             v-if="dateRangeMode === 'custom'"
             class="flex flex-wrap items-center gap-2 sm:gap-3 pl-4 border-l border-gray-300 dark:border-dark-border"
           >
-            <label class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap">기간</label>
+            <label
+              class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
+              >기간</label
+            >
             <input
               v-model="startDateFilter"
               type="date"
@@ -398,8 +401,10 @@
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
                   <div class="flex flex-col items-center gap-0.5">
-                    <span class="font-medium">{{ getLockerInfo(reservation.lockerId).number }}</span>
-                    <span class="text-xs text-gray-500 dark:text-gray-400">{{ getLockerSizeDisplay(getLockerInfo(reservation.lockerId).size) }}</span>
+                    <!-- <span class="font-medium">{{ getLockerInfo(reservation.lockerId).size }}</span> -->
+                    <span class="text-xs text-gray-500 dark:text-gray-400">{{
+                      getLockerSizeDisplay(getLockerInfo(reservation.lockerId).size)
+                    }}</span>
                   </div>
                 </td>
                 <td
@@ -487,7 +492,8 @@ const getCustomerInfo = (customerId) => {
 
 // 사물함 정보 조회 함수 (메모이제이션)
 const getLockerInfo = (lockerId) => {
-  return lockerMap.value.get(lockerId) || { number: '-', size: '-', location: '-' }
+  const locker = lockerMap.value.get(lockerId)
+  return locker || { number: '-', size: '-', location: '-' }
 }
 
 // 사물함 크기 표시 함수
