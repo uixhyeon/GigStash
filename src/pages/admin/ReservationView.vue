@@ -244,7 +244,7 @@
               <tr>
                 <th
                   @click="toggleSort('eventId')"
-                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
                 >
                   <div class="flex items-center justify-center gap-1">
                     행사번호 (EVT ID)
@@ -455,16 +455,22 @@ const getLockerInfo = (lockerId) => {
   return lockerMap.value.get(lockerId) || { number: '-', location: '-' }
 }
 
-// 상태 맵핑 (영문 -> 한글)
+// 상태 맵핑 (영문 -> 한글) - 데이터베이스의 영문 상태를 화면에 표시할 때 사용
+// 상태 정의:
+// - active: 현재 사용 중 (행사 진행 중, 예약된 사물함에 짐이 있는 상태)
+// - waiting: 승인 대기 중 (관리자의 승인을 기다리는 상태)
+// - pending: 예정됨 (아직 시작되지 않은 예약, 향후 사용)
+// - completed: 완료됨 (행사 종료, 사물함 회수 완료)
+// - cancelled: 취소됨 (고객 요청 또는 행사 취소로 인한 예약 취소)
 const statusMap = {
   active: '활성',
   waiting: '대기',
+  pending: '예정',
   completed: '완료',
   cancelled: '취소',
-  pending: '예정',
 }
 
-// 한글 상태 -> 영문 상태 역맵
+// 한글 상태 -> 영문 상태 역맵 (사용자가 선택한 한글 상태를 데이터베이스에 저장할 때 변환)
 const reverseStatusMap = {
   활성: 'active',
   대기: 'waiting',
