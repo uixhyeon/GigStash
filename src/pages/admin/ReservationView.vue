@@ -163,9 +163,40 @@
             <i class="fi fi-br-refresh mr-1"></i>초기화
           </button>
 
-          <!-- 조회 기간 라디오 버튼 -->
-          <div class="flex items-center gap-3 ml-auto pl-4 border-l border-gray-300 dark:border-dark-border">
+          <!-- 기간 선택 입력 필드 (선택 모드일 때만 표시) -->
+          <div
+            v-if="dateRangeMode === 'custom'"
+            class="flex flex-wrap items-center gap-2 sm:gap-3 pl-4 border-l border-gray-300 dark:border-dark-border"
+          >
             <label class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap">기간</label>
+            <input
+              v-model="startDateFilter"
+              type="date"
+              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+            />
+            <span class="text-gray-500 dark:text-gray-400 text-xs">~</span>
+            <input
+              v-model="endDateFilter"
+              type="date"
+              class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+            />
+            <button
+              @click="applyDateFilter"
+              class="px-3 py-1.5 bg-primary hover:bg-primary/90 text-white rounded-lg transition-all font-medium text-xs flex-shrink-0 whitespace-nowrap"
+              title="기간 조회"
+            >
+              <i class="fi fi-rr-search mr-1"></i>조회
+            </button>
+          </div>
+
+          <!-- 조회 기간 라디오 버튼 -->
+          <div
+            class="flex items-center gap-3 ml-auto pl-4 border-l border-gray-300 dark:border-dark-border"
+          >
+            <label
+              class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
+              >기간</label
+            >
             <div class="flex items-center gap-3">
               <div class="flex items-center gap-1.5">
                 <input
@@ -175,8 +206,11 @@
                   id="radio-all-2"
                   class="w-3.5 h-3.5 cursor-pointer accent-primary"
                 />
-                <label for="radio-all-2" class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary cursor-pointer whitespace-nowrap">
-                  전체
+                <label
+                  for="radio-all-2"
+                  class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary cursor-pointer whitespace-nowrap"
+                >
+                  기본
                 </label>
               </div>
               <div class="flex items-center gap-1.5">
@@ -187,28 +221,15 @@
                   id="radio-custom-2"
                   class="w-3.5 h-3.5 cursor-pointer accent-primary"
                 />
-                <label for="radio-custom-2" class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary cursor-pointer whitespace-nowrap">
+                <label
+                  for="radio-custom-2"
+                  class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary cursor-pointer whitespace-nowrap"
+                >
                   선택
                 </label>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- 이전기간 선택 시 표시되는 기간 입력 필드 -->
-        <div v-if="dateRangeMode === 'custom'" class="flex flex-wrap items-center gap-2 sm:gap-3 p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-          <label class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap">기간 선택</label>
-          <input
-            v-model="startDateFilter"
-            type="date"
-            class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
-          />
-          <span class="text-gray-500 dark:text-gray-400 text-xs">~</span>
-          <input
-            v-model="endDateFilter"
-            type="date"
-            class="px-2 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
-          />
         </div>
       </div>
 
@@ -376,7 +397,10 @@
                 <td
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
-                  {{ getLockerInfo(reservation.lockerId).number }}
+                  <div class="flex flex-col items-center gap-0.5">
+                    <span class="font-medium">{{ getLockerInfo(reservation.lockerId).number }}</span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">{{ getLockerSizeDisplay(getLockerInfo(reservation.lockerId).size) }}</span>
+                  </div>
                 </td>
                 <td
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
@@ -463,7 +487,18 @@ const getCustomerInfo = (customerId) => {
 
 // 사물함 정보 조회 함수 (메모이제이션)
 const getLockerInfo = (lockerId) => {
-  return lockerMap.value.get(lockerId) || { number: '-', location: '-' }
+  return lockerMap.value.get(lockerId) || { number: '-', size: '-', location: '-' }
+}
+
+// 사물함 크기 표시 함수
+const getLockerSizeDisplay = (size) => {
+  const sizeMap = {
+    small: '소형',
+    medium: '중형',
+    large: '대형',
+    extra_large: '특대형',
+  }
+  return sizeMap[size] || size || '-'
 }
 
 // 상태 맵핑 (영문 -> 한글) - 데이터베이스의 영문 상태를 화면에 표시할 때 사용
@@ -684,6 +719,14 @@ const toggleSort = (column) => {
     sortBy.value = column
     sortDirection.value = 'desc'
   }
+}
+
+// 기간 필터 적용 (조회 버튼 클릭)
+const applyDateFilter = () => {
+  // filteredReservations computed property가 자동으로 반응
+  // 버튼 클릭 시 이미 startDateFilter, endDateFilter가 업데이트되어 있으므로
+  // computed property가 자동으로 재계산됨
+  console.log('기간 조회:', startDateFilter.value, '~', endDateFilter.value)
 }
 
 // 필터 초기화
