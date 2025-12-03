@@ -401,9 +401,9 @@
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
                   <div class="flex flex-col items-center gap-0.5">
-                    <span class="font-medium">{{
+                    <!-- <span class="font-medium">{{
                       getLockerInfo(reservation.lockerId).number
-                    }}</span>
+                    }}</span> -->
                     <span class="text-xs text-gray-600 dark:text-gray-300">{{
                       getLockerSizeDisplay(getLockerInfo(reservation.lockerId).size)
                     }}</span>
