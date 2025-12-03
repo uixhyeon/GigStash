@@ -363,7 +363,7 @@
                 <td
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
-                  {{ reservation.lockerNumber }}
+                  {{ getLockerInfo(reservation.lockerId).number }}
                 </td>
                 <td
                   class="px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
@@ -415,6 +415,7 @@ const dataStore = useDataStore()
 // 메모이제이션: 스토어의 상태를 직접 사용
 const reservations = computed(() => dataStore.reservations)
 const customers = computed(() => dataStore.customers)
+const lockers = computed(() => dataStore.lockers)
 
 // 필터 상태
 const statusFilter = ref('전체')
@@ -434,9 +435,21 @@ const customerMap = computed(() => {
   return map
 })
 
+// 사물함 맵 (메모이제이션: 빠른 조회를 위한 캐시)
+const lockerMap = computed(() => {
+  const map = new Map()
+  lockers.value.forEach(l => map.set(l.id, l))
+  return map
+})
+
 // 고객 정보 조회 함수 (메모이제이션)
 const getCustomerInfo = (customerId) => {
   return customerMap.value.get(customerId) || { name: '미정' }
+}
+
+// 사물함 정보 조회 함수 (메모이제이션)
+const getLockerInfo = (lockerId) => {
+  return lockerMap.value.get(lockerId) || { number: '-', location: '-' }
 }
 
 // 상태 맵핑 (영문 -> 한글)
@@ -474,25 +487,35 @@ const stats = computed(() => {
 const filteredReservations = computed(() => {
   let filtered = [...reservations.value]
 
+  // 오늘 자정 이후의 예약만 조회 (기본 필터)
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  filtered = filtered.filter((r) => {
+    const reservationDate = new Date(r.startTime)
+    return reservationDate >= today
+  })
+
   // 상태 필터
   if (statusFilter.value !== '전체') {
     const statusCode = reverseStatusMap[statusFilter.value] || statusFilter.value
     filtered = filtered.filter((r) => r.status === statusCode)
   }
 
-  // 검색 쿼리 (고객명, 고객ID, 핸드폰번호, 예약번호)
+  // 검색 쿼리 (고객명, 고객ID, 핸드폰번호, 예약번호, 사물함)
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase()
     filtered = filtered.filter((r) => {
       const customer = getCustomerInfo(r.customerId)
+      const locker = getLockerInfo(r.lockerId)
       const phone = customer.phone || ''
       const customerId = customer.id || ''
+      const lockerNumber = locker.number || ''
       return (
         r.id.toLowerCase().includes(query) ||
         customer.name.toLowerCase().includes(query) ||
         customerId.toLowerCase().includes(query) ||
         phone.toLowerCase().includes(query) ||
-        r.lockerNumber.toLowerCase().includes(query)
+        lockerNumber.toLowerCase().includes(query)
       )
     })
   }
@@ -500,7 +523,8 @@ const filteredReservations = computed(() => {
   // 사물함 구역 필터 (사물함 번호의 첫 문자로 구역 판단)
   if (lockerFilter.value) {
     filtered = filtered.filter((r) => {
-      const section = r.lockerNumber.charAt(0)
+      const locker = getLockerInfo(r.lockerId)
+      const section = locker.number.charAt(0)
       return section === lockerFilter.value
     })
   }
@@ -540,8 +564,8 @@ const filteredReservations = computed(() => {
       aValue = getCustomerInfo(a.customerId).name
       bValue = getCustomerInfo(b.customerId).name
     } else if (sortBy.value === 'lockerNumber') {
-      aValue = a.lockerNumber
-      bValue = b.lockerNumber
+      aValue = getLockerInfo(a.lockerId).number
+      bValue = getLockerInfo(b.lockerId).number
     } else if (sortBy.value === 'status') {
       aValue = a.status
       bValue = b.status
