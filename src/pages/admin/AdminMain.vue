@@ -3,20 +3,98 @@
     <!-- <h1 class="text-3xl font-bold mb-8" style="color: #1e293b">Main Home</h1> -->
 
     <!-- 통계 카드 -->
-    <div class="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="mb-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
       <section>
-        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-          당일 보관함 현황
-        </h2>
+        <div class="mb-8">
+          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+            전체 공지 사항
+            <i class="fi fi-rr-info text-lg align-middle flex-shrink-0"></i>
+          </h2>
 
-        <div
-          v-if="loading"
-          class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm"
-          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-        >
-          통계 로딩 중...
+          <div
+            v-if="loading"
+            class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm text-slate-600 dark:text-slate-400"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
+            로딩 중...
+          </div>
+          <div v-if="!loading" class="max-w-full overflow-x-auto scrollbar-hide">
+            <table
+              class="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden text-[10px] sm:text-xs min-w-max"
+              style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+            >
+              <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
+                <tr>
+                  <th
+                    class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  >
+                    No.
+                  </th>
+                  <th
+                    class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  >
+                    제 목
+                  </th>
+
+                  <th
+                    class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  >
+                    등록일
+                  </th>
+                  <!-- <th
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                >
+                  접근코드
+                </th> -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  v-for="reservation in recentReservations.slice(0, 6)"
+                  :key="reservation.id"
+                  class="border-t border-slate-200 dark:border-slate-700 h-8 sm:h-10"
+                >
+                  <td
+                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  >
+                    {{ reservation.id }}
+                  </td>
+                  <td
+                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  >
+                    {{ reservation.eventId }}
+                  </td>
+                  <td
+                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  >
+                    {{ reservation.lockerId }}
+                  </td>
+
+                  <td
+                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  >
+                    {{ formatDateTime(reservation.createdAt) }}
+                  </td>
+                  <td
+                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  >
+                    {{ reservation.customerName }}
+                  </td>
+                  <!-- <td
+                  class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                >
+                  {{ reservation.accessCode }}
+                </td> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div v-else class="grid grid-cols-2 gap-3 mb-4">
+
+        <div>
+          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+            보관함 알람
+          </h2>
           <!-- 미사용 -->
           <div
             class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
@@ -41,7 +119,21 @@
               <i class="fi fi-rr-box text-lg sm:text-xl flex-shrink-0" style="color: #3b82f6"></i>
             </div>
           </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+          당일 보관함 현황
+        </h2>
 
+        <div
+          v-if="loading"
+          class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm"
+          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+        >
+          통계 로딩 중...
+        </div>
+        <div v-else class="grid grid-cols-2 gap-3 mb-4">
           <!-- 사용중 -->
           <div
             class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-amber-100 dark:border-amber-900/30"
@@ -96,7 +188,7 @@
           </div>
 
           <!-- 활성 예약 -->
-          <div
+          <!-- <div
             class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-purple-100 dark:border-purple-900/30 col-span-2 sm:col-span-1"
             style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
           >
@@ -121,43 +213,16 @@
                 style="color: #a855f7"
               ></i>
             </div>
-          </div>
+          </div> -->
         </div>
-      </section>
 
-      <section>
         <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-          고객 참여도
+          고객 분석
         </h2>
         <div class="grid grid-cols-2 gap-3 mb-4">
-          <!-- 일일 활성 사용자 -->
-          <div
-            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
-            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-          >
-            <div class="flex justify-between items-start gap-2">
-              <div class="min-w-0 flex-1">
-                <div
-                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
-                >
-                  일일 활성 사용자
-                </div>
-                <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-blue-600 dark:text-blue-400"
-                >
-                  {{ dailyActiveUsers }}
-                </div>
-                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  어제 대비 <span class="text-blue-600 dark:text-blue-400 font-medium">+12%</span>
-                </div>
-              </div>
-              <i class="fi fi-rr-users text-lg sm:text-xl flex-shrink-0" style="color: #3b82f6"></i>
-            </div>
-          </div>
-
           <!-- 재방문율 -->
           <div
-            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-amber-100 dark:border-amber-900/30"
+            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
             style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
           >
             <div class="flex justify-between items-start gap-2">
@@ -168,21 +233,19 @@
                   재방문율
                 </div>
                 <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-amber-600 dark:text-amber-400"
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-blue-600 dark:text-blue-400"
                 >
                   {{ repeatVisitRate }}%
                 </div>
                 <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  지난달 대비
-                  <span class="text-amber-600 dark:text-amber-400 font-medium">+5.2%</span>
+                  어제 대비 <span class="text-blue-600 dark:text-blue-400 font-medium">+12%</span>
                 </div>
               </div>
-              <i
-                class="fi fi-rr-rotate-clockwise text-lg sm:text-xl flex-shrink-0"
-                style="color: #d97706"
-              ></i>
+              <i class="fi fi-rr-users text-lg sm:text-xl flex-shrink-0" style="color: #3b82f6"></i>
             </div>
           </div>
+
+          <!-- 재방문율 -->
 
           <!-- 신규 고객 비율 -->
           <div
@@ -242,7 +305,7 @@
                   <th
                     class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
-                    ID
+                    예약 ID
                   </th>
                   <th
                     class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
@@ -254,11 +317,7 @@
                   >
                     보관함 ID
                   </th>
-                  <th
-                    class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
-                  >
-                    보관함명
-                  </th>
+
                   <th
                     class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
@@ -297,11 +356,7 @@
                   >
                     {{ reservation.lockerId }}
                   </td>
-                  <td
-                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
-                  >
-                    {{ reservation.lockerNumber }}
-                  </td>
+
                   <td
                     class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
                   >
@@ -375,7 +430,7 @@ const lockers = computed(() => {
   const data = dataStore.lockers
   console.log('🔍 AdminMain.vue: lockers computed 실행', {
     length: data.length,
-    data: data.slice(0, 2)
+    data: data.slice(0, 2),
   })
   return data
 })
@@ -397,7 +452,7 @@ const stats = computed(() => {
     maintenance,
     broken,
     usageRate,
-    activeReservations
+    activeReservations,
   })
 
   return {
@@ -452,12 +507,7 @@ const chartData = computed(() => {
     datasets: [
       {
         label: '보관함 수',
-        data: [
-          stats.value.available,
-          stats.value.inUse,
-          maintenance,
-          broken,
-        ],
+        data: [stats.value.available, stats.value.inUse, maintenance, broken],
         backgroundColor: ['#007aff', '#34c759', '#ff9500', '#ff3b30'],
         borderRadius: 8,
       },

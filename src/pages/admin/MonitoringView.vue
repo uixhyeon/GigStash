@@ -747,7 +747,6 @@
 <script setup>
 import { ref, computed, onMounted, watch, nextTick } from 'vue'
 import { Chart, registerables } from 'chart.js'
-import reservationsData from '@/data/reservations_monthly.json'
 
 Chart.register(...registerables)
 
@@ -1602,10 +1601,6 @@ const insights = computed(() => {
 
 // 데이터 로드
 onMounted(() => {
-  if (reservationsData && reservationsData.reservations) {
-    allReservations.value = reservationsData.reservations
-  }
-
   // Chart.js 차트 생성
   nextTick(() => {
     createEventTypeChart()

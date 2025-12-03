@@ -158,9 +158,9 @@
                 @click="isProfileMenuOpen = !isProfileMenuOpen"
                 class="flex items-center gap-2 px-3 py-2 hover:bg-gray-200 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-700 dark:text-gray-300"
               >
-                <p class="text-xs text-gray-600 dark:text-gray-400">
+                <!-- <p class="text-xs text-gray-600 dark:text-gray-400">
                   {{ authStore.user?.email || 'admin@example.com' }}
-                </p>
+                </p> -->
                 <span class="text-xl">
                   <div
                     class="w-7 h-7 text-lg rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-300"
@@ -204,7 +204,6 @@
                 </div>
               </transition>
             </div>
-
             <!-- 다크모드 토글 -->
             <ComDarkModeToggle />
           </div>
@@ -216,14 +215,13 @@
         <RouterView />
       </main>
     </div>
-
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
-import DarkModeToggle from '@/components/common/ComDarkModeToggle.vue'
+import ComDarkModeToggle from '@/components/common/ComDarkModeToggle.vue'
 import { useAuthStore } from '@/stores/auth'
 
 const route = useRoute()

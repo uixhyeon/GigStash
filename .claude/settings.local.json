@@ -11,7 +11,9 @@
       "Bash(node scripts/fix-reservation-statuses.js:*)",
       "Bash(node -e:*)",
       "Bash(node scripts/normalize-data.js:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(npm run build:*)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []
