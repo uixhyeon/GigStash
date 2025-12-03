@@ -243,21 +243,6 @@
             <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
               <tr>
                 <th
-                  @click="toggleSort('id')"
-                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
-                >
-                  <div class="flex items-center gap-1">
-                    예약번호 (ID)
-                    <i
-                      v-if="sortBy === 'id'"
-                      :class="[
-                        'fi text-xs',
-                        sortDirection === 'asc' ? 'fi-rr-arrow-up' : 'fi-rr-arrow-down',
-                      ]"
-                    ></i>
-                  </div>
-                </th>
-                <th
                   @click="toggleSort('eventId')"
                   class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
                 >
@@ -272,6 +257,22 @@
                     ></i>
                   </div>
                 </th>
+                <th
+                  @click="toggleSort('id')"
+                  class="px-2 py-2 text-left font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
+                >
+                  <div class="flex items-center gap-1">
+                    예약번호 (ID)
+                    <i
+                      v-if="sortBy === 'id'"
+                      :class="[
+                        'fi text-xs',
+                        sortDirection === 'asc' ? 'fi-rr-arrow-up' : 'fi-rr-arrow-down',
+                      ]"
+                    ></i>
+                  </div>
+                </th>
+
                 <th
                   @click="toggleSort('customerId')"
                   class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
@@ -431,14 +432,14 @@ const sortDirection = ref('desc')
 // 고객 맵 (메모이제이션: 빠른 조회를 위한 캐시)
 const customerMap = computed(() => {
   const map = new Map()
-  customers.value.forEach(c => map.set(c.id, c))
+  customers.value.forEach((c) => map.set(c.id, c))
   return map
 })
 
 // 사물함 맵 (메모이제이션: 빠른 조회를 위한 캐시)
 const lockerMap = computed(() => {
   const map = new Map()
-  lockers.value.forEach(l => map.set(l.id, l))
+  lockers.value.forEach((l) => map.set(l.id, l))
   return map
 })
 
