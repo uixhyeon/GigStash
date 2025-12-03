@@ -310,14 +310,8 @@ const getVehicleCountByEvent = (eventId) => {
 }
 
 // dataStore의 행사 데이터를 UI 형식으로 변환
-const events = computed(() => {
-  console.log('[EventView] Computing events:', {
-    totalEvents: dataStore.events.length,
-    totalReservations: dataStore.reservations.length,
-    totalVehicles: dataStore.vehicles.length,
-  })
-
-  return dataStore.events.map((event) => ({
+const events = computed(() =>
+  dataStore.events.map((event) => ({
     id: event.id,
     name: event.eventName,
     startDate: event.eventDate,
@@ -329,8 +323,8 @@ const events = computed(() => {
     venue: event.eventVenue,
     type: event.eventType,
     performanceTime: event.performanceTime || '',
-  }))
-})
+  })),
+)
 
 // 정렬 상태 (초기값: 일자별 오름차순)
 const sortConfig = ref({

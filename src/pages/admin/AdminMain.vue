@@ -50,7 +50,8 @@
               </thead>
               <tbody>
                 <tr
-                  v-for="i in 5 > 0"
+                  v-for="i in 5"
+                  :key="i"
                   class="border-t border-slate-200 dark:border-slate-700 h-8 sm:h-10"
                 >
                   <td
