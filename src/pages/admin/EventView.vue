@@ -81,7 +81,7 @@
           <div class="overflow-x-auto overflow-y-auto scrollbar-hide w-full flex-1">
             <table class="w-full text-xs min-w-max">
               <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
-                <tr class="h-10 mx-6">
+                <tr class="h-10 -mx-6">
                   <th
                     class="px-6 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap"
                   >
@@ -93,12 +93,12 @@
                     ID
                   </th>
                   <th
-                    class="px-6 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    class="px-6 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap max-w-32"
                   >
                     행사명
                   </th>
                   <th
-                    class="px-6 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    class="px-6 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap w-48"
                   >
                     행사장소
                   </th>
@@ -204,14 +204,15 @@
                   </td>
                   <td
                     :class="[
-                      'px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap',
+                      'px-2 py-1 text-left text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 max-w-32 truncate',
                       event.status === '취소' ? 'line-through' : '',
                     ]"
+                    :title="event.name"
                   >
                     {{ event.name }}
                   </td>
                   <td
-                    class="px-2 py-1 text-center text-gray-700 dark:text-dark-text-secondary group-hover:dark:text-gray-700 whitespace-nowrap"
+                    class="px-2 py-1 text-center text-gray-700 dark:text-dark-text-secondary group-hover:dark:text-gray-700 whitespace-nowrap w-48"
                   >
                     {{ event.venue }}
                   </td>
@@ -458,6 +459,16 @@ const resetFilters = () => {
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar-track {
+  display: none !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  display: none !important;
 }
 </style>
