@@ -1,45 +1,6 @@
-<!--
-  ╔══════════════════════════════════════════════════════════════════════╗
-  ║ 페이지: EditProfile.vue                                              ║
-  ╠══════════════════════════════════════════════════════════════════════╣
-  ║ 타입: 페이지 (Page)                                                  ║
-  ║                                                                      ║
-  ║ 주요 기능:                                                           ║
-  ║ - 워커(기사) 프로필 수정 페이지                                      ║
-  ║ - 프로필 이미지 업로드 및 변경                                       ║
-  ║ - 기본 정보 수정 (이름, 전화번호, 이메일)                            ║
-  ║ - 계좌 정보 수정 (은행, 계좌번호, 예금주)                            ║
-  ║ - 비밀번호 변경                                                      ║
-  ║                                                                      ║
-  ║ 특징:                                                                ║
-  ║ - 이미지 파일 업로드 및 미리보기                                     ║
-  ║ - 비밀번호 검증 (8자 이상, 확인 일치)                                ║
-  ║ - 저장 후 이전 페이지로 이동                                         ║
-  ╚══════════════════════════════════════════════════════════════════════╝
--->
 
 <template>
   <div class="pb-20">
-    <!-- 프로필 이미지 섹션 -->
-    <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 mt-4 p-5">
-      <div class="flex flex-col items-center">
-        <div class="relative">
-          <div class="w-24 h-24 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden flex-shrink-0 mb-3">
-            <img v-if="profileData.profileImage" :src="profileData.profileImage" alt="프로필" class="w-full h-full object-cover" />
-            <span v-else class="text-4xl text-gray-400 dark:text-gray-500">👤</span>
-          </div>
-          <button
-            @click="fileInput?.click()"
-            class="absolute bottom-0 right-0 bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-colors"
-          >
-            <i class="fi fi-rr-camera text-sm"></i>
-          </button>
-          <input ref="fileInput" type="file" accept="image/*" class="hidden" @change="handleImageUpload" />
-        </div>
-        <p class="text-sm text-gray-600 dark:text-gray-400">프로필 사진 변경</p>
-      </div>
-    </div>
-
     <!-- 기본 정보 섹션 -->
     <div class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 mt-4 p-5">
       <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">기본 정보</h2>
@@ -154,7 +115,7 @@
     <div class="mx-4 mt-4 mb-4 flex justify-end">
       <button
         @click="saveProfile"
-        class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-3 rounded-lg text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-gray-200 dark:border-gray-700 justify-center"
+        class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-lg text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-gray-200 dark:border-gray-700 rounded-md"
         style="width: 100px"
       >
         <i class="fi fi-rr-disk"></i>

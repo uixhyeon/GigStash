@@ -445,85 +445,118 @@
     </div>
 
     <!-- 주차장 사진 모달 -->
-    <div
-      v-if="showParkingModal"
-      class="fixed inset-0 z-50 bg-black/80 flex items-start justify-center"
-      @click.self="showParkingModal = false"
-    >
-      <div class="w-full max-w-[480px] h-[calc(100vh-68px)] bg-transparent mx-auto flex flex-col mt-[68px]">
-        <!-- 제목 -->
-        <div class="bg-black/95 pt-5 px-5 pb-2 flex justify-between items-center">
-          <h2 class="text-lg font-bold text-white">주차 장소 보기</h2>
-          <button
-            @click="showParkingModal = false"
-            class="text-white hover:text-gray-300 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
-          >
-            <i class="fi fi-rr-cross text-lg"></i>
-          </button>
-        </div>
+    <Teleport to="body">
+      <Transition name="modal-slide">
+        <div
+          v-if="showParkingModal"
+          class="fixed inset-0 z-[100] flex justify-center"
+        >
+          <!-- 모달 컨텐츠 (헤더 아래부터 시작) -->
+          <div class="w-full max-w-[480px] h-full bg-white dark:bg-gray-900 overflow-y-auto pt-[68px]">
+            <!-- 헤더 -->
+            <div class="sticky top-0 bg-white dark:bg-gray-900 px-4 py-4 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 z-10">
+              <div>
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white">주차 장소</h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{{ currentLocation }}</p>
+              </div>
+              <button
+                @click="showParkingModal = false"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              >
+                <i class="fi fi-rr-cross text-gray-600 dark:text-gray-400"></i>
+              </button>
+            </div>
 
-        <!-- 이미지 슬라이더 -->
-        <div class="flex-1 relative overflow-hidden">
-          <div
-            class="flex transition-transform duration-300 ease-in-out h-full"
-            :style="{ transform: `translateX(-${currentImageIndex * 100}%)` }"
-          >
-            <div
-              v-for="(image, index) in parkingImages"
-              :key="index"
-              class="w-full h-full flex-shrink-0 flex items-center justify-center"
-            >
-              <img
-                :src="image"
-                :alt="`주차장 사진 ${index + 1}`"
-                class="w-full h-full object-contain"
-              />
+            <!-- 메인 이미지 -->
+            <div class="relative aspect-[4/3] bg-gray-100 dark:bg-gray-800 overflow-hidden">
+              <div
+                class="flex transition-transform duration-500 ease-out h-full"
+                :style="{ transform: `translateX(-${currentImageIndex * 100}%)` }"
+              >
+                <div
+                  v-for="(image, index) in parkingImages"
+                  :key="index"
+                  class="w-full h-full flex-shrink-0"
+                >
+                  <img
+                    :src="image"
+                    :alt="`주차장 사진 ${index + 1}`"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <!-- 이미지 카운터 -->
+              <div class="absolute top-4 right-4 bg-black/50 text-white text-sm px-3 py-1.5 rounded-full">
+                {{ currentImageIndex + 1 }} / {{ parkingImages.length }}
+              </div>
+
+              <!-- 좌우 버튼 -->
+              <button
+                v-if="currentImageIndex > 0"
+                @click="prevImage"
+                class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg hover:scale-105 transition-transform"
+              >
+                <i class="fi fi-rr-angle-left text-gray-800 dark:text-white text-lg"></i>
+              </button>
+              <button
+                v-if="currentImageIndex < parkingImages.length - 1"
+                @click="nextImage"
+                class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg hover:scale-105 transition-transform"
+              >
+                <i class="fi fi-rr-angle-right text-gray-800 dark:text-white text-lg"></i>
+              </button>
+            </div>
+
+            <!-- 도트 인디케이터 -->
+            <div class="flex justify-center gap-2 py-4 bg-white dark:bg-gray-900">
+              <button
+                v-for="(image, index) in parkingImages"
+                :key="index"
+                @click="currentImageIndex = index"
+                class="w-2.5 h-2.5 rounded-full transition-all duration-300"
+                :class="currentImageIndex === index 
+                  ? 'bg-blue-500 w-6' 
+                  : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'"
+              ></button>
+            </div>
+
+            <!-- 썸네일 목록 -->
+            <div class="px-4 pb-4 bg-white dark:bg-gray-900">
+              <div class="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
+                <button
+                  v-for="(image, index) in parkingImages"
+                  :key="index"
+                  @click="currentImageIndex = index"
+                  class="flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden transition-all duration-200"
+                  :class="currentImageIndex === index 
+                    ? 'ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-gray-900 scale-105' 
+                    : 'opacity-60 hover:opacity-100'"
+                >
+                  <img
+                    :src="image"
+                    :alt="`썸네일 ${index + 1}`"
+                    class="w-full h-full object-cover"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- 네비게이션 버튼 -->
+            <div class="px-4 pb-6 bg-white dark:bg-gray-900">
+              <button
+                @click="openKakaoNavigation"
+                class="w-full py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 transition-all hover:shadow-xl hover:shadow-blue-500/30"
+              >
+                <i class="fi fi-rr-navigation text-lg"></i>
+                <span>카카오맵으로 길찾기</span>
+              </button>
             </div>
           </div>
-
-          <!-- 이전 버튼 -->
-          <button
-            v-if="currentImageIndex > 0"
-            @click="prevImage"
-            class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-colors"
-          >
-            <i class="fi fi-rr-angle-left text-xl"></i>
-          </button>
-
-          <!-- 다음 버튼 -->
-          <button
-            v-if="currentImageIndex < parkingImages.length - 1"
-            @click="nextImage"
-            class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-colors"
-          >
-            <i class="fi fi-rr-angle-right text-xl"></i>
-          </button>
         </div>
+      </Transition>
+    </Teleport>
 
-        <!-- 썸네일 이미지 목록 -->
-        <div class="bg-black/95 p-3 overflow-x-auto">
-          <div class="flex gap-2 justify-center">
-            <div
-              v-for="(image, index) in parkingImages"
-              :key="index"
-              @click="currentImageIndex = index"
-              class="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden cursor-pointer border-2 transition-all"
-              :class="
-                currentImageIndex === index
-                  ? 'border-blue-500'
-                  : 'border-transparent opacity-60 hover:opacity-100'
-              "
-            >
-              <img
-                :src="image"
-                :alt="`주차장 사진 ${index + 1}`"
-                class="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -1140,3 +1173,29 @@ const formatDate = (date) => {
   return `${month}월 ${day}일 ${weekday}`
 }
 </script>
+
+<style scoped>
+/* 모달 슬라이드 트랜지션 */
+.modal-slide-enter-active,
+.modal-slide-leave-active {
+  transition: transform 0.3s ease;
+}
+
+.modal-slide-enter-from {
+  transform: translateX(100%);
+}
+
+.modal-slide-leave-to {
+  transform: translateX(100%);
+}
+
+/* 스크롤바 숨기기 */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+</style>
