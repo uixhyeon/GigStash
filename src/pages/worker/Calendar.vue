@@ -97,9 +97,13 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import reservationsData from '@/data/reservations_monthly.json'
+import { useAuthStore } from '@/stores/auth'
 import { events } from '@/data/events'
 import { vehicles } from '@/data/vehicles'
+import { lockers } from '@/data/lockers'
+import { reservations as allReservations } from '@/data/reservations'
+
+const authStore = useAuthStore()
 
 // 현재 날짜 및 뷰 날짜
 const today = new Date()
@@ -125,16 +129,53 @@ const nextMonth = () => {
   viewDate.value = new Date(year.value, month.value + 1, 1)
 }
 
+// 로그인 이름을 vehicles.js의 driver 이름으로 매핑
+const workerNameToDriverName = (name) => {
+  const mapping = {
+    '박기사': '김운전',
+    '김기사': '김운전',
+    '이기사': '이운전',
+    // 추가 매핑 필요시 여기에 추가
+  }
+  return mapping[name] || name
+}
+
+// 현재 로그인 워커 이름 (없으면 기본값 사용)
+const currentWorkerName = computed(() => authStore.user?.name || '김운전')
+
+// 워커가 담당하는 차량
+const workerVehicles = computed(() => {
+  const driverName = workerNameToDriverName(currentWorkerName.value)
+  return vehicles.filter((v) => v.driver === driverName)
+})
+
+// 워커 차량에 연결된 보관함
+const workerLockers = computed(() => {
+  const vehicleIds = new Set(workerVehicles.value.map((v) => v.id))
+  return lockers.filter((l) => vehicleIds.has(l.vehicleId))
+})
+
+// 워커 보관함에 연결된 예약 (정규화된 reservations.js 기반)
+const workerRawReservations = computed(() => {
+  const lockerIds = new Set(workerLockers.value.map((l) => l.id))
+  return allReservations.filter((r) => lockerIds.has(r.lockerId))
+})
+
+// 워커가 실제로 참여하는 행사 목록
+const workerEvents = computed(() => {
+  const eventIds = new Set(workerRawReservations.value.map((r) => r.eventId))
+  return events.filter((e) => eventIds.has(e.id) && e.eventDate)
+})
+
 // 날짜별 행사 정보 계산 + 배정된 기사 정보 포함
-// 1) events.js 기준으로 모든 11~12월 행사 생성
-// 2) reservations_monthly.json 을 이용해 예약 인원(bookedCustomerCount) 집계
+// 본인 예약과 연결된 행사만 표시
 const eventsByDate = computed(() => {
   const eventsMap = {}
 
   const normalizeName = (name) => (name || '').replace(/\s+/g, '')
 
-  // 1단계: events.js 기준으로 행사 생성
-  events.forEach((e) => {
+  // 1단계: 본인이 참여하는 행사만 생성
+  workerEvents.value.forEach((e) => {
     if (!e.eventDate) return
 
     const eventDate = e.eventDate
@@ -152,45 +193,22 @@ const eventsByDate = computed(() => {
         new Set(vehicles.filter((v) => v.eventId === e.id && v.driver).map((v) => v.driver)),
       )
 
+      // 본인 예약 수 계산
+      const bookedCustomerCount = workerRawReservations.value.filter(
+        (r) => r.eventId === e.id
+      ).length
+
       eventsMap[key] = {
         date: eventDate,
         eventName,
         eventVenue,
         eventType,
         operatingHours,
-        bookedCustomerCount: 0,
+        bookedCustomerCount,
         drivers: assignedDrivers,
         vehicleCount: assignedDrivers.length,
         key,
       }
-    }
-  })
-
-  // 2단계: 예약 데이터로 예약 인원 집계
-  reservationsData.reservations.forEach((r) => {
-    const eventDate = r.eventDate || (r.dropoffTime ? r.dropoffTime.split('T')[0] : null)
-    if (!eventDate) return
-
-    const eventName = r.eventName || '행사'
-    const eventVenue = r.eventVenue || '-'
-
-    // 1순위: 날짜 + 이름(공백 제거) 일치
-    let keyCandidates = Object.keys(eventsMap).filter((key) => {
-      const [d, name] = key.split('|')
-      return d === eventDate && normalizeName(name) === normalizeName(eventName)
-    })
-
-    // 2순위: 이름만 일치 (날짜가 살짝 어긋난 경우 포함)
-    if (keyCandidates.length === 0) {
-      keyCandidates = Object.keys(eventsMap).filter((key) => {
-        const [, name] = key.split('|')
-        return normalizeName(name) === normalizeName(eventName)
-      })
-    }
-
-    if (keyCandidates.length > 0) {
-      const key = keyCandidates[0]
-      eventsMap[key].bookedCustomerCount++
     }
   })
 

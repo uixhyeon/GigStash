@@ -20,17 +20,6 @@
               일별
             </button>
             <button
-              @click="periodFilter = 'week'"
-              :class="[
-                'flex-1 py-2 rounded-lg text-sm transition-colors',
-                periodFilter === 'week'
-                  ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm'
-                  : 'text-gray-600 dark:text-gray-400',
-              ]"
-            >
-              주별
-            </button>
-            <button
               @click="periodFilter = 'month'"
               :class="[
                 'flex-1 py-2 rounded-lg text-sm transition-colors',
@@ -46,7 +35,88 @@
 
         <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">급여 상세</h2>
 
-        <div class="space-y-3">
+        <!-- 월별 달력 -->
+        <div v-if="periodFilter === 'month'" class="mb-6">
+          <!-- 달력 헤더 -->
+          <div class="flex items-center justify-center gap-4 mb-4">
+            <button
+              @click="prevCalendarMonth"
+              class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+            >
+              <i class="fi fi-rr-angle-left text-gray-600 dark:text-gray-400"></i>
+            </button>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+              {{ selectedCalendarMonth.year }}년 {{ selectedCalendarMonth.month + 1 }}월
+            </h3>
+            <button
+              @click="nextCalendarMonth"
+              class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+            >
+              <i class="fi fi-rr-angle-right text-gray-600 dark:text-gray-400"></i>
+            </button>
+          </div>
+
+          <!-- 달력 그리드 -->
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-2">
+            <!-- 요일 헤더 -->
+            <div class="grid grid-cols-7 gap-1 mb-1">
+              <div
+                v-for="day in ['일', '월', '화', '수', '목', '금', '토']"
+                :key="day"
+                :class="[
+                  'text-center text-xs font-medium py-2',
+                  day === '일'
+                    ? 'text-red-500 dark:text-red-400'
+                    : day === '토'
+                      ? 'text-blue-500 dark:text-blue-400'
+                      : 'text-gray-600 dark:text-gray-400',
+                ]"
+              >
+                {{ day }}
+              </div>
+            </div>
+
+            <!-- 날짜 그리드 -->
+            <div class="grid grid-cols-7 gap-1">
+              <div
+                v-for="date in calendarDates"
+                :key="date.key"
+                :class="[
+                  'aspect-square p-1 rounded-lg text-center flex flex-col items-center justify-center relative',
+                  date.isCurrentMonth
+                    ? date.isToday
+                      ? 'bg-blue-500 text-white'
+                      : date.hasWork
+                        ? 'bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 cursor-pointer'
+                        : 'hover:bg-gray-100 dark:hover:bg-gray-800'
+                    : 'text-gray-300 dark:text-gray-600',
+                ]"
+              >
+                <span
+                  :class="[
+                    'text-sm font-medium',
+                    date.isCurrentMonth
+                      ? date.isToday
+                        ? 'text-white'
+                        : 'text-gray-900 dark:text-white'
+                      : 'text-gray-300 dark:text-gray-600',
+                  ]"
+                >
+                  {{ date.day }}
+                </span>
+                <span
+                  v-if="date.hasWork && date.isCurrentMonth"
+                  class="text-[9px] text-blue-600 dark:text-blue-400 font-medium mt-0.5 leading-tight"
+                >
+                  {{ formatCurrencyCompact(date.salary) }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 일별/월별 리스트 -->
+        <div v-if="periodFilter !== 'month' || filteredSalaryDetails.length === 0" class="space-y-3">
           <div
             v-for="item in filteredSalaryDetails"
             :key="item.id"
@@ -89,7 +159,7 @@
       <div
         class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm p-5"
       >
-        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">지급 내역</h2>
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">지급 금액</h2>
 
         <!-- 지급 완료 내역 -->
         <div class="mb-6">
@@ -161,8 +231,14 @@ const authStore = useAuthStore()
 
 const periodFilter = ref('month') // 'day', 'week', 'month'
 
+// 달력 관련
+const selectedCalendarMonth = ref({
+  year: new Date().getFullYear(),
+  month: new Date().getMonth(),
+})
+
 // 시급
-const HOURLY_WAGE = 25000 // 기본 시급 25,000원
+const HOURLY_WAGE = 30000 // 기본 시급 30,000원
 
 // 로그인 이름을 vehicles.js의 driver 이름으로 매핑
 const workerNameToDriverName = (name) => {
@@ -343,36 +419,6 @@ const filteredSalaryDetails = computed(() => {
         }
         return a.label.localeCompare(b.label)
       })
-  } else if (periodFilter.value === 'week') {
-    // 주별: 3개월 동안 (오늘 날짜 기준으로 최근 3개월)
-    const threeMonthsAgo = new Date(today)
-    threeMonthsAgo.setMonth(today.getMonth() - 3)
-
-    const weekGroups = {}
-    salaryDetails.value
-      .filter((item) => item.dateObj >= threeMonthsAgo && item.dateObj <= today)
-      .forEach((item) => {
-        const weekKey = `${item.weekStart.getFullYear()}-W${getWeekNumber(item.weekStart)}`
-        if (!weekGroups[weekKey]) {
-          weekGroups[weekKey] = {
-            weekKey,
-            weekStart: item.weekStart,
-            workHours: 0,
-            salary: 0,
-          }
-        }
-        weekGroups[weekKey].workHours += item.workHours
-        weekGroups[weekKey].salary += item.salary
-      })
-
-    filtered = Object.values(weekGroups)
-      .map((group) => ({
-        id: group.weekKey,
-        label: formatWeekLabel(group.weekStart),
-        workHours: Math.round(group.workHours * 10) / 10,
-        salary: group.salary,
-      }))
-      .sort((a, b) => b.weekStart - a.weekStart)
   } else {
     // 월별: 6개월 동안 (오늘 날짜 기준으로 최근 6개월)
     const sixMonthsAgo = new Date(today)
@@ -408,6 +454,29 @@ const filteredSalaryDetails = computed(() => {
 
 // 총 급여
 const totalSalary = computed(() => {
+  // 월별 필터일 때는 선택한 달력 월의 총 급여만 계산
+  if (periodFilter.value === 'month') {
+    const year = selectedCalendarMonth.value.year
+    const month = selectedCalendarMonth.value.month
+    const monthStart = new Date(year, month, 1)
+    const monthEnd = new Date(year, month + 1, 0)
+
+    let total = 0
+    salaryDetails.value.forEach((item) => {
+      const itemDate = item.dateObj
+      if (
+        itemDate.getFullYear() === year &&
+        itemDate.getMonth() === month &&
+        itemDate >= monthStart &&
+        itemDate <= monthEnd
+      ) {
+        total += item.salary
+      }
+    })
+    return total
+  }
+
+  // 일별 필터일 때는 필터링된 항목들의 합계
   return filteredSalaryDetails.value.reduce((sum, item) => sum + item.salary, 0)
 })
 
@@ -480,16 +549,116 @@ const scheduledPayments = computed(() => {
   return payments.sort((a, b) => a.id.localeCompare(b.id))
 })
 
+// 날짜별 급여 데이터 매핑
+const dailySalaryMap = computed(() => {
+  const map = {}
+  salaryDetails.value.forEach((item) => {
+    const dateKey = item.date
+    if (!map[dateKey]) {
+      map[dateKey] = {
+        salary: 0,
+        workHours: 0,
+      }
+    }
+    map[dateKey].salary += item.salary
+    map[dateKey].workHours += item.workHours
+  })
+  return map
+})
+
+// 달력 날짜 생성
+const calendarDates = computed(() => {
+  const year = selectedCalendarMonth.value.year
+  const month = selectedCalendarMonth.value.month
+
+  const firstDay = new Date(year, month, 1)
+  const lastDay = new Date(year, month + 1, 0)
+  const prevLastDay = new Date(year, month, 0)
+
+  const firstDayOfWeek = firstDay.getDay()
+  const lastDateOfMonth = lastDay.getDate()
+  const lastDateOfPrevMonth = prevLastDay.getDate()
+
+  const dates = []
+  const today = new Date()
+
+  // 이전 달의 날짜들
+  for (let i = firstDayOfWeek - 1; i >= 0; i--) {
+    const day = lastDateOfPrevMonth - i
+    dates.push({
+      key: `prev-${day}`,
+      day,
+      isCurrentMonth: false,
+      isToday: false,
+      hasWork: false,
+      salary: 0,
+    })
+  }
+
+  // 현재 달의 날짜들
+  for (let i = 1; i <= lastDateOfMonth; i++) {
+    const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`
+    const isToday =
+      i === today.getDate() &&
+      month === today.getMonth() &&
+      year === today.getFullYear()
+
+    const dailyData = dailySalaryMap.value[dateStr]
+    const hasWork = !!dailyData
+
+    dates.push({
+      key: dateStr,
+      day: i,
+      dateStr,
+      isCurrentMonth: true,
+      isToday,
+      hasWork,
+      salary: hasWork ? dailyData.salary : 0,
+    })
+  }
+
+  // 다음 달의 날짜들
+  const weeksNeeded = Math.ceil((firstDayOfWeek + lastDateOfMonth) / 7)
+  const totalDaysNeeded = weeksNeeded * 7
+  const remainingDays = totalDaysNeeded - dates.length
+
+  for (let i = 1; i <= remainingDays; i++) {
+    dates.push({
+      key: `next-${i}`,
+      day: i,
+      isCurrentMonth: false,
+      isToday: false,
+      hasWork: false,
+      salary: 0,
+    })
+  }
+
+  return dates
+})
+
+// 달력 월 이동 함수
+const prevCalendarMonth = () => {
+  if (selectedCalendarMonth.value.month === 0) {
+    selectedCalendarMonth.value.month = 11
+    selectedCalendarMonth.value.year--
+  } else {
+    selectedCalendarMonth.value.month--
+  }
+}
+
+const nextCalendarMonth = () => {
+  if (selectedCalendarMonth.value.month === 11) {
+    selectedCalendarMonth.value.month = 0
+    selectedCalendarMonth.value.year++
+  } else {
+    selectedCalendarMonth.value.month++
+  }
+}
+
 // 날짜 포맷 함수들
 const formatDateLabel = (dateStr) => {
   const date = new Date(dateStr)
   return `${date.getMonth() + 1}월 ${date.getDate()}일`
-}
-
-const formatWeekLabel = (weekStart) => {
-  const weekEnd = new Date(weekStart)
-  weekEnd.setDate(weekStart.getDate() + 6)
-  return `${weekStart.getMonth() + 1}/${weekStart.getDate()} ~ ${weekEnd.getMonth() + 1}/${weekEnd.getDate()}`
 }
 
 const formatMonthLabel = (monthKey) => {
@@ -497,15 +666,21 @@ const formatMonthLabel = (monthKey) => {
   return `${year}년 ${parseInt(month)}월`
 }
 
-const getWeekNumber = (date) => {
-  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()))
-  const dayNum = d.getUTCDay() || 7
-  d.setUTCDate(d.getUTCDate() + 4 - dayNum)
-  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1))
-  return Math.ceil(((d - yearStart) / 86400000 + 1) / 7)
-}
-
 const formatCurrency = (amount) => {
   return amount.toLocaleString('ko-KR')
+}
+
+// 급여를 간단하게 표시 (천 단위로)
+const formatCurrencyCompact = (amount) => {
+  if (amount >= 100000) {
+    const 만 = Math.floor(amount / 10000)
+    const 천 = Math.floor((amount % 10000) / 1000)
+    return 천 > 0 ? `${만}.${천}만` : `${만}만`
+  } else if (amount >= 10000) {
+    return `${Math.round(amount / 10000)}만`
+  } else if (amount >= 1000) {
+    return `${Math.round(amount / 1000)}천`
+  }
+  return `${amount}`
 }
 </script>
