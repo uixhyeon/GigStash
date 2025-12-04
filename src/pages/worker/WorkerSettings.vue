@@ -212,7 +212,7 @@ const monthScheduleCount = computed(() => {
 });
 
 // 급여 계산 로직
-const HOURLY_WAGE = 25000; // 기본 시급 25,000원
+const HOURLY_WAGE = 30000; // 기본 시급 30,000원
 
 // 근무시간 계산 (행사 시간 + 6시간)
 const calculateWorkHours = (eventStartTime, eventEndTime) => {

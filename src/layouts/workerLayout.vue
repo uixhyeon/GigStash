@@ -27,29 +27,30 @@
       style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)"
     >
       <div class="flex items-center gap-3 justify-between p-4 pb-2">
-        <!-- 왼쪽: 로고 + 사용자 이름 -->
+        <!-- 왼쪽: GigStash 로고 -->
         <button
           @click="goToHome"
-          class="flex items-center gap-3 hover:opacity-80 transition-opacity"
+          class="hover:opacity-80 transition-opacity"
         >
-          <div class="flex items-center gap-1">
-            <div class="w-3 h-3 bg-blue-400 rounded-sm"></div>
-            <div class="w-3 h-3 bg-cyan-300 rounded-sm"></div>
-          </div>
-          <span class="text-white text-base">{{ authStore.user?.name || "김운전" }}님</span>
+          <span 
+            class="text-white font-bold text-2xl"
+            style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif; letter-spacing: -0.5px;"
+          >
+            GigStash
+          </span>
         </button>
 
-        <!-- 오른쪽: 다크모드 + 설정 -->
-        <div class="flex items-center gap-1">
+        <!-- 오른쪽: 기사 이름 + 다크모드 토글 -->
+        <div class="flex items-center gap-2">
+          <button
+            @click="goToProfile"
+            class="flex items-center gap-1 hover:opacity-80 transition-opacity"
+          >
+            <span class="text-white text-base">{{ authStore.user?.name || "김운전" }}님</span>
+          </button>
           <div class="flex items-center justify-center w-10 h-10 [&_button]:text-white [&_svg]:text-white">
             <ComDarkModeToggle />
           </div>
-          <button
-            @click="goToProfile"
-            class="flex items-center justify-center w-10 h-10 text-white rounded-lg"
-          >
-            <i class="fi fi-rr-settings text-xl"></i>
-          </button>
         </div>
       </div>
     </header>
@@ -62,7 +63,7 @@
 </template>
 
 <script setup>
-import DarkModeToggle from "@/components/common/ComDarkModeToggle.vue";
+import ComDarkModeToggle from "@/components/common/ComDarkModeToggle.vue";
 import { useAuthStore } from "@/stores/auth";
 import { useRouter } from "vue-router";
 
