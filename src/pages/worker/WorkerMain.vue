@@ -1,30 +1,3 @@
-<!--
-  ╔══════════════════════════════════════════════════════════════════════╗
-  ║ 페이지: WorkerMain.vue                                               ║
-  ╠══════════════════════════════════════════════════════════════════════╣
-  ║ 타입: 페이지 (Page)                                                  ║
-  ║                                                                      ║
-  ║ 주요 기능:                                                           ║
-  ║ - 워커(기사) 메인 대시보드 페이지                                    ║
-  ║ - 오늘 일정 및 위치 정보 표시                                        ║
-  ║ - 카카오 맵 연동 및 네비게이션 실행                                  ║
-  ║ - 예약 목록 관리 (진행중/완료)                                       ║
-   ║ - 예약번호/전화번호로 예약 조회 및 완료 처리                          ║
-   ║                                                                      ║
-   ║ 주요 모달:                                                           ║
-   ║ 1. 진행 인원 모달: 남은 예약과 완료된 예약 목록 표시                 ║
-   ║ 2. 바코드 모달: 웹 카메라 연결 및 예약번호/전화번호로 예약 조회      ║
-   ║ 3. 주차장 사진 모달: 주차장 위치 사진 슬라이더                       ║
-   ║                                                                      ║
-   ║ 특징:                                                                ║
-   ║ - JSON 데이터 기반 실시간 예약 관리                                  ║
-   ║ - 카카오맵 API 연동                                                  ║
-   ║ - 웹 카메라 연결 (getUserMedia API 사용)                             ║
-  ║ - 오늘 날짜 기준 예약 필터링                                         ║
-  ║ - 행사 정보 자동 계산 (장소, 시간, 예약 인원)                        ║
-  ╚══════════════════════════════════════════════════════════════════════╝
--->
-
 <template>
   <div class="pb-20">
     <!-- 날짜와 날씨 (카드 위) -->
@@ -44,13 +17,22 @@
 
     <!-- 위치 정보 카드 -->
     <div
+      v-if="assignedEventInfo"
       class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 p-5"
     >
       <div class="text-base text-gray-900 dark:text-white mb-3">
-        {{ currentLocation }}
+        {{ assignedEventInfo.venue }}
       </div>
       <div class="border-t border-dashed border-gray-300 dark:border-gray-700 pt-3">
-        <div class="text-base text-gray-900 dark:text-white">{{ arrivalTime }} 도착 예정</div>
+        <div class="text-base text-gray-900 dark:text-white">{{ assignedEventInfo.arrivalTime }} 도착 예정</div>
+      </div>
+    </div>
+    <div
+      v-else
+      class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 p-5"
+    >
+      <div class="text-base text-gray-900 dark:text-white text-center">
+        오늘은 일정이 없습니다
       </div>
     </div>
 
@@ -465,10 +447,10 @@
     <!-- 주차장 사진 모달 -->
     <div
       v-if="showParkingModal"
-      class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+      class="fixed inset-0 z-50 bg-black/80 flex items-start justify-center"
       @click.self="showParkingModal = false"
     >
-      <div class="w-full max-w-[480px] h-full bg-transparent mx-auto flex flex-col">
+      <div class="w-full max-w-[480px] h-[calc(100vh-68px)] bg-transparent mx-auto flex flex-col mt-[68px]">
         <!-- 제목 -->
         <div class="bg-black/95 pt-5 px-5 pb-2 flex justify-between items-center">
           <h2 class="text-lg font-bold text-white">주차 장소 보기</h2>
@@ -547,9 +529,16 @@
 
 <script setup>
 import { ref, onUnmounted, watch, onMounted, nextTick, computed } from 'vue'
-import reservationsData from '@/data/reservations_monthly.json'
+import { useAuthStore } from '@/stores/auth'
+import { customers } from '@/data/customers'
+import { events } from '@/data/events'
+import { vehicles } from '@/data/vehicles'
+import { lockers } from '@/data/lockers'
+import { reservations as allReservations } from '@/data/reservations'
 
 // 위치와 도착 시간은 todaySchedule에서 계산됨
+
+const authStore = useAuthStore()
 
 const showParticipantsModal = ref(false)
 const showBarcodeModal = ref(false)
@@ -573,44 +562,102 @@ const todayStr = computed(() => {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
 })
 
+// 로그인 이름을 vehicles.js의 driver 이름으로 매핑
+const workerNameToDriverName = (name) => {
+  const mapping = {
+    '박기사': '김운전',
+    '김기사': '김운전',
+    '이기사': '이운전',
+    // 추가 매핑 필요시 여기에 추가
+  }
+  return mapping[name] || name
+}
+
+// 현재 로그인 워커 이름 (없으면 기본값 사용)
+const currentWorkerName = computed(() => authStore.user?.name || '김운전')
+
+// 워커가 담당하는 차량
+const workerVehicles = computed(() => {
+  const driverName = workerNameToDriverName(currentWorkerName.value)
+  return vehicles.filter((v) => v.driver === driverName)
+})
+
+// 워커 차량에 연결된 보관함
+const workerLockers = computed(() => {
+  const vehicleIds = new Set(workerVehicles.value.map((v) => v.id))
+  return lockers.filter((l) => vehicleIds.has(l.vehicleId))
+})
+
+// 워커 보관함에 연결된 예약 (정규화된 reservations.js 기반)
+const workerRawReservations = computed(() => {
+  const lockerIds = new Set(workerLockers.value.map((l) => l.id))
+  return allReservations.filter((r) => lockerIds.has(r.lockerId))
+})
+
 // 완료 상태 관리 (예약 ID를 키로 사용)
 const reservationStatusMap = ref(new Map())
 
-// reservations_monthly.json 데이터를 워커 페이지 형식으로 변환
-// 오늘 날짜의 예약만 필터링 (computed로 만들어서 날짜가 바뀌면 자동 업데이트)
+// 고객/행사 정보를 join 해서 워커 페이지에서 쓰기 편한 형태로 변환
 const reservations = computed(() => {
-  return reservationsData.reservations
+  const customerMap = new Map(customers.map((c) => [c.id, c]))
+  const eventMap = new Map(events.map((e) => [e.id, e]))
+
+  return workerRawReservations.value
     .filter((r) => {
-      // dropoffTime 또는 eventDate 기준으로 오늘 날짜 확인
-      if (r.dropoffTime) {
-        const dropoffDate = new Date(r.dropoffTime)
-        const dropoffDateStr = `${dropoffDate.getFullYear()}-${String(dropoffDate.getMonth() + 1).padStart(2, '0')}-${String(dropoffDate.getDate()).padStart(2, '0')}`
-        return dropoffDateStr === todayStr.value
+      // 오늘 날짜 기준으로 필터링 (행사 날짜 또는 시작/종료 시간 기준)
+      const event = eventMap.get(r.eventId)
+
+      if (event?.eventDate) {
+        return event.eventDate === todayStr.value
       }
-      if (r.eventDate) {
-        return r.eventDate === todayStr.value
+
+      if (r.startTime) {
+        const d = new Date(r.startTime)
+        const dStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+        return dStr === todayStr.value
       }
+
+      if (r.endTime) {
+        const d = new Date(r.endTime)
+        const dStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+        return dStr === todayStr.value
+      }
+
       return false
     })
     .map((r) => {
-      // dropoffTime에서 시간 추출 (ISO 형식: "2025-11-01T15:33:00Z")
-      const dropoffDate = r.dropoffTime ? new Date(r.dropoffTime) : null
+      const customer = customerMap.get(r.customerId)
+      const event = eventMap.get(r.eventId)
+
+      // 하차 시간은 예약 endTime 기준
+      const dropoffDate = r.endTime ? new Date(r.endTime) : null
       const timeStr = dropoffDate
         ? `${String(dropoffDate.getHours()).padStart(2, '0')}:${String(dropoffDate.getMinutes()).padStart(2, '0')}`
         : ''
 
       // 완료 상태 확인 (기본값은 "scheduled")
-      const status = reservationStatusMap.value.get(r.id) || 'scheduled'
+      const status = reservationStatusMap.value.get(r.id) || (r.status === 'completed' ? 'done' : 'scheduled')
 
       return {
         id: r.id,
-        customerName: r.customerName,
-        phone: r.customerPhone,
-        address: r.deliveryAddress || r.eventVenue || '',
+        customerName: customer?.name || '고객',
+        phone: customer?.phone || '',
+        address: event?.eventVenue || '',
         time: timeStr,
-        status: status,
+        status,
         // 원본 데이터도 함께 저장 (추가 정보 표시용)
-        original: r,
+        original: {
+          ...r,
+          customerName: customer?.name,
+          customerPhone: customer?.phone,
+          eventName: event?.eventName,
+          eventDate: event?.eventDate,
+          eventVenue: event?.eventVenue,
+          eventStartTime: event?.eventDate && event?.performanceTime
+            ? new Date(`${event.eventDate}T${(event.performanceTime || '00:00').split('-')[0]}:00Z`).toISOString()
+            : null,
+          eventEndTime: null,
+        },
       }
     })
 })
@@ -988,8 +1035,68 @@ const venueToParkingAddress = {
   // 다른 행사 장소도 추가 가능
 }
 
-// 현재 위치 (오늘 일정의 행사 장소에 맞는 주차장)
+// 배정된 이벤트 정보 (상단 표시용)
+const assignedEventInfo = computed(() => {
+  if (reservations.value.length === 0) {
+    return null
+  }
+
+  const eventMap = new Map(events.map((e) => [e.id, e]))
+
+  // 행사별로 그룹화하여 가장 빠른 이벤트 시작 시간 찾기
+  let earliestReservation = null
+  let earliestStartTime = null
+
+  reservations.value.forEach((r) => {
+    const event = eventMap.get(r.original?.eventId || r.eventId)
+    if (!event) return
+
+    // performanceTime에서 시작 시간 추출 (예: "14:00" 또는 "18:00-20:00")
+    const performanceTime = event.performanceTime || ''
+    const startTimeStr = performanceTime.split('-')[0].trim()
+
+    if (startTimeStr && event.eventDate) {
+      // eventDate와 performanceTime을 조합하여 Date 객체 생성
+      const [hours, minutes] = startTimeStr.split(':').map(Number)
+      const startTime = new Date(event.eventDate)
+      startTime.setHours(hours || 0, minutes || 0, 0, 0)
+
+      if (!earliestStartTime || startTime < earliestStartTime) {
+        earliestStartTime = startTime
+        earliestReservation = r
+      }
+    }
+  })
+
+  if (!earliestReservation || !earliestStartTime) {
+    return null
+  }
+
+  // 도착 시간 계산 (운영 시작 시간 - 30분)
+  const arrivalDate = new Date(earliestStartTime)
+  arrivalDate.setMinutes(arrivalDate.getMinutes() - 30)
+
+  // 시간 포맷팅
+  const hours = String(arrivalDate.getHours()).padStart(2, '0')
+  const minutes = String(arrivalDate.getMinutes()).padStart(2, '0')
+  const arrivalTime = `${hours}:${minutes}`
+
+  // 장소 정보
+  const event = eventMap.get(earliestReservation.original?.eventId || earliestReservation.eventId)
+  const venue = event?.eventVenue || earliestReservation.original?.eventVenue || earliestReservation.address || '장소 미정'
+  const venueName = venueToParkingName[venue] || venue
+
+  return {
+    venue: venueName,
+    arrivalTime: arrivalTime,
+  }
+})
+
+// 현재 위치 (오늘 일정의 행사 장소에 맞는 주차장) - 하위 호환성 유지
 const currentLocation = computed(() => {
+  if (assignedEventInfo.value) {
+    return assignedEventInfo.value.venue
+  }
   const venue = todaySchedule.value.venue
   if (!venue || venue === '-') {
     return '잠실실내체육관 남측 주차장' // 기본값
@@ -997,36 +1104,12 @@ const currentLocation = computed(() => {
   return venueToParkingName[venue] || `${venue} 주차장` // 매핑이 없으면 장소명 + 주차장
 })
 
-// 도착 예정 시간 (이벤트 시작 시간 - 3시간)
+// 도착 예정 시간 (하위 호환성 유지)
 const arrivalTime = computed(() => {
-  // todaySchedule에서 이벤트 시작 시간 가져오기
-  if (reservations.value.length === 0) {
-    return '16:30' // 기본값
+  if (assignedEventInfo.value) {
+    return assignedEventInfo.value.arrivalTime
   }
-
-  // 행사별로 그룹화하여 가장 빠른 이벤트 시작 시간 찾기
-  let earliestStartTime = null
-  reservations.value.forEach((r) => {
-    if (r.original?.eventStartTime) {
-      const startTime = new Date(r.original.eventStartTime)
-      if (!earliestStartTime || startTime < earliestStartTime) {
-        earliestStartTime = startTime
-      }
-    }
-  })
-
-  if (!earliestStartTime) {
-    return '16:30' // 기본값
-  }
-
-  // 이벤트 시작 시간에서 3시간 빼기
-  const arrivalDate = new Date(earliestStartTime)
-  arrivalDate.setHours(arrivalDate.getHours() - 3)
-
-  // 시간 포맷팅
-  const hours = String(arrivalDate.getHours()).padStart(2, '0')
-  const minutes = String(arrivalDate.getMinutes()).padStart(2, '0')
-  return `${hours}:${minutes}`
+  return '16:30' // 기본값
 })
 
 // 오늘 일정의 행사 장소에 맞는 주차장 주소
