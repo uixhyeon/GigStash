@@ -11,14 +11,7 @@
             <i class="fi fi-rr-info text-lg align-middle flex-shrink-0"></i>
           </h2>
 
-          <div
-            v-if="loading"
-            class="p-6 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-sm text-slate-600 dark:text-slate-400"
-            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-          >
-            로딩 중...
-          </div>
-          <div v-if="!loading" class="max-w-full overflow-x-auto scrollbar-hide">
+          <div class="max-w-full overflow-x-auto scrollbar-hide">
             <table
               class="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden text-[10px] sm:text-xs min-w-max"
               style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
@@ -26,56 +19,59 @@
               <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
                 <tr>
                   <th
-                    class="text-left px-1 sm:px-2 py-1 sm:py-2 font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    class="ml-2 text-left px-1 sm:px-2 py-1 sm:py-2 font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
                     No.
                   </th>
                   <th
-                    class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    class="px-1 sm:px-2 py-1 sm:py-2 text-left font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
-                    제 목
+                    제목
                   </th>
-
                   <th
                     class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
                     등록일
                   </th>
-                  <!-- <th
-                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
-                >
-                  접근코드
-                </th> -->
+                  <th
+                    class="text-right px-1 sm:px-2 py-1 sm:py-2 font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                  >
+                    <i
+                      class="fi fi-br-plus text-md align-middle mr-2 cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                      @click="openAddNoticeModal"
+                    ></i>
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr
-                  v-for="count in 5"
-                  :key="count"
-                  class="border-t border-slate-200 dark:border-slate-700 h-8 sm:h-10"
+                  v-for="(notice, index) in notices"
+                  :key="notice.id"
+                  class="border-t border-slate-200 dark:border-slate-700 h-8 sm:h-10 hover:bg-slate-50 dark:hover:bg-slate-700 cursor-pointer transition-colors"
+                  @click="openNoticeDetail(notice)"
                 >
                   <td
                     class="text-left px-1 sm:px-2 py-0.5 sm:py-1 text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
                   >
-                    {{ count }}
+                    {{ index + 1 }}
+                  </td>
+                  <td
+                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-left text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  >
+                    <span>{{ notice.title }}</span>
+                    <span
+                      v-if="isNewNotice(notice.createdAt) && !notice.isRead"
+                      class="ml-2 text-[8px] sm:text-[10px] font-bold text-red-500"
+                    >
+                      New
+                    </span>
                   </td>
                   <td
                     class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
                   >
-                    {{}}
+                    {{ formatDateTime(notice.createdAt) }}
                   </td>
-
-                  <td
-                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
-                  >
-                    {{}}
-                  </td>
-
-                  <!-- <td
-                  class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap"
-                >
-                  {{ reservation.accessCode }}
-                </td> -->
+                  <td class="px-1 sm:px-2 py-0.5 sm:py-1 text-right"></td>
                 </tr>
               </tbody>
             </table>
@@ -386,11 +382,129 @@
         </section>
       </div>
     </div>
+
+    <!-- 공지사항 추가 모달 -->
+    <div
+      v-if="showAddNoticeModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+      @click.self="closeAddNoticeModal"
+    >
+      <div
+        class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+      >
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-6 text-gray-900 dark:text-white">공지사항 추가</h3>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                제목
+              </label>
+              <input
+                v-model="newNotice.title"
+                type="text"
+                class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                placeholder="공지사항 제목을 입력하세요"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                내용
+              </label>
+              <textarea
+                v-model="newNotice.content"
+                rows="8"
+                class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white resize-none"
+                placeholder="공지사항 내용을 입력하세요"
+              ></textarea>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                등록자
+              </label>
+              <input
+                v-model="newNotice.author"
+                type="text"
+                class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+              />
+            </div>
+          </div>
+
+          <div class="flex gap-3 mt-6">
+            <button
+              @click="addNotice"
+              class="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            >
+              등록
+            </button>
+            <button
+              @click="closeAddNoticeModal"
+              class="flex-1 px-6 py-3 bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors font-medium"
+            >
+              취소
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 공지사항 상세보기 모달 -->
+    <div
+      v-if="showNoticeModal && selectedNotice"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+      @click.self="closeNoticeModal"
+    >
+      <div
+        class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+      >
+        <div class="p-6">
+          <div class="flex items-start justify-between mb-6">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white pr-4">
+              {{ selectedNotice.title }}
+            </h3>
+            <button
+              @click="closeNoticeModal"
+              class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 flex-shrink-0"
+            >
+              <i class="fi fi-rr-cross text-xl"></i>
+            </button>
+          </div>
+
+          <div class="space-y-4 mb-6">
+            <div class="flex gap-4 text-sm text-gray-600 dark:text-gray-400">
+              <div>
+                <span class="font-medium">등록자:</span>
+                <span class="ml-2">{{ selectedNotice.author }}</span>
+              </div>
+              <div>
+                <span class="font-medium">등록일:</span>
+                <span class="ml-2">{{ selectedNotice.createdAt }}</span>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-200 dark:border-slate-700 pt-4">
+              <p class="text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">
+                {{ selectedNotice.content }}
+              </p>
+            </div>
+          </div>
+
+          <button
+            @click="closeNoticeModal"
+            class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+          >
+            확인
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted, computed } from 'vue'
+import { onMounted, computed, ref } from 'vue'
 import { Bar } from 'vue-chartjs'
 import {
   Chart as ChartJS,
@@ -404,6 +518,49 @@ import {
 import { useDataStore } from '@/stores/dataStore'
 import ComStatusChip from '@/components/common/ComStatusChip.vue'
 import ComCard from '@/components/common/ComCard.vue'
+
+// 공지사항 데이터
+const notices = ref([
+  {
+    id: 1,
+    title: '시스템 점검 안내',
+    content:
+      '2024년 12월 10일 새벽 2시부터 4시까지 시스템 점검이 예정되어 있습니다. 해당 시간 동안 서비스 이용이 제한될 수 있습니다.',
+    author: '관리자',
+    createdAt: '2024-12-04 14:30:00',
+    isRead: false,
+  },
+  {
+    id: 2,
+    title: '새로운 기능 업데이트',
+    content:
+      'GigStash에 새로운 예약 알림 기능이 추가되었습니다. 예약 시간 30분 전에 자동으로 알림을 받아보실 수 있습니다.',
+    author: '운영팀',
+    createdAt: '2024-12-03 10:15:00',
+    isRead: false,
+  },
+  {
+    id: 3,
+    title: '연말 이벤트 안내',
+    content:
+      '12월 한 달간 모든 회원님들께 특별 할인 혜택을 제공합니다. 자세한 내용은 이벤트 페이지를 확인해주세요.',
+    author: '마케팅팀',
+    createdAt: '2024-12-01 09:00:00',
+    isRead: true,
+  },
+])
+
+// 모달 상태
+const showNoticeModal = ref(false)
+const selectedNotice = ref(null)
+const showAddNoticeModal = ref(false)
+
+// 새 공지사항 폼
+const newNotice = ref({
+  title: '',
+  content: '',
+  author: '관리자',
+})
 
 // Chart.js 등록
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
@@ -598,6 +755,61 @@ const getMembershipClass = (level) => {
     bronze: 'bg-orange-600 text-white',
   }
   return classes[level] || 'bg-gray-200 text-black'
+}
+
+// 공지사항 관련 함수
+const openNoticeDetail = (notice) => {
+  selectedNotice.value = notice
+  showNoticeModal.value = true
+}
+
+const closeNoticeModal = () => {
+  if (selectedNotice.value && !selectedNotice.value.isRead) {
+    selectedNotice.value.isRead = true
+  }
+  showNoticeModal.value = false
+  selectedNotice.value = null
+}
+
+const openAddNoticeModal = () => {
+  newNotice.value = {
+    title: '',
+    content: '',
+    author: '관리자',
+  }
+  showAddNoticeModal.value = true
+}
+
+const closeAddNoticeModal = () => {
+  showAddNoticeModal.value = false
+}
+
+const addNotice = () => {
+  if (!newNotice.value.title.trim() || !newNotice.value.content.trim()) {
+    alert('제목과 내용을 입력해주세요.')
+    return
+  }
+
+  const now = new Date()
+  const newNoticeItem = {
+    id: notices.value.length + 1,
+    title: newNotice.value.title,
+    content: newNotice.value.content,
+    author: newNotice.value.author,
+    createdAt: now.toISOString().slice(0, 19).replace('T', ' '),
+    isRead: false,
+  }
+
+  notices.value.unshift(newNoticeItem)
+  closeAddNoticeModal()
+}
+
+// 새 글 여부 확인 (최근 24시간 이내)
+const isNewNotice = (createdAt) => {
+  const now = new Date()
+  const noticeDate = new Date(createdAt)
+  const hoursDiff = (now - noticeDate) / (1000 * 60 * 60)
+  return hoursDiff <= 24
 }
 
 // 스토어에서 데이터를 가져오므로 별도의 로드가 필요 없음
