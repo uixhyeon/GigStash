@@ -69,7 +69,7 @@
           v-for="(day, index) in ['일', '월', '화', '수', '목', '금', '토']"
           :key="day"
           :class="[
-            'text-center font-semibold text-sm',
+            'text-center font-semibold text-xs',
             index === 0
               ? 'text-red-500 dark:text-red-400'
               : index === 6

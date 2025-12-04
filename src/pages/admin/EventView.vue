@@ -19,8 +19,8 @@
       <!-- 필터 및 테이블 섹션 -->
       <div class="xl:col-span-4 2xl:col-span-4 flex flex-col min-h-0">
         <!-- 행사 목록 헤더 (제목 + 필터) -->
-        <div class="flex justify-between gap-4 mb-4 items-center">
-          <h2 class="text-lg font-semibold text-gray-900 dark:text-table-header-text">행사 목록</h2>
+        <div class="flex justify-between gap-4 mb-3 items-center">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-table-header-text">행사 목록</h3>
 
           <!-- 필터 조건 -->
           <div class="flex items-center gap-3">
