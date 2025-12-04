@@ -4,19 +4,16 @@
 
     <!-- 통계 카드 -->
     <div class="mb-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <section>
-        <div class="mb-8">
-          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-            전체 공지 사항
-            <i class="fi fi-rr-info text-lg align-middle flex-shrink-0"></i>
-          </h2>
+      <section class="flex flex-col">
+        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+          전체 공지 사항
+          <i class="fi fi-rr-info text-lg align-middle flex-shrink-0"></i>
+        </h2>
 
-          <div class="max-w-full overflow-x-auto scrollbar-hide">
-            <table
-              class="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden text-[10px] sm:text-xs min-w-max"
-              style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-            >
-              <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
+        <div class="flex-1 max-w-full overflow-hidden rounded-2xl" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)">
+          <div class="h-full overflow-y-auto scrollbar-hide bg-white dark:bg-slate-800 rounded-2xl">
+            <table class="w-full text-[10px] sm:text-xs min-w-max">
+              <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark z-10">
                 <tr>
                   <th
                     class="ml-2 text-left px-1 sm:px-2 py-1 sm:py-2 font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
@@ -75,36 +72,6 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-            보관함 알람
-          </h2>
-          <!-- 미사용 -->
-          <div
-            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
-            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-          >
-            <div class="flex justify-between items-start gap-2">
-              <div class="min-w-0 flex-1">
-                <div
-                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
-                >
-                  미사용
-                </div>
-                <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-blue-600 dark:text-blue-400"
-                >
-                  {{ stats.available }}
-                </div>
-                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  현재 가용
-                </div>
-              </div>
-              <i class="fi fi-rr-box text-lg sm:text-xl flex-shrink-0" style="color: #3b82f6"></i>
-            </div>
           </div>
         </div>
       </section>
@@ -206,10 +173,10 @@
         <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
           고객 분석
         </h2>
-        <div class="grid grid-cols-2 gap-3 mb-4">
-          <!-- 재방문율 -->
+        <div class="grid grid-cols-1 gap-3 mb-4">
+          <!-- 현재 이용자 수 -->
           <div
-            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-purple-100 dark:border-purple-900/30"
             style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
           >
             <div class="flex justify-between items-start gap-2">
@@ -217,48 +184,18 @@
                 <div
                   class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
                 >
-                  재방문율
+                  현재 이용자 수
                 </div>
                 <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-blue-600 dark:text-blue-400"
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-purple-600 dark:text-purple-400"
                 >
-                  {{ repeatVisitRate }}%
+                  {{ stats.inUse }}
                 </div>
                 <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  어제 대비 <span class="text-blue-600 dark:text-blue-400 font-medium">+12%</span>
+                  현재 보관함 사용 중
                 </div>
               </div>
-              <i class="fi fi-rr-users text-lg sm:text-xl flex-shrink-0" style="color: #3b82f6"></i>
-            </div>
-          </div>
-
-          <!-- 재방문율 -->
-
-          <!-- 신규 고객 비율 -->
-          <div
-            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30 col-span-2 sm:col-span-1"
-            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-          >
-            <div class="flex justify-between items-start gap-2">
-              <div class="min-w-0 flex-1">
-                <div
-                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
-                >
-                  신규 고객
-                </div>
-                <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-green-600 dark:text-green-400"
-                >
-                  {{ newCustomerCount }}
-                </div>
-                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  이번달 신규 ({{ newCustomerPercentage }}%)
-                </div>
-              </div>
-              <i
-                class="fi fi-rr-user-add text-lg sm:text-xl flex-shrink-0"
-                style="color: #16a34a"
-              ></i>
+              <i class="fi fi-rr-users text-lg sm:text-xl flex-shrink-0" style="color: #a855f7"></i>
             </div>
           </div>
         </div>
@@ -491,12 +428,89 @@
             </div>
           </div>
 
-          <button
-            @click="closeNoticeModal"
-            class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
-          >
-            확인
-          </button>
+          <div class="flex justify-end gap-3">
+            <button
+              v-if="isOwnNotice(selectedNotice)"
+              @click="openEditNoticeModal(selectedNotice)"
+              class="px-6 py-3 bg-transparent border-2 border-blue-600 text-blue-600 dark:text-blue-500 dark:border-blue-500 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors font-medium"
+            >
+              수정
+            </button>
+            <button
+              v-if="isOwnNotice(selectedNotice)"
+              @click="deleteNotice(selectedNotice.id)"
+              class="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium"
+            >
+              삭제
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 공지사항 수정 모달 -->
+    <div
+      v-if="showEditNoticeModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+      @click.self="closeEditNoticeModal"
+    >
+      <div
+        class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+      >
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-6 text-gray-900 dark:text-white">공지사항 수정</h3>
+
+          <div class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                제목
+              </label>
+              <input
+                v-model="editNotice.title"
+                type="text"
+                class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+                placeholder="공지사항 제목을 입력하세요"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                내용
+              </label>
+              <textarea
+                v-model="editNotice.content"
+                rows="8"
+                class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white resize-none"
+                placeholder="공지사항 내용을 입력하세요"
+              ></textarea>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                등록자
+              </label>
+              <input
+                v-model="editNotice.author"
+                type="text"
+                class="w-full px-4 py-2 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-slate-700 dark:text-white"
+              />
+            </div>
+          </div>
+
+          <div class="flex gap-3 mt-6">
+            <button
+              @click="updateNotice"
+              class="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            >
+              저장
+            </button>
+            <button
+              @click="closeEditNoticeModal"
+              class="flex-1 px-6 py-3 bg-gray-200 dark:bg-slate-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors font-medium"
+            >
+              취소
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -554,6 +568,7 @@ const notices = ref([
 const showNoticeModal = ref(false)
 const selectedNotice = ref(null)
 const showAddNoticeModal = ref(false)
+const showEditNoticeModal = ref(false)
 
 // 새 공지사항 폼
 const newNotice = ref({
@@ -561,6 +576,17 @@ const newNotice = ref({
   content: '',
   author: '관리자',
 })
+
+// 수정할 공지사항
+const editNotice = ref({
+  id: null,
+  title: '',
+  content: '',
+  author: '',
+})
+
+// 현재 로그인한 사용자 (실제로는 인증 시스템에서 가져와야 함)
+const currentUser = ref('관리자')
 
 // Chart.js 등록
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
@@ -810,6 +836,65 @@ const isNewNotice = (createdAt) => {
   const noticeDate = new Date(createdAt)
   const hoursDiff = (now - noticeDate) / (1000 * 60 * 60)
   return hoursDiff <= 24
+}
+
+// 공지사항 수정 모달 열기
+const openEditNoticeModal = (notice) => {
+  editNotice.value = {
+    id: notice.id,
+    title: notice.title,
+    content: notice.content,
+    author: notice.author,
+  }
+  showNoticeModal.value = false
+  showEditNoticeModal.value = true
+}
+
+// 공지사항 수정 모달 닫기
+const closeEditNoticeModal = () => {
+  showEditNoticeModal.value = false
+  editNotice.value = {
+    id: null,
+    title: '',
+    content: '',
+    author: '',
+  }
+}
+
+// 공지사항 수정 저장
+const updateNotice = () => {
+  if (!editNotice.value.title.trim() || !editNotice.value.content.trim()) {
+    alert('제목과 내용을 입력해주세요.')
+    return
+  }
+
+  const index = notices.value.findIndex((n) => n.id === editNotice.value.id)
+  if (index !== -1) {
+    notices.value[index] = {
+      ...notices.value[index],
+      title: editNotice.value.title,
+      content: editNotice.value.content,
+      author: editNotice.value.author,
+    }
+  }
+
+  closeEditNoticeModal()
+}
+
+// 공지사항 삭제
+const deleteNotice = (noticeId) => {
+  if (confirm('정말로 이 공지사항을 삭제하시겠습니까?')) {
+    const index = notices.value.findIndex((n) => n.id === noticeId)
+    if (index !== -1) {
+      notices.value.splice(index, 1)
+    }
+    showNoticeModal.value = false
+  }
+}
+
+// 본인이 작성한 공지사항인지 확인
+const isOwnNotice = (notice) => {
+  return notice.author === currentUser.value
 }
 
 // 스토어에서 데이터를 가져오므로 별도의 로드가 필요 없음

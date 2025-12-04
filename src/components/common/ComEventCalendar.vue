@@ -1,13 +1,31 @@
 <template>
   <div>
     <!-- 달력 헤더 -->
-    <div class="mb-6 flex justify-between items-center">
-      <div class="flex justify-between items-end gap-3 w-full">
+    <div class="mb-4">
+      <!-- 기존 헤더 -->
+      <div class="flex justify-between gap-4 items-center">
         <h3 class="text-lg font-semibold text-gray-900 dark:text-table-header-text">
           {{ currentMonth }}
         </h3>
         <div class="flex gap-2 items-center">
-          <p class="text-sm text-gray-600 dark:text-dark-text-secondary ml-auto">
+          <!-- 년/월 드롭다운 -->
+          <div class="flex items-center gap-2">
+            <select
+              :value="selectedYear"
+              @change="handleYearChange"
+              class="w-15 h-7 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+            >
+              <option v-for="year in yearOptions" :key="year" :value="year">{{ year }}년</option>
+            </select>
+            <select
+              :value="selectedMonth"
+              @change="handleMonthChange"
+              class="w-15 h-7 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+            >
+              <option v-for="month in 12" :key="month" :value="month">{{ month }}월</option>
+            </select>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-dark-text-secondary">
             총 {{ currentMonthEventCount }} 건
           </p>
           <button
@@ -38,14 +56,14 @@
       </div>
     </div>
 
-    <!-- 달력 그리드 -->
+    <!-- 달력 그리드 ==================================================================-->
     <div
       class="px-6 bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm"
       style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
     >
       <!-- 요일 헤더 -->
       <div
-        class="grid grid-cols-7 gap-2 mb-2 flex-shrink-0 -mx-6 px-6 py-3 bg-table-header-bg dark:bg-table-header-bg-dark rounded-t-2xl"
+        class="grid grid-cols-7 gap-2 flex-shrink-0 -mx-6 px-6 py-3 bg-table-header-bg dark:bg-table-header-bg-dark rounded-t-2xl"
       >
         <div
           v-for="(day, index) in ['일', '월', '화', '수', '목', '금', '토']"
@@ -168,6 +186,42 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['update:currentDate', 'update:selectedDate', 'date-select'])
+
+// 년도 옵션 (현재 년도 기준 ±5년)
+const yearOptions = computed(() => {
+  const currentYear = new Date().getFullYear()
+  const years = []
+  for (let i = currentYear - 5; i <= currentYear + 5; i++) {
+    years.push(i)
+  }
+  return years
+})
+
+// 선택된 년도
+const selectedYear = computed(() => {
+  return props.currentDate ? props.currentDate.getFullYear() : new Date().getFullYear()
+})
+
+// 선택된 월 (1-12)
+const selectedMonth = computed(() => {
+  return props.currentDate ? props.currentDate.getMonth() + 1 : new Date().getMonth() + 1
+})
+
+// 년도 변경 핸들러
+const handleYearChange = (event) => {
+  const newYear = parseInt(event.target.value)
+  const newDate = new Date(props.currentDate)
+  newDate.setFullYear(newYear)
+  emit('update:currentDate', newDate)
+}
+
+// 월 변경 핸들러
+const handleMonthChange = (event) => {
+  const newMonth = parseInt(event.target.value) - 1
+  const newDate = new Date(props.currentDate)
+  newDate.setMonth(newMonth)
+  emit('update:currentDate', newDate)
+}
 
 // 현재 월 표시
 const currentMonth = computed(() => {

@@ -111,7 +111,7 @@
     >
       <!-- 상단 헤더 -->
       <header
-        class="sticky top-0 z-20 bg-gray-50 dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700 px-6 h-16 flex items-center shadow-sm flex-shrink-0"
+        class="sticky top-0 z-20 bg-gray-50 dark:bg-slate-800 px-6 h-16 flex items-center flex-shrink-0"
       >
         <div class="flex justify-between items-center w-full">
           <!-- 왼쪽: 토글 버튼 + 페이지 타이틀 -->

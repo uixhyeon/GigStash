@@ -8,7 +8,7 @@
       style="margin-left: auto; margin-right: auto"
     >
       <!-- 달력 섹션 -->
-      <div class="xl:col-span-2 2xl:col-span-3">
+      <div class="xl:col-span-2 2xl:col-span-3 flex flex-col min-h-0">
         <ComEventCalendar
           v-model:current-date="currentDate"
           v-model:selected-date="selectedDate"
@@ -17,7 +17,7 @@
       </div>
 
       <!-- 필터 및 테이블 섹션 -->
-      <div class="xl:col-span-4 2xl:col-span-4">
+      <div class="xl:col-span-4 2xl:col-span-4 flex flex-col min-h-0">
         <!-- 행사 목록 헤더 (제목 + 필터) -->
         <div class="flex justify-between gap-4 mb-4 items-center">
           <h2 class="text-lg font-semibold text-gray-900 dark:text-table-header-text">행사 목록</h2>
@@ -62,20 +62,6 @@
               <i class="fi fi-br-search text-gray-600 dark:text-gray-300"></i>
             </div>
 
-            <!-- 월 선택 -->
-            <div class="flex items-center gap-1.5">
-              <label
-                class="text-xs font-medium text-gray-700 dark:text-dark-text-secondary whitespace-nowrap"
-              >
-                월
-              </label>
-              <input
-                v-model="monthFilter"
-                type="month"
-                class="px-2.5 py-1.5 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
-              />
-            </div>
-
             <!-- 필터 초기화 버튼 -->
             <button
               @click="resetFilters"
@@ -89,35 +75,35 @@
 
         <!-- 행사 list =============================================================-->
         <div
-          class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden max-w-full"
+          class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden max-w-full flex-1 flex flex-col min-h-0"
           style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
         >
-          <div class="overflow-x-auto overflow-y-auto max-h-[700px] scrollbar-hide w-full">
+          <div class="overflow-x-auto overflow-y-auto scrollbar-hide w-full flex-1">
             <table class="w-full text-xs min-w-max">
               <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
-                <tr class="h-10">
+                <tr class="h-10 mx-6">
                   <th
-                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap"
+                    class="px-6 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap"
                   >
                     No
                   </th>
                   <th
-                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    class="px-6 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
                     ID
                   </th>
                   <th
-                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    class="px-6 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
                     행사명
                   </th>
                   <th
-                    class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    class="px-6 py-3 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                   >
                     행사장소
                   </th>
                   <th
-                    class="px-2 py-2 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    class="px-6 py-3 text-center font-semibold cursor-pointer hover:opacity-80 transition-all text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                     @click="toggleSort('startDate')"
                   >
                     <div class="flex items-center justify-center gap-1">
