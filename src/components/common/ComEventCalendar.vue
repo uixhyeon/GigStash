@@ -190,6 +190,26 @@
           </button>
         </div>
       </div>
+
+      <!-- 범례 (Legend) -->
+      <div class="flex justify-end items-center gap-4 py-4 px-2 text-xs">
+        <div class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-blue-500 dark:bg-blue-400"></span>
+          <span class="text-gray-700 dark:text-gray-300">예정</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-teal-500 dark:bg-teal-400"></span>
+          <span class="text-gray-700 dark:text-gray-300">진행중</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-amber-500 dark:bg-amber-400"></span>
+          <span class="text-gray-700 dark:text-gray-300">취소</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-slate-600 dark:bg-slate-400"></span>
+          <span class="text-gray-700 dark:text-gray-300">종료</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
