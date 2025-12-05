@@ -17,7 +17,8 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(npm run data:validate:*)",
-      "Bash(npm run data:test:*)"
+      "Bash(npm run data:test:*)",
+      "Bash(git fetch:*)"
     ],
     "deny": [],
     "ask": []
