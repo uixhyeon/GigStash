@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-6 bg-background dark:bg-dark-bg h-[100vh - 64px] scrollbar-hide flex flex-col justify-start"
+    class="px-6 bg-background dark:bg-dark-bg h-[calc(100vh-130px)] scrollbar-hide flex flex-col justify-start"
   >
     <!-- 달력과 테이블 병렬 레이아웃 -->
     <div
@@ -72,13 +72,12 @@
             </button>
           </div>
         </div>
-
         <!-- 행사 list =============================================================-->
         <div
-          class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden max-w-full flex-1 flex flex-col min-h-0"
+          class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm max-w-full flex-1 flex flex-col min-h-0 overflow-y-auto"
           style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
         >
-          <div class="overflow-x-auto overflow-y-auto scrollbar-hide w-full flex-1">
+          <div class="overflow-x-auto scrollbar-hide w-full">
             <table class="w-full text-xs min-w-max">
               <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
                 <tr class="h-10 -mx-6">

@@ -120,8 +120,10 @@
           >
             <span
               :class="[
-                'text-sm font-medium rounded-full flex items-center justify-center',
-                date.isToday ? 'w-8 h-8 bg-red-500 text-white' : '',
+                'text-sm w-8 h-8 font-medium rounded-full flex items-center justify-center',
+                date.isToday
+                  ? 'text-[10px] px-1 py-0.5 rounded bg-teal-100 dark:bg-teal-500/20 text-teal-700 dark:text-accent-400 font-medium whitespace-nowrap'
+                  : '',
               ]"
             >
               {{ date.date }}
