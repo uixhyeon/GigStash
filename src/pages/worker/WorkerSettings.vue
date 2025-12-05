@@ -63,6 +63,7 @@
       <!-- 버튼 영역 -->
       <div class="mt-4 mb-4 flex justify-end items-center gap-3">
         <!-- 다크모드 토글 버튼 -->
+
         <button
           @click="toggleDarkMode"
           class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-lg text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-gray-200 dark:border-gray-700"
@@ -70,7 +71,7 @@
           <i :class="isDark ? 'fi fi-rr-sun' : 'fi fi-rr-moon'"></i>
           <span>{{ isDark ? 'Light' : 'Dark' }}</span>
         </button>
-        
+
         <!-- 로그아웃 버튼 -->
         <button
           @click="handleLogout"
