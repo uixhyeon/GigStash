@@ -58,8 +58,8 @@
 
     <!-- 달력 그리드 ==================================================================-->
     <div
-      class="px-6 bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm"
-      style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+      class="px-6 bg-gradient-to-br from-white to-gray-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl shadow-lg"
+      style="box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15)"
     >
       <!-- 요일 헤더 -->
       <div
