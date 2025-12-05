@@ -51,470 +51,407 @@
       </div>
     </div>
 
-    <!-- 왼쪽/오른쪽 2분할 레이아웃 -->
-    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
-      <!-- 왼쪽 컬럼 -->
-      <div class="space-y-2">
-        <!-- 주요 지표 -->
-        <section>
+    <!-- 2x2 그리드 레이아웃 -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <!-- 1. 이번 달 주요 지표 -->
+      <section>
+        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+          이번 달 주요 지표
+        </h2>
+        <div class="flex flex-wrap gap-3 mb-4">
+          <!-- 이용률 카드 -->
+          <div
+            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+          >
+            <div>
+              <div
+                class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400"
+                style="font-size: 16px; font-weight: bold"
+              >
+                이용률
+              </div>
+              <div
+                class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-table-header-text"
+                style="font-size: 30px"
+              >
+                {{ keyMetrics.utilizationRate }}%
+              </div>
+              <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                전월 대비
+                <span
+                  class="font-medium"
+                  :style="{ color: getChangeColor(keyMetrics.utilizationChange) }"
+                >
+                  <i :class="getChangeIcon(keyMetrics.utilizationChange)" class="mr-1"></i
+                  >{{ Math.abs(keyMetrics.utilizationChange) }}%
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 재방문율 카드 -->
+          <div
+            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30"
+          >
+            <div>
+              <div
+                class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400"
+                style="font-size: 16px; font-weight: bold"
+              >
+                재방문율
+              </div>
+              <div
+                class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-table-header-text"
+                style="font-size: 30px"
+              >
+                {{ additionalMetrics.revisitRate }}%
+              </div>
+              <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                전월 대비
+                <span
+                  class="font-medium"
+                  :style="{ color: getChangeColor(additionalMetrics.revisitChange) }"
+                >
+                  <i :class="getChangeIcon(additionalMetrics.revisitChange)" class="mr-1"></i
+                  >{{ Math.abs(additionalMetrics.revisitChange) }}%
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 배송선택률 카드 -->
+          <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-300/90 to-amber-400/95 text-gray-800" -->
+          <div
+            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-yellow-100 dark:border-yellow-900/30"
+          >
+            <div>
+              <div
+                class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400"
+                style="font-size: 16px; font-weight: bold"
+              >
+                배송선택률
+              </div>
+              <div
+                class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-table-header-text"
+                style="font-size: 30px"
+              >
+                {{ additionalMetrics.deliveryRate }}%
+              </div>
+              <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                전월 대비
+                <span
+                  class="font-medium"
+                  :style="{ color: getChangeColor(additionalMetrics.deliveryChange) }"
+                >
+                  <i :class="getChangeIcon(additionalMetrics.deliveryChange)" class="mr-1"></i
+                  >{{ Math.abs(additionalMetrics.deliveryChange) }}%
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 매출 & 이용객 카드 -->
+        <div class="flex flex-wrap gap-3">
+          <!-- 이용객 카드 -->
+          <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-gray-400/90 to-gray-600/95" -->
+          <div
+            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-100/90 to-yellow-300/95"
+          >
+            <div
+              class="font-bold opacity-90 text-gray-900 dark:text-table-header-text"
+              style="font-size: 16px"
+            >
+              이용객
+            </div>
+            <div class="text-right">
+              <div
+                class="mt-1 sm:mt-2 font-bold"
+                style="font-size: 16px"
+                :style="{ color: getChangeColor(keyMetrics.usersChange) }"
+              >
+                <i :class="getChangeIcon(keyMetrics.usersChange)" class="mr-1"></i
+                >{{ Math.abs(keyMetrics.usersChange) }}%
+              </div>
+              <div
+                class="font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text"
+                style="font-size: 30px"
+              >
+                {{ formatNumber(keyMetrics.users) }}명
+              </div>
+            </div>
+          </div>
+
+          <!-- 매출 카드 -->
+          <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-400/90 to-blue-600/95 text-white" -->
+
+          <div
+            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95"
+          >
+            <div
+              class="font-bold opacity-90 text-gray-900 dark:text-gray-900"
+              style="font-size: 16px"
+            >
+              매출
+            </div>
+            <div class="text-right">
+              <div
+                class="mt-1 sm:mt-2 font-bold"
+                style="font-size: 16px"
+                :style="{ color: getChangeColor(keyMetrics.revenueChange) }"
+              >
+                <i :class="getChangeIcon(keyMetrics.revenueChange)" class="mr-1"></i
+                >{{ Math.abs(keyMetrics.revenueChange) }}%
+              </div>
+              <div
+                class="font-bold mt-1 sm:mt-2 text-gray-900 dark:text-gray-900"
+                style="font-size: 30px"
+              >
+                {{ formatCurrency(keyMetrics.revenue) }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. 피크타임 분석 -->
+      <section>
+        <h2
+          class="text-lg items-center font-semibold mb-4 text-gray-900 dark:text-table-header-text"
+        >
+          피크타임 분석
+        </h2>
+
+        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 mb-4">
+          <!-- 범례와 셀렉트 (가로 배치) -->
+          <div class="flex items-baseline justify-between gap-4 mb-3">
+            <!-- 커스텀 범례 -->
+            <div class="flex items-center gap-4">
+              <div class="flex items-center gap-1.5">
+                <div class="w-3 h-3 rounded-full" style="background-color: #f59e0b"></div>
+                <span class="text-sm text-slate-700 dark:text-slate-300 font-medium">맡기기</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <div class="w-3 h-3 rounded-full" style="background-color: #3b82f6"></div>
+                <span class="text-sm text-slate-700 dark:text-slate-300 font-medium">찾기</span>
+              </div>
+            </div>
+            <!-- 셀렉트 박스 -->
+            <select
+              v-model="selectedEventTypeForPeakTime"
+              class="px-3 py-1.5 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-600 text-sm focus:outline-none"
+            >
+              <option value="">전체</option>
+              <option v-for="eventType in availableEventTypes" :key="eventType" :value="eventType">
+                {{ eventType }}
+              </option>
+            </select>
+          </div>
+          <div class="h-64 flex flex-col items-center gap-2 flex-1 w-full min-w-0">
+            <canvas ref="peakTimeChartRef"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 행사 유형별 매출 & 사이즈별 비율 (가로 배열) -->
+      <div class="flex gap-3 flex-col xl:flex-row xl:items-stretch">
+        <!-- 행사 유형별 매출 -->
+        <section class="flex-1 min-w-0 flex flex-col">
           <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-            이번 달 주요 지표
+            행사 유형별 매출
           </h2>
-          <div class="flex flex-wrap gap-3 mb-4">
-            <!-- 이용률 카드 -->
-            <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
-            >
-              <div>
-                <div
-                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400"
-                  style="font-size: 16px; font-weight: bold"
-                >
-                  이용률
-                </div>
-                <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-table-header-text"
-                  style="font-size: 30px"
-                >
-                  {{ keyMetrics.utilizationRate }}%
-                </div>
-                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  전월 대비
-                  <span
-                    class="font-medium"
-                    :style="{ color: getChangeColor(keyMetrics.utilizationChange) }"
-                  >
-                    <i :class="getChangeIcon(keyMetrics.utilizationChange)" class="mr-1"></i
-                    >{{ Math.abs(keyMetrics.utilizationChange) }}%
-                  </span>
-                </div>
-              </div>
+          <div
+            class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 md:p-4 lg:p-6"
+            style="height: 256px"
+          >
+            <!-- 가로 막대 그래프 (높이 절반으로 축소) -->
+            <div style="height: 100px; position: relative">
+              <canvas ref="eventTypeChartRef"></canvas>
             </div>
-
-            <!-- 재방문율 카드 -->
-            <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30"
-            >
-              <div>
-                <div
-                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400"
-                  style="font-size: 16px; font-weight: bold"
-                >
-                  재방문율
-                </div>
-                <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-table-header-text"
-                  style="font-size: 30px"
-                >
-                  {{ additionalMetrics.revisitRate }}%
-                </div>
-                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  전월 대비
-                  <span
-                    class="font-medium"
-                    :style="{ color: getChangeColor(additionalMetrics.revisitChange) }"
-                  >
-                    <i :class="getChangeIcon(additionalMetrics.revisitChange)" class="mr-1"></i
-                    >{{ Math.abs(additionalMetrics.revisitChange) }}%
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <!-- 배송선택률 카드 -->
-            <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-300/90 to-amber-400/95 text-gray-800" -->
-            <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-yellow-100 dark:border-yellow-900/30"
-            >
-              <div>
-                <div
-                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400"
-                  style="font-size: 16px; font-weight: bold"
-                >
-                  배송선택률
-                </div>
-                <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-table-header-text"
-                  style="font-size: 30px"
-                >
-                  {{ additionalMetrics.deliveryRate }}%
-                </div>
-                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  전월 대비
-                  <span
-                    class="font-medium"
-                    :style="{ color: getChangeColor(additionalMetrics.deliveryChange) }"
-                  >
-                    <i :class="getChangeIcon(additionalMetrics.deliveryChange)" class="mr-1"></i
-                    >{{ Math.abs(additionalMetrics.deliveryChange) }}%
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 매출 & 이용객 카드 -->
-          <div class="flex flex-wrap gap-3">
-            <!-- 이용객 카드 -->
-            <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-gray-400/90 to-gray-600/95" -->
-            <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-100/90 to-yellow-300/95"
-            >
+            <!-- 아래 범례 -->
+            <div class="mt-4 space-y-2">
               <div
-                class="font-bold opacity-90 text-gray-900 dark:text-table-header-text"
-                style="font-size: 16px"
+                v-for="(item, index) in eventTypeSales"
+                :key="item.type"
+                class="flex items-center justify-between gap-2 cursor-pointer"
+                @mouseenter="highlightEventType(index)"
+                @mouseleave="clearHighlightEventType"
               >
-                이용객
-              </div>
-              <div class="text-right">
-                <div
-                  class="mt-1 sm:mt-2 font-bold"
-                  style="font-size: 16px"
-                  :style="{ color: getChangeColor(keyMetrics.usersChange) }"
-                >
-                  <i :class="getChangeIcon(keyMetrics.usersChange)" class="mr-1"></i
-                  >{{ Math.abs(keyMetrics.usersChange) }}%
+                <div class="flex items-center gap-2 min-w-0">
+                  <span
+                    class="w-3 h-3 rounded-full flex-shrink-0"
+                    :style="{ backgroundColor: item.color }"
+                  ></span>
+                  <span class="text-[11px] text-slate-700 dark:text-slate-200 font-medium truncate">
+                    {{ item.type }}
+                  </span>
                 </div>
-                <div
-                  class="font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text"
-                  style="font-size: 30px"
-                >
-                  {{ formatNumber(keyMetrics.users) }}명
-                </div>
-              </div>
-            </div>
-
-            <!-- 매출 카드 -->
-            <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-400/90 to-blue-600/95 text-white" -->
-
-            <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95"
-            >
-              <div
-                class="font-bold opacity-90 text-gray-900 dark:text-gray-900"
-                style="font-size: 16px"
-              >
-                매출
-              </div>
-              <div class="text-right">
-                <div
-                  class="mt-1 sm:mt-2 font-bold"
-                  style="font-size: 16px"
-                  :style="{ color: getChangeColor(keyMetrics.revenueChange) }"
-                >
-                  <i :class="getChangeIcon(keyMetrics.revenueChange)" class="mr-1"></i
-                  >{{ Math.abs(keyMetrics.revenueChange) }}%
-                </div>
-                <div
-                  class="font-bold mt-1 sm:mt-2 text-gray-900 dark:text-gray-900"
-                  style="font-size: 30px"
-                >
-                  {{ formatCurrency(keyMetrics.revenue) }}
-                </div>
+                <span class="text-[11px] font-semibold text-slate-900 dark:text-slate-100">
+                  {{ formatCurrency(item.value) }}
+                </span>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- 이용객 & 매출 카드 (배경 없는 버전) -->
-        <section>
-          <div class="flex flex-wrap gap-3">
-            <!-- 이용객 카드 (배경 없음) -->
-            <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-100 dark:border-gray-700"
-            >
-              <div
-                class="font-bold opacity-90 text-gray-900 dark:text-table-header-text"
-                style="font-size: 16px"
-              >
-                이용객
-              </div>
-              <div class="text-right">
-                <div
-                  class="mt-1 sm:mt-2 font-bold"
-                  style="font-size: 16px"
-                  :style="{ color: getChangeColor(keyMetrics.usersChange) }"
-                >
-                  <i :class="getChangeIcon(keyMetrics.usersChange)" class="mr-1"></i
-                  >{{ Math.abs(keyMetrics.usersChange) }}%
+        <!-- 사이즈별 비율 -->
+        <section class="flex-1 min-w-0 flex flex-col">
+          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+            사이즈별 비율
+          </h2>
+          <div
+            class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 md:p-4 lg:p-6"
+            style="height: 256px"
+          >
+            <div class="flex flex-col items-center gap-4 h-full">
+              <!-- 도넛 차트 -->
+              <div class="flex items-center justify-center">
+                <div class="relative" style="width: 140px; height: 140px">
+                  <canvas
+                    ref="sizeRatioChartRef"
+                    style="
+                      display: block;
+                      width: 140px;
+                      height: 140px;
+                      position: relative;
+                      z-index: 1;
+                    "
+                  ></canvas>
                 </div>
-                <div class="font-bold mt-1 sm:mt-2" style="font-size: 30px; color: #ea580c">
-                  {{ formatNumber(keyMetrics.users) }}명
-                </div>
-              </div>
-            </div>
-
-            <!-- 매출 카드 (배경 없음) -->
-            <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-gray-100 dark:border-gray-700"
-            >
-              <div
-                class="font-bold opacity-90 text-gray-900 dark:text-table-header-text"
-                style="font-size: 16px"
-              >
-                매출
-              </div>
-              <div class="text-right">
-                <div
-                  class="mt-1 sm:mt-2 font-bold"
-                  style="font-size: 16px"
-                  :style="{ color: getChangeColor(keyMetrics.revenueChange) }"
-                >
-                  <i :class="getChangeIcon(keyMetrics.revenueChange)" class="mr-1"></i
-                  >{{ Math.abs(keyMetrics.revenueChange) }}%
-                </div>
-                <div class="font-bold mt-1 sm:mt-2" style="font-size: 30px; color: #2563eb">
-                  {{ formatCurrency(keyMetrics.revenue) }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- 행사 유형별 매출 & 사이즈별 비율 (가로 배열) -->
-        <div class="flex gap-3 flex-col xl:flex-row">
-          <!-- 행사 유형별 매출 -->
-          <section class="flex-1 min-w-0">
-            <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-              행사 유형별 매출
-            </h2>
-            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 md:p-4 lg:p-6">
-              <!-- 가로 막대 그래프 (높이 절반으로 축소) -->
-              <div style="height: 100px; position: relative">
-                <canvas ref="eventTypeChartRef"></canvas>
               </div>
               <!-- 아래 범례 -->
-              <div class="mt-4 space-y-2">
+              <div class="w-full space-y-2">
                 <div
-                  v-for="(item, index) in eventTypeSales"
-                  :key="item.type"
+                  v-for="(segment, index) in sizeRatio"
+                  :key="segment.size"
                   class="flex items-center justify-between gap-2 cursor-pointer"
-                  @mouseenter="highlightEventType(index)"
-                  @mouseleave="clearHighlightEventType"
+                  @mouseenter="highlightSizeSegment(index)"
+                  @mouseleave="clearHighlightSizeSegment"
                 >
                   <div class="flex items-center gap-2 min-w-0">
                     <span
                       class="w-3 h-3 rounded-full flex-shrink-0"
-                      :style="{ backgroundColor: item.color }"
+                      :style="{ backgroundColor: segment.color }"
                     ></span>
                     <span
                       class="text-[11px] text-slate-700 dark:text-slate-200 font-medium truncate"
                     >
-                      {{ item.type }}
+                      {{ segment.size }}
                     </span>
                   </div>
                   <span class="text-[11px] font-semibold text-slate-900 dark:text-slate-100">
-                    {{ formatCurrency(item.value) }}
+                    {{ segment.percentage }}%
                   </span>
                 </div>
               </div>
             </div>
-          </section>
-
-          <!-- 사이즈별 비율 -->
-          <section class="flex-1 min-w-0">
-            <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-              사이즈별 비율
-            </h2>
-            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 md:p-4 lg:p-6">
-              <div class="flex flex-col items-center gap-4" style="min-height: 200px">
-                <!-- 도넛 차트 -->
-                <div class="flex items-center justify-center">
-                  <div class="relative" style="width: 140px; height: 140px">
-                    <canvas
-                      ref="sizeRatioChartRef"
-                      style="
-                        display: block;
-                        width: 140px;
-                        height: 140px;
-                        position: relative;
-                        z-index: 1;
-                      "
-                    ></canvas>
-                  </div>
-                </div>
-                <!-- 아래 범례 -->
-                <div class="w-full space-y-2">
-                  <div
-                    v-for="(segment, index) in sizeRatio"
-                    :key="segment.size"
-                    class="flex items-center justify-between gap-2 cursor-pointer"
-                    @mouseenter="highlightSizeSegment(index)"
-                    @mouseleave="clearHighlightSizeSegment"
-                  >
-                    <div class="flex items-center gap-2 min-w-0">
-                      <span
-                        class="w-3 h-3 rounded-full flex-shrink-0"
-                        :style="{ backgroundColor: segment.color }"
-                      ></span>
-                      <span
-                        class="text-[11px] text-slate-700 dark:text-slate-200 font-medium truncate"
-                      >
-                        {{ segment.size }}
-                      </span>
-                    </div>
-                    <span class="text-[11px] font-semibold text-slate-900 dark:text-slate-100">
-                      {{ segment.percentage }}%
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      <!-- 오른쪽 컬럼 -->
-      <div class="space-y-2">
-        <!-- 피크타임 분석 -->
-        <section>
-          <h2
-            class="text-lg items-center font-semibold mb-4 text-gray-900 dark:text-table-header-text"
-          >
-            피크타임 분석
-          </h2>
-
-          <div
-            class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 mb-4"
-          >
-            <!-- 범례와 셀렉트 (가로 배치) -->
-            <div class="flex items-baseline justify-between gap-4 mb-3">
-              <!-- 커스텀 범례 -->
-              <div class="flex items-center gap-4">
-                <div class="flex items-center gap-1.5">
-                  <div class="w-3 h-3 rounded-full" style="background-color: #f59e0b"></div>
-                  <span class="text-sm text-slate-700 dark:text-slate-300 font-medium">맡기기</span>
-                </div>
-                <div class="flex items-center gap-1.5">
-                  <div class="w-3 h-3 rounded-full" style="background-color: #3b82f6"></div>
-                  <span class="text-sm text-slate-700 dark:text-slate-300 font-medium">찾기</span>
-                </div>
-              </div>
-              <!-- 셀렉트 박스 -->
-              <select
-                v-model="selectedEventTypeForPeakTime"
-                class="px-3 py-1.5 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg border border-slate-200 dark:border-slate-600 text-sm focus:outline-none"
-              >
-                <option value="">전체</option>
-                <option
-                  v-for="eventType in availableEventTypes"
-                  :key="eventType"
-                  :value="eventType"
-                >
-                  {{ eventType }}
-                </option>
-              </select>
-            </div>
-            <div class="h-64 flex flex-col items-center gap-2 flex-1 w-full min-w-0">
-              <canvas ref="peakTimeChartRef"></canvas>
-            </div>
           </div>
         </section>
+      </div>
 
-        <!-- 지역별 배송 -->
-        <section class="mb-4">
-          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
-            지역별 배송
-          </h2>
-          <div
-            class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 overflow-x-auto"
-          >
-            <!-- 히트맵과 Top 5를 가로 배치 -->
-            <div class="flex flex-col lg:flex-row gap-3 lg:items-start">
-              <!-- 히트맵 스타일 지도 -->
-              <div class="flex flex-col items-center gap-2 flex-1 w-full">
-                <!-- 3x3 그리드: 서울, 인천, 경기, 강원, 충청, 전라, 경북, 경남, 제주 -->
-                <div class="grid grid-cols-3 gap-2 w-full">
-                  <div
-                    v-for="(region, index) in deliveryHeatmap"
-                    :key="region.name"
-                    :class="[
-                      getHeatmapColor(region.count || 0),
-                      getHeatmapTextColor(region.count || 0),
-                    ]"
-                    class="h-20 w-full rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
-                    @click="selectRegion(region)"
-                    @mouseenter="
-                      (e) => {
-                        hoveredRegion = region
-                        const rect = e.currentTarget.getBoundingClientRect()
-                        regionTooltipPosition.x = rect.left + rect.width / 2
-                        regionTooltipPosition.y = rect.top - 10
-                      }
-                    "
-                    @mouseleave="hoveredRegion = null"
-                  >
-                    <div class="font-bold text-xs sm:text-sm">
+      <!-- 4. 지역별 배송 -->
+      <section class="mb-4">
+        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+          지역별 배송
+        </h2>
+        <div
+          class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 overflow-x-auto"
+        >
+          <!-- 히트맵과 Top 5를 가로 배치 -->
+          <div class="flex flex-col lg:flex-row gap-3 lg:items-start">
+            <!-- 히트맵 스타일 지도 -->
+            <div class="flex flex-col items-center gap-2 flex-1 w-full">
+              <!-- 3x3 그리드: 서울, 인천, 경기, 강원, 충청, 전라, 경북, 경남, 제주 -->
+              <div class="grid grid-cols-3 gap-2 w-full">
+                <div
+                  v-for="(region, index) in deliveryHeatmap"
+                  :key="region.name"
+                  :class="[
+                    getHeatmapColor(region.count || 0),
+                    getHeatmapTextColor(region.count || 0),
+                  ]"
+                  class="h-20 w-full rounded-2xl flex flex-col items-center justify-center font-semibold cursor-pointer hover:opacity-90 hover:scale-105 transition-all text-center text-[9px] sm:text-[10px] px-1 relative shadow-sm"
+                  @click="selectRegion(region)"
+                  @mouseenter="
+                    (e) => {
+                      hoveredRegion = region
+                      const rect = e.currentTarget.getBoundingClientRect()
+                      regionTooltipPosition.x = rect.left + rect.width / 2
+                      regionTooltipPosition.y = rect.top - 10
+                    }
+                  "
+                  @mouseleave="hoveredRegion = null"
+                >
+                  <div class="font-bold text-xs sm:text-sm">
+                    {{ region.name }}
+                  </div>
+                  <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
+                    {{ getRegionDescription(region.name) }}
+                  </div>
+                </div>
+              </div>
+
+              <!-- 지역별 배송 툴팁 -->
+              <div
+                v-if="hoveredRegion"
+                class="fixed bg-slate-900 dark:bg-slate-700 text-white text-xs rounded-xl p-3 shadow-lg z-50 pointer-events-none transform -translate-x-1/2 -translate-y-full"
+                :style="{
+                  left: `${regionTooltipPosition.x}px`,
+                  top: `${regionTooltipPosition.y}px`,
+                }"
+              >
+                <div class="font-semibold mb-2">{{ hoveredRegion.name }}</div>
+                <div class="mb-1">건수: {{ hoveredRegion.count || 0 }}건</div>
+                <div class="mb-1">비율: {{ hoveredRegion.percentage }}%</div>
+                <!-- 말풍선 화살표 -->
+                <div
+                  class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-slate-900 dark:border-t-slate-700"
+                ></div>
+              </div>
+            </div>
+
+            <!-- Top 5 리스트 (세로 배치) -->
+            <div
+              class="w-full lg:w-auto lg:min-w-[120px] flex-shrink-0"
+              v-if="deliveryRegions.length > 0"
+            >
+              <div
+                class="text-xs font-semibold mb-1.5 text-center lg:text-left text-gray-900 dark:text-table-header-text"
+              >
+                Top 5
+              </div>
+              <div class="flex flex-col gap-1">
+                <div
+                  v-for="(region, index) in deliveryRegions"
+                  :key="index"
+                  class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 min-w-0 overflow-hidden"
+                >
+                  <div class="flex items-center gap-2 mb-0.5">
+                    <div
+                      class="text-[9px] font-bold text-gray-700 dark:text-slate-300 flex-shrink-0"
+                    >
+                      {{ index + 1 }}위
+                    </div>
+                    <div
+                      class="text-[10px] font-bold truncate text-gray-900 dark:text-slate-100 flex-1"
+                    >
                       {{ region.name }}
                     </div>
-                    <div class="text-[8px] sm:text-[9px] mt-1 opacity-75 leading-tight">
-                      {{ getRegionDescription(region.name) }}
-                    </div>
                   </div>
-                </div>
-
-                <!-- 지역별 배송 툴팁 -->
-                <div
-                  v-if="hoveredRegion"
-                  class="fixed bg-slate-900 dark:bg-slate-700 text-white text-xs rounded-xl p-3 shadow-lg z-50 pointer-events-none transform -translate-x-1/2 -translate-y-full"
-                  :style="{
-                    left: `${regionTooltipPosition.x}px`,
-                    top: `${regionTooltipPosition.y}px`,
-                  }"
-                >
-                  <div class="font-semibold mb-2">{{ hoveredRegion.name }}</div>
-                  <div class="mb-1">건수: {{ hoveredRegion.count || 0 }}건</div>
-                  <div class="mb-1">비율: {{ hoveredRegion.percentage }}%</div>
-                  <!-- 말풍선 화살표 -->
-                  <div
-                    class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-slate-900 dark:border-t-slate-700"
-                  ></div>
-                </div>
-              </div>
-
-              <!-- Top 5 리스트 (세로 배치) -->
-              <div
-                class="w-full lg:w-auto lg:min-w-[120px] flex-shrink-0"
-                v-if="deliveryRegions.length > 0"
-              >
-                <div
-                  class="text-xs font-semibold mb-1.5 text-center lg:text-left text-gray-900 dark:text-table-header-text"
-                >
-                  Top 5
-                </div>
-                <div class="flex flex-col gap-1">
-                  <div
-                    v-for="(region, index) in deliveryRegions"
-                    :key="index"
-                    class="p-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 min-w-0 overflow-hidden"
-                  >
-                    <div class="flex items-center gap-2 mb-0.5">
-                      <div
-                        class="text-[9px] font-bold text-gray-700 dark:text-slate-300 flex-shrink-0"
-                      >
-                        {{ index + 1 }}위
-                      </div>
-                      <div
-                        class="text-[10px] font-bold truncate text-gray-900 dark:text-slate-100 flex-1"
-                      >
-                        {{ region.name }}
-                      </div>
+                  <div class="flex items-center justify-between gap-1">
+                    <div class="text-[8px] text-gray-500 dark:text-slate-500">
+                      {{ region.count || 0 }}건
                     </div>
-                    <div class="flex items-center justify-between gap-1">
-                      <div class="text-[8px] text-gray-500 dark:text-slate-500">
-                        {{ region.count || 0 }}건
-                      </div>
-                      <div class="text-[9px] font-semibold text-gray-600 dark:text-slate-400">
-                        {{ region.percentage }}%
-                      </div>
+                    <div class="text-[9px] font-semibold text-gray-600 dark:text-slate-400">
+                      {{ region.percentage }}%
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   </div>
 </template>

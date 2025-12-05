@@ -80,10 +80,9 @@
                     {{ event.operatingHours }}
                   </span>
                   <span
-                    v-if="event.drivers && event.drivers.length"
                     class="text-sm px-1.5 py-0.5 rounded-full bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-200"
                   >
-                    {{ event.drivers.join(', ') }}
+                    {{ myDriverName }}
                   </span>
                 </div>
               </div>
@@ -142,6 +141,9 @@ const workerNameToDriverName = (name) => {
 
 // 현재 로그인 워커 이름 (없으면 기본값 사용)
 const currentWorkerName = computed(() => authStore.user?.name || '김운전')
+
+// 현재 로그인한 기사의 드라이버 이름
+const myDriverName = computed(() => workerNameToDriverName(currentWorkerName.value))
 
 // 워커가 담당하는 차량
 const workerVehicles = computed(() => {
