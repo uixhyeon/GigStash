@@ -18,7 +18,13 @@
       "Bash(git commit:*)",
       "Bash(npm run data:validate:*)",
       "Bash(npm run data:test:*)",
-      "Bash(git fetch:*)"
+      "Bash(git fetch:*)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout:*)",
+      "Bash(del test-vehicle-structure.js)",
+      "Bash(git restore:*)",
+      "Bash(git reset:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
