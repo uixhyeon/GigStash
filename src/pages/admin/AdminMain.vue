@@ -1,8 +1,8 @@
 <template>
-  <div class="p-6 bg-slate-50 dark:bg-slate-900 h-[100vh - 64px] scrollbar-hide">
+  <div class="px-6 bg-slate-50 dark:bg-slate-900 h-[calc(100vh-130px)] scrollbar-hide">
     <!-- <h1 class="text-3xl font-bold mb-8" style="color: #1e293b">Main Home</h1> -->
 
-    <!-- 통계 카드 -->
+    <!-- 전체 공지 사항 ===============================================================-->
     <div class="mb-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
       <section class="flex flex-col">
         <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
@@ -10,7 +10,10 @@
           <i class="fi fi-rr-info text-lg align-middle flex-shrink-0"></i>
         </h2>
 
-        <div class="flex-1 max-w-full overflow-hidden rounded-2xl" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)">
+        <div
+          class="flex-1 max-w-full overflow-hidden rounded-2xl"
+          style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+        >
           <div class="h-full overflow-y-auto scrollbar-hide bg-white dark:bg-slate-800 rounded-2xl">
             <table class="w-full text-[10px] sm:text-xs min-w-max">
               <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark z-10">
@@ -75,6 +78,9 @@
           </div>
         </div>
       </section>
+
+      <!--  END OF 전체 공지 사항 ===============================================================-->
+
       <section>
         <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
           당일 보관함 현황
@@ -87,51 +93,48 @@
         >
           통계 로딩 중...
         </div>
-        <div v-else class="grid grid-cols-2 gap-3 mb-4">
-          <!-- 사용중 -->
+        <div v-else class="grid grid-cols-2 gap-3 mb-5">
+          <!-- 사용중 ==========================-->
           <div
-            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-amber-100 dark:border-amber-900/30"
+            class="p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
             style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
           >
-            <div class="flex justify-between items-start gap-2">
-              <div class="min-w-0 flex-1">
+            <div class="flex justify-between items-start gap-1 sm:gap-2 md:gap-3">
+              <div class="min-w-0">
                 <div
-                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                  class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate"
                 >
                   사용중
                 </div>
                 <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-amber-600 dark:text-amber-400"
+                  class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-blue-600 dark:text-blue-400"
                 >
-                  {{ stats.inUse }}
-                </div>
-                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  현재 사용 중
+                  {{ stats.inUse }} 건
                 </div>
               </div>
-              <i class="fi fi-rr-lock text-lg sm:text-xl flex-shrink-0" style="color: #d97706"></i>
+              <i
+                class="fi fi-rs-calendar-check text-sm sm:text-base md:text-lg lg:text-2xl flex-shrink-0"
+                style="color: #3b82f6"
+              ></i>
             </div>
           </div>
 
-          <!-- 사용률 -->
+          <!-- 사용률 ============================-->
           <div
-            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30"
+            class="p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
             style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
           >
-            <div class="flex justify-between items-start gap-2">
-              <div class="min-w-0 flex-1">
+            <div class="flex justify-between items-start gap-1 sm:gap-2 md:gap-3">
+              <div class="min-w-0">
                 <div
-                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                  class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate"
                 >
                   사용률
                 </div>
                 <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-green-600 dark:text-green-400"
+                  class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold mt-0.5 sm:mt-1 md:mt-2 text-green-600 dark:text-green-400"
                 >
-                  {{ stats.usageRate }}%
-                </div>
-                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  오늘의 사용률
+                  {{ stats.usageRate }} %
                 </div>
               </div>
               <i
@@ -140,56 +143,52 @@
               ></i>
             </div>
           </div>
-
-          <!-- 활성 예약 -->
-          <!-- <div
-            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-purple-100 dark:border-purple-900/30 col-span-2 sm:col-span-1"
-            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
-          >
-            <div class="flex justify-between items-start gap-2">
-              <div class="min-w-0 flex-1">
-                <div
-                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
-                >
-                  활성 예약
-                </div>
-                <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-purple-600 dark:text-purple-400"
-                >
-                  {{ stats.activeReservations }}
-                </div>
-                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
-                  진행 중인 예약
-                </div>
-              </div>
-              <i
-                class="fi fi-rr-calendar-check text-lg sm:text-xl flex-shrink-0"
-                style="color: #a855f7"
-              ></i>
-            </div>
-          </div> -->
         </div>
 
+        <!--  ==================================================================== -->
         <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
           고객 분석
         </h2>
         <div class="grid grid-cols-1 gap-3 mb-4">
           <!-- 현재 이용자 수 -->
           <div
-            class="p-3 sm:p-4 md:p-5 rounded-2xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-purple-100 dark:border-purple-900/30"
+            class="p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
             style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
           >
-            <div class="flex justify-between items-start gap-2">
-              <div class="min-w-0 flex-1">
+            <div class="flex justify-between items-start gap-1 sm:gap-2 md:gap-3">
+              <div class="min-w-0">
                 <div
-                  class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400 truncate"
+                  class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate"
                 >
-                  현재 이용자 수
+                  이용자 수
                 </div>
                 <div
                   class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-purple-600 dark:text-purple-400"
                 >
-                  {{ stats.inUse }}
+                  {{ stats.inUse }} / {{ stats.inUse }}
+                </div>
+                <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                  현재 보관함 사용 중
+                </div>
+              </div>
+              <i class="fi fi-rr-users text-lg sm:text-xl flex-shrink-0" style="color: #a855f7"></i>
+            </div>
+          </div>
+          <div
+            class="p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
+            <div class="flex justify-between items-start gap-1 sm:gap-2 md:gap-3">
+              <div class="min-w-0">
+                <div
+                  class="text-xs sm:text-sm md:text-base font-medium text-gray-600 dark:text-gray-400 truncate"
+                >
+                  이용률
+                </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-purple-600 dark:text-purple-400"
+                >
+                  {{ stats.inUse }} %
                 </div>
                 <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
                   현재 보관함 사용 중
@@ -201,14 +200,13 @@
         </div>
       </section>
     </div>
-    <!--통계 카드 끝 =============================================================================================================== -->
+    <!-- =============================================================================================================== -->
 
-    <!-- 좌측: 최근 예약 테이블 + 차트 (2칼럼) -->
+    <!--   최근 예약 테이블 + 차트 (2칼럼) -->
     <div class="lg:col-span-2">
-      <!-- 테이블과 차트 그리드 -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <!-- 최근 예약 테이블 -->
-        <section>
+        <!-- 최근 예약 테이블  ===========================================-->
+        <section class="flex flex-col">
           <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
             최근 예약
           </h2>
@@ -219,86 +217,91 @@
           >
             예약 로딩 중...
           </div>
-          <div v-if="!loading" class="max-w-full overflow-x-auto scrollbar-hide">
-            <table
-              class="w-full bg-white dark:bg-slate-800 rounded-2xl shadow-sm overflow-hidden text-[10px] sm:text-xs min-w-max"
-              style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          <div
+            v-if="!loading"
+            class="flex-1 max-w-full overflow-hidden rounded-2xl"
+            style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
+          >
+            <div
+              class="h-full overflow-y-auto scrollbar-hide bg-white dark:bg-slate-800 rounded-2xl"
             >
-              <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
-                <tr>
-                  <th
-                    class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
-                  >
-                    예약 ID
-                  </th>
-                  <th
-                    class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
-                  >
-                    이벤트 ID
-                  </th>
-                  <th
-                    class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
-                  >
-                    보관함 ID
-                  </th>
+              <table class="w-full text-[10px] sm:text-xs min-w-max">
+                <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark z-10">
+                  <tr>
+                    <th
+                      class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    >
+                      예약 ID
+                    </th>
+                    <th
+                      class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    >
+                      이벤트 ID
+                    </th>
+                    <th
+                      class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    >
+                      보관함 ID
+                    </th>
 
-                  <th
-                    class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
-                  >
-                    보관 시작시간
-                  </th>
-                  <th
-                    class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
-                  >
-                    고객명
-                  </th>
-                  <!-- <th
+                    <th
+                      class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    >
+                      보관 시작시간
+                    </th>
+                    <th
+                      class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                    >
+                      고객명
+                    </th>
+                    <!-- <th
                   class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                 >
                   접근코드
                 </th> -->
-                </tr>
-              </thead>
-              <tbody>
-                <tr
-                  v-for="reservation in recentReservations.slice(0, 6)"
-                  :key="reservation.id"
-                  class="border-t border-slate-200 dark:border-slate-700 h-8 sm:h-10"
-                >
-                  <td
-                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    v-for="reservation in recentReservations"
+                    :key="reservation.id"
+                    class="border-t border-slate-200 dark:border-slate-700 h-8 sm:h-10 hover:bg-slate-50 dark:hover:bg-slate-700 cursor-pointer transition-colors"
                   >
-                    {{ reservation.id }}
-                  </td>
-                  <td
-                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
-                  >
-                    {{ reservation.eventId }}
-                  </td>
-                  <td
-                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
-                  >
-                    {{ reservation.lockerId }}
-                  </td>
+                    <td
+                      class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                    >
+                      {{ reservation.id }}
+                    </td>
+                    <td
+                      class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                    >
+                      {{ reservation.eventId }}
+                    </td>
+                    <td
+                      class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                    >
+                      {{ reservation.lockerId }}
+                    </td>
 
-                  <td
-                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
-                  >
-                    {{ formatDateTime(reservation.createdAt) }}
-                  </td>
-                  <td
-                    class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
-                  >
-                    {{ reservation.customerName }}
-                  </td>
-                  <!-- <td
+                    <td
+                      class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                    >
+                      {{ formatDateTime(reservation.createdAt) }}
+                    </td>
+                    <td
+                      class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                    >
+                      {{ reservation.customerName }}
+                    </td>
+                    <!-- <td
                   class="px-2 py-1 text-center text-slate-900 dark:text-slate-100 whitespace-nowrap"
                 >
                   {{ reservation.accessCode }}
                 </td> -->
-                </tr>
-              </tbody>
-            </table>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
 
@@ -613,6 +616,7 @@ const lockers = computed(() => {
 const stats = computed(() => {
   const total = lockers.value.length
   const inUse = lockers.value.filter((l) => l.status === 'active').length
+  const inCancle = lockers.value.filter((l) => l.status === 'active').length
   const maintenance = lockers.value.filter((l) => l.status === 'maintenance').length
   const broken = lockers.value.filter((l) => l.status === 'broken').length
   const available = total - inUse - maintenance - broken
@@ -761,16 +765,6 @@ const formatDateTime = (dateTimeStr) => {
     hour: '2-digit',
     minute: '2-digit',
   })
-}
-
-const getMembershipLabel = (level) => {
-  const labels = {
-    platinum: '플래티넘',
-    gold: '골드',
-    silver: '실버',
-    bronze: '브론즈',
-  }
-  return labels[level] || level
 }
 
 const getMembershipClass = (level) => {

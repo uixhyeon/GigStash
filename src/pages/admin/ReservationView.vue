@@ -1,7 +1,9 @@
 <template>
-  <div class="p-6 bg-slate-50 dark:bg-slate-900 scrollbar-hide h-[100vh - 64px]">
+  <div
+    class="px-6 bg-slate-50 dark:bg-slate-900 scrollbar-hide h-[calc(100vh-130px)] flex flex-col overflow-hidden"
+  >
     <!-- 통계 카드 -->
-    <section class="mb-8">
+    <section class="mb-8 flex-shrink-0">
       <h2 class="text-lg font-semibold mb-4 text-slate-800 dark:text-slate-200">예약 통계</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
         <!-- 전체 예약 -->
@@ -107,12 +109,12 @@
     </section>
 
     <!-- 필터 및 검색 ==================================================-->
-    <section>
+    <section class="flex flex-col flex-1 min-h-0">
       <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
         예약 목록
       </h2>
 
-      <div class="flex flex-col gap-3 mb-4">
+      <div class="flex flex-col gap-3 mb-4 flex-shrink-0">
         <!-- 필터 조건 -->
         <div class="flex flex-wrap items-center gap-2 sm:gap-3">
           <!-- 상태 필터 -->
@@ -164,7 +166,7 @@
           </button>
 
           <!-- 기간 선택 입력 필드 (선택 모드일 때만 표시) -->
-          <div
+          <!-- <div
             v-if="dateRangeMode === 'custom'"
             class="flex flex-wrap items-center gap-2 sm:gap-3 pl-4 border-l border-gray-300 dark:border-dark-border"
           >
@@ -190,10 +192,10 @@
             >
               <i class="fi fi-rr-search mr-1"></i>조회
             </button>
-          </div>
+          </div> -->
 
           <!-- 조회 기간 라디오 버튼 -->
-          <div
+          <!-- <div
             class="flex items-center gap-3 ml-auto pl-4 border-l border-gray-300 dark:border-dark-border"
           >
             <label
@@ -232,7 +234,7 @@
                 </label>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -267,18 +269,23 @@
         </div>
       </div> -->
 
-      <!-- 예약 목록 -->
+      <!-- 예약 목록 ================================================================================== -->
       <div
-        class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden max-w-full"
+        class="bg-white dark:bg-dark-bg-secondary rounded-2xl shadow-sm overflow-hidden max-w-full flex-1 flex flex-col min-h-0"
         style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)"
       >
-        <div class="overflow-x-auto overflow-y-auto max-h-[300px] scrollbar-hide w-full">
+        <div class="overflow-y-auto scrollbar-hide w-full">
           <table class="w-full text-xs min-w-max">
             <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark">
               <tr>
                 <th
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap"
+                >
+                  No
+                </th>
+                <th
                   @click="toggleSort('eventId')"
-                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark rounded-tl-2xl whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
+                  class="px-2 py-2 text-center font-semibold text-table-header-text dark:text-table-header-text-dark whitespace-nowrap cursor-pointer hover:opacity-80 transition-opacity select-none"
                 >
                   <div class="flex items-center justify-center gap-1">
                     행사번호 (EVT ID)
@@ -377,10 +384,15 @@
 
             <tbody>
               <tr
-                v-for="reservation in filteredReservations"
+                v-for="(reservation, index) in filteredReservations"
                 :key="reservation.id"
                 class="border-t text-center border-gray-200 dark:border-dark-border hover:bg-gray-50 dark:hover:bg-dark-bg-tertiary/50 cursor-pointer transition-colors group h-10"
               >
+                <td
+                  class="text-center px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
+                >
+                  {{ index + 1 }}
+                </td>
                 <td
                   class="text-center px-2 py-1 text-gray-900 dark:text-dark-text-primary group-hover:dark:text-gray-900 whitespace-nowrap"
                 >
