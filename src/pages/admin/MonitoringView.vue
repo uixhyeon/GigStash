@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-6 bg-background dark:bg-dark-bg h-[100vh - 64px] scrollbar-hide flex flex-col justify-start"
+    class="px-6 bg-background dark:bg-dark-bg h-[100vh - 64px] scrollbar-hide flex flex-col justify-start"
     @click="showCalendar = false"
   >
     <!-- 리포트 & 통계 헤더 -->
@@ -21,10 +21,6 @@
             <div class="text-lg font-semibold text-slate-900 dark:text-slate-100">
               {{ getMonthLabel(dateRange.start) }}
             </div>
-            <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-              {{ formatDateRange(dateRange.start) }} ~
-              {{ formatDateRange(dateRange.end) }}
-            </div>
           </div>
           <button
             @click="nextDateRange"
@@ -40,7 +36,7 @@
     <!-- 운영 기간 안내 메시지 -->
     <div
       v-if="!isValidDateRange && filteredReservations.length === 0"
-      class="mb-4 p-4 rounded-xl border bg-gray-50 dark:bg-gray-900/20 border-gray-200 dark:border-gray-800"
+      class="mb-4 p-4 rounded-xl border  dark:bg-gray-900/20 border-gray-200 dark:border-gray-800"
     >
       <div class="flex items-center gap-2">
         <i class="fi fi-rr-info text-gray-600 dark:text-gray-400"></i>
@@ -52,31 +48,32 @@
     </div>
 
     <!-- 2x2 그리드 레이아웃 -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
       <!-- 1. 이번 달 주요 지표 -->
-      <section>
-        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+      <section class="flex flex-col h-full">
+        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0">
           이번 달 주요 지표
         </h2>
+        <div class="flex-1 flex flex-col">
         <div class="flex flex-wrap gap-3 mb-4">
           <!-- 이용률 카드 -->
           <div
-            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30"
+            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-blue-100 dark:border-blue-900/30 h-[160px]"
           >
             <div>
               <div
-                class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400"
-                style="font-size: 16px; font-weight: bold"
+                class="text-[11px] sm:text-xs font-medium"
+                style="font-size: 16px; font-weight: bold; color: #1E293B"
               >
                 이용률
               </div>
               <div
-                class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-table-header-text"
+                class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
                 style="font-size: 30px"
               >
                 {{ keyMetrics.utilizationRate }}%
               </div>
-              <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+              <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5 text-right">
                 전월 대비
                 <span
                   class="font-medium"
@@ -91,22 +88,22 @@
 
           <!-- 재방문율 카드 -->
           <div
-            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30"
+            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-green-100 dark:border-green-900/30 h-[160px]"
           >
             <div>
               <div
-                class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400"
-                style="font-size: 16px; font-weight: bold"
+                class="text-[11px] sm:text-xs font-medium"
+                style="font-size: 16px; font-weight: bold; color: #1E293B"
               >
                 재방문율
               </div>
               <div
-                class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-table-header-text"
+                class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
                 style="font-size: 30px"
               >
                 {{ additionalMetrics.revisitRate }}%
               </div>
-              <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+              <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5 text-right">
                 전월 대비
                 <span
                   class="font-medium"
@@ -122,22 +119,22 @@
           <!-- 배송선택률 카드 -->
           <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-300/90 to-amber-400/95 text-gray-800" -->
           <div
-            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-slate-800/50 border border-yellow-100 dark:border-yellow-900/30"
+            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-yellow-100 dark:border-yellow-900/30 h-[160px]"
           >
             <div>
               <div
-                class="text-[11px] sm:text-xs font-medium text-gray-600 dark:text-gray-400"
-                style="font-size: 16px; font-weight: bold"
+                class="text-[11px] sm:text-xs font-medium"
+                style="font-size: 16px; font-weight: bold; color: #1E293B"
               >
                 배송선택률
               </div>
               <div
-                class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 dark:text-table-header-text"
+                class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
                 style="font-size: 30px"
               >
                 {{ additionalMetrics.deliveryRate }}%
               </div>
-              <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+              <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5 text-right">
                 전월 대비
                 <span
                   class="font-medium"
@@ -156,10 +153,10 @@
           <!-- 이용객 카드 -->
           <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-gray-400/90 to-gray-600/95" -->
           <div
-            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-100/90 to-yellow-300/95"
+            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-100/90 to-yellow-300/95 h-[160px]"
           >
             <div
-              class="font-bold opacity-90 text-gray-900 dark:text-table-header-text"
+              class="font-bold opacity-90 text-gray-900 "
               style="font-size: 16px"
             >
               이용객
@@ -174,7 +171,7 @@
                 >{{ Math.abs(keyMetrics.usersChange) }}%
               </div>
               <div
-                class="font-bold mt-1 sm:mt-2 text-gray-900 dark:text-table-header-text"
+                class="font-bold mt-1 sm:mt-2 text-gray-900"
                 style="font-size: 30px"
               >
                 {{ formatNumber(keyMetrics.users) }}명
@@ -186,7 +183,7 @@
           <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-400/90 to-blue-600/95 text-white" -->
 
           <div
-            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95"
+            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95 h-[160px]"
           >
             <div
               class="font-bold opacity-90 text-gray-900 dark:text-gray-900"
@@ -212,19 +209,17 @@
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       <!-- 2. 피크타임 분석 -->
-      <section>
-        <h2
-          class="text-lg items-center font-semibold mb-4 text-gray-900 dark:text-table-header-text"
-        >
+      <section class="flex flex-col h-full">
+        <h2 class="text-lg items-center font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0">
           피크타임 분석
         </h2>
-
-        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 mb-4">
+        <div class="flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col">
           <!-- 범례와 셀렉트 (가로 배치) -->
-          <div class="flex items-baseline justify-between gap-4 mb-3">
+          <div class="flex items-baseline justify-between gap-4 mb-3 flex-shrink-0">
             <!-- 커스텀 범례 -->
             <div class="flex items-center gap-4">
               <div class="flex items-center gap-1.5">
@@ -247,101 +242,64 @@
               </option>
             </select>
           </div>
-          <div class="h-64 flex flex-col items-center gap-2 flex-1 w-full min-w-0">
-            <canvas ref="peakTimeChartRef"></canvas>
+          <div
+            class="flex-none flex flex-col items-center gap-2 w-full"
+            style="height: 238.5px;"
+          >
+            <canvas ref="peakTimeChartRef" class="w-full h-full"></canvas>
           </div>
         </div>
       </section>
 
-      <!-- 3. 행사 유형별 매출 & 사이즈별 비율 (가로 배열) -->
-      <div class="flex gap-3 flex-col xl:flex-row xl:items-stretch">
+      <!-- 3. 행사 유형별 매출 & 사이즈별 비율 (하나의 그리드 셀 안에 두 개의 섹션) -->
+      <div class="flex gap-3 flex-col xl:flex-row h-full">
         <!-- 행사 유형별 매출 -->
-        <section class="flex-1 min-w-0 flex flex-col">
-          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+        <section class="flex-1 flex flex-col h-full">
+          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0">
             행사 유형별 매출
           </h2>
           <div
-            class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 md:p-4 lg:p-6"
-            style="height: 256px"
+            class="flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 md:p-4 lg:p-6 flex flex-col min-h-0"
           >
-            <!-- 가로 막대 그래프 (높이 절반으로 축소) -->
-            <div style="height: 100px; position: relative">
+            <!-- 막대 그래프 -->
+            <div class="flex-1 min-h-0" style="position: relative; width: 100%; height: 100%;">
               <canvas ref="eventTypeChartRef"></canvas>
-            </div>
-            <!-- 아래 범례 -->
-            <div class="mt-4 space-y-2">
-              <div
-                v-for="(item, index) in eventTypeSales"
-                :key="item.type"
-                class="flex items-center justify-between gap-2 cursor-pointer"
-                @mouseenter="highlightEventType(index)"
-                @mouseleave="clearHighlightEventType"
-              >
-                <div class="flex items-center gap-2 min-w-0">
-                  <span
-                    class="w-3 h-3 rounded-full flex-shrink-0"
-                    :style="{ backgroundColor: item.color }"
-                  ></span>
-                  <span class="text-[11px] text-slate-700 dark:text-slate-200 font-medium truncate">
-                    {{ item.type }}
-                  </span>
-                </div>
-                <span class="text-[11px] font-semibold text-slate-900 dark:text-slate-100">
-                  {{ formatCurrency(item.value) }}
-                </span>
-              </div>
             </div>
           </div>
         </section>
 
         <!-- 사이즈별 비율 -->
-        <section class="flex-1 min-w-0 flex flex-col">
-          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+        <section class="flex-1 flex flex-col h-full">
+          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0">
             사이즈별 비율
           </h2>
           <div
-            class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 md:p-4 lg:p-6"
-            style="height: 256px"
+            class="flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 md:p-4 lg:p-6 flex flex-col min-h-0"
           >
-            <div class="flex flex-col items-center gap-4 h-full">
-              <!-- 도넛 차트 -->
-              <div class="flex items-center justify-center">
-                <div class="relative" style="width: 140px; height: 140px">
-                  <canvas
-                    ref="sizeRatioChartRef"
-                    style="
-                      display: block;
-                      width: 140px;
-                      height: 140px;
-                      position: relative;
-                      z-index: 1;
-                    "
-                  ></canvas>
-                </div>
-              </div>
-              <!-- 아래 범례 -->
-              <div class="w-full space-y-2">
-                <div
-                  v-for="(segment, index) in sizeRatio"
-                  :key="segment.size"
-                  class="flex items-center justify-between gap-2 cursor-pointer"
-                  @mouseenter="highlightSizeSegment(index)"
-                  @mouseleave="clearHighlightSizeSegment"
-                >
-                  <div class="flex items-center gap-2 min-w-0">
+            <!-- 도넛 차트 -->
+            <div class="flex-1 min-h-0" style="position: relative; width: 100%; height: 100%;">
+              <canvas ref="sizeRatioChartRef"></canvas>
+              <!-- 중앙 범례 -->
+              <div
+                class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                style="z-index: 10;"
+              >
+                <div class="flex flex-col items-end gap-1.5 text-right">
+                  <div
+                    v-for="(segment, index) in sizeRatio"
+                    :key="segment.size"
+                    class="flex items-center gap-1.5"
+                  >
                     <span
                       class="w-3 h-3 rounded-full flex-shrink-0"
                       :style="{ backgroundColor: segment.color }"
                     ></span>
                     <span
-                      class="text-[11px] text-slate-700 dark:text-slate-200 font-medium truncate"
+                      class="text-[11px] text-slate-600 dark:text-slate-200 font-medium whitespace-nowrap"
                     >
                       {{ segment.size }}
                     </span>
                   </div>
-                  <span class="text-[11px] font-semibold text-slate-900 dark:text-slate-100">
-                    {{ segment.percentage }}%
-                  </span>
                 </div>
               </div>
             </div>
@@ -350,12 +308,12 @@
       </div>
 
       <!-- 4. 지역별 배송 -->
-      <section class="mb-4">
-        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text">
+      <section class="mb-4 flex flex-col h-full">
+        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0">
           지역별 배송
         </h2>
         <div
-          class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 overflow-x-auto"
+          class="flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 overflow-x-auto"
         >
           <!-- 히트맵과 Top 5를 가로 배치 -->
           <div class="flex flex-col lg:flex-row gap-3 lg:items-start">
@@ -1316,28 +1274,51 @@ const createEventTypeChart = () => {
   const gridColor = isDark ? 'rgba(148, 163, 184, 0.1)' : 'rgba(226, 232, 240, 1)'
   const textColor = isDark ? 'rgba(148, 163, 184, 1)' : 'rgba(100, 116, 139, 1)'
 
-  // 1개의 막대 안에 행사 유형별 비율을 색상으로 구분한 100% 누적 막대 그래프
+  const barValuePlugin = {
+    id: 'barValue',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart
+      const meta = chart.getDatasetMeta(0)
+      if (!meta) return
+
+      ctx.save()
+      ctx.fillStyle = textColor
+      ctx.font = '12px sans-serif'
+      ctx.textAlign = 'left'
+      ctx.textBaseline = 'middle'
+
+      meta.data.forEach((bar, index) => {
+        const item = eventTypeSales.value[index]
+        if (!item) return
+        const pos = bar.tooltipPosition()
+        ctx.fillText(formatCurrency(item.value), pos.x + 8, pos.y)
+      })
+
+      ctx.restore()
+    },
+  }
+
+  // 유형별 매출을 개별 막대로 표시 (가로 막대)
   eventTypeChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['전체'],
-      datasets: eventTypeSales.value.map((item) => ({
-        label: item.type,
-        data: [item.percentage],
-        backgroundColor: item.color + 'CC',
-        borderColor: item.color,
-        borderWidth: 0,
-        // 네 모서리 모두 0으로 해서 완전 직사각 막대
-        borderRadius: 0,
-        borderSkipped: false,
-        stack: 'eventType',
-        barThickness: 40,
-      })),
+      labels: eventTypeSales.value.map((item) => item.type),
+      datasets: [
+        {
+          label: '매출',
+          data: eventTypeSales.value.map((item) => item.value),
+          backgroundColor: eventTypeSales.value.map((item) => item.color + 'CC'),
+          borderColor: eventTypeSales.value.map((item) => item.color),
+          borderWidth: 0,
+          borderRadius: 8,
+          borderSkipped: false,
+        },
+      ],
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      indexAxis: 'y', // 가로 막대
+      indexAxis: 'y',
       plugins: {
         legend: {
           display: false,
@@ -1350,27 +1331,51 @@ const createEventTypeChart = () => {
           borderWidth: 1,
           borderRadius: 12,
           callbacks: {
-            title: function () {
-              return '행사 유형별 매출 비중'
+            title: function (context) {
+              const item = eventTypeSales.value[context[0].dataIndex]
+              return item ? item.type : ''
             },
             label: function (context) {
-              const item = eventTypeSales.value[context.datasetIndex]
+              const item = eventTypeSales.value[context.dataIndex]
+              if (!item) return []
               return [
-                `${item.type}`,
-                `매출: ${formatNumber(item.value)}원`,
+                `매출: ${formatCurrency(item.value)}`,
                 `비율: ${item.percentage}%`,
                 `건수: ${item.count || 0}건`,
               ]
+            },
+            labelColor: function (context) {
+              const item = eventTypeSales.value[context.dataIndex]
+              if (!item) return {}
+              return {
+                borderColor: item.color,
+                backgroundColor: item.color,
+              }
             },
           },
         },
       },
       scales: {
-        // 세로축(카테고리 축): '전체' 라벨만 사용, 눈금 숫자는 숨김
         y: {
-          stacked: true,
           ticks: {
+            color: textColor,
+            font: { size: 11 },
+          },
+          grid: {
             display: false,
+          },
+          categoryPercentage: 0.8,
+          barPercentage: 0.9,
+        },
+        x: {
+          beginAtZero: true,
+          ticks: {
+            color: textColor,
+            font: { size: 11 },
+            callback: function (value) {
+              const val = Number(value) || 0
+              return `${Math.round(val / 10000)}만원`
+            },
           },
           grid: {
             color: gridColor,
@@ -1378,49 +1383,25 @@ const createEventTypeChart = () => {
             lineWidth: 1,
           },
         },
-        // 가로축(값 축): 0~100% 구간, 퍼센트 라벨 표시
-        x: {
-          beginAtZero: true,
-          max: 100,
-          stacked: true,
-          ticks: {
-            // 0, 25, 50, 75, 100 형태로 표시
-            stepSize: 25,
-            callback: function (value) {
-              return value + '%'
-            },
-            color: textColor,
-            font: {
-              size: 11,
-            },
-          },
-          grid: {
-            display: false,
-          },
-          categoryPercentage: 0.6,
-          barPercentage: 0.8,
-        },
       },
     },
   })
 }
 
 // 행사 유형 범례 호버 시 해당 구간을 강조하고 툴팁 표시
-const highlightEventType = (datasetIndex) => {
+const highlightEventType = (index) => {
   if (!eventTypeChart) return
 
-  const meta = eventTypeChart.getDatasetMeta(datasetIndex)
-  if (!meta || !meta.data || !meta.data[0]) return
+  const meta = eventTypeChart.getDatasetMeta(0)
+  if (!meta || !meta.data || !meta.data[index]) return
 
-  const element = { datasetIndex, index: 0 }
+  const element = { datasetIndex: 0, index }
+  const bar = meta.data[index]
 
   eventTypeChart.setActiveElements([element])
-  // 툴팁을 막대 오른쪽 안쪽에 표시해서 잘리지 않도록 살짝 우측으로 이동
-  const baseX = meta.data[0].x
-  const baseY = meta.data[0].y
   eventTypeChart.tooltip.setActiveElements([element], {
-    x: baseX + 40,
-    y: baseY,
+    x: bar.x,
+    y: bar.y,
   })
   eventTypeChart.update()
 }
@@ -1651,6 +1632,33 @@ const createSizeRatioChart = () => {
   const isDark = document.documentElement.classList.contains('dark')
   const textColor = isDark ? 'rgba(148, 163, 184, 1)' : 'rgba(100, 116, 139, 1)'
 
+  const sizeRatioValuePlugin = {
+    id: 'sizeRatioValue',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart
+      const meta = chart.getDatasetMeta(0)
+      if (!meta) return
+
+      ctx.save()
+      ctx.fillStyle = '#ffffff'
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
+
+      meta.data.forEach((arc, index) => {
+        const item = sizeRatio.value[index]
+        if (!item) return
+
+        const pos = arc.tooltipPosition()
+        ctx.font = 'bold 12px sans-serif'
+        ctx.fillText(`${item.percentage}%`, pos.x, pos.y - 7)
+        ctx.font = '11px sans-serif'
+        ctx.fillText(`${formatNumber(item.count)}건`, pos.x, pos.y + 8)
+      })
+
+      ctx.restore()
+    },
+  }
+
   sizeRatioChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
@@ -1701,6 +1709,7 @@ const createSizeRatioChart = () => {
         },
       },
     },
+    plugins: [sizeRatioValuePlugin],
   })
 }
 
@@ -1719,8 +1728,13 @@ watch(
   () => {
     nextTick(() => {
       if (eventTypeChart) {
-        // 행사 유형별 매출 차트는 1개의 100% 누적 막대이므로, 다시 생성해서 최신 데이터 반영
-        createEventTypeChart()
+        eventTypeChart.data.labels = eventTypeSales.value.map((item) => item.type)
+        eventTypeChart.data.datasets[0].data = eventTypeSales.value.map((item) => item.value)
+        eventTypeChart.data.datasets[0].backgroundColor = eventTypeSales.value.map(
+          (item) => item.color + 'CC',
+        )
+        eventTypeChart.data.datasets[0].borderColor = eventTypeSales.value.map((item) => item.color)
+        eventTypeChart.update()
       }
 
       if (peakTimeChart) {

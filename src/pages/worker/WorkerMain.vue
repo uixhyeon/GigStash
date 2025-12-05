@@ -563,15 +563,16 @@
 <script setup>
 import { ref, onUnmounted, watch, onMounted, nextTick, computed } from 'vue'
 import { useAuthStore } from '@/stores/auth'
+import { useDataStore } from '@/stores/dataStore'
 import { customers } from '@/data/customers'
 import { events } from '@/data/events'
-import { vehicles } from '@/data/vehicles'
 import { lockers } from '@/data/lockers'
 import { reservations as allReservations } from '@/data/reservations'
 
 // 위치와 도착 시간은 todaySchedule에서 계산됨
 
 const authStore = useAuthStore()
+const dataStore = useDataStore()
 
 const showParticipantsModal = ref(false)
 const showBarcodeModal = ref(false)
@@ -609,22 +610,40 @@ const workerNameToDriverName = (name) => {
 // 현재 로그인 워커 이름 (없으면 기본값 사용)
 const currentWorkerName = computed(() => authStore.user?.name || '김운전')
 
-// 워커가 담당하는 차량
+// 워커가 담당하는 차량 (dataStore에서 가져오기)
 const workerVehicles = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return vehicles.filter((v) => v.driver === driverName)
+  return dataStore.vehicles.filter((v) => v.driver === driverName)
+})
+
+// 첫 번째 기사 정보의 eventId 가져오기
+const firstWorkerVehicle = computed(() => {
+  return workerVehicles.value.length > 0 ? workerVehicles.value[0] : null
+})
+
+const workerEventId = computed(() => {
+  return firstWorkerVehicle.value?.eventId || null
 })
 
 // 워커 차량에 연결된 보관함
 const workerLockers = computed(() => {
-  const vehicleIds = new Set(workerVehicles.value.map((v) => v.id))
+  if (!workerEventId.value) return []
+  
+  // 첫 번째 기사의 eventId를 사용하여 해당 eventId에 연결된 차량들 찾기
+  const eventVehicles = dataStore.vehicles.filter((v) => v.eventId === workerEventId.value)
+  const vehicleIds = new Set(eventVehicles.map((v) => v.id))
   return lockers.filter((l) => vehicleIds.has(l.vehicleId))
 })
 
 // 워커 보관함에 연결된 예약 (정규화된 reservations.js 기반)
 const workerRawReservations = computed(() => {
+  if (!workerEventId.value) return []
+  
   const lockerIds = new Set(workerLockers.value.map((l) => l.id))
-  return allReservations.filter((r) => lockerIds.has(r.lockerId))
+  // eventId도 함께 필터링하여 해당 이벤트의 예약만 가져오기
+  return allReservations.filter((r) => 
+    lockerIds.has(r.lockerId) && r.eventId === workerEventId.value
+  )
 })
 
 // 완료 상태 관리 (예약 ID를 키로 사용)
