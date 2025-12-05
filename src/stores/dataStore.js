@@ -29,12 +29,16 @@ export const useDataStore = defineStore('data', () => {
   // Vehicles: 정규화된 차량 데이터 (id -> 차량 객체)
   const vehicleMap = ref(new Map())
 
+  // VehicleAssignments: 정규화된 배차 데이터 (id -> 배차 객체)
+  const vehicleAssignmentMap = ref(new Map())
+
   // 조회 순서 추적 (성능 최적화용)
   const customerIds = ref([])
   const reservationIds = ref([])
   const eventIds = ref([])
   const lockerIds = ref([])
   const vehicleIds = ref([])
+  const vehicleAssignmentIds = ref([])
 
   // 로딩 상태
   const isLoading = ref(false)
@@ -78,6 +82,13 @@ export const useDataStore = defineStore('data', () => {
   })
 
   /**
+   * 모든 배차를 배열로 반환 (정렬된 순서 유지)
+   */
+  const vehicleAssignments = computed(() => {
+    return vehicleAssignmentIds.value.map(id => vehicleAssignmentMap.value.get(id))
+  })
+
+  /**
    * 행사별 예약 건수를 조회 (eventId, 날짜, 상태 필터링)
    * @param {string} eventId - 행사 ID
    * @returns {number} 예약 건수
@@ -104,12 +115,12 @@ export const useDataStore = defineStore('data', () => {
   }
 
   /**
-   * 행사별 배차 수를 조인해서 반환 (eventId로 vehicles 필터링)
+   * 행사별 배차 수를 조인해서 반환 (eventId로 vehicleAssignments 필터링)
    * @param {string} eventId - 행사 ID
    * @returns {number} 배차 대수
    */
   const getVehicleCountByEventId = (eventId) => {
-    return vehicles.value.filter(v => v.eventId === eventId).length
+    return vehicleAssignments.value.filter(va => va.eventId === eventId).length
   }
 
   /**
@@ -272,6 +283,19 @@ export const useDataStore = defineStore('data', () => {
     vehiclesData.forEach(vehicle => {
       vehicleMap.value.set(vehicle.id, { ...vehicle })
       vehicleIds.value.push(vehicle.id)
+    })
+  }
+
+  /**
+   * 배차 데이터 일괄 로드
+   */
+  const setVehicleAssignments = (vehicleAssignmentsData) => {
+    vehicleAssignmentMap.value.clear()
+    vehicleAssignmentIds.value = []
+
+    vehicleAssignmentsData.forEach(assignment => {
+      vehicleAssignmentMap.value.set(assignment.id, { ...assignment })
+      vehicleAssignmentIds.value.push(assignment.id)
     })
   }
 
@@ -475,11 +499,13 @@ export const useDataStore = defineStore('data', () => {
     eventMap.value.clear()
     lockerMap.value.clear()
     vehicleMap.value.clear()
+    vehicleAssignmentMap.value.clear()
     customerIds.value = []
     reservationIds.value = []
     eventIds.value = []
     lockerIds.value = []
     vehicleIds.value = []
+    vehicleAssignmentIds.value = []
     error.value = null
   }
 
@@ -506,11 +532,13 @@ export const useDataStore = defineStore('data', () => {
     eventMap,
     lockerMap,
     vehicleMap,
+    vehicleAssignmentMap,
     customerIds,
     reservationIds,
     eventIds,
     lockerIds,
     vehicleIds,
+    vehicleAssignmentIds,
     isLoading,
     error,
 
@@ -520,6 +548,7 @@ export const useDataStore = defineStore('data', () => {
     events,
     lockers,
     vehicles,
+    vehicleAssignments,
     eventsWithVehicles,
     activeReservations,
     completedReservations,
@@ -534,6 +563,7 @@ export const useDataStore = defineStore('data', () => {
     setEvents,
     setLockers,
     setVehicles,
+    setVehicleAssignments,
     addCustomer,
     addReservation,
     addEvent,

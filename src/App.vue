@@ -8,6 +8,7 @@ import { reservations as reservationsData } from './data/reservations.js'
 import { customers as customersData } from './data/customers.js'
 import { lockers as lockersData } from './data/lockers.js'
 import { vehicles as vehiclesData } from './data/vehicles.js'
+import { vehicleAssignments as vehicleAssignmentsData } from './data/vehicle-assignments.js'
 
 // 다크모드 초기화
 const { initDarkMode } = useDarkMode()
@@ -62,6 +63,7 @@ onMounted(() => {
     const customers = customersData || []
     const lockers = lockersData || []
     const vehicles = vehiclesData || []
+    const vehicleAssignments = vehicleAssignmentsData || []
 
     console.log('📊 App.vue: 로드된 데이터')
     console.log(`  - 예약: ${reservations.length}개`)
@@ -69,6 +71,7 @@ onMounted(() => {
     console.log(`  - 사물함: ${lockers.length}개`)
     console.log(`  - 행사: ${events.length}개`)
     console.log(`  - 차량: ${vehicles.length}개`)
+    console.log(`  - 배차: ${vehicleAssignments.length}개`)
 
     // 예약 데이터 정규화
     const normalizedReservations = normalizeReservations(reservations, events)
@@ -79,6 +82,7 @@ onMounted(() => {
     dataStore.setLockers(lockers)
     dataStore.setEvents(events)
     dataStore.setVehicles(vehicles)
+    dataStore.setVehicleAssignments(vehicleAssignments)
 
     console.log('✅ App.vue: 데이터 로드 완료')
     console.log(`  - 스토어 예약: ${dataStore.reservations.length}개`)
@@ -86,6 +90,7 @@ onMounted(() => {
     console.log(`  - 스토어 사물함: ${dataStore.lockers.length}개`)
     console.log(`  - 스토어 행사: ${dataStore.events.length}개`)
     console.log(`  - 스토어 차량: ${dataStore.vehicles.length}개`)
+    console.log(`  - 스토어 배차: ${dataStore.vehicleAssignments.length}개`)
 
     // 데이터 로드 완료 플래그 설정 (자식 컴포넌트 렌더링 허용)
     dataLoaded.value = true
