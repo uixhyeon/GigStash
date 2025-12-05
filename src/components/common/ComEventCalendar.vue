@@ -4,33 +4,36 @@
     <div class="mb-4">
       <!-- 기존 헤더 -->
       <div class="flex justify-between gap-4 items-center">
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-table-header-text">
-          {{ currentMonth }}
-        </h3>
+        <div class="flex gap-3">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-table-header-text">
+            {{ currentMonth }}
+          </h3>
+          <p class="text-sm align-middle text-gray-600 dark:text-dark-text-secondary">
+            총 {{ currentMonthEventCount }} 건
+          </p>
+        </div>
         <div class="flex gap-2 items-center">
           <!-- 년/월 드롭다운 -->
           <div class="flex items-center gap-2">
             <select
               :value="selectedYear"
               @change="handleYearChange"
-              class="w-15 h-7 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+              class="w-20 h-8 text-sm text-center border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
             >
               <option v-for="year in yearOptions" :key="year" :value="year">{{ year }}년</option>
             </select>
             <select
               :value="selectedMonth"
               @change="handleMonthChange"
-              class="w-15 h-7 text-xs border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
+              class="w-20 h-8 text-sm text-center border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-dark-bg-tertiary dark:text-dark-text-primary"
             >
               <option v-for="month in 12" :key="month" :value="month">{{ month }}월</option>
             </select>
           </div>
-          <p class="text-sm text-gray-600 dark:text-dark-text-secondary">
-            총 {{ currentMonthEventCount }} 건
-          </p>
+
           <button
             @click.prevent="handlePrevMonth"
-            class="w-10 h-7 flex items-center justify-center bg-gray-200 dark:bg-dark-bg-tertiary hover:bg-gray-300 dark:hover:bg-dark-border rounded-md transition-all flex-shrink-0 text-gray-600 dark:text-dark-text-secondary cursor-pointer"
+            class="w-10 h-8 flex items-center justify-center rounded-full bg-white dark:bg-slate-700 shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 flex-shrink-0 text-gray-600 dark:text-dark-text-secondary cursor-pointer"
             title="이전 달"
             type="button"
           >
@@ -38,7 +41,7 @@
           </button>
           <button
             @click.prevent="handleNextMonth"
-            class="w-10 h-7 flex items-center justify-center bg-gray-200 dark:bg-dark-bg-tertiary hover:bg-gray-300 dark:hover:bg-dark-border rounded-md transition-all flex-shrink-0 text-gray-600 dark:text-dark-text-secondary cursor-pointer"
+            class="w-10 h-8 flex items-center justify-center rounded-full bg-white dark:bg-slate-700 shadow-sm hover:shadow-md hover:scale-110 transition-all duration-200 flex-shrink-0 text-gray-600 dark:text-dark-text-secondary cursor-pointer"
             title="다음 달"
             type="button"
           >
@@ -46,7 +49,7 @@
           </button>
           <button
             @click.prevent="handleGoToToday"
-            class="w-20 h-7 flex items-center justify-center bg-gray-200 dark:bg-dark-bg-tertiary hover:bg-gray-300 dark:hover:bg-dark-border rounded-md transition-all flex-shrink-0 text-gray-600 dark:text-dark-text-secondary cursor-pointer"
+            class="px-4 h-8 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 flex-shrink-0 cursor-pointer font-medium text-sm"
             title="오늘로 이동"
             type="button"
           >
@@ -88,7 +91,8 @@
             :key="index"
             @click="handleDateClick(date)"
             :class="[
-              'p-3 text-sm rounded-lg transition-all text-center flex flex-col items-center justify-center min-h-20 overflow-hidden',
+              'p-3 text-sm rounded-xl transition-all duration-200 text-center flex flex-col items-center justify-start min-h-24 overflow-hidden relative group',
+              'transform hover:scale-105 active:scale-95',
               // 기본 글자색 (요일별)
               date.isCurrentMonth
                 ? (index % 7 === 0
@@ -97,70 +101,91 @@
                       ? 'text-blue-500 dark:text-blue-400'
                       : 'text-gray-900 dark:text-white') +
                   (date.eventCount > 0
-                    ? ' hover:shadow-md hover:scale-105'
-                    : ' hover:bg-blue-300  dark:hover:bg-slate-700') +
+                    ? ' hover:shadow-xl hover:z-10'
+                    : ' hover:bg-blue-50 dark:hover:bg-slate-700 hover:shadow-md') +
                   ' cursor-pointer'
                 : 'text-gray-400 dark:text-gray-600',
               // 선택된 날짜
               isDateSelected(date)
-                ? 'bg-blue-500 text-white'
+                ? 'bg-blue-500 text-white shadow-lg ring-2 ring-blue-300 dark:ring-blue-700'
                 : // 행사가 있는 날짜 - 상태에 따라 다르게 (선택된 날짜 제외)
                   date.eventCount > 0
                   ? date.cancelledCount > 0
-                    ? 'bg-amber-100 dark:bg-amber-900/30' // 취소 있음
+                    ? 'bg-amber-100 dark:bg-amber-900/30 shadow-md' // 취소 있음
                     : date.inProgressCount > 0
-                      ? 'bg-teal-100 dark:bg-teal-900/30' // 진행중
+                      ? 'bg-teal-100 dark:bg-teal-900/30 shadow-md' // 진행중
                       : date.scheduledCount > 0
-                        ? 'bg-blue-100 dark:bg-blue-900/30' // 예정
+                        ? 'bg-blue-100 dark:bg-blue-900/30 shadow-md' // 예정
                         : date.completedCount > 0
-                          ? 'bg-gray-100 dark:bg-gray-800' // 완료만
+                          ? 'bg-slate-200 dark:bg-slate-700 shadow-sm' // 완료만
                           : ''
                   : '',
             ]"
           >
             <span
               :class="[
-                'text-sm w-8 h-8 font-medium rounded-full flex items-center justify-center',
-                date.isToday
-                  ? 'text-[10px] px-1 py-0.5 rounded bg-teal-100 dark:bg-teal-500/20 text-teal-700 dark:text-accent-400 font-medium whitespace-nowrap'
-                  : '',
+                'text-base font-bold rounded-full flex items-center justify-center mb-1',
+                date.isToday ? 'w-8 h-8 ring-2 ring-teal-500 dark:ring-teal-400' : 'w-8 h-8',
               ]"
             >
               {{ date.date }}
             </span>
-            <!-- 상태별 건수 표시 -->
+
+            <!-- 이벤트 개수 및 상태별 점 표시 (간단하게) -->
             <div
-              v-if="date.isCurrentMonth"
-              class="flex flex-col gap-0.5 mt-1 justify-center items-center w-full"
+              v-if="date.isCurrentMonth && date.eventCount > 0"
+              class="flex flex-col gap-1 w-full items-center"
             >
-              <!-- 예정 건수 -->
-              <span
-                v-if="date.scheduledCount > 0"
-                class="text-[10px] px-1 py-0.5 rounded bg-blue-100 dark:bg-blue-500/20 text-primary dark:text-blue-300 font-medium whitespace-nowrap"
+              <!-- 총 이벤트 개수 -->
+              <div class="flex items-center gap-1">
+                <span class="text-xs font-semibold">{{ date.eventCount }}건</span>
+              </div>
+
+              <!-- 상태별 점(dot) 표시 -->
+              <div class="flex justify-center gap-1 mt-1">
+                <span
+                  v-if="date.scheduledCount > 0"
+                  class="w-2 h-2 rounded-full bg-blue-500 dark:bg-blue-400"
+                  :title="`예정 ${date.scheduledCount}건`"
+                ></span>
+                <span
+                  v-if="date.inProgressCount > 0"
+                  class="w-2 h-2 rounded-full bg-teal-500 dark:bg-teal-400"
+                  :title="`진행 ${date.inProgressCount}건`"
+                ></span>
+                <span
+                  v-if="date.cancelledCount > 0"
+                  class="w-2 h-2 rounded-full bg-amber-500 dark:bg-amber-400"
+                  :title="`취소 ${date.cancelledCount}건`"
+                ></span>
+                <span
+                  v-if="date.completedCount > 0"
+                  class="w-2 h-2 rounded-full bg-slate-600 dark:bg-slate-400"
+                  :title="`종료 ${date.completedCount}건`"
+                ></span>
+              </div>
+
+              <!-- 호버 시 상세 정보 툴팁 -->
+              <div
+                class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity z-50 whitespace-nowrap pointer-events-none shadow-xl"
               >
-                예정 {{ date.scheduledCount }} 건
-              </span>
-              <!-- 진행중 건수 (사용중 칩 색상) -->
-              <span
-                v-if="date.inProgressCount > 0"
-                class="text-[10px] px-1 py-0.5 rounded bg-teal-100 dark:bg-teal-500/20 text-teal-700 dark:text-accent-400 font-medium whitespace-nowrap"
-              >
-                진행 {{ date.inProgressCount }} 건
-              </span>
-              <!-- 취소 건수 -->
-              <span
-                v-if="date.cancelledCount > 0"
-                class="text-[10px] px-1 py-0.5 rounded bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400 font-medium whitespace-nowrap"
-              >
-                취소 {{ date.cancelledCount }} 건
-              </span>
-              <!-- 종료 건수 -->
-              <span
-                v-if="date.completedCount > 0"
-                class="text-[10px] px-1 py-0.5 rounded bg-gray-100 dark:bg-gray-900/30 text-gray-800 dark:text-gray-400 font-medium whitespace-nowrap"
-              >
-                종료 {{ date.completedCount }} 건
-              </span>
+                <div v-if="date.scheduledCount > 0" class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                  <span>예정: {{ date.scheduledCount }}건</span>
+                </div>
+                <div v-if="date.inProgressCount > 0" class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-teal-400"></span>
+                  <span>진행: {{ date.inProgressCount }}건</span>
+                </div>
+                <div v-if="date.cancelledCount > 0" class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                  <span>취소: {{ date.cancelledCount }}건</span>
+                </div>
+                <div v-if="date.completedCount > 0" class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+                  <span>종료: {{ date.completedCount }}건</span>
+                </div>
+              </div>
             </div>
           </button>
         </div>
