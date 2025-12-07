@@ -183,6 +183,7 @@
                 leave-from-class="transform opacity-100 scale-100"
                 leave-to-class="transform opacity-0 scale-95"
               >
+                <!-- ref="profileMenu" -->
                 <div
                   v-if="isProfileMenuOpen"
                   class="absolute right-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-lg shadow-lg dark:shadow-slate-950 border border-gray-200 dark:border-slate-700 py-2 z-50"
@@ -219,7 +220,8 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+
 import { RouterLink, RouterView, useRoute, useRouter } from 'vue-router'
 import ComDarkModeToggle from '@/components/common/ComDarkModeToggle.vue'
 import { useAuthStore } from '@/stores/auth'
@@ -230,6 +232,7 @@ const authStore = useAuthStore()
 const isSidebarCollapsed = ref(false)
 const isMobileMenuOpen = ref(false)
 const isProfileMenuOpen = ref(false)
+// const profileMenu = ref(null)
 
 const menuItems = [
   {
@@ -279,19 +282,38 @@ const toggleSidebar = () => {
   }
 }
 
-// 데스크탑용 사이드바 토글 버튼용 함수
-const toggleSidebarDesktop = () => {
-  isSidebarCollapsed.value = !isSidebarCollapsed.value
-  localStorage.setItem('sidebarCollapsed', isSidebarCollapsed.value)
-}
+// // 데스크탑용 사이드바 토글 버튼용 함수
+// const toggleSidebarDesktop = () => {
+//   isSidebarCollapsed.value = !isSidebarCollapsed.value
+//   localStorage.setItem('sidebarCollapsed', isSidebarCollapsed.value)
+// }
 
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
 }
 
+//직접 프로필 메뉴 닫기
 const closeProfileMenu = () => {
   isProfileMenuOpen.value = false
 }
+//================
+//프로필 외부 클릭 감지
+const handleClickOutside = (event) => {
+  if (profileMenu.value && !profileMenu.value.contains(event.target)) {
+    isProfileMenuOpen.value = false
+  }
+}
+
+// 컴포넌트 마운트 시(생성될때) 외부 클릭 감지 이벤트 리스너 전역(document)에 추가
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+// 컴포넌트 언마운트 시 이벤트 리스너 제거
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
+//==========`========
 
 const collapseButtonTitle = computed(() =>
   isSidebarCollapsed.value ? '사이드바 펼치기' : '사이드바 접기',
