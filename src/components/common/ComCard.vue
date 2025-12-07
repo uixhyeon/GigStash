@@ -22,7 +22,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup> 
 import { computed } from 'vue'
 
 const props = defineProps({
@@ -82,6 +82,8 @@ const cardClass = computed(() => {
 
   const variants = {
     blue: 'bg-white/80 dark:bg-slate-800/50 border border-blue-100 dark:border-blue-900/30',
+    green: 'bg-white/80 dark:bg-slate-800/50 border border-green-100 dark:border-green-900/30',
+    puple: 'bg-white/80 dark:bg-slate-800/50 border border-purple-100 dark:border-purple-900/30',
     black: 'bg-white/80 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700',
     'gradient-blue': 'bg-gradient-to-br from-blue-400/90 to-blue-600/95 text-white',
     'gradient-black': 'bg-white/80 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700',
@@ -99,6 +101,8 @@ const layoutClass = computed(() => {
 const valueClass = computed(() => {
   const variants = {
     blue: 'text-blue-600 dark:text-blue-400',
+    green: 'text-green-600 dark:text-green-400',
+    puple: 'text-purple-600 dark:text-purple-400',
     black: 'text-gray-900 dark:text-white',
     'gradient-blue': 'text-white',
     'gradient-black': 'text-gray-900 dark:text-white',
@@ -112,6 +116,8 @@ const valueClass = computed(() => {
 const iconStyle = computed(() => {
   const variants = {
     blue: 'color: #3b82f6;',
+    green: 'color: #16a34a;',
+    puple: 'color: #a855f7;',
     black: 'color: #1f2937;',
     'gradient-blue': 'color: #ffffff;',
     'gradient-black': 'color: #1f2937;',

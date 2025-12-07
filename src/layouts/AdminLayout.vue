@@ -11,7 +11,7 @@
     <aside
       :class="[
         'fixed left-0 top-0 bottom-0 bg-white dark:bg-slate-800 border-r border-gray-200 dark:border-slate-700',
-        'flex flex-col transition-all duration-200 z-30 shadow-lg dark:shadow-slate-950/50',
+        'flex flex-col  transition-all duration-200 z-30 shadow-lg dark:shadow-slate-950/50',
         // 데스크톱: 접기/펼치기
         'lg:translate-x-0',
         isSidebarCollapsed ? 'lg:w-16' : 'lg:w-56',
@@ -50,7 +50,7 @@
 
       <!-- 네비게이션 ================================================== -->
       <nav
-        class="flex-1 py-3 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-slate-600"
+        class="items-center align-middle flex-1 py-3 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-slate-600"
       >
         <RouterLink
           v-for="item in menuItems"
@@ -66,8 +66,8 @@
           active-class="!bg-blue-600 !text-white dark:!bg-blue-600 !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
         >
           <span class="text-xl flex-shrink-0">
-            <component v-if="typeof item.icon !== 'string'" :is="item.icon" class="w-5 h-5 mr-3" />
-            <i v-else :class="[item.icon, `mr-3`]"></i>
+            <component v-if="typeof item.icon !== 'string'" :is="item.icon" class="w-5 h-5" />
+            <i v-else :class="[item.icon, ``]"></i>
           </span>
           <span class="flex-1 block lg:hidden">{{ item.label }}</span>
           <transition name="fade">
@@ -93,7 +93,7 @@
           active-class="!bg-blue-600 !text-white dark:!bg-blue-600 !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
         >
           <!-- active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30" -->
-          <span class="text-xl flex-shrink-0"><i :class="[item.icon, `mr-3`]"></i></span>
+          <span class="text-xl flex-shrink-0"><i :class="[item.icon, ``]"></i></span>
           <span class="flex-1 block lg:hidden">{{ item.label }}</span>
           <transition name="fade">
             <span v-if="!isSidebarCollapsed" class="hidden lg:block flex-1">{{ item.label }}</span>
@@ -239,16 +239,16 @@ const menuItems = [
     label: '대시보드',
   },
   {
-    name: 'adminReservations',
-    path: '/admin/reservations',
-    icon: 'fi fi-rr-clipboard-list',
-    label: '예약관리',
-  },
-  {
     name: 'adminEventManagement',
     path: '/admin/event-management',
     icon: 'fi fi-rr-calendar',
     label: '행사관리',
+  },
+  {
+    name: 'adminReservations',
+    path: '/admin/reservations',
+    icon: 'fi fi-rr-clipboard-list',
+    label: '예약관리',
   },
   {
     name: 'adminMonitoring',
