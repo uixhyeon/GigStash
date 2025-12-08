@@ -1,9 +1,9 @@
 
 <template>
-  <div class="h-screen flex flex-col overflow-hidden">
-    <!-- 탭 -->
+  <div class="h-full flex flex-col overflow-hidden">
+    <!-- 탭 (상단 고정) -->
     <div
-      class="bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-gray-700 flex-shrink-0"
+      class="bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-gray-700 flex-shrink-0 sticky top-0 z-10"
     >
       <div class="flex">
         <button
@@ -38,7 +38,7 @@
     </div>
 
     <!-- 예약 목록 -->
-    <div class="flex-1 overflow-y-auto min-h-0">
+    <div class="flex-1 overflow-hidden min-h-0">
       <!-- 예약번호 탭 -->
       <div v-if="activeTab === 'pending'" class="p-4 space-y-2">
         <div

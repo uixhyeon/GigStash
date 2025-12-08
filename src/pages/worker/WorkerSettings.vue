@@ -20,8 +20,17 @@
             }}</span>
           </div>
           <div class="flex-1">
-            <div class="text-lg font-bold text-gray-900 dark:text-white mb-1">
-              {{ userInfo.displayName }}
+            <div class="flex items-center justify-between mb-1">
+              <div class="text-lg font-bold text-gray-900 dark:text-white">
+                {{ userInfo.displayName }}
+              </div>
+              <button
+                @click="handleLogout"
+                class="text-sm text-gray-900 dark:text-gray-100 flex items-baseline gap-1.5 px-3 py-1.5 border border-gray-200 dark:border-gray-700 rounded-md"
+              >
+                <i class="fi fi-rr-sign-out-alt text-sm leading-none"></i>
+                <span class="leading-none">로그아웃</span>
+              </button>
             </div>
             <div class="text-sm text-gray-600 dark:text-gray-400 mb-1">{{ userInfo.phone }}</div>
             <div class="text-sm text-gray-600 dark:text-gray-400">{{ userInfo.email }}</div>
@@ -63,22 +72,12 @@
       <!-- 버튼 영역 -->
       <div class="mt-4 mb-4 flex justify-end items-center gap-3">
         <!-- 다크모드 토글 버튼 -->
-
         <button
           @click="toggleDarkMode"
-          class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-lg text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-gray-200 dark:border-gray-700"
+          class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-md text-sm shadow-sm hover:shadow-md transition-all flex items-baseline gap-1.5 border border-gray-200 dark:border-gray-700"
         >
-          <i :class="isDark ? 'fi fi-rr-sun' : 'fi fi-rr-moon'"></i>
-          <span>{{ isDark ? 'Light' : 'Dark' }}</span>
-        </button>
-
-        <!-- 로그아웃 버튼 -->
-        <button
-          @click="handleLogout"
-          class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-lg text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-gray-200 dark:border-gray-700"
-        >
-          <i class="fi fi-rr-sign-out-alt"></i>
-          <span>로그아웃</span>
+          <i :class="[isDark ? 'fi fi-rr-sun' : 'fi fi-rr-moon', 'text-sm leading-none']"></i>
+          <span class="leading-none">{{ isDark ? 'Light' : 'Dark' }}</span>
         </button>
       </div>
     </div>

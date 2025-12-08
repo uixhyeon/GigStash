@@ -446,29 +446,31 @@
 
     <!-- 주차장 사진 모달 -->
     <Teleport to="body">
-      <Transition name="modal-slide">
-        <div
-          v-if="showParkingModal"
-          class="fixed inset-0 z-[100] flex justify-center"
-        >
-          <!-- 모달 컨텐츠 (헤더 아래부터 시작) -->
-          <div class="w-full max-w-[480px] h-full bg-white dark:bg-gray-900 overflow-y-auto pt-[68px]">
+      <div
+        v-if="showParkingModal"
+        class="fixed top-[68px] bottom-[72px] left-1/2 -translate-x-1/2 w-full max-w-[480px] z-30"
+      >
+          <!-- 모달 컨텐츠 (헤더와 하단 탭 바를 고려한 높이) -->
+          <div class="w-full h-full bg-white dark:bg-gray-900 overflow-hidden flex flex-col">
             <!-- 헤더 -->
-            <div class="sticky top-0 bg-white dark:bg-gray-900 px-4 py-4 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 z-10">
-              <div>
-                <h2 class="text-lg font-bold text-gray-900 dark:text-white">주차 장소</h2>
+            <div class="flex-shrink-0 bg-white dark:bg-gray-900 px-4 py-2 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 z-10">
+              <div class="flex items-center gap-2">
+                <h2 class="text-base font-bold text-gray-900 dark:text-white">주차 장소</h2>
+                <span class="text-sm text-gray-500 dark:text-gray-400">·</span>
                 <p class="text-sm text-gray-500 dark:text-gray-400">{{ currentLocation }}</p>
               </div>
               <button
                 @click="showParkingModal = false"
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               >
-                <i class="fi fi-rr-cross text-gray-600 dark:text-gray-400"></i>
+                <i class="fi fi-rr-cross text-gray-600 dark:text-gray-400 text-sm"></i>
               </button>
             </div>
 
-            <!-- 메인 이미지 -->
-            <div class="relative aspect-[4/3] bg-gray-100 dark:bg-gray-800 overflow-hidden">
+            <!-- 스크롤 가능한 콘텐츠 영역 -->
+            <div class="flex-1 overflow-hidden flex flex-col min-h-0">
+              <!-- 메인 이미지 -->
+              <div class="relative flex-1 bg-gray-100 dark:bg-gray-800 overflow-hidden min-h-0">
               <div
                 class="flex transition-transform duration-500 ease-out h-full"
                 :style="{ transform: `translateX(-${currentImageIndex * 100}%)` }"
@@ -486,75 +488,70 @@
                 </div>
               </div>
 
-              <!-- 이미지 카운터 -->
-              <div class="absolute top-4 right-4 bg-black/50 text-white text-sm px-3 py-1.5 rounded-full">
-                {{ currentImageIndex + 1 }} / {{ parkingImages.length }}
-              </div>
-
               <!-- 좌우 버튼 -->
               <button
                 v-if="currentImageIndex > 0"
                 @click="prevImage"
-                class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg hover:scale-105 transition-transform"
+                class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center transition-opacity hover:opacity-80"
               >
-                <i class="fi fi-rr-angle-left text-gray-800 dark:text-white text-lg"></i>
+                <i class="fi fi-rr-angle-left text-white/80 text-2xl drop-shadow-lg"></i>
               </button>
               <button
                 v-if="currentImageIndex < parkingImages.length - 1"
                 @click="nextImage"
-                class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg hover:scale-105 transition-transform"
+                class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center transition-opacity hover:opacity-80"
               >
-                <i class="fi fi-rr-angle-right text-gray-800 dark:text-white text-lg"></i>
+                <i class="fi fi-rr-angle-right text-white/80 text-2xl drop-shadow-lg"></i>
               </button>
             </div>
 
-            <!-- 도트 인디케이터 -->
-            <div class="flex justify-center gap-2 py-4 bg-white dark:bg-gray-900">
-              <button
-                v-for="(image, index) in parkingImages"
-                :key="index"
-                @click="currentImageIndex = index"
-                class="w-2.5 h-2.5 rounded-full transition-all duration-300"
-                :class="currentImageIndex === index 
-                  ? 'bg-blue-500 w-6' 
-                  : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'"
-              ></button>
-            </div>
-
-            <!-- 썸네일 목록 -->
-            <div class="px-4 pb-4 bg-white dark:bg-gray-900">
-              <div class="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
+              <!-- 도트 인디케이터 -->
+              <div class="flex-shrink-0 flex justify-center gap-2 py-3 bg-white dark:bg-gray-900">
                 <button
                   v-for="(image, index) in parkingImages"
                   :key="index"
                   @click="currentImageIndex = index"
-                  class="flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden transition-all duration-200"
+                  class="w-2.5 h-2.5 rounded-full transition-colors duration-300"
                   :class="currentImageIndex === index 
-                    ? 'ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-gray-900 scale-105' 
-                    : 'opacity-60 hover:opacity-100'"
+                    ? 'bg-blue-500' 
+                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'"
+                ></button>
+              </div>
+
+              <!-- 썸네일 목록 -->
+              <div class="flex-shrink-0 px-4 pb-3 bg-white dark:bg-gray-900">
+                <div class="flex gap-2 justify-center overflow-x-auto scrollbar-hide pb-2">
+                  <button
+                    v-for="(image, index) in parkingImages"
+                    :key="index"
+                    @click="currentImageIndex = index"
+                    class="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden transition-all duration-200"
+                    :class="currentImageIndex === index 
+                      ? 'ring-2 ring-blue-500 ring-offset-1 dark:ring-offset-gray-900 scale-105' 
+                      : 'opacity-60 hover:opacity-100'"
+                  >
+                    <img
+                      :src="image"
+                      :alt="`썸네일 ${index + 1}`"
+                      class="w-full h-full object-cover"
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <!-- 네비게이션 버튼 -->
+              <div class="flex-shrink-0 px-4 pb-4 bg-white dark:bg-gray-900">
+                <button
+                  @click="openKakaoNavigation"
+                  class="w-full py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2 shadow-md shadow-blue-500/25 transition-all"
                 >
-                  <img
-                    :src="image"
-                    :alt="`썸네일 ${index + 1}`"
-                    class="w-full h-full object-cover"
-                  />
+                  <i class="fi fi-rr-navigation text-base"></i>
+                  <span>카카오맵으로 길찾기</span>
                 </button>
               </div>
             </div>
-
-            <!-- 네비게이션 버튼 -->
-            <div class="px-4 pb-6 bg-white dark:bg-gray-900">
-              <button
-                @click="openKakaoNavigation"
-                class="w-full py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 transition-all hover:shadow-xl hover:shadow-blue-500/30"
-              >
-                <i class="fi fi-rr-navigation text-lg"></i>
-                <span>카카오맵으로 길찾기</span>
-              </button>
-            </div>
           </div>
         </div>
-      </Transition>
     </Teleport>
 
   </div>
@@ -1194,20 +1191,6 @@ const formatDate = (date) => {
 </script>
 
 <style scoped>
-/* 모달 슬라이드 트랜지션 */
-.modal-slide-enter-active,
-.modal-slide-leave-active {
-  transition: transform 0.3s ease;
-}
-
-.modal-slide-enter-from {
-  transform: translateX(100%);
-}
-
-.modal-slide-leave-to {
-  transform: translateX(100%);
-}
-
 /* 스크롤바 숨기기 */
 .scrollbar-hide {
   -ms-overflow-style: none;
