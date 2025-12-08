@@ -1,6 +1,6 @@
 
 <template>
-  <div class="h-screen bg-black flex flex-col">
+  <div class="h-full bg-black flex flex-col overflow-hidden">
     <!-- 상단: 탭에 따라 전체가 바뀌는 콘텐츠 영역 -->
     <div class="flex-1 overflow-hidden flex flex-col">
       <!-- QR 스캔 화면 -->
@@ -189,20 +189,20 @@
       <!-- 왼쪽: 수동 검색 탭 -->
       <button
         @click="activeTab = 'manual'"
-        class="flex-1 py-4 text-base font-bold flex items-center justify-center gap-2 transition-colors"
+        class="flex-1 min-h-[60px] py-3 text-base font-bold flex items-center justify-center gap-2 transition-colors"
         :class="
           activeTab === 'manual'
             ? 'bg-gray-900 text-blue-400 border-t-2 border-blue-500'
             : 'bg-gray-950 text-gray-500 hover:text-gray-300'
         "
       >
-        <i class="fi fi-rr-list-check text-xl"></i>
+        <i class="fi fi-rr-search text-xl"></i>
         <span>수동 검색</span>
       </button>
       <!-- 오른쪽: QR 스캔 탭 -->
       <button
         @click="activeTab = 'qr'"
-        class="flex-1 py-4 text-base font-bold flex items-center justify-center gap-2 transition-colors"
+        class="flex-1 min-h-[60px] py-3 text-base font-bold flex items-center justify-center gap-2 transition-colors"
         :class="
           activeTab === 'qr'
             ? 'bg-gray-900 text-blue-400 border-t-2 border-blue-500'
