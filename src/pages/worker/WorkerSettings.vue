@@ -74,10 +74,10 @@
         <!-- 다크모드 토글 버튼 -->
         <button
           @click="toggleDarkMode"
-          class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-md text-sm shadow-sm hover:shadow-md transition-all flex items-baseline gap-1.5 border border-gray-200 dark:border-gray-700"
+          class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-md text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-1.5 border border-gray-200 dark:border-gray-700"
         >
-          <i :class="[isDark ? 'fi fi-rr-sun' : 'fi fi-rr-moon', 'text-sm leading-none']"></i>
-          <span class="leading-none">{{ isDark ? 'Light' : 'Dark' }}</span>
+          <i :class="[isDark ? 'fi fi-rr-moon' : 'fi fi-rr-brightness', 'text-sm leading-none']" style="transform: translateY(1px);"></i>
+          <span class="leading-none">{{ isDark ? 'Dark' : 'Light' }}</span>
         </button>
       </div>
     </div>
