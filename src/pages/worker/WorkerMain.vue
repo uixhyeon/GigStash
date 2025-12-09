@@ -598,53 +598,39 @@ const todayStr = computed(() => {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
 })
 
-// 로그인 이름을 vehicles.js의 driver 이름으로 매핑
+// 로그인 이름을 driver 이름으로 매핑
 const workerNameToDriverName = (name) => {
-  const mapping = {
-    박기사: '김운전',
-    김기사: '김운전',
-    이기사: '이운전',
-    // 추가 매핑 필요시 여기에 추가
-  }
-  return mapping[name] || name
+  // 모든 케이스를 오운전으로 매핑
+  return '오운전'
 }
 
 // 현재 로그인 워커 이름 (없으면 기본값 사용)
-const currentWorkerName = computed(() => authStore.user?.name || '김운전')
+const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 
-// 워커가 담당하는 차량 (dataStore에서 가져오기)
-const workerVehicles = computed(() => {
+// 워커가 담당하는 배차 (dataStore에서 가져오기)
+const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return dataStore.vehicles.filter((v) => v.driver === driverName)
+  return dataStore.vehicleAssignments.filter((a) => a.driver === driverName)
 })
 
-// 첫 번째 기사 정보의 eventId 가져오기
-const firstWorkerVehicle = computed(() => {
-  return workerVehicles.value.length > 0 ? workerVehicles.value[0] : null
-})
-
-const workerEventId = computed(() => {
-  return firstWorkerVehicle.value?.eventId || null
-})
+// 워커의 배차에 포함된 vehicleId / eventId 세트
+const workerVehicleIds = computed(() => new Set(workerAssignments.value.map((a) => a.vehicleId)))
+const workerEventIds = computed(() => new Set(workerAssignments.value.map((a) => a.eventId)))
 
 // 워커 차량에 연결된 보관함
 const workerLockers = computed(() => {
-  if (!workerEventId.value) return []
-
-  // 첫 번째 기사의 eventId를 사용하여 해당 eventId에 연결된 차량들 찾기
-  const eventVehicles = dataStore.vehicles.filter((v) => v.eventId === workerEventId.value)
-  const vehicleIds = new Set(eventVehicles.map((v) => v.id))
-  return lockers.filter((l) => vehicleIds.has(l.vehicleId))
+  if (workerVehicleIds.value.size === 0) return []
+  return lockers.filter((l) => workerVehicleIds.value.has(l.vehicleId))
 })
 
 // 워커 보관함에 연결된 예약 (정규화된 reservations.js 기반)
 const workerRawReservations = computed(() => {
-  if (!workerEventId.value) return []
+  if (workerVehicleIds.value.size === 0) return []
 
   const lockerIds = new Set(workerLockers.value.map((l) => l.id))
-  // eventId도 함께 필터링하여 해당 이벤트의 예약만 가져오기
+  const eventIds = workerEventIds.value
   return allReservations.filter(
-    (r) => lockerIds.has(r.lockerId) && r.eventId === workerEventId.value,
+    (r) => lockerIds.has(r.lockerId) && eventIds.has(r.eventId),
   )
 })
 

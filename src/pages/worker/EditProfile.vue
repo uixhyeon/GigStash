@@ -132,13 +132,13 @@ const router = useRouter();
 const fileInput = ref(null);
 
 const profileData = ref({
-  displayName: "김기사",
+  displayName: "오운전",
   phone: "010-1234-5678",
   email: "driver@example.com",
   profileImage: null,
   bank: "kb",
   accountNumber: "101-02***-***",
-  accountHolder: "김기사",
+  accountHolder: "오운전",
 });
 
 const passwordData = ref({

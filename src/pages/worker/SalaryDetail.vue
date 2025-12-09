@@ -120,15 +120,20 @@
           <div
             v-for="item in filteredSalaryDetails"
             :key="item.id"
-            class="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-700 last:border-0"
+            class="flex justify-between items-start gap-3 py-2"
           >
-            <div>
-              <div class="text-base text-gray-900 dark:text-white">{{ item.label }}</div>
-              <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+            <div class="min-w-0">
+              <div class="text-base text-gray-900 dark:text-white font-semibold leading-snug">
+                {{ item.dateLabel }}
+              </div>
+              <div class="text-sm text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">
+                {{ item.eventName }}
+              </div>
+              <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
                 {{ item.workHours }}시간
               </div>
             </div>
-            <div class="text-base text-gray-900 dark:text-white">
+            <div class="text-base font-semibold text-gray-900 dark:text-white whitespace-nowrap">
               {{ formatCurrency(item.salary) }}원
             </div>
           </div>
@@ -223,7 +228,7 @@
 import { ref, computed } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 import { events } from '@/data/events'
-import { vehicles } from '@/data/vehicles'
+import { vehicleAssignments } from '@/data/vehicle-assignments'
 import { lockers } from '@/data/lockers'
 import { reservations as allReservations } from '@/data/reservations'
 
@@ -240,41 +245,41 @@ const selectedCalendarMonth = ref({
 // 시급
 const HOURLY_WAGE = 30000 // 기본 시급 30,000원
 
-// 로그인 이름을 vehicles.js의 driver 이름으로 매핑
+// 로그인 이름을 driver 이름으로 매핑 (모든 케이스 오운전)
 const workerNameToDriverName = (name) => {
-  const mapping = {
-    '박기사': '김운전',
-    '김기사': '김운전',
-    '이기사': '이운전',
-    // 추가 매핑 필요시 여기에 추가
-  }
-  return mapping[name] || name
+  return '오운전'
 }
 
 // 현재 로그인 워커 이름 (없으면 기본값 사용)
-const currentWorkerName = computed(() => authStore.user?.name || '김운전')
+const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 
-// 워커가 담당하는 차량
-const workerVehicles = computed(() => {
+// 워커가 담당하는 배차
+const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return vehicles.filter((v) => v.driver === driverName)
+  return vehicleAssignments.filter((a) => a.driver === driverName)
 })
+
+// 워커 배차에 포함된 vehicleId / eventId 집합
+const workerVehicleIds = computed(() => new Set(workerAssignments.value.map((a) => a.vehicleId)))
+const workerEventIds = computed(() => new Set(workerAssignments.value.map((a) => a.eventId)))
 
 // 워커 차량에 연결된 보관함
 const workerLockers = computed(() => {
-  const vehicleIds = new Set(workerVehicles.value.map((v) => v.id))
-  return lockers.filter((l) => vehicleIds.has(l.vehicleId))
+  if (workerVehicleIds.value.size === 0) return []
+  return lockers.filter((l) => workerVehicleIds.value.has(l.vehicleId))
 })
 
 // 워커 보관함에 연결된 예약
 const workerRawReservations = computed(() => {
+  if (workerVehicleIds.value.size === 0) return []
   const lockerIds = new Set(workerLockers.value.map((l) => l.id))
-  return allReservations.filter((r) => lockerIds.has(r.lockerId))
+  const eventIds = workerEventIds.value
+  return allReservations.filter((r) => lockerIds.has(r.lockerId) && eventIds.has(r.eventId))
 })
 
 // 워커가 실제로 참여하는 행사 목록
 const workerEvents = computed(() => {
-  const eventIds = new Set(workerRawReservations.value.map((r) => r.eventId))
+  const eventIds = workerEventIds.value
   return events.filter((e) => eventIds.has(e.id) && e.eventDate)
 })
 
@@ -406,7 +411,8 @@ const filteredSalaryDetails = computed(() => {
       })
       .map((item) => ({
         id: item.id,
-        label: `${formatDateLabel(item.date)} - ${item.eventName}`,
+        dateLabel: formatDateLabel(item.date),
+        eventName: item.eventName,
         workHours: Math.round(item.workHours * 10) / 10,
         salary: item.salary,
       }))
@@ -417,7 +423,7 @@ const filteredSalaryDetails = computed(() => {
         if (dateA !== dateB) {
           return new Date(dateB) - new Date(dateA)
         }
-        return a.label.localeCompare(b.label)
+        return (a.eventName || '').localeCompare(b.eventName || '')
       })
   } else {
     // 월별: 6개월 동안 (오늘 날짜 기준으로 최근 6개월)
@@ -442,7 +448,8 @@ const filteredSalaryDetails = computed(() => {
     filtered = Object.values(monthGroups)
       .map((group) => ({
         id: group.monthKey,
-        label: formatMonthLabel(group.monthKey),
+        dateLabel: formatMonthLabel(group.monthKey),
+        eventName: '',
         workHours: Math.round(group.workHours * 10) / 10,
         salary: group.salary,
       }))
