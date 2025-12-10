@@ -1,10 +1,10 @@
 <template>
   <div
-    class="px-6 bg-background dark:bg-dark-bg h-[calc(100vh-130px)] scrollbar-hide flex flex-col justify-start"
+    class="px-6 bg-slate-50 dark:bg-slate-900 lg:h-[calc(100vh-130px)] lg:flex lg:flex-col"
     @click="showCalendar = false"
   >
     <!-- 리포트 & 통계 헤더 -->
-    <div>
+    <div class="flex-shrink-0">
       <!-- <h1 class="text-xl font-bold mb-3" style="color: #1e293b">리포트 & 통계</h1> -->
 
       <!-- 날짜 범위 선택기 -->
@@ -33,24 +33,23 @@
       </div>
     </div>
 
-    <!-- 운영 기간 안내 메시지 -->
     <div
       v-if="!isValidDateRange && filteredReservations.length === 0"
-      class="mb-4 p-4 rounded-xl border dark:bg-gray-900/20 border-gray-200 dark:border-gray-800"
+      class="mb-4 p-4 rounded-xl border dark:bg-gray-900/20 border-gray-200 dark:border-gray-800 flex-shrink-0"
     >
       <div class="flex items-center gap-2">
         <i class="fi fi-rr-info text-gray-600 dark:text-gray-400"></i>
         <p class="text-sm text-gray-800 dark:text-gray-200">
           <span v-if="isBeforeNovember">아직 서비스가 오픈되지 않았습니다.</span>
-          <span v-else-if="isAfterNovember">이 기간은 운영 정보가 없습니다.</span>
+          <span v-else-if="isAfterNovember">해당 기간의 운영 정보가 없습니다.</span>
         </p>
       </div>
     </div>
 
     <!-- 2x2 그리드 레이아웃 -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-6 pb-6 lg:flex-1 lg:grid-rows-2">
       <!-- 1. 이번 달 주요 지표 -->
-      <section class="flex flex-col h-full">
+      <section class="flex flex-col lg:h-full">
         <h2
           class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0"
         >
@@ -60,7 +59,7 @@
           <div class="flex flex-wrap gap-3 mb-4">
             <!-- 이용률 카드 -->
             <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-blue-100 dark:border-blue-900/30 h-[160px]"
+              class="flex-1 min-w-0 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-blue-100 dark:border-blue-900/30"
             >
               <div>
                 <div
@@ -68,12 +67,6 @@
                   style="font-size: 16px; font-weight: bold; color: #1e293b"
                 >
                   이용률
-                </div>
-                <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
-                  style="font-size: 30px"
-                >
-                  {{ keyMetrics.utilizationRate }}%
                 </div>
                 <div
                   class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5 text-right"
@@ -87,12 +80,18 @@
                     >{{ Math.abs(keyMetrics.utilizationChange) }}%
                   </span>
                 </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
+                  style="font-size: 30px"
+                >
+                  {{ keyMetrics.utilizationRate }}%
+                </div>
               </div>
             </div>
 
             <!-- 재방문율 카드 -->
             <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-green-100 dark:border-green-900/30 h-[160px]"
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-green-100 dark:border-green-900/30"
             >
               <div>
                 <div
@@ -101,12 +100,7 @@
                 >
                   재방문율
                 </div>
-                <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
-                  style="font-size: 30px"
-                >
-                  {{ additionalMetrics.revisitRate }}%
-                </div>
+
                 <div
                   class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5 text-right"
                 >
@@ -119,13 +113,19 @@
                     >{{ Math.abs(additionalMetrics.revisitChange) }}%
                   </span>
                 </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
+                  style="font-size: 30px"
+                >
+                  {{ additionalMetrics.revisitRate }}%
+                </div>
               </div>
             </div>
 
             <!-- 배송선택률 카드 -->
             <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-300/90 to-amber-400/95 text-gray-800" -->
             <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-yellow-100 dark:border-yellow-900/30 h-[160px]"
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-yellow-100 dark:border-yellow-900/30"
             >
               <div>
                 <div
@@ -134,12 +134,7 @@
                 >
                   배송선택률
                 </div>
-                <div
-                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
-                  style="font-size: 30px"
-                >
-                  {{ additionalMetrics.deliveryRate }}%
-                </div>
+
                 <div
                   class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5 text-right"
                 >
@@ -152,16 +147,22 @@
                     >{{ Math.abs(additionalMetrics.deliveryChange) }}%
                   </span>
                 </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
+                  style="font-size: 30px"
+                >
+                  {{ additionalMetrics.deliveryRate }}%
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- 매출 & 이용객 카드 -->
+          <!-- 매출 & 이용객 카드 ===================================================-->
           <div class="flex flex-wrap gap-3">
             <!-- 이용객 카드 -->
             <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-gray-400/90 to-gray-600/95" -->
             <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-100/90 to-yellow-300/95 h-[160px]"
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-100/90 to-yellow-300/95"
             >
               <div class="font-bold opacity-90 text-gray-900" style="font-size: 16px">이용객</div>
               <div class="text-right">
@@ -183,7 +184,7 @@
             <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-400/90 to-blue-600/95 text-white" -->
 
             <div
-              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95 h-[160px]"
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95"
             >
               <div
                 class="font-bold opacity-90 text-gray-900 dark:text-gray-900"
@@ -213,14 +214,14 @@
       </section>
 
       <!-- 2. 피크타임 분석 -->
-      <section class="flex flex-col h-full">
+      <section class="flex flex-col lg:h-full">
         <h2
           class="text-lg items-center font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0"
         >
           피크타임 분석
         </h2>
         <div
-          class="flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col"
+          class="flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col min-h-0"
         >
           <!-- 범례와 셀렉트 (가로 배치) -->
           <div class="flex items-baseline justify-between gap-4 mb-3 flex-shrink-0">
@@ -246,16 +247,16 @@
               </option>
             </select>
           </div>
-          <div class="flex-none flex flex-col items-center gap-2 w-full" style="height: 238.5px">
-            <canvas ref="peakTimeChartRef" class="w-full h-full"></canvas>
+          <div class="flex-1 min-h-0" style="position: relative; width: 100%; height: 100%">
+            <canvas ref="peakTimeChartRef"></canvas>
           </div>
         </div>
       </section>
 
       <!-- 3. 행사 유형별 매출 & 사이즈별 비율 (하나의 그리드 셀 안에 두 개의 섹션) -->
-      <div class="flex gap-3 flex-col xl:flex-row h-full">
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-3 lg:h-full">
         <!-- 행사 유형별 매출 -->
-        <section class="flex-1 flex flex-col h-full">
+        <section class="flex flex-col lg:h-full">
           <h2
             class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0"
           >
@@ -272,7 +273,7 @@
         </section>
 
         <!-- 사이즈별 비율 -->
-        <section class="flex-1 flex flex-col h-full">
+        <section class="flex flex-col lg:h-full">
           <h2
             class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0"
           >
@@ -313,7 +314,7 @@
       </div>
 
       <!-- 4. 지역별 배송 -->
-      <section class="mb-4 flex flex-col h-full">
+      <section class="mb-4 flex flex-col lg:h-full">
         <h2
           class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0"
         >

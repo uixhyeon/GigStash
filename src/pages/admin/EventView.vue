@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="px-6 bg-background dark:bg-dark-bg h-[calc(100vh-130px)] scrollbar-hide flex flex-col justify-start"
-  >
+  <div class="px-6 bg-slate-50 dark:bg-slate-900 h-[calc(100vh-130px)] scrollbar-hide">
     <!-- 달력과 테이블 병렬 레이아웃 -->
     <div
       class="grid grid-cols-1 xl:grid-cols-6 2xl:grid-cols-7 gap-10 flex-1 w-full min-h-0"

@@ -148,7 +148,7 @@
 
       <!-- Footer -->
       <p class="text-center text-white/80 text-sm mt-8">
-        &copy; 2024 GigStash. All rights reserved.
+        &copy; 2025 GigStash. All rights reserved.
       </p>
     </div>
   </div>

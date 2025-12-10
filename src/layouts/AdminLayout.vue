@@ -155,6 +155,7 @@
             <!-- 프로필 영역 -->
             <div class="relative">
               <button
+                ref="profileButton"
                 @click="isProfileMenuOpen = !isProfileMenuOpen"
                 class="flex items-center gap-2 px-3 py-2 hover:bg-gray-200 dark:hover:bg-slate-700 rounded-lg transition-all text-gray-700 dark:text-gray-300"
               >
@@ -233,6 +234,7 @@ const isSidebarCollapsed = ref(false)
 const isMobileMenuOpen = ref(false)
 const isProfileMenuOpen = ref(false)
 const profileMenu = ref(null)
+const profileButton = ref(null)
 
 const menuItems = [
   {
@@ -261,7 +263,12 @@ const menuItems = [
   },
 ]
 const secondaryMenuItems = [
-  { name: 'adminComponentDemo', path: '/admin/demo', icon: 'fi fi-rr-settings', label: '설정' },
+  {
+    name: 'adminComponentDemo',
+    path: '/admin/demo',
+    icon: 'fi fi-rr-settings',
+    label: '컴포넌트 데모',
+  },
 ]
 
 // menuItems과 secondaryMenuItems을 통합하여 route.name -> label 매핑
@@ -299,9 +306,15 @@ const closeProfileMenu = () => {
 //================
 //프로필 외부 클릭 감지
 const handleClickOutside = (event) => {
-  if (profileMenu.value && !profileMenu.value.contains(event.target)) {
-    isProfileMenuOpen.value = false
+  // 프로필 버튼이나 드롭다운 메뉴 내부를 클릭한 경우 무시
+  if (
+    (profileButton.value && profileButton.value.contains(event.target)) ||
+    (profileMenu.value && profileMenu.value.contains(event.target))
+  ) {
+    return
   }
+  // 외부 클릭 시 메뉴 닫기
+  isProfileMenuOpen.value = false
 }
 
 // 컴포넌트 마운트 시(생성될때) 외부 클릭 감지 이벤트 리스너 전역(document)에 추가
