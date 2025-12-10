@@ -37,8 +37,8 @@
       </div>
     </div>
 
-    <!-- 예약 목록 -->
-    <div class="flex-1 overflow-hidden min-h-0">
+    <!-- 예약 목록 (스크롤 가능 영역) -->
+    <div class="flex-1 overflow-y-auto min-h-0 pb-[68px]">
       <!-- 예약번호 탭 -->
       <div v-if="activeTab === 'pending'" class="p-4 space-y-2">
         <div
@@ -140,14 +140,20 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
-import { customers } from '@/data/customers'
-import { events } from '@/data/events'
-import { vehicleAssignments } from '@/data/vehicle-assignments'
-import { lockers } from '@/data/lockers'
+import { useDataStore } from '@/stores/dataStore'
+import { customers as customersData } from '@/data/customers'
+import { events as eventsData } from '@/data/events'
+import { lockers as lockersData } from '@/data/lockers'
 import { reservations as allReservations } from '@/data/reservations'
 
 const router = useRouter()
 const authStore = useAuthStore()
+const dataStore = useDataStore()
+
+// dataStore 또는 직접 import 데이터 사용 (dataStore 우선)
+const customers = computed(() => dataStore.customers.length > 0 ? dataStore.customers : customersData)
+const events = computed(() => dataStore.events.length > 0 ? dataStore.events : eventsData)
+const lockers = computed(() => dataStore.lockers.length > 0 ? dataStore.lockers : lockersData)
 
 // 탭 상태 관리
 const activeTab = ref('pending')
@@ -178,28 +184,39 @@ const workerNameToDriverName = (name) => {
 // 현재 로그인 워커 이름 (없으면 기본값 사용)
 const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 
-// 워커가 담당하는 배차
+// 워커가 담당하는 배차 (dataStore에서 가져오기)
 const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return vehicleAssignments.filter((a) => a.driver === driverName)
+  return dataStore.vehicleAssignments.filter((a) => a.driver === driverName)
 })
+
+// 워커의 배차에 포함된 vehicleId / eventId 세트
+const workerVehicleIds = computed(() => new Set(workerAssignments.value.map((a) => a.vehicleId)))
+const workerEventIds = computed(() => new Set(workerAssignments.value.map((a) => a.eventId)))
 
 // 워커 차량에 연결된 보관함
 const workerLockers = computed(() => {
-  const vehicleIds = new Set(workerAssignments.value.map((a) => a.vehicleId))
-  return lockers.filter((l) => vehicleIds.has(l.vehicleId))
+  if (workerVehicleIds.value.size === 0) return []
+  const lockersArray = Array.isArray(lockers.value) ? lockers.value : lockers
+  return lockersArray.filter((l) => workerVehicleIds.value.has(l.vehicleId))
 })
 
 // 워커 보관함에 연결된 예약 (정규화된 reservations.js 기반)
+// ⚠️ lockerId 필터링 제거 - eventId만으로 필터링 (예약이 오운전 차량 locker에 연결되지 않은 경우 대비)
 const workerRawReservations = computed(() => {
-  const lockerIds = new Set(workerLockers.value.map((l) => l.id))
-  return allReservations.filter((r) => lockerIds.has(r.lockerId))
+  if (workerEventIds.value.size === 0) return []
+
+  const eventIds = workerEventIds.value
+  // eventId만으로 필터링 (lockerId 필터링 제거)
+  return allReservations.filter((r) => eventIds.has(r.eventId))
 })
 
 // 배정된 예약 정보 (상단 표시용)
 const assignedReservationInfo = computed(() => {
-  const customerMap = new Map(customers.map((c) => [c.id, c]))
-  const eventMap = new Map(events.map((e) => [e.id, e]))
+  const customersArray = Array.isArray(customers.value) ? customers.value : customers
+  const eventsArray = Array.isArray(events.value) ? events.value : events
+  const customerMap = new Map(customersArray.map((c) => [c.id, c]))
+  const eventMap = new Map(eventsArray.map((e) => [e.id, e]))
 
   // 워커에게 배정된 당일 예약 찾기
   const assignedReservation = workerRawReservations.value.find((r) => {
@@ -250,39 +267,50 @@ const assignedReservationInfo = computed(() => {
 })
 
 // 고객/행사 정보를 join 해서 워커 페이지에서 쓰기 편한 형태로 변환
-// 당일 + 워커 배정된 예약만 필터링
+// 메인 행사의 모든 예약만 필터링 (날짜 필터링 제거)
 const reservations = computed(() => {
-  const customerMap = new Map(customers.map((c) => [c.id, c]))
-  const eventMap = new Map(events.map((e) => [e.id, e]))
-
-  return workerRawReservations.value
-    .filter((r) => {
-      // 오늘 날짜 기준으로 필터링 (행사 날짜 또는 시작/종료 시간 기준)
-      const event = eventMap.get(r.eventId)
-
-      if (event?.eventDate) {
-        return event.eventDate === todayStr.value
+  const customersArray = Array.isArray(customers.value) ? customers.value : customers
+  const eventsArray = Array.isArray(events.value) ? events.value : events
+  const customerMap = new Map(customersArray.map((c) => [c.id, c]))
+  const eventMap = new Map(eventsArray.map((e) => [e.id, e]))
+  
+  // 메인 행사의 eventId 가져오기 (오늘 날짜의 가장 많은 배차 행사)
+  const todayEvents = []
+  for (const eventId of workerEventIds.value) {
+    const event = eventMap.get(eventId)
+    if (event && event.eventDate === todayStr.value) {
+      todayEvents.push(event)
+    }
+  }
+  
+  let mainEventId = null
+  if (todayEvents.length > 0) {
+    // 가장 많은 배차가 있는 행사 선택
+    let mainEvent = todayEvents[0]
+    let maxAssignments = 0
+    for (const event of todayEvents) {
+      const assignmentCount = workerAssignments.value.filter((a) => a.eventId === event.id).length
+      if (assignmentCount > maxAssignments) {
+        maxAssignments = assignmentCount
+        mainEvent = event
       }
+    }
+    mainEventId = mainEvent.id
+  }
+  
+  if (!mainEventId) {
+    return []
+  }
+  
+  // 메인 행사의 모든 예약 가져오기 (취소만 제외)
+  const filtered = workerRawReservations.value.filter((r) => {
+    // 취소된 예약 제외
+    if (r.status === 'cancelled') return false
+    // 메인 행사의 eventId와 일치하는 예약만
+    return r.eventId === mainEventId
+  })
 
-      if (r.startTime) {
-        const d = new Date(r.startTime)
-        const dStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(
-          d.getDate(),
-        ).padStart(2, '0')}`
-        return dStr === todayStr.value
-      }
-
-      if (r.endTime) {
-        const d = new Date(r.endTime)
-        const dStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(
-          d.getDate(),
-        ).padStart(2, '0')}`
-        return dStr === todayStr.value
-      }
-
-      return false
-    })
-    .map((r) => {
+  return filtered.map((r) => {
       const customer = customerMap.get(r.customerId)
       const event = eventMap.get(r.eventId)
 
