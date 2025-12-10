@@ -24,16 +24,16 @@
         {{ assignedEventInfo.venue }}
       </div>
       <div class="border-t border-dashed border-gray-300 dark:border-gray-700 pt-3">
-        <div class="text-base text-gray-900 dark:text-white">{{ assignedEventInfo.arrivalTime }} 도착 예정</div>
+        <div class="text-base text-gray-900 dark:text-white">
+          {{ assignedEventInfo.arrivalTime }} 도착 예정
+        </div>
       </div>
     </div>
     <div
       v-else
       class="bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm mx-4 p-5"
     >
-      <div class="text-base text-gray-900 dark:text-white text-center">
-        오늘은 일정이 없습니다
-      </div>
+      <div class="text-base text-gray-900 dark:text-white text-center">오늘은 일정이 없습니다</div>
     </div>
 
     <!-- 지도 섹션 -->
@@ -156,7 +156,7 @@
           </div>
           <button
             @click="showParticipantsModal = false"
-            class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-2xl transition-colors"
           >
             ×
           </button>
@@ -272,7 +272,7 @@
           <h2 class="text-lg font-bold text-white">바코드 스캔</h2>
           <button
             @click="closeBarcodeModal"
-            class="text-white hover:text-gray-300 text-2xl w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+            class="text-white hover:text-gray-300 text-2xl transition-colors"
           >
             ×
           </button>
@@ -446,29 +446,33 @@
 
     <!-- 주차장 사진 모달 -->
     <Teleport to="body">
-      <Transition name="modal-slide">
-        <div
-          v-if="showParkingModal"
-          class="fixed inset-0 z-[100] flex justify-center"
-        >
-          <!-- 모달 컨텐츠 (헤더 아래부터 시작) -->
-          <div class="w-full max-w-[480px] h-full bg-white dark:bg-gray-900 overflow-y-auto pt-[68px]">
-            <!-- 헤더 -->
-            <div class="sticky top-0 bg-white dark:bg-gray-900 px-4 py-4 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 z-10">
-              <div>
-                <h2 class="text-lg font-bold text-gray-900 dark:text-white">주차 장소</h2>
-                <p class="text-sm text-gray-500 dark:text-gray-400">{{ currentLocation }}</p>
-              </div>
-              <button
-                @click="showParkingModal = false"
-                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-              >
-                <i class="fi fi-rr-cross text-gray-600 dark:text-gray-400"></i>
-              </button>
+      <div
+        v-if="showParkingModal"
+        class="fixed top-[68px] bottom-[72px] left-1/2 -translate-x-1/2 w-full max-w-[480px] z-30"
+      >
+        <!-- 모달 컨텐츠 (헤더와 하단 탭 바를 고려한 높이) -->
+        <div class="w-full h-full bg-white dark:bg-gray-900 overflow-hidden flex flex-col">
+          <!-- 헤더 -->
+          <div
+            class="flex-shrink-0 bg-white dark:bg-gray-900 px-4 py-2 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 z-10"
+          >
+            <div class="flex items-center gap-2">
+              <h2 class="text-base font-bold text-gray-900 dark:text-white">주차 장소</h2>
+              <span class="text-sm text-gray-500 dark:text-gray-400">·</span>
+              <p class="text-sm text-gray-500 dark:text-gray-400">{{ currentLocation }}</p>
             </div>
+            <button
+              @click="showParkingModal = false"
+              class="transition-colors"
+            >
+              <i class="fi fi-rr-cross text-gray-600 dark:text-gray-400 text-sm"></i>
+            </button>
+          </div>
 
+          <!-- 스크롤 가능한 콘텐츠 영역 -->
+          <div class="flex-1 overflow-hidden flex flex-col min-h-0">
             <!-- 메인 이미지 -->
-            <div class="relative aspect-[4/3] bg-gray-100 dark:bg-gray-800 overflow-hidden">
+            <div class="relative flex-1 bg-gray-100 dark:bg-gray-800 overflow-hidden min-h-0">
               <div
                 class="flex transition-transform duration-500 ease-out h-full"
                 :style="{ transform: `translateX(-${currentImageIndex * 100}%)` }"
@@ -476,62 +480,61 @@
                 <div
                   v-for="(image, index) in parkingImages"
                   :key="index"
-                  class="w-full h-full flex-shrink-0"
+                  class="w-full h-full flex-shrink-0 flex items-center justify-center"
                 >
                   <img
                     :src="image"
                     :alt="`주차장 사진 ${index + 1}`"
-                    class="w-full h-full object-cover"
+                    class="w-full h-full object-contain"
                   />
                 </div>
-              </div>
-
-              <!-- 이미지 카운터 -->
-              <div class="absolute top-4 right-4 bg-black/50 text-white text-sm px-3 py-1.5 rounded-full">
-                {{ currentImageIndex + 1 }} / {{ parkingImages.length }}
               </div>
 
               <!-- 좌우 버튼 -->
               <button
                 v-if="currentImageIndex > 0"
                 @click="prevImage"
-                class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg hover:scale-105 transition-transform"
+                class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center transition-opacity hover:opacity-80"
               >
-                <i class="fi fi-rr-angle-left text-gray-800 dark:text-white text-lg"></i>
+                <i class="fi fi-rr-angle-left text-white/80 text-2xl drop-shadow-lg"></i>
               </button>
               <button
                 v-if="currentImageIndex < parkingImages.length - 1"
                 @click="nextImage"
-                class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-white/90 dark:bg-gray-800/90 shadow-lg hover:scale-105 transition-transform"
+                class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center transition-opacity hover:opacity-80"
               >
-                <i class="fi fi-rr-angle-right text-gray-800 dark:text-white text-lg"></i>
+                <i class="fi fi-rr-angle-right text-white/80 text-2xl drop-shadow-lg"></i>
               </button>
             </div>
 
             <!-- 도트 인디케이터 -->
-            <div class="flex justify-center gap-2 py-4 bg-white dark:bg-gray-900">
+            <div class="flex-shrink-0 flex justify-center gap-2 py-3 bg-white dark:bg-gray-900">
               <button
                 v-for="(image, index) in parkingImages"
                 :key="index"
                 @click="currentImageIndex = index"
-                class="w-2.5 h-2.5 rounded-full transition-all duration-300"
-                :class="currentImageIndex === index 
-                  ? 'bg-blue-500 w-6' 
-                  : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'"
+                class="w-2.5 h-2.5 rounded-full transition-colors duration-300"
+                :class="
+                  currentImageIndex === index
+                    ? 'bg-blue-500'
+                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
+                "
               ></button>
             </div>
 
             <!-- 썸네일 목록 -->
-            <div class="px-4 pb-4 bg-white dark:bg-gray-900">
-              <div class="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
+            <div class="flex-shrink-0 px-4 pb-3 bg-white dark:bg-gray-900">
+              <div class="flex gap-3 justify-center overflow-x-auto scrollbar-hide py-3">
                 <button
                   v-for="(image, index) in parkingImages"
                   :key="index"
                   @click="currentImageIndex = index"
-                  class="flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden transition-all duration-200"
-                  :class="currentImageIndex === index 
-                    ? 'ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-gray-900 scale-105' 
-                    : 'opacity-60 hover:opacity-100'"
+                  class="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden transition-all duration-200"
+                  :class="
+                    currentImageIndex === index
+                      ? 'ring-2 ring-blue-500 ring-offset-1 dark:ring-offset-gray-900 scale-105'
+                      : 'opacity-60 hover:opacity-100'
+                  "
                 >
                   <img
                     :src="image"
@@ -543,20 +546,19 @@
             </div>
 
             <!-- 네비게이션 버튼 -->
-            <div class="px-4 pb-6 bg-white dark:bg-gray-900">
+            <div class="flex-shrink-0 px-4 pb-4 bg-white dark:bg-gray-900">
               <button
                 @click="openKakaoNavigation"
-                class="w-full py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 transition-all hover:shadow-xl hover:shadow-blue-500/30"
+                class="w-full py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2 shadow-md shadow-blue-500/25 transition-all"
               >
-                <i class="fi fi-rr-navigation text-lg"></i>
+                <i class="fi fi-rr-navigation text-base"></i>
                 <span>카카오맵으로 길찾기</span>
               </button>
             </div>
           </div>
         </div>
-      </Transition>
+      </div>
     </Teleport>
-
   </div>
 </template>
 
@@ -596,53 +598,39 @@ const todayStr = computed(() => {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
 })
 
-// 로그인 이름을 vehicles.js의 driver 이름으로 매핑
+// 로그인 이름을 driver 이름으로 매핑
 const workerNameToDriverName = (name) => {
-  const mapping = {
-    '박기사': '김운전',
-    '김기사': '김운전',
-    '이기사': '이운전',
-    // 추가 매핑 필요시 여기에 추가
-  }
-  return mapping[name] || name
+  // 모든 케이스를 오운전으로 매핑
+  return '오운전'
 }
 
 // 현재 로그인 워커 이름 (없으면 기본값 사용)
-const currentWorkerName = computed(() => authStore.user?.name || '김운전')
+const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 
-// 워커가 담당하는 차량 (dataStore에서 가져오기)
-const workerVehicles = computed(() => {
+// 워커가 담당하는 배차 (dataStore에서 가져오기)
+const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return dataStore.vehicles.filter((v) => v.driver === driverName)
+  return dataStore.vehicleAssignments.filter((a) => a.driver === driverName)
 })
 
-// 첫 번째 기사 정보의 eventId 가져오기
-const firstWorkerVehicle = computed(() => {
-  return workerVehicles.value.length > 0 ? workerVehicles.value[0] : null
-})
-
-const workerEventId = computed(() => {
-  return firstWorkerVehicle.value?.eventId || null
-})
+// 워커의 배차에 포함된 vehicleId / eventId 세트
+const workerVehicleIds = computed(() => new Set(workerAssignments.value.map((a) => a.vehicleId)))
+const workerEventIds = computed(() => new Set(workerAssignments.value.map((a) => a.eventId)))
 
 // 워커 차량에 연결된 보관함
 const workerLockers = computed(() => {
-  if (!workerEventId.value) return []
-  
-  // 첫 번째 기사의 eventId를 사용하여 해당 eventId에 연결된 차량들 찾기
-  const eventVehicles = dataStore.vehicles.filter((v) => v.eventId === workerEventId.value)
-  const vehicleIds = new Set(eventVehicles.map((v) => v.id))
-  return lockers.filter((l) => vehicleIds.has(l.vehicleId))
+  if (workerVehicleIds.value.size === 0) return []
+  return lockers.filter((l) => workerVehicleIds.value.has(l.vehicleId))
 })
 
 // 워커 보관함에 연결된 예약 (정규화된 reservations.js 기반)
 const workerRawReservations = computed(() => {
-  if (!workerEventId.value) return []
-  
+  if (workerVehicleIds.value.size === 0) return []
+
   const lockerIds = new Set(workerLockers.value.map((l) => l.id))
-  // eventId도 함께 필터링하여 해당 이벤트의 예약만 가져오기
-  return allReservations.filter((r) => 
-    lockerIds.has(r.lockerId) && r.eventId === workerEventId.value
+  const eventIds = workerEventIds.value
+  return allReservations.filter(
+    (r) => lockerIds.has(r.lockerId) && eventIds.has(r.eventId),
   )
 })
 
@@ -688,7 +676,8 @@ const reservations = computed(() => {
         : ''
 
       // 완료 상태 확인 (기본값은 "scheduled")
-      const status = reservationStatusMap.value.get(r.id) || (r.status === 'completed' ? 'done' : 'scheduled')
+      const status =
+        reservationStatusMap.value.get(r.id) || (r.status === 'completed' ? 'done' : 'scheduled')
 
       return {
         id: r.id,
@@ -705,9 +694,12 @@ const reservations = computed(() => {
           eventName: event?.eventName,
           eventDate: event?.eventDate,
           eventVenue: event?.eventVenue,
-          eventStartTime: event?.eventDate && event?.performanceTime
-            ? new Date(`${event.eventDate}T${(event.performanceTime || '00:00').split('-')[0]}:00Z`).toISOString()
-            : null,
+          eventStartTime:
+            event?.eventDate && event?.performanceTime
+              ? new Date(
+                  `${event.eventDate}T${(event.performanceTime || '00:00').split('-')[0]}:00Z`,
+                ).toISOString()
+              : null,
           eventEndTime: null,
         },
       }
@@ -737,9 +729,9 @@ const totalCapacity = computed(() => {
 
 // 주차장 사진 슬라이더
 const parkingImages = ref([
-  'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&h=600&fit=crop',
+  '/workerImg/parking1.jpg',
+  '/workerImg/parking2.jpg',
+  '/workerImg/parking3.jpg',
 ])
 
 const currentImageIndex = ref(0)
@@ -756,21 +748,54 @@ const prevImage = () => {
   }
 }
 
+// 카카오맵 인스턴스 저장
+const kakaoMap = ref(null)
+const kakaoMarker = ref(null)
+const kakaoInfoWindow = ref(null)
+
+//
+
+
 // 카카오 맵 초기화
 onMounted(() => {
+  // API 키 가져오기 (여러 방법 시도)
+  let kakaoApiKey = import.meta.env.VITE_KAKAO_MAP_APP_KEY
+  
+  // 대안 1: 직접 접근
+  if (!kakaoApiKey) {
+    kakaoApiKey = import.meta.env['VITE_KAKAO_MAP_APP_KEY']
+  }
+  
+  // 대안 2: 모든 환경 변수에서 찾기
+  if (!kakaoApiKey) {
+    const env = import.meta.env
+    kakaoApiKey = env.VITE_KAKAO_MAP_APP_KEY || env['VITE_KAKAO_MAP_APP_KEY']
+  }
+  
+  // 대안 3: .env 파일이 로드되지 않는 경우를 위한 임시 fallback
+  // TODO: .env 파일이 정상적으로 로드되면 이 부분 제거
+  if (!kakaoApiKey) {
+    kakaoApiKey = 'ce0be3a036c1109ce140f2113648226b' // 임시 fallback
+  }
+  
   // 카카오 맵 스크립트 로드
   if (!window.kakao || !window.kakao.maps) {
-    const kakaoApiKey = import.meta.env.VITE_KAKAO_MAP_APP_KEY
     if (!kakaoApiKey) {
-      console.error(
-        '카카오맵 API 키가 설정되지 않았습니다. VITE_KAKAO_MAP_APP_KEY 환경 변수를 설정해주세요.',
-      )
+      console.error('=== 카카오맵 API 키 오류 ===')
+      console.error('API 키가 설정되지 않았습니다.')
+      console.error('확인 사항:')
+      console.error('1. .env 파일이 프로젝트 루트에 있는지 확인')
+      console.error('2. .env 파일에 VITE_KAKAO_MAP_APP_KEY=값 형식으로 입력되어 있는지 확인')
+      console.error('3. 개발 서버를 재시작했는지 확인')
+      console.error('4. .env 파일에 따옴표나 공백이 없는지 확인')
       return
     }
     const script = document.createElement('script')
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${import.meta.env.VITE_KAKAO_MAP_APP_KEY}&autoload=false`
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoApiKey}&autoload=false`
     script.onload = () => {
+      console.log('카카오맵 스크립트 로드 완료')
       window.kakao.maps.load(() => {
+        console.log('카카오맵 SDK 로드 완료')
         initMap()
       })
     }
@@ -779,41 +804,79 @@ onMounted(() => {
     }
     document.head.appendChild(script)
   } else {
+    console.log('카카오맵 SDK 이미 로드됨')
     initMap()
   }
 })
 
 const initMap = () => {
   nextTick(() => {
+    console.log('initMap 호출')
     const container = document.getElementById('kakao-map')
-    if (!container || !window.kakao?.maps) return
+    console.log('컨테이너:', container ? '찾음' : '없음')
+    console.log('window.kakao:', window.kakao ? '있음' : '없음')
+    console.log('window.kakao.maps:', window.kakao?.maps ? '있음' : '없음')
+    
+    if (!container) {
+      console.error('지도 컨테이너를 찾을 수 없습니다.')
+      return
+    }
+    
+    if (!window.kakao?.maps) {
+      console.error('카카오맵 SDK가 로드되지 않았습니다.')
+      return
+    }
 
     // 오늘 일정의 행사 장소에 맞는 좌표 가져오기
     const venue = todaySchedule.value.venue
+    console.log('현재 venue:', venue)
+    
     const coordinates =
       venue && venue !== '-'
         ? venueToCoordinates[venue] || venueToCoordinates['default']
         : venueToCoordinates['default']
+    
+    console.log('사용할 좌표:', coordinates)
 
-    const options = {
-      center: new window.kakao.maps.LatLng(coordinates.lat, coordinates.lng),
-      level: 3,
+    try {
+      // 기존 지도가 있으면 제거
+      if (kakaoMap.value) {
+        kakaoMap.value = null
+      }
+      if (kakaoMarker.value) {
+        kakaoMarker.value.setMap(null)
+        kakaoMarker.value = null
+      }
+      if (kakaoInfoWindow.value) {
+        kakaoInfoWindow.value.close()
+        kakaoInfoWindow.value = null
+      }
+
+      const options = {
+        center: new window.kakao.maps.LatLng(coordinates.lat, coordinates.lng),
+        level: 3,
+      }
+
+      kakaoMap.value = new window.kakao.maps.Map(container, options)
+      console.log('지도 생성 완료')
+
+      // 마커 생성
+      const markerPosition = new window.kakao.maps.LatLng(coordinates.lat, coordinates.lng)
+      kakaoMarker.value = new window.kakao.maps.Marker({
+        position: markerPosition,
+      })
+      kakaoMarker.value.setMap(kakaoMap.value)
+      console.log('마커 생성 완료')
+
+      // 인포윈도우 생성 (현재 위치 표시)
+      kakaoInfoWindow.value = new window.kakao.maps.InfoWindow({
+        content: `<div style="padding:5px;font-size:12px;">${currentLocation.value}</div>`,
+      })
+      kakaoInfoWindow.value.open(kakaoMap.value, kakaoMarker.value)
+      console.log('인포윈도우 생성 완료')
+    } catch (error) {
+      console.error('지도 초기화 중 오류 발생:', error)
     }
-
-    const map = new window.kakao.maps.Map(container, options)
-
-    // 마커 생성
-    const markerPosition = new window.kakao.maps.LatLng(coordinates.lat, coordinates.lng)
-    const marker = new window.kakao.maps.Marker({
-      position: markerPosition,
-    })
-    marker.setMap(map)
-
-    // 인포윈도우 생성 (현재 위치 표시)
-    const infowindow = new window.kakao.maps.InfoWindow({
-      content: `<div style="padding:5px;font-size:12px;">${currentLocation.value}</div>`,
-    })
-    infowindow.open(map, marker)
   })
 }
 
@@ -1075,6 +1138,8 @@ const venueToCoordinates = {
   KSPO돔: { lat: 37.5219, lng: 127.1238 },
   올림픽공원: { lat: 37.5219, lng: 127.1238 },
   '올림픽공원 올림픽홀': { lat: 37.5219, lng: 127.1238 },
+  고척돔: { lat: 37.4981, lng: 126.8670 },
+  고척스카이돔: { lat: 37.4981, lng: 126.8670 },
   // 기본값 (잠실실내체육관)
   default: { lat: 37.5153, lng: 127.1028 },
 }
@@ -1084,6 +1149,8 @@ const venueToParkingAddress = {
   잠실실내체육관: '서울특별시 > 송파구 > 잠실동',
   KSPO돔: '서울특별시 > 송파구 > 올림픽로',
   올림픽공원: '서울특별시 > 송파구 > 올림픽로',
+  고척돔: '서울특별시 > 구로구 > 고척동',
+  고척스카이돔: '서울특별시 > 구로구 > 고척동',
   // 다른 행사 장소도 추가 가능
 }
 
@@ -1135,7 +1202,11 @@ const assignedEventInfo = computed(() => {
 
   // 장소 정보
   const event = eventMap.get(earliestReservation.original?.eventId || earliestReservation.eventId)
-  const venue = event?.eventVenue || earliestReservation.original?.eventVenue || earliestReservation.address || '장소 미정'
+  const venue =
+    event?.eventVenue ||
+    earliestReservation.original?.eventVenue ||
+    earliestReservation.address ||
+    '장소 미정'
   const venueName = venueToParkingName[venue] || venue
 
   return {
@@ -1177,7 +1248,34 @@ const parkingLocationAddress = computed(() => {
 watch(
   [todaySchedule, currentLocation],
   () => {
-    if (window.kakao?.maps) {
+    console.log('지도 업데이트 필요 - todaySchedule 또는 currentLocation 변경됨')
+    if (window.kakao?.maps && kakaoMap.value) {
+      const venue = todaySchedule.value.venue
+      const coordinates =
+        venue && venue !== '-'
+          ? venueToCoordinates[venue] || venueToCoordinates['default']
+          : venueToCoordinates['default']
+      
+      // 지도 중심 이동
+      const moveLatLon = new window.kakao.maps.LatLng(coordinates.lat, coordinates.lng)
+      kakaoMap.value.setCenter(moveLatLon)
+      
+      // 마커 위치 이동
+      if (kakaoMarker.value) {
+        kakaoMarker.value.setPosition(moveLatLon)
+      }
+      
+      // 인포윈도우 내용 업데이트
+      if (kakaoInfoWindow.value) {
+        kakaoInfoWindow.value.setContent(
+          `<div style="padding:5px;font-size:12px;">${currentLocation.value}</div>`
+        )
+        if (kakaoMarker.value) {
+          kakaoInfoWindow.value.open(kakaoMap.value, kakaoMarker.value)
+        }
+      }
+    } else if (window.kakao?.maps) {
+      // 지도가 아직 생성되지 않았으면 생성
       initMap()
     }
   },
@@ -1194,20 +1292,6 @@ const formatDate = (date) => {
 </script>
 
 <style scoped>
-/* 모달 슬라이드 트랜지션 */
-.modal-slide-enter-active,
-.modal-slide-leave-active {
-  transition: transform 0.3s ease;
-}
-
-.modal-slide-enter-from {
-  transform: translateX(100%);
-}
-
-.modal-slide-leave-to {
-  transform: translateX(100%);
-}
-
 /* 스크롤바 숨기기 */
 .scrollbar-hide {
   -ms-overflow-style: none;

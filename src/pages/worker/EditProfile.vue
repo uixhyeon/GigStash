@@ -115,8 +115,7 @@
     <div class="mx-4 mt-4 mb-4 flex justify-end">
       <button
         @click="saveProfile"
-        class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-lg text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-gray-200 dark:border-gray-700 rounded-md"
-        style="width: 100px"
+        class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-6 py-2 rounded-lg text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-gray-200 dark:border-gray-700"
       >
         <i class="fi fi-rr-disk"></i>
         <span>저장</span>
@@ -133,13 +132,13 @@ const router = useRouter();
 const fileInput = ref(null);
 
 const profileData = ref({
-  displayName: "김기사",
+  displayName: "오운전",
   phone: "010-1234-5678",
   email: "driver@example.com",
   profileImage: null,
   bank: "kb",
   accountNumber: "101-02***-***",
-  accountHolder: "김기사",
+  accountHolder: "오운전",
 });
 
 const passwordData = ref({

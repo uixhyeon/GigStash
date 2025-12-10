@@ -4,16 +4,15 @@
   >
     <!-- 헤더 -->
     <header
-      class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] z-20"
+      class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] h-[68px] z-20 flex items-center"
       style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)"
     >
-      <div class="flex items-center gap-3 justify-center p-4 pb-2">
+      <div class="flex items-center gap-3 justify-center w-full px-4">
         <!-- 왼쪽: GigStash 로고 -->
         <button @click="goToHome" >
           <span
             class="text-white font-bold text-2xl"
             style="
-              padding-bottom: 50px;
               font-family:
                 -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
               letter-spacing: -0.5px;
@@ -26,63 +25,55 @@
     </header>
 
     <!-- 메인 컨텐츠 -->
-    <main class="bg-gray-100 overflow-y-auto w-full h-full pt-[68px] pb-[72px] dark:bg-gray-900">
+    <main 
+      class="bg-gray-100 w-full h-full pt-[68px] pb-5 dark:bg-gray-900 scrollbar-hide"
+      :class="isQrCodePage ? 'overflow-hidden' : 'overflow-y-auto'"
+    >
       <router-view></router-view>
     </main>
 
     <!-- 하단 네비게이션 바 -->
     <nav
-      class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 z-40"
+      class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] h-[68px] bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 z-40 flex items-center"
     >
-      <div class="flex items-center justify-around py-2">
+      <div class="flex items-center justify-around w-full">
         <!-- 내급여 -->
         <router-link
           to="/worker/workerMain/salary-detail"
           :class="[
-            'flex flex-col items-center gap-1 px-6 py-2 rounded-lg transition-colors',
+            'flex items-center justify-center px-6 transition-colors',
             isActiveRoute('/worker/workerMain/salary-detail')
               ? 'text-blue-600 dark:text-blue-400'
               : 'text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400',
           ]"
         >
-          <i class="fi fi-rr-wallet text-xl leading-none"></i>
-          <span
-            class="text-xs"
-            :class="isActiveRoute('/worker/workerMain/salary-detail') ? 'font-medium' : ''"
-            >내급여</span
-          >
+          <i class="fi fi-rr-wallet text-2xl"></i>
         </router-link>
 
         <!-- 홈 -->
         <router-link
           to="/worker/workerMain"
           :class="[
-            'flex flex-col items-center gap-1 px-6 py-2 rounded-lg transition-colors',
+            'flex items-center justify-center px-6 transition-colors',
             isHomeActive
               ? 'text-blue-600 dark:text-blue-400'
               : 'text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400',
           ]"
         >
-          <i class="fi fi-rr-home text-xl leading-none"></i>
-          <span class="text-xs" :class="isHomeActive ? 'font-medium' : ''">홈</span>
+          <i class="fi fi-rr-home text-2xl"></i>
         </router-link>
 
         <!-- 마이페이지 -->
         <router-link
           to="/worker/workerMain/settings"
           :class="[
-            'flex flex-col items-center gap-1 px-6 py-2 rounded-lg transition-colors',
+            'flex items-center justify-center px-6 transition-colors',
             isActiveRoute('/worker/workerMain/settings')
               ? 'text-blue-600 dark:text-blue-400'
               : 'text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400',
           ]"
         >
-          <i class="fi fi-rr-user text-xl leading-none"></i>
-          <span
-            class="text-xs"
-            :class="isActiveRoute('/worker/workerMain/settings') ? 'font-medium' : ''"
-            >마이페이지</span
-          >
+          <i class="fi fi-rr-user text-2xl"></i>
         </router-link>
       </div>
     </nav>
@@ -123,4 +114,31 @@ const isHomeActive = computed(() => {
       !route.path.includes('/edit-profile'))
   )
 })
+
+// QrCode 페이지 여부 확인
+const isQrCodePage = computed(() => {
+  return route.path.includes('/qr-code')
+})
 </script>
+
+<style scoped>
+/* 스크롤바 숨기기 */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar-track {
+  display: none !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  display: none !important;
+}
+</style>

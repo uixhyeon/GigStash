@@ -20,8 +20,17 @@
             }}</span>
           </div>
           <div class="flex-1">
-            <div class="text-lg font-bold text-gray-900 dark:text-white mb-1">
-              {{ userInfo.displayName }}
+            <div class="flex items-center justify-between mb-1">
+              <div class="text-lg font-bold text-gray-900 dark:text-white">
+                {{ userInfo.displayName }}
+              </div>
+              <button
+                @click="handleLogout"
+                class="text-sm text-gray-900 dark:text-gray-100 flex items-baseline gap-1.5 px-3 py-1.5 border border-gray-200 dark:border-gray-700 rounded-md"
+              >
+                <i class="fi fi-rr-sign-out-alt text-sm leading-none"></i>
+                <span class="leading-none">로그아웃</span>
+              </button>
             </div>
             <div class="text-sm text-gray-600 dark:text-gray-400 mb-1">{{ userInfo.phone }}</div>
             <div class="text-sm text-gray-600 dark:text-gray-400">{{ userInfo.email }}</div>
@@ -63,22 +72,12 @@
       <!-- 버튼 영역 -->
       <div class="mt-4 mb-4 flex justify-end items-center gap-3">
         <!-- 다크모드 토글 버튼 -->
-
         <button
           @click="toggleDarkMode"
-          class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-lg text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-gray-200 dark:border-gray-700"
+          class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-md text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-1.5 border border-gray-200 dark:border-gray-700"
         >
-          <i :class="isDark ? 'fi fi-rr-sun' : 'fi fi-rr-moon'"></i>
-          <span>{{ isDark ? 'Light' : 'Dark' }}</span>
-        </button>
-
-        <!-- 로그아웃 버튼 -->
-        <button
-          @click="handleLogout"
-          class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-lg text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-2 border border-gray-200 dark:border-gray-700"
-        >
-          <i class="fi fi-rr-sign-out-alt"></i>
-          <span>로그아웃</span>
+          <i :class="[isDark ? 'fi fi-rr-moon' : 'fi fi-rr-brightness', 'text-sm leading-none']" style="transform: translateY(1px);"></i>
+          <span class="leading-none">{{ isDark ? 'Dark' : 'Light' }}</span>
         </button>
       </div>
     </div>
@@ -92,7 +91,7 @@ import { useRouter } from 'vue-router'
 import { useDarkMode } from '@/composables/useDarkMode'
 import { customers } from '@/data/customers'
 import { events } from '@/data/events'
-import { vehicles } from '@/data/vehicles'
+import { vehicleAssignments } from '@/data/vehicle-assignments'
 import { lockers } from '@/data/lockers'
 import { reservations as allReservations } from '@/data/reservations'
 
@@ -101,8 +100,8 @@ const router = useRouter()
 const { isDark, toggleDarkMode } = useDarkMode()
 
 const userInfo = ref({
-  name: authStore.user?.name || '김운전',
-  displayName: authStore.user?.name || '김운전',
+  name: '오운전',
+  displayName: '오운전',
   phone: '010-1234-5678',
   email: authStore.user?.email || 'driver@example.com',
   profileImage: null,
@@ -132,41 +131,42 @@ const handleLogout = () => {
 const today = new Date()
 today.setHours(0, 0, 0, 0)
 
-// 로그인 이름을 vehicles.js의 driver 이름으로 매핑
+// 로그인 이름을 driver 이름으로 매핑
 const workerNameToDriverName = (name) => {
-  const mapping = {
-    박기사: '김운전',
-    김기사: '김운전',
-    이기사: '이운전',
-    // 추가 매핑 필요시 여기에 추가
-  }
-  return mapping[name] || name
+  // 모든 케이스를 오운전으로 매핑
+  return '오운전'
 }
 
 // 현재 로그인 워커 이름 (없으면 기본값 사용)
-const currentWorkerName = computed(() => authStore.user?.name || '김운전')
+const currentWorkerName = computed(() => '오운전')
 
-// 워커가 담당하는 차량
-const workerVehicles = computed(() => {
+// 워커가 담당하는 배차
+const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return vehicles.filter((v) => v.driver === driverName)
+  return vehicleAssignments.filter((a) => a.driver === driverName)
 })
+
+// 워커 배차의 vehicleId / eventId 집합
+const workerVehicleIds = computed(() => new Set(workerAssignments.value.map((a) => a.vehicleId)))
+const workerEventIds = computed(() => new Set(workerAssignments.value.map((a) => a.eventId)))
 
 // 워커 차량에 연결된 보관함
 const workerLockers = computed(() => {
-  const vehicleIds = new Set(workerVehicles.value.map((v) => v.id))
-  return lockers.filter((l) => vehicleIds.has(l.vehicleId))
+  if (workerVehicleIds.value.size === 0) return []
+  return lockers.filter((l) => workerVehicleIds.value.has(l.vehicleId))
 })
 
 // 워커 보관함에 연결된 예약
 const workerRawReservations = computed(() => {
+  if (workerVehicleIds.value.size === 0) return []
   const lockerIds = new Set(workerLockers.value.map((l) => l.id))
-  return allReservations.filter((r) => lockerIds.has(r.lockerId))
+  const eventIds = workerEventIds.value
+  return allReservations.filter((r) => lockerIds.has(r.lockerId) && eventIds.has(r.eventId))
 })
 
 // 워커가 실제로 참여하는 행사 목록
 const workerEvents = computed(() => {
-  const eventIds = new Set(workerRawReservations.value.map((r) => r.eventId))
+  const eventIds = workerEventIds.value
   return events.filter((e) => eventIds.has(e.id) && e.eventDate)
 })
 

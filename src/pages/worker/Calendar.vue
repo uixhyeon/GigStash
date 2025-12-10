@@ -91,18 +91,122 @@
         </ul>
       </div>
     </div>
+
+    <!-- 오른쪽 아래 고정 버튼 -->
+    <button
+      @click="showAllWorkersModal = true"
+      class="fixed bottom-20 right-4 bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-200 px-4 py-3 rounded-full shadow-lg z-50 flex items-center gap-2"
+    >
+      <i class="fi fi-rr-users text-lg"></i>
+      <span class="text-sm font-medium">전체 기사일정보기</span>
+    </button>
+
+    <!-- 전체 기사일정 모달 -->
+    <Teleport to="body">
+      <div
+        v-if="showAllWorkersModal"
+        class="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4"
+        @click.self="showAllWorkersModal = false"
+      >
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-md max-h-[80vh] overflow-hidden flex flex-col"
+        >
+          <!-- 모달 헤더 -->
+          <div
+            class="sticky top-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-5 flex justify-between items-center rounded-t-2xl z-10"
+          >
+            <h2 class="text-lg font-bold text-gray-900 dark:text-white">전체 기사일정보기(임시)</h2>
+            <button
+              @click="showAllWorkersModal = false"
+              class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-2xl transition-colors"
+            >
+              ×
+            </button>
+          </div>
+
+          <!-- 모달 내용 -->
+          <div class="flex-1 overflow-y-auto p-5">
+            <div v-if="allEventsWithDrivers.length === 0" class="text-center text-gray-600 dark:text-gray-400 py-8">
+              등록된 이벤트가 없습니다.
+            </div>
+            <div v-else class="space-y-4">
+              <div
+                v-for="eventGroup in allEventsWithDrivers"
+                :key="eventGroup.date"
+                class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-gray-50 dark:bg-gray-900/50"
+              >
+                <!-- 날짜 헤더 -->
+                <div class="mb-3 pb-2 border-b border-gray-200 dark:border-gray-700">
+                  <h3 class="text-base font-semibold text-gray-900 dark:text-white">
+                    {{ formatDateHeader(eventGroup.date) }}
+                  </h3>
+                </div>
+
+                <!-- 해당 날짜의 이벤트들 -->
+                <div class="space-y-3">
+                  <div
+                    v-for="event in eventGroup.events"
+                    :key="event.id"
+                    class="bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-700"
+                  >
+                    <!-- 이벤트 정보 -->
+                    <div class="mb-2">
+                      <p class="text-base font-medium text-gray-900 dark:text-white">
+                        {{ event.eventName }}
+                      </p>
+                      <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        {{ event.eventVenue }}
+                      </p>
+                      <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                        {{ event.eventType }}
+                      </p>
+                      <p v-if="event.performanceTime" class="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                        시간: {{ event.performanceTime }}
+                      </p>
+                    </div>
+
+                    <!-- 배차된 기사 목록 -->
+                    <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                      <p class="text-xs font-medium text-gray-700 dark:text-gray-300 mb-2">
+                        배차된 기사 ({{ event.assignedDrivers.length }}명)
+                      </p>
+                      <div v-if="event.assignedDrivers.length > 0" class="flex flex-wrap gap-2">
+                        <span
+                          v-for="driver in event.assignedDrivers"
+                          :key="driver"
+                          class="text-xs px-2 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300"
+                        >
+                          {{ driver }}
+                        </span>
+                      </div>
+                      <p v-else class="text-xs text-gray-500 dark:text-gray-500">
+                        배차된 기사가 없습니다.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Teleport>
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
+import { Teleport } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 import { events } from '@/data/events'
-import { vehicles } from '@/data/vehicles'
+import { vehicleAssignments } from '@/data/vehicle-assignments'
 import { lockers } from '@/data/lockers'
 import { reservations as allReservations } from '@/data/reservations'
 
 const authStore = useAuthStore()
+
+// 모달 상태
+const showAllWorkersModal = ref(false)
 
 // 현재 날짜 및 뷰 날짜
 const today = new Date()
@@ -128,44 +232,45 @@ const nextMonth = () => {
   viewDate.value = new Date(year.value, month.value + 1, 1)
 }
 
-// 로그인 이름을 vehicles.js의 driver 이름으로 매핑
+// 로그인 이름을 driver 이름으로 매핑
 const workerNameToDriverName = (name) => {
-  const mapping = {
-    '박기사': '김운전',
-    '김기사': '김운전',
-    '이기사': '이운전',
-    // 추가 매핑 필요시 여기에 추가
-  }
-  return mapping[name] || name
+  // 모든 케이스를 오운전으로 매핑
+  return '오운전'
 }
 
 // 현재 로그인 워커 이름 (없으면 기본값 사용)
-const currentWorkerName = computed(() => authStore.user?.name || '김운전')
+const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 
 // 현재 로그인한 기사의 드라이버 이름
 const myDriverName = computed(() => workerNameToDriverName(currentWorkerName.value))
 
-// 워커가 담당하는 차량
-const workerVehicles = computed(() => {
+// 워커가 담당하는 배차
+const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return vehicles.filter((v) => v.driver === driverName)
+  return vehicleAssignments.filter((a) => a.driver === driverName)
 })
+
+// 워커 배차의 vehicleId / eventId 집합
+const workerVehicleIds = computed(() => new Set(workerAssignments.value.map((a) => a.vehicleId)))
+const workerEventIds = computed(() => new Set(workerAssignments.value.map((a) => a.eventId)))
 
 // 워커 차량에 연결된 보관함
 const workerLockers = computed(() => {
-  const vehicleIds = new Set(workerVehicles.value.map((v) => v.id))
-  return lockers.filter((l) => vehicleIds.has(l.vehicleId))
+  if (workerVehicleIds.value.size === 0) return []
+  return lockers.filter((l) => workerVehicleIds.value.has(l.vehicleId))
 })
 
 // 워커 보관함에 연결된 예약 (정규화된 reservations.js 기반)
 const workerRawReservations = computed(() => {
+  if (workerVehicleIds.value.size === 0) return []
   const lockerIds = new Set(workerLockers.value.map((l) => l.id))
-  return allReservations.filter((r) => lockerIds.has(r.lockerId))
+  const eventIds = workerEventIds.value
+  return allReservations.filter((r) => lockerIds.has(r.lockerId) && eventIds.has(r.eventId))
 })
 
 // 워커가 실제로 참여하는 행사 목록
 const workerEvents = computed(() => {
-  const eventIds = new Set(workerRawReservations.value.map((r) => r.eventId))
+  const eventIds = workerEventIds.value
   return events.filter((e) => eventIds.has(e.id) && e.eventDate)
 })
 
@@ -190,9 +295,13 @@ const eventsByDate = computed(() => {
       // 운영 시간은 performanceTime을 그대로 사용 (또는 "HH:MM-HH:MM" 형태)
       const operatingHours = e.performanceTime || ''
 
-      // vehicles.js에서 배정된 기사 목록 찾기
+      // 배정된 기사 목록 찾기
       const assignedDrivers = Array.from(
-        new Set(vehicles.filter((v) => v.eventId === e.id && v.driver).map((v) => v.driver)),
+        new Set(
+          vehicleAssignments
+            .filter((a) => a.eventId === e.id && a.driver)
+            .map((a) => a.driver),
+        ),
       )
 
       // 본인 예약 수 계산
@@ -250,4 +359,45 @@ const formatDateHeader = (dateStr) => {
   const weekday = ['일', '월', '화', '수', '목', '금', '토'][date.getDay()]
   return `${month}월 ${day}일 (${weekday})`
 }
+
+// 전체 이벤트와 배차된 기사 정보 (모달용)
+const allEventsWithDrivers = computed(() => {
+  // 모든 이벤트를 날짜별로 그룹화
+  const eventsByDateMap = {}
+
+  events.forEach((event) => {
+    if (!event.eventDate) return
+
+    const eventDate = event.eventDate
+
+    // 배정된 기사 목록 찾기
+    const assignedDrivers = Array.from(
+      new Set(
+        vehicleAssignments
+          .filter((a) => a.eventId === event.id && a.driver)
+          .map((a) => a.driver),
+      ),
+    )
+
+    if (!eventsByDateMap[eventDate]) {
+      eventsByDateMap[eventDate] = []
+    }
+
+    eventsByDateMap[eventDate].push({
+      id: event.id,
+      eventName: event.eventName || '행사',
+      eventVenue: event.eventVenue || '-',
+      eventType: event.eventType || '-',
+      performanceTime: event.performanceTime || '',
+      assignedDrivers: assignedDrivers,
+    })
+  })
+
+  // 날짜순으로 정렬하여 배열로 변환
+  const sortedDates = Object.keys(eventsByDateMap).sort()
+  return sortedDates.map((date) => ({
+    date,
+    events: eventsByDateMap[date],
+  }))
+})
 </script>

@@ -1,7 +1,45 @@
 
 <template>
-  <div class="h-screen bg-black flex flex-col">
-    <!-- 상단: 탭에 따라 전체가 바뀌는 콘텐츠 영역 -->
+  <div class="h-full bg-gray-100 dark:bg-gray-900 flex flex-col overflow-hidden">
+    <!-- 상단: 탭 바 (헤더 바로 아래) -->
+    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex flex-shrink-0">
+      <!-- 왼쪽: 수동 검색 탭 -->
+      <button
+        @click="activeTab = 'manual'"
+        class="flex-1 h-[50px] text-base font-bold flex items-center justify-center gap-2 relative"
+        :class="
+          activeTab === 'manual'
+            ? 'bg-gray-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400'
+            : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+        "
+      >
+        <span
+          v-if="activeTab === 'manual'"
+          class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500"
+        ></span>
+        <i class="fi fi-rr-search text-xl"></i>
+        <span>수동 검색</span>
+      </button>
+      <!-- 오른쪽: QR 스캔 탭 -->
+      <button
+        @click="activeTab = 'qr'"
+        class="flex-1 h-[50px] text-base font-bold flex items-center justify-center gap-2 relative"
+        :class="
+          activeTab === 'qr'
+            ? 'bg-gray-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400'
+            : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+        "
+      >
+        <span
+          v-if="activeTab === 'qr'"
+          class="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500"
+        ></span>
+        <i class="fi fi-rr-qr-scan text-xl"></i>
+        <span>QR 스캔</span>
+      </button>
+    </div>
+
+    <!-- 콘텐츠 영역: 탭에 따라 전체가 바뀌는 콘텐츠 -->
     <div class="flex-1 overflow-hidden flex flex-col">
       <!-- QR 스캔 화면 -->
       <div v-if="activeTab === 'qr'" class="flex-1 relative bg-black overflow-hidden">
@@ -11,14 +49,12 @@
           ref="videoElement"
           autoplay
           playsinline
-          class="absolute inset-0 w-full h-full object-cover"
+          class="absolute inset-0 w-full h-full object-cover scale-x-[-1]"
         ></video>
 
         <!-- QR 스캔 영역 가이드 (중앙에만 표시) -->
         <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
           <div class="relative w-[260px] h-[260px]">
-            <!-- 외곽 반투명 배경 -->
-            <div class="absolute inset-0 bg-black/50 rounded-2xl"></div>
             <!-- 모서리 코너 (둥근 스타일) -->
             <div
               class="absolute top-0 left-0 w-10 h-10 border-t-4 border-l-4 border-blue-400 rounded-tl-2xl"
@@ -63,15 +99,15 @@
       </div>
 
       <!-- 수동 검색 화면 -->
-      <div v-else class="flex-1 bg-gray-950 overflow-y-auto">
+      <div v-else class="flex-1 bg-gray-100 dark:bg-gray-900 overflow-y-auto">
         <div class="p-5 pb-6 space-y-5">
           <!-- 검색 옵션 카드 -->
-          <div class="bg-gray-900 rounded-2xl p-5 shadow-sm border border-gray-800">
-            <h2 class="text-lg font-bold text-white mb-4">검색 옵션</h2>
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-sm border border-gray-200 dark:border-gray-700">
+            <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">검색 옵션</h2>
 
             <!-- 검색 타입 -->
             <div class="mb-4">
-              <p class="text-sm text-gray-400 mb-2">검색 유형</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">검색 유형</p>
               <div class="flex gap-2">
                 <button
                   @click="searchType = 'reservation'"
@@ -79,7 +115,7 @@
                     'flex-1 py-3 rounded-xl text-sm font-semibold transition-all',
                     searchType === 'reservation'
                       ? 'bg-blue-500 text-white shadow-md'
-                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700',
+                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600',
                   ]"
                 >
                   예약번호
@@ -90,7 +126,7 @@
                     'flex-1 py-3 rounded-xl text-sm font-semibold transition-all',
                     searchType === 'phone'
                       ? 'bg-blue-500 text-white shadow-md'
-                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700',
+                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600',
                   ]"
                 >
                   전화번호
@@ -100,14 +136,14 @@
 
             <!-- 입력창 -->
             <div>
-              <p class="text-sm text-gray-400 mb-2">검색어 입력</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">검색어 입력</p>
               <input
                 v-model="searchInput"
                 type="text"
                 :placeholder="
                   searchType === 'reservation' ? '예약번호를 입력하세요' : '전화번호를 입력하세요'
                 "
-                class="w-full px-4 py-3.5 bg-black/40 text-white rounded-xl border border-gray-700 focus:border-blue-500 focus:outline-none text-base"
+                class="w-full px-4 py-3.5 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-xl border border-gray-300 dark:border-gray-600 focus:border-blue-500 focus:outline-none text-base"
                 @keyup.enter="handleSearch"
               />
             </div>
@@ -133,40 +169,40 @@
           <!-- 회원 정보 카드 -->
           <div
             v-if="selectedReservation"
-            class="bg-gray-900 rounded-2xl p-5 shadow-sm border border-blue-500/40"
+            class="bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-sm border border-blue-500/40 dark:border-blue-500/40"
           >
-            <h2 class="text-lg font-bold text-white mb-4">회원 정보</h2>
+            <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">회원 정보</h2>
             <div class="space-y-4">
-              <div class="flex justify-between items-center pb-3 border-b border-gray-800">
-                <span class="text-sm text-gray-400 font-medium">예약번호</span>
-                <span class="text-base font-bold text-white">{{ selectedReservation.id }}</span>
+              <div class="flex justify-between items-center pb-3 border-b border-gray-200 dark:border-gray-700">
+                <span class="text-sm text-gray-600 dark:text-gray-400 font-medium">예약번호</span>
+                <span class="text-base font-bold text-gray-900 dark:text-white">{{ selectedReservation.id }}</span>
               </div>
-              <div class="flex justify-between items-center pb-3 border-b border-gray-800">
-                <span class="text-sm text-gray-400 font-medium">고객명</span>
-                <span class="text-base font-semibold text-white">{{
+              <div class="flex justify-between items-center pb-3 border-b border-gray-200 dark:border-gray-700">
+                <span class="text-sm text-gray-600 dark:text-gray-400 font-medium">고객명</span>
+                <span class="text-base font-semibold text-gray-900 dark:text-white">{{
                   selectedReservation.customerName
                 }}</span>
               </div>
-              <div class="flex justify-between items-center pb-3 border-b border-gray-800">
-                <span class="text-sm text-gray-400 font-medium">전화번호</span>
-                <span class="text-base font-semibold text-white">{{
+              <div class="flex justify-between items-center pb-3 border-b border-gray-200 dark:border-gray-700">
+                <span class="text-sm text-gray-600 dark:text-gray-400 font-medium">전화번호</span>
+                <span class="text-base font-semibold text-gray-900 dark:text-white">{{
                   selectedReservation.phone
                 }}</span>
               </div>
-              <div class="flex justify-between items-start pb-3 border-b border-gray-800">
-                <span class="text-sm text-gray-400 font-medium">주소</span>
-                <span class="text-base text-right flex-1 break-words text-gray-100 ml-4">
+              <div class="flex justify-between items-start pb-3 border-b border-gray-200 dark:border-gray-700">
+                <span class="text-sm text-gray-600 dark:text-gray-400 font-medium">주소</span>
+                <span class="text-base text-right flex-1 break-words text-gray-700 dark:text-gray-300 ml-4">
                   {{ selectedReservation.address }}
                 </span>
               </div>
-              <div class="flex justify-between items-center pb-3 border-b border-gray-800">
-                <span class="text-sm text-gray-400 font-medium">하차 시간</span>
-                <span class="text-base font-semibold text-white">{{
+              <div class="flex justify-between items-center pb-3 border-b border-gray-200 dark:border-gray-700">
+                <span class="text-sm text-gray-600 dark:text-gray-400 font-medium">하차 시간</span>
+                <span class="text-base font-semibold text-gray-900 dark:text-white">{{
                   selectedReservation.time
                 }}</span>
               </div>
               <div v-if="selectedReservation.original" class="flex justify-between items-center">
-                <span class="text-sm text-gray-600 font-medium">상태</span>
+                <span class="text-sm text-gray-600 dark:text-gray-400 font-medium">상태</span>
                 <span
                   class="text-base font-bold px-3 py-1 rounded-full"
                   :class="
@@ -182,36 +218,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- 하단: 탭 바 (항상 화면 맨 아래 고정) -->
-    <div class="bg-gray-950 border-t border-gray-800 flex shadow-[0_-4px_12px_rgba(0,0,0,0.6)]">
-      <!-- 왼쪽: 수동 검색 탭 -->
-      <button
-        @click="activeTab = 'manual'"
-        class="flex-1 py-4 text-base font-bold flex items-center justify-center gap-2 transition-colors"
-        :class="
-          activeTab === 'manual'
-            ? 'bg-gray-900 text-blue-400 border-t-2 border-blue-500'
-            : 'bg-gray-950 text-gray-500 hover:text-gray-300'
-        "
-      >
-        <i class="fi fi-rr-list-check text-xl"></i>
-        <span>수동 검색</span>
-      </button>
-      <!-- 오른쪽: QR 스캔 탭 -->
-      <button
-        @click="activeTab = 'qr'"
-        class="flex-1 py-4 text-base font-bold flex items-center justify-center gap-2 transition-colors"
-        :class="
-          activeTab === 'qr'
-            ? 'bg-gray-900 text-blue-400 border-t-2 border-blue-500'
-            : 'bg-gray-950 text-gray-500 hover:text-gray-300'
-        "
-      >
-        <i class="fi fi-rr-qr-scan text-xl"></i>
-        <span>QR 스캔</span>
-      </button>
     </div>
   </div>
 </template>
