@@ -142,7 +142,7 @@ import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 import { customers } from '@/data/customers'
 import { events } from '@/data/events'
-import { vehicles } from '@/data/vehicles'
+import { vehicleAssignments } from '@/data/vehicle-assignments'
 import { lockers } from '@/data/lockers'
 import { reservations as allReservations } from '@/data/reservations'
 
@@ -169,29 +169,24 @@ const todayStr = computed(() => {
   ).padStart(2, '0')}`
 })
 
-// 로그인 이름을 vehicles.js의 driver 이름으로 매핑
+// 로그인 이름을 driver 이름으로 매핑
 const workerNameToDriverName = (name) => {
-  const mapping = {
-    '박기사': '김운전',
-    '김기사': '김운전',
-    '이기사': '이운전',
-    // 추가 매핑 필요시 여기에 추가
-  }
-  return mapping[name] || name
+  // 모든 케이스를 오운전으로 매핑
+  return '오운전'
 }
 
 // 현재 로그인 워커 이름 (없으면 기본값 사용)
-const currentWorkerName = computed(() => authStore.user?.name || '김운전')
+const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 
-// 워커가 담당하는 차량
-const workerVehicles = computed(() => {
+// 워커가 담당하는 배차
+const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return vehicles.filter((v) => v.driver === driverName)
+  return vehicleAssignments.filter((a) => a.driver === driverName)
 })
 
 // 워커 차량에 연결된 보관함
 const workerLockers = computed(() => {
-  const vehicleIds = new Set(workerVehicles.value.map((v) => v.id))
+  const vehicleIds = new Set(workerAssignments.value.map((a) => a.vehicleId))
   return lockers.filter((l) => vehicleIds.has(l.vehicleId))
 })
 

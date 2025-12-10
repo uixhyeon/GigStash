@@ -199,7 +199,7 @@ import { ref, computed } from 'vue'
 import { Teleport } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 import { events } from '@/data/events'
-import { vehicles } from '@/data/vehicles'
+import { vehicleAssignments } from '@/data/vehicle-assignments'
 import { lockers } from '@/data/lockers'
 import { reservations as allReservations } from '@/data/reservations'
 
@@ -232,44 +232,45 @@ const nextMonth = () => {
   viewDate.value = new Date(year.value, month.value + 1, 1)
 }
 
-// 로그인 이름을 vehicles.js의 driver 이름으로 매핑
+// 로그인 이름을 driver 이름으로 매핑
 const workerNameToDriverName = (name) => {
-  const mapping = {
-    '박기사': '김운전',
-    '김기사': '김운전',
-    '이기사': '이운전',
-    // 추가 매핑 필요시 여기에 추가
-  }
-  return mapping[name] || name
+  // 모든 케이스를 오운전으로 매핑
+  return '오운전'
 }
 
 // 현재 로그인 워커 이름 (없으면 기본값 사용)
-const currentWorkerName = computed(() => authStore.user?.name || '김운전')
+const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 
 // 현재 로그인한 기사의 드라이버 이름
 const myDriverName = computed(() => workerNameToDriverName(currentWorkerName.value))
 
-// 워커가 담당하는 차량
-const workerVehicles = computed(() => {
+// 워커가 담당하는 배차
+const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return vehicles.filter((v) => v.driver === driverName)
+  return vehicleAssignments.filter((a) => a.driver === driverName)
 })
+
+// 워커 배차의 vehicleId / eventId 집합
+const workerVehicleIds = computed(() => new Set(workerAssignments.value.map((a) => a.vehicleId)))
+const workerEventIds = computed(() => new Set(workerAssignments.value.map((a) => a.eventId)))
 
 // 워커 차량에 연결된 보관함
 const workerLockers = computed(() => {
-  const vehicleIds = new Set(workerVehicles.value.map((v) => v.id))
-  return lockers.filter((l) => vehicleIds.has(l.vehicleId))
+  if (workerVehicleIds.value.size === 0) return []
+  return lockers.filter((l) => workerVehicleIds.value.has(l.vehicleId))
 })
 
 // 워커 보관함에 연결된 예약 (정규화된 reservations.js 기반)
 const workerRawReservations = computed(() => {
+  if (workerVehicleIds.value.size === 0) return []
   const lockerIds = new Set(workerLockers.value.map((l) => l.id))
-  return allReservations.filter((r) => lockerIds.has(r.lockerId))
+  const eventIds = workerEventIds.value
+  return allReservations.filter((r) => lockerIds.has(r.lockerId) && eventIds.has(r.eventId))
 })
 
 // 워커가 실제로 참여하는 행사 목록
 const workerEvents = computed(() => {
-  const eventIds = new Set(workerRawReservations.value.map((r) => r.eventId))
+  const eventIds = workerEventIds.value
   return events.filter((e) => eventIds.has(e.id) && e.eventDate)
 })
 
@@ -294,9 +295,13 @@ const eventsByDate = computed(() => {
       // 운영 시간은 performanceTime을 그대로 사용 (또는 "HH:MM-HH:MM" 형태)
       const operatingHours = e.performanceTime || ''
 
-      // vehicles.js에서 배정된 기사 목록 찾기
+      // 배정된 기사 목록 찾기
       const assignedDrivers = Array.from(
-        new Set(vehicles.filter((v) => v.eventId === e.id && v.driver).map((v) => v.driver)),
+        new Set(
+          vehicleAssignments
+            .filter((a) => a.eventId === e.id && a.driver)
+            .map((a) => a.driver),
+        ),
       )
 
       // 본인 예약 수 계산
@@ -365,9 +370,13 @@ const allEventsWithDrivers = computed(() => {
 
     const eventDate = event.eventDate
 
-    // vehicles.js에서 배정된 기사 목록 찾기
+    // 배정된 기사 목록 찾기
     const assignedDrivers = Array.from(
-      new Set(vehicles.filter((v) => v.eventId === event.id && v.driver).map((v) => v.driver)),
+      new Set(
+        vehicleAssignments
+          .filter((a) => a.eventId === event.id && a.driver)
+          .map((a) => a.driver),
+      ),
     )
 
     if (!eventsByDateMap[eventDate]) {
