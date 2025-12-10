@@ -25,7 +25,7 @@
       >
         <!-- 모바일에서는 항상 보임, 데스크톱에서는 !isSidebarCollapsed일 때만 보임 -->
         <h2
-          class="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-cyan-400 dark:to-blue-500 bg-clip-text text-transparent text-center whitespace-nowrap flex-1 lg:hidden"
+          class="text-xl font-bold text-blue-600 dark:text-blue-400 text-center whitespace-nowrap flex-1 lg:hidden"
         >
           GigStash
         </h2>
@@ -33,14 +33,14 @@
           <h2
             v-if="!isSidebarCollapsed"
             key="full"
-            class="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-cyan-400 dark:to-blue-500 bg-clip-text text-transparent text-center whitespace-nowrap flex-1 hidden lg:block"
+            class="text-xl font-bold text-blue-600 dark:text-blue-400 text-center whitespace-nowrap flex-1 hidden lg:block"
           >
             GigStash
           </h2>
           <div
             v-else
             key="collapsed"
-            class="text-xs text-center flex-1 hidden lg:flex flex-col items-center justify-center text-slate-900 dark:text-slate-100"
+            class="text-xs text-center flex-1 hidden lg:flex flex-col items-center justify-center text-blue-600 dark:text-blue-400"
           >
             <span class="font-bold leading-none">GS</span>
             <span class="font-black text-sm leading-none">It!</span>
@@ -58,12 +58,12 @@
           :to="item.path"
           :class="[
             'flex items-center gap-3 px-3 py-2.5 mx-2 my-0.5 rounded-lg',
-            'text-gray-700 dark:text-slate-300 font-medium transition-all duration-200 whitespace-nowrap',
-            'hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 dark:hover:from-slate-700 dark:hover:to-slate-600',
-            'hover:text-blue-700 dark:hover:text-white hover:shadow-md',
+            'text-gray-700 dark:text-slate-300 font-medium transition-all duration-150 whitespace-nowrap',
+            'hover:bg-blue-50 dark:hover:bg-slate-700/50',
+            'hover:text-blue-600 dark:hover:text-blue-400',
             isSidebarCollapsed ? 'lg:justify-center lg:px-2' : '',
           ]"
-          active-class="!bg-blue-600 !text-white dark:!bg-blue-600 !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
+          active-class="!bg-blue-600 !text-white dark:!bg-blue-600"
         >
           <span class="text-xl flex-shrink-0">
             <component v-if="typeof item.icon !== 'string'" :is="item.icon" class="w-5 h-5" />
@@ -76,7 +76,7 @@
         </RouterLink>
 
         <div
-          class="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-slate-600 to-transparent mx-3 my-2"
+          class="h-px bg-gray-200 dark:bg-slate-700 mx-3 my-2"
         ></div>
 
         <RouterLink
@@ -85,12 +85,12 @@
           :to="item.path"
           :class="[
             'flex items-center gap-3 px-3 py-2.5 mx-2 my-0.5 rounded-lg',
-            'text-gray-700 dark:text-slate-300 font-medium transition-all duration-200 whitespace-nowrap',
-            'hover:bg-gradient-to-r hover:from-blue-50 hover:to-cyan-50 dark:hover:from-slate-700 dark:hover:to-slate-600',
-            'hover:text-blue-700 dark:hover:text-white hover:shadow-md',
+            'text-gray-700 dark:text-slate-300 font-medium transition-all duration-150 whitespace-nowrap',
+            'hover:bg-blue-50 dark:hover:bg-slate-700/50',
+            'hover:text-blue-600 dark:hover:text-blue-400',
             isSidebarCollapsed ? 'lg:justify-center lg:px-2' : '',
           ]"
-          active-class="!bg-blue-600 !text-white dark:!bg-blue-600 !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"
+          active-class="!bg-blue-600 !text-white dark:!bg-blue-600"
         >
           <!-- active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30" -->
           <span class="text-xl flex-shrink-0"><i :class="[item.icon, ``]"></i></span>
