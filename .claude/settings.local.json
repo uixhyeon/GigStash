@@ -24,7 +24,8 @@
       "Bash(del test-vehicle-structure.js)",
       "Bash(git restore:*)",
       "Bash(git reset:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git pull:*)"
     ],
     "deny": [],
     "ask": []
