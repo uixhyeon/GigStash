@@ -87,17 +87,23 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useAuthStore } from '@/stores/auth'
+import { useDataStore } from '@/stores/dataStore'
 import { useRouter } from 'vue-router'
 import { useDarkMode } from '@/composables/useDarkMode'
-import { customers } from '@/data/customers'
-import { events } from '@/data/events'
-import { vehicleAssignments } from '@/data/vehicle-assignments'
-import { lockers } from '@/data/lockers'
+import { customers as customersData } from '@/data/customers'
+import { events as eventsData } from '@/data/events'
+import { lockers as lockersData } from '@/data/lockers'
 import { reservations as allReservations } from '@/data/reservations'
 
 const authStore = useAuthStore()
+const dataStore = useDataStore()
 const router = useRouter()
 const { isDark, toggleDarkMode } = useDarkMode()
+
+// dataStore 또는 직접 import 데이터 사용 (dataStore 우선)
+const customers = computed(() => dataStore.customers.length > 0 ? dataStore.customers : customersData)
+const events = computed(() => dataStore.events.length > 0 ? dataStore.events : eventsData)
+const lockers = computed(() => dataStore.lockers.length > 0 ? dataStore.lockers : lockersData)
 
 const userInfo = ref({
   name: '오운전',
@@ -127,9 +133,17 @@ const handleLogout = () => {
   }
 }
 
-// 일정 통계 계산
-const today = new Date()
-today.setHours(0, 0, 0, 0)
+// 오늘 날짜 (computed로 만들어서 날짜가 바뀌면 자동 업데이트)
+const today = computed(() => {
+  const d = new Date()
+  d.setHours(0, 0, 0, 0)
+  return d
+})
+
+const todayStr = computed(() => {
+  const d = today.value
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+})
 
 // 로그인 이름을 driver 이름으로 매핑
 const workerNameToDriverName = (name) => {
@@ -138,12 +152,12 @@ const workerNameToDriverName = (name) => {
 }
 
 // 현재 로그인 워커 이름 (없으면 기본값 사용)
-const currentWorkerName = computed(() => '오운전')
+const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 
-// 워커가 담당하는 배차
+// 워커가 담당하는 배차 (dataStore에서 가져오기)
 const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return vehicleAssignments.filter((a) => a.driver === driverName)
+  return dataStore.vehicleAssignments.filter((a) => a.driver === driverName)
 })
 
 // 워커 배차의 vehicleId / eventId 집합
@@ -153,7 +167,8 @@ const workerEventIds = computed(() => new Set(workerAssignments.value.map((a) =>
 // 워커 차량에 연결된 보관함
 const workerLockers = computed(() => {
   if (workerVehicleIds.value.size === 0) return []
-  return lockers.filter((l) => workerVehicleIds.value.has(l.vehicleId))
+  const lockersArray = Array.isArray(lockers.value) ? lockers.value : lockers
+  return lockersArray.filter((l) => workerVehicleIds.value.has(l.vehicleId))
 })
 
 // 워커 보관함에 연결된 예약
@@ -167,7 +182,8 @@ const workerRawReservations = computed(() => {
 // 워커가 실제로 참여하는 행사 목록
 const workerEvents = computed(() => {
   const eventIds = workerEventIds.value
-  return events.filter((e) => eventIds.has(e.id) && e.eventDate)
+  const eventsArray = Array.isArray(events.value) ? events.value : events
+  return eventsArray.filter((e) => eventIds.has(e.id) && e.eventDate)
 })
 
 // 날짜별 행사 그룹화
@@ -190,14 +206,14 @@ const eventsByDate = computed(() => {
 
 // 오늘 일정 수
 const todayScheduleCount = computed(() => {
-  const todayStr = today.toISOString().split('T')[0]
-  return eventsByDate.value.filter((e) => e.date === todayStr).length
+  return eventsByDate.value.filter((e) => e.date === todayStr.value).length
 })
 
 // 이번 주 일정 수
 const weekScheduleCount = computed(() => {
-  const weekStart = new Date(today)
-  weekStart.setDate(today.getDate() - today.getDay())
+  const todayValue = today.value
+  const weekStart = new Date(todayValue)
+  weekStart.setDate(todayValue.getDate() - todayValue.getDay())
   const weekEnd = new Date(weekStart)
   weekEnd.setDate(weekStart.getDate() + 6)
 
@@ -209,8 +225,9 @@ const weekScheduleCount = computed(() => {
 
 // 이번 달 일정 수
 const monthScheduleCount = computed(() => {
-  const monthStart = new Date(today.getFullYear(), today.getMonth(), 1)
-  const monthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0)
+  const todayValue = today.value
+  const monthStart = new Date(todayValue.getFullYear(), todayValue.getMonth(), 1)
+  const monthEnd = new Date(todayValue.getFullYear(), todayValue.getMonth() + 1, 0)
 
   return eventsByDate.value.filter((e) => {
     const eventDate = new Date(e.date)
@@ -318,16 +335,16 @@ const salaryDetails = computed(() => {
 
 // 오늘 급여
 const todaySalary = computed(() => {
-  const todayStr = today.toISOString().split('T')[0]
   return salaryDetails.value
-    .filter((item) => item.date === todayStr)
+    .filter((item) => item.date === todayStr.value)
     .reduce((sum, item) => sum + item.salary, 0)
 })
 
 // 이번 주 급여
 const weekSalary = computed(() => {
-  const weekStart = new Date(today)
-  weekStart.setDate(today.getDate() - today.getDay())
+  const todayValue = today.value
+  const weekStart = new Date(todayValue)
+  weekStart.setDate(todayValue.getDate() - todayValue.getDay())
   weekStart.setHours(0, 0, 0, 0)
   const weekEnd = new Date(weekStart)
   weekEnd.setDate(weekStart.getDate() + 6)
@@ -335,7 +352,7 @@ const weekSalary = computed(() => {
 
   return salaryDetails.value
     .filter((item) => {
-      const eventDate = item.dateObj
+      const eventDate = new Date(item.dateObj)
       eventDate.setHours(0, 0, 0, 0)
       return eventDate >= weekStart && eventDate <= weekEnd
     })
@@ -344,13 +361,14 @@ const weekSalary = computed(() => {
 
 // 이번 달 급여
 const monthSalary = computed(() => {
-  const monthStart = new Date(today.getFullYear(), today.getMonth(), 1)
-  const monthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 0)
+  const todayValue = today.value
+  const monthStart = new Date(todayValue.getFullYear(), todayValue.getMonth(), 1)
+  const monthEnd = new Date(todayValue.getFullYear(), todayValue.getMonth() + 1, 0)
   monthEnd.setHours(23, 59, 59, 999)
 
   return salaryDetails.value
     .filter((item) => {
-      const eventDate = item.dateObj
+      const eventDate = new Date(item.dateObj)
       eventDate.setHours(0, 0, 0, 0)
       return eventDate >= monthStart && eventDate <= monthEnd
     })
