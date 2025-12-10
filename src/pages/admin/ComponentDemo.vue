@@ -155,7 +155,7 @@
       <h2 class="text-2xl font-semibold text-gray-900 m-0 mb-6 dark:text-white">Calendar 컴포넌트</h2>
       <div class="flex justify-center">
         <div class="w-full max-w-md">
-          <ComCalendar />
+          <ComCalendar :current-date="currentDate" @select="handleDateSelect" />
         </div>
       </div>
     </section>
@@ -215,6 +215,11 @@ const { initDarkMode } = useDarkMode()
 const currentDate = ref(new Date())
 const selectedDate = ref(null)
 const events = ref([])
+
+const handleDateSelect = (date) => {
+  selectedDate.value = date
+  console.log('Selected date:', date)
+}
 
 onMounted(() => {
   initDarkMode()

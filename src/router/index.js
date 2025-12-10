@@ -47,7 +47,7 @@ const router = createRouter({
           path: 'demo',
           name: 'adminComponentDemo',
           component: () => import('../pages/admin/ComponentDemo.vue'),
-          meta: { title: 'Component Demo', role: 'admin' },
+          meta: { title: '설정', role: 'admin' },
         },
       ],
     },

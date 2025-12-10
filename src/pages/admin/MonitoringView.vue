@@ -36,7 +36,7 @@
     <!-- 운영 기간 안내 메시지 -->
     <div
       v-if="!isValidDateRange && filteredReservations.length === 0"
-      class="mb-4 p-4 rounded-xl border  dark:bg-gray-900/20 border-gray-200 dark:border-gray-800"
+      class="mb-4 p-4 rounded-xl border dark:bg-gray-900/20 border-gray-200 dark:border-gray-800"
     >
       <div class="flex items-center gap-2">
         <i class="fi fi-rr-info text-gray-600 dark:text-gray-400"></i>
@@ -51,173 +51,177 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
       <!-- 1. 이번 달 주요 지표 -->
       <section class="flex flex-col h-full">
-        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0">
+        <h2
+          class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0"
+        >
           이번 달 주요 지표
         </h2>
         <div class="flex-1 flex flex-col">
-        <div class="flex flex-wrap gap-3 mb-4">
-          <!-- 이용률 카드 -->
-          <div
-            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-blue-100 dark:border-blue-900/30 h-[160px]"
-          >
-            <div>
-              <div
-                class="text-[11px] sm:text-xs font-medium"
-                style="font-size: 16px; font-weight: bold; color: #1E293B"
-              >
-                이용률
-              </div>
-              <div
-                class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
-                style="font-size: 30px"
-              >
-                {{ keyMetrics.utilizationRate }}%
-              </div>
-              <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5 text-right">
-                전월 대비
-                <span
-                  class="font-medium"
-                  :style="{ color: getChangeColor(keyMetrics.utilizationChange) }"
-                >
-                  <i :class="getChangeIcon(keyMetrics.utilizationChange)" class="mr-1"></i
-                  >{{ Math.abs(keyMetrics.utilizationChange) }}%
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 재방문율 카드 -->
-          <div
-            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-green-100 dark:border-green-900/30 h-[160px]"
-          >
-            <div>
-              <div
-                class="text-[11px] sm:text-xs font-medium"
-                style="font-size: 16px; font-weight: bold; color: #1E293B"
-              >
-                재방문율
-              </div>
-              <div
-                class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
-                style="font-size: 30px"
-              >
-                {{ additionalMetrics.revisitRate }}%
-              </div>
-              <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5 text-right">
-                전월 대비
-                <span
-                  class="font-medium"
-                  :style="{ color: getChangeColor(additionalMetrics.revisitChange) }"
-                >
-                  <i :class="getChangeIcon(additionalMetrics.revisitChange)" class="mr-1"></i
-                  >{{ Math.abs(additionalMetrics.revisitChange) }}%
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 배송선택률 카드 -->
-          <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-300/90 to-amber-400/95 text-gray-800" -->
-          <div
-            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-yellow-100 dark:border-yellow-900/30 h-[160px]"
-          >
-            <div>
-              <div
-                class="text-[11px] sm:text-xs font-medium"
-                style="font-size: 16px; font-weight: bold; color: #1E293B"
-              >
-                배송선택률
-              </div>
-              <div
-                class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
-                style="font-size: 30px"
-              >
-                {{ additionalMetrics.deliveryRate }}%
-              </div>
-              <div class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5 text-right">
-                전월 대비
-                <span
-                  class="font-medium"
-                  :style="{ color: getChangeColor(additionalMetrics.deliveryChange) }"
-                >
-                  <i :class="getChangeIcon(additionalMetrics.deliveryChange)" class="mr-1"></i
-                  >{{ Math.abs(additionalMetrics.deliveryChange) }}%
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 매출 & 이용객 카드 -->
-        <div class="flex flex-wrap gap-3">
-          <!-- 이용객 카드 -->
-          <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-gray-400/90 to-gray-600/95" -->
-          <div
-            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-100/90 to-yellow-300/95 h-[160px]"
-          >
+          <div class="flex flex-wrap gap-3 mb-4">
+            <!-- 이용률 카드 -->
             <div
-              class="font-bold opacity-90 text-gray-900 "
-              style="font-size: 16px"
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-blue-100 dark:border-blue-900/30 h-[160px]"
             >
-              이용객
-            </div>
-            <div class="text-right">
-              <div
-                class="mt-1 sm:mt-2 font-bold"
-                style="font-size: 16px"
-                :style="{ color: getChangeColor(keyMetrics.usersChange) }"
-              >
-                <i :class="getChangeIcon(keyMetrics.usersChange)" class="mr-1"></i
-                >{{ Math.abs(keyMetrics.usersChange) }}%
+              <div>
+                <div
+                  class="text-[11px] sm:text-xs font-medium"
+                  style="font-size: 16px; font-weight: bold; color: #1e293b"
+                >
+                  이용률
+                </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
+                  style="font-size: 30px"
+                >
+                  {{ keyMetrics.utilizationRate }}%
+                </div>
+                <div
+                  class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5 text-right"
+                >
+                  전월 대비
+                  <span
+                    class="font-medium"
+                    :style="{ color: getChangeColor(keyMetrics.utilizationChange) }"
+                  >
+                    <i :class="getChangeIcon(keyMetrics.utilizationChange)" class="mr-1"></i
+                    >{{ Math.abs(keyMetrics.utilizationChange) }}%
+                  </span>
+                </div>
               </div>
-              <div
-                class="font-bold mt-1 sm:mt-2 text-gray-900"
-                style="font-size: 30px"
-              >
-                {{ formatNumber(keyMetrics.users) }}명
-              </div>
             </div>
-          </div>
 
-          <!-- 매출 카드 -->
-          <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-400/90 to-blue-600/95 text-white" -->
-
-          <div
-            class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95 h-[160px]"
-          >
+            <!-- 재방문율 카드 -->
             <div
-              class="font-bold opacity-90 text-gray-900 dark:text-gray-900"
-              style="font-size: 16px"
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-green-100 dark:border-green-900/30 h-[160px]"
             >
-              매출
-            </div>
-            <div class="text-right">
-              <div
-                class="mt-1 sm:mt-2 font-bold"
-                style="font-size: 16px"
-                :style="{ color: getChangeColor(keyMetrics.revenueChange) }"
-              >
-                <i :class="getChangeIcon(keyMetrics.revenueChange)" class="mr-1"></i
-                >{{ Math.abs(keyMetrics.revenueChange) }}%
+              <div>
+                <div
+                  class="text-[11px] sm:text-xs font-medium"
+                  style="font-size: 16px; font-weight: bold; color: #1e293b"
+                >
+                  재방문율
+                </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
+                  style="font-size: 30px"
+                >
+                  {{ additionalMetrics.revisitRate }}%
+                </div>
+                <div
+                  class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5 text-right"
+                >
+                  전월 대비
+                  <span
+                    class="font-medium"
+                    :style="{ color: getChangeColor(additionalMetrics.revisitChange) }"
+                  >
+                    <i :class="getChangeIcon(additionalMetrics.revisitChange)" class="mr-1"></i
+                    >{{ Math.abs(additionalMetrics.revisitChange) }}%
+                  </span>
+                </div>
               </div>
-              <div
-                class="font-bold mt-1 sm:mt-2 text-gray-900 dark:text-gray-900"
-                style="font-size: 30px"
-              >
-                {{ formatCurrency(keyMetrics.revenue) }}
+            </div>
+
+            <!-- 배송선택률 카드 -->
+            <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-300/90 to-amber-400/95 text-gray-800" -->
+            <div
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-white/80 dark:bg-[#C4CFE1] border border-yellow-100 dark:border-yellow-900/30 h-[160px]"
+            >
+              <div>
+                <div
+                  class="text-[11px] sm:text-xs font-medium"
+                  style="font-size: 16px; font-weight: bold; color: #1e293b"
+                >
+                  배송선택률
+                </div>
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl font-bold mt-1 text-gray-900 text-right"
+                  style="font-size: 30px"
+                >
+                  {{ additionalMetrics.deliveryRate }}%
+                </div>
+                <div
+                  class="text-[9px] sm:text-xs text-gray-500 dark:text-gray-500 mt-0.5 text-right"
+                >
+                  전월 대비
+                  <span
+                    class="font-medium"
+                    :style="{ color: getChangeColor(additionalMetrics.deliveryChange) }"
+                  >
+                    <i :class="getChangeIcon(additionalMetrics.deliveryChange)" class="mr-1"></i
+                    >{{ Math.abs(additionalMetrics.deliveryChange) }}%
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
+          <!-- 매출 & 이용객 카드 -->
+          <div class="flex flex-wrap gap-3">
+            <!-- 이용객 카드 -->
+            <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-gray-400/90 to-gray-600/95" -->
+            <div
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-yellow-100/90 to-yellow-300/95 h-[160px]"
+            >
+              <div class="font-bold opacity-90 text-gray-900" style="font-size: 16px">이용객</div>
+              <div class="text-right">
+                <div
+                  class="mt-1 sm:mt-2 font-bold"
+                  style="font-size: 16px"
+                  :style="{ color: getChangeColor(keyMetrics.usersChange) }"
+                >
+                  <i :class="getChangeIcon(keyMetrics.usersChange)" class="mr-1"></i
+                  >{{ Math.abs(keyMetrics.usersChange) }}%
+                </div>
+                <div class="font-bold mt-1 sm:mt-2 text-gray-900" style="font-size: 30px">
+                  {{ formatNumber(keyMetrics.users) }}명
+                </div>
+              </div>
+            </div>
+
+            <!-- 매출 카드 -->
+            <!-- class="flex-1 p-6 rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-400/90 to-blue-600/95 text-white" -->
+
+            <div
+              class="flex-1 min-w-0 p-2 sm:p-3 md:p-4 lg:p-6 rounded-2xl sm:rounded-3xl shadow-sm backdrop-blur-sm bg-gradient-to-br from-blue-100/90 to-blue-300/95 h-[160px]"
+            >
+              <div
+                class="font-bold opacity-90 text-gray-900 dark:text-gray-900"
+                style="font-size: 16px"
+              >
+                매출
+              </div>
+              <div class="text-right">
+                <div
+                  class="mt-1 sm:mt-2 font-bold"
+                  style="font-size: 16px"
+                  :style="{ color: getChangeColor(keyMetrics.revenueChange) }"
+                >
+                  <i :class="getChangeIcon(keyMetrics.revenueChange)" class="mr-1"></i
+                  >{{ Math.abs(keyMetrics.revenueChange) }}%
+                </div>
+                <div
+                  class="font-bold mt-1 sm:mt-2 text-gray-900 dark:text-gray-900"
+                  style="font-size: 30px"
+                >
+                  {{ formatCurrency(keyMetrics.revenue) }}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- 2. 피크타임 분석 -->
       <section class="flex flex-col h-full">
-        <h2 class="text-lg items-center font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0">
+        <h2
+          class="text-lg items-center font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0"
+        >
           피크타임 분석
         </h2>
-        <div class="flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col">
+        <div
+          class="flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col"
+        >
           <!-- 범례와 셀렉트 (가로 배치) -->
           <div class="flex items-baseline justify-between gap-4 mb-3 flex-shrink-0">
             <!-- 커스텀 범례 -->
@@ -242,10 +246,7 @@
               </option>
             </select>
           </div>
-          <div
-            class="flex-none flex flex-col items-center gap-2 w-full"
-            style="height: 238.5px;"
-          >
+          <div class="flex-none flex flex-col items-center gap-2 w-full" style="height: 238.5px">
             <canvas ref="peakTimeChartRef" class="w-full h-full"></canvas>
           </div>
         </div>
@@ -255,14 +256,16 @@
       <div class="flex gap-3 flex-col xl:flex-row h-full">
         <!-- 행사 유형별 매출 -->
         <section class="flex-1 flex flex-col h-full">
-          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0">
+          <h2
+            class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0"
+          >
             행사 유형별 매출
           </h2>
           <div
             class="flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 md:p-4 lg:p-6 flex flex-col min-h-0"
           >
             <!-- 막대 그래프 -->
-            <div class="flex-1 min-h-0" style="position: relative; width: 100%; height: 100%;">
+            <div class="flex-1 min-h-0" style="position: relative; width: 100%; height: 100%">
               <canvas ref="eventTypeChartRef"></canvas>
             </div>
           </div>
@@ -270,19 +273,21 @@
 
         <!-- 사이즈별 비율 -->
         <section class="flex-1 flex flex-col h-full">
-          <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0">
+          <h2
+            class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0"
+          >
             사이즈별 비율
           </h2>
           <div
             class="flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm p-3 md:p-4 lg:p-6 flex flex-col min-h-0"
           >
             <!-- 도넛 차트 -->
-            <div class="flex-1 min-h-0" style="position: relative; width: 100%; height: 100%;">
+            <div class="flex-1 min-h-0" style="position: relative; width: 100%; height: 100%">
               <canvas ref="sizeRatioChartRef"></canvas>
               <!-- 중앙 범례 -->
               <div
                 class="absolute inset-0 flex items-center justify-center pointer-events-none"
-                style="z-index: 10;"
+                style="z-index: 10"
               >
                 <div class="flex flex-col items-end gap-1.5 text-right">
                   <div
@@ -309,7 +314,9 @@
 
       <!-- 4. 지역별 배송 -->
       <section class="mb-4 flex flex-col h-full">
-        <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0">
+        <h2
+          class="text-lg font-semibold mb-4 text-gray-900 dark:text-table-header-text flex-shrink-0"
+        >
           지역별 배송
         </h2>
         <div

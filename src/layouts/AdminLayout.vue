@@ -183,8 +183,8 @@
                 leave-from-class="transform opacity-100 scale-100"
                 leave-to-class="transform opacity-0 scale-95"
               >
-                <!-- ref="profileMenu" -->
                 <div
+                  ref="profileMenu"
                   v-if="isProfileMenuOpen"
                   class="absolute right-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-lg shadow-lg dark:shadow-slate-950 border border-gray-200 dark:border-slate-700 py-2 z-50"
                 >
@@ -232,7 +232,7 @@ const authStore = useAuthStore()
 const isSidebarCollapsed = ref(false)
 const isMobileMenuOpen = ref(false)
 const isProfileMenuOpen = ref(false)
-// const profileMenu = ref(null)
+const profileMenu = ref(null)
 
 const menuItems = [
   {
