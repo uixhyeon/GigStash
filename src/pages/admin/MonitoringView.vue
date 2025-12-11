@@ -290,7 +290,7 @@
                 class="absolute inset-0 flex items-center justify-center pointer-events-none"
                 style="z-index: 10"
               >
-                <div class="flex flex-col items-end gap-1.5 text-right">
+                <div class="flex flex-col items-start gap-1.5 text-left">
                   <div
                     v-for="(segment, index) in sizeRatio"
                     :key="segment.size"
@@ -360,7 +360,7 @@
               <!-- 지역별 배송 툴팁 -->
               <div
                 v-if="hoveredRegion"
-                class="fixed bg-slate-900 dark:bg-slate-700 text-white text-xs rounded-xl p-3 shadow-lg z-50 pointer-events-none transform -translate-x-1/2 -translate-y-full"
+                class="fixed bg-slate-900 dark:bg-slate-700 text-white text-xs rounded-lg p-3 shadow-lg z-50 pointer-events-none transform -translate-x-1/2 -translate-y-full"
                 :style="{
                   left: `${regionTooltipPosition.x}px`,
                   top: `${regionTooltipPosition.y}px`,
