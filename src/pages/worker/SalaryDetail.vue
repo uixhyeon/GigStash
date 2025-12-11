@@ -123,17 +123,17 @@
             class="flex justify-between items-start gap-3 py-2"
           >
             <div class="min-w-0">
-              <div class="text-base text-gray-900 dark:text-white font-semibold leading-snug">
+              <div class="text-base text-gray-900 dark:text-white leading-snug">
                 {{ item.dateLabel }}
               </div>
-              <div class="text-sm text-gray-500 dark:text-gray-400 mt-0.5 leading-snug">
+              <div class="text-base text-gray-900 dark:text-gray-400 mt-0.5 leading-snug">
                 {{ item.eventName }}
               </div>
               <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
                 {{ item.workHours }}시간
               </div>
             </div>
-            <div class="text-base font-semibold text-gray-900 dark:text-white whitespace-nowrap">
+            <div class="text-base  text-gray-900 dark:text-white whitespace-nowrap">
               {{ formatCurrency(item.salary) }}원
             </div>
           </div>
