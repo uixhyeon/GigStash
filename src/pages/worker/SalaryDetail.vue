@@ -82,34 +82,46 @@
                 v-for="date in calendarDates"
                 :key="date.key"
                 :class="[
-                  'aspect-square p-1 rounded-lg text-center flex flex-col items-center justify-center relative',
+                  'aspect-square p-1 rounded-lg text-center flex items-center justify-center relative',
                   date.isCurrentMonth
                     ? date.isToday
-                      ? 'bg-blue-500 text-white'
+                      ? 'bg-transparent'
                       : date.hasWork
                         ? 'bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 cursor-pointer'
                         : 'hover:bg-gray-100 dark:hover:bg-gray-800'
                     : 'text-gray-300 dark:text-gray-600',
                 ]"
               >
-                <span
+                <div
                   :class="[
-                    'text-sm font-medium',
-                    date.isCurrentMonth
-                      ? date.isToday
-                        ? 'text-white'
-                        : 'text-gray-900 dark:text-white'
-                      : 'text-gray-300 dark:text-gray-600',
+                    'w-full h-full flex flex-col items-center justify-center',
+                    date.isToday
+                      ? 'rounded-full bg-white ring-1 ring-blue-200 shadow-md text-[var(--gray-900,#1E293B)] dark:bg-slate-800 dark:ring-blue-500/50 dark:shadow-none'
+                      : '',
                   ]"
                 >
-                  {{ date.day }}
-                </span>
-                <span
-                  v-if="date.hasWork && date.isCurrentMonth"
-                  class="text-[9px] text-blue-600 dark:text-blue-400 font-medium mt-0.5 leading-tight"
-                >
-                  {{ formatCurrencyCompact(date.salary) }}
-                </span>
+                  <span
+                    :class="[
+                      'text-sm font-medium',
+                      date.isCurrentMonth
+                        ? date.isToday
+                          ? 'text-[var(--gray-900,#1E293B)]'
+                          : 'text-gray-900 dark:text-white'
+                        : 'text-gray-300 dark:text-gray-600',
+                    ]"
+                  >
+                    {{ date.day }}
+                  </span>
+                  <span
+                    v-if="date.hasWork && date.isCurrentMonth"
+                    :class="[
+                      'text-[9px] font-medium mt-0.5 leading-tight',
+                      date.isToday ? 'text-[var(--gray-900,#1E293B)]' : 'text-blue-600 dark:text-blue-400',
+                    ]"
+                  >
+                    {{ formatCurrencyCompact(date.salary) }}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -173,7 +185,7 @@
             <div
               v-for="item in completedPayments"
               :key="item.id"
-              class="flex justify-between items-center py-2"
+              class="flex justify-between items-center py-2 px-3 rounded-lg border border-transparent bg-transparent dark:border-transparent dark:bg-transparent"
             >
               <div>
                 <div class="text-base text-gray-900 dark:text-white">{{ item.period }}</div>
@@ -192,30 +204,32 @@
           </div>
         </div>
 
-        <!-- 지급 예정 내역 -->
-        <div>
-          <h3 class="text-sm text-gray-600 dark:text-gray-400 mb-3">지급 예정</h3>
-          <div class="space-y-2">
-            <div
-              v-for="item in scheduledPayments"
-              :key="item.id"
-              class="flex justify-between items-center py-2"
-            >
-              <div>
-                <div class="text-base text-gray-900 dark:text-white">{{ item.period }}</div>
-                <div class="text-sm text-gray-600 dark:text-gray-400">
-                  예정일: {{ item.scheduledDate }}
+        <div class="border-t border-[var(--gray-200,#E2E8F0)] dark:border-gray-700 pt-4">
+          <!-- 지급 예정 내역 -->
+          <div>
+            <h3 class="text-sm text-gray-600 dark:text-gray-400 mb-3">지급 예정</h3>
+            <div class="space-y-2">
+              <div
+                v-for="item in scheduledPayments"
+                :key="item.id"
+                class="flex justify-between items-center py-2 px-3 rounded-lg border border-transparent bg-blue-50 dark:border-transparent dark:bg-blue-900/20"
+              >
+                <div>
+                  <div class="text-base text-gray-900 dark:text-white">{{ item.period }}</div>
+                  <div class="text-sm text-gray-600 dark:text-gray-400">
+                    예정일: {{ item.scheduledDate }}
+                  </div>
+                </div>
+                <div class="text-base text-blue-600 dark:text-blue-400">
+                  {{ formatCurrency(item.amount) }}원
                 </div>
               </div>
-              <div class="text-base text-blue-600 dark:text-blue-400">
-                {{ formatCurrency(item.amount) }}원
+              <div
+                v-if="scheduledPayments.length === 0"
+                class="text-center text-gray-400 dark:text-gray-500 text-sm py-4"
+              >
+                지급 예정 내역이 없습니다.
               </div>
-            </div>
-            <div
-              v-if="scheduledPayments.length === 0"
-              class="text-center text-gray-400 dark:text-gray-500 text-sm py-4"
-            >
-              지급 예정 내역이 없습니다.
             </div>
           </div>
         </div>

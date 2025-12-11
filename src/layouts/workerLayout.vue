@@ -36,44 +36,44 @@
     <nav
       class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[480px] h-[68px] bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 z-40 flex items-center"
     >
-      <div class="flex items-center justify-around w-full">
+      <div class="flex items-center justify-center w-full gap-16">
         <!-- 내급여 -->
         <router-link
           to="/worker/workerMain/salary-detail"
           :class="[
-            'flex items-center justify-center px-6 transition-colors',
+            'flex items-center justify-center w-14 h-14 rounded-full transition-colors',
             isActiveRoute('/worker/workerMain/salary-detail')
               ? 'text-blue-600 dark:text-blue-400'
               : 'text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400',
           ]"
         >
-          <i class="fi fi-rr-wallet text-2xl"></i>
+          <i class="fi fi-rr-wallet text-[27px] leading-none"></i>
         </router-link>
 
         <!-- 홈 -->
         <router-link
           to="/worker/workerMain"
           :class="[
-            'flex items-center justify-center px-6 transition-colors',
+            'relative flex items-center justify-center w-[72px] h-[72px] -translate-y-3 rounded-full shadow-lg transition-transform duration-150',
             isHomeActive
-              ? 'text-blue-600 dark:text-blue-400'
-              : 'text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400',
+              ? 'bg-[#1e3a8a] text-white shadow-[0_10px_24px_rgba(0,0,0,0.25)]'
+              : 'bg-[#1e40af] text-white shadow-[0_8px_18px_rgba(0,0,0,0.18)]',
           ]"
         >
-          <i class="fi fi-rr-home text-2xl"></i>
+          <i class="fi fi-rr-home text-[27px] leading-none"></i>
         </router-link>
 
         <!-- 마이페이지 -->
         <router-link
           to="/worker/workerMain/settings"
           :class="[
-            'flex items-center justify-center px-6 transition-colors',
+            'flex items-center justify-center w-14 h-14 rounded-full transition-colors',
             isActiveRoute('/worker/workerMain/settings')
               ? 'text-blue-600 dark:text-blue-400'
               : 'text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400',
           ]"
         >
-          <i class="fi fi-rr-user text-2xl"></i>
+          <i class="fi fi-rr-user text-[27px] leading-none"></i>
         </router-link>
       </div>
     </nav>
