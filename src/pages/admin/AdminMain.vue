@@ -176,7 +176,7 @@
                 <thead class="sticky top-0 bg-table-header-bg dark:bg-table-header-bg-dark z-10">
                   <tr>
                     <th
-                      class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
+                      class="px-1 sm:px-2 py-1 sm:py-2 text-left font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                     >
                       예약 ID
                     </th>
@@ -191,11 +191,11 @@
                       보관함 ID
                     </th>
 
-                    <th
+                    <!-- <th
                       class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                     >
                       보관 시작시간
-                    </th>
+                    </th> -->
                     <th
                       class="px-1 sm:px-2 py-1 sm:py-2 text-center font-semibold text-[9px] sm:text-xs text-table-header-text dark:text-table-header-text-dark whitespace-nowrap"
                     >
@@ -215,7 +215,7 @@
                     class="border-t border-slate-200 dark:border-slate-700 h-8 sm:h-10 hover:bg-slate-50 dark:hover:bg-slate-700 cursor-pointer transition-colors"
                   >
                     <td
-                      class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
+                      class="px-1 sm:px-2 py-0.5 sm:py-1 text-left text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
                     >
                       {{ reservation.id }}
                     </td>
@@ -230,11 +230,11 @@
                       {{ reservation.lockerId }}
                     </td>
 
-                    <td
+                    <!-- <td
                       class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
                     >
                       {{ formatDateTime(reservation.createdAt) }}
-                    </td>
+                    </td> -->
                     <td
                       class="px-1 sm:px-2 py-0.5 sm:py-1 text-center text-[9px] sm:text-xs text-slate-900 dark:text-slate-100 whitespace-nowrap"
                     >

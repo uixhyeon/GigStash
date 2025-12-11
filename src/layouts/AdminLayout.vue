@@ -75,11 +75,9 @@
           </transition>
         </RouterLink>
 
-        <div
-          class="h-px bg-gray-200 dark:bg-slate-700 mx-3 my-2"
-        ></div>
+        <!-- <div class="h-px bg-gray-200 dark:bg-slate-700 mx-3 my-2"></div> -->
 
-        <RouterLink
+        <!-- <RouterLink
           v-for="item in secondaryMenuItems"
           :key="item.path"
           :to="item.path"
@@ -92,13 +90,13 @@
           ]"
           active-class="!bg-blue-600 !text-white dark:!bg-blue-600"
         >
-          <!-- active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30" -->
+          active-class="!bg-gradient-to-r !from-blue-600 !to-cyan-500 dark:!from-cyan-500 dark:!to-blue-600 !text-white !shadow-lg !shadow-blue-500/50 dark:!shadow-cyan-500/30"  
           <span class="text-xl flex-shrink-0"><i :class="[item.icon, ``]"></i></span>
           <span class="flex-1 block lg:hidden">{{ item.label }}</span>
           <transition name="fade">
             <span v-if="!isSidebarCollapsed" class="hidden lg:block flex-1">{{ item.label }}</span>
           </transition>
-        </RouterLink>
+        </RouterLink>  -->
       </nav>
     </aside>
 
