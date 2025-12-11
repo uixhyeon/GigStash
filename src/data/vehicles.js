@@ -3,6 +3,7 @@
 // vehicleType(차량종류) - 버스/중형차
 // capacity(정원) - 최대 탑승 인원
 // plateNumber(번호판) - 차량 번호판 (고유값)
+// driver(운전자) - 차량에 고정 배정된 운전자명
 // status(상태) - active(운영중), inactive(운영중지)
 
 export const vehicles = [
@@ -11,6 +12,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '서울12가1235',
+    driver: '김운전',
     status: 'active',
   },
   {
@@ -18,6 +20,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '서울12가2001',
+    driver: '이운전',
     status: 'active',
   },
   {
@@ -25,6 +28,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '서울12가2002',
+    driver: '박운전',
     status: 'active',
   },
   {
@@ -32,6 +36,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '서울12가2003',
+    driver: '최운전',
     status: 'active',
   },
   {
@@ -39,6 +44,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '경기12가1001',
+    driver: '정운전',
     status: 'active',
   },
   {
@@ -46,6 +52,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '경기12가1002',
+    driver: '강운전',
     status: 'active',
   },
   {
@@ -53,6 +60,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '경기12가1003',
+    driver: '윤운전',
     status: 'active',
   },
   {
@@ -60,6 +68,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '경기12가2001',
+    driver: '임운전',
     status: 'active',
   },
   {
@@ -67,6 +76,7 @@ export const vehicles = [
     vehicleType: '중형차',
     capacity: 50,
     plateNumber: '경기12가2002',
+    driver: '한운전',
     status: 'active',
   },
   {
@@ -74,6 +84,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '경기12가2003',
+    driver: '오운전',
     status: 'active',
   },
   {
@@ -81,6 +92,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '인천12가1001',
+    driver: '신운전',
     status: 'active',
   },
   {
@@ -88,6 +100,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '인천12가1002',
+    driver: '조운전',
     status: 'active',
   },
   {
@@ -95,6 +108,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '인천12가1003',
+    driver: '홍운전',
     status: 'active',
   },
   {
@@ -102,6 +116,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '부산12가1001',
+    driver: '전운전',
     status: 'active',
   },
   {
@@ -109,6 +124,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '부산12가1002',
+    driver: '남운전',
     status: 'active',
   },
   {
@@ -116,6 +132,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '대구12가1001',
+    driver: '안운전',
     status: 'active',
   },
   {
@@ -123,6 +140,7 @@ export const vehicles = [
     vehicleType: '중형차',
     capacity: 50,
     plateNumber: '대전12가1001',
+    driver: '배운전',
     status: 'active',
   },
   {
@@ -130,6 +148,7 @@ export const vehicles = [
     vehicleType: '중형차',
     capacity: 50,
     plateNumber: '대전12가1002',
+    driver: '서운전',
     status: 'active',
   },
   {
@@ -137,6 +156,7 @@ export const vehicles = [
     vehicleType: '중형차',
     capacity: 50,
     plateNumber: '광주12가1001',
+    driver: '양운전',
     status: 'active',
   },
   {
@@ -144,6 +164,7 @@ export const vehicles = [
     vehicleType: '중형차',
     capacity: 50,
     plateNumber: '울산12가1001',
+    driver: '허운전',
     status: 'active',
   },
   {
@@ -151,6 +172,7 @@ export const vehicles = [
     vehicleType: '중형차',
     capacity: 50,
     plateNumber: '세종12가1001',
+    driver: '류운전',
     status: 'active',
   },
   {
@@ -158,6 +180,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '강원12가1001',
+    driver: '마운전',
     status: 'active',
   },
   {
@@ -165,6 +188,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '충청12가1001',
+    driver: '노운전',
     status: 'active',
   },
   {
@@ -172,6 +196,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '전북12가1001',
+    driver: '도운전',
     status: 'active',
   },
   {
@@ -179,6 +204,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '전남12가1001',
+    driver: '로운전',
     status: 'active',
   },
   {
@@ -186,6 +212,7 @@ export const vehicles = [
     vehicleType: '버스',
     capacity: 50,
     plateNumber: '서울12가1234',
+    driver: '소운전',
     status: 'active',
   },
 ]

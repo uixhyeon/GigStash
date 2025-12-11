@@ -90,7 +90,7 @@
                     'w-full px-3 py-2 text-sm border rounded-lg focus:outline-none focus:ring-2 transition-colors',
                     isEventEnded
                       ? 'border-gray-300 dark:border-slate-600 bg-gray-100 dark:bg-slate-700 text-gray-500 dark:text-gray-400 cursor-not-allowed'
-                      : 'border-gray-300 dark:border-slate-600 focus:ring-blue-500 dark:bg-slate-800 dark:text-slate-200'
+                      : 'border-gray-300 dark:border-slate-600 focus:ring-blue-500 dark:bg-slate-800 dark:text-slate-200',
                   ]"
                 >
                   <option value="예정">예정</option>
@@ -98,7 +98,10 @@
                   <option value="종료">종료</option>
                   <option v-if="!isEventStartedOrEnded" value="취소">취소</option>
                 </select>
-                <p v-if="isEventStartedOrEnded && !isEventEnded" class="text-xs text-red-600 dark:text-red-400 mt-2">
+                <p
+                  v-if="isEventStartedOrEnded && !isEventEnded"
+                  class="text-xs text-red-600 dark:text-red-400 mt-2"
+                >
                   행사가 시작되거나 종료되면 취소할 수 없습니다.
                 </p>
               </div>
@@ -131,12 +134,12 @@
             </div>
 
             <!-- 참여자 수 -->
-            <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
+            <!-- <div class="bg-slate-50 dark:bg-slate-900/30 rounded-lg p-4">
               <label class="block text-xs font-medium text-gray-600 dark:text-slate-300 mb-1"
                 >참여자 수</label
               >
               <p class="text-sm text-gray-900 dark:text-slate-200">{{ event?.participants }}명</p>
-            </div>
+            </div> -->
           </div>
         </div>
 

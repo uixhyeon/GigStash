@@ -228,6 +228,7 @@
 import { ref, computed } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 import { events } from '@/data/events'
+import { vehicles } from '@/data/vehicles'
 import { vehicleAssignments } from '@/data/vehicle-assignments'
 import { lockers } from '@/data/lockers'
 import { reservations as allReservations } from '@/data/reservations'
@@ -254,9 +255,13 @@ const workerNameToDriverName = (name) => {
 const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 
 // 워커가 담당하는 배차
+// vehicle에서 driver 정보를 조회하여 필터링
 const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return vehicleAssignments.filter((a) => a.driver === driverName)
+  return vehicleAssignments.filter((a) => {
+    const vehicle = vehicles.find((v) => v.id === a.vehicleId)
+    return vehicle?.driver === driverName
+  })
 })
 
 // 워커 배차에 포함된 vehicleId / eventId 집합

@@ -101,8 +101,8 @@
     <div
       class="block w-[calc(100%-2rem)] mx-4 mt-4 bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl shadow-sm p-5 text-left"
     >
-      <div class="flex justify-between items-center mb-4">
-        <div class="text-lg font-bold text-gray-900 dark:text-white">오늘 일정</div>
+      <div class="grid grid-cols-[1fr_3fr] justify-between items-center mb-4">
+        <div class="text-lg align-middle font-bold text-gray-900 dark:text-white">오늘 일정</div>
         <div class="text-base text-gray-900 dark:text-white">
           {{ todaySchedule.title }}
         </div>
@@ -117,19 +117,19 @@
             }}</span>
           </div>
           <div class="flex justify-between">
-            <span class="text-sm text-gray-600 dark:text-gray-400">운영 시간</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">운행 시간</span>
             <span class="text-base text-gray-900 dark:text-white"
               >{{ todaySchedule.operatingHours }} ({{ todaySchedule.duration }})</span
             >
           </div>
           <div class="flex justify-between">
-            <span class="text-sm text-gray-600 dark:text-gray-400">예약 인원</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">예약건 수</span>
             <span class="text-base text-gray-900 dark:text-white"
               >{{ todaySchedule.bookedCapacity }}/{{ todaySchedule.totalCapacity }}</span
             >
           </div>
           <div class="flex justify-between">
-            <span class="text-sm text-gray-600 dark:text-gray-400">담당인원</span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">고객 수</span>
             <span class="text-base text-gray-900 dark:text-white"
               >{{ todaySchedule.expectedAttendance }}명</span
             >
@@ -467,10 +467,7 @@
               <span class="text-sm text-gray-500 dark:text-gray-400">·</span>
               <p class="text-sm text-gray-500 dark:text-gray-400">{{ currentLocation }}</p>
             </div>
-            <button
-              @click="showParkingModal = false"
-              class="transition-colors"
-            >
+            <button @click="showParkingModal = false" class="transition-colors">
               <i class="fi fi-rr-cross text-gray-600 dark:text-gray-400 text-sm"></i>
             </button>
           </div>
@@ -581,9 +578,11 @@ const authStore = useAuthStore()
 const dataStore = useDataStore()
 
 // dataStore 또는 직접 import 데이터 사용 (dataStore 우선)
-const customers = computed(() => dataStore.customers.length > 0 ? dataStore.customers : customersData)
-const events = computed(() => dataStore.events.length > 0 ? dataStore.events : eventsData)
-const lockers = computed(() => dataStore.lockers.length > 0 ? dataStore.lockers : lockersData)
+const customers = computed(() =>
+  dataStore.customers.length > 0 ? dataStore.customers : customersData,
+)
+const events = computed(() => (dataStore.events.length > 0 ? dataStore.events : eventsData))
+const lockers = computed(() => (dataStore.lockers.length > 0 ? dataStore.lockers : lockersData))
 
 // 위치와 도착 시간은 todaySchedule에서 계산됨
 
@@ -619,9 +618,13 @@ const workerNameToDriverName = (name) => {
 const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 
 // 워커가 담당하는 배차 (dataStore에서 가져오기)
+// vehicle에서 driver 정보를 조회하여 필터링
 const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return dataStore.vehicleAssignments.filter((a) => a.driver === driverName)
+  return dataStore.vehicleAssignments.filter((a) => {
+    const vehicle = dataStore.vehicles.find((v) => v.id === a.vehicleId)
+    return vehicle?.driver === driverName
+  })
 })
 
 // 워커의 배차에 포함된 vehicleId / eventId 세트
@@ -639,24 +642,22 @@ const workerLockers = computed(() => {
 // ⚠️ lockerId 필터링 제거 - eventId만으로 필터링 (예약이 오운전 차량 locker에 연결되지 않은 경우 대비)
 const workerRawReservations = computed(() => {
   console.log('🔍 [workerRawReservations] 시작')
-  
+
   if (workerEventIds.value.size === 0) {
     console.log('❌ workerEventIds가 비어있음')
     return []
   }
 
   const eventIds = workerEventIds.value
-  
+
   console.log('🔍 [workerRawReservations] 필터링 전:')
   console.log('  - workerAssignments:', workerAssignments.value.length, '개')
   console.log('  - workerEventIds:', Array.from(eventIds))
   console.log('  - allReservations 총 개수:', allReservations.length)
-  
+
   // eventId만으로 필터링 (lockerId 필터링 제거)
-  const filtered = allReservations.filter(
-    (r) => eventIds.has(r.eventId),
-  )
-  
+  const filtered = allReservations.filter((r) => eventIds.has(r.eventId))
+
   console.log('✅ [workerRawReservations] 필터링 결과:', filtered.length, '개')
   if (filtered.length > 0) {
     console.log('  - 첫 번째 예약:', {
@@ -664,18 +665,18 @@ const workerRawReservations = computed(() => {
       lockerId: filtered[0].lockerId,
       eventId: filtered[0].eventId,
       customerId: filtered[0].customerId,
-      status: filtered[0].status
+      status: filtered[0].status,
     })
     // eventId별 예약 수 확인
     const byEvent = {}
-    filtered.forEach(r => {
+    filtered.forEach((r) => {
       byEvent[r.eventId] = (byEvent[r.eventId] || 0) + 1
     })
     console.log('  - eventId별 예약 수:', byEvent)
   } else {
     console.log('  ⚠️ 필터링된 예약이 없습니다!')
   }
-  
+
   return filtered
 })
 
@@ -686,10 +687,10 @@ const reservationStatusMap = ref(new Map())
 const reservations = computed(() => {
   const customersArray = Array.isArray(customers.value) ? customers.value : customers
   const eventsArray = Array.isArray(events.value) ? events.value : events
-  
+
   const customerMap = new Map(customersArray.map((c) => [c.id, c]))
   const eventMap = new Map(eventsArray.map((e) => [e.id, e]))
-  
+
   // 메인 행사의 eventId 가져오기
   const todayEvents = []
   for (const eventId of workerEventIds.value) {
@@ -698,7 +699,7 @@ const reservations = computed(() => {
       todayEvents.push(event)
     }
   }
-  
+
   let mainEventId = null
   if (todayEvents.length > 0) {
     // 가장 많은 배차가 있는 행사 선택
@@ -713,36 +714,41 @@ const reservations = computed(() => {
     }
     mainEventId = mainEvent.id
   }
-  
+
   console.log('🔍 [reservations] Step 1: 데이터 확인')
   console.log('  - customers 배열 길이:', customersArray.length)
   console.log('  - events 배열 길이:', eventsArray.length)
   console.log('  - workerRawReservations:', workerRawReservations.value.length, '개')
   console.log('  - todayStr:', todayStr.value)
   console.log('  - workerEventIds:', Array.from(workerEventIds.value))
-  console.log('  - todayEvents:', todayEvents.length, '개', todayEvents.map(e => e.id))
+  console.log(
+    '  - todayEvents:',
+    todayEvents.length,
+    '개',
+    todayEvents.map((e) => e.id),
+  )
   console.log('  - mainEventId:', mainEventId)
-  
+
   if (!mainEventId) {
     console.log('  ❌ 메인 행사 없음 - 빈 배열 반환')
     return []
   }
-  
+
   // Step 2: 메인 행사의 모든 예약 가져오기 (날짜 필터링 제거, 취소만 제외)
   const filtered = workerRawReservations.value.filter((r) => {
     // 취소된 예약 제외
     if (r.status === 'cancelled') {
       return false
     }
-    
+
     // 메인 행사의 eventId와 일치하는 예약만
     if (r.eventId === mainEventId) {
       return true
     }
-    
+
     return false
   })
-  
+
   console.log('🔍 [reservations] Step 2: 메인 행사 예약 필터링 결과')
   console.log('  - 필터링 후 예약 수:', filtered.length, '개')
   if (filtered.length > 0) {
@@ -750,22 +756,27 @@ const reservations = computed(() => {
       id: filtered[0].id,
       customerId: filtered[0].customerId,
       eventId: filtered[0].eventId,
-      status: filtered[0].status
+      status: filtered[0].status,
     })
   } else {
     console.log('  ⚠️ 메인 행사에 해당하는 예약이 없습니다!')
-    console.log('  - workerRawReservations의 eventId들:', [...new Set(workerRawReservations.value.map(r => r.eventId))])
+    console.log('  - workerRawReservations의 eventId들:', [
+      ...new Set(workerRawReservations.value.map((r) => r.eventId)),
+    ])
   }
-  
+
   // Step 3: 고객 정보 join
   const mapped = filtered.map((r, index) => {
     const customer = customerMap.get(r.customerId)
     const event = eventMap.get(r.eventId)
-    
-    if (index < 3) { // 처음 3개만 로그 출력
-      console.log(`  - 예약 ${r.id}: customer=${customer ? customer.name : '없음'} (${r.customerId}), event=${event ? event.eventName : '없음'} (${r.eventId})`)
+
+    if (index < 3) {
+      // 처음 3개만 로그 출력
+      console.log(
+        `  - 예약 ${r.id}: customer=${customer ? customer.name : '없음'} (${r.customerId}), event=${event ? event.eventName : '없음'} (${r.eventId})`,
+      )
     }
-    
+
     if (!customer) {
       console.warn('⚠️ 고객 정보 없음:', r.customerId, '예약:', r.id)
     }
@@ -773,47 +784,47 @@ const reservations = computed(() => {
       console.warn('⚠️ 이벤트 정보 없음:', r.eventId, '예약:', r.id)
     }
 
-      // 하차 시간은 예약 endTime 기준
-      const dropoffDate = r.endTime ? new Date(r.endTime) : null
-      const timeStr = dropoffDate
-        ? `${String(dropoffDate.getHours()).padStart(2, '0')}:${String(dropoffDate.getMinutes()).padStart(2, '0')}`
-        : ''
+    // 하차 시간은 예약 endTime 기준
+    const dropoffDate = r.endTime ? new Date(r.endTime) : null
+    const timeStr = dropoffDate
+      ? `${String(dropoffDate.getHours()).padStart(2, '0')}:${String(dropoffDate.getMinutes()).padStart(2, '0')}`
+      : ''
 
-      // 완료 상태 확인 (기본값은 "scheduled")
-      const status =
-        reservationStatusMap.value.get(r.id) || (r.status === 'completed' ? 'done' : 'scheduled')
+    // 완료 상태 확인 (기본값은 "scheduled")
+    const status =
+      reservationStatusMap.value.get(r.id) || (r.status === 'completed' ? 'done' : 'scheduled')
 
-      return {
-        id: r.id,
-        customerName: customer?.name || '고객',
-        phone: customer?.phone || '',
-        address: event?.eventVenue || '',
-        time: timeStr,
-        status,
-        // 원본 데이터도 함께 저장 (추가 정보 표시용)
-        original: {
-          ...r,
-          customerName: customer?.name,
-          customerPhone: customer?.phone,
-          eventName: event?.eventName,
-          eventDate: event?.eventDate,
-          eventVenue: event?.eventVenue,
-          eventStartTime:
-            event?.eventDate && event?.performanceTime
-              ? new Date(
-                  `${event.eventDate}T${(event.performanceTime || '00:00').split('-')[0]}:00Z`,
-                ).toISOString()
-              : null,
-          eventEndTime: null,
-        },
-      }
-    })
-  
+    return {
+      id: r.id,
+      customerName: customer?.name || '고객',
+      phone: customer?.phone || '',
+      address: event?.eventVenue || '',
+      time: timeStr,
+      status,
+      // 원본 데이터도 함께 저장 (추가 정보 표시용)
+      original: {
+        ...r,
+        customerName: customer?.name,
+        customerPhone: customer?.phone,
+        eventName: event?.eventName,
+        eventDate: event?.eventDate,
+        eventVenue: event?.eventVenue,
+        eventStartTime:
+          event?.eventDate && event?.performanceTime
+            ? new Date(
+                `${event.eventDate}T${(event.performanceTime || '00:00').split('-')[0]}:00Z`,
+              ).toISOString()
+            : null,
+        eventEndTime: null,
+      },
+    }
+  })
+
   console.log('✅ 최종 reservations:', mapped.length, '개')
   if (mapped.length > 0) {
     console.log('  - 첫 번째 최종 예약:', mapped[0])
   }
-  
+
   return mapped
 })
 const selectedReservationForComplete = ref(null)
@@ -866,29 +877,28 @@ const kakaoInfoWindow = ref(null)
 
 //
 
-
 // 카카오 맵 초기화
 onMounted(() => {
   // API 키 가져오기 (여러 방법 시도)
   let kakaoApiKey = import.meta.env.VITE_KAKAO_MAP_APP_KEY
-  
+
   // 대안 1: 직접 접근
   if (!kakaoApiKey) {
     kakaoApiKey = import.meta.env['VITE_KAKAO_MAP_APP_KEY']
   }
-  
+
   // 대안 2: 모든 환경 변수에서 찾기
   if (!kakaoApiKey) {
     const env = import.meta.env
     kakaoApiKey = env.VITE_KAKAO_MAP_APP_KEY || env['VITE_KAKAO_MAP_APP_KEY']
   }
-  
+
   // 대안 3: .env 파일이 로드되지 않는 경우를 위한 임시 fallback
   // TODO: .env 파일이 정상적으로 로드되면 이 부분 제거
   if (!kakaoApiKey) {
     kakaoApiKey = 'ce0be3a036c1109ce140f2113648226b' // 임시 fallback
   }
-  
+
   // 카카오 맵 스크립트 로드
   if (!window.kakao || !window.kakao.maps) {
     if (!kakaoApiKey) {
@@ -927,12 +937,12 @@ const initMap = () => {
     console.log('컨테이너:', container ? '찾음' : '없음')
     console.log('window.kakao:', window.kakao ? '있음' : '없음')
     console.log('window.kakao.maps:', window.kakao?.maps ? '있음' : '없음')
-    
+
     if (!container) {
       console.error('지도 컨테이너를 찾을 수 없습니다.')
       return
     }
-    
+
     if (!window.kakao?.maps) {
       console.error('카카오맵 SDK가 로드되지 않았습니다.')
       return
@@ -941,12 +951,12 @@ const initMap = () => {
     // 오늘 일정의 행사 장소에 맞는 좌표 가져오기
     const venue = todaySchedule.value.venue
     console.log('현재 venue:', venue)
-    
+
     const coordinates =
       venue && venue !== '-'
         ? venueToCoordinates[venue] || venueToCoordinates['default']
         : venueToCoordinates['default']
-    
+
     console.log('사용할 좌표:', coordinates)
 
     try {
@@ -1133,7 +1143,7 @@ onUnmounted(() => {
 const todaySchedule = computed(() => {
   const eventsArray = Array.isArray(events.value) ? events.value : events
   const eventMap = new Map(eventsArray.map((e) => [e.id, e]))
-  
+
   // 오늘 날짜의 배정된 이벤트 찾기
   const todayEvents = []
   for (const eventId of workerEventIds.value) {
@@ -1160,11 +1170,9 @@ const todaySchedule = computed(() => {
   // 가장 많은 배차가 있는 행사 선택 (또는 첫 번째 행사)
   let mainEvent = todayEvents[0]
   let maxAssignments = 0
-  
+
   for (const event of todayEvents) {
-    const assignmentCount = workerAssignments.value.filter(
-      (a) => a.eventId === event.id
-    ).length
+    const assignmentCount = workerAssignments.value.filter((a) => a.eventId === event.id).length
     if (assignmentCount > maxAssignments) {
       maxAssignments = assignmentCount
       mainEvent = event
@@ -1172,26 +1180,22 @@ const todaySchedule = computed(() => {
   }
 
   // 오늘 날짜의 예약 수 계산 (reservations.value는 이미 오늘 날짜로 필터링됨)
-  const todayReservations = reservations.value.filter(
-    (r) => r.original?.eventId === mainEvent.id
-  )
-  
+  const todayReservations = reservations.value.filter((r) => r.original?.eventId === mainEvent.id)
+
   // 취소되지 않은 예약만 카운트
   const bookedCapacity = todayReservations.filter(
-    (r) => r.status !== 'done' && r.original?.status !== 'cancelled'
+    (r) => r.status !== 'done' && r.original?.status !== 'cancelled',
   ).length
   const totalCapacity = todayReservations.length
 
   // 예상 인원 계산 (배차 대수 * 50)
-  const vehicleCount = workerAssignments.value.filter(
-    (a) => a.eventId === mainEvent.id
-  ).length
+  const vehicleCount = workerAssignments.value.filter((a) => a.eventId === mainEvent.id).length
   const expectedAttendance = vehicleCount * 50
 
   // 행사 시작/종료 시간 계산
   const performanceTime = mainEvent.performanceTime || ''
   const performanceStartStr = performanceTime.split('-')[0].trim()
-  
+
   // 행사 시작 시간
   let eventStartTime = null
   if (performanceStartStr) {
@@ -1216,7 +1220,7 @@ const todaySchedule = computed(() => {
       eventEndTime.setMinutes(eventEndTime.getMinutes() + runningMinutes)
     }
   }
-  
+
   // eventEndTime이 계산되지 않은 경우, 기본값으로 3시간 추가
   if (!eventEndTime && eventStartTime) {
     eventEndTime = new Date(eventStartTime)
@@ -1226,12 +1230,12 @@ const todaySchedule = computed(() => {
   // 운영 시간: 행사 시작 3시간 전 ~ 행사 종료 3시간 후
   let operatingStartTime = null
   let operatingEndTime = null
-  
+
   if (eventStartTime) {
     operatingStartTime = new Date(eventStartTime)
     operatingStartTime.setHours(operatingStartTime.getHours() - 3)
   }
-  
+
   if (eventEndTime) {
     operatingEndTime = new Date(eventEndTime)
     operatingEndTime.setHours(operatingEndTime.getHours() + 3)
@@ -1245,9 +1249,10 @@ const todaySchedule = computed(() => {
 
   const operatingStartStr = formatTime(operatingStartTime)
   const operatingEndStr = formatTime(operatingEndTime)
-  const operatingHours = operatingStartStr && operatingEndStr 
-    ? `${operatingStartStr} ~ ${operatingEndStr}` 
-    : operatingStartStr || '-'
+  const operatingHours =
+    operatingStartStr && operatingEndStr
+      ? `${operatingStartStr} ~ ${operatingEndStr}`
+      : operatingStartStr || '-'
 
   // 지속 시간 계산 (운영 시간 총 길이)
   let duration = '-'
@@ -1265,10 +1270,8 @@ const todaySchedule = computed(() => {
   }
 
   // 상태 결정
-  const completedCount = todayReservations.filter(
-    (r) => r.status === 'done'
-  ).length
-  
+  const completedCount = todayReservations.filter((r) => r.status === 'done').length
+
   const status =
     totalCapacity === 0
       ? '대기'
@@ -1306,8 +1309,8 @@ const venueToCoordinates = {
   KSPO돔: { lat: 37.5219, lng: 127.1238 },
   올림픽공원: { lat: 37.5219, lng: 127.1238 },
   '올림픽공원 올림픽홀': { lat: 37.5219, lng: 127.1238 },
-  고척돔: { lat: 37.4981, lng: 126.8670 },
-  고척스카이돔: { lat: 37.4981, lng: 126.8670 },
+  고척돔: { lat: 37.4981, lng: 126.867 },
+  고척스카이돔: { lat: 37.4981, lng: 126.867 },
   // 기본값 (잠실실내체육관)
   default: { lat: 37.5153, lng: 127.1028 },
 }
@@ -1326,7 +1329,7 @@ const venueToParkingAddress = {
 const assignedEventInfo = computed(() => {
   const eventsArray = Array.isArray(events.value) ? events.value : events
   const eventMap = new Map(eventsArray.map((e) => [e.id, e]))
-  
+
   // 오운전 배정 중 오늘 날짜 행사 찾기
   const todayEventIds = workerEventIds.value
   let todayEvent = null
@@ -1415,20 +1418,20 @@ watch(
         venue && venue !== '-'
           ? venueToCoordinates[venue] || venueToCoordinates['default']
           : venueToCoordinates['default']
-      
+
       // 지도 중심 이동
       const moveLatLon = new window.kakao.maps.LatLng(coordinates.lat, coordinates.lng)
       kakaoMap.value.setCenter(moveLatLon)
-      
+
       // 마커 위치 이동
       if (kakaoMarker.value) {
         kakaoMarker.value.setPosition(moveLatLon)
       }
-      
+
       // 인포윈도우 내용 업데이트
       if (kakaoInfoWindow.value) {
         kakaoInfoWindow.value.setContent(
-          `<div style="padding:5px;font-size:12px;">${currentLocation.value}</div>`
+          `<div style="padding:5px;font-size:12px;">${currentLocation.value}</div>`,
         )
         if (kakaoMarker.value) {
           kakaoInfoWindow.value.open(kakaoMap.value, kakaoMarker.value)

@@ -185,9 +185,13 @@ const workerNameToDriverName = (name) => {
 const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 
 // 워커가 담당하는 배차 (dataStore에서 가져오기)
+// vehicle에서 driver 정보를 조회하여 필터링
 const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return dataStore.vehicleAssignments.filter((a) => a.driver === driverName)
+  return dataStore.vehicleAssignments.filter((a) => {
+    const vehicle = dataStore.vehicles.find((v) => v.id === a.vehicleId)
+    return vehicle?.driver === driverName
+  })
 })
 
 // 워커의 배차에 포함된 vehicleId / eventId 세트

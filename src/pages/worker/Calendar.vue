@@ -126,7 +126,10 @@
 
           <!-- 모달 내용 -->
           <div class="flex-1 overflow-y-auto p-5">
-            <div v-if="allEventsWithDrivers.length === 0" class="text-center text-gray-600 dark:text-gray-400 py-8">
+            <div
+              v-if="allEventsWithDrivers.length === 0"
+              class="text-center text-gray-600 dark:text-gray-400 py-8"
+            >
               등록된 이벤트가 없습니다.
             </div>
             <div v-else class="space-y-4">
@@ -160,7 +163,10 @@
                       <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">
                         {{ event.eventType }}
                       </p>
-                      <p v-if="event.performanceTime" class="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                      <p
+                        v-if="event.performanceTime"
+                        class="text-xs text-gray-500 dark:text-gray-500 mt-1"
+                      >
                         시간: {{ event.performanceTime }}
                       </p>
                     </div>
@@ -200,6 +206,7 @@ import { Teleport } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 import { events } from '@/data/events'
 import { vehicleAssignments } from '@/data/vehicle-assignments'
+import { vehicles } from '@/data/vehicles'
 import { lockers } from '@/data/lockers'
 import { reservations as allReservations } from '@/data/reservations'
 
@@ -245,9 +252,13 @@ const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 const myDriverName = computed(() => workerNameToDriverName(currentWorkerName.value))
 
 // 워커가 담당하는 배차
+// vehicle에서 driver 정보를 조회하여 필터링
 const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return vehicleAssignments.filter((a) => a.driver === driverName)
+  return vehicleAssignments.filter((a) => {
+    const vehicle = vehicles.find((v) => v.id === a.vehicleId)
+    return vehicle?.driver === driverName
+  })
 })
 
 // 워커 배차의 vehicleId / eventId 집합
@@ -295,18 +306,22 @@ const eventsByDate = computed(() => {
       // 운영 시간은 performanceTime을 그대로 사용 (또는 "HH:MM-HH:MM" 형태)
       const operatingHours = e.performanceTime || ''
 
-      // 배정된 기사 목록 찾기
+      // 배정된 기사 목록 찾기 (vehicle에서 driver 정보 조회)
       const assignedDrivers = Array.from(
         new Set(
           vehicleAssignments
-            .filter((a) => a.eventId === e.id && a.driver)
-            .map((a) => a.driver),
+            .filter((a) => a.eventId === e.id)
+            .map((a) => {
+              const vehicle = vehicles.find((v) => v.id === a.vehicleId)
+              return vehicle?.driver
+            })
+            .filter((driver) => driver), // undefined 제거
         ),
       )
 
       // 본인 예약 수 계산
       const bookedCustomerCount = workerRawReservations.value.filter(
-        (r) => r.eventId === e.id
+        (r) => r.eventId === e.id,
       ).length
 
       eventsMap[key] = {
@@ -373,9 +388,7 @@ const allEventsWithDrivers = computed(() => {
     // 배정된 기사 목록 찾기
     const assignedDrivers = Array.from(
       new Set(
-        vehicleAssignments
-          .filter((a) => a.eventId === event.id && a.driver)
-          .map((a) => a.driver),
+        vehicleAssignments.filter((a) => a.eventId === event.id && a.driver).map((a) => a.driver),
       ),
     )
 

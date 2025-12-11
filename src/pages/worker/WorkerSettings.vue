@@ -49,10 +49,10 @@
       >
         <div class="text-lg font-bold text-gray-900 dark:text-white mb-3">내 근무 일정</div>
         <div class="space-y-3">
-          <div class="flex justify-between items-center">
+          <!-- <div class="flex justify-between items-center">
             <span class="text-sm text-gray-600 dark:text-gray-400">오늘 행사</span>
             <span class="text-base text-gray-900 dark:text-white">{{ todayScheduleCount }}건</span>
-          </div>
+          </div> -->
           <div class="flex justify-between items-center">
             <span class="text-sm text-gray-600 dark:text-gray-400">이번 주 행사</span>
             <span class="text-base text-gray-900 dark:text-white">{{ weekScheduleCount }}건</span>
@@ -76,7 +76,10 @@
           @click="toggleDarkMode"
           class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 px-4 py-2 rounded-md text-sm shadow-sm hover:shadow-md transition-all flex items-center gap-1.5 border border-gray-200 dark:border-gray-700"
         >
-          <i :class="[isDark ? 'fi fi-rr-moon' : 'fi fi-rr-brightness', 'text-sm leading-none']" style="transform: translateY(1px);"></i>
+          <i
+            :class="[isDark ? 'fi fi-rr-moon' : 'fi fi-rr-brightness', 'text-sm leading-none']"
+            style="transform: translateY(1px)"
+          ></i>
           <span class="leading-none">{{ isDark ? 'Dark' : 'Light' }}</span>
         </button>
       </div>
@@ -101,9 +104,11 @@ const router = useRouter()
 const { isDark, toggleDarkMode } = useDarkMode()
 
 // dataStore 또는 직접 import 데이터 사용 (dataStore 우선)
-const customers = computed(() => dataStore.customers.length > 0 ? dataStore.customers : customersData)
-const events = computed(() => dataStore.events.length > 0 ? dataStore.events : eventsData)
-const lockers = computed(() => dataStore.lockers.length > 0 ? dataStore.lockers : lockersData)
+const customers = computed(() =>
+  dataStore.customers.length > 0 ? dataStore.customers : customersData,
+)
+const events = computed(() => (dataStore.events.length > 0 ? dataStore.events : eventsData))
+const lockers = computed(() => (dataStore.lockers.length > 0 ? dataStore.lockers : lockersData))
 
 const userInfo = ref({
   name: '오운전',
@@ -157,7 +162,10 @@ const currentWorkerName = computed(() => authStore.user?.name || '오운전')
 // 워커가 담당하는 배차 (dataStore에서 가져오기)
 const workerAssignments = computed(() => {
   const driverName = workerNameToDriverName(currentWorkerName.value)
-  return dataStore.vehicleAssignments.filter((a) => a.driver === driverName)
+  return dataStore.vehicleAssignments.filter((a) => {
+    const vehicle = dataStore.vehicles.find((v) => v.id === a.vehicleId)
+    return vehicle?.driver === driverName
+  })
 })
 
 // 워커 배차의 vehicleId / eventId 집합
@@ -206,7 +214,7 @@ const eventsByDate = computed(() => {
 
 // 오늘 일정 수
 const todayScheduleCount = computed(() => {
-  return eventsByDate.value.filter((e) => e.date === todayStr.value).length
+  return vehicle.value.filter((e) => e.date === todayStr.value).length
 })
 
 // 이번 주 일정 수
